@@ -1,0 +1,101 @@
+/* Estilos para el Sidebar */
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, #000706, #00272d); /* Gradiente de color1 a color2 */
+    padding-top: 20px;
+    font-family: Arial, sans-serif;
+    color: #bfac8b; /* Color5 para el texto */
+    transition: background 1.5s ease-in-out, width 0.5s ease-in-out; /* Transición más lenta para el fondo */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar:hover {
+    width: 270px;
+    background: linear-gradient(180deg, #00272d, #134647); /* Gradiente de color2 a color3 en hover */
+}
+
+.sidebar a {
+    padding: 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #bfac8b; /* Color5 para los enlaces */
+    display: block;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    margin: 5px 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar a:hover {
+    background-color: #0c7e7e; /* Color4 en hover */
+    color: #fff; /* Texto blanco en hover */
+    transform: translateX(10px);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.5s ease-in-out; /* Transición de hover más lenta */
+}
+
+.sidebar a i {
+    margin-right: 10px;
+    font-size: 20px;
+    color: #bfac8b; /* Color5 para los íconos */
+    transition: 0.3s;
+}
+
+.sidebar .logo {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #bfac8b; /* Color5 para el logo */
+    animation: fadeIn 1s;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar .menu-heading {
+    padding-left: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #bfac8b; /* Color5 para los títulos */
+    animation: fadeIn 1s;
+    border-bottom: 1px solid #bfac8b;
+    padding-bottom: 5px;
+}
+
+.sidebar .logout {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.sidebar .logout a:hover {
+    color: #fff;
+}
+
+.sidebar:hover .logout {
+    transform: scale(1.05);
+}
+
+/* Enlace activo */
+.sidebar a.active {
+    background-color: #bfac8b; /* Color5 para el enlace activo */
+    color: #000706; /* Texto en color1 para el enlace activo */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+
+

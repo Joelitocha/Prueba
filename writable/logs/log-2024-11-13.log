@@ -1,0 +1,302 @@
+CRITICAL - 2024-11-13 16:20:36 --> ErrorException: Undefined array key "ID_Usuario"
+[Method: POST, Route: cargar_acceso]
+in APPPATH\Models\Esp32Model.php on line 25.
+ 1 APPPATH\Models\Esp32Model.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Usuario"', 'C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Models\\Esp32Model.php', 25)
+ 2 APPPATH\Controllers\esp32controller.php(15): App\Models\Esp32Model->insertar_registro('0xaa12e080')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->insertar_registro()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-11-13 16:23:21 --> mysqli_sql_exception: Column 'ID_Usuario' cannot be null in C:\xampp\htdocs\cosas\Prueba\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\cosas\Prueba\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `re...', 0)
+#1 C:\xampp\htdocs\cosas\Prueba\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `re...')
+#2 C:\xampp\htdocs\cosas\Prueba\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `re...')
+#3 C:\xampp\htdocs\cosas\Prueba\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `re...', Array, false)
+#4 C:\xampp\htdocs\cosas\Prueba\app\Models\Esp32Model.php(31): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\cosas\Prueba\app\Controllers\esp32controller.php(15): App\Models\Esp32Model->insertar_registro('0xaa12e080')
+#6 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(933): App\Controllers\esp32controller->insertar_registro()
+#7 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+#8 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\cosas\Prueba\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\cosas\Prueba\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\cosas\Prueba\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2024-11-13 16:23:25 --> mysqli_sql_exception: Column 'ID_Usuario' cannot be null in C:\xampp\htdocs\cosas\Prueba\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\cosas\Prueba\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `re...', 0)
+#1 C:\xampp\htdocs\cosas\Prueba\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `re...')
+#2 C:\xampp\htdocs\cosas\Prueba\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `re...')
+#3 C:\xampp\htdocs\cosas\Prueba\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `re...', Array, false)
+#4 C:\xampp\htdocs\cosas\Prueba\app\Models\Esp32Model.php(31): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\cosas\Prueba\app\Controllers\esp32controller.php(15): App\Models\Esp32Model->insertar_registro('0xaa12e080')
+#6 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(933): App\Controllers\esp32controller->insertar_registro()
+#7 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+#8 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\cosas\Prueba\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\cosas\Prueba\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\cosas\Prueba\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2024-11-13 16:23:30 --> mysqli_sql_exception: Column 'ID_Usuario' cannot be null in C:\xampp\htdocs\cosas\Prueba\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\cosas\Prueba\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `re...', 0)
+#1 C:\xampp\htdocs\cosas\Prueba\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `re...')
+#2 C:\xampp\htdocs\cosas\Prueba\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `re...')
+#3 C:\xampp\htdocs\cosas\Prueba\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `re...', Array, false)
+#4 C:\xampp\htdocs\cosas\Prueba\app\Models\Esp32Model.php(31): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\cosas\Prueba\app\Controllers\esp32controller.php(15): App\Models\Esp32Model->insertar_registro('0xaa12e080')
+#6 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(933): App\Controllers\esp32controller->insertar_registro()
+#7 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+#8 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\cosas\Prueba\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\cosas\Prueba\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\cosas\Prueba\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2024-11-13 16:23:33 --> mysqli_sql_exception: Column 'ID_Usuario' cannot be null in C:\xampp\htdocs\cosas\Prueba\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\cosas\Prueba\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `re...', 0)
+#1 C:\xampp\htdocs\cosas\Prueba\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `re...')
+#2 C:\xampp\htdocs\cosas\Prueba\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `re...')
+#3 C:\xampp\htdocs\cosas\Prueba\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `re...', Array, false)
+#4 C:\xampp\htdocs\cosas\Prueba\app\Models\Esp32Model.php(31): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\cosas\Prueba\app\Controllers\esp32controller.php(15): App\Models\Esp32Model->insertar_registro('0xaa12e080')
+#6 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(933): App\Controllers\esp32controller->insertar_registro()
+#7 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+#8 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\cosas\Prueba\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\cosas\Prueba\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\cosas\Prueba\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-11-13 16:23:37 --> ParseError: syntax error, unexpected token ","
+[Method: POST, Route: cargar_acceso]
+in APPPATH\Models\Esp32Model.php on line 25.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Models\\Esp32Model.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Esp32Model')
+ 3 APPPATH\Controllers\esp32controller.php(14): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Esp32Model')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->insertar_registro()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-13 16:23:41 --> ParseError: syntax error, unexpected token ",", expecting variable or "{" or "$"
+[Method: POST, Route: cargar_acceso]
+in APPPATH\Models\Esp32Model.php on line 25.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Models\\Esp32Model.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Esp32Model')
+ 3 APPPATH\Controllers\esp32controller.php(14): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Esp32Model')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->insertar_registro()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-13 16:23:45 --> ErrorException: Array to string conversion
+[Method: POST, Route: cargar_acceso]
+in SYSTEMPATH\Database\Query.php on line 331.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\cosas\\Prueba\\system\\Database\\Query.php', 331)
+ 2 SYSTEMPATH\Database\Query.php(331): implode(',', [...])
+ 3 SYSTEMPATH\Database\Query.php(312): CodeIgniter\Database\Query->matchNamedBinds('INSERT INTO `registro_acceso_rf` (`Resultado`, `Accion_Tomada`, `Fecha_Hora_Grabacion`, `Archivo_Video`, `Ubicacion_Camara`, `ID_Usuario`, `ID_Sistema`, `ID_Tarjeta`) VALUES (:Resultado:, :Accion_Tomada:, :Fecha_Hora_Grabacion:, :Archivo_Video:, :Ubicacion_Camara:, :ID_Usuario:, :ID_Sistema:, :ID_Tarjeta:)', [...])
+ 4 SYSTEMPATH\Database\Query.php(163): CodeIgniter\Database\Query->compileBinds()
+ 5 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\Query->getQuery()
+ 6 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registro_acceso_rf` (`Resultado`, `Accion_Tomada`, `Fecha_Hora_Grabacion`, `Archivo_Video`, `Ubicacion_Camara`, `ID_Usuario`, `ID_Sistema`, `ID_Tarjeta`) VALUES (:Resultado:, :Accion_Tomada:, :Fecha_Hora_Grabacion:, :Archivo_Video:, :Ubicacion_Camara:, :ID_Usuario:, :ID_Sistema:, :ID_Tarjeta:)', [...], false)
+ 7 APPPATH\Models\Esp32Model.php(31): CodeIgniter\Database\BaseBuilder->insert([...])
+ 8 APPPATH\Controllers\esp32controller.php(15): App\Models\Esp32Model->insertar_registro('0xaa12e080')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->insertar_registro()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-11-13 16:23:51 --> mysqli_sql_exception: Operand should contain 1 column(s) in C:\xampp\htdocs\cosas\Prueba\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\cosas\Prueba\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `re...', 0)
+#1 C:\xampp\htdocs\cosas\Prueba\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `re...')
+#2 C:\xampp\htdocs\cosas\Prueba\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `re...')
+#3 C:\xampp\htdocs\cosas\Prueba\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `re...', Array, false)
+#4 C:\xampp\htdocs\cosas\Prueba\app\Models\Esp32Model.php(31): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\cosas\Prueba\app\Controllers\esp32controller.php(15): App\Models\Esp32Model->insertar_registro('0xaa12e080')
+#6 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(933): App\Controllers\esp32controller->insertar_registro()
+#7 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+#8 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\cosas\Prueba\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\cosas\Prueba\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\cosas\Prueba\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-11-13 16:23:55 --> ErrorException: Cannot use [] for reading
+[Method: POST, Route: cargar_acceso]
+in APPPATH\Models\Esp32Model.php on line 20.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-11-13 16:23:59 --> ErrorException: Undefined array key ""
+[Method: POST, Route: cargar_acceso]
+in APPPATH\Models\Esp32Model.php on line 25.
+ 1 APPPATH\Models\Esp32Model.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key ""', 'C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Models\\Esp32Model.php', 25)
+ 2 APPPATH\Controllers\esp32controller.php(15): App\Models\Esp32Model->insertar_registro('0xaa12e080')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->insertar_registro()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-13 16:24:03 --> ErrorException: Undefined array key ""
+[Method: POST, Route: cargar_acceso]
+in APPPATH\Models\Esp32Model.php on line 25.
+ 1 APPPATH\Models\Esp32Model.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key ""', 'C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Models\\Esp32Model.php', 25)
+ 2 APPPATH\Controllers\esp32controller.php(15): App\Models\Esp32Model->insertar_registro('0xaa12e080')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->insertar_registro()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-13 16:24:07 --> ErrorException: Undefined array key "ID"
+[Method: POST, Route: cargar_acceso]
+in APPPATH\Models\Esp32Model.php on line 25.
+ 1 APPPATH\Models\Esp32Model.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID"', 'C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Models\\Esp32Model.php', 25)
+ 2 APPPATH\Controllers\esp32controller.php(15): App\Models\Esp32Model->insertar_registro('0xaa12e080')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->insertar_registro()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-13 16:24:11 --> ErrorException: Undefined array key "ID_"
+[Method: POST, Route: cargar_acceso]
+in APPPATH\Models\Esp32Model.php on line 25.
+ 1 APPPATH\Models\Esp32Model.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_"', 'C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Models\\Esp32Model.php', 25)
+ 2 APPPATH\Controllers\esp32controller.php(15): App\Models\Esp32Model->insertar_registro('0xaa12e080')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->insertar_registro()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-13 16:24:15 --> ErrorException: Undefined array key "ID_Usuario"
+[Method: POST, Route: cargar_acceso]
+in APPPATH\Models\Esp32Model.php on line 25.
+ 1 APPPATH\Models\Esp32Model.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Usuario"', 'C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Models\\Esp32Model.php', 25)
+ 2 APPPATH\Controllers\esp32controller.php(15): App\Models\Esp32Model->insertar_registro('0xaa12e080')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->insertar_registro()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-13 16:24:19 --> ErrorException: Undefined array key "ID_Usuario"
+[Method: POST, Route: cargar_acceso]
+in APPPATH\Models\Esp32Model.php on line 25.
+ 1 APPPATH\Models\Esp32Model.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Usuario"', 'C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Models\\Esp32Model.php', 25)
+ 2 APPPATH\Controllers\esp32controller.php(15): App\Models\Esp32Model->insertar_registro('0xaa12e080')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->insertar_registro()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-13 16:24:23 --> ErrorException: Undefined array key "ID_Usuario"
+[Method: POST, Route: cargar_acceso]
+in APPPATH\Models\Esp32Model.php on line 25.
+ 1 APPPATH\Models\Esp32Model.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Usuario"', 'C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Models\\Esp32Model.php', 25)
+ 2 APPPATH\Controllers\esp32controller.php(15): App\Models\Esp32Model->insertar_registro('0xaa12e080')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->insertar_registro()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-13 16:24:27 --> ErrorException: Undefined array key "ID_Usuario"
+[Method: POST, Route: cargar_acceso]
+in APPPATH\Models\Esp32Model.php on line 25.
+ 1 APPPATH\Models\Esp32Model.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Usuario"', 'C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Models\\Esp32Model.php', 25)
+ 2 APPPATH\Controllers\esp32controller.php(15): App\Models\Esp32Model->insertar_registro('0xaa12e080')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->insertar_registro()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-13 16:24:32 --> ErrorException: Undefined array key "ID_Usuario"
+[Method: POST, Route: cargar_acceso]
+in APPPATH\Models\Esp32Model.php on line 25.
+ 1 APPPATH\Models\Esp32Model.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Usuario"', 'C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Models\\Esp32Model.php', 25)
+ 2 APPPATH\Controllers\esp32controller.php(15): App\Models\Esp32Model->insertar_registro('0xaa12e080')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->insertar_registro()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-13 16:24:36 --> ErrorException: Undefined array key "ID_Usuario"
+[Method: POST, Route: cargar_acceso]
+in APPPATH\Models\Esp32Model.php on line 25.
+ 1 APPPATH\Models\Esp32Model.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Usuario"', 'C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Models\\Esp32Model.php', 25)
+ 2 APPPATH\Controllers\esp32controller.php(15): App\Models\Esp32Model->insertar_registro('0xaa12e080')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->insertar_registro()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-13 16:24:45 --> ErrorException: Undefined array key "ID_Usuario"
+[Method: POST, Route: cargar_acceso]
+in APPPATH\Models\Esp32Model.php on line 25.
+ 1 APPPATH\Models\Esp32Model.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Usuario"', 'C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Models\\Esp32Model.php', 25)
+ 2 APPPATH\Controllers\esp32controller.php(15): App\Models\Esp32Model->insertar_registro('0x839df72c')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->insertar_registro()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-13 16:24:56 --> ErrorException: Undefined array key "ID_Usuario"
+[Method: POST, Route: cargar_acceso]
+in APPPATH\Models\Esp32Model.php on line 25.
+ 1 APPPATH\Models\Esp32Model.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Usuario"', 'C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Models\\Esp32Model.php', 25)
+ 2 APPPATH\Controllers\esp32controller.php(15): App\Models\Esp32Model->insertar_registro('0x839df72c')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->insertar_registro()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-13 16:32:55 --> ErrorException: Undefined array key "ID_Usuario"
+[Method: POST, Route: cargar_acceso]
+in APPPATH\Models\Esp32Model.php on line 25.
+ 1 APPPATH\Models\Esp32Model.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Usuario"', 'C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Models\\Esp32Model.php', 25)
+ 2 APPPATH\Controllers\esp32controller.php(15): App\Models\Esp32Model->insertar_registro('0xaa12e080')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->insertar_registro()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-13 16:46:20 --> ErrorException: Undefined array key "ID_Usuario"
+[Method: GET, Route: ver-accesos-tarjeta]
+in APPPATH\Views\ver-accesos-tarjeta.php on line 356.
+ 1 APPPATH\Views\ver-accesos-tarjeta.php(356): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Usuario"', 'C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Views\\ver-accesos-tarjeta.php', 356)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Views\\ver-accesos-tarjeta.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('ver-accesos-tarjeta', [], true)
+ 5 APPPATH\Controllers\RegistrosAccesoController.php(28): view('ver-accesos-tarjeta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RegistrosAccesoController->verRegistros()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegistrosAccesoController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-13 16:46:27 --> ErrorException: Undefined array key "ID_Usuario"
+[Method: GET, Route: ver-accesos-tarjeta]
+in APPPATH\Views\ver-accesos-tarjeta.php on line 356.
+ 1 APPPATH\Views\ver-accesos-tarjeta.php(356): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Usuario"', 'C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Views\\ver-accesos-tarjeta.php', 356)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Views\\ver-accesos-tarjeta.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('ver-accesos-tarjeta', [], true)
+ 5 APPPATH\Controllers\RegistrosAccesoController.php(28): view('ver-accesos-tarjeta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RegistrosAccesoController->verRegistros()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegistrosAccesoController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

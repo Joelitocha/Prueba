@@ -1,0 +1,11 @@
+CRITICAL - 2024-11-18 21:06:30 --> ErrorException: Undefined array key 0
+[Method: POST, Route: cargar_acceso]
+in APPPATH\Models\Esp32Model.php on line 20.
+ 1 APPPATH\Models\Esp32Model.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Models\\Esp32Model.php', 20)
+ 2 APPPATH\Controllers\esp32controller.php(15): App\Models\Esp32Model->insertar_registro('0x73722e50')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->insertar_registro()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

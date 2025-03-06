@@ -1,0 +1,436 @@
+INFO - 2024-10-29 16:30:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 16:31:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 16:31:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 16:33:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 16:35:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 16:35:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 16:35:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 16:37:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 16:37:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 16:38:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 16:39:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 16:54:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 16:54:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 16:54:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 16:54:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 16:54:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-29 17:31:03 --> ErrorException: fopen(C:\xampp\htdocs\cosas\Prueba\writable\data/registro.csv): Failed to open stream: No such file or directory
+[Method: POST, Route: enviar-datos]
+in APPPATH\Controllers\esp32controller.php on line 16.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(C:\\xampp\\htdocs\\cosas\\Prueba\\writable\\data/registro.csv): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Controllers\\esp32controller.php', 16)
+ 2 APPPATH\Controllers\esp32controller.php(16): fopen('C:\\xampp\\htdocs\\cosas\\Prueba\\writable\\data/registro.csv', 'a')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->gordo()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-29 17:31:22 --> ErrorException: fopen(C:\xampp\htdocs\cosas\Prueba\writable\data/registro.csv): Failed to open stream: No such file or directory
+[Method: POST, Route: enviar-datos]
+in APPPATH\Controllers\esp32controller.php on line 16.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(C:\\xampp\\htdocs\\cosas\\Prueba\\writable\\data/registro.csv): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Controllers\\esp32controller.php', 16)
+ 2 APPPATH\Controllers\esp32controller.php(16): fopen('C:\\xampp\\htdocs\\cosas\\Prueba\\writable\\data/registro.csv', 'a')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->gordo()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-29 17:33:45 --> TypeError: fputcsv(): Argument #2 ($fields) must be of type array, null given
+[Method: POST, Route: enviar-datos]
+in APPPATH\Controllers\esp32controller.php on line 21.
+ 1 APPPATH\Controllers\esp32controller.php(21): fputcsv(resource (stream), null)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->gordo()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-29 17:33:46 --> ErrorException: Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Type is not supported in C:\xampp\htdocs\cosas\Prueba\system\Format\JSONFormatter.php:45
+Stack trace:
+#0 C:\xampp\htdocs\cosas\Prueba\system\Format\JSONFormatter.php(45): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\cosas\Prueba\system\API\ResponseTrait.php(357): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\cosas\Prueba\system\API\ResponseTrait.php(103): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\cosas\Prueba\system\Debug\ExceptionHandler.php(83): CodeIgniter\Debug\ExceptionHandler->respond(Array, 500)
+#4 C:\xampp\htdocs\cosas\Prueba\system\Debug\Exceptions.php(163): CodeIgniter\Debug\ExceptionHandler->handle(Object(TypeError), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(TypeError))
+#6 {main}
+  thrown
+【Previous Exception】
+TypeError
+fputcsv(): Argument #2 ($fields) must be of type array, null given
+#0 C:\xampp\htdocs\cosas\Prueba\app\Controllers\esp32controller.php(21): fputcsv(Resource id #120, NULL)
+#1 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(933): App\Controllers\esp32controller->gordo()
+#2 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+#3 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cosas\Prueba\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cosas\Prueba\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#6 C:\xampp\htdocs\cosas\Prueba\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#7 {main}
+[Method: POST, Route: enviar-datos]
+in SYSTEMPATH\Format\JSONFormatter.php on line 45.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-10-29 17:34:06 --> TypeError: fputcsv(): Argument #2 ($fields) must be of type array, null given
+[Method: POST, Route: enviar-datos]
+in APPPATH\Controllers\esp32controller.php on line 21.
+ 1 APPPATH\Controllers\esp32controller.php(21): fputcsv(resource (stream), null)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->gordo()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-29 17:34:06 --> ErrorException: Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Type is not supported in C:\xampp\htdocs\cosas\Prueba\system\Format\JSONFormatter.php:45
+Stack trace:
+#0 C:\xampp\htdocs\cosas\Prueba\system\Format\JSONFormatter.php(45): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\cosas\Prueba\system\API\ResponseTrait.php(357): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\cosas\Prueba\system\API\ResponseTrait.php(103): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\cosas\Prueba\system\Debug\ExceptionHandler.php(83): CodeIgniter\Debug\ExceptionHandler->respond(Array, 500)
+#4 C:\xampp\htdocs\cosas\Prueba\system\Debug\Exceptions.php(163): CodeIgniter\Debug\ExceptionHandler->handle(Object(TypeError), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(TypeError))
+#6 {main}
+  thrown
+【Previous Exception】
+TypeError
+fputcsv(): Argument #2 ($fields) must be of type array, null given
+#0 C:\xampp\htdocs\cosas\Prueba\app\Controllers\esp32controller.php(21): fputcsv(Resource id #120, NULL)
+#1 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(933): App\Controllers\esp32controller->gordo()
+#2 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+#3 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\cosas\Prueba\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\cosas\Prueba\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#6 C:\xampp\htdocs\cosas\Prueba\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#7 {main}
+[Method: POST, Route: enviar-datos]
+in SYSTEMPATH\Format\JSONFormatter.php on line 45.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-10-29 17:38:04 --> ErrorException: Array to string conversion
+[Method: POST, Route: enviar-datos]
+in APPPATH\Controllers\esp32controller.php on line 22.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Controllers\\esp32controller.php', 22)
+ 2 APPPATH\Controllers\esp32controller.php(22): fputcsv(resource (stream), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->gordo()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-29 17:38:04 --> ErrorException: Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Type is not supported in C:\xampp\htdocs\cosas\Prueba\system\Format\JSONFormatter.php:45
+Stack trace:
+#0 C:\xampp\htdocs\cosas\Prueba\system\Format\JSONFormatter.php(45): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\cosas\Prueba\system\API\ResponseTrait.php(357): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\cosas\Prueba\system\API\ResponseTrait.php(103): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\cosas\Prueba\system\Debug\ExceptionHandler.php(83): CodeIgniter\Debug\ExceptionHandler->respond(Array, 500)
+#4 C:\xampp\htdocs\cosas\Prueba\system\Debug\Exceptions.php(163): CodeIgniter\Debug\ExceptionHandler->handle(Object(ErrorException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#6 {main}
+  thrown
+【Previous Exception】
+ErrorException
+Array to string conversion
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 22)
+#1 C:\xampp\htdocs\cosas\Prueba\app\Controllers\esp32controller.php(22): fputcsv(Resource id #120, Array)
+#2 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(933): App\Controllers\esp32controller->gordo()
+#3 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+#4 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\cosas\Prueba\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\cosas\Prueba\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#7 C:\xampp\htdocs\cosas\Prueba\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#8 {main}
+[Method: POST, Route: enviar-datos]
+in SYSTEMPATH\Format\JSONFormatter.php on line 45.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-10-29 17:38:14 --> ErrorException: Array to string conversion
+[Method: POST, Route: enviar-datos]
+in APPPATH\Controllers\esp32controller.php on line 22.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Controllers\\esp32controller.php', 22)
+ 2 APPPATH\Controllers\esp32controller.php(22): fputcsv(resource (stream), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->gordo()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-29 17:38:14 --> ErrorException: Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Type is not supported in C:\xampp\htdocs\cosas\Prueba\system\Format\JSONFormatter.php:45
+Stack trace:
+#0 C:\xampp\htdocs\cosas\Prueba\system\Format\JSONFormatter.php(45): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\cosas\Prueba\system\API\ResponseTrait.php(357): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\cosas\Prueba\system\API\ResponseTrait.php(103): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\cosas\Prueba\system\Debug\ExceptionHandler.php(83): CodeIgniter\Debug\ExceptionHandler->respond(Array, 500)
+#4 C:\xampp\htdocs\cosas\Prueba\system\Debug\Exceptions.php(163): CodeIgniter\Debug\ExceptionHandler->handle(Object(ErrorException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#6 {main}
+  thrown
+【Previous Exception】
+ErrorException
+Array to string conversion
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 22)
+#1 C:\xampp\htdocs\cosas\Prueba\app\Controllers\esp32controller.php(22): fputcsv(Resource id #120, Array)
+#2 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(933): App\Controllers\esp32controller->gordo()
+#3 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+#4 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\cosas\Prueba\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\cosas\Prueba\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#7 C:\xampp\htdocs\cosas\Prueba\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#8 {main}
+[Method: POST, Route: enviar-datos]
+in SYSTEMPATH\Format\JSONFormatter.php on line 45.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2024-10-29 17:56:29 --> mysqli_sql_exception: Column 'Accion_Tomada' cannot be null in C:\xampp\htdocs\cosas\Prueba\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\cosas\Prueba\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `re...', 0)
+#1 C:\xampp\htdocs\cosas\Prueba\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `re...')
+#2 C:\xampp\htdocs\cosas\Prueba\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `re...')
+#3 C:\xampp\htdocs\cosas\Prueba\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `re...', Array, false)
+#4 C:\xampp\htdocs\cosas\Prueba\app\Models\Esp32Model.php(21): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\cosas\Prueba\app\Controllers\esp32controller.php(21): App\Models\Esp32Model->insertar_registro('0x839df72c')
+#6 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(933): App\Controllers\esp32controller->gordo()
+#7 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+#8 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\cosas\Prueba\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\cosas\Prueba\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\cosas\Prueba\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-10-29 17:56:29 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'Accion_Tomada' cannot be null
+[Method: POST, Route: enviar-datos]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registro_acceso_rf` (`Resultado`, `Accion_Tomada`, `Fecha_Hora_Grabacion`, `Archivo_Video`, `Ubicacion_Camara`, `ID_Usuario`, `ID_Sistema`, `ID_Tarjeta`) VALUES (:Resultado:, :Accion_Tomada:, :Fecha_Hora_Grabacion:, :Archivo_Video:, :Ubicacion_Camara:, :ID_Usuario:, :ID_Sistema:, :ID_Tarjeta:)', [...], false)
+ 2 APPPATH\Models\Esp32Model.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\esp32controller.php(21): App\Models\Esp32Model->insertar_registro('0x839df72c')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->gordo()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-29 17:56:29 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'Accion_Tomada' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `registro_acceso_rf` (`Resultado`, `Accion_Tomada`, `Fecha_Hora_Grabacion`, `Archivo_Video`, `Ubicacion_Camara`, `ID_Usuario`, `ID_Sistema`, `ID_Tarjeta`) VALUES (1, NULL, NULL, NULL, NULL, NULL, NULL, \'25\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `registro_acceso_rf` (`Resultado`, `Accion_Tomada`, `Fecha_Hora_Grabacion`, `Archivo_Video`, `Ubicacion_Camara`, `ID_Usuario`, `ID_Sistema`, `ID_Tarjeta`) VALUES (1, NULL, NULL, NULL, NULL, NULL, NULL, \'25\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registro_acceso_rf` (`Resultado`, `Accion_Tomada`, `Fecha_Hora_Grabacion`, `Archivo_Video`, `Ubicacion_Camara`, `ID_Usuario`, `ID_Sistema`, `ID_Tarjeta`) VALUES (:Resultado:, :Accion_Tomada:, :Fecha_Hora_Grabacion:, :Archivo_Video:, :Ubicacion_Camara:, :ID_Usuario:, :ID_Sistema:, :ID_Tarjeta:)', [...], false)
+ 4 APPPATH\Models\Esp32Model.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\esp32controller.php(21): App\Models\Esp32Model->insertar_registro('0x839df72c')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->gordo()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-29 17:56:29 --> [Caused by] mysqli_sql_exception: Column 'Accion_Tomada' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `registro_acceso_rf` (`Resultado`, `Accion_Tomada`, `Fecha_Hora_Grabacion`, `Archivo_Video`, `Ubicacion_Camara`, `ID_Usuario`, `ID_Sistema`, `ID_Tarjeta`) VALUES (1, NULL, NULL, NULL, NULL, NULL, NULL, \'25\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `registro_acceso_rf` (`Resultado`, `Accion_Tomada`, `Fecha_Hora_Grabacion`, `Archivo_Video`, `Ubicacion_Camara`, `ID_Usuario`, `ID_Sistema`, `ID_Tarjeta`) VALUES (1, NULL, NULL, NULL, NULL, NULL, NULL, \'25\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `registro_acceso_rf` (`Resultado`, `Accion_Tomada`, `Fecha_Hora_Grabacion`, `Archivo_Video`, `Ubicacion_Camara`, `ID_Usuario`, `ID_Sistema`, `ID_Tarjeta`) VALUES (1, NULL, NULL, NULL, NULL, NULL, NULL, \'25\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registro_acceso_rf` (`Resultado`, `Accion_Tomada`, `Fecha_Hora_Grabacion`, `Archivo_Video`, `Ubicacion_Camara`, `ID_Usuario`, `ID_Sistema`, `ID_Tarjeta`) VALUES (:Resultado:, :Accion_Tomada:, :Fecha_Hora_Grabacion:, :Archivo_Video:, :Ubicacion_Camara:, :ID_Usuario:, :ID_Sistema:, :ID_Tarjeta:)', [...], false)
+ 5 APPPATH\Models\Esp32Model.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\esp32controller.php(21): App\Models\Esp32Model->insertar_registro('0x839df72c')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->gordo()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-29 17:56:35 --> mysqli_sql_exception: Column 'Accion_Tomada' cannot be null in C:\xampp\htdocs\cosas\Prueba\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\cosas\Prueba\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `re...', 0)
+#1 C:\xampp\htdocs\cosas\Prueba\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `re...')
+#2 C:\xampp\htdocs\cosas\Prueba\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `re...')
+#3 C:\xampp\htdocs\cosas\Prueba\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `re...', Array, false)
+#4 C:\xampp\htdocs\cosas\Prueba\app\Models\Esp32Model.php(21): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\cosas\Prueba\app\Controllers\esp32controller.php(21): App\Models\Esp32Model->insertar_registro('0x839df72c')
+#6 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(933): App\Controllers\esp32controller->gordo()
+#7 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+#8 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\cosas\Prueba\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\cosas\Prueba\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\cosas\Prueba\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-10-29 17:56:35 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'Accion_Tomada' cannot be null
+[Method: POST, Route: enviar-datos]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registro_acceso_rf` (`Resultado`, `Accion_Tomada`, `Fecha_Hora_Grabacion`, `Archivo_Video`, `Ubicacion_Camara`, `ID_Usuario`, `ID_Sistema`, `ID_Tarjeta`) VALUES (:Resultado:, :Accion_Tomada:, :Fecha_Hora_Grabacion:, :Archivo_Video:, :Ubicacion_Camara:, :ID_Usuario:, :ID_Sistema:, :ID_Tarjeta:)', [...], false)
+ 2 APPPATH\Models\Esp32Model.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\esp32controller.php(21): App\Models\Esp32Model->insertar_registro('0x839df72c')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->gordo()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-29 17:56:35 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'Accion_Tomada' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `registro_acceso_rf` (`Resultado`, `Accion_Tomada`, `Fecha_Hora_Grabacion`, `Archivo_Video`, `Ubicacion_Camara`, `ID_Usuario`, `ID_Sistema`, `ID_Tarjeta`) VALUES (1, NULL, NULL, NULL, NULL, NULL, NULL, \'25\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `registro_acceso_rf` (`Resultado`, `Accion_Tomada`, `Fecha_Hora_Grabacion`, `Archivo_Video`, `Ubicacion_Camara`, `ID_Usuario`, `ID_Sistema`, `ID_Tarjeta`) VALUES (1, NULL, NULL, NULL, NULL, NULL, NULL, \'25\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registro_acceso_rf` (`Resultado`, `Accion_Tomada`, `Fecha_Hora_Grabacion`, `Archivo_Video`, `Ubicacion_Camara`, `ID_Usuario`, `ID_Sistema`, `ID_Tarjeta`) VALUES (:Resultado:, :Accion_Tomada:, :Fecha_Hora_Grabacion:, :Archivo_Video:, :Ubicacion_Camara:, :ID_Usuario:, :ID_Sistema:, :ID_Tarjeta:)', [...], false)
+ 4 APPPATH\Models\Esp32Model.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\esp32controller.php(21): App\Models\Esp32Model->insertar_registro('0x839df72c')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->gordo()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-29 17:56:35 --> [Caused by] mysqli_sql_exception: Column 'Accion_Tomada' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `registro_acceso_rf` (`Resultado`, `Accion_Tomada`, `Fecha_Hora_Grabacion`, `Archivo_Video`, `Ubicacion_Camara`, `ID_Usuario`, `ID_Sistema`, `ID_Tarjeta`) VALUES (1, NULL, NULL, NULL, NULL, NULL, NULL, \'25\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `registro_acceso_rf` (`Resultado`, `Accion_Tomada`, `Fecha_Hora_Grabacion`, `Archivo_Video`, `Ubicacion_Camara`, `ID_Usuario`, `ID_Sistema`, `ID_Tarjeta`) VALUES (1, NULL, NULL, NULL, NULL, NULL, NULL, \'25\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `registro_acceso_rf` (`Resultado`, `Accion_Tomada`, `Fecha_Hora_Grabacion`, `Archivo_Video`, `Ubicacion_Camara`, `ID_Usuario`, `ID_Sistema`, `ID_Tarjeta`) VALUES (1, NULL, NULL, NULL, NULL, NULL, NULL, \'25\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registro_acceso_rf` (`Resultado`, `Accion_Tomada`, `Fecha_Hora_Grabacion`, `Archivo_Video`, `Ubicacion_Camara`, `ID_Usuario`, `ID_Sistema`, `ID_Tarjeta`) VALUES (:Resultado:, :Accion_Tomada:, :Fecha_Hora_Grabacion:, :Archivo_Video:, :Ubicacion_Camara:, :ID_Usuario:, :ID_Sistema:, :ID_Tarjeta:)', [...], false)
+ 5 APPPATH\Models\Esp32Model.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\esp32controller.php(21): App\Models\Esp32Model->insertar_registro('0x839df72c')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->gordo()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-29 18:14:53 --> ErrorException: Undefined array key 0
+[Method: POST, Route: enviar-datos]
+in APPPATH\Models\Esp32Model.php on line 19.
+ 1 APPPATH\Models\Esp32Model.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Models\\Esp32Model.php', 19)
+ 2 APPPATH\Controllers\esp32controller.php(21): App\Models\Esp32Model->insertar_registro('0x352d9302')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\esp32controller->gordo()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\esp32controller))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-10-29 18:15:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 18:15:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 18:15:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 18:15:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 18:15:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 18:16:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 18:16:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 18:16:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 18:16:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:03:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:03:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:03:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:03:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:03:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:03:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:03:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:04:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:10:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:32:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:32:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:34:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:34:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:34:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:34:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:36:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:36:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:37:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:37:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:38:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-29 19:38:02 --> ErrorException: Undefined variable $user
+[Method: GET, Route: ver-accesos-tarjeta]
+in APPPATH\Views\ver-accesos-tarjeta.php on line 305.
+ 1 APPPATH\Views\ver-accesos-tarjeta.php(305): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user', 'C:\\xampp\\htdocs\\Cosas\\Prueba\\app\\Views\\ver-accesos-tarjeta.php', 305)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\Cosas\\Prueba\\app\\Views\\ver-accesos-tarjeta.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('ver-accesos-tarjeta', [], true)
+ 5 APPPATH\Controllers\RegistrosTarjetaController.php(11): view('ver-accesos-tarjeta')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RegistrosTarjetaController->VistaAccesos()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegistrosTarjetaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-10-29 19:38:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:39:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:46:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:46:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:46:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:46:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:46:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:46:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:46:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:46:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:46:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 19:46:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:04:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:05:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:07:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:07:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:14:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:14:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:15:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:15:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:15:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:15:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:15:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:15:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:15:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:15:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:15:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:15:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:15:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:15:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:15:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:15:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:15:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:15:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:15:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:15:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:16:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:16:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:16:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:16:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:16:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:16:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:16:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:17:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:17:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:17:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:17:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:18:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:18:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:19:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:19:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:21:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-29 20:21:02 --> Error: Class "App\Models\RegistroAccesoModel" not found
+[Method: GET, Route: ver-accesos-tarjeta]
+in APPPATH\Controllers\RegistrosAccesoController.php on line 18.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RegistrosAccesoController->verRegistros()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegistrosAccesoController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-10-29 20:21:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-29 20:21:10 --> Error: Class "App\Models\RegistroAccesoModel" not found
+[Method: GET, Route: ver-accesos-tarjeta]
+in APPPATH\Controllers\RegistrosAccesoController.php on line 18.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RegistrosAccesoController->verRegistros()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegistrosAccesoController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-10-29 20:21:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:21:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:21:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-29 20:21:12 --> Error: Class "App\Models\RegistroAccesoModel" not found
+[Method: GET, Route: ver-accesos-tarjeta]
+in APPPATH\Controllers\RegistrosAccesoController.php on line 18.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RegistrosAccesoController->verRegistros()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegistrosAccesoController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-10-29 20:21:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 20:23:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 21:27:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 21:27:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 21:29:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 21:30:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 21:30:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 21:30:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 21:30:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 21:30:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 21:31:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 21:31:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-29 21:31:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

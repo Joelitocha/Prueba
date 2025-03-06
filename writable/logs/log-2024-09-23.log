@@ -1,0 +1,205 @@
+INFO - 2024-09-23 18:55:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-23 18:55:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-23 18:56:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-23 19:01:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-23 19:01:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-23 19:01:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-23 19:01:05 --> Error: Class "UserModel" not found
+[Method: GET, Route: modificar-usuario]
+in APPPATH\Views\modificar-usuario.php on line 21.
+ 1 SYSTEMPATH\View\View.php(234): include()
+ 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('modificar-usuario', [], true)
+ 4 APPPATH\Controllers\ViewsControllers.php(10): view('modificar-usuario')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ViewsControllers->VistaModificar()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewsControllers))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-23 19:01:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-23 19:01:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-23 19:01:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-23 19:01:14 --> Error: Class "UserModel" not found
+[Method: GET, Route: modificar-usuario]
+in APPPATH\Views\modificar-usuario.php on line 21.
+ 1 SYSTEMPATH\View\View.php(234): include()
+ 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('modificar-usuario', [], true)
+ 4 APPPATH\Controllers\ViewsControllers.php(10): view('modificar-usuario')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ViewsControllers->VistaModificar()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewsControllers))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-23 19:02:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-23 19:03:07 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`codeigniter4_bd`.`usuario`, CONSTRAINT `usuario_ibfk_2` FOREIGN KEY (`ID_Tarjeta`) REFERENCES `tarjeta_acceso` (`ID_Tarjeta`)) in C:\xampp\htdocs\Cosas\Prueba\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\Cosas\Prueba\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `Us...', 0)
+#1 C:\xampp\htdocs\Cosas\Prueba\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `Us...')
+#2 C:\xampp\htdocs\Cosas\Prueba\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `Us...')
+#3 C:\xampp\htdocs\Cosas\Prueba\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `Us...', Array, false)
+#4 C:\xampp\htdocs\Cosas\Prueba\app\Models\UserModel.php(23): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\Cosas\Prueba\app\Controllers\AuthController.php(60): App\Models\UserModel->insertUser(Array)
+#6 C:\xampp\htdocs\Cosas\Prueba\system\CodeIgniter.php(933): App\Controllers\AuthController->registerUser()
+#7 C:\xampp\htdocs\Cosas\Prueba\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#8 C:\xampp\htdocs\Cosas\Prueba\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Cosas\Prueba\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\Cosas\Prueba\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\Cosas\Prueba\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-09-23 19:03:07 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`codeigniter4_bd`.`usuario`, CONSTRAINT `usuario_ibfk_2` FOREIGN KEY (`ID_Tarjeta`) REFERENCES `tarjeta_acceso` (`ID_Tarjeta`))
+[Method: POST, Route: register2]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `Usuario` (`Nombre`, `Email`, `Contraseña`, `ID_Rol`, `ID_Tarjeta`) VALUES (:Nombre:, :Email:, :Contraseña:, :ID_Rol:, :ID_Tarjeta:)', [...], false)
+ 2 APPPATH\Models\UserModel.php(23): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\AuthController.php(60): App\Models\UserModel->insertUser([...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->registerUser()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-09-23 19:03:07 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`codeigniter4_bd`.`usuario`, CONSTRAINT `usuario_ibfk_2` FOREIGN KEY (`ID_Tarjeta`) REFERENCES `tarjeta_acceso` (`ID_Tarjeta`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `Usuario` (`Nombre`, `Email`, `Contraseña`, `ID_Rol`, `ID_Tarjeta`) VALUES (\'monica riveira\', \'monica@gmail.com\', \'$2y$10$Yhv7esK6vfZRAqxSJjC1beOEZZv/WuoD2eu7zdee6HB.zutcFF/h6\', \'7\', \'3\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `Usuario` (`Nombre`, `Email`, `Contraseña`, `ID_Rol`, `ID_Tarjeta`) VALUES (\'monica riveira\', \'monica@gmail.com\', \'$2y$10$Yhv7esK6vfZRAqxSJjC1beOEZZv/WuoD2eu7zdee6HB.zutcFF/h6\', \'7\', \'3\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `Usuario` (`Nombre`, `Email`, `Contraseña`, `ID_Rol`, `ID_Tarjeta`) VALUES (:Nombre:, :Email:, :Contraseña:, :ID_Rol:, :ID_Tarjeta:)', [...], false)
+ 4 APPPATH\Models\UserModel.php(23): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\AuthController.php(60): App\Models\UserModel->insertUser([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->registerUser()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-09-23 19:03:07 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`codeigniter4_bd`.`usuario`, CONSTRAINT `usuario_ibfk_2` FOREIGN KEY (`ID_Tarjeta`) REFERENCES `tarjeta_acceso` (`ID_Tarjeta`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `Usuario` (`Nombre`, `Email`, `Contraseña`, `ID_Rol`, `ID_Tarjeta`) VALUES (\'monica riveira\', \'monica@gmail.com\', \'$2y$10$Yhv7esK6vfZRAqxSJjC1beOEZZv/WuoD2eu7zdee6HB.zutcFF/h6\', \'7\', \'3\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `Usuario` (`Nombre`, `Email`, `Contraseña`, `ID_Rol`, `ID_Tarjeta`) VALUES (\'monica riveira\', \'monica@gmail.com\', \'$2y$10$Yhv7esK6vfZRAqxSJjC1beOEZZv/WuoD2eu7zdee6HB.zutcFF/h6\', \'7\', \'3\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `Usuario` (`Nombre`, `Email`, `Contraseña`, `ID_Rol`, `ID_Tarjeta`) VALUES (\'monica riveira\', \'monica@gmail.com\', \'$2y$10$Yhv7esK6vfZRAqxSJjC1beOEZZv/WuoD2eu7zdee6HB.zutcFF/h6\', \'7\', \'3\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `Usuario` (`Nombre`, `Email`, `Contraseña`, `ID_Rol`, `ID_Tarjeta`) VALUES (:Nombre:, :Email:, :Contraseña:, :ID_Rol:, :ID_Tarjeta:)', [...], false)
+ 5 APPPATH\Models\UserModel.php(23): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\AuthController.php(60): App\Models\UserModel->insertUser([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->registerUser()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-23 19:03:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-23 19:03:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-23 19:03:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-23 19:03:44 --> Error: Class "UserModel" not found
+[Method: GET, Route: modificar-usuario]
+in APPPATH\Views\modificar-usuario.php on line 21.
+ 1 SYSTEMPATH\View\View.php(234): include()
+ 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('modificar-usuario', [], true)
+ 4 APPPATH\Controllers\ViewsControllers.php(10): view('modificar-usuario')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ViewsControllers->VistaModificar()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewsControllers))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-23 19:06:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-23 19:06:54 --> ErrorException: require_once(/Models/UserModel.php): Failed to open stream: No such file or directory
+[Method: GET, Route: modificar-usuario]
+in APPPATH\Views\modificar-usuario.php on line 21.
+ 1 APPPATH\Views\modificar-usuario.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require_once(/Models/UserModel.php): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\Cosas\\Prueba\\app\\Views\\modificar-usuario.php', 21)
+ 2 APPPATH\Views\modificar-usuario.php(21): require_once()
+ 3 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\Cosas\\Prueba\\app\\Views\\modificar-usuario.php')
+ 4 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('modificar-usuario', [], true)
+ 6 APPPATH\Controllers\ViewsControllers.php(10): view('modificar-usuario')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ViewsControllers->VistaModificar()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewsControllers))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-23 19:07:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-23 19:07:18 --> ErrorException: require_once(Models/UserModel.php): Failed to open stream: No such file or directory
+[Method: GET, Route: modificar-usuario]
+in APPPATH\Views\modificar-usuario.php on line 21.
+ 1 APPPATH\Views\modificar-usuario.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require_once(Models/UserModel.php): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\Cosas\\Prueba\\app\\Views\\modificar-usuario.php', 21)
+ 2 APPPATH\Views\modificar-usuario.php(21): require_once()
+ 3 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\Cosas\\Prueba\\app\\Views\\modificar-usuario.php')
+ 4 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('modificar-usuario', [], true)
+ 6 APPPATH\Controllers\ViewsControllers.php(10): view('modificar-usuario')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ViewsControllers->VistaModificar()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewsControllers))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-23 19:08:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-23 19:08:07 --> ErrorException: require_once(/UserModel.php): Failed to open stream: No such file or directory
+[Method: GET, Route: modificar-usuario]
+in APPPATH\Views\modificar-usuario.php on line 21.
+ 1 APPPATH\Views\modificar-usuario.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require_once(/UserModel.php): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\Cosas\\Prueba\\app\\Views\\modificar-usuario.php', 21)
+ 2 APPPATH\Views\modificar-usuario.php(21): require_once()
+ 3 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\Cosas\\Prueba\\app\\Views\\modificar-usuario.php')
+ 4 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('modificar-usuario', [], true)
+ 6 APPPATH\Controllers\ViewsControllers.php(10): view('modificar-usuario')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ViewsControllers->VistaModificar()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewsControllers))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-23 19:08:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-23 19:08:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-23 19:08:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-23 19:08:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-23 19:08:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-23 19:08:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-23 19:08:43 --> ErrorException: require_once(/UserModel.php): Failed to open stream: No such file or directory
+[Method: GET, Route: modificar-usuario]
+in APPPATH\Views\modificar-usuario.php on line 21.
+ 1 APPPATH\Views\modificar-usuario.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require_once(/UserModel.php): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\Cosas\\Prueba\\app\\Views\\modificar-usuario.php', 21)
+ 2 APPPATH\Views\modificar-usuario.php(21): require_once()
+ 3 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\Cosas\\Prueba\\app\\Views\\modificar-usuario.php')
+ 4 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('modificar-usuario', [], true)
+ 6 APPPATH\Controllers\ViewsControllers.php(10): view('modificar-usuario')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ViewsControllers->VistaModificar()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewsControllers))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-23 19:09:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-23 19:09:13 --> ErrorException: Undefined array key "ID_Usuario"
+[Method: GET, Route: modificar-usuario]
+in APPPATH\Views\modificar-usuario.php on line 23.
+ 1 APPPATH\Views\modificar-usuario.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ID_Usuario"', 'C:\\xampp\\htdocs\\Cosas\\Prueba\\app\\Views\\modificar-usuario.php', 23)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\Cosas\\Prueba\\app\\Views\\modificar-usuario.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('modificar-usuario', [], true)
+ 5 APPPATH\Controllers\ViewsControllers.php(10): view('modificar-usuario')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ViewsControllers->VistaModificar()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewsControllers))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-23 19:11:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-23 19:11:58 --> ErrorException: Undefined variable $user
+[Method: GET, Route: modificar-usuario]
+in APPPATH\Views\modificar-usuario.php on line 23.
+ 1 APPPATH\Views\modificar-usuario.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user', 'C:\\xampp\\htdocs\\Cosas\\Prueba\\app\\Views\\modificar-usuario.php', 23)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\Cosas\\Prueba\\app\\Views\\modificar-usuario.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('modificar-usuario', [], true)
+ 5 APPPATH\Controllers\ViewsControllers.php(10): view('modificar-usuario')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ViewsControllers->VistaModificar()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ViewsControllers))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

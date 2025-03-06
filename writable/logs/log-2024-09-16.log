@@ -1,0 +1,12 @@
+CRITICAL - 2024-09-16 18:08:36 --> ParseError: syntax error, unexpected token ":", expecting ";"
+[Method: GET, Route: bienvenido]
+in APPPATH\Views\bienvenido_Admin.php on line 54.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('bienvenido_Admin', [], true)
+ 3 APPPATH\Controllers\AuthController.php(77): view('bienvenido_Admin')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->welcome()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
