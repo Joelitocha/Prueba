@@ -216,9 +216,12 @@
       <p><?php echo $error; ?></p>
     <?php endif; ?>
 
-    <?php
-    echo "Tu Tarjeta Es: "."Y Su Estado Es: ";
-    ?>
+    <?php if (isset($id_persona)): ?>
+    <p><strong>ID Persona en sesión:</strong> <?= esc($id_persona) ?></p>
+<?php else: ?>
+    <p><strong>No hay usuario en sesión.</strong></p>
+<?php endif; ?>
+
 
     </div>
 
