@@ -11,7 +11,20 @@ class AuthController extends BaseController
     {
         return view('login'); // Carga la vista de inicio de sesión
     }
+    public function sendEmail()
+    {
+        $emailService = \Config\Services::email();
 
+        $emailService->setTo('federicoarias@alumnos.itr3.edu.ar'); // Cambia al correo de prueba
+        $emailService->setSubject('Prueba de Correo con Brevo');
+        $emailService->setMessage('<p>Este es un correo de prueba enviado desde CodeIgniter 4 con Brevo SMTP.</p>');
+
+        if ($emailService->send()) {
+            return "✅ Correo enviado correctamente.";
+        } else {
+            return $emailService->printDebugger(['headers']);
+        }
+    }
     // Método para iniciar sesión
     public function loginUser()
     {
