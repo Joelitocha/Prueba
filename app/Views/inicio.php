@@ -4,7 +4,7 @@
     $rol = $session->get("ID_Rol");
 
 ?>
-sudv
+
 <!doctype html>
 <html lang="en">
   <head>
