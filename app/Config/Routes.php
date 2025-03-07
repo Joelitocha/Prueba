@@ -58,4 +58,5 @@ $routes->post('/consultar-rfid', 'TarjetaController::verEstadoTarjeta');  // Con
 // Rutas para ESP32
 $routes->post('cargar_acceso', 'Esp32Controller::insertar_registro');  // Registrar acceso desde ESP32
 
+
 ?>
