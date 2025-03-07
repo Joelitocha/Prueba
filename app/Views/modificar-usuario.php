@@ -462,5 +462,3 @@ function cerrarsesion(url){
         echo "<p style='color: green;'>$success</p>";
     }
 ?>
-
- 
