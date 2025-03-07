@@ -1,0 +1,56 @@
+ERROR - 2025-01-18 15:01:56 --> mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`codeigniter4_bd`.`usuario`, CONSTRAINT `usuario_ibfk_2` FOREIGN KEY (`ID_Tarjeta`) REFERENCES `tarjeta_acceso` (`ID_Tarjeta`)) in C:\xampp\htdocs\cosas\Prueba\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\cosas\Prueba\system\Database\MySQLi\Connection.php(312): mysqli->query('DELETE FROM `ta...', 0)
+#1 C:\xampp\htdocs\cosas\Prueba\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `ta...')
+#2 C:\xampp\htdocs\cosas\Prueba\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `ta...')
+#3 C:\xampp\htdocs\cosas\Prueba\system\Database\BaseBuilder.php(2843): CodeIgniter\Database\BaseConnection->query('DELETE FROM `ta...', Array, false)
+#4 C:\xampp\htdocs\cosas\Prueba\system\Model.php(521): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\xampp\htdocs\cosas\Prueba\system\BaseModel.php(1158): CodeIgniter\Model->doDelete(Array, false)
+#6 C:\xampp\htdocs\cosas\Prueba\app\Controllers\TarjetaController.php(73): CodeIgniter\BaseModel->delete(Array)
+#7 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(933): App\Controllers\TarjetaController->delete()
+#8 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TarjetaController))
+#9 C:\xampp\htdocs\cosas\Prueba\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\cosas\Prueba\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\cosas\Prueba\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\cosas\Prueba\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-01-18 15:09:03 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "eliminar-tarjeta.php"
+[Method: GET, Route: eliminar-tarjeta]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('eliminar-tarjeta.php')
+ 2 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('eliminar-tarjeta', [], true)
+ 3 APPPATH\Controllers\TarjetaController.php(47): view('eliminar-tarjeta', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\TarjetaController->gestionar()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TarjetaController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-18 17:16:22 --> ErrorException: Undefined array key "estado"
+[Method: POST, Route: modificar-tarjeta2]
+in APPPATH\Views\modificar-tarjeta2.php on line 292.
+ 1 APPPATH\Views\modificar-tarjeta2.php(292): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "estado"', 'C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Views\\modificar-tarjeta2.php', 292)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Views\\modificar-tarjeta2.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('modificar-tarjeta2', [], true)
+ 5 APPPATH\Controllers\TarjetaController.php(31): view('modificar-tarjeta2', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\TarjetaController->VistaModificar2()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TarjetaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-18 17:16:27 --> ErrorException: Undefined array key "estado"
+[Method: POST, Route: modificar-tarjeta2]
+in APPPATH\Views\modificar-tarjeta2.php on line 292.
+ 1 APPPATH\Views\modificar-tarjeta2.php(292): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "estado"', 'C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Views\\modificar-tarjeta2.php', 292)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cosas\\Prueba\\app\\Views\\modificar-tarjeta2.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('modificar-tarjeta2', [], true)
+ 5 APPPATH\Controllers\TarjetaController.php(31): view('modificar-tarjeta2', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\TarjetaController->VistaModificar2()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TarjetaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

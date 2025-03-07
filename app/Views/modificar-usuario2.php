@@ -26,31 +26,216 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/css/mod2.css'); ?>"> <!-- Enlazando el CSS del Sidebar -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-      .content {
-        margin-left: 250px;
-        padding: 20px;
-        transition: all 0.3s ease-in-out;
-      }
+.content {
+    margin-left: 250px; /* Mantiene el margen izquierdo debido al sidebar */
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+}
 
-      body {
-        background: #F5F5F5;
-        font-family: Arial, sans-serif;
-      }
-      .eliminar {
-        width: 100%;
-        border-right-width: 0px;
-        justify-content: center; 
-        align-items: center;
-        padding-left: 247px;
-      }
-      .modificar{
-        padding-left: 10px;
-        border: 4px black solid;
-        margin-left: 270px;
-        padding-right: 0px;
-        margin-right: 1200px;
-        padding-bottom: 10px;
-      }
+body {
+    background: #F5F5F5;
+    font-family: Arial, sans-serif;
+}
+
+.modificar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 265px; /* Ajuste para no sobreponerse al sidebar */
+    padding: 20px;
+    width: 35%; /* Ajusta el ancho */
+    background-color: #ffffff; /* Fondo blanco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 8px; /* Bordes redondeados */
+    margin-top: 50px; /* Espacio superior */
+    align-items: stretch;
+}
+
+body {
+    background-color: #E5E5E5; /* Mismo fondo claro que en "Crear Tarjeta" */
+}
+
+.modificar h1 {
+    text-align: center;
+    color: #333;
+}
+
+.modificar label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.modificar input, .modificar select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.modificar input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.modificar input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+      /* Estilos para el Sidebar */
+      .sidebar {
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, #000706, #00272d); /* Gradiente de color1 a color2 */
+    padding-top: 20px;
+    font-family: Arial, sans-serif;
+    color: #bfac8b; /* Color5 para el texto */
+    transition: background 1.5s ease-in-out, width 0.5s ease-in-out;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
+    overflow-y: auto; /* Desplazamiento vertical */
+    scrollbar-width: none; /* Ocultar barra de desplazamiento en Firefox */
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none; /* Ocultar barra de desplazamiento en Chrome/Safari */
+}
+
+.sidebar:hover {
+    width: 270px;
+    background: linear-gradient(180deg, #00272d, #134647); /* Gradiente más sutil */
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.6); /* Sombra más fuerte en hover */
+}
+
+.sidebar a {
+    padding: 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #bfac8b; /* Color5 */
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    margin: 10px 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: all 0.4s ease; /* Transiciones más suaves */
+    box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.sidebar a:hover {
+    background-color: #0c7e7e; /* Color4 */
+    color: #fff; /* Blanco en hover */
+    transform: translateX(12px);
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar a i {
+    margin-right: 12px;
+    font-size: 20px;
+    color: #bfac8b; /* Color5 para íconos */
+    transition: color 0.3s ease;
+}
+
+.sidebar a:hover i {
+    color: #fff; /* Íconos blancos en hover */
+}
+
+.sidebar .logo {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #bfac8b; /* Color5 */
+    animation: fadeIn 1.5s ease-in-out;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.sidebar .menu-heading {
+    padding-left: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 25px;
+    font-size: 15px;
+    color: #bfac8b; /* Color5 */
+    border-bottom: 1px solid #bfac8b;
+    padding-bottom: 8px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.sidebar .menu-heading:last-of-type {
+    margin-top: 40px; /* Separación extra para la última categoría */
+}
+
+.sidebar a:last-of-type {
+    margin-bottom: 30px; /* Espacio en la parte inferior del último enlace */
+}
+.sidebar .menu .cerrar-sesion {
+    margin-top: auto; /* Esto empuja el elemento hacia el fondo del sidebar */
+    padding-bottom: 10px; /* Puedes ajustar el espacio adicional si es necesario */
+}
+.sidebar .logout {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.sidebar .logout a {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.sidebar .logout a:hover {
+    color: #fff;
+    transform: scale(1.1); /* Pequeño aumento en hover */
+}
+
+/* Enlace activo */
+.sidebar a.active {
+    background-color: #bfac8b; /* Color5 para el enlace activo */
+    color: #000706; /* Texto color1 */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Estilos para el contenido fuera del sidebar */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+body {
+    background-image: url("../images/bg1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* Fija el fondo para evitar que se mueva con el contenido */
+}
+
+/* Estilos para el contenedor principal */
+.welcome-container {
+    background: linear-gradient(135deg, #00272d, #0c7e7e); /* Gradiente de color2 a color4 */
+    padding: 50px;
+    border-radius: 20px;
+    max-width: 800px;
+    margin: 50px auto;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Sombra más fuerte */
+}
+
     </style>
 </head>
 <body>
@@ -76,32 +261,18 @@
   <!-- Opciones para Administrador -->
 <?php if ($rol == 5): ?>
   <div class="menu-heading">Usuarios</div>
-  <a href="<?php echo site_url('/register');?>" class="menu-item">
-    <i class="fas fa-user-plus"></i> Crear Usuarios
-  </a>
   <a href="<?php echo site_url('/modificar-usuario');?>" class="menu-item">
-    <i class="fas fa-user-edit"></i> Modificar Usuarios
-  </a>
-  <a href="<?php echo site_url('/eliminar-usuarios');?>" class="menu-item">
-    <i class="fas fa-user-minus"></i> Eliminar Usuarios
+    <i class="fas fa-user-edit"></i> Gestor de Usuarios
   </a>
 <?php endif; ?>
 
 <!-- Opciones para Tarjetas disponibles para todos los roles -->
 <div class="menu-heading">Tarjetas</div>
 
-
-
 <!-- Administrador puede gestionar tarjetas -->
 <?php if ($rol == 5): ?>
-  <a href="<?php echo site_url('/crear-tarjeta');?>" class="menu-item">
-    <i class="fas fa-id-card"></i> Crear Tarjeta
-  </a>
   <a href="<?php echo site_url('/modificar-tarjeta');?>" class="menu-item"> <!-- Cambia "1" por el ID dinámico -->
-    <i class="fas fa-user-edit"></i> Modificar Tarjeta
-  </a>
-  <a href="<?php echo site_url('/eliminar-tarjeta');?>" class="menu-item"> <!-- Cambia "1" por el ID dinámico -->
-    <i class="fas fa-user-minus"></i> Eliminar Tarjeta
+    <i class="fas fa-user-edit"></i> Gestor de Tarjetas
   </a>
 <?php endif; ?>
 
@@ -126,41 +297,50 @@
   </a>
 <?php endif; ?>
 
-<div class="logout">
-  <a href="<?php echo site_url('/logout');?>" class="menu-item">
-    <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
-  </a>
-</div>
+<!-- Nueva Categoría para Cerrar Sesión -->
+<div class="menu-heading">Cerrar Sesión</div>
+<a onclick="cerrarsesion('<?php echo site_url('/logout');?>')" class="menu-item">
+  <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+</a>
+
 </div>
 <!-- Fin Sidebar -->
 
 <div class="modificar">
     <h1>Modificar Usuario</h1>
     <form action="<?php echo site_url('/actualizar-usuario') ?>" method="post">
-    <label for="Nombre">Nombre de Usuario</label>
-    <input type="text" name="Nombre" id="Nombre" value="<?= esc($user[0]['Nombre']) ?>" required maxlength="50"><br><br>
-    <label for="Email">Correo Electrónico</label>
-    <input type="email" name="Email" id="Email" value="<?= esc($user[0]['Email']) ?>" required maxlength="100"><br><br>
-    <label for="ID_Rol">ID Rol</label>
-    <select name="ID_Rol" id="ID_Rol" required>
-        <option value="5" <?= ($user[0]['ID_Rol'] == 5) ? 'selected' : ''; ?>>Administrador</option>
-        <option value="6" <?= ($user[0]['ID_Rol'] == 6) ? 'selected' : ''; ?>>Supervisor</option>
-        <option value="7" <?= ($user[0]['ID_Rol'] == 7) ? 'selected' : ''; ?>>Usuario</option>
-    </select><br><br>
-    <label for="ID_Tarjeta">ID Tarjeta</label>
-      <select name="ID_Tarjeta" id="ID_Tarjeta" required>
-        <option value="">Seleccione una tarjeta</option>
-          <?php foreach ($tarjetas as $tarjeta): ?>
-        <option value="<?= $tarjeta['ID_Tarjeta']; ?>" <?= ($tarjeta['ID_Tarjeta'] == $user[0]['ID_Tarjeta']) ? 'selected' : ''; ?>>
-            Tarjeta <?= $tarjeta['ID_Tarjeta']; ?>
-        </option>
-          <?php endforeach; ?>
+        
+        <label for="Nombre">Nombre de Usuario</label>
+        <input type="text" name="Nombre" id="Nombre" value="<?= esc($user[0]['Nombre']) ?>" required maxlength="50"><br><br>
+
+        <label for="Email">Correo Electrónico</label>
+        <input type="email" name="Email" id="Email" value="<?= esc($user[0]['Email']) ?>" required maxlength="100"><br><br>
+
+        <label for="ID_Rol">ID Rol</label>
+        <select name="ID_Rol" id="ID_Rol" required>
+            <option value="5" <?= ($user[0]['ID_Rol'] == 5) ? 'selected' : ''; ?>>Administrador</option>
+            <option value="6" <?= ($user[0]['ID_Rol'] == 6) ? 'selected' : ''; ?>>Supervisor</option>
+            <option value="7" <?= ($user[0]['ID_Rol'] == 7) ? 'selected' : ''; ?>>Usuario</option>
+        </select><br><br>
+
+        <label for="ID_Tarjeta">ID Tarjeta</label>
+        <select name="ID_Tarjeta" id="ID_Tarjeta" required>
+            <option value="">Seleccione una tarjeta</option>
+            <?php foreach ($tarjetas as $tarjeta): ?>
+                <option value="<?= $tarjeta['ID_Tarjeta']; ?>" <?= ($tarjeta['ID_Tarjeta'] == $user[0]['ID_Tarjeta']) ? 'selected' : ''; ?>>
+                    Tarjeta <?= $tarjeta['ID_Tarjeta']; ?>
+                </option>
+            <?php endforeach; ?>
         </select>
-    <input type="hidden" value="<?php echo $user[0]['ID_Usuario']?>" name="id">
-    <br> <br>
-    <input type="submit" value="Actualizar">
-</form>
+
+        <input type="hidden" value="<?php echo $user[0]['ID_Usuario']?>" name="id">
+        <br><br>
+        <input type="submit" value="Actualizar">
+        <a href="modificar-usuario">Volver</a>
+    </form>
 </div>
+
+
 <?php
     if (isset($error)) {
         echo "<p style='color: red;'>$error</p>";
@@ -169,5 +349,12 @@
     }
 ?>
 
+<script>
+function cerrarsesion(url){
+  if(confirm('¿Seguro Queres Cerrar Sesion?')){
+    window.location.href=url;
+  }
+}
+</script>
 </body>
 </html>

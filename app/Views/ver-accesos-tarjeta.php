@@ -257,51 +257,29 @@ body {
       }
     ?>
   </div>
-  
   <div class="menu-heading">Menu</div>
   <a href="<?php echo site_url('/bienvenido');?>" class="menu-item">
     <i class="fas fa-home"></i> Inicio
   </a>
-
   <!-- Opciones para Administrador -->
 <?php if ($rol == 5): ?>
   <div class="menu-heading">Usuarios</div>
-  <a href="<?php echo site_url('/register');?>" class="menu-item">
-    <i class="fas fa-user-plus"></i> Crear Usuarios
-  </a>
   <a href="<?php echo site_url('/modificar-usuario');?>" class="menu-item">
-    <i class="fas fa-user-edit"></i> Modificar Usuarios
-  </a>
-  <a href="<?php echo site_url('/eliminar-usuarios');?>" class="menu-item">
-    <i class="fas fa-user-minus"></i> Eliminar Usuarios
+    <i class="fas fa-user-edit"></i> Gestor de Tarjetas
   </a>
 <?php endif; ?>
-
 <!-- Opciones para Tarjetas disponibles para todos los roles -->
 <div class="menu-heading">Tarjetas</div>
-
-
-
 <!-- Administrador puede gestionar tarjetas -->
 <?php if ($rol == 5): ?>
-  <a href="<?php echo site_url('/crear-tarjeta');?>" class="menu-item">
-    <i class="fas fa-id-card"></i> Crear Tarjeta
-  </a>
   <a href="<?php echo site_url('/modificar-tarjeta');?>" class="menu-item"> <!-- Cambia "1" por el ID dinámico -->
-    <i class="fas fa-user-edit"></i> Modificar Tarjeta
-  </a>
-  <a href="<?php echo site_url('/eliminar-tarjeta');?>" class="menu-item"> <!-- Cambia "1" por el ID dinámico -->
-    <i class="fas fa-user-minus"></i> Eliminar Tarjeta
+    <i class="fas fa-user-edit"></i> Gestor de Tarjetas
   </a>
 <?php endif; ?>
-
-
-
 <!-- Consultar estado de tarjetas, accesible para todos los roles -->
 <a href="<?php echo site_url('/consultar-rfid');?>" class="menu-item">
   <i class="fas fa-search"></i> Consultar Estado de Tarjetas
 </a>
-
 <!-- Opciones para Supervisor y Administrador -->
 <?php if ($rol == 5 || $rol == 6): ?>
   <div class="menu-heading">Reportes</div>
@@ -318,7 +296,7 @@ body {
 
 <!-- Nueva Categoría para Cerrar Sesión -->
 <div class="menu-heading">Cerrar Sesión</div>
-<a href="<?php echo site_url('/logout');?>" class="menu-item">
+<a onclick="cerrarsesion('<?php echo site_url('/logout');?>')" class="menu-item">
   <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
 </a>
 
@@ -362,6 +340,12 @@ body {
             <?php endforeach; ?>
         </tbody>
     </table>
-
+    <script>
+function cerrarsesion(url){
+  if(confirm('¿Seguro Queres Cerrar Sesion?')){
+    window.location.href=url;
+  }
+}
+</script>
 </body>
 </html>

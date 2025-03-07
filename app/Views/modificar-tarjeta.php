@@ -23,37 +23,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modificar Tarjeta</title>
+    <title>Administración de Tarjeta</title>
     <link rel="stylesheet" href="<?php echo base_url('assets/css/modtar.css'); ?>"> <!-- Enlazando el CSS del Sidebar -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-      .cosas{
-        margin-left: 265px;
-        margin-right: 500px;
-        padding-bottom: 10px;
-        padding-left: 10px;
-      }
-      th, td {
-        width: 25%;
-        text-align: center;
-        vertical-align: top;
-        border: 1px solid #000;
-        border-collapse: collapse;
-        padding: 0.3em;
-        caption-side: bottom;
-      }
-      caption {
-        padding: 0.3em;
-        color: #fff;
-        background: #000;
-      }
-      th {
-        background: #eee;
-      }
-      .titulo{
-        padding-left: 270px;
-        margin-right: 7px;
-      }
+    /* Contenedor del título */
+.titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 270px 10px; /* Alineación con el sidebar */
+    text-align: center;
+}
+
+.titulo h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Acciones (botón + barra de búsqueda) */
+.titulo .acciones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.titulo .menu-item {
+    display: inline-flex;
+    align-items: center;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.titulo .menu-item:hover {
+    background-color: #2980b9;
+}
+
+/* Barra de búsqueda */
+.barra-busqueda {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 250px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+.barra-busqueda:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Contenedor de la tabla */
+.tabla-container {
+    padding-left: 270px; /* Alineación con el sidebar */
+    padding-right: 20px;
+    overflow-x: auto;
+}
+
+/* Tabla */
+.modificar {
+    margin: 20px auto;
+    width: calc(100% - 270px);
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modificar th,
+.modificar td {
+    padding: 10px 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.modificar th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    color: #333;
+}
+
+.modificar tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+.modificar tr:hover {
+    background-color: #e9f5ff;
+}
+
+/* Estado de las tarjetas */
+.estado-activa {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.estado-inactiva {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Botones */
+.btn-modificar {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-modificar:hover {
+    background-color: #2980b9;
+}
+
+.btn-eliminar {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-eliminar:hover {
+    background-color: #c0392b;
+}
 
             /* Estilos para el Sidebar */
 .sidebar {
@@ -190,51 +298,29 @@
       }
     ?>
   </div>
-  
   <div class="menu-heading">Menu</div>
   <a href="<?php echo site_url('/bienvenido');?>" class="menu-item">
     <i class="fas fa-home"></i> Inicio
   </a>
-
   <!-- Opciones para Administrador -->
 <?php if ($rol == 5): ?>
   <div class="menu-heading">Usuarios</div>
-  <a href="<?php echo site_url('/register');?>" class="menu-item">
-    <i class="fas fa-user-plus"></i> Crear Usuarios
-  </a>
   <a href="<?php echo site_url('/modificar-usuario');?>" class="menu-item">
-    <i class="fas fa-user-edit"></i> Modificar Usuarios
-  </a>
-  <a href="<?php echo site_url('/eliminar-usuarios');?>" class="menu-item">
-    <i class="fas fa-user-minus"></i> Eliminar Usuarios
+    <i class="fas fa-user-edit"></i> Gestor de Usuarios
   </a>
 <?php endif; ?>
-
 <!-- Opciones para Tarjetas disponibles para todos los roles -->
 <div class="menu-heading">Tarjetas</div>
-
-
-
 <!-- Administrador puede gestionar tarjetas -->
 <?php if ($rol == 5): ?>
-  <a href="<?php echo site_url('/crear-tarjeta');?>" class="menu-item">
-    <i class="fas fa-id-card"></i> Crear Tarjeta
-  </a>
   <a href="<?php echo site_url('/modificar-tarjeta');?>" class="menu-item"> <!-- Cambia "1" por el ID dinámico -->
-    <i class="fas fa-user-edit"></i> Modificar Tarjeta
-  </a>
-  <a href="<?php echo site_url('/eliminar-tarjeta');?>" class="menu-item"> <!-- Cambia "1" por el ID dinámico -->
-    <i class="fas fa-user-minus"></i> Eliminar Tarjeta
+    <i class="fas fa-user-edit"></i> Gestor de Tarjetas
   </a>
 <?php endif; ?>
-
-
-
 <!-- Consultar estado de tarjetas, accesible para todos los roles -->
 <a href="<?php echo site_url('/consultar-rfid');?>" class="menu-item">
   <i class="fas fa-search"></i> Consultar Estado de Tarjetas
 </a>
-
 <!-- Opciones para Supervisor y Administrador -->
 <?php if ($rol == 5 || $rol == 6): ?>
   <div class="menu-heading">Reportes</div>
@@ -248,51 +334,63 @@
     <i class="fas fa-history"></i> Ver Historial de Cambios
   </a>
 <?php endif; ?>
-
 <!-- Nueva Categoría para Cerrar Sesión -->
 <div class="menu-heading">Cerrar Sesión</div>
-<a href="<?php echo site_url('/logout');?>" class="menu-item">
+<a onclick="cerrarsesion('<?php echo site_url('/logout');?>')" class="menu-item">
   <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
 </a>
-
 </div>
 <!-- Fin Sidebar -->
 <div class="titulo">
-  <h1>Modificar Tarjeta</h1>
+  <h1>Administración de Tarjetas</h1>
+  <div class="acciones">
+    <a href="<?php echo site_url('/crear-tarjeta'); ?>" class="menu-item">
+      <i class="fas fa-id-card"></i> Añadir Tarjeta
+    </a>
+    <input type="text" placeholder="Buscar tarjeta..." class="barra-busqueda">
+  </div>
 </div>
-<div class="cosas">
-    <!-- Tabla que muestra todas las tarjetas -->
-    <table>
-        <thead>
-            <tr>
-                <th>ID Tarjeta</th>
-                <th>Estado</th>
-                <th>Fecha de Emisión</th>
-                <th>Acción</th>
-            </tr>
-        </thead>
-        <tbody>
-        <?php foreach ($tarjetas as $tarjeta): ?>
-            <tr>
-                <td><?= esc($tarjeta['ID_Tarjeta']); ?></td>
-                <?php
-                if($tarjeta['Estado']==1):?>
-                <td> Activa</td>
-                <?php else:?>
-                <td> Inactiva</td>
-                <?php endif;?>
-                <td><?= esc($tarjeta['Fecha_emision']); ?></td>
-                <td>
-                    <!-- Formulario para seleccionar una tarjeta para modificar -->
-                    <form action="<?= site_url('modificar-tarjeta2') ?>" method="post">
-                        <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
-                        <input type="submit" value="Modificar">
-                    </form>
-                </td>
-            </tr>
-        <?php endforeach; ?>
-        </tbody>
-    </table>
-    </div>
+<div class="tabla-container">
+  <!-- Tabla que muestra todas las tarjetas -->
+  <table class="modificar">
+    <thead>
+      <tr>
+        <th>ID Tarjeta</th>
+        <th>Estado</th>
+        <th>Fecha de Emisión</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach ($tarjetas as $tarjeta): ?>
+        <tr>
+          <td><?= esc($tarjeta['ID_Tarjeta']); ?></td>
+          <td class="<?= $tarjeta['Estado'] == 1 ? 'estado-activa' : 'estado-inactiva'; ?>">
+            <?= $tarjeta['Estado'] == 1 ? 'Activa' : 'Inactiva'; ?>
+          </td>
+          <td><?= esc($tarjeta['Fecha_emision']); ?></td>
+          <td>
+            <form action="<?= site_url('modificar-tarjeta2') ?>" method="post" style="display: inline;">
+              <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
+              <input type="submit" value="Modificar" class="btn-modificar">
+            </form>
+            <form action="<?= site_url('eliminar-tarjeta') ?>" method="post" style="display: inline;" onsubmit="return confirmarEliminacion();">
+              <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
+              <input type="submit" value="Eliminar" class="btn-eliminar">
+            </form>
+          </td>
+        </tr>
+      <?php endforeach; ?>
+    </tbody>
+  </table>
+</div>
+
+    <script>
+function cerrarsesion(url){
+  if(confirm('¿Seguro Queres Cerrar Sesion?')){
+    window.location.href=url;
+  }
+}
+</script>
 </body>
 </html>

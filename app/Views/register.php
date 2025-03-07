@@ -25,241 +25,179 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/css/register.css'); ?>"> <!-- Enlazando el CSS del Sidebar -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-      .registro{
-        margin-left: 265px;
-        margin-right: 500px;
-        border: 4px solid black;
-        padding-bottom: 10px;
-        padding-left: 10px;
-      }
-            /* Estilos para el Sidebar */
-      .sidebar {
-        height: 100vh;
-        width: 250px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background: linear-gradient(180deg, #000706, #00272d); /* Gradiente de color1 a color2 */
-        padding-top: 20px;
-        font-family: Arial, sans-serif;
-        color: #bfac8b; /* Color5 para el texto */
-        transition: background 1.5s ease-in-out, width 0.5s ease-in-out;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
-        overflow-y: auto; /* Desplazamiento vertical */
-        scrollbar-width: none; /* Ocultar barra de desplazamiento en Firefox */
-      }
+/* Fondo */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Fondo degradado */
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-      .sidebar::-webkit-scrollbar {
-        display: none; /* Ocultar barra de desplazamiento en Chrome/Safari */
-      }
+/* Contenedor del formulario */
+.registro {
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra */
+    padding: 20px;
+    width: 400px;
+    max-width: 90%;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #e4e4e4;
+}
 
-      .sidebar:hover {
-        width: 270px;
-        background: linear-gradient(180deg, #00272d, #134647); /* Gradiente más sutil */
-        box-shadow: 2px 0 15px rgba(0, 0, 0, 0.6); /* Sombra más fuerte en hover */
-      }
+/* Título del formulario */
+.registro h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
 
-      .sidebar a {
-        padding: 15px;
-        text-decoration: none;
-        font-size: 18px;
-        color: #bfac8b; /* Color5 */
-        display: flex;
-        align-items: center;
-        border-radius: 8px;
-        margin: 10px 15px;
-        background-color: rgba(255, 255, 255, 0.05);
-        transition: all 0.4s ease; /* Transiciones más suaves */
-        box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.1);
-      }
+/* Campos de entrada */
+.registro input[type="text"],
+.registro input[type="email"],
+.registro input[type="password"],
+.registro select {
+    width: 100%;
+    padding: 10px 15px; /* Relleno: 10px arriba/abajo, 15px izquierda/derecha */
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+    box-sizing: border-box; /* Incluye el padding dentro del ancho total */
+    text-align: left; /* Asegura que el texto comience a la izquierda */
+}
 
-      .sidebar a:hover {
-        background-color: #0c7e7e; /* Color4 */
-        color: #fff; /* Blanco en hover */
-        transform: translateX(12px);
-        box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(0, 0, 0, 0.2);
-      }
-
-      .sidebar a i {
-        margin-right: 12px;
-        font-size: 20px;
-        color: #bfac8b; /* Color5 para íconos */
-        transition: color 0.3s ease;
-      }
-
-      .sidebar a:hover i {
-        color: #fff; /* Íconos blancos en hover */
-      }
-
-      .sidebar .logo {
-        text-align: center;
-        font-size: 26px;
-        font-weight: bold;
-        margin-bottom: 20px;
-        color: #bfac8b; /* Color5 */
-        animation: fadeIn 1.5s ease-in-out;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-      }
-
-      .sidebar .menu-heading {
-        padding-left: 15px;
-        text-transform: uppercase;
-        font-weight: bold;
-        margin-top: 25px;
-        font-size: 15px;
-        color: #bfac8b; /* Color5 */
-        border-bottom: 1px solid #bfac8b;
-        padding-bottom: 8px;
-        animation: fadeIn 1.5s ease-in-out;
-      }
-
-      .sidebar .menu-heading:last-of-type {
-        margin-top: 40px; /* Separación extra para la última categoría */
-      }
-
-      .sidebar a:last-of-type {
-        margin-bottom: 30px; /* Espacio en la parte inferior del último enlace */
-      }
-      .sidebar .menu .cerrar-sesion {
-        margin-top: auto; /* Esto empuja el elemento hacia el fondo del sidebar */
-        padding-bottom: 10px; /* Puedes ajustar el espacio adicional si es necesario */
-      }
-      .sidebar .logout {
-        position: absolute;
-        bottom: 20px;
-        width: 100%;
-        text-align: center;
-      }
-
-      .sidebar .logout a {
-        transition: transform 0.3s ease, color 0.3s ease;
-      }
-
-      .sidebar .logout a:hover {
-        color: #fff;
-        transform: scale(1.1); /* Pequeño aumento en hover */
-      }
-
-      /* Enlace activo */
-      .sidebar a.active {
-        background-color: #bfac8b; /* Color5 para el enlace activo */
-        color: #000706; /* Texto color1 */
-      }
-
-      /* Animaciones */
-      @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-      }
+.registro input:focus,
+.registro select:focus {
+    border-color: #3498db; /* Cambia el color del borde al enfocar */
+    outline: none;
+}
 
 
+/* Botones */
+.registro button[type="submit"] {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.registro button[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* Enlace "Volver" */
+.registro .volver {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.registro .volver:hover {
+    color: #1a5a85;
+}
+
+/* Flash Card */
+.flash-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    max-width: 500px;
+    margin: 20px auto;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.flash-header h1 {
+    font-size: 24px;
+    color: #27ae60; /* Verde para éxito */
+    margin-bottom: 10px;
+}
+
+.flash-message p {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
     </style>
   </head>
   <body>
-<!-- Incluir Sidebar -->
-<div class="sidebar">
-  <div class="logo">
-    <?php 
-      if ($rol == 5) {
-          echo "Administrador";
-      } elseif ($rol == 6) {
-          echo "Supervisor";
-      } elseif ($rol == 7) {
-          echo "Usuario";
+  <div class="registro">
+  <form action="<?php echo site_url('/register2') ?>" method="POST" class="formulario__register">
+    <h2>Crear Usuario</h2>
+    <input type="text" placeholder="Nombre Completo" name="Nombre" required>
+    <input type="email" placeholder="Correo Electrónico" name="Email" required>
+    <input type="password" placeholder="Contraseña" name="Contraseña" required>
+    <label for="ID_Tarjeta">Seleccionar Tarjeta:</label>
+    <select name="ID_Tarjeta" id="ID_Tarjeta" required>
+      <option value="">Seleccione una tarjeta</option>
+      <?php foreach ($tarjetas as $tarjeta): ?>
+        <option value="<?= $tarjeta['ID_Tarjeta']; ?>">
+          Tarjeta <?= $tarjeta['ID_Tarjeta']; ?>
+        </option>
+      <?php endforeach; ?>
+    </select>
+    <label for="ID_Rol">Seleccionar Rol:</label>
+    <select name="ID_Rol" id="ID_Rol" required>
+      <option value="5">Administrador</option>
+      <option value="6">Supervisor</option>
+      <option value="7">Usuario</option>
+    </select>
+    <div class="formulario__acciones">
+      <button type="submit">Registrar Usuario</button>
+      <a href="modificar-usuario" class="volver">Volver</a>
+    </div>
+  </form>
+</div>
+    <?php
+      $success = session()->getFlashdata("success");
+
+      if ($success) {
+          echo "
+          <div class='flash-card'>
+              <div class='flash-header'>
+                  <h1>Operación Exitosa</h1>
+              </div>
+              <div class='flash-message'>
+                  <p>$success</p>
+              </div>
+          </div>";
       }
     ?>
-  </div>
-  
-  <div class="menu-heading">Menu</div>
-  <a href="<?php echo site_url('/bienvenido');?>" class="menu-item">
-    <i class="fas fa-home"></i> Inicio
-  </a>
+<script>
+function cerrarsesion(url){
+  if(confirm('¿Seguro Queres Cerrar Sesion?')){
+    window.location.href=url;
+  }
+}
+</script>
 
-  <!-- Opciones para Administrador -->
-<?php if ($rol == 5): ?>
-  <div class="menu-heading">Usuarios</div>
-  <a href="<?php echo site_url('/register');?>" class="menu-item">
-    <i class="fas fa-user-plus"></i> Crear Usuarios
-  </a>
-  <a href="<?php echo site_url('/modificar-usuario');?>" class="menu-item">
-    <i class="fas fa-user-edit"></i> Modificar Usuarios
-  </a>
-  <a href="<?php echo site_url('/eliminar-usuarios');?>" class="menu-item">
-    <i class="fas fa-user-minus"></i> Eliminar Usuarios
-  </a>
-<?php endif; ?>
-
-<!-- Opciones para Tarjetas disponibles para todos los roles -->
-<div class="menu-heading">Tarjetas</div>
-
-
-
-<!-- Administrador puede gestionar tarjetas -->
-<?php if ($rol == 5): ?>
-  <a href="<?php echo site_url('/crear-tarjeta');?>" class="menu-item">
-    <i class="fas fa-id-card"></i> Crear Tarjeta
-  </a>
-  <a href="<?php echo site_url('/modificar-tarjeta');?>" class="menu-item"> <!-- Cambia "1" por el ID dinámico -->
-    <i class="fas fa-user-edit"></i> Modificar Tarjeta
-  </a>
-  <a href="<?php echo site_url('/eliminar-tarjeta');?>" class="menu-item"> <!-- Cambia "1" por el ID dinámico -->
-    <i class="fas fa-user-minus"></i> Eliminar Tarjeta
-  </a>
-<?php endif; ?>
-
-
-
-<!-- Consultar estado de tarjetas, accesible para todos los roles -->
-<a href="<?php echo site_url('/consultar-rfid');?>" class="menu-item">
-  <i class="fas fa-search"></i> Consultar Estado de Tarjetas
-</a>
-
-<!-- Opciones para Supervisor y Administrador -->
-<?php if ($rol == 5 || $rol == 6): ?>
-  <div class="menu-heading">Reportes</div>
-  <a href="<?php echo site_url('/ver-alertas');?>" class="menu-item">
-    <i class="fas fa-exclamation-triangle"></i> Ver Alertas
-  </a>
-  <a href="<?php echo site_url('/ver-accesos-tarjeta');?>" class="menu-item">
-    <i class="fas fa-key"></i> Ver Accesos de Tarjeta
-  </a>
-  <a href="<?php echo site_url('/ver-historial-cambios');?>" class="menu-item">
-    <i class="fas fa-history"></i> Ver Historial de Cambios
-  </a>
-<?php endif; ?>
-
-<!-- Nueva Categoría para Cerrar Sesión -->
-<div class="menu-heading">Cerrar Sesión</div>
-<a href="<?php echo site_url('/logout');?>" class="menu-item">
-  <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
-</a>
-
-</div>
-<!-- Fin Sidebar -->
-    <div class="registro">
-                <form action="<?php echo site_url('/register2') ?>" method="POST" class="formulario__register">
-                    <h2>Crear Usuario</h2>
-                    <input type="text" placeholder="Nombre Completo" name="Nombre">
-                    <input type="text" placeholder="Correo Electronico" name="Email">
-                    <input type="password" placeholder="Contraseña" name="Contraseña">
-                    <label for="ID_Tarjeta">Seleccionar Tarjeta:</label>
-                      <select name="ID_Tarjeta" id="ID_Tarjeta" required>
-                        <option value="">Seleccione una tarjeta</option>
-                          <?php foreach ($tarjetas as $tarjeta): ?>
-                        <option value="<?= $tarjeta['ID_Tarjeta']; ?>">
-                          Tarjeta <?= $tarjeta['ID_Tarjeta']; ?>
-                        </option>
-                          <?php endforeach; ?>
-                      </select>
-                    <label for="ID_Rol">ID Rol</label>
-                      <select name="ID_Rol" id="ID_Rol" required>
-                        <option value="5" >Administrador</option>
-                        <option value="6" >Supervisor</option>
-                        <option value="7">Usuario</option>
-                      </select>
-                    <p>
-                    <button type="submit">Registrar Usuario</button> 
-                </form>
-    </div>
   </body>
 </html>

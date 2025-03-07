@@ -71,7 +71,7 @@ class AuthController extends BaseController
             'ID_Tarjeta' => $uid
         ]);
         $session->setFlashdata('success','Usuario creado correctamente');
-        return redirect()->to('/bienvenido'); // Redirige a la bienvenida con mensaje de éxito
+        return redirect()->to('/register'); // Redirige a la bienvenida con mensaje de éxito
     }
 
     // Método para mostrar la página de bienvenida solo si el usuario tiene sesión iniciada

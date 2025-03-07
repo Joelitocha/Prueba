@@ -55,7 +55,7 @@ class TarjetaController extends BaseController
 
         // Verifica si el usuario tiene permiso para eliminar tarjetas (solo el rol 5 puede eliminar)
         if ($rol != 5) {
-            return redirect()->to('/gestionar-tarjeta')->with('error', 'No tienes permiso para eliminar tarjetas');
+            return redirect()->to('/modificar-tarjeta')->with('error', 'No tienes permiso para eliminar tarjetas');
         }
 
         // Obtiene el ID de la tarjeta desde el formulario
@@ -66,9 +66,9 @@ class TarjetaController extends BaseController
 
         // Verifica si la tarjeta existe antes de intentar eliminarla
         if (!$tarjeta) {
-            return redirect()->to('/gestionar-tarjeta')->with('error', 'Tarjeta no encontrada');
+            return redirect()->to('/modificar-tarjeta')->with('error', 'Tarjeta no encontrada');
         }
-        $session->setFlashdata('success','Tarjeta eliminada correctamente');
+
         // Elimina la tarjeta de la base de datos
         $tarjetaModel->delete($id);
         return redirect()->back(); // Redirige a la misma página

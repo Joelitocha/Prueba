@@ -16,7 +16,7 @@ class App extends BaseConfig
      *
      * E.g., http://example.com/
      */
-    public $baseURL = 'http://localhost/cosas/WildProyect/public';
+    public $baseURL = 'http://192.168.2.109/cosas/Prueba/public';
 
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.

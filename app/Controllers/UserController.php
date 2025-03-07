@@ -82,15 +82,7 @@ class UserController extends BaseController
         // Pasa los datos del usuario y las tarjetas a la vista
         return view("modificar-usuario2", ['user' => $user, 'tarjetas' => $tarjetas]);
     }
-    
 
-    // Función para cargar la vista de eliminación de usuarios
-    public function VistaEliminar()
-    {
-        $userModel = new UserModel(); // Instancia del modelo de usuario
-        $user = $userModel->getUser(); // Obtiene todos los usuarios
-        return view("eliminar-usuarios", ['user' => $user]); // Carga la vista de eliminación con los usuarios
-    }
 
     // Función para eliminar un usuario
     public function eliminarUsuario()
@@ -100,10 +92,10 @@ class UserController extends BaseController
     
         if ($userModel->delete($id)) {
             // Establecer un mensaje de éxito en la sesión
-            return redirect()->to('/eliminar-usuarios')->with('success', 'El usuario ha sido eliminado correctamente.');
+            return redirect()->to('/modificar-usuario')->with('success', 'El usuario ha sido eliminado correctamente.');
         } else {
             // Establecer un mensaje de error en caso de fallo
-            return redirect()->to('/eliminar-usuarios')->with('error', 'Hubo un problema al eliminar el usuario.');
+            return redirect()->to('/modificar-usuario')->with('error', 'Hubo un problema al eliminar el usuario.');
         }
     }
     

@@ -23,40 +23,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modificar Usuario</title>
+    <title>Administración de Usuarios</title>
     <link rel="stylesheet" href="<?php echo base_url('assets/css/mod1.css'); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-.modificar {
-    width: 100%;
-    border-right-width: 0px;
-    justify-content: center; 
+    /* Contenedor de la tabla */
+/* Contenedor del título */
+.titulo {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    padding-left: 270px;
-    padding-right: 375px;
- }
- th, td {
-    width: 25%;
+    justify-content: center;
+    padding: 20px 270px 10px; /* Alineación con el sidebar */
     text-align: center;
-    vertical-align: top;
-    border: 1px solid #000;
-    border-collapse: collapse;
-    padding: 0.3em;
-    caption-side: bottom;
- }
- caption {
-    padding: 0.3em;
+}
+
+/* Título principal */
+.titulo h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Contenedor de acciones (botón + barra de búsqueda) */
+.titulo .acciones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Botón "Añadir Usuario" */
+.titulo .menu-item {
+    display: inline-flex;
+    align-items: center;
+    background-color: #3498db;
     color: #fff;
-     background: #000;
- }
- th {
-    background: #eee;
- }
- .titulo{
-  padding-left: 270px;
- }
-      /* Estilos para el Sidebar */
-      .sidebar {
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.titulo .menu-item:hover {
+    background-color: #2980b9;
+}
+
+/* Barra de búsqueda */
+.barra-busqueda {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 250px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+.barra-busqueda:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Tabla */
+.tabla-container {
+    padding-left: 270px; /* Alineación con el sidebar */
+    padding-right: 20px;
+    overflow-x: auto;
+}
+
+.modificar {
+    margin: 20px auto;
+    width: calc(100% - 270px);
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustes visuales para tabla y filas ya se mantienen del CSS original */
+
+
+.modificar th,
+.modificar td {
+    padding: 10px 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.modificar th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    color: #333;
+}
+
+.modificar tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+.modificar tr:hover {
+    background-color: #e9f5ff;
+}
+
+/* Roles */
+.rol-admin {
+    color: #0066cc;
+    font-weight: bold;
+}
+
+.rol-supervisor {
+    color: #e67e22;
+    font-weight: bold;
+}
+
+.rol-usuario {
+    color: #27ae60;
+}
+
+.rol-desconocido {
+    color: #7f8c8d;
+}
+
+/* Botones */
+.btn-modificar {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-modificar:hover {
+    background-color: #2980b9;
+}
+
+.btn-eliminar {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-eliminar:hover {
+    background-color: #c0392b;
+}
+/* Estilos para el Sidebar */
+.sidebar {
     height: 100vh;
     width: 250px;
     position: fixed;
@@ -174,11 +294,20 @@
     from { opacity: 0; }
     to { opacity: 1; }
 }
-
-
 </style>
 </head>
 <body>
+  <!-- Modal de confirmación -->
+<div id="modalConfirmacion" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center;">
+    <div style="background: #fff; padding: 20px; border-radius: 8px; width: 300px; text-align: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        <h3 style="margin-bottom: 20px;">¿Quieres borrar este usuario?</h3>
+        <form id="formEliminar" method="post" action="<?= site_url('eliminar-usuarios') ?>">
+            <input type="hidden" name="id" id="idUsuarioEliminar">
+            <button type="button" onclick="cerrarModal()" style="background: #ccc; border: none; padding: 10px 20px; border-radius: 4px; margin-right: 10px;">Cancelar</button>
+            <button type="submit" style="background: #e74c3c; color: white; border: none; padding: 10px 20px; border-radius: 4px;">Eliminar</button>
+        </form>
+    </div>
+</div>
 <!-- Incluir Sidebar -->
 <div class="sidebar">
   <div class="logo">
@@ -192,51 +321,29 @@
       }
     ?>
   </div>
-  
   <div class="menu-heading">Menu</div>
   <a href="<?php echo site_url('/bienvenido');?>" class="menu-item">
     <i class="fas fa-home"></i> Inicio
   </a>
-
   <!-- Opciones para Administrador -->
 <?php if ($rol == 5): ?>
   <div class="menu-heading">Usuarios</div>
-  <a href="<?php echo site_url('/register');?>" class="menu-item">
-    <i class="fas fa-user-plus"></i> Crear Usuarios
-  </a>
   <a href="<?php echo site_url('/modificar-usuario');?>" class="menu-item">
-    <i class="fas fa-user-edit"></i> Modificar Usuarios
-  </a>
-  <a href="<?php echo site_url('/eliminar-usuarios');?>" class="menu-item">
-    <i class="fas fa-user-minus"></i> Eliminar Usuarios
+    <i class="fas fa-user-edit"></i> Gestor de Tarjetas
   </a>
 <?php endif; ?>
-
 <!-- Opciones para Tarjetas disponibles para todos los roles -->
 <div class="menu-heading">Tarjetas</div>
-
-
-
 <!-- Administrador puede gestionar tarjetas -->
 <?php if ($rol == 5): ?>
-  <a href="<?php echo site_url('/crear-tarjeta');?>" class="menu-item">
-    <i class="fas fa-id-card"></i> Crear Tarjeta
-  </a>
   <a href="<?php echo site_url('/modificar-tarjeta');?>" class="menu-item"> <!-- Cambia "1" por el ID dinámico -->
-    <i class="fas fa-user-edit"></i> Modificar Tarjeta
-  </a>
-  <a href="<?php echo site_url('/eliminar-tarjeta');?>" class="menu-item"> <!-- Cambia "1" por el ID dinámico -->
-    <i class="fas fa-user-minus"></i> Eliminar Tarjeta
+    <i class="fas fa-user-edit"></i> Gestor de Tarjetas
   </a>
 <?php endif; ?>
-
-
-
 <!-- Consultar estado de tarjetas, accesible para todos los roles -->
 <a href="<?php echo site_url('/consultar-rfid');?>" class="menu-item">
   <i class="fas fa-search"></i> Consultar Estado de Tarjetas
 </a>
-
 <!-- Opciones para Supervisor y Administrador -->
 <?php if ($rol == 5 || $rol == 6): ?>
   <div class="menu-heading">Reportes</div>
@@ -253,67 +360,98 @@
 
 <!-- Nueva Categoría para Cerrar Sesión -->
 <div class="menu-heading">Cerrar Sesión</div>
-<a href="<?php echo site_url('/logout');?>" class="menu-item">
+<a onclick="cerrarsesion('<?php echo site_url('/logout');?>')" class="menu-item">
   <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
 </a>
 
 </div>
 <!-- Fin Sidebar -->
 <div class="titulo">
-  <h1>Modificar Usuario</h1>
+  <h1>Administración de Usuarios</h1>
+  <div class="acciones">
+    <a href="<?php echo site_url('/register'); ?>" class="menu-item">
+      <i class="fas fa-id-card"></i> Añadir Usuario
+    </a>
+    <input type="text" placeholder="Buscar usuario..." class="barra-busqueda">
+  </div>
 </div>
-<table class="modificar">
-    <thead>
-        <th>Nombre</th>
-        <th>Email</th>
-        <th>Rol</th>
-        <th>Tarjeta</th>
-        <th>Acciones</th>
+<div class="tabla-container">
+    <table class="modificar">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Rol</th>
+                <th>Tarjeta</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($user as $u): ?>
+            <tr>
+                <td><?php echo $u["Nombre"]; ?></td>
+                <td><?php echo $u["Email"]; ?></td>
+                <td>
+                    <?php 
+                    $rolNombre = "";
+                    $rolClase = "";
+                    switch ($u["ID_Rol"]) {
+                        case 5: // Administrador
+                            $rolNombre = "Administrador";
+                            $rolClase = "rol-admin";
+                            break;
+                        case 6: // Supervisor
+                            $rolNombre = "Supervisor";
+                            $rolClase = "rol-supervisor";
+                            break;
+                        case 7: // Usuario
+                            $rolNombre = "Usuario";
+                            $rolClase = "rol-usuario";
+                            break;
+                        default:
+                            $rolNombre = "Desconocido";
+                            $rolClase = "rol-desconocido";
+                    }
+                    ?>
+                    <span class="<?php echo $rolClase; ?>"><?php echo $rolNombre; ?></span>
+                </td>
+                <td><?php echo $u["ID_Tarjeta"]; ?></td>
+                <td>
+                    <form action="<?= site_url('modificar-usuario2') ?>" method="post">
+                        <input type="hidden" value="<?php echo $u["ID_Usuario"]; ?>" name="id">
+                        <input type="submit" value="Modificar" class="btn-modificar">
+                    </form>
+                    <button type="button" class="btn-eliminar" onclick="mostrarModal(<?php echo $u['ID_Usuario']; ?>)">
+                        Eliminar
+                    </button>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
 
-    </thead>
-    <tbody>
-    <?php foreach($user as $u): ?>
-    <tr>
-        <td><?php echo $u["Nombre"]; ?></td>
-        <td><?php echo $u["Email"]; ?></td>
-        <td>
-            <?php 
-            // Determinar el rol y asignar el estilo
-            $rolNombre = "";
-            $rolEstilo = "";
-            switch ($u["ID_Rol"]) {
-                case 5: // Administrador
-                    $rolNombre = "Administrador";
-                    $rolEstilo = "color: blue;";
-                    break;
-                case 6: // Supervisor
-                    $rolNombre = "Supervisor";
-                    $rolEstilo = "color: orange; font-weight: bold;";
-                    break;
-                case 7: // Usuario
-                    $rolNombre = "Usuario";
-                    $rolEstilo = "color: darkgreen;";
-                    break;
-                default:
-                    $rolNombre = "Desconocido";
-                    $rolEstilo = "color: black;";
-            }
-            ?>
-            <span style="<?php echo $rolEstilo; ?>"><?php echo $rolNombre; ?></span>
-        </td>
-        <td><?php echo $u["ID_Tarjeta"]; ?></td>
-        <td>
-            <form action="<?= site_url('modificar-usuario2') ?>" method="post">
-                <input type="hidden" value="<?php echo $u["ID_Usuario"]; ?>" name="id">
-                <input type="submit" value="Modificar">
-            </form>
-        </td>
-    </tr>
-<?php endforeach; ?>
+<script>
+    function mostrarModal(idUsuario) {
+        // Establecer el ID del usuario en el formulario
+        document.getElementById('idUsuarioEliminar').value = idUsuario;
+        // Mostrar el modal
+        document.getElementById('modalConfirmacion').style.display = 'flex';
+    }
 
-    </tbody>
-</table>
+    function cerrarModal() {
+        // Ocultar el modal
+        document.getElementById('modalConfirmacion').style.display = 'none';
+    }
+</script>
 
+<script>
+function cerrarsesion(url){
+  if(confirm('¿Seguro Queres Cerrar Sesion?')){
+    window.location.href=url;
+  }
+}
+</script>
 </body>
 </html>
 
