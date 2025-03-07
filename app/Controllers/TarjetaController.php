@@ -161,20 +161,6 @@ class TarjetaController extends BaseController
             return view('consultar-rfid', ['error' => 'ID de tarjeta no proporcionado']);
         }
     }
-    public function __construct()
-{
-    helper('session'); // Carga el helper de sesión
-    // Verifica si la sesión tiene el ID_Persona
-    if (!session()->has('ID_Persona')) {
-        return redirect()->to('/login'); // Redirige al login si no está en sesión
-    }
-}
-    public function obtenerIdPersonaSesion()
-    {
-        $session = session(); // Inicia la sesión
-        return $session->get('ID_Persona'); // Retorna el ID almacenado en la sesión
-    }
-    
 }
 
 ?>
