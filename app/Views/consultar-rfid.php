@@ -216,6 +216,10 @@
       <p><?php echo $error; ?></p>
     <?php endif; ?>
 
+    <?php
+    echo "Tu Tarjeta Es: "."Y Su Estado Es: ";
+    ?>
+
     </div>
 
     
