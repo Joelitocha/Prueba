@@ -12,19 +12,22 @@ class AuthController extends BaseController
         return view('login'); // Carga la vista de inicio de sesión
     }
     public function sendEmail()
-    {
-        $emailService = \Config\Services::email();
+{
+    $email = \Config\Services::email();
+    
+    $email->setTo('federicoarias@alumnos.itr3.edu.ar'); // Destinatario
+    $email->setFrom('87736f002@smtp-brevo.com', 'RackON Seguridad'); // Mismo que `SMTPUser`
+    $email->setSubject('Prueba de Correo con Brevo');
+    $email->setMessage('<p>Este es un correo de prueba desde CodeIgniter 4 con Brevo.</p>');
 
-        $emailService->setTo('federicoarias@alumnos.itr3.edu.ar'); // Cambia al correo de prueba
-        $emailService->setSubject('Prueba de Correo con Brevo');
-        $emailService->setMessage('<p>Este es un correo de prueba enviado desde CodeIgniter 4 con Brevo SMTP.</p>');
-
-        if ($emailService->send()) {
-            return "✅ Correo enviado correctamente.";
-        } else {
-            return $emailService->printDebugger(['headers']);
-        }
+    if ($email->send()) {
+        echo '✅ Correo enviado correctamente.';
+    } else {
+        echo '❌ Error al enviar correo.';
+        print_r($email->printDebugger(['headers']));
     }
+}
+
     // Método para iniciar sesión
     public function loginUser()
     {
