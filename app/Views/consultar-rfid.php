@@ -217,18 +217,7 @@
     <?php endif; ?>
 
     </div>
-
-    <div class="conrfid">
-    <h1>Consultar Estado de Tarjeta</h1>
-
-    <?php if (isset($id_tarjeta)): ?>
-        <p><strong>Tu ID de Tarjeta:</strong> <?= esc($id_tarjeta) ?></p>
-        <p><strong>Estado:</strong> <?= $estado == 1 ? 'Activa' : 'Inactiva'; ?></p>
-    <?php elseif (isset($error)): ?>
-        <p><?= esc($error) ?></p>
-    <?php endif; ?>
-</div>
-
+    
 
     
 <script>

@@ -49,11 +49,6 @@ class TarjetaModel extends Model
         $tabla->where('ID_Tarjeta', $idTarjeta); // Aplica una condición para buscar la tarjeta por ID
         return $tabla->get()->getResultArray(); // Devuelve el resultado de la búsqueda como un array
     }
-    // Método para obtener la tarjeta asignada a un usuario según su ID
-    public function getTarjetaByUserId($idPersona)
-    {
-        return $this->where('ID_Persona', $idPersona)->first(); // Busca la tarjeta asignada al usuario
-    }
-
+    
 }
 ?>

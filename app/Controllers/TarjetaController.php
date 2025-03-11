@@ -138,25 +138,29 @@ class TarjetaController extends BaseController
 
     // Ver el estado de una tarjeta específica
     public function verEstadoTarjeta()
-{
-    $session = session();
-    $idPersona = $session->get('ID_Persona'); // Obtiene el ID de la persona en sesión
+    {
+        $tarjetaModel = new TarjetaModel(); // Crea una instancia del modelo de tarjetas
+        
+        // Captura el ID de la tarjeta desde el formulario
+        $idTarjeta = $this->request->getPost('id_tarjeta');
+        
+        // Verifica que el ID no esté vacío
+        if (!empty($idTarjeta)) {
+            // Obtiene el estado de la tarjeta con el ID especificado
+            $tarjeta = $tarjetaModel->obtenerEstado($idTarjeta);
 
-    $tarjetaModel = new TarjetaModel();
-
-    // Busca la tarjeta asignada al usuario
-    $tarjeta = $tarjetaModel->getTarjetaByUserId($idPersona);
-
-    if ($tarjeta) {
-        return view('consultar-rfid', [
-            'id_tarjeta' => $tarjeta['ID_Tarjeta'], // Envia el ID de la tarjeta a la vista
-            'estado' => $tarjeta['Estado']
-        ]);
-    } else {
-        return view('consultar-rfid', ['error' => 'No tenés una tarjeta asignada.']);
+            if ($tarjeta) {
+                // Si se encuentra la tarjeta, muestra su estado en la vista 'consultar-rfid'
+                return view('consultar-rfid', ['estado' => $tarjeta[0]['Estado']]);
+            } else {
+                // Si no se encuentra la tarjeta, muestra un mensaje de error
+                return view('consultar-rfid', ['error' => 'Tarjeta no encontrada']);
+            }
+        } else {
+            // Si el ID_Tarjeta está vacío, muestra un mensaje de error
+            return view('consultar-rfid', ['error' => 'ID de tarjeta no proporcionado']);
+        }
     }
-}
-
 }
 
 ?>
