@@ -22,7 +22,7 @@ class ViewsControllers extends BaseController // Definición de la clase ViewsCo
         $tarjetamodel=new TarjetaModel;
         $id=session()->get('ID_tarjeta');
         $data=$tarjetamodel->obtenerEstado($id);
-        return view("consultar-rfid",["data" => $data]); // Retorna la vista 'consultar-rfid'
+        return view("consultar-rfid",["estado" => $data]); // Retorna la vista 'consultar-rfid'
     }
 
     // Método para cargar la vista de alertas
