@@ -21,7 +21,7 @@
     <form action="/asignar-tarjeta-usuario" method="POST">
       <label for="id_usuario">ID del Usuario:</label>
       <input type="text" id="id_usuario" name="id_usuario">
-      <br><br>
+      <br><br> 
       <label for="id_tarjeta">ID de la Tarjeta:</label>
       <input type="text" id="id_tarjeta" name="id_tarjeta">
       <br><br>
