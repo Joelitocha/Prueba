@@ -203,7 +203,7 @@
 <div class="conrfid">
 
     <h1>Consultar Estado de Tarjeta</h1>
-    <!-- <form action="<?= #site_url('consultar-rfid') ?>" method="POST">
+    <!-- <form action="< #site_url('consultar-rfid') " method="POST">
       <label for="id_tarjeta">ID de la Tarjeta:</label>
       <input type="text" id="id_tarjeta" name="id_tarjeta" required>
       <br><br>
