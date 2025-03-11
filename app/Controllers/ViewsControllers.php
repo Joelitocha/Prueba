@@ -3,6 +3,7 @@
 namespace App\Controllers; // Definición del espacio de nombres para el controlador
 
 use App\Models\UserModel; // Importación del modelo UserModel (aunque no se utiliza en este controlador)
+use App\Models\TarjetaModel; // Importación del modelo UserModel (aunque no se utiliza en este controlador)
 
 class ViewsControllers extends BaseController // Definición de la clase ViewsControllers que extiende de BaseController
 {
@@ -18,7 +19,10 @@ class ViewsControllers extends BaseController // Definición de la clase ViewsCo
 
     // Método para cargar la vista de consulta de RFID
     public function VistaConsultar() {
-        return view("consultar-rfid"); // Retorna la vista 'consultar-rfid'
+        $tarjetamodel=new TarjetaModel;
+        $id=session()->get('ID_tarjeta');
+        $data=$tarjetamodel->obtenerEstado($id);
+        return view("consultar-rfid",["estado" => $data]); // Retorna la vista 'consultar-rfid'
     }
 
     // Método para cargar la vista de alertas

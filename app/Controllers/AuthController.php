@@ -32,7 +32,8 @@ class AuthController extends BaseController
                 "user_id" => $user["ID_Usuario"],
                 "logged_in" => true,
                 "username" => $user["Nombre"],
-                "ID_Rol" => $user["ID_Rol"]
+                "ID_Rol" => $user["ID_Rol"],
+                'ID_tarjeta' => $user['ID_Tarjeta']
             ];
             $session->set($datos); // Guarda los datos en la sesión
 
