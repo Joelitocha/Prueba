@@ -211,8 +211,8 @@
     </form> -->
 
     <?php if (isset($estado)): ?>
-      <?php echo $estado;?>
-      <p>El estado de la tarjeta es: <?php echo $estado == 1 ? 'Activa' : 'Inactiva'; ?></p>
+      <?php $estado;?>
+      <p>El estado de la tarjeta es: <?php echo $estado[0]["Estado"] == 1 ? 'Activa' : 'Inactiva'; ?></p>
     <?php elseif (isset($error)): ?>
       <p><?php echo $error; ?></p>
     <?php endif; ?>
