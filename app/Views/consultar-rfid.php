@@ -203,12 +203,12 @@
 <div class="conrfid">
 
     <h1>Consultar Estado de Tarjeta</h1>
-    <form action="<?= site_url('consultar-rfid') ?>" method="POST">
+    <!-- <form action="<?= #site_url('consultar-rfid') ?>" method="POST">
       <label for="id_tarjeta">ID de la Tarjeta:</label>
       <input type="text" id="id_tarjeta" name="id_tarjeta" required>
       <br><br>
       <input type="submit" value="Consultar Estado">
-    </form>
+    </form> -->
 
     <?php if (isset($estado)): ?>
       <p>El estado de la tarjeta es: <?php echo $estado == 1 ? 'Activa' : 'Inactiva'; ?></p>
