@@ -305,7 +305,6 @@ body {
 
 </div>
 <!-- Fin Sidebar -->
-
 <div class="modificar">
     <h1>Modificar Usuario</h1>
     <form action="<?php echo site_url('/actualizar-usuario') ?>" method="post">
@@ -336,11 +335,9 @@ body {
         <input type="hidden" value="<?php echo $user[0]['ID_Usuario']?>" name="id">
         <br><br>
         <input type="submit" value="Actualizar">
-        <a href="modificar-usuario">Volver</a>
+        <center><a href="modificar-usuario">Volver</a> </center>
     </form>
 </div>
-
-
 <?php
     if (isset($error)) {
         echo "<p style='color: red;'>$error</p>";
