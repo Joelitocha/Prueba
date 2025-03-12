@@ -452,6 +452,28 @@ function cerrarsesion(url){
   }
 }
 </script>
+<script>
+    // Filtrado en tiempo real para la tabla de usuarios
+    const barraBusqueda = document.querySelector('.barra-busqueda');
+    const filasUsuario = document.querySelectorAll('.modificar tbody tr');
+
+    barraBusqueda.addEventListener('input', function() {
+        const valorBusqueda = barraBusqueda.value.toLowerCase();
+
+        filasUsuario.forEach(fila => {
+            const nombreUsuario = fila.querySelector('td:first-child').innerText.toLowerCase();
+            const emailUsuario = fila.querySelector('td:nth-child(2)').innerText.toLowerCase();
+            const rolUsuario = fila.querySelector('td:nth-child(3)').innerText.toLowerCase();
+
+            if (nombreUsuario.includes(valorBusqueda) || emailUsuario.includes(valorBusqueda) || rolUsuario.includes(valorBusqueda)) {
+                fila.style.display = '';  // Mostrar la fila si coincide
+            } else {
+                fila.style.display = 'none';  // Ocultar la fila si no coincide
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
 

@@ -392,5 +392,32 @@ function cerrarsesion(url){
   }
 }
 </script>
+<script>
+    // Filtrado en tiempo real para la tabla de tarjetas
+    const barraBusquedaTarjeta = document.querySelector('.barra-busqueda');
+    const filasTarjeta = document.querySelectorAll('.modificar tbody tr');
+
+    barraBusquedaTarjeta.addEventListener('input', function() {
+        const valorBusqueda = barraBusquedaTarjeta.value.toLowerCase();
+
+        filasTarjeta.forEach(fila => {
+            const idTarjeta = fila.querySelector('td:first-child').innerText.toLowerCase();
+            const estadoTarjeta = fila.querySelector('td:nth-child(2)').innerText.toLowerCase();
+            const fechaEmision = fila.querySelector('td:nth-child(3)').innerText.toLowerCase();
+
+            if (idTarjeta.includes(valorBusqueda) || estadoTarjeta.includes(valorBusqueda) || fechaEmision.includes(valorBusqueda)) {
+                fila.style.display = '';  // Mostrar la fila si coincide
+            } else {
+                fila.style.display = 'none';  // Ocultar la fila si no coincide
+            }
+        });
+    });
+
+    // Confirmación de eliminación
+    function confirmarEliminacion() {
+        return confirm('¿Estás seguro de que deseas eliminar esta tarjeta?');
+    }
+</script>
+
 </body>
 </html>
