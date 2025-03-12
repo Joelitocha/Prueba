@@ -12,13 +12,49 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/css/conrfid.css'); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        .conrfid{
-            margin-left: 265px;
-            margin-right: 1200px;
-            border: 4px solid black;
-            padding-bottom: 10px;
-            padding-left: 10px;
-        }
+.conrfid {
+    margin-left: 265px;
+    margin-right: 1200px;
+    background-color: #fff; /* Fondo blanco */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    color: #000706; /* Texto oscuro */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.conrfid::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("<?php echo base_url('assets/images/tarjeta_fondo.png'); ?>");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15; /* Opacidad baja para no estorbar */
+    z-index: 0;
+}
+
+.conrfid h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #00272d; /* Color principal para el título */
+    z-index: 1;
+    position: relative;
+}
+
+.conrfid p {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #134647; /* Color secundario */
+    z-index: 1;
+    position: relative;
+}
 
               /* Estilos para el Sidebar */
 .sidebar {
@@ -201,23 +237,13 @@
 <!-- Fin Sidebar -->
  
 <div class="conrfid">
-
-    <h1>Consultar Estado de Tarjeta</h1>
-    <!-- <form action="< #site_url('consultar-rfid') " method="POST">
-      <label for="id_tarjeta">ID de la Tarjeta:</label>
-      <input type="text" id="id_tarjeta" name="id_tarjeta" required>
-      <br><br>
-      <input type="submit" value="Consultar Estado">
-    </form> -->
-
+    <h1>Tarjeta RFID</h1>
     <?php if (isset($estado)): ?>
-      <?php $estado;?>
-      <p>El estado de la tarjeta es: <?php echo $estado[0]["Estado"] == 1 ? 'Activa' : 'Inactiva'; ?></p>
+        <p>Estado: <?php echo $estado[0]["Estado"] == 1 ? 'Activa' : 'Inactiva'; ?></p>
     <?php elseif (isset($error)): ?>
-      <p><?php echo $error; ?></p>
+        <p><?php echo $error; ?></p>
     <?php endif; ?>
-
-    </div>
+</div>
     
 
     
