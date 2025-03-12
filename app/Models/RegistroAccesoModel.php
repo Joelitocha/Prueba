@@ -29,6 +29,17 @@ class RegistroAccesoModel extends Model
     ];
 
     // Función para obtener todos los registros de acceso
+    public function getPaginatedRecords($perPage, $offset)
+    {
+        return $this->orderBy('Fecha_Hora', 'DESC')
+                    ->findAll($perPage, $offset); // Devuelve los registros paginados
+    }
+
+    // Obtener el total de registros para la paginación
+    public function getTotalRecords()
+    {
+        return $this->countAllResults(); // Devuelve el total de registros en la tabla
+    }
     public function getAllRecords()
     {
         return $this->orderBy('Fecha_Hora','DESC')->findAll(); // Devuelve todos los registros de la tabla

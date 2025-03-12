@@ -24,6 +24,30 @@
     <title>Ver Accesos Tarjeta</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
+        .paginacion {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+    .paginacion a {
+        margin: 0 5px;
+        padding: 8px 12px;
+        background-color: #3498db;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .paginacion a:hover {
+        background-color: #2980b9;
+    }
+
+    .paginacion a.activa {
+        background-color: #2980b9;
+        pointer-events: none;
+    }
         /* Estilos de la tabla */
         table {
             width: 100%;
@@ -340,6 +364,11 @@ body {
             <?php endforeach; ?>
         </tbody>
     </table>
+    <div class="paginacion">
+    <?php for ($i = 1; $i <= $totalPaginas; $i++): ?>
+        <a href="?pagina=<?= $i; ?>" class="pagina <?= $i == $paginaActual ? 'activa' : ''; ?>"><?= $i; ?></a>
+    <?php endfor; ?>
+</div>
     <script>
 function cerrarsesion(url){
   if(confirm('¿Seguro Queres Cerrar Sesion?')){
