@@ -34,8 +34,8 @@
     width: 100%;
     height: 100%;
     background-image: url("<?php echo base_url('assets/images/tarjeta_fondo.png'); ?>");
-    background-size: cover;
-    background-position: center;
+    background-size: cover; /* Ajusta la imagen para que ocupe todo el fondo */
+    background-position: center; /* Centra la imagen */
     opacity: 0.15; /* Opacidad baja para no estorbar */
     z-index: 0;
 }
