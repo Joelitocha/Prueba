@@ -329,7 +329,7 @@
 <?php if ($rol == 5): ?>
   <div class="menu-heading">Usuarios</div>
   <a href="<?php echo site_url('/modificar-usuario');?>" class="menu-item">
-    <i class="fas fa-user-edit"></i> Gestor de Tarjetas
+    <i class="fas fa-user-edit"></i> Gestor de Usuarios
   </a>
 <?php endif; ?>
 <!-- Opciones para Tarjetas disponibles para todos los roles -->
