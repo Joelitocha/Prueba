@@ -18,6 +18,8 @@ $routes->get('/bienvenido', 'AuthController::welcome');  // Página de bienvenid
 // Rutas para registro de usuario (solo para administrador)
 $routes->get('/register', 'AuthController::registro');  // Formulario de registro
 $routes->post('/register2', 'AuthController::registerUser');  // Proceso de registro
+$routes->get('/verify', 'AuthController::verifyEmail');
+
 
 // Rutas para cerrar sesión
 $routes->get('/logout', 'AuthController::logout');  // Cerrar sesión (GET)
