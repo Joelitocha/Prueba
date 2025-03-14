@@ -1,5 +1,5 @@
 <?php
-sabjhiopse toinñ 
+
 namespace Config;
 
 use CodeIgniter\Config\BaseConfig;
