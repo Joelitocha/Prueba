@@ -212,7 +212,7 @@
 </div>
 <!-- Fin Sidebar -->
 <div class="historial">
-<h1>Historial de Cambios en las Tarjetas</h1>
+<h1>Historial de Cambios</h1>
     <ul>
       <li>Cambio 1: Tarjeta A fue desactivada por el Administrador</li>
       <li>Cambio 2: Tarjeta B fue asignada al Usuario C</li>
