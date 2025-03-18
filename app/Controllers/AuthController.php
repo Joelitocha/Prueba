@@ -2,7 +2,7 @@
 
 namespace App\Controllers; // Define el espacio de nombres para organizar el proyecto
 
-use App\Models\UserModel; // Importa el modelo de usuario para interactuar con la base de datos q9wuhqwi9ouehjfew
+use App\Models\UserModel; // Importa el modelo de usuario para interactuar con la base de datos
 use Config\Services;
 
 class AuthController extends BaseController
