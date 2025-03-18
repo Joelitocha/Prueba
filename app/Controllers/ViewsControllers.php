@@ -29,10 +29,5 @@ class ViewsControllers extends BaseController // Definición de la clase ViewsCo
     public function VistaAlertas() {
         return view("ver-alertas"); // Retorna la vista 'ver-alertas'
     }
-
-    // Método para cargar la vista de historial de cambios
-    public function VistaHistorial() {
-        return view("ver-historial-cambios"); // Retorna la vista 'ver-historial-cambios'
-    }
 }
 ?>

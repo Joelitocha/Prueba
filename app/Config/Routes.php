@@ -31,7 +31,6 @@ $routes->post('/modificar-usuario2', 'UserController::VistaModificar2');  // Pro
 $routes->get('/eliminar-usuarios', 'UserController::VistaEliminar');  // Vista para eliminar usuarios
 $routes->get('/consultar-rfid', 'ViewsControllers::VistaConsultar');  // Vista para consultar RFID
 $routes->get('/ver-alertas', 'ViewsControllers::VistaAlertas');  // Vista para ver alertas
-$routes->get('/ver-historial-cambios', 'ViewsControllers::VistaHistorial');  // Vista para ver historial de cambios
 
 // Otras rutas protegidas
 $routes->post('/actualizar-usuario', 'UserController::actualizarUsuario');  // Proceso de actualización de usuario
@@ -48,6 +47,11 @@ $routes->post('/eliminar-tarjeta', 'TarjetaController::delete');  // Proceso de 
 
 // Rutas para el registro de accesos a través de tarjeta
 $routes->get('/ver-accesos-tarjeta', 'RegistrosAccesoController::verRegistros');  // Ver registros de acceso por tarjeta
+
+// Rutas para ver los registros 
+$routes->get('/historial-cambios', 'HistorialController::index');
+$routes->get('/historial-cambios/ver/(:segment)', 'HistorialController::verArchivo/$1');
+
 
 // Rutas adicionales
 $routes->get('/crear-tarjeta', 'CrearTarjetaController::index');  // Vista para crear tarjeta
