@@ -3,6 +3,7 @@
 namespace App\Controllers; // Define el espacio de nombres para organizar el proyecto
 
 use App\Models\UserModel; // Importa el modelo de usuario para interactuar con la base de datos
+use Config\Services;
 
 class AuthController extends BaseController
 {
@@ -14,20 +15,21 @@ class AuthController extends BaseController
     // Método para iniciar sesión
     public function loginUser()
     {
-        $model = new UserModel(); // Crea una instancia del modelo UserModel
-        $email = $this->request->getPost('Email'); // Obtiene el email ingresado por el usuario
-        $password = $this->request->getPost('Contraseña'); // Obtiene la contraseña ingresada por el usuario
+        $model = new UserModel();
+        $email = $this->request->getPost('Email');
+        $password = $this->request->getPost('Contraseña');
 
-        $user = $model->where('Email', $email)->first(); // Busca en la base de datos un usuario con el email ingresado
+        $user = $model->where('Email', $email)->first();
 
         // Verifica si el usuario existe y la contraseña es correcta
         if ($user && password_verify($password, $user['Contraseña'])) {
-            // Actualiza el campo Ultimo_Acceso con la fecha y hora actual
+            // Verificar si la cuenta está verificada
+            if ($user['Verificado'] == 0) {
+                return redirect()->to('/')->with('error', 'Cuenta no verificada. Por favor, revisa tu correo.');
+            }
+
             $model->update($user['ID_Usuario'], ['Ultimo_Acceso' => date('Y-m-d H:i:s')]);
-
-            $session = session(); // Inicia la sesión
-
-            // Define los datos de sesión para el usuario
+            $session = session();
             $datos = [
                 "user_id" => $user["ID_Usuario"],
                 "logged_in" => true,
@@ -35,46 +37,78 @@ class AuthController extends BaseController
                 "ID_Rol" => $user["ID_Rol"],
                 'ID_tarjeta' => $user['ID_Tarjeta']
             ];
-            $session->set($datos); // Guarda los datos en la sesión
+            $session->set($datos);
 
-            return redirect()->to('/bienvenido'); // Redirige a la página de bienvenida
+            return redirect()->to('/bienvenido');
         } else {
-            // Si el usuario o la contraseña no son correctos, redirige al login con un mensaje de error
             return redirect()->to('/')->with('error', 'Usuario o clave incorrectos');
         }
     }
-    
+    private function generarToken()
+    {
+        return bin2hex(random_bytes(16));
+    }
+    private function enviarCorreoVerificacion($email, $token)
+    {
+        $verificationLink = base_url("verify?token=" . $token);
+        $cuerpo = "
+            <h2>¡Bienvenido a RackON!</h2>
+            <p>Haz clic en el siguiente enlace para verificar tu cuenta:</p>
+            <a href='$verificationLink'>Verificar Cuenta</a>
+            <p>Si no solicitaste esta cuenta, ignora este mensaje.</p>
+        ";
+        return Services::sendEmail($email, 'Verificación de cuenta - RackON', $cuerpo);
+    }
+    private function enviarCredenciales($email, $nombre, $password)
+    {
+        $cuerpo = "
+            <h2>Cuenta Verificada</h2>
+            <p>Tu cuenta ha sido verificada exitosamente.</p>
+            <p>Nombre de usuario: $nombre</p>
+            <p>Contraseña: $password</p>
+        ";
+        return Services::sendEmail($email, 'Credenciales de acceso - RackON', $cuerpo);
+    }
+    public function verifyEmail()
+    {
+        $model = new UserModel();
+        $token = $this->request->getGet('token');
+        $user = $model->where('Token', $token)->first();
+
+        if ($user) {
+            $model->update($user['ID_Usuario'], ['Verificado' => 1, 'Token' => null]);
+            $this->enviarCredenciales($user['Email'], $user['Nombre'], 'contraseña');
+            return redirect()->to('/')->with('success', 'Cuenta verificada correctamente.');
+        }
+
+        return redirect()->to('/')->with('error', 'Enlace de verificación inválido.');
+    }
     // Método para registrar un nuevo usuario
     public function registerUser()
     {
-        $session=session();
-        $model = new UserModel(); // Crea una instancia del modelo UserModel
-        $nombre = $this->request->getPost('Nombre'); // Obtiene el nombre ingresado
-        $email = $this->request->getPost('Email'); // Obtiene el email ingresado
-        $password = password_hash($this->request->getPost('Contraseña'), PASSWORD_DEFAULT); // Hashea la contraseña ingresada
-        $uid = $this->request->getPost('ID_Tarjeta'); // Obtiene el ID de tarjeta ingresado
-        $rol = $this->request->getPost('ID_Rol'); // Obtiene el rol ingresado
+        $model = new UserModel();
+        $nombre = $this->request->getPost('Nombre');
+        $email = $this->request->getPost('Email');
+        $password = password_hash($this->request->getPost('Contraseña'), PASSWORD_DEFAULT);
+        $uid = $this->request->getPost('ID_Tarjeta');
+        $rol = $this->request->getPost('ID_Rol');
 
-        $existingUser = $model->userExists($email, $nombre); // Verifica si el usuario ya existe
+        $token = $this->generarToken();
 
-        if ($existingUser) {
-            // Si el usuario ya está registrado, redirige al login con un mensaje de error
-            return redirect()->to('/')->with('error', 'El correo o usuario ya están registrados');
-        }
-
-        // Inserta el nuevo usuario en la base de datos
         $model->insertUser([
             'Nombre' => $nombre,
             'Email' => $email,
             'Contraseña' => $password,
             'ID_Rol' => $rol,
-            'ID_Tarjeta' => $uid
+            'ID_Tarjeta' => $uid,
+            'Token' => $token,
+            'Verificado' => 0
         ]);
-        $session->setFlashdata('success','Usuario creado correctamente');
-        return redirect()->to('/register'); // Redirige a la bienvenida con mensaje de éxito
+
+        $this->enviarCorreoVerificacion($email, $token);
+        return redirect()->to('/register')->with('success', 'Usuario creado. Verifica tu correo.');
     }
 
-    // Método para mostrar la página de bienvenida solo si el usuario tiene sesión iniciada
     public function welcome()
     {
         $session = session(); // Inicia la sesión

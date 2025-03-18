@@ -14,7 +14,7 @@ class UserModel extends Model
     protected $returnType     = 'array'; // Tipo de retorno para los resultados
     protected $useSoftDeletes = false; // Indica si se utilizarán eliminaciones suaves
 
-    protected $allowedFields = ['Nombre', 'Contraseña', 'Email', 'Ultimo_Acceso', 'ID_Rol', 'ID_Tarjeta']; // Campos permitidos para operaciones de inserción y actualización
+    protected $allowedFields = ['Nombre', 'Contraseña', 'Email', 'Ultimo_Acceso', 'ID_Rol', 'ID_Tarjeta', 'Token', 'Verificado'];
 
     protected $useTimestamps = false; // Indica si se utilizarán marcas de tiempo
 
