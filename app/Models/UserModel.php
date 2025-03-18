@@ -50,12 +50,14 @@ class UserModel extends Model
     }
 
     // Método para actualizar un usuario existente
-    public function updateUser($id, $data)
-    {
-        $query = $this->db->table('usuario'); // Accede a la tabla 'usuario'
-        $query->where(['ID_Usuario' => $id]); // Aplica una condición para buscar el usuario por ID
-        $query->update($data); // Actualiza los datos del usuario
-    }
+    // Método para actualizar un usuario existente
+public function updateUser($id, $data)
+{
+    return $this->db->table($this->table) // Utiliza la propiedad $table en lugar de escribir 'usuario' directamente
+                    ->where(['ID_Usuario' => $id]) // Busca el usuario por ID
+                    ->update($data); // Realiza la actualización y devuelve true o false
+}
+
 
     // Método para obtener un usuario específico por su ID
     public function getUserbyid($id)

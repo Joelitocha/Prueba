@@ -120,8 +120,8 @@ function verContenido(archivo) {
         method: "POST",
         data: { nombreArchivo: archivo },
         success: function(data) {
-            $("#contenido").text(data);
-            $("#modal").css("display", "flex");
+            $("#contenido").text(data); // Muestra el contenido en la terminal
+            $("#modal").css("display", "flex"); // Muestra el modal
         },
         error: function() {
             alert("Error al cargar el contenido del archivo.");
@@ -133,6 +133,7 @@ function cerrarModal() {
     $("#modal").hide();
 }
 </script>
+
 
 
 </body>
