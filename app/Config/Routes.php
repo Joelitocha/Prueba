@@ -50,7 +50,7 @@ $routes->get('/ver-accesos-tarjeta', 'RegistrosAccesoController::verRegistros');
 
 // Rutas para ver los registros 
 $routes->get('/historial-cambios', 'HistorialController::index');
-$routes->get('/historial-cambios/ver/(:segment)', 'HistorialController::verArchivo/$1');
+$routes->post('/historial-cambios/ver', 'HistorialController::verArchivo');
 
 
 // Rutas adicionales

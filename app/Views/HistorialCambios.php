@@ -17,8 +17,12 @@ if ($session->get("ID_Rol") != 5 && $session->get("ID_Rol") != 6) {
 }
 
 // Obtener la lista de archivos en el directorio de cambios
-$directorio = 'cambios/';
+$directorio = WRITEPATH . 'logs/cambios/';
+if (!is_dir($directorio)) {
+    mkdir($directorio, 0755, true); // Crear el directorio si no existe
+}
 $archivos = array_diff(scandir($directorio), array('.', '..'));
+
 ?>
 
 <!doctype html>
@@ -95,7 +99,7 @@ $archivos = array_diff(scandir($directorio), array('.', '..'));
             <tr>
                 <td><?php echo $archivo; ?></td>
                 <td>
-                    <button class="boton-ver" onclick="verContenido('<?php echo $directorio . $archivo; ?>')">Ver</button>
+                    <button class="boton-ver" onclick="verContenido('<?php echo $archivo; ?>')">Ver</button>
                 </td>
             </tr>
         <?php endforeach; ?>
@@ -110,16 +114,26 @@ $archivos = array_diff(scandir($directorio), array('.', '..'));
 </div>
 
 <script>
-function verContenido(ruta) {
-    $.get(ruta, function(data) {
-        $("#contenido").text(data);
-        $("#modal").css("display", "flex");
+function verContenido(archivo) {
+    $.ajax({
+        url: "<?= site_url('historial-cambios/ver'); ?>",
+        method: "POST",
+        data: { nombreArchivo: archivo },
+        success: function(data) {
+            $("#contenido").text(data);
+            $("#modal").css("display", "flex");
+        },
+        error: function() {
+            alert("Error al cargar el contenido del archivo.");
+        }
     });
 }
+
 function cerrarModal() {
     $("#modal").hide();
 }
 </script>
+
 
 </body>
 </html>

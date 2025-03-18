@@ -7,11 +7,35 @@ use App\Models\UserModel; // Importa el modelo de usuario
 
 class UserController extends BaseController
 {
+    // Función para registrar cambios en el historial
+    private function registrarCambio($mensaje)
+{
+    $logPath = WRITEPATH . 'logs/cambios/';
+    if (!is_dir($logPath)) {
+        if (!mkdir($logPath, 0755, true)) {
+            echo "Error al crear el directorio de cambios.";
+            return;
+        }
+    }
+
+    // Nombre del archivo con la fecha actual
+    $nombreArchivo = $logPath . 'historial_cambios_' . date('Y-m-d') . '.txt';
+
+    // Formato del mensaje con la hora actual
+    $registro = "[" . date('H:i:s') . "] " . $mensaje . PHP_EOL;
+
+    // Intentar escribir en el archivo
+    if (file_put_contents($nombreArchivo, $registro, FILE_APPEND) === false) {
+        echo "Error al escribir en el archivo de cambios.";
+    }
+}
+
+
     // Función para cargar la vista de modificación de usuario
     public function Modificar($id = null)
     {
-        $session = \Config\Services::session(); // Inicializa el servicio de sesión
-        $userModel = new UserModel(); // Crea una instancia del modelo de usuario
+        $session = \Config\Services::session();
+        $userModel = new UserModel();
 
         // Buscar el usuario por ID
         $usuario = $userModel->find($id);
@@ -22,26 +46,22 @@ class UserController extends BaseController
         }
 
         $data = [
-            'user_id' => $usuario // Prepara los datos del usuario para la vista
+            'user_id' => $usuario
         ];
 
-        // Cargar la vista de modificación
         return view('modificar-usuario', $data);
     }
 
     // Función para actualizar los datos del usuario
     public function actualizarUsuario()
     {
-        $userModel = new UserModel(); // Instancia del modelo de usuarios
-    
-        // Obtener los datos del formulario
+        $userModel = new UserModel();
         $id = $this->request->getPost('id');
         $nombre = $this->request->getPost('Nombre');
         $email = $this->request->getPost('Email');
         $rol = $this->request->getPost('ID_Rol');
         $tarjeta = $this->request->getPost('ID_Tarjeta');
-    
-        // Crear un arreglo con los datos que quieres actualizar
+
         $data = [
             'ID_Usuario' => $id,
             'Nombre' => $nombre,
@@ -49,54 +69,53 @@ class UserController extends BaseController
             'ID_Rol' => $rol,
             'ID_Tarjeta' => $tarjeta,
         ];
-    
+
         // Actualizar los datos del usuario
-        $userModel->updateUser($id, $data);
-    
-        // Redirigir a la vista de modificación
-        return redirect()->to(site_url('/modificar-usuario'))->with('success', 'Usuario actualizado correctamente');
+        if ($userModel->updateUser($id, $data)) {
+            // Registrar el cambio en el historial
+            $mensaje = "CTU: Se modificaron los privilegios de \"{$nombre}\" al estado de \"{$rol}\".";
+            $this->registrarCambio($mensaje);
+            return redirect()->to(site_url('/modificar-usuario'))->with('success', 'Usuario actualizado correctamente');
+        } else {
+            return redirect()->to(site_url('/modificar-usuario'))->with('error', 'Hubo un problema al actualizar el usuario.');
+        }
     }
-    
 
     // Función para mostrar la vista de modificar usuarios
     public function VistaModificar()
     {
-        $userModel = new UserModel(); // Instancia del modelo de usuario
-        $user = $userModel->getUser(); // Obtiene todos los usuarios
-        return view("modificar-usuario", ['user' => $user]); // Carga la vista con los usuarios
+        $userModel = new UserModel();
+        $user = $userModel->getUser();
+        return view("modificar-usuario", ['user' => $user]);
     }
 
     // Función para mostrar la vista de modificación de un usuario específico
     public function VistaModificar2()
     {
-        $id = $this->request->getPost('id'); // Obtiene el ID del usuario
-        $userModel = new UserModel(); // Instancia del modelo de usuario
-        $tarjetaModel = new \App\Models\TarjetaModel(); // Instancia del modelo de tarjeta
-    
-        // Obtén el usuario por ID
+        $id = $this->request->getPost('id');
+        $userModel = new UserModel();
+        $tarjetaModel = new \App\Models\TarjetaModel();
+        
         $user = $userModel->getUserbyid($id);
-    
-        // Obtén todas las tarjetas
         $tarjetas = $tarjetaModel->getAllTarjetas();
-    
-        // Pasa los datos del usuario y las tarjetas a la vista
+
         return view("modificar-usuario2", ['user' => $user, 'tarjetas' => $tarjetas]);
     }
-
 
     // Función para eliminar un usuario
     public function eliminarUsuario()
     {
         $userModel = new UserModel();
         $id = $this->request->getPost('id');
-    
-        if ($userModel->delete($id)) {
-            // Establecer un mensaje de éxito en la sesión
+        $usuario = $userModel->find($id);
+
+        if ($usuario && $userModel->delete($id)) {
+            // Registrar el cambio en el historial
+            $mensaje = "EU: El usuario \"{$usuario['Nombre']}\" ha sido eliminado.";
+            $this->registrarCambio($mensaje);
             return redirect()->to('/modificar-usuario')->with('success', 'El usuario ha sido eliminado correctamente.');
         } else {
-            // Establecer un mensaje de error en caso de fallo
             return redirect()->to('/modificar-usuario')->with('error', 'Hubo un problema al eliminar el usuario.');
         }
     }
-    
 }
