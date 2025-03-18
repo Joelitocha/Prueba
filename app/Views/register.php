@@ -154,7 +154,6 @@ body {
     <h2>Crear Usuario</h2>
     <input type="text" placeholder="Nombre Completo" name="Nombre" required>
     <input type="email" placeholder="Correo Electrónico" name="Email" required>
-    <input type="password" placeholder="Contraseña" name="Contraseña" required>
     <label for="ID_Tarjeta">Seleccionar Tarjeta:</label>
     <select name="ID_Tarjeta" id="ID_Tarjeta" required>
       <option value="">Seleccione una tarjeta</option>

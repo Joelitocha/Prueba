@@ -59,55 +59,98 @@ class AuthController extends BaseController
         ";
         return Services::sendEmail($email, 'Verificación de cuenta - RackON', $cuerpo);
     }
-    private function enviarCredenciales($email, $nombre, $password)
-    {
-        $cuerpo = "
-            <h2>Cuenta Verificada</h2>
-            <p>Tu cuenta ha sido verificada exitosamente.</p>
-            <p>Nombre de usuario: $nombre</p>
-            <p>Contraseña: $password</p>
-        ";
-        return Services::sendEmail($email, 'Credenciales de acceso - RackON', $cuerpo);
-    }
-    public function verifyEmail()
-    {
-        $model = new UserModel();
-        $token = $this->request->getGet('token');
-        $user = $model->where('Token', $token)->first();
+// Método para enviar el correo con las credenciales
+// Método para enviar el correo con las credenciales
+private function enviarCredenciales($email, $nombre, $password)
+{
+    $cuerpo = "
+        <h2>Cuenta Verificada</h2>
+        <p>Tu cuenta ha sido verificada exitosamente.</p>
+        <p>Nombre de usuario (Email): $email</p>
+        <p>Contraseña: $password</p>
+        <p>Puedes acceder a la plataforma utilizando estas credenciales.</p>
+    ";
+    return Services::sendEmail($email, 'Credenciales de acceso - RackON', $cuerpo);
+}
 
-        if ($user) {
-            $model->update($user['ID_Usuario'], ['Verificado' => 1, 'Token' => null]);
-            $this->enviarCredenciales($user['Email'], $user['Nombre'], 'contraseña');
-            return redirect()->to('/')->with('success', 'Cuenta verificada correctamente.');
+// Método para generar una contraseña segura y aleatoria
+private function generarContrasena($longitud = 16) {
+    $caracteres = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()';
+    $contrasena = '';
+    for ($i = 0; $i < $longitud; $i++) {
+        $contrasena .= $caracteres[rand(0, strlen($caracteres) - 1)];
+    }
+    return $contrasena;
+}
+
+// Verificar el correo electrónico mediante el token
+public function verifyEmail()
+{
+    $model = new UserModel();
+    $token = $this->request->getGet('token');
+    $user = $model->where('Token', $token)->first();
+
+    if ($user) {
+        $model->update($user['ID_Usuario'], ['Verificado' => 1, 'Token' => null]);
+
+        // Recuperar la información desde la sesión temporal
+        $plainPassword = session()->get('plainPassword');
+        $plainEmail = session()->get('plainEmail');
+        $plainNombre = session()->get('plainNombre');
+
+        // Verificar que los datos estén disponibles
+        if (!empty($plainEmail) && !empty($plainPassword) && !empty($plainNombre)) {
+            // Enviar el correo con las credenciales después de la verificación
+            $this->enviarCredenciales($plainEmail, $plainNombre, $plainPassword);
+
+            // Limpiar los datos de la sesión
+            session()->remove('plainPassword');
+            session()->remove('plainEmail');
+            session()->remove('plainNombre');
+
+            return redirect()->to('/')->with('success', 'Cuenta verificada correctamente. Credenciales enviadas por correo.');
+        } else {
+            return redirect()->to('/')->with('error', 'Error al enviar las credenciales después de la verificación.');
         }
-
-        return redirect()->to('/')->with('error', 'Enlace de verificación inválido.');
     }
-    // Método para registrar un nuevo usuario
-    public function registerUser()
-    {
-        $model = new UserModel();
-        $nombre = $this->request->getPost('Nombre');
-        $email = $this->request->getPost('Email');
-        $password = password_hash($this->request->getPost('Contraseña'), PASSWORD_DEFAULT);
-        $uid = $this->request->getPost('ID_Tarjeta');
-        $rol = $this->request->getPost('ID_Rol');
 
-        $token = $this->generarToken();
+    return redirect()->to('/')->with('error', 'Enlace de verificación inválido.');
+}
+// Método para registrar un nuevo usuario
+public function registerUser()
+{
+    $model = new UserModel();
+    $nombre = $this->request->getPost('Nombre');
+    $email = $this->request->getPost('Email');
+    $uid = $this->request->getPost('ID_Tarjeta');
+    $rol = $this->request->getPost('ID_Rol');
 
-        $model->insertUser([
-            'Nombre' => $nombre,
-            'Email' => $email,
-            'Contraseña' => $password,
-            'ID_Rol' => $rol,
-            'ID_Tarjeta' => $uid,
-            'Token' => $token,
-            'Verificado' => 0
-        ]);
+    // Generar una contraseña segura y aleatoria
+    $password = $this->generarContrasena();
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT); // Hasheamos la contraseña
 
-        $this->enviarCorreoVerificacion($email, $token);
-        return redirect()->to('/register')->with('success', 'Usuario creado. Verifica tu correo.');
-    }
+    $token = $this->generarToken();
+
+    // Guardar el usuario en la base de datos con la contraseña hasheada
+    $model->insertUser([
+        'Nombre' => $nombre,
+        'Email' => $email,
+        'Contraseña' => $hashedPassword,
+        'ID_Rol' => $rol,
+        'ID_Tarjeta' => $uid,
+        'Token' => $token,
+        'Verificado' => 0
+    ]);
+
+    // Guardar la contraseña en sesión temporal para enviarla después de la verificación
+    session()->set('plainPassword', $password);
+    session()->set('plainEmail', $email);
+    session()->set('plainNombre', $nombre);
+
+    // Enviar el correo de verificación
+    $this->enviarCorreoVerificacion($email, $token);
+    return redirect()->to('/register')->with('success', 'Usuario creado. Verifica tu correo.');
+}
 
     public function welcome()
     {
