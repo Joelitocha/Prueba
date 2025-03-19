@@ -1,6 +1,6 @@
 <!-- asignar-tarjeta.php -->
 <?php
-    // Verificar si la sesión está iniciada
+    // Verificar si la sesión está iniciada q nai
     if (!isset($session)) {
         $session = session();
     }
