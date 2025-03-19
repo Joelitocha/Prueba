@@ -11,7 +11,7 @@ class Email extends BaseConfig
     public string $recipients = '';
 
     /**
-     * The "user agent"
+     * The "user agent"wet
      */
     public string $userAgent = 'CodeIgniter';
 
