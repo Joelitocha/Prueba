@@ -228,12 +228,10 @@ body {
       }
     ?>
   </div>
-  
   <div class="menu-heading">Menu</div>
   <a href="<?php echo site_url('/bienvenido');?>" class="menu-item">
     <i class="fas fa-home"></i> Inicio
   </a>
-
   <!-- Opciones para Administrador -->
 <?php if ($rol == 5): ?>
   <div class="menu-heading">Usuarios</div>
@@ -241,24 +239,18 @@ body {
     <i class="fas fa-user-edit"></i> Gestor de Usuarios
   </a>
 <?php endif; ?>
-
 <!-- Opciones para Tarjetas disponibles para todos los roles -->
 <div class="menu-heading">Tarjetas</div>
-
 <!-- Administrador puede gestionar tarjetas -->
 <?php if ($rol == 5): ?>
   <a href="<?php echo site_url('/modificar-tarjeta');?>" class="menu-item"> <!-- Cambia "1" por el ID dinámico -->
     <i class="fas fa-user-edit"></i> Gestor de Tarjetas
   </a>
 <?php endif; ?>
-
-
-
 <!-- Consultar estado de tarjetas, accesible para todos los roles -->
 <a href="<?php echo site_url('/consultar-rfid');?>" class="menu-item">
   <i class="fas fa-search"></i> Consultar Estado de Tarjetas
 </a>
-
 <!-- Opciones para Supervisor y Administrador -->
 <?php if ($rol == 5 || $rol == 6): ?>
   <div class="menu-heading">Reportes</div>
@@ -268,17 +260,15 @@ body {
   <a href="<?php echo site_url('/ver-accesos-tarjeta');?>" class="menu-item">
     <i class="fas fa-key"></i> Ver Accesos de Tarjeta
   </a>
-  <a href="<?php echo site_url('/ver-historial-cambios');?>" class="menu-item">
+  <a href="<?php echo site_url('/historial-cambios');?>" class="menu-item">
     <i class="fas fa-history"></i> Ver Historial de Cambios
   </a>
 <?php endif; ?>
-
 <!-- Nueva Categoría para Cerrar Sesión -->
 <div class="menu-heading">Cerrar Sesión</div>
 <a onclick="cerrarsesion('<?php echo site_url('/logout');?>')" class="menu-item">
   <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
 </a>
-
 </div>
 <!-- Fin Sidebar -->
 <div class="modtar">

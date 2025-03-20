@@ -330,7 +330,7 @@
   <a href="<?php echo site_url('/ver-accesos-tarjeta');?>" class="menu-item">
     <i class="fas fa-key"></i> Ver Accesos de Tarjeta
   </a>
-  <a href="<?php echo site_url('/ver-historial-cambios');?>" class="menu-item">
+  <a href="<?php echo site_url('/historial-cambios');?>" class="menu-item">
     <i class="fas fa-history"></i> Ver Historial de Cambios
   </a>
 <?php endif; ?>

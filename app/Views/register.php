@@ -149,6 +149,7 @@ body {
     </style>
   </head>
   <body>
+    
   <div class="registro">
   <form action="<?php echo site_url('/register2') ?>" method="POST" class="formulario__register">
     <h2>Crear Usuario</h2>

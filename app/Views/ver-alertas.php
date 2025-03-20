@@ -155,7 +155,7 @@
 
   </style>
 
-  <!-- Incluir Sidebar -->
+ <!-- Incluir Sidebar -->
 <div class="sidebar">
   <div class="logo">
     <?php 
@@ -176,7 +176,7 @@
 <?php if ($rol == 5): ?>
   <div class="menu-heading">Usuarios</div>
   <a href="<?php echo site_url('/modificar-usuario');?>" class="menu-item">
-    <i class="fas fa-user-edit"></i> Gestor de Tarjetas
+    <i class="fas fa-user-edit"></i> Gestor de Usuarios
   </a>
 <?php endif; ?>
 <!-- Opciones para Tarjetas disponibles para todos los roles -->
@@ -200,19 +200,18 @@
   <a href="<?php echo site_url('/ver-accesos-tarjeta');?>" class="menu-item">
     <i class="fas fa-key"></i> Ver Accesos de Tarjeta
   </a>
-  <a href="<?php echo site_url('/ver-historial-cambios');?>" class="menu-item">
+  <a href="<?php echo site_url('/historial-cambios');?>" class="menu-item">
     <i class="fas fa-history"></i> Ver Historial de Cambios
   </a>
 <?php endif; ?>
-
 <!-- Nueva Categoría para Cerrar Sesión -->
 <div class="menu-heading">Cerrar Sesión</div>
 <a onclick="cerrarsesion('<?php echo site_url('/logout');?>')" class="menu-item">
   <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
 </a>
-
 </div>
 <!-- Fin Sidebar -->
+
 <div class="alerta">
       <h1>Alertas del Sistema</h1>
       <ul>
