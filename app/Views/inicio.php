@@ -274,7 +274,7 @@ body {
       </div>
       <div class="welcome-message">
         <?php 
-        // Mostrar mensaje basado en el rol
+        // Mostrar mensaje basado en el rol ndea
         if ($rol == 5) { // Administrador
             echo "<p>Hola Administrador, bienvenido. Aquí podrás gestionar usuarios, tarjetas y revisar reportes para asegurar que todo esté en orden. ¡Gracias por mantener el sistema funcionando de manera eficiente!</p>";
         } elseif ($rol == 6) { // Supervisor
