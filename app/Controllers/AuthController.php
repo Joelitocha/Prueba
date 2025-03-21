@@ -60,7 +60,6 @@ class AuthController extends BaseController
         return Services::sendEmail($email, 'Verificación de cuenta - RackON', $cuerpo);
     }
 // Método para enviar el correo con las credenciales
-// Método para enviar el correo con las credenciales
 private function enviarCredenciales($email, $nombre, $password)
 {
     $cuerpo = "

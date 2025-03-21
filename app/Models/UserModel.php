@@ -50,7 +50,6 @@ class UserModel extends Model
     }
 
     // Método para actualizar un usuario existente
-    // Método para actualizar un usuario existente
 public function updateUser($id, $data)
 {
     return $this->db->table($this->table) // Utiliza la propiedad $table en lugar de escribir 'usuario' directamente
