@@ -9,10 +9,9 @@ class AuthController extends BaseController
 {
     public function index()
     {
-        return view('login'); 
+        return view('login');
     }
 
-    // Método para iniciar sesión
     public function loginUser()
     {
         $model = new UserModel();
@@ -23,17 +22,18 @@ class AuthController extends BaseController
 
         if ($user && password_verify($password, $user['Contraseña'])) {
             if ($user['Verificado'] == 0) {
-                return redirect()->to('/')->with('error', 'Cuenta no verificada. Revisa tu correo.');
+                return redirect()->to('/')->with('error', 'Cuenta no verificada. Por favor, revisa tu correo.');
             }
 
             $model->update($user['ID_Usuario'], ['Ultimo_Acceso' => date('Y-m-d H:i:s')]);
+
             $session = session();
             $datos = [
                 "user_id" => $user["ID_Usuario"],
                 "logged_in" => true,
                 "username" => $user["Nombre"],
                 "ID_Rol" => $user["ID_Rol"],
-                'ID_tarjeta' => $user['ID_Tarjeta']
+                "ID_tarjeta" => $user["ID_Tarjeta"]
             ];
             $session->set($datos);
 
@@ -65,14 +65,14 @@ class AuthController extends BaseController
         $cuerpo = "
             <h2>Cuenta Verificada</h2>
             <p>Tu cuenta ha sido verificada exitosamente.</p>
-            <p><strong>Nombre de usuario (Email):</strong> $email</p>
-            <p><strong>Contraseña:</strong> $password</p>
+            <p>Nombre de usuario (Email): $email</p>
+            <p>Contraseña: $password</p>
             <p>Puedes acceder a la plataforma utilizando estas credenciales.</p>
         ";
         return Services::sendEmail($email, 'Credenciales de acceso - RackON', $cuerpo);
     }
 
-    private function generarContrasena($longitud = 16) 
+    private function generarContrasena($longitud = 16)
     {
         $caracteres = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()';
         $contrasena = '';
@@ -91,14 +91,20 @@ class AuthController extends BaseController
         if ($user) {
             $model->update($user['ID_Usuario'], ['Verificado' => 1, 'Token' => null]);
 
-            // Recuperar datos almacenados temporalmente en sesión
-            $plainPassword = session()->getFlashdata('plainPassword');
-            $plainEmail = session()->getFlashdata('plainEmail');
-            $plainNombre = session()->getFlashdata('plainNombre');
+            // Recuperar datos de sesión
+            $plainPassword = session()->get('plainPassword');
+            $plainEmail = session()->get('plainEmail');
+            $plainNombre = session()->get('plainNombre');
 
             // Verificar que los datos estén disponibles
             if (!empty($plainEmail) && !empty($plainPassword) && !empty($plainNombre)) {
                 $this->enviarCredenciales($plainEmail, $plainNombre, $plainPassword);
+
+                // Limpiar datos de sesión
+                session()->remove('plainPassword');
+                session()->remove('plainEmail');
+                session()->remove('plainNombre');
+
                 return redirect()->to('/')->with('success', 'Cuenta verificada correctamente. Credenciales enviadas por correo.');
             } else {
                 log_message('error', '❌ Error: No se encontraron datos de sesión para enviar credenciales.');
@@ -117,10 +123,13 @@ class AuthController extends BaseController
         $uid = $this->request->getPost('ID_Tarjeta');
         $rol = $this->request->getPost('ID_Rol');
 
+        // Generar una contraseña segura y aleatoria
         $password = $this->generarContrasena();
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
         $token = $this->generarToken();
 
+        // Guardar el usuario en la base de datos con la contraseña hasheada
         $model->insertUser([
             'Nombre' => $nombre,
             'Email' => $email,
@@ -132,10 +141,11 @@ class AuthController extends BaseController
         ]);
 
         // Guardar la contraseña en sesión temporal para enviarla después de la verificación
-        session()->setFlashdata('plainPassword', $password);
-        session()->setFlashdata('plainEmail', $email);
-        session()->setFlashdata('plainNombre', $nombre);
+        session()->set('plainPassword', $password);
+        session()->set('plainEmail', $email);
+        session()->set('plainNombre', $nombre);
 
+        // Enviar el correo de verificación
         $this->enviarCorreoVerificacion($email, $token);
         return redirect()->to('/register')->with('success', 'Usuario creado. Verifica tu correo.');
     }
@@ -159,12 +169,8 @@ class AuthController extends BaseController
     public function logout()
     {
         $session = session();
-        $session->remove('user_id');
-        $session->remove('logged_in');
-        $session->remove('username');
         $session->destroy();
         setcookie(session_name(), '', time() - 3600);
         return redirect()->to('/');
     }
 }
-?>
