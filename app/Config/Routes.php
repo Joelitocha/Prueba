@@ -15,11 +15,14 @@ $routes->post('/login', 'AuthController::loginUser');  // Iniciar sesión
 // Ruta para la página de bienvenida después de iniciar sesión
 $routes->get('/bienvenido', 'AuthController::welcome');  // Página de bienvenida
 
-// Rutas para registro de usuario (solo para administrador)
+// Rutas para registro y verificación de usuario
 $routes->get('/register', 'AuthController::registro');  // Formulario de registro
 $routes->post('/register2', 'AuthController::registerUser');  // Proceso de registro
-$routes->get('/verify', 'AuthController::verifyEmail');
+$routes->get('/verify', 'AuthController::verifyEmail'); // Verificación de email (GET)
 
+// Nuevas rutas para el flujo de establecimiento de contraseña
+$routes->get('/set-password', 'AuthController::showSetPassword'); // Mostrar formulario para establecer contraseña
+$routes->post('/complete-registration', 'AuthController::completeRegistration'); // Procesar contraseña
 
 // Rutas para cerrar sesión
 $routes->get('/logout', 'AuthController::logout');  // Cerrar sesión (GET)
@@ -52,7 +55,6 @@ $routes->get('/ver-accesos-tarjeta', 'RegistrosAccesoController::verRegistros');
 $routes->get('/historial-cambios', 'HistorialController::index');
 $routes->post('/historial-cambios/ver', 'HistorialController::verArchivo');
 
-
 // Rutas adicionales
 $routes->get('/crear-tarjeta', 'CrearTarjetaController::index');  // Vista para crear tarjeta
 $routes->post('/crear-tarjeta', 'CrearTarjetaController::store');  // Proceso de creación de tarjeta
@@ -61,5 +63,7 @@ $routes->post('/consultar-rfid', 'TarjetaController::verEstadoTarjeta');  // Con
 // Rutas para ESP32
 $routes->post('cargar_acceso', 'Esp32Controller::insertar_registro');  // Registrar acceso desde ESP32
 
-
-?>
+// Filtros de autenticación (ejemplo)
+// $routes->group('', ['filter' => 'auth'], function($routes) {
+//     $routes->get('/dashboard', 'DashboardController::index');
+// });

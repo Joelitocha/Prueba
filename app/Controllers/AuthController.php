@@ -55,31 +55,22 @@ class AuthController extends BaseController
             <h2>¡Bienvenido a RackON!</h2>
             <p>Haz clic en el siguiente enlace para verificar tu cuenta:</p>
             <a href='$verificationLink'>Verificar Cuenta</a>
+            <p>Después de la verificación, podrás establecer tu contraseña.</p>
             <p>Si no solicitaste esta cuenta, ignora este mensaje.</p>
         ";
         return Services::sendEmail($email, 'Verificación de cuenta - RackON', $cuerpo);
     }
 
-    private function enviarCredenciales($email, $nombre, $password)
+    private function enviarCredenciales($email, $nombre, $mensaje)
     {
         $cuerpo = "
             <h2>Cuenta Verificada</h2>
-            <p>Tu cuenta ha sido verificada exitosamente.</p>
-            <p>Nombre de usuario (Email): $email</p>
-            <p>Contraseña: $password</p>
-            <p>Puedes acceder a la plataforma utilizando estas credenciales.</p>
+            <p>Hola $nombre,</p>
+            <p>$mensaje</p>
+            <p>Puedes acceder a la plataforma utilizando tu correo electrónico y la contraseña que estableciste.</p>
+            <p>Gracias por unirte a RackON!</p>
         ";
-        return Services::sendEmail($email, 'Credenciales de acceso - RackON', $cuerpo);
-    }
-
-    private function generarContrasena($longitud = 16)
-    {
-        $caracteres = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()';
-        $contrasena = '';
-        for ($i = 0; $i < $longitud; $i++) {
-            $contrasena .= $caracteres[rand(0, strlen($caracteres) - 1)];
-        }
-        return $contrasena;
+        return Services::sendEmail($email, 'Cuenta verificada - RackON', $cuerpo);
     }
 
     public function verifyEmail()
@@ -89,30 +80,69 @@ class AuthController extends BaseController
         $user = $model->where('Token', $token)->first();
 
         if ($user) {
-            $model->update($user['ID_Usuario'], ['Verificado' => 1, 'Token' => null]);
-
-            // Recuperar datos de sesión
-            $plainPassword = session()->get('plainPassword');
-            $plainEmail = session()->get('plainEmail');
-            $plainNombre = session()->get('plainNombre');
-
-            // Verificar que los datos estén disponibles
-            if (!empty($plainEmail) && !empty($plainPassword) && !empty($plainNombre)) {
-                $this->enviarCredenciales($plainEmail, $plainNombre, $plainPassword);
-
-                // Limpiar datos de sesión
-                session()->remove('plainPassword');
-                session()->remove('plainEmail');
-                session()->remove('plainNombre');
-
-                return redirect()->to('/')->with('success', 'Cuenta verificada correctamente. Credenciales enviadas por correo.');
-            } else {
-                log_message('error', '❌ Error: No se encontraron datos de sesión para enviar credenciales.');
-                return redirect()->to('/')->with('error', 'Error al enviar las credenciales después de la verificación.');
-            }
+            // Redirigir a la página para establecer contraseña
+            return redirect()->to('/set-password?token='.$token);
         }
 
-        return redirect()->to('/')->with('error', 'Enlace de verificación inválido.');
+        return redirect()->to('/')->with('error', 'Enlace de verificación inválido o expirado.');
+    }
+
+    public function showSetPassword()
+    {
+        $token = $this->request->getGet('token');
+        
+        // Verificar que el token sea válido
+        $model = new UserModel();
+        $user = $model->where('Token', $token)->first();
+        
+        if (!$user) {
+            return redirect()->to('/')->with('error', 'Token inválido o expirado.');
+        }
+        
+        return view('set_password', ['token' => $token]);
+    }
+
+    public function completeRegistration()
+    {
+        $model = new UserModel();
+        $token = $this->request->getPost('token');
+        $password = $this->request->getPost('password');
+        $confirm_password = $this->request->getPost('confirm_password');
+
+        // Validaciones
+        if (empty($password) || empty($confirm_password)) {
+            return redirect()->back()->with('error', 'Por favor completa todos los campos.');
+        }
+
+        if ($password !== $confirm_password) {
+            return redirect()->back()->with('error', 'Las contraseñas no coinciden.');
+        }
+
+        if (strlen($password) < 8) {
+            return redirect()->back()->with('error', 'La contraseña debe tener al menos 8 caracteres.');
+        }
+
+        $user = $model->where('Token', $token)->first();
+        
+        if ($user) {
+            // Actualizar usuario con nueva contraseña
+            $model->update($user['ID_Usuario'], [
+                'Contraseña' => password_hash($password, PASSWORD_DEFAULT),
+                'Verificado' => 1,
+                'Token' => null
+            ]);
+
+            // Enviar correo de confirmación
+            $this->enviarCredenciales(
+                $user['Email'], 
+                $user['Nombre'], 
+                "Tu cuenta ha sido verificada correctamente. Ahora puedes iniciar sesión con tu email y la contraseña que acabas de establecer."
+            );
+
+            return redirect()->to('/')->with('success', 'Registro completado. Ahora puedes iniciar sesión.');
+        }
+
+        return redirect()->to('/')->with('error', 'Token inválido o expirado.');
     }
 
     public function registerUser()
@@ -123,31 +153,29 @@ class AuthController extends BaseController
         $uid = $this->request->getPost('ID_Tarjeta');
         $rol = $this->request->getPost('ID_Rol');
 
-        // Generar una contraseña segura y aleatoria
-        $password = $this->generarContrasena();
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        // Verificar si el usuario ya existe
+        if ($model->where('Email', $email)->first()) {
+            return redirect()->to('/register')->with('error', 'El correo electrónico ya está registrado.');
+        }
 
+        // Generar token de verificación
         $token = $this->generarToken();
 
-        // Guardar el usuario en la base de datos con la contraseña hasheada
-        $model->insertUser([
+        // Guardar el usuario en la base de datos con el token
+        $model->insert([
             'Nombre' => $nombre,
             'Email' => $email,
-            'Contraseña' => $hashedPassword,
+            'Contraseña' => '', // Contraseña vacía temporalmente
             'ID_Rol' => $rol,
             'ID_Tarjeta' => $uid,
             'Token' => $token,
             'Verificado' => 0
         ]);
 
-        // Guardar la contraseña en sesión temporal para enviarla después de la verificación
-        session()->set('plainPassword', $password);
-        session()->set('plainEmail', $email);
-        session()->set('plainNombre', $nombre);
-
-        // Enviar el correo de verificación
+        // Enviar el correo de verificación con instrucciones
         $this->enviarCorreoVerificacion($email, $token);
-        return redirect()->to('/register')->with('success', 'Usuario creado. Verifica tu correo.');
+        
+        return redirect()->to('/register')->with('success', 'Usuario creado. Verifica tu correo para completar el registro.');
     }
 
     public function welcome()
