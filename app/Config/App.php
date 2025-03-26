@@ -16,7 +16,7 @@ class App extends BaseConfig
      *
      * E.g., http://example.com/ 
      */
-    public $baseURL = 'http://rackon/cosas/Prueba/public/';
+    public $baseURL = 'http://192.168.2.150/cosas/Prueba/public/';
 
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.
@@ -29,7 +29,7 @@ class App extends BaseConfig
      *
      * @var list<string>
      */
-    public array $allowedHostnames = [];
+    public array $allowedHostnames = [''];
 
     /**
      * --------------------------------------------------------------------------
