@@ -202,9 +202,4 @@ class AuthController extends BaseController
         return redirect()->to('/');
     }
 
-    public function login()
-{
-    return view('login'); // Carga la vista de inicio de sesión
-}
-
 }

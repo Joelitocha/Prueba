@@ -63,8 +63,6 @@ $routes->post('/consultar-rfid', 'TarjetaController::verEstadoTarjeta');  // Con
 // Rutas para ESP32
 $routes->post('cargar_acceso', 'Esp32Controller::insertar_registro');  // Registrar acceso desde ESP32
 
-$routes->get('/', 'Home::bienvenida'); // Redirige a la nueva vista principal
-$routes->get('login', 'AuthController::login'); // Ruta al login usando AuthController
 
 
 // Filtros de autenticación (ejemplo)
