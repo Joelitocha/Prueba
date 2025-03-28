@@ -1,302 +1,341 @@
 <?php
-
     $session = session();
     $rol = $session->get("ID_Rol");
-
 ?>
 
 <!doctype html>
 <html lang="en">
   <head>
     <title>Inicio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-      /* Estilos para el Sidebar */
-.sidebar {
-    height: 100vh;
-    width: 250px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: linear-gradient(180deg, #000706, #00272d); /* Gradiente de color1 a color2 */
-    padding-top: 20px;
-    font-family: Arial, sans-serif;
-    color: #bfac8b; /* Color5 para el texto */
-    transition: background 1.5s ease-in-out, width 0.5s ease-in-out;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
-    overflow-y: auto; /* Desplazamiento vertical */
-    scrollbar-width: none; /* Ocultar barra de desplazamiento en Firefox */
-}
+      /* Estilos generales */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      body {
+        background-color: #e6eef3;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        min-height: 100vh;
+      }
 
-.sidebar::-webkit-scrollbar {
-    display: none; /* Ocultar barra de desplazamiento en Chrome/Safari */
-}
+      /* Botón para mostrar/ocultar menú en móviles */
+      .menu-toggle {
+        display: none;
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        background-color: #3a962d;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 10px;
+        z-index: 1100;
+        cursor: pointer;
+        font-size: 18px;
+      }
 
-.sidebar:hover {
-    width: 270px;
-    background: linear-gradient(180deg, #00272d, #134647); /* Gradiente más sutil */
-    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.6); /* Sombra más fuerte en hover */
-}
+      /* Estilos para el Sidebar - Versión responsive */
+      .sidebar {
+        height: 100vh;
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #2b2b2b;
+        padding-top: 20px;
+        color: #fff;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+        overflow-y: auto;
+        scrollbar-width: none;
+        z-index: 1000;
+        transition: transform 0.3s ease;
+      }
 
-.sidebar a {
-    padding: 15px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #bfac8b; /* Color5 */
-    display: flex;
-    align-items: center;
-    border-radius: 8px;
-    margin: 10px 15px;
-    background-color: rgba(255, 255, 255, 0.05);
-    transition: all 0.4s ease; /* Transiciones más suaves */
-    box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.1);
-}
+      .sidebar::-webkit-scrollbar {
+        display: none;
+      }
 
-.sidebar a:hover {
-    background-color: #0c7e7e; /* Color4 */
-    color: #fff; /* Blanco en hover */
-    transform: translateX(12px);
-    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(0, 0, 0, 0.2);
-}
+      .sidebar a {
+        padding: 12px 15px;
+        text-decoration: none;
+        font-size: 16px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        margin: 8px 15px;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
 
-.sidebar a i {
-    margin-right: 12px;
-    font-size: 20px;
-    color: #bfac8b; /* Color5 para íconos */
-    transition: color 0.3s ease;
-}
+      /* Efecto hover */
+      .sidebar a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 15px rgba(58, 150, 45, 0.3);
+      }
 
-.sidebar a:hover i {
-    color: #fff; /* Íconos blancos en hover */
-}
+      /* Efecto para íconos */
+      .sidebar a i {
+        margin-right: 10px;
+        font-size: 18px;
+        color: #3a962d;
+        transition: transform 0.3s ease;
+      }
 
-.sidebar .logo {
-    text-align: center;
-    font-size: 26px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #bfac8b; /* Color5 */
-    animation: fadeIn 1.5s ease-in-out;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-}
+      .sidebar a:hover i {
+        transform: scale(1.15);
+      }
 
-.sidebar .menu-heading {
-    padding-left: 15px;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-top: 25px;
-    font-size: 15px;
-    color: #bfac8b; /* Color5 */
-    border-bottom: 1px solid #bfac8b;
-    padding-bottom: 8px;
-    animation: fadeIn 1.5s ease-in-out;
-}
+      /* Elemento activo */
+      .sidebar a.active {
+        background-color: #4a4a4a;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+      }
 
-.sidebar .menu-heading:last-of-type {
-    margin-top: 40px; /* Separación extra para la última categoría */
-}
+      .sidebar a.active::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 4px;
+        background-color: #3a962d;
+      }
 
-.sidebar a:last-of-type {
-    margin-bottom: 30px; /* Espacio en la parte inferior del último enlace */
-}
-.sidebar .menu .cerrar-sesion {
-    margin-top: auto; /* Esto empuja el elemento hacia el fondo del sidebar */
-    padding-bottom: 10px; /* Puedes ajustar el espacio adicional si es necesario */
-}
-.sidebar .logout {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    text-align: center;
-}
+      .sidebar .logo {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        color: #3a962d;
+        padding: 0 15px;
+      }
 
-.sidebar .logout a {
-    transition: transform 0.3s ease, color 0.3s ease;
-}
+      .sidebar .menu-heading {
+        padding: 10px 15px;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-top: 25px;
+        font-size: 14px;
+        color: #3a962d;
+        letter-spacing: 1px;
+      }
 
-.sidebar .logout a:hover {
-    color: #fff;
-    transform: scale(1.1); /* Pequeño aumento en hover */
-}
+      /* Contenido principal */
+      .content {
+        margin-left: 250px;
+        padding: 20px;
+        transition: margin-left 0.3s ease;
+      }
 
-/* Enlace activo */
-.sidebar a.active {
-    background-color: #bfac8b; /* Color5 para el enlace activo */
-    color: #000706; /* Texto color1 */
-}
+      /* Tarjeta de bienvenida */
+      .welcome-container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        max-width: 800px;
+        margin: 50px auto;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      }
 
-/* Animaciones */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+      .welcome-card {
+        text-align: center;
+      }
 
-/* Estilos para el contenido fuera del sidebar */
-.content {
-    margin-left: 250px;
-    padding: 20px;
-    transition: all 0.3s ease-in-out;
-}
+      .welcome-header h1 {
+        font-size: 28px;
+        color: #3a962d;
+        margin-bottom: 20px;
+      }
 
-body {
-    background-image: url("../images/bg1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed; /* Fija el fondo para evitar que se mueva con el contenido */
-}
+      .welcome-message p {
+        font-size: 16px;
+        color: #333;
+        line-height: 1.6;
+      }
 
-/* Estilos para el contenedor principal */
-.welcome-container {
-    background: linear-gradient(135deg, #00272d, #0c7e7e); /* Gradiente de color2 a color4 */
-    padding: 50px;
-    border-radius: 20px;
-    max-width: 800px;
-    margin: 50px auto;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Sombra más fuerte */
-}
+      /* Media Queries para responsive */
+      @media (max-width: 992px) {
+        .sidebar {
+          transform: translateX(-100%);
+        }
+        
+        .sidebar.active {
+          transform: translateX(0);
+        }
+        
+        .content {
+          margin-left: 0;
+        }
+        
+        .menu-toggle {
+          display: block;
+        }
+      }
 
-/* Estilos para la carta de bienvenida */
-.welcome-card {
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    font-family: 'Arial', sans-serif;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+      @media (max-width: 768px) {
+        .welcome-container {
+          padding: 20px;
+          margin: 30px auto;
+        }
+        
+        .welcome-header h1 {
+          font-size: 24px;
+        }
+        
+        .welcome-message p {
+          font-size: 15px;
+        }
+      }
 
-.welcome-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Estilo para el título de la carta */
-.welcome-header h1 {
-    font-size: 30px;
-    color: #bfac8b; /* Color5 */
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px; /* Espaciado entre letras */
-}
-
-/* Estilo para el mensaje de bienvenida */
-.welcome-message p {
-    font-size: 18px;
-    color: #00272d; /* Color2 */
-    line-height: 1.6;
-}
-
-/* Efecto hover para la carta */
-.welcome-card:hover {
-    transform: translateY(-5px);
-    transition: transform 0.3s ease;
-}
-
-/* Estilo adicional para la vista general */
-.content {
-    text-align: center;
-    margin: 20px;
-    margin-left: 190px;
-}
-
-.cosas {
-    text-align: center;
-}
-
+      @media (max-width: 576px) {
+        .sidebar {
+          width: 220px;
+        }
+        
+        .sidebar a {
+          padding: 10px 12px;
+          font-size: 15px;
+        }
+        
+        .sidebar .logo {
+          font-size: 22px;
+        }
+        
+        .welcome-container {
+          padding: 15px;
+          margin: 20px 10px;
+        }
+        
+        .welcome-header h1 {
+          font-size: 22px;
+        }
+      }
     </style>
   </head>
   <body>
+    <!-- Botón para mostrar/ocultar menú en móviles -->
+    <button class="menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
+    </button>
 
-<!-- Incluir Sidebar -->
-<div class="sidebar">
-  <div class="logo">
-    <?php 
-      if ($rol == 5) {
-          echo "Administrador";
-      } elseif ($rol == 6) {
-          echo "Supervisor";
-      } elseif ($rol == 7) {
-          echo "Usuario";
-      }
-    ?>
-  </div>
-  <div class="menu-heading">Menu</div>
-  <a href="<?php echo site_url('/bienvenido');?>" class="menu-item">
-    <i class="fas fa-home"></i> Inicio
-  </a>
-  <!-- Opciones para Administrador -->
-<?php if ($rol == 5): ?>
-  <div class="menu-heading">Usuarios</div>
-  <a href="<?php echo site_url('/modificar-usuario');?>" class="menu-item">
-    <i class="fas fa-user-edit"></i> Gestor de Usuarios
-  </a>
-<?php endif; ?>
-<!-- Opciones para Tarjetas disponibles para todos los roles -->
-<div class="menu-heading">Tarjetas</div>
-<!-- Administrador puede gestionar tarjetas -->
-<?php if ($rol == 5): ?>
-  <a href="<?php echo site_url('/modificar-tarjeta');?>" class="menu-item"> <!-- Cambia "1" por el ID dinámico -->
-    <i class="fas fa-user-edit"></i> Gestor de Tarjetas
-  </a>
-<?php endif; ?>
-<!-- Consultar estado de tarjetas, accesible para todos los roles -->
-<a href="<?php echo site_url('/consultar-rfid');?>" class="menu-item">
-  <i class="fas fa-search"></i> Consultar Estado de Tarjetas
-</a>
-<!-- Opciones para Supervisor y Administrador -->
-<?php if ($rol == 5 || $rol == 6): ?>
-  <div class="menu-heading">Reportes</div>
-  <a href="<?php echo site_url('/ver-alertas');?>" class="menu-item">
-    <i class="fas fa-exclamation-triangle"></i> Ver Alertas
-  </a>
-  <a href="<?php echo site_url('/ver-accesos-tarjeta');?>" class="menu-item">
-    <i class="fas fa-key"></i> Ver Accesos de Tarjeta
-  </a>
-  <a href="<?php echo site_url('/historial-cambios');?>" class="menu-item">
-    <i class="fas fa-history"></i> Ver Historial de Cambios
-  </a>
-<?php endif; ?>
-<!-- Nueva Categoría para Cerrar Sesión -->
-<div class="menu-heading">Cerrar Sesión</div>
-<a onclick="cerrarsesion('<?php echo site_url('/logout');?>')" class="menu-item">
-  <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
-</a>
-</div>
-<!-- Fin Sidebar -->
-
-<!-- Vista de Inicio con contenedor estilizado -->
-<div class="content">
-  <div class="welcome-container">
-    <div class="welcome-card">
-      <div class="welcome-header">
-        <h1>Bienvenido/a al Sistema</h1>
-      </div>
-      <div class="welcome-message">
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <div class="logo">
         <?php 
-        // Mostrar mensaje basado en el rol ndea
-        if ($rol == 5) { // Administrador
-            echo "<p>Hola Administrador, bienvenido. Aquí podrás gestionar usuarios, tarjetas y revisar reportes para asegurar que todo esté en orden. ¡Gracias por mantener el sistema funcionando de manera eficiente!</p>";
-        } elseif ($rol == 6) { // Supervisor
-            echo "<p>Hola Supervisor, bienvenido/a. En esta sección podrás monitorear el estado de las tarjetas, revisar alertas y accesos. ¡Gracias por asegurarte de que todo esté bajo control!</p>";
-        } elseif ($rol == 7) { // Usuario
-            echo "<p>Hola Usuario, bienvenido/a. Aquí puedes consultar el estado de tus tarjetas y asegurarte de que todo está en orden. ¡Gracias por usar nuestro sistema!</p>";
-        }
+          if ($rol == 5) {
+              echo "Administrador";
+          } elseif ($rol == 6) {
+              echo "Supervisor";
+          } elseif ($rol == 7) {
+              echo "Usuario";
+          }
         ?>
+      </div>
+      <div class="menu-heading">Menu</div>
+      <a href="<?php echo site_url('/bienvenido');?>" class="menu-item active">
+        <i class="fas fa-home"></i> Inicio
+      </a>
+      
+      <!-- Opciones para Administrador -->
+      <?php if ($rol == 5): ?>
+      <div class="menu-heading">Usuarios</div>
+      <a href="<?php echo site_url('/modificar-usuario');?>" class="menu-item">
+        <i class="fas fa-user-edit"></i> Gestor de Usuarios
+      </a>
+      <?php endif; ?>
+      
+      <!-- Opciones para Tarjetas -->
+      <div class="menu-heading">Tarjetas</div>
+      <?php if ($rol == 5): ?>
+      <a href="<?php echo site_url('/modificar-tarjeta');?>" class="menu-item">
+        <i class="fas fa-credit-card"></i> Gestor de Tarjetas
+      </a>
+      <?php endif; ?>
+      <a href="<?php echo site_url('/consultar-rfid');?>" class="menu-item">
+        <i class="fas fa-search"></i> Consultar Estado
+      </a>
+      
+      <!-- Opciones para Supervisor y Administrador -->
+      <?php if ($rol == 5 || $rol == 6): ?>
+      <div class="menu-heading">Reportes</div>
+      <a href="<?php echo site_url('/ver-alertas');?>" class="menu-item">
+        <i class="fas fa-exclamation-triangle"></i> Ver Alertas
+      </a>
+      <a href="<?php echo site_url('/ver-accesos-tarjeta');?>" class="menu-item">
+        <i class="fas fa-key"></i> Ver Accesos
+      </a>
+      <a href="<?php echo site_url('/historial-cambios');?>" class="menu-item">
+        <i class="fas fa-history"></i> Historial
+      </a>
+      <?php endif; ?>
+      
+      <div class="menu-heading">Sesión</div>
+      <a onclick="cerrarsesion('<?php echo site_url('/logout');?>')" class="menu-item">
+        <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+      </a>
+    </div>
 
+    <!-- Contenido principal -->
+    <div class="content">
+      <div class="welcome-container">
+        <div class="welcome-card">
+          <div class="welcome-header">
+            <h1>Bienvenido/a al Sistema</h1>
+          </div>
+          <div class="welcome-message">
+            <?php 
+            if ($rol == 5) {
+                echo "<p>Hola Administrador, bienvenido. Aquí podrás gestionar usuarios, tarjetas y revisar reportes para asegurar que todo esté en orden. ¡Gracias por mantener el sistema funcionando de manera eficiente!</p>";
+            } elseif ($rol == 6) {
+                echo "<p>Hola Supervisor, bienvenido/a. En esta sección podrás monitorear el estado de las tarjetas, revisar alertas y accesos. ¡Gracias por asegurarte de que todo esté bajo control!</p>";
+            } elseif ($rol == 7) {
+                echo "<p>Hola Usuario, bienvenido/a. Aquí puedes consultar el estado de tus tarjetas y asegurarte de que todo está en orden. ¡Gracias por usar nuestro sistema!</p>";
+            }
+            ?>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<script>
-function cerrarsesion(url){
-  if(confirm('¿Seguro Queres Cerrar Sesion?')){
-    window.location.href=url;
-  }
-}
-</script>
+    <script>
+      // Mostrar/ocultar sidebar en móviles
+      const menuToggle = document.getElementById('menuToggle');
+      const sidebar = document.getElementById('sidebar');
+      
+      menuToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+      });
 
+      // Cerrar sidebar al hacer clic en un enlace (en móviles)
+      const menuItems = document.querySelectorAll('.sidebar a');
+      menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+          if (window.innerWidth <= 992) {
+            sidebar.classList.remove('active');
+          }
+        });
+      });
+
+      // Cerrar sesión
+      function cerrarsesion(url){
+        if(confirm('¿Seguro Queres Cerrar Sesion?')){
+          window.location.href=url;
+        }
+      }
+
+      // Redimensionar la ventana
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 992) {
+          sidebar.classList.remove('active');
+        }
+      });
+    </script>
   </body>
 </html>
-
