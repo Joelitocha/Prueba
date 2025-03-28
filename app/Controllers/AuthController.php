@@ -201,4 +201,10 @@ class AuthController extends BaseController
         setcookie(session_name(), '', time() - 3600);
         return redirect()->to('/');
     }
+
+    public function login()
+{
+    return view('login'); // Carga la vista de inicio de sesión
+}
+
 }
