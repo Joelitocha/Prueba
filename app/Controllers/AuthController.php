@@ -201,4 +201,5 @@ class AuthController extends BaseController
         setcookie(session_name(), '', time() - 3600);
         return redirect()->to('/');
     }
+
 }
