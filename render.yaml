@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: rackon
+    runtime: php
+    buildCommand: "curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && composer install --no-dev"
+    startCommand: "php -S 0.0.0.0:10000 -t public"
+    env: php
