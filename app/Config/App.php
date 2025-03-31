@@ -16,7 +16,7 @@ class App extends BaseConfig
      *
      * E.g., http://example.com/ 
      */
-    public $baseURL = 'https://rackon.tech/cosas/Prueba/public/';
+    public $baseURL = 'https://rackon.tech/';
 
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.
