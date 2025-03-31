@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     zip \
     libicu-dev \
-    libonig-dev && \  # <-- ¡Añade esta línea!
+    libonig-dev && \
     docker-php-ext-install zip intl mbstring opcache pdo_mysql && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*  # Limpieza para reducir tamaño de imagen
