@@ -1,25 +1,35 @@
 FROM php:8.2-apache
 
-# Instala dependencias del sistema y PHP
+# 1. Instala dependencias del sistema y extensiones PHP
 RUN apt-get update && apt-get install -y \
     libzip-dev \
     zip \
-    && docker-php-ext-install zip
+    libicu-dev \  # Necesario para ext-intl
+    && docker-php-ext-install \
+    zip \
+    intl \       # Extensión requerida
+    mbstring \   # Otra extensión requerida
+    opcache \
+    pdo_mysql
 
-# Instala Composer
+# 2. Configuración recomendada para producción
+RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini" && \
+    echo "memory_limit = 512M" >> "$PHP_INI_DIR/conf.d/custom.ini"
+
+# 3. Instala Composer
 RUN curl -sS https://getcomposer.org/installer | php -- \
     --install-dir=/usr/local/bin --filename=composer
 
-# Copia los archivos del proyecto
+# 4. Copia los archivos del proyecto
 COPY . /var/www/html
 WORKDIR /var/www/html
 
-# Instala dependencias de Composer (sin dev)
+# 5. Instala dependencias (sin desarrollo)
 RUN composer install --no-dev --optimize-autoloader
 
-# Configura Apache para usar la carpeta public/
-RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf
-RUN a2enmod rewrite
+# 6. Configura Apache
+RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf && \
+    a2enmod rewrite && \
+    chown -R www-data:www-data /var/www/html/writable
 
-# Puerto expuesto (necesario para Render)
-EXPOSE 10000
+EXPOSE 80
