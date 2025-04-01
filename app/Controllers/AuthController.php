@@ -15,10 +15,10 @@ class AuthController extends BaseController
     public function loginUser()
     {
         $model = new UserModel();
-        $email = $this->request->getPost('email');
+        $email = $this->request->getPost('Email');
         $password = $this->request->getPost('Contraseña');
 
-        $user = $model->where('email', $email)->first();
+        $user = $model->where('Email', $email)->first();
 
         if ($user && password_verify($password, $user['Contraseña'])) {
             if ($user['Verificado'] == 0) {
@@ -134,7 +134,7 @@ class AuthController extends BaseController
 
             // Enviar correo de confirmación
             $this->enviarCredenciales(
-                $user['email'], 
+                $user['Email'], 
                 $user['Nombre'], 
                 "Tu cuenta ha sido verificada correctamente. Ahora puedes iniciar sesión con tu email y la contraseña que acabas de establecer."
             );
@@ -149,7 +149,7 @@ class AuthController extends BaseController
     {
         $model = new UserModel();
         $nombre = $this->request->getPost('Nombre');
-        $email = $this->request->getPost('email');
+        $email = $this->request->getPost('Email');
         $uid = $this->request->getPost('ID_Tarjeta');
         $rol = $this->request->getPost('ID_Rol');
 
@@ -164,7 +164,7 @@ class AuthController extends BaseController
         // Guardar el usuario en la base de datos con el token
         $model->insert([
             'Nombre' => $nombre,
-            'email' => $email,
+            'Email' => $email,
             'Contraseña' => '', // Contraseña vacía temporalmente
             'ID_Rol' => $rol,
             'ID_Tarjeta' => $uid,
