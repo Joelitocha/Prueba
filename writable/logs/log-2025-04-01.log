@@ -153,3 +153,57 @@ in SYSTEMPATH/Model.php on line 330.
  6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
  8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-01 18:47:07 --> mysqli_sql_exception: Table 'codeigniter4_bd.Usuario' doesn't exist in /var/www/html/Prueba/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /var/www/html/Prueba/system/Database/MySQLi/Connection.php(312): mysqli->query()
+#1 /var/www/html/Prueba/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/Prueba/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/Prueba/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/Prueba/system/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/Prueba/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 /var/www/html/Prueba/app/Controllers/AuthController.php(21): CodeIgniter\BaseModel->first()
+#7 /var/www/html/Prueba/system/CodeIgniter.php(933): App\Controllers\AuthController->loginUser()
+#8 /var/www/html/Prueba/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/Prueba/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/Prueba/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/Prueba/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/Prueba/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-04-01 18:47:07 --> Error: Call to a member function getFirstRow() on bool
+[Method: POST, Route: login]
+in SYSTEMPATH/Model.php on line 330.
+ 1 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 2 APPPATH/Controllers/AuthController.php(21): CodeIgniter\BaseModel->first()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AuthController->loginUser()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-01 18:59:35 --> mysqli_sql_exception: Table 'codeigniter4_bd.Usuario' doesn't exist in /var/www/html/Prueba/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /var/www/html/Prueba/system/Database/MySQLi/Connection.php(312): mysqli->query()
+#1 /var/www/html/Prueba/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/Prueba/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/Prueba/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/Prueba/system/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/Prueba/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 /var/www/html/Prueba/app/Controllers/AuthController.php(21): CodeIgniter\BaseModel->first()
+#7 /var/www/html/Prueba/system/CodeIgniter.php(933): App\Controllers\AuthController->loginUser()
+#8 /var/www/html/Prueba/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/Prueba/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/Prueba/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/Prueba/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/Prueba/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-04-01 18:59:35 --> Error: Call to a member function getFirstRow() on bool
+[Method: POST, Route: login]
+in SYSTEMPATH/Model.php on line 330.
+ 1 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 2 APPPATH/Controllers/AuthController.php(21): CodeIgniter\BaseModel->first()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AuthController->loginUser()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
