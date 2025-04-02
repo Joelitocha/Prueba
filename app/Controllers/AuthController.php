@@ -18,7 +18,7 @@ class AuthController extends BaseController
         $email = $this->request->getPost('Email');
         $password = $this->request->getPost('Contraseña');
 
-        $user = $model->where('Email', $email);
+        $user = $model->where('Email', $email)->first();
 
         if ($user && password_verify($password, $user['Contraseña'])) {
             if ($user['Verificado'] == 0) {
