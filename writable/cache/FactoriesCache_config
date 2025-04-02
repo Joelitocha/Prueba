@@ -10,18 +10,18 @@
   'aliases' => 
   array (
     'Config\\Exceptions' => 'Config\\Exceptions',
+    'Config\\ContentSecurityPolicy' => 'Config\\ContentSecurityPolicy',
     'Config\\App' => 'Config\\App',
     'Config\\Cache' => 'Config\\Cache',
     'Config\\UserAgents' => 'Config\\UserAgents',
-    'Config\\ContentSecurityPolicy' => 'Config\\ContentSecurityPolicy',
     'Config\\Cookie' => 'Config\\Cookie',
     'Config\\Modules' => 'Config\\Modules',
-    'Config\\Filters' => 'Config\\Filters',
+    'Config\\Toolbar' => 'Config\\Toolbar',
     'Config\\Routing' => 'Config\\Routing',
+    'Config\\Filters' => 'Config\\Filters',
     'Config\\Feature' => 'Config\\Feature',
     'Config\\Logger' => 'Config\\Logger',
     'Config\\View' => 'Config\\View',
-    'Config\\Toolbar' => 'Config\\Toolbar',
   ),
   'instances' => 
   array (
@@ -38,6 +38,31 @@
       ),
        'logDeprecations' => true,
        'deprecationLogLevel' => 'warning',
+    )),
+    'Config\\ContentSecurityPolicy' => 
+    Config\ContentSecurityPolicy::__set_state(array(
+       'reportOnly' => false,
+       'reportURI' => NULL,
+       'upgradeInsecureRequests' => false,
+       'defaultSrc' => NULL,
+       'scriptSrc' => 'self',
+       'styleSrc' => 'self',
+       'imageSrc' => 'self',
+       'baseURI' => NULL,
+       'childSrc' => 'self',
+       'connectSrc' => 'self',
+       'fontSrc' => NULL,
+       'formAction' => 'self',
+       'frameAncestors' => NULL,
+       'frameSrc' => NULL,
+       'mediaSrc' => NULL,
+       'objectSrc' => 'self',
+       'manifestSrc' => NULL,
+       'pluginTypes' => NULL,
+       'sandbox' => NULL,
+       'styleNonceTag' => '{csp-style-nonce}',
+       'scriptNonceTag' => '{csp-script-nonce}',
+       'autoNonce' => true,
     )),
     'Config\\App' => 
     Config\App::__set_state(array(
@@ -283,31 +308,6 @@
         'Uptimebot' => 'Uptimebot',
       ),
     )),
-    'Config\\ContentSecurityPolicy' => 
-    Config\ContentSecurityPolicy::__set_state(array(
-       'reportOnly' => false,
-       'reportURI' => NULL,
-       'upgradeInsecureRequests' => false,
-       'defaultSrc' => NULL,
-       'scriptSrc' => 'self',
-       'styleSrc' => 'self',
-       'imageSrc' => 'self',
-       'baseURI' => NULL,
-       'childSrc' => 'self',
-       'connectSrc' => 'self',
-       'fontSrc' => NULL,
-       'formAction' => 'self',
-       'frameAncestors' => NULL,
-       'frameSrc' => NULL,
-       'mediaSrc' => NULL,
-       'objectSrc' => 'self',
-       'manifestSrc' => NULL,
-       'pluginTypes' => NULL,
-       'sandbox' => NULL,
-       'styleNonceTag' => '{csp-style-nonce}',
-       'scriptNonceTag' => '{csp-script-nonce}',
-       'autoNonce' => true,
-    )),
     'Config\\Cookie' => 
     Config\Cookie::__set_state(array(
        'prefix' => '',
@@ -334,6 +334,56 @@
        'composerPackages' => 
       array (
       ),
+    )),
+    'Config\\Toolbar' => 
+    Config\Toolbar::__set_state(array(
+       'collectors' => 
+      array (
+        0 => 'CodeIgniter\\Debug\\Toolbar\\Collectors\\Timers',
+        1 => 'CodeIgniter\\Debug\\Toolbar\\Collectors\\Database',
+        2 => 'CodeIgniter\\Debug\\Toolbar\\Collectors\\Logs',
+        3 => 'CodeIgniter\\Debug\\Toolbar\\Collectors\\Views',
+        4 => 'CodeIgniter\\Debug\\Toolbar\\Collectors\\Files',
+        5 => 'CodeIgniter\\Debug\\Toolbar\\Collectors\\Routes',
+        6 => 'CodeIgniter\\Debug\\Toolbar\\Collectors\\Events',
+      ),
+       'collectVarData' => true,
+       'maxHistory' => 20,
+       'viewsPath' => '/var/www/html/Prueba/system/Debug/Toolbar/Views/',
+       'maxQueries' => 100,
+       'watchedDirectories' => 
+      array (
+        0 => 'app',
+      ),
+       'watchedExtensions' => 
+      array (
+        0 => 'php',
+        1 => 'css',
+        2 => 'js',
+        3 => 'html',
+        4 => 'svg',
+        5 => 'json',
+        6 => 'env',
+      ),
+    )),
+    'Config\\Routing' => 
+    Config\Routing::__set_state(array(
+       'routeFiles' => 
+      array (
+        0 => '/var/www/html/Prueba/app/Config/Routes.php',
+      ),
+       'defaultNamespace' => 'App\\Controllers',
+       'defaultController' => 'Home',
+       'defaultMethod' => 'index',
+       'translateURIDashes' => false,
+       'override404' => NULL,
+       'autoRoute' => false,
+       'prioritize' => false,
+       'multipleSegmentsOneParam' => false,
+       'moduleRoutes' => 
+      array (
+      ),
+       'translateUriToCamelCase' => false,
     )),
     'Config\\Filters' => 
     Config\Filters::__set_state(array(
@@ -379,25 +429,6 @@
       array (
       ),
     )),
-    'Config\\Routing' => 
-    Config\Routing::__set_state(array(
-       'routeFiles' => 
-      array (
-        0 => '/var/www/html/Prueba/app/Config/Routes.php',
-      ),
-       'defaultNamespace' => 'App\\Controllers',
-       'defaultController' => 'Home',
-       'defaultMethod' => 'index',
-       'translateURIDashes' => false,
-       'override404' => NULL,
-       'autoRoute' => false,
-       'prioritize' => false,
-       'multipleSegmentsOneParam' => false,
-       'moduleRoutes' => 
-      array (
-      ),
-       'translateUriToCamelCase' => false,
-    )),
     'Config\\Feature' => 
     Config\Feature::__set_state(array(
        'autoRoutesImproved' => false,
@@ -406,7 +437,7 @@
     )),
     'Config\\Logger' => 
     Config\Logger::__set_state(array(
-       'threshold' => 4,
+       'threshold' => 9,
        'dateFormat' => 'Y-m-d H:i:s',
        'handlers' => 
       array (
@@ -508,37 +539,6 @@
       ),
        'decorators' => 
       array (
-      ),
-    )),
-    'Config\\Toolbar' => 
-    Config\Toolbar::__set_state(array(
-       'collectors' => 
-      array (
-        0 => 'CodeIgniter\\Debug\\Toolbar\\Collectors\\Timers',
-        1 => 'CodeIgniter\\Debug\\Toolbar\\Collectors\\Database',
-        2 => 'CodeIgniter\\Debug\\Toolbar\\Collectors\\Logs',
-        3 => 'CodeIgniter\\Debug\\Toolbar\\Collectors\\Views',
-        4 => 'CodeIgniter\\Debug\\Toolbar\\Collectors\\Files',
-        5 => 'CodeIgniter\\Debug\\Toolbar\\Collectors\\Routes',
-        6 => 'CodeIgniter\\Debug\\Toolbar\\Collectors\\Events',
-      ),
-       'collectVarData' => true,
-       'maxHistory' => 20,
-       'viewsPath' => '/var/www/html/Prueba/system/Debug/Toolbar/Views/',
-       'maxQueries' => 100,
-       'watchedDirectories' => 
-      array (
-        0 => 'app',
-      ),
-       'watchedExtensions' => 
-      array (
-        0 => 'php',
-        1 => 'css',
-        2 => 'js',
-        3 => 'html',
-        4 => 'svg',
-        5 => 'json',
-        6 => 'env',
       ),
     )),
   ),

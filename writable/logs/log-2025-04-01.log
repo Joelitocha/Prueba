@@ -234,3 +234,97 @@ in SYSTEMPATH/Model.php on line 330.
  6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
  8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-01 19:17:03 --> mysqli_sql_exception: Table 'codeigniter4_bd.Usuario' doesn't exist in /var/www/html/Prueba/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /var/www/html/Prueba/system/Database/MySQLi/Connection.php(312): mysqli->query()
+#1 /var/www/html/Prueba/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/Prueba/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/Prueba/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/Prueba/system/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/Prueba/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 /var/www/html/Prueba/app/Controllers/AuthController.php(21): CodeIgniter\BaseModel->first()
+#7 /var/www/html/Prueba/system/CodeIgniter.php(933): App\Controllers\AuthController->loginUser()
+#8 /var/www/html/Prueba/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/Prueba/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/Prueba/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/Prueba/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/Prueba/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-04-01 19:17:03 --> Error: Call to a member function getFirstRow() on bool
+[Method: POST, Route: login]
+in SYSTEMPATH/Model.php on line 330.
+ 1 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 2 APPPATH/Controllers/AuthController.php(21): CodeIgniter\BaseModel->first()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AuthController->loginUser()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-01 19:20:41 --> Error: Call to a member function where() on null
+[Method: POST, Route: login]
+in APPPATH/Controllers/AuthController.php on line 20.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AuthController->loginUser()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-01 19:31:20 --> mysqli_sql_exception: Table 'codeigniter4_bd.Usuario' doesn't exist in /var/www/html/Prueba/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /var/www/html/Prueba/system/Database/MySQLi/Connection.php(312): mysqli->query()
+#1 /var/www/html/Prueba/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/Prueba/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/Prueba/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/Prueba/system/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/Prueba/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 /var/www/html/Prueba/app/Controllers/AuthController.php(21): CodeIgniter\BaseModel->first()
+#7 /var/www/html/Prueba/system/CodeIgniter.php(933): App\Controllers\AuthController->loginUser()
+#8 /var/www/html/Prueba/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/Prueba/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/Prueba/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/Prueba/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/Prueba/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-04-01 19:31:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'codeigniter4_bd.Usuario' doesn't exist
+[Method: POST, Route: login]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 4 APPPATH/Controllers/AuthController.php(21): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AuthController->loginUser()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-01 19:31:20 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'codeigniter4_bd.Usuario' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 6 APPPATH/Controllers/AuthController.php(21): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AuthController->loginUser()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-01 19:31:20 --> [Caused by] mysqli_sql_exception: Table 'codeigniter4_bd.Usuario' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 7 APPPATH/Controllers/AuthController.php(21): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AuthController->loginUser()
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
