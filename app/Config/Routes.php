@@ -65,7 +65,3 @@ $routes->post('cargar_acceso', 'Esp32Controller::insertar_registro');  // Regist
 
 
 
-// Filtros de autenticación (ejemplo)
-// $routes->group('', ['filter' => 'auth'], function($routes) {
-//     $routes->get('/dashboard', 'DashboardController::index');
-// });
