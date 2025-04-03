@@ -210,12 +210,13 @@
         outline: none;
     }
 
-    /* Tabla - Versión responsive */
+    /* Tabla - Versión responsive para PC y móviles */
     .tabla-container {
         padding: 20px;
         margin-left: 250px;
         transition: margin-left 0.3s ease;
         overflow-x: auto;
+        width: calc(100% - 250px);
     }
 
     .modificar {
@@ -223,6 +224,7 @@
         border-collapse: collapse;
         background-color: #fff;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        min-width: 600px; /* Ancho mínimo para PC */
     }
 
     .modificar th,
@@ -236,6 +238,8 @@
         background-color: #f8f9fa;
         font-weight: bold;
         color: #3498db;
+        position: sticky;
+        top: 0;
     }
 
     .modificar tr:nth-child(even) {
@@ -258,6 +262,13 @@
     }
 
     /* Botones */
+    .btn-group {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+
     .btn-modificar {
         background-color: #3498db;
         color: #fff;
@@ -267,6 +278,7 @@
         cursor: pointer;
         transition: background-color 0.3s;
         margin: 2px;
+        white-space: nowrap;
     }
 
     .btn-eliminar {
@@ -278,6 +290,7 @@
         cursor: pointer;
         transition: background-color 0.3s;
         margin: 2px;
+        white-space: nowrap;
     }
 
     .btn-modificar:hover {
@@ -366,53 +379,19 @@
         border: 1px solid #c3e6cb;
     }
 
-    /* Estilos para dispositivos móviles */
-    @media screen and (max-width: 768px) {
+    /* Media Queries para responsive */
+    @media (max-width: 1200px) {
+        .tabla-container {
+            width: calc(100% - 40px);
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        
         .modificar {
-            display: block;
-            width: 100%;
-            overflow-x: auto;
-        }
-        
-        .modificar thead {
-            display: none;
-        }
-        
-        .modificar tr {
-            display: block;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #3498db;
-            position: relative;
-        }
-        
-        .modificar td {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 8px 10px;
-            text-align: right;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .modificar td::before {
-            content: attr(data-label);
-            font-weight: bold;
-            margin-right: 10px;
-            color: #3498db;
-        }
-        
-        .modificar td:last-child {
-            border-bottom: none;
-        }
-        
-        .btn-group {
-            display: flex;
-            justify-content: flex-end;
-            width: 100%;
+            min-width: 800px;
         }
     }
 
-    /* Media Queries para responsive */
     @media (max-width: 992px) {
         .sidebar {
             transform: translateX(-100%);
@@ -424,10 +403,15 @@
         
         .content, .tabla-container, .mensaje {
             margin-left: 0;
+            width: 100%;
         }
         
         .menu-toggle {
             display: block;
+        }
+        
+        .modificar {
+            min-width: 700px;
         }
     }
 
@@ -443,6 +427,67 @@
         
         .titulo h1 {
             font-size: 22px;
+        }
+        
+        .modificar th, 
+        .modificar td {
+            padding: 10px 12px;
+            font-size: 14px;
+        }
+        
+        .btn-modificar, 
+        .btn-eliminar {
+            padding: 6px 10px;
+            font-size: 13px;
+        }
+        
+        /* Versión móvil de la tabla */
+        .modificar {
+            min-width: 100%;
+            display: block;
+        }
+        
+        .modificar thead {
+            display: none;
+        }
+        
+        .modificar tbody {
+            display: block;
+            width: 100%;
+        }
+        
+        .modificar tr {
+            display: block;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .modificar td {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: right;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .modificar td::before {
+            content: attr(data-label);
+            font-weight: bold;
+            margin-right: 15px;
+            color: #3498db;
+            text-align: left;
+        }
+        
+        .modificar td:last-child {
+            border-bottom: none;
+        }
+        
+        .btn-group {
+            justify-content: flex-end;
         }
     }
 
@@ -463,6 +508,21 @@
         .mensaje {
             margin: 15px 10px;
             font-size: 14px;
+        }
+        
+        .modificar td {
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+        }
+        
+        .modificar td::before {
+            margin-bottom: 5px;
+        }
+        
+        .btn-group {
+            width: 100%;
+            justify-content: space-between;
         }
     }
     </style>
@@ -643,13 +703,6 @@
       });
     });
 
-    // Redimensionar la ventana
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 992) {
-        sidebar.classList.remove('active');
-      }
-    });
-
     // Convertir tabla a formato responsive en móviles
     function hacerTablaResponsive() {
       if (window.innerWidth <= 768) {
@@ -664,9 +717,16 @@
       }
     }
 
-    // Ejecutar al cargar y al redimensionar
+    // Redimensionar la ventana
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 992) {
+        sidebar.classList.remove('active');
+      }
+      hacerTablaResponsive();
+    });
+
+    // Ejecutar al cargar
     window.addEventListener('load', hacerTablaResponsive);
-    window.addEventListener('resize', hacerTablaResponsive);
   </script>
 
   <?php
