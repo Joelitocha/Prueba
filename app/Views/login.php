@@ -104,25 +104,6 @@
         transform: translateY(0);
     }
 
-    /* === ENLACES === */
-    .extra-links {
-        margin-top: 20px;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-
-    .extra-links a {
-        color: #7f8c8d;
-        text-decoration: none;
-        font-size: 14px;
-        transition: color 0.3s ease;
-    }
-
-    .extra-links a:hover {
-        color: #3498db;
-    }
-
     /* === MENSAJES === */
     .alert {
         padding: 12px 15px;
@@ -147,15 +128,6 @@
     @media (max-width: 576px) {
         .login-container {
             padding: 30px 20px;
-        }
-        
-        .extra-links {
-            flex-direction: column;
-            gap: 10px;
-        }
-        
-        .extra-links a {
-            text-align: center;
         }
     }
     </style>
@@ -191,11 +163,6 @@
                 <i class="fas fa-sign-in-alt"></i> Entrar
             </button>
         </form>
-        
-        <div class="extra-links">
-            <a href="#"><i class="fas fa-question-circle"></i> ¿Olvidaste tu contraseña?</a>
-            <a href="#"><i class="fas fa-user-plus"></i> Registrarse</a>
-        </div>
     </div>
 </body>
 </html>
