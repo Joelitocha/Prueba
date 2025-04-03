@@ -22,6 +22,9 @@
     'Config\\Feature' => 'Config\\Feature',
     'Config\\Logger' => 'Config\\Logger',
     'Config\\View' => 'Config\\View',
+    'Config\\Session' => 'Config\\Session',
+    'Config\\Database' => 'Config\\Database',
+    'Config\\Email' => 'Config\\Email',
   ),
   'instances' => 
   array (
@@ -540,6 +543,107 @@
        'decorators' => 
       array (
       ),
+    )),
+    'Config\\Session' => 
+    Config\Session::__set_state(array(
+       'driver' => 'CodeIgniter\\Session\\Handlers\\FileHandler',
+       'cookieName' => 'ci_session',
+       'expiration' => 0,
+       'savePath' => '/var/www/html/Prueba/writable/session',
+       'matchIP' => false,
+       'timeToUpdate' => 180,
+       'regenerateDestroy' => true,
+       'DBGroup' => NULL,
+       'lockRetryInterval' => 100000,
+       'lockMaxRetries' => 300,
+    )),
+    'Config\\Database' => 
+    Config\Database::__set_state(array(
+       'filesPath' => '/var/www/html/Prueba/app/Database/',
+       'defaultGroup' => 'default',
+       'default' => 
+      array (
+        'DSN' => '',
+        'hostname' => 'localhost',
+        'username' => 'ci4_user',
+        'password' => 'Chanderfuott1@',
+        'database' => 'codeigniter4_bd',
+        'DBDriver' => 'MySQLi',
+        'DBPrefix' => '',
+        'pConnect' => false,
+        'DBDebug' => true,
+        'cacheOn' => false,
+        'cacheDir' => '',
+        'charset' => 'utf8',
+        'DBCollat' => 'utf8_general_ci',
+        'swapPre' => '',
+        'encrypt' => false,
+        'compress' => false,
+        'strictOn' => false,
+        'failover' => 
+        array (
+        ),
+        'port' => 3306,
+      ),
+       'tests' => 
+      array (
+        'DSN' => '',
+        'hostname' => '127.0.0.1',
+        'username' => '',
+        'password' => '',
+        'database' => ':memory:',
+        'DBDriver' => 'SQLite3',
+        'DBPrefix' => 'db_',
+        'pConnect' => false,
+        'DBDebug' => true,
+        'charset' => 'utf8',
+        'DBCollat' => '',
+        'swapPre' => '',
+        'encrypt' => false,
+        'compress' => false,
+        'strictOn' => false,
+        'failover' => 
+        array (
+        ),
+        'port' => 3306,
+        'foreignKeys' => true,
+        'busyTimeout' => 1000,
+        'dateFormat' => 
+        array (
+          'date' => 'Y-m-d',
+          'datetime' => 'Y-m-d H:i:s',
+          'time' => 'H:i:s',
+        ),
+      ),
+    )),
+    'Config\\Email' => 
+    Config\Email::__set_state(array(
+       'fromEmail' => 'RackOnOficial@gmail.com',
+       'fromName' => 'RackOn',
+       'recipients' => '',
+       'userAgent' => 'CodeIgniter',
+       'protocol' => 'smtp',
+       'mailPath' => '/usr/sbin/sendmail',
+       'SMTPHost' => 'smtp.gmail.com',
+       'SMTPUser' => 'RackOnOficial@gmail.com',
+       'SMTPPass' => 'tgnh dplm fuhb hypm',
+       'SMTPPort' => 587,
+       'SMTPTimeout' => 5,
+       'SMTPKeepAlive' => false,
+       'SMTPCrypto' => 'tls',
+       'wordWrap' => true,
+       'wrapChars' => 76,
+       'mailType' => 'html',
+       'charset' => 'utf-8',
+       'validate' => false,
+       'priority' => 3,
+       'CRLF' => '
+',
+       'newline' => '
+',
+       'BCCBatchMode' => false,
+       'BCCBatchSize' => 200,
+       'DSN' => false,
     )),
   ),
 );
