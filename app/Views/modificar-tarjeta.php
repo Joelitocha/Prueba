@@ -19,24 +19,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administración de Tarjeta</title>
+    <title>Administración de Tarjetas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-      /* Estilos generales */
-      * {
+    /* Estilos generales */
+    * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-      }
-      
-      body {
-        background-color: #e6eef3;
+    }
+    
+    body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
         min-height: 100vh;
-      }
+    }
 
-      /* Botón para mostrar/ocultar menú en móviles */
-      .menu-toggle {
+    /* Botón para mostrar/ocultar menú en móviles */
+    .menu-toggle {
         display: none;
         position: fixed;
         top: 15px;
@@ -49,10 +51,10 @@
         z-index: 1100;
         cursor: pointer;
         font-size: 18px;
-      }
+    }
 
-      /* Estilos para el Sidebar - Versión responsive */
-      .sidebar {
+    /* Sidebar - Versión responsive */
+    .sidebar {
         height: 100vh;
         width: 250px;
         position: fixed;
@@ -60,23 +62,23 @@
         left: 0;
         background-color: #2b2b2b;
         padding-top: 20px;
-        color: white;
+        color: #fff;
         box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
         overflow-y: auto;
         scrollbar-width: none;
         z-index: 1000;
         transition: transform 0.3s ease;
-      }
+    }
 
-      .sidebar::-webkit-scrollbar {
+    .sidebar::-webkit-scrollbar {
         display: none;
-      }
+    }
 
-      .sidebar a {
+    .sidebar a {
         padding: 12px 15px;
         text-decoration: none;
         font-size: 16px;
-        color: white;
+        color: #fff;
         display: flex;
         align-items: center;
         margin: 8px 15px;
@@ -84,269 +86,385 @@
         transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
-      }
+    }
 
-      /* Efecto hover */
-      .sidebar a:hover {
-        background-color: rgba(255, 35, 1, 0.1);
-        box-shadow: 0 0 15px rgba(255, 35, 1, 0.3);
-      }
+    /* Efecto hover */
+    .sidebar a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
+    }
 
-      /* Efecto para íconos */
-      .sidebar a i {
+    /* Efecto para íconos */
+    .sidebar a i {
         margin-right: 10px;
         font-size: 18px;
-        color: #ff2301;
+        color: #3498db;
         transition: transform 0.3s ease;
-      }
+    }
 
-      .sidebar a:hover i {
+    .sidebar a:hover i {
         transform: scale(1.15);
-      }
+    }
 
-      /* Elemento activo */
-      .sidebar a.active {
+    /* Elemento activo */
+    .sidebar a.active {
         background-color: #4a4a4a;
         box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
-      }
+    }
 
-      .sidebar a.active::before {
+    .sidebar a.active::before {
         content: '';
         position: absolute;
         left: 0;
         top: 0;
         height: 100%;
         width: 4px;
-        background-color: #ff2301;
-      }
+        background-color: #3498db;
+    }
 
-      .sidebar .logo {
+    .sidebar .logo {
         text-align: center;
         font-size: 24px;
         font-weight: bold;
         margin-bottom: 30px;
-        color: #ff2301;
+        color: #3498db;
         padding: 0 15px;
-      }
+    }
 
-      .sidebar .menu-heading {
+    .sidebar .menu-heading {
         padding: 10px 15px;
         text-transform: uppercase;
         font-weight: bold;
         margin-top: 25px;
         font-size: 14px;
-        color: #ff2301;
+        color: #3498db;
         letter-spacing: 1px;
-      }
+    }
 
-      /* Contenido principal (ESTILOS ORIGINALES MANTENIDOS) */
-      .content {
+    /* Contenido principal */
+    .content {
         margin-left: 250px;
         padding: 20px;
         transition: margin-left 0.3s ease;
-      }
+    }
 
-      /* Contenedor del título */
-      .titulo {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          padding: 20px 20px 10px;
-          text-align: center;
-      }
+    /* Contenedor del título */
+    .titulo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 20px 10px;
+        text-align: center;
+    }
 
-      .titulo h1 {
-          margin: 0;
-          font-size: 24px;
-          color: #333; /* Color original mantenido */
-      }
+    .titulo h1 {
+        margin: 0;
+        font-size: 24px;
+        color: #333;
+    }
 
-      /* Contenedor de acciones */
-      .titulo .acciones {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 15px;
-          margin-top: 10px;
-          flex-wrap: wrap;
-      }
+    /* Contenedor de acciones */
+    .titulo .acciones {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+    }
 
-      /* Botón "Añadir Tarjeta" */
-      .titulo .menu-item {
-          display: inline-flex;
-          align-items: center;
-          background-color: #3498db; /* Color original mantenido */
-          color: #fff;
-          border: none;
-          padding: 8px 16px;
-          border-radius: 4px;
-          font-size: 14px;
-          text-decoration: none;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-      }
+    /* Botón "Añadir Tarjeta" */
+    .titulo .menu-item {
+        display: inline-flex;
+        align-items: center;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        font-size: 14px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
 
-      .titulo .menu-item:hover {
-          background-color: #2980b9; /* Color original mantenido */
-      }
+    .titulo .menu-item:hover {
+        background-color: #2980b9;
+    }
 
-      /* Barra de búsqueda */
-      .barra-busqueda {
-          padding: 8px 12px;
-          border: 1px solid #ddd;
-          border-radius: 4px;
-          font-size: 14px;
-          width: 250px;
-          max-width: 100%;
-          box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-          transition: border-color 0.3s ease;
-      }
+    /* Barra de búsqueda */
+    .barra-busqueda {
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        width: 250px;
+        max-width: 100%;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        transition: border-color 0.3s ease;
+    }
 
-      .barra-busqueda:focus {
-          border-color: #3498db; /* Color original mantenido */
-          outline: none;
-      }
+    .barra-busqueda:focus {
+        border-color: #3498db;
+        outline: none;
+    }
 
-      /* Tabla */
-      .tabla-container {
-          padding: 20px;
-          margin-left: 250px;
-          transition: margin-left 0.3s ease;
-          overflow-x: auto;
-      }
+    /* Tabla - Versión responsive */
+    .tabla-container {
+        padding: 20px;
+        margin-left: 250px;
+        transition: margin-left 0.3s ease;
+        overflow-x: auto;
+    }
 
-      .modificar {
-          width: 100%;
-          border-collapse: collapse;
-          background-color: #fff;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-          min-width: 600px;
-      }
+    .modificar {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
 
-      .modificar th,
-      .modificar td {
-          padding: 12px 15px;
-          text-align: center;
-          border-bottom: 1px solid #eee;
-      }
+    .modificar th,
+    .modificar td {
+        padding: 12px 15px;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
 
-      .modificar th {
-          background-color: #f8f9fa;
-          font-weight: bold;
-          color: #333; /* Color original mantenido */
-      }
+    .modificar th {
+        background-color: #f8f9fa;
+        font-weight: bold;
+        color: #3498db;
+    }
 
-      .modificar tr:nth-child(even) {
-          background-color: #f8f9fa;
-      }
+    .modificar tr:nth-child(even) {
+        background-color: #f8f9fa;
+    }
 
-      .modificar tr:hover {
-          background-color: #f1f8ff;
-      }
+    .modificar tr:hover {
+        background-color: #f1f8ff;
+    }
 
-      /* Estado de las tarjetas */
-      .estado-activa {
-          color: #27ae60; /* Color original mantenido */
-          font-weight: bold;
-      }
+    /* Estado de las tarjetas */
+    .estado-activa {
+        color: #27ae60;
+        font-weight: bold;
+    }
 
-      .estado-inactiva {
-          color: #e74c3c; /* Color original mantenido */
-          font-weight: bold;
-      }
+    .estado-inactiva {
+        color: #e74c3c;
+        font-weight: bold;
+    }
 
-      /* Botones */
-      .btn-modificar {
-          background-color: #3498db; /* Color original mantenido */
-          color: #fff;
-          border: none;
-          padding: 8px 12px;
-          border-radius: 4px;
-          cursor: pointer;
-          transition: background-color 0.3s;
-          margin: 2px;
-      }
+    /* Botones */
+    .btn-modificar {
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin: 2px;
+    }
 
-      .btn-eliminar {
-          background-color: #e74c3c; /* Color original mantenido */
-          color: #fff;
-          border: none;
-          padding: 8px 12px;
-          border-radius: 4px;
-          cursor: pointer;
-          transition: background-color 0.3s;
-          margin: 2px;
-      }
+    .btn-eliminar {
+        background-color: #e74c3c;
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin: 2px;
+    }
 
-      .btn-modificar:hover {
-          background-color: #2980b9; /* Color original mantenido */
-      }
+    .btn-modificar:hover {
+        background-color: #2980b9;
+    }
 
-      .btn-eliminar:hover {
-          background-color: #c0392b; /* Color original mantenido */
-      }
+    .btn-eliminar:hover {
+        background-color: #c0392b;
+    }
 
-      /* Media Queries para responsive */
-      @media (max-width: 992px) {
-          .sidebar {
-              transform: translateX(-100%);
-          }
-          
-          .sidebar.active {
-              transform: translateX(0);
-          }
-          
-          .content, .tabla-container {
-              margin-left: 0;
-          }
-          
-          .menu-toggle {
-              display: block;
-          }
-      }
+    /* Modal de confirmación */
+    #modalConfirmacion {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+        z-index: 1100;
+    }
 
-      @media (max-width: 768px) {
-          .titulo h1 {
-              font-size: 22px;
-          }
-          
-          .modificar th, 
-          .modificar td {
-              padding: 8px 10px;
-              font-size: 14px;
-          }
-          
-          .btn-modificar, 
-          .btn-eliminar {
-              padding: 6px 10px;
-              font-size: 13px;
-          }
-      }
+    #modalConfirmacion div {
+        background: #fff;
+        padding: 25px;
+        border-radius: 8px;
+        width: 90%;
+        max-width: 320px;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
 
-      @media (max-width: 576px) {
-          .sidebar {
-              width: 220px;
-          }
-          
-          .sidebar a {
-              padding: 10px 12px;
-              font-size: 15px;
-          }
-          
-          .sidebar .logo {
-              font-size: 22px;
-          }
-          
-          .titulo .acciones {
-              flex-direction: column;
-              width: 100%;
-          }
-          
-          .barra-busqueda {
-              width: 100%;
-          }
-      }
+    #modalConfirmacion h3 {
+        margin-bottom: 20px;
+        color: #2c3e50;
+    }
+
+    #modalConfirmacion button {
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        margin: 0 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    #modalConfirmacion button[type="button"] {
+        background: #95a5a6;
+        color: white;
+    }
+
+    #modalConfirmacion button[type="button"]:hover {
+        background: #7f8c8d;
+    }
+
+    #modalConfirmacion button[type="submit"] {
+        background: #e74c3c;
+        color: white;
+    }
+
+    #modalConfirmacion button[type="submit"]:hover {
+        background: #c0392b;
+    }
+
+    /* Mensajes de error/éxito */
+    .mensaje {
+        padding: 12px 15px;
+        margin: 15px 20px 15px 270px;
+        border-radius: 4px;
+        text-align: center;
+        font-size: 15px;
+        transition: margin-left 0.3s ease;
+    }
+
+    .error {
+        color: #e74c3c;
+        background-color: #fdecea;
+        border: 1px solid #f5c6cb;
+    }
+
+    .success {
+        color: #27ae60;
+        background-color: #e8f5e9;
+        border: 1px solid #c3e6cb;
+    }
+
+    /* Estilos para dispositivos móviles */
+    @media screen and (max-width: 768px) {
+        .modificar {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+        }
+        
+        .modificar thead {
+            display: none;
+        }
+        
+        .modificar tr {
+            display: block;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+            position: relative;
+        }
+        
+        .modificar td {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 10px;
+            text-align: right;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .modificar td::before {
+            content: attr(data-label);
+            font-weight: bold;
+            margin-right: 10px;
+            color: #3498db;
+        }
+        
+        .modificar td:last-child {
+            border-bottom: none;
+        }
+        
+        .btn-group {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+        }
+    }
+
+    /* Media Queries para responsive */
+    @media (max-width: 992px) {
+        .sidebar {
+            transform: translateX(-100%);
+        }
+        
+        .sidebar.active {
+            transform: translateX(0);
+        }
+        
+        .content, .tabla-container, .mensaje {
+            margin-left: 0;
+        }
+        
+        .menu-toggle {
+            display: block;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .titulo .acciones {
+            flex-direction: column;
+            width: 100%;
+        }
+        
+        .barra-busqueda {
+            width: 100%;
+        }
+        
+        .titulo h1 {
+            font-size: 22px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .sidebar {
+            width: 220px;
+        }
+        
+        .sidebar a {
+            padding: 10px 12px;
+            font-size: 15px;
+        }
+        
+        .sidebar .logo {
+            font-size: 22px;
+        }
+        
+        .mensaje {
+            margin: 15px 10px;
+            font-size: 14px;
+        }
+    }
     </style>
 </head>
 <body>
@@ -354,6 +472,18 @@
   <button class="menu-toggle" id="menuToggle">
     <i class="fas fa-bars"></i>
   </button>
+
+  <!-- Modal de confirmación -->
+  <div id="modalConfirmacion">
+    <div>
+        <h3>¿Quieres borrar esta tarjeta?</h3>
+        <form id="formEliminar" method="post" action="<?= site_url('eliminar-tarjeta') ?>">
+            <input type="hidden" name="ID_Tarjeta" id="idTarjetaEliminar">
+            <button type="button" onclick="cerrarModal()">Cancelar</button>
+            <button type="submit">Eliminar</button>
+        </form>
+    </div>
+  </div>
 
   <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
@@ -422,34 +552,32 @@
     </div>
     
     <div class="tabla-container">
-      <!-- Tabla que muestra todas las tarjetas -->
       <table class="modificar">
         <thead>
           <tr>
             <th>ID Tarjeta</th>
             <th>Estado</th>
             <th>Fecha de Emisión</th>
-            <th>Acción</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
           <?php foreach ($tarjetas as $tarjeta): ?>
             <tr>
-              <td><?= esc($tarjeta['ID_Tarjeta']); ?></td>
-              <td class="<?= $tarjeta['Estado'] == 1 ? 'estado-activa' : 'estado-inactiva'; ?>">
+              <td data-label="ID Tarjeta"><?= esc($tarjeta['ID_Tarjeta']); ?></td>
+              <td data-label="Estado" class="<?= $tarjeta['Estado'] == 1 ? 'estado-activa' : 'estado-inactiva'; ?>">
                 <?= $tarjeta['Estado'] == 1 ? 'Activa' : 'Inactiva'; ?>
               </td>
-              <td><?= esc($tarjeta['Fecha_emision']); ?></td>
-              <td>
+              <td data-label="Fecha Emisión"><?= esc($tarjeta['Fecha_emision']); ?></td>
+              <td data-label="Acciones">
                 <div class="btn-group">
                   <form action="<?= site_url('modificar-tarjeta2') ?>" method="post">
                     <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
                     <input type="submit" value="Modificar" class="btn-modificar">
                   </form>
-                  <form action="<?= site_url('eliminar-tarjeta') ?>" method="post" onsubmit="return confirmarEliminacion();">
-                    <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
-                    <input type="submit" value="Eliminar" class="btn-eliminar">
-                  </form>
+                  <button type="button" class="btn-eliminar" onclick="mostrarModal('<?= esc($tarjeta['ID_Tarjeta']); ?>')">
+                    Eliminar
+                  </button>
                 </div>
               </td>
             </tr>
@@ -478,6 +606,16 @@
       });
     });
 
+    // Modal de confirmación
+    function mostrarModal(idTarjeta) {
+      document.getElementById('idTarjetaEliminar').value = idTarjeta;
+      document.getElementById('modalConfirmacion').style.display = 'flex';
+    }
+
+    function cerrarModal() {
+      document.getElementById('modalConfirmacion').style.display = 'none';
+    }
+
     // Cerrar sesión
     function cerrarsesion(url){
       if(confirm('¿Seguro Queres Cerrar Sesion?')){
@@ -505,17 +643,38 @@
       });
     });
 
-    // Confirmación de eliminación
-    function confirmarEliminacion() {
-      return confirm('¿Estás seguro de que deseas eliminar esta tarjeta?');
-    }
-
     // Redimensionar la ventana
     window.addEventListener('resize', () => {
       if (window.innerWidth > 992) {
         sidebar.classList.remove('active');
       }
     });
+
+    // Convertir tabla a formato responsive en móviles
+    function hacerTablaResponsive() {
+      if (window.innerWidth <= 768) {
+        const celdas = document.querySelectorAll('.modificar td');
+        const headers = document.querySelectorAll('.modificar th');
+        
+        celdas.forEach((celda, index) => {
+          const headerIndex = index % headers.length;
+          const headerText = headers[headerIndex].innerText;
+          celda.setAttribute('data-label', headerText);
+        });
+      }
+    }
+
+    // Ejecutar al cargar y al redimensionar
+    window.addEventListener('load', hacerTablaResponsive);
+    window.addEventListener('resize', hacerTablaResponsive);
   </script>
+
+  <?php
+    if (isset($error)) {
+      echo '<div class="mensaje error">'.$error.'</div>';
+    } elseif (isset($success)) {
+      echo '<div class="mensaje success">'.$success.'</div>';
+    }
+  ?>
 </body>
 </html>
