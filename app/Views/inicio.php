@@ -18,7 +18,7 @@
       }
       
       body {
-        background-color: #e6eef3;
+        background-color: #f5f5f5;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         min-height: 100vh;
       }
@@ -29,7 +29,7 @@
         position: fixed;
         top: 15px;
         left: 15px;
-        background-color: #3a962d;
+        background-color: #3498db;
         color: white;
         border: none;
         border-radius: 4px;
@@ -77,14 +77,14 @@
       /* Efecto hover */
       .sidebar a:hover {
         background-color: rgba(255, 255, 255, 0.1);
-        box-shadow: 0 0 15px rgba(58, 150, 45, 0.3);
+        box-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
       }
 
       /* Efecto para íconos */
       .sidebar a i {
         margin-right: 10px;
         font-size: 18px;
-        color: #3a962d;
+        color: #3498db;
         transition: transform 0.3s ease;
       }
 
@@ -105,7 +105,7 @@
         top: 0;
         height: 100%;
         width: 4px;
-        background-color: #3a962d;
+        background-color: #3498db;
       }
 
       .sidebar .logo {
@@ -113,7 +113,7 @@
         font-size: 24px;
         font-weight: bold;
         margin-bottom: 30px;
-        color: #3a962d;
+        color: #3498db;
         padding: 0 15px;
       }
 
@@ -123,7 +123,7 @@
         font-weight: bold;
         margin-top: 25px;
         font-size: 14px;
-        color: #3a962d;
+        color: #3498db;
         letter-spacing: 1px;
       }
 
@@ -150,7 +150,7 @@
 
       .welcome-header h1 {
         font-size: 28px;
-        color: #3a962d;
+        color: #3498db;
         margin-bottom: 20px;
       }
 
@@ -158,6 +158,28 @@
         font-size: 16px;
         color: #333;
         line-height: 1.6;
+      }
+
+      /* Mensajes de error/éxito */
+      .mensaje {
+        padding: 12px 15px;
+        margin: 15px 20px 15px 270px;
+        border-radius: 4px;
+        text-align: center;
+        font-size: 15px;
+        transition: margin-left 0.3s ease;
+      }
+
+      .error {
+        color: #e74c3c;
+        background-color: #fdecea;
+        border: 1px solid #f5c6cb;
+      }
+
+      .success {
+        color: #27ae60;
+        background-color: #e8f5e9;
+        border: 1px solid #c3e6cb;
       }
 
       /* Media Queries para responsive */
@@ -176,6 +198,10 @@
         
         .menu-toggle {
           display: block;
+        }
+
+        .mensaje {
+          margin: 15px 20px;
         }
       }
 
@@ -337,5 +363,13 @@
         }
       });
     </script>
+
+    <?php
+      if (isset($error)) {
+        echo '<div class="mensaje error">'.$error.'</div>';
+      } elseif (isset($success)) {
+        echo '<div class="mensaje success">'.$success.'</div>';
+      }
+    ?>
   </body>
 </html>
