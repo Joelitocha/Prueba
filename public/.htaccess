@@ -37,7 +37,9 @@ Options -Indexes
 	RewriteCond %{HTTP:Authorization} .
 	RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 </IfModule>
-
+<Files "logo.ico">
+    Header set Cache-Control "max-age=86400, public"
+</Files>
 # Disable server signature start
 ServerSignature Off
 # Disable server signature end
