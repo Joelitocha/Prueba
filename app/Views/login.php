@@ -1,139 +1,201 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Login</title>
-  </head>
-  <body background="../images/bg5.jpg">
-  <style>
-    
-/* Paleta de colores */
-:root {
-    --color1: #20130a ;
-    --color2: #142026 ;
-    --color3: #ffffff ;
-    --color4: #3b657a ;
-    --color5: #e9f0c956 ;
-  }
-  
-  body{
-    background-image: url("https://www.celmad.com/wp-content/uploads/2023/11/Que-es-un-centro-de-datos-y-por-que-estan-en-auge-2048x1170.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  html {
-    height: 100%;
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .main-login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .login-container {
-    background: var(--color2);
-    padding: 50px;
-    border-radius: 30px; /* Forma alargada */
-    width: 400px;
-    text-align: center;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5); /* Sombra */
-  }
-  
-  .title {
-    color: var(--color3);
-    font-size: 24px;
-    margin-bottom: 30px;
-  }
-  
-  .form-login {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .input-group input {
-    width: 93%;
-    padding: 15px;
-    border-radius: 20px; /* Bordes redondeados */
-    border: none;
-    background: var(--color4);
-    color: white;
-    font-size: 18px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .input-group input:focus {
-    background-color: var(--color5); /* Cambia el color de fondo al interactuar */
-    transform: scale(1.05); /* Efecto de enfoque en los inputs */
-  }
-  
-  .btn-login {
-    width: 100%;
-    padding: 15px;
-    border-radius: 20px;
-    border: none;
-    background: var(--color3);
-    color: var(--color1);
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn-login:hover {
-    background-color: var(--color4);
-    color: white;
-  }
-  
-  .btn-login:active {
-    transform: scale(0.95);
-  }
-  
-  input::placeholder {
-    color: var(--color3);
-  }
-  
-  .extra-links {
-    margin-top: 15px;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .extra-links a {
-    color: var(--color3);
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
-  }
-  
-  .extra-links a:hover {
-    color: var(--color5);
-  }
-  
-  
-  </style>
-    <main class="main-login">
-      <div class="login-container">
-        <h2 class="title">Iniciar Sesión</h2>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login - Sistema de Control</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+    /* === ESTILOS GENERALES === */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://www.celmad.com/wp-content/uploads/2023/11/Que-es-un-centro-de-datos-y-por-que-estan-en-auge-2048x1170.jpg') no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* === CONTENEDOR LOGIN === */
+    .login-container {
+        background-color: #2b2b2b;
+        padding: 40px;
+        border-radius: 8px;
+        width: 100%;
+        max-width: 400px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        margin: 20px;
+    }
+
+    .login-container h2 {
+        color: #3498db;
+        margin-bottom: 30px;
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    /* === FORMULARIO === */
+    .form-login {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .input-group {
+        position: relative;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 14px 20px;
+        border: 1px solid #444;
+        border-radius: 6px;
+        background-color: #3a3a3a;
+        color: #fff;
+        font-size: 15px;
+        transition: all 0.3s ease;
+        box-sizing: border-box;
+    }
+
+    .input-group input:focus {
+        border-color: #3498db;
+        outline: none;
+        background-color: #444;
+        box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    }
+
+    .input-group i {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #7f8c8d;
+    }
+
+    .input-group input {
+        padding-left: 40px;
+    }
+
+    /* === BOTÓN === */
+    .btn-login {
+        width: 100%;
+        padding: 14px;
+        border-radius: 6px;
+        border: none;
+        background-color: #3498db;
+        color: white;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+    }
+
+    .btn-login:hover {
+        background-color: #2980b9;
+        transform: translateY(-2px);
+    }
+
+    .btn-login:active {
+        transform: translateY(0);
+    }
+
+    /* === ENLACES === */
+    .extra-links {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .extra-links a {
+        color: #7f8c8d;
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.3s ease;
+    }
+
+    .extra-links a:hover {
+        color: #3498db;
+    }
+
+    /* === MENSAJES === */
+    .alert {
+        padding: 12px 15px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        font-size: 15px;
+    }
+
+    .alert-error {
+        color: #e74c3c;
+        background-color: #fdecea;
+        border: 1px solid #f5c6cb;
+    }
+
+    .alert-success {
+        color: #27ae60;
+        background-color: #e8f5e9;
+        border: 1px solid #c3e6cb;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 576px) {
+        .login-container {
+            padding: 30px 20px;
+        }
+        
+        .extra-links {
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .extra-links a {
+            text-align: center;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2><i class="fas fa-lock"></i> Iniciar Sesión</h2>
+        
+        <?php if (session()->getFlashdata('error')): ?>
+            <div class="alert alert-error">
+                <?= session()->getFlashdata('error') ?>
+            </div>
+        <?php endif; ?>
+        
+        <?php if (session()->getFlashdata('success')): ?>
+            <div class="alert alert-success">
+                <?= session()->getFlashdata('success') ?>
+            </div>
+        <?php endif; ?>
+        
         <form action="<?= base_url('login') ?>" method="POST" class="form-login">
-          <div class="input-group">
-            <input type="text" placeholder="Correo Electrónico" name="Email" required>
-          </div>
-          <div class="input-group">
-            <input type="password" placeholder="Contraseña" name="Contraseña" required>
-          </div>
-          <button type="submit" class="btn-login">Entrar</button>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="text" placeholder="Correo Electrónico" name="Email" required>
+            </div>
+            
+            <div class="input-group">
+                <i class="fas fa-key"></i>
+                <input type="password" placeholder="Contraseña" name="Contraseña" required>
+            </div>
+            
+            <button type="submit" class="btn-login">
+                <i class="fas fa-sign-in-alt"></i> Entrar
+            </button>
         </form>
+        
+        <div class="extra-links">
+            <a href="#"><i class="fas fa-question-circle"></i> ¿Olvidaste tu contraseña?</a>
+            <a href="#"><i class="fas fa-user-plus"></i> Registrarse</a>
         </div>
-      </div>
-    </main>
-    
-  </body>
+    </div>
+</body>
 </html>
