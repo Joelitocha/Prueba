@@ -210,13 +210,12 @@
         outline: none;
     }
 
-    /* Tabla - Versión responsive para PC y móviles */
+    /* Estilos para la tabla - Versión responsive */
     .tabla-container {
         padding: 20px;
-
-        transition: margin-left 0.3s ease;
         overflow-x: auto;
         width: calc(100% - 250px);
+        transition: margin-left 0.3s ease;
     }
 
     .modificar {
@@ -227,27 +226,111 @@
         min-width: 600px; /* Ancho mínimo para PC */
     }
 
-    .modificar th,
-    .modificar td {
-        padding: 12px 15px;
-        text-align: center;
-        border-bottom: 1px solid #eee;
+    /* Versión para pantallas grandes (PC) */
+    @media (min-width: 769px) {
+        .modificar th,
+        .modificar td {
+            padding: 12px 15px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .modificar th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            color: #3498db;
+            position: sticky;
+            top: 0;
+        }
+
+        .modificar tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .modificar tr:hover {
+            background-color: #f1f8ff;
+        }
     }
 
-    .modificar th {
-        background-color: #f8f9fa;
-        font-weight: bold;
-        color: #3498db;
-        position: sticky;
-        top: 0;
+    /* Versión para móviles */
+    @media (max-width: 768px) {
+        .tabla-container {
+            padding: 10px;
+            width: 100%;
+            margin-left: 0;
+        }
+
+        .modificar {
+            min-width: 100%;
+            display: block;
+        }
+
+        .modificar thead {
+            display: none;
+        }
+
+        .modificar tbody {
+            display: block;
+            width: 100%;
+        }
+
+        .modificar tr {
+            display: block;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .modificar td {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: right;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .modificar td::before {
+            content: attr(data-label);
+            font-weight: bold;
+            margin-right: 15px;
+            color: #3498db;
+            text-align: left;
+        }
+
+        .modificar td:last-child {
+            border-bottom: none;
+        }
+
+        .btn-group {
+            justify-content: flex-end;
+            width: 100%;
+        }
     }
 
-    .modificar tr:nth-child(even) {
-        background-color: #f8f9fa;
-    }
+    /* Para pantallas muy pequeñas */
+    @media (max-width: 480px) {
+        .modificar td {
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+        }
 
-    .modificar tr:hover {
-        background-color: #f1f8ff;
+        .modificar td::before {
+            margin-bottom: 5px;
+        }
+
+        .btn-group {
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .btn-modificar, 
+        .btn-eliminar {
+            width: 100%;
+        }
     }
 
     /* Estado de las tarjetas */
@@ -380,18 +463,6 @@
     }
 
     /* Media Queries para responsive */
-    @media (max-width: 1200px) {
-        .tabla-container {
-            width: calc(100% - 40px);
-            margin-left: 20px;
-            margin-right: 20px;
-        }
-        
-        .modificar {
-            min-width: 800px;
-        }
-    }
-
     @media (max-width: 992px) {
         .sidebar {
             transform: translateX(-100%);
@@ -401,17 +472,12 @@
             transform: translateX(0);
         }
         
-        .content, .tabla-container, .mensaje {
+        .content, .mensaje {
             margin-left: 0;
-            width: 100%;
         }
         
         .menu-toggle {
             display: block;
-        }
-        
-        .modificar {
-            min-width: 700px;
         }
     }
 
@@ -427,67 +493,6 @@
         
         .titulo h1 {
             font-size: 22px;
-        }
-        
-        .modificar th, 
-        .modificar td {
-            padding: 10px 12px;
-            font-size: 14px;
-        }
-        
-        .btn-modificar, 
-        .btn-eliminar {
-            padding: 6px 10px;
-            font-size: 13px;
-        }
-        
-        /* Versión móvil de la tabla */
-        .modificar {
-            min-width: 100%;
-            display: block;
-        }
-        
-        .modificar thead {
-            display: none;
-        }
-        
-        .modificar tbody {
-            display: block;
-            width: 100%;
-        }
-        
-        .modificar tr {
-            display: block;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .modificar td {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            text-align: right;
-            padding: 10px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .modificar td::before {
-            content: attr(data-label);
-            font-weight: bold;
-            margin-right: 15px;
-            color: #3498db;
-            text-align: left;
-        }
-        
-        .modificar td:last-child {
-            border-bottom: none;
-        }
-        
-        .btn-group {
-            justify-content: flex-end;
         }
     }
 
@@ -508,21 +513,6 @@
         .mensaje {
             margin: 15px 10px;
             font-size: 14px;
-        }
-        
-        .modificar td {
-            flex-direction: column;
-            align-items: flex-start;
-            text-align: left;
-        }
-        
-        .modificar td::before {
-            margin-bottom: 5px;
-        }
-        
-        .btn-group {
-            width: 100%;
-            justify-content: space-between;
         }
     }
     </style>
@@ -703,30 +693,24 @@
       });
     });
 
-    // Convertir tabla a formato responsive en móviles
-    function hacerTablaResponsive() {
-      if (window.innerWidth <= 768) {
-        const celdas = document.querySelectorAll('.modificar td');
-        const headers = document.querySelectorAll('.modificar th');
-        
-        celdas.forEach((celda, index) => {
-          const headerIndex = index % headers.length;
-          const headerText = headers[headerIndex].innerText;
-          celda.setAttribute('data-label', headerText);
-        });
-      }
-    }
-
     // Redimensionar la ventana
     window.addEventListener('resize', () => {
       if (window.innerWidth > 992) {
         sidebar.classList.remove('active');
       }
-      hacerTablaResponsive();
     });
 
     // Ejecutar al cargar
-    window.addEventListener('load', hacerTablaResponsive);
+    document.addEventListener('DOMContentLoaded', function() {
+      // Asegurar que los data-labels estén configurados correctamente en móviles
+      if (window.innerWidth <= 768) {
+        document.querySelectorAll('.modificar td').forEach(td => {
+          const headerIndex = Array.from(td.parentNode.children).indexOf(td);
+          const headerText = document.querySelectorAll('.modificar th')[headerIndex].innerText;
+          td.setAttribute('data-label', headerText);
+        });
+      }
+    });
   </script>
 
   <?php
