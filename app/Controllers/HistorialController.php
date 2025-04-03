@@ -25,7 +25,7 @@ class HistorialController extends BaseController
         rsort($archivos); // Ordenar de más reciente a más antiguo
 
         $data = ['archivos' => $archivos];
-        return view('historialCambios', $data);
+        return view('HistorialCambios', $data);
     }
 
     // Método para mostrar el contenido de un archivo específico
