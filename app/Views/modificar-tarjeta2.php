@@ -1,10 +1,7 @@
 <?php
-
     $session = session();
     $rol = $session->get("ID_Rol");
 
-?>
-<?php
     // Verificar si la sesión está iniciada
     if (!isset($session)) {
         $session = session();
@@ -22,276 +19,421 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modificar Tarjeta</title>
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/modtar2.css'); ?>"> <!-- Enlazando el CSS del Sidebar -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-.content {
-    margin-left: 250px; /* Mantiene el margen izquierdo debido al sidebar */
-    padding: 20px;
-    transition: all 0.3s ease-in-out;
-}
+    /* Estilos generales */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f5f5f5;
+        min-height: 100vh;
+    }
 
-body {
-    background: #F5F5F5;
-    font-family: Arial, sans-serif;
-}
+    /* Botón para mostrar/ocultar menú en móviles */
+    .menu-toggle {
+        display: none;
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 10px;
+        z-index: 1100;
+        cursor: pointer;
+        font-size: 18px;
+    }
 
-.modtar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-left: 265px; /* Ajuste para no sobreponerse al sidebar */
-    padding: 20px;
-    width: 20%; /* Ajusta el ancho */
-    background-color: #ffffff; /* Fondo blanco */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    border-radius: 8px; /* Bordes redondeados */
-    margin-top: 50px; /* Espacio superior */
-}
+    /* Sidebar - Versión responsive */
+    .sidebar {
+        height: 100vh;
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #2b2b2b;
+        padding-top: 20px;
+        color: #fff;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+        overflow-y: auto;
+        scrollbar-width: none;
+        z-index: 1000;
+        transition: transform 0.3s ease;
+    }
 
-body {
-    background-color: #E5E5E5; /* Fondo claro */
-}
+    .sidebar::-webkit-scrollbar {
+        display: none;
+    }
 
-.modtar h1 {
-    text-align: center;
-    color: #333;
-}
+    .sidebar a {
+        padding: 12px 15px;
+        text-decoration: none;
+        font-size: 16px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        margin: 8px 15px;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
 
-.modtar label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #555;
-}
+    /* Efecto hover */
+    .sidebar a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
+    }
 
-.modtar input, .modtar select {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    box-sizing: border-box;
-}
+    /* Efecto para íconos */
+    .sidebar a i {
+        margin-right: 10px;
+        font-size: 18px;
+        color: #3498db;
+        transition: transform 0.3s ease;
+    }
 
-.modtar input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    padding: 12px;
-    margin-top: 10px;
-    font-size: 16px;
-}
+    .sidebar a:hover i {
+        transform: scale(1.15);
+    }
 
-.modtar input[type="submit"]:hover {
-    background-color: #45a049;
-}
+    /* Elemento activo */
+    .sidebar a.active {
+        background-color: #4a4a4a;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    }
 
-      /* Estilos para el Sidebar */
-          /* Estilos para el Sidebar */
-          .sidebar {
-    height: 100vh;
-    width: 250px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: linear-gradient(180deg, #000706, #00272d); /* Gradiente de color1 a color2 */
-    padding-top: 20px;
-    font-family: Arial, sans-serif;
-    color: #bfac8b; /* Color5 para el texto */
-    transition: background 1.5s ease-in-out, width 0.5s ease-in-out;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
-    overflow-y: auto; /* Desplazamiento vertical */
-    scrollbar-width: none; /* Ocultar barra de desplazamiento en Firefox */
-}
+    .sidebar a.active::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 4px;
+        background-color: #3498db;
+    }
 
-.sidebar::-webkit-scrollbar {
-    display: none; /* Ocultar barra de desplazamiento en Chrome/Safari */
-}
+    .sidebar .logo {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        color: #3498db;
+        padding: 0 15px;
+    }
 
-.sidebar:hover {
-    width: 270px;
-    background: linear-gradient(180deg, #00272d, #134647); /* Gradiente más sutil */
-    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.6); /* Sombra más fuerte en hover */
-}
+    .sidebar .menu-heading {
+        padding: 10px 15px;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-top: 25px;
+        font-size: 14px;
+        color: #3498db;
+        letter-spacing: 1px;
+    }
 
-.sidebar a {
-    padding: 15px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #bfac8b; /* Color5 */
-    display: flex;
-    align-items: center;
-    border-radius: 8px;
-    margin: 10px 15px;
-    background-color: rgba(255, 255, 255, 0.05);
-    transition: all 0.4s ease; /* Transiciones más suaves */
-    box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.1);
-}
+    /* Contenido principal */
+    .content {
+        margin-left: 250px;
+        padding: 20px;
+        transition: margin-left 0.3s ease;
+    }
 
-.sidebar a:hover {
-    background-color: #0c7e7e; /* Color4 */
-    color: #fff; /* Blanco en hover */
-    transform: translateX(12px);
-    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(0, 0, 0, 0.2);
-}
+    /* Formulario de modificación */
+    .form-container {
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
 
-.sidebar a i {
-    margin-right: 12px;
-    font-size: 20px;
-    color: #bfac8b; /* Color5 para íconos */
-    transition: color 0.3s ease;
-}
+    .form-container h1 {
+        text-align: center;
+        color: #3498db;
+        margin-bottom: 25px;
+        font-size: 24px;
+    }
 
-.sidebar a:hover i {
-    color: #fff; /* Íconos blancos en hover */
-}
+    .form-group {
+        margin-bottom: 20px;
+    }
 
-.sidebar .logo {
-    text-align: center;
-    font-size: 26px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #bfac8b; /* Color5 */
-    animation: fadeIn 1.5s ease-in-out;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-}
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #555;
+    }
 
-.sidebar .menu-heading {
-    padding-left: 15px;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-top: 25px;
-    font-size: 15px;
-    color: #bfac8b; /* Color5 */
-    border-bottom: 1px solid #bfac8b;
-    padding-bottom: 8px;
-    animation: fadeIn 1.5s ease-in-out;
-}
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 15px;
+        transition: border-color 0.3s;
+    }
 
-.sidebar .menu-heading:last-of-type {
-    margin-top: 40px; /* Separación extra para la última categoría */
-}
+    .form-group input:focus,
+    .form-group select:focus {
+        border-color: #3498db;
+        outline: none;
+    }
 
-.sidebar a:last-of-type {
-    margin-bottom: 30px; /* Espacio en la parte inferior del último enlace */
-}
-.sidebar .menu .cerrar-sesion {
-    margin-top: auto; /* Esto empuja el elemento hacia el fondo del sidebar */
-    padding-bottom: 10px; /* Puedes ajustar el espacio adicional si es necesario */
-}
-.sidebar .logout {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    text-align: center;
-}
+    .btn-submit {
+        width: 100%;
+        padding: 12px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-top: 10px;
+    }
 
-.sidebar .logout a {
-    transition: transform 0.3s ease, color 0.3s ease;
-}
+    .btn-submit:hover {
+        background-color: #2980b9;
+    }
 
-.sidebar .logout a:hover {
-    color: #fff;
-    transform: scale(1.1); /* Pequeño aumento en hover */
-}
+    .btn-volver {
+        display: inline-block;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        background-color: #95a5a6;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-top: 15px;
+        text-decoration: none;
+    }
 
-/* Enlace activo */
-.sidebar a.active {
-    background-color: #bfac8b; /* Color5 para el enlace activo */
-    color: #000706; /* Texto color1 */
-}
+    .btn-volver:hover {
+        background-color: #7f8c8d;
+    }
 
-/* Animaciones */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+    /* Mensajes de error/éxito */
+    .mensaje {
+        padding: 12px 15px;
+        margin: 15px 20px 15px 270px;
+        border-radius: 4px;
+        text-align: center;
+        font-size: 15px;
+        transition: margin-left 0.3s ease;
+    }
+
+    .error {
+        color: #e74c3c;
+        background-color: #fdecea;
+        border: 1px solid #f5c6cb;
+    }
+
+    .success {
+        color: #27ae60;
+        background-color: #e8f5e9;
+        border: 1px solid #c3e6cb;
+    }
+
+    /* Media Queries para responsive */
+    @media (max-width: 992px) {
+        .sidebar {
+            transform: translateX(-100%);
+        }
+        
+        .sidebar.active {
+            transform: translateX(0);
+        }
+        
+        .content, .mensaje {
+            margin-left: 0;
+        }
+        
+        .menu-toggle {
+            display: block;
+        }
+        
+        .form-container {
+            margin: 30px auto;
+            padding: 20px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .form-container {
+            margin: 20px;
+            width: auto;
+        }
+        
+        .form-container h1 {
+            font-size: 22px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .sidebar {
+            width: 220px;
+        }
+        
+        .sidebar a {
+            padding: 10px 12px;
+            font-size: 15px;
+        }
+        
+        .sidebar .logo {
+            font-size: 22px;
+        }
+        
+        .mensaje {
+            margin: 15px 10px;
+            font-size: 14px;
+        }
+        
+        .form-container {
+            padding: 15px;
+        }
+        
+        .form-group input,
+        .form-group select {
+            padding: 10px 12px;
+        }
+    }
     </style>
 </head>
 <body>
+  <!-- Botón para mostrar/ocultar menú en móviles -->
+  <button class="menu-toggle" id="menuToggle">
+    <i class="fas fa-bars"></i>
+  </button>
 
-<!-- Incluir Sidebar -->
-<div class="sidebar">
-  <div class="logo">
-    <?php 
-      if ($rol == 5) {
-          echo "Administrador";
-      } elseif ($rol == 6) {
-          echo "Supervisor";
-      } elseif ($rol == 7) {
-          echo "Usuario";
-      }
-    ?>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="logo">
+      <?php 
+        if ($rol == 5) {
+            echo "Administrador";
+        } elseif ($rol == 6) {
+            echo "Supervisor";
+        } elseif ($rol == 7) {
+            echo "Usuario";
+        }
+      ?>
+    </div>
+    <div class="menu-heading">Menu</div>
+    <a href="<?php echo site_url('/bienvenido');?>" class="menu-item">
+      <i class="fas fa-home"></i> Inicio
+    </a>
+    
+    <?php if ($rol == 5): ?>
+    <div class="menu-heading">Usuarios</div>
+    <a href="<?php echo site_url('/modificar-usuario');?>" class="menu-item">
+      <i class="fas fa-user-edit"></i> Gestor de Usuarios
+    </a>
+    <?php endif; ?>
+    
+    <div class="menu-heading">Tarjetas</div>
+    <?php if ($rol == 5): ?>
+    <a href="<?php echo site_url('/modificar-tarjeta');?>" class="menu-item active">
+      <i class="fas fa-credit-card"></i> Gestor de Tarjetas
+    </a>
+    <?php endif; ?>
+    <a href="<?php echo site_url('/consultar-rfid');?>" class="menu-item">
+      <i class="fas fa-search"></i> Consultar Estado
+    </a>
+    
+    <?php if ($rol == 5 || $rol == 6): ?>
+    <div class="menu-heading">Reportes</div>
+    <a href="<?php echo site_url('/ver-alertas');?>" class="menu-item">
+      <i class="fas fa-exclamation-triangle"></i> Ver Alertas
+    </a>
+    <a href="<?php echo site_url('/ver-accesos-tarjeta');?>" class="menu-item">
+      <i class="fas fa-key"></i> Ver Accesos
+    </a>
+    <a href="<?php echo site_url('/historial-cambios');?>" class="menu-item">
+      <i class="fas fa-history"></i> Historial
+    </a>
+    <?php endif; ?>
+    
+    <div class="menu-heading">Sesión</div>
+    <a onclick="cerrarsesion('<?php echo site_url('/logout');?>')" class="menu-item">
+      <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+    </a>
   </div>
-  <div class="menu-heading">Menu</div>
-  <a href="<?php echo site_url('/bienvenido');?>" class="menu-item">
-    <i class="fas fa-home"></i> Inicio
-  </a>
-  <!-- Opciones para Administrador -->
-<?php if ($rol == 5): ?>
-  <div class="menu-heading">Usuarios</div>
-  <a href="<?php echo site_url('/modificar-usuario');?>" class="menu-item">
-    <i class="fas fa-user-edit"></i> Gestor de Usuarios
-  </a>
-<?php endif; ?>
-<!-- Opciones para Tarjetas disponibles para todos los roles -->
-<div class="menu-heading">Tarjetas</div>
-<!-- Administrador puede gestionar tarjetas -->
-<?php if ($rol == 5): ?>
-  <a href="<?php echo site_url('/modificar-tarjeta');?>" class="menu-item"> <!-- Cambia "1" por el ID dinámico -->
-    <i class="fas fa-user-edit"></i> Gestor de Tarjetas
-  </a>
-<?php endif; ?>
-<!-- Consultar estado de tarjetas, accesible para todos los roles -->
-<a href="<?php echo site_url('/consultar-rfid');?>" class="menu-item">
-  <i class="fas fa-search"></i> Consultar Estado de Tarjetas
-</a>
-<!-- Opciones para Supervisor y Administrador -->
-<?php if ($rol == 5 || $rol == 6): ?>
-  <div class="menu-heading">Reportes</div>
-  <a href="<?php echo site_url('/ver-alertas');?>" class="menu-item">
-    <i class="fas fa-exclamation-triangle"></i> Ver Alertas
-  </a>
-  <a href="<?php echo site_url('/ver-accesos-tarjeta');?>" class="menu-item">
-    <i class="fas fa-key"></i> Ver Accesos de Tarjeta
-  </a>
-  <a href="<?php echo site_url('/historial-cambios');?>" class="menu-item">
-    <i class="fas fa-history"></i> Ver Historial de Cambios
-  </a>
-<?php endif; ?>
-<!-- Nueva Categoría para Cerrar Sesión -->
-<div class="menu-heading">Cerrar Sesión</div>
-<a onclick="cerrarsesion('<?php echo site_url('/logout');?>')" class="menu-item">
-  <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
-</a>
-</div>
-<!-- Fin Sidebar -->
-<div class="modtar">
-    <h1>Modificar Tarjeta</h1>
-    <!-- Formulario de actualización de la tarjeta -->
-    <form action="<?= site_url('actualizar-tarjeta') ?>" method="post">
-        <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
-        <label for="estado">Estado de la Tarjeta</label>
-        <select name="estado" required>
-          <option value="1">Activa</option>
-          <option value="0">Inactiva</option>
-        </select>
-        <input type="submit" value="Actualizar Tarjeta">
-        <a href="modificar-tarjeta">Volver</a>
-    </form>
-</div>
 
-    <script>
-function cerrarsesion(url){
-  if(confirm('¿Seguro Queres Cerrar Sesion?')){
-    window.location.href=url;
-  }
-}
-</script>
+  <!-- Contenido principal -->
+  <div class="content">
+    <div class="form-container">
+      <h1>Modificar Tarjeta</h1>
+      <form action="<?= site_url('actualizar-tarjeta') ?>" method="post">
+          <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
+          
+          <div class="form-group">
+              <label for="estado">Estado de la Tarjeta</label>
+              <select name="estado" id="estado" required>
+                <option value="1" <?= $tarjeta['Estado'] == 1 ? 'selected' : '' ?>>Activa</option>
+                <option value="0" <?= $tarjeta['Estado'] == 0 ? 'selected' : '' ?>>Inactiva</option>
+              </select>
+          </div>
+          
+          <button type="submit" class="btn-submit">Actualizar Tarjeta</button>
+          <a href="<?= site_url('modificar-tarjeta') ?>" class="btn-volver">Volver</a>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Mostrar/ocultar sidebar en móviles
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+
+    // Cerrar sidebar al hacer clic en un enlace (en móviles)
+    const menuItems = document.querySelectorAll('.sidebar a');
+    menuItems.forEach(item => {
+      item.addEventListener('click', () => {
+        if (window.innerWidth <= 992) {
+          sidebar.classList.remove('active');
+        }
+      });
+    });
+
+    // Cerrar sesión
+    function cerrarsesion(url){
+      if(confirm('¿Seguro Queres Cerrar Sesion?')){
+        window.location.href=url;
+      }
+    }
+
+    // Redimensionar la ventana
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 992) {
+        sidebar.classList.remove('active');
+      }
+    });
+  </script>
+
+  <?php
+    if (isset($error)) {
+      echo '<div class="mensaje error">'.$error.'</div>';
+    } elseif (isset($success)) {
+      echo '<div class="mensaje success">'.$success.'</div>';
+    }
+  ?>
 </body>
 </html>
