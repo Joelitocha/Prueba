@@ -1,0 +1,545 @@
+<?php return array (
+  'options' => 
+  array (
+    'component' => 'config',
+    'path' => 'Config',
+    'instanceOf' => NULL,
+    'getShared' => true,
+    'preferApp' => true,
+  ),
+  'aliases' => 
+  array (
+    'Config\\Exceptions' => 'Config\\Exceptions',
+    'Config\\ContentSecurityPolicy' => 'Config\\ContentSecurityPolicy',
+    'Config\\App' => 'Config\\App',
+    'Config\\Cache' => 'Config\\Cache',
+    'Config\\UserAgents' => 'Config\\UserAgents',
+    'Config\\Cookie' => 'Config\\Cookie',
+    'Config\\Modules' => 'Config\\Modules',
+    'Config\\Toolbar' => 'Config\\Toolbar',
+    'Config\\Routing' => 'Config\\Routing',
+    'Config\\Filters' => 'Config\\Filters',
+    'Config\\Feature' => 'Config\\Feature',
+    'Config\\Logger' => 'Config\\Logger',
+    'Config\\View' => 'Config\\View',
+  ),
+  'instances' => 
+  array (
+    'Config\\Exceptions' => 
+    Config\Exceptions::__set_state(array(
+       'log' => true,
+       'ignoreCodes' => 
+      array (
+        0 => 404,
+      ),
+       'errorViewPath' => '/var/www/html/Prueba/app/Views/errors',
+       'sensitiveDataInTrace' => 
+      array (
+      ),
+       'logDeprecations' => true,
+       'deprecationLogLevel' => 'warning',
+    )),
+    'Config\\ContentSecurityPolicy' => 
+    Config\ContentSecurityPolicy::__set_state(array(
+       'reportOnly' => false,
+       'reportURI' => NULL,
+       'upgradeInsecureRequests' => false,
+       'defaultSrc' => NULL,
+       'scriptSrc' => 'self',
+       'styleSrc' => 'self',
+       'imageSrc' => 'self',
+       'baseURI' => NULL,
+       'childSrc' => 'self',
+       'connectSrc' => 'self',
+       'fontSrc' => NULL,
+       'formAction' => 'self',
+       'frameAncestors' => NULL,
+       'frameSrc' => NULL,
+       'mediaSrc' => NULL,
+       'objectSrc' => 'self',
+       'manifestSrc' => NULL,
+       'pluginTypes' => NULL,
+       'sandbox' => NULL,
+       'styleNonceTag' => '{csp-style-nonce}',
+       'scriptNonceTag' => '{csp-script-nonce}',
+       'autoNonce' => true,
+    )),
+    'Config\\App' => 
+    Config\App::__set_state(array(
+       'baseURL' => 'https://RackOn.tech/',
+       'allowedHostnames' => 
+      array (
+        0 => '',
+      ),
+       'indexPage' => '',
+       'uriProtocol' => 'REQUEST_URI',
+       'permittedURIChars' => 'a-z 0-9~%.:_\\-',
+       'defaultLocale' => 'en',
+       'negotiateLocale' => false,
+       'supportedLocales' => 
+      array (
+        0 => 'en',
+      ),
+       'appTimezone' => 'America/Argentina/Buenos_Aires',
+       'charset' => 'UTF-8',
+       'forceGlobalSecureRequests' => true,
+       'proxyIPs' => 
+      array (
+      ),
+       'CSPEnabled' => false,
+    )),
+    'Config\\Cache' => 
+    Config\Cache::__set_state(array(
+       'handler' => 'file',
+       'backupHandler' => 'dummy',
+       'storePath' => '/var/www/html/Prueba/writable/cache/',
+       'prefix' => '',
+       'ttl' => 60,
+       'reservedCharacters' => '{}()/\\@:',
+       'file' => 
+      array (
+        'storePath' => '/var/www/html/Prueba/writable/cache/',
+        'mode' => 416,
+      ),
+       'memcached' => 
+      array (
+        'host' => '127.0.0.1',
+        'port' => 11211,
+        'weight' => 1,
+        'raw' => false,
+      ),
+       'redis' => 
+      array (
+        'host' => '127.0.0.1',
+        'password' => NULL,
+        'port' => 6379,
+        'timeout' => 0,
+        'database' => 0,
+      ),
+       'validHandlers' => 
+      array (
+        'dummy' => 'CodeIgniter\\Cache\\Handlers\\DummyHandler',
+        'file' => 'CodeIgniter\\Cache\\Handlers\\FileHandler',
+        'memcached' => 'CodeIgniter\\Cache\\Handlers\\MemcachedHandler',
+        'predis' => 'CodeIgniter\\Cache\\Handlers\\PredisHandler',
+        'redis' => 'CodeIgniter\\Cache\\Handlers\\RedisHandler',
+        'wincache' => 'CodeIgniter\\Cache\\Handlers\\WincacheHandler',
+      ),
+       'cacheQueryString' => false,
+    )),
+    'Config\\UserAgents' => 
+    Config\UserAgents::__set_state(array(
+       'platforms' => 
+      array (
+        'windows nt 10.0' => 'Windows 10',
+        'windows nt 6.3' => 'Windows 8.1',
+        'windows nt 6.2' => 'Windows 8',
+        'windows nt 6.1' => 'Windows 7',
+        'windows nt 6.0' => 'Windows Vista',
+        'windows nt 5.2' => 'Windows 2003',
+        'windows nt 5.1' => 'Windows XP',
+        'windows nt 5.0' => 'Windows 2000',
+        'windows nt 4.0' => 'Windows NT 4.0',
+        'winnt4.0' => 'Windows NT 4.0',
+        'winnt 4.0' => 'Windows NT',
+        'winnt' => 'Windows NT',
+        'windows 98' => 'Windows 98',
+        'win98' => 'Windows 98',
+        'windows 95' => 'Windows 95',
+        'win95' => 'Windows 95',
+        'windows phone' => 'Windows Phone',
+        'windows' => 'Unknown Windows OS',
+        'android' => 'Android',
+        'blackberry' => 'BlackBerry',
+        'iphone' => 'iOS',
+        'ipad' => 'iOS',
+        'ipod' => 'iOS',
+        'os x' => 'Mac OS X',
+        'ppc mac' => 'Power PC Mac',
+        'freebsd' => 'FreeBSD',
+        'ppc' => 'Macintosh',
+        'linux' => 'Linux',
+        'debian' => 'Debian',
+        'sunos' => 'Sun Solaris',
+        'beos' => 'BeOS',
+        'apachebench' => 'ApacheBench',
+        'aix' => 'AIX',
+        'irix' => 'Irix',
+        'osf' => 'DEC OSF',
+        'hp-ux' => 'HP-UX',
+        'netbsd' => 'NetBSD',
+        'bsdi' => 'BSDi',
+        'openbsd' => 'OpenBSD',
+        'gnu' => 'GNU/Linux',
+        'unix' => 'Unknown Unix OS',
+        'symbian' => 'Symbian OS',
+      ),
+       'browsers' => 
+      array (
+        'OPR' => 'Opera',
+        'Flock' => 'Flock',
+        'Edge' => 'Spartan',
+        'Edg' => 'Edge',
+        'Chrome' => 'Chrome',
+        'Opera.*?Version' => 'Opera',
+        'Opera' => 'Opera',
+        'MSIE' => 'Internet Explorer',
+        'Internet Explorer' => 'Internet Explorer',
+        'Trident.* rv' => 'Internet Explorer',
+        'Shiira' => 'Shiira',
+        'Firefox' => 'Firefox',
+        'Chimera' => 'Chimera',
+        'Phoenix' => 'Phoenix',
+        'Firebird' => 'Firebird',
+        'Camino' => 'Camino',
+        'Netscape' => 'Netscape',
+        'OmniWeb' => 'OmniWeb',
+        'Safari' => 'Safari',
+        'Mozilla' => 'Mozilla',
+        'Konqueror' => 'Konqueror',
+        'icab' => 'iCab',
+        'Lynx' => 'Lynx',
+        'Links' => 'Links',
+        'hotjava' => 'HotJava',
+        'amaya' => 'Amaya',
+        'IBrowse' => 'IBrowse',
+        'Maxthon' => 'Maxthon',
+        'Ubuntu' => 'Ubuntu Web Browser',
+        'Vivaldi' => 'Vivaldi',
+      ),
+       'mobiles' => 
+      array (
+        'mobileexplorer' => 'Mobile Explorer',
+        'palmsource' => 'Palm',
+        'palmscape' => 'Palmscape',
+        'motorola' => 'Motorola',
+        'nokia' => 'Nokia',
+        'palm' => 'Palm',
+        'iphone' => 'Apple iPhone',
+        'ipad' => 'iPad',
+        'ipod' => 'Apple iPod Touch',
+        'sony' => 'Sony Ericsson',
+        'ericsson' => 'Sony Ericsson',
+        'blackberry' => 'BlackBerry',
+        'cocoon' => 'O2 Cocoon',
+        'blazer' => 'Treo',
+        'lg' => 'LG',
+        'amoi' => 'Amoi',
+        'xda' => 'XDA',
+        'mda' => 'MDA',
+        'vario' => 'Vario',
+        'htc' => 'HTC',
+        'samsung' => 'Samsung',
+        'sharp' => 'Sharp',
+        'sie-' => 'Siemens',
+        'alcatel' => 'Alcatel',
+        'benq' => 'BenQ',
+        'ipaq' => 'HP iPaq',
+        'mot-' => 'Motorola',
+        'playstation portable' => 'PlayStation Portable',
+        'playstation 3' => 'PlayStation 3',
+        'playstation vita' => 'PlayStation Vita',
+        'hiptop' => 'Danger Hiptop',
+        'nec-' => 'NEC',
+        'panasonic' => 'Panasonic',
+        'philips' => 'Philips',
+        'sagem' => 'Sagem',
+        'sanyo' => 'Sanyo',
+        'spv' => 'SPV',
+        'zte' => 'ZTE',
+        'sendo' => 'Sendo',
+        'nintendo dsi' => 'Nintendo DSi',
+        'nintendo ds' => 'Nintendo DS',
+        'nintendo 3ds' => 'Nintendo 3DS',
+        'wii' => 'Nintendo Wii',
+        'open web' => 'Open Web',
+        'openweb' => 'OpenWeb',
+        'android' => 'Android',
+        'symbian' => 'Symbian',
+        'SymbianOS' => 'SymbianOS',
+        'elaine' => 'Palm',
+        'series60' => 'Symbian S60',
+        'windows ce' => 'Windows CE',
+        'obigo' => 'Obigo',
+        'netfront' => 'Netfront Browser',
+        'openwave' => 'Openwave Browser',
+        'mobilexplorer' => 'Mobile Explorer',
+        'operamini' => 'Opera Mini',
+        'opera mini' => 'Opera Mini',
+        'opera mobi' => 'Opera Mobile',
+        'fennec' => 'Firefox Mobile',
+        'digital paths' => 'Digital Paths',
+        'avantgo' => 'AvantGo',
+        'xiino' => 'Xiino',
+        'novarra' => 'Novarra Transcoder',
+        'vodafone' => 'Vodafone',
+        'docomo' => 'NTT DoCoMo',
+        'o2' => 'O2',
+        'mobile' => 'Generic Mobile',
+        'wireless' => 'Generic Mobile',
+        'j2me' => 'Generic Mobile',
+        'midp' => 'Generic Mobile',
+        'cldc' => 'Generic Mobile',
+        'up.link' => 'Generic Mobile',
+        'up.browser' => 'Generic Mobile',
+        'smartphone' => 'Generic Mobile',
+        'cellphone' => 'Generic Mobile',
+      ),
+       'robots' => 
+      array (
+        'googlebot' => 'Googlebot',
+        'msnbot' => 'MSNBot',
+        'baiduspider' => 'Baiduspider',
+        'bingbot' => 'Bing',
+        'slurp' => 'Inktomi Slurp',
+        'yahoo' => 'Yahoo',
+        'ask jeeves' => 'Ask Jeeves',
+        'fastcrawler' => 'FastCrawler',
+        'infoseek' => 'InfoSeek Robot 1.0',
+        'lycos' => 'Lycos',
+        'yandex' => 'YandexBot',
+        'mediapartners-google' => 'MediaPartners Google',
+        'CRAZYWEBCRAWLER' => 'Crazy Webcrawler',
+        'adsbot-google' => 'AdsBot Google',
+        'feedfetcher-google' => 'Feedfetcher Google',
+        'curious george' => 'Curious George',
+        'ia_archiver' => 'Alexa Crawler',
+        'MJ12bot' => 'Majestic-12',
+        'Uptimebot' => 'Uptimebot',
+      ),
+    )),
+    'Config\\Cookie' => 
+    Config\Cookie::__set_state(array(
+       'prefix' => '',
+       'expires' => 0,
+       'path' => '/',
+       'domain' => '',
+       'secure' => false,
+       'httponly' => true,
+       'samesite' => 'Lax',
+       'raw' => false,
+    )),
+    'Config\\Modules' => 
+    Config\Modules::__set_state(array(
+       'enabled' => true,
+       'discoverInComposer' => true,
+       'aliases' => 
+      array (
+        0 => 'events',
+        1 => 'filters',
+        2 => 'registrars',
+        3 => 'routes',
+        4 => 'services',
+      ),
+       'composerPackages' => 
+      array (
+      ),
+    )),
+    'Config\\Toolbar' => 
+    Config\Toolbar::__set_state(array(
+       'collectors' => 
+      array (
+        0 => 'CodeIgniter\\Debug\\Toolbar\\Collectors\\Timers',
+        1 => 'CodeIgniter\\Debug\\Toolbar\\Collectors\\Database',
+        2 => 'CodeIgniter\\Debug\\Toolbar\\Collectors\\Logs',
+        3 => 'CodeIgniter\\Debug\\Toolbar\\Collectors\\Views',
+        4 => 'CodeIgniter\\Debug\\Toolbar\\Collectors\\Files',
+        5 => 'CodeIgniter\\Debug\\Toolbar\\Collectors\\Routes',
+        6 => 'CodeIgniter\\Debug\\Toolbar\\Collectors\\Events',
+      ),
+       'collectVarData' => true,
+       'maxHistory' => 20,
+       'viewsPath' => '/var/www/html/Prueba/system/Debug/Toolbar/Views/',
+       'maxQueries' => 100,
+       'watchedDirectories' => 
+      array (
+        0 => 'app',
+      ),
+       'watchedExtensions' => 
+      array (
+        0 => 'php',
+        1 => 'css',
+        2 => 'js',
+        3 => 'html',
+        4 => 'svg',
+        5 => 'json',
+        6 => 'env',
+      ),
+    )),
+    'Config\\Routing' => 
+    Config\Routing::__set_state(array(
+       'routeFiles' => 
+      array (
+        0 => '/var/www/html/Prueba/app/Config/Routes.php',
+      ),
+       'defaultNamespace' => 'App\\Controllers',
+       'defaultController' => 'Home',
+       'defaultMethod' => 'index',
+       'translateURIDashes' => false,
+       'override404' => NULL,
+       'autoRoute' => false,
+       'prioritize' => false,
+       'multipleSegmentsOneParam' => false,
+       'moduleRoutes' => 
+      array (
+      ),
+       'translateUriToCamelCase' => false,
+    )),
+    'Config\\Filters' => 
+    Config\Filters::__set_state(array(
+       'aliases' => 
+      array (
+        'csrf' => 'CodeIgniter\\Filters\\CSRF',
+        'toolbar' => 'CodeIgniter\\Filters\\DebugToolbar',
+        'honeypot' => 'CodeIgniter\\Filters\\Honeypot',
+        'invalidchars' => 'CodeIgniter\\Filters\\InvalidChars',
+        'secureheaders' => 'CodeIgniter\\Filters\\SecureHeaders',
+        'cors' => 'CodeIgniter\\Filters\\Cors',
+        'forcehttps' => 'CodeIgniter\\Filters\\ForceHTTPS',
+        'pagecache' => 'CodeIgniter\\Filters\\PageCache',
+        'performance' => 'CodeIgniter\\Filters\\PerformanceMetrics',
+      ),
+       'required' => 
+      array (
+        'before' => 
+        array (
+          0 => 'forcehttps',
+          1 => 'pagecache',
+        ),
+        'after' => 
+        array (
+          0 => 'pagecache',
+          1 => 'performance',
+          2 => 'toolbar',
+        ),
+      ),
+       'globals' => 
+      array (
+        'before' => 
+        array (
+        ),
+        'after' => 
+        array (
+        ),
+      ),
+       'methods' => 
+      array (
+      ),
+       'filters' => 
+      array (
+      ),
+    )),
+    'Config\\Feature' => 
+    Config\Feature::__set_state(array(
+       'autoRoutesImproved' => false,
+       'oldFilterOrder' => false,
+       'limitZeroAsAll' => true,
+    )),
+    'Config\\Logger' => 
+    Config\Logger::__set_state(array(
+       'threshold' => 9,
+       'dateFormat' => 'Y-m-d H:i:s',
+       'handlers' => 
+      array (
+        'CodeIgniter\\Log\\Handlers\\FileHandler' => 
+        array (
+          'handles' => 
+          array (
+            0 => 'critical',
+            1 => 'alert',
+            2 => 'emergency',
+            3 => 'debug',
+            4 => 'error',
+            5 => 'info',
+            6 => 'notice',
+            7 => 'warning',
+          ),
+          'fileExtension' => '',
+          'filePermissions' => 420,
+          'path' => '',
+        ),
+      ),
+    )),
+    'Config\\View' => 
+    Config\View::__set_state(array(
+       'saveData' => true,
+       'filters' => 
+      array (
+        'abs' => '\\abs',
+        'capitalize' => '\\CodeIgniter\\View\\Filters::capitalize',
+        'date' => '\\CodeIgniter\\View\\Filters::date',
+        'date_modify' => '\\CodeIgniter\\View\\Filters::date_modify',
+        'default' => '\\CodeIgniter\\View\\Filters::default',
+        'esc' => '\\CodeIgniter\\View\\Filters::esc',
+        'excerpt' => '\\CodeIgniter\\View\\Filters::excerpt',
+        'highlight' => '\\CodeIgniter\\View\\Filters::highlight',
+        'highlight_code' => '\\CodeIgniter\\View\\Filters::highlight_code',
+        'limit_words' => '\\CodeIgniter\\View\\Filters::limit_words',
+        'limit_chars' => '\\CodeIgniter\\View\\Filters::limit_chars',
+        'local_currency' => '\\CodeIgniter\\View\\Filters::local_currency',
+        'local_number' => '\\CodeIgniter\\View\\Filters::local_number',
+        'lower' => '\\strtolower',
+        'nl2br' => '\\CodeIgniter\\View\\Filters::nl2br',
+        'number_format' => '\\number_format',
+        'prose' => '\\CodeIgniter\\View\\Filters::prose',
+        'round' => '\\CodeIgniter\\View\\Filters::round',
+        'strip_tags' => '\\strip_tags',
+        'title' => '\\CodeIgniter\\View\\Filters::title',
+        'upper' => '\\strtoupper',
+      ),
+       'plugins' => 
+      array (
+        'csp_script_nonce' => '\\CodeIgniter\\View\\Plugins::cspScriptNonce',
+        'csp_style_nonce' => '\\CodeIgniter\\View\\Plugins::cspStyleNonce',
+        'current_url' => '\\CodeIgniter\\View\\Plugins::currentURL',
+        'previous_url' => '\\CodeIgniter\\View\\Plugins::previousURL',
+        'mailto' => '\\CodeIgniter\\View\\Plugins::mailto',
+        'safe_mailto' => '\\CodeIgniter\\View\\Plugins::safeMailto',
+        'lang' => '\\CodeIgniter\\View\\Plugins::lang',
+        'validation_errors' => '\\CodeIgniter\\View\\Plugins::validationErrors',
+        'route' => '\\CodeIgniter\\View\\Plugins::route',
+        'siteURL' => '\\CodeIgniter\\View\\Plugins::siteURL',
+      ),
+       'coreFilters' => 
+      array (
+        'abs' => '\\abs',
+        'capitalize' => '\\CodeIgniter\\View\\Filters::capitalize',
+        'date' => '\\CodeIgniter\\View\\Filters::date',
+        'date_modify' => '\\CodeIgniter\\View\\Filters::date_modify',
+        'default' => '\\CodeIgniter\\View\\Filters::default',
+        'esc' => '\\CodeIgniter\\View\\Filters::esc',
+        'excerpt' => '\\CodeIgniter\\View\\Filters::excerpt',
+        'highlight' => '\\CodeIgniter\\View\\Filters::highlight',
+        'highlight_code' => '\\CodeIgniter\\View\\Filters::highlight_code',
+        'limit_words' => '\\CodeIgniter\\View\\Filters::limit_words',
+        'limit_chars' => '\\CodeIgniter\\View\\Filters::limit_chars',
+        'local_currency' => '\\CodeIgniter\\View\\Filters::local_currency',
+        'local_number' => '\\CodeIgniter\\View\\Filters::local_number',
+        'lower' => '\\strtolower',
+        'nl2br' => '\\CodeIgniter\\View\\Filters::nl2br',
+        'number_format' => '\\number_format',
+        'prose' => '\\CodeIgniter\\View\\Filters::prose',
+        'round' => '\\CodeIgniter\\View\\Filters::round',
+        'strip_tags' => '\\strip_tags',
+        'title' => '\\CodeIgniter\\View\\Filters::title',
+        'upper' => '\\strtoupper',
+      ),
+       'corePlugins' => 
+      array (
+        'csp_script_nonce' => '\\CodeIgniter\\View\\Plugins::cspScriptNonce',
+        'csp_style_nonce' => '\\CodeIgniter\\View\\Plugins::cspStyleNonce',
+        'current_url' => '\\CodeIgniter\\View\\Plugins::currentURL',
+        'previous_url' => '\\CodeIgniter\\View\\Plugins::previousURL',
+        'mailto' => '\\CodeIgniter\\View\\Plugins::mailto',
+        'safe_mailto' => '\\CodeIgniter\\View\\Plugins::safeMailto',
+        'lang' => '\\CodeIgniter\\View\\Plugins::lang',
+        'validation_errors' => '\\CodeIgniter\\View\\Plugins::validationErrors',
+        'route' => '\\CodeIgniter\\View\\Plugins::route',
+        'siteURL' => '\\CodeIgniter\\View\\Plugins::siteURL',
+      ),
+       'decorators' => 
+      array (
+      ),
+    )),
+  ),
+);

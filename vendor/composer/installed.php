@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'type' => 'project',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'reference' => '9ada5c16f6ea86fde1b15dd7c40b9a48eb4132af',
+        'name' => 'codeigniter4/framework',
+        'dev' => false,
+    ),
+    'versions' => array(
+        'codeigniter4/framework' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'type' => 'project',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'reference' => '9ada5c16f6ea86fde1b15dd7c40b9a48eb4132af',
+            'dev_requirement' => false,
+        ),
+        'laminas/laminas-escaper' => array(
+            'pretty_version' => '2.16.0',
+            'version' => '2.16.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laminas/laminas-escaper',
+            'aliases' => array(),
+            'reference' => '9cf1f5317ca65b4fd5c6a3c2855e24a187b288c8',
+            'dev_requirement' => false,
+        ),
+        'psr/log' => array(
+            'pretty_version' => '3.0.2',
+            'version' => '3.0.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/log',
+            'aliases' => array(),
+            'reference' => 'f16e1d5863e37f8d8c2a01719f5b34baa2b714d3',
+            'dev_requirement' => false,
+        ),
+    ),
+);

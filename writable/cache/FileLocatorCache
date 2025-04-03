@@ -1,0 +1,273 @@
+<?php return array (
+  'search' => 
+  array (
+    'Config/Services' => 
+    array (
+      'php' => 
+      array (
+        1 => 
+        array (
+          0 => '/var/www/html/Prueba/app/Config/Services.php',
+          1 => '/var/www/html/Prueba/system/Config/Services.php',
+        ),
+      ),
+    ),
+    'Config/Registrar.php' => 
+    array (
+      'php' => 
+      array (
+        1 => 
+        array (
+        ),
+      ),
+    ),
+    'Helpers/kint_helper' => 
+    array (
+      'php' => 
+      array (
+        1 => 
+        array (
+          0 => '/var/www/html/Prueba/system/Helpers/kint_helper.php',
+        ),
+      ),
+    ),
+    'Helpers/url_helper' => 
+    array (
+      'php' => 
+      array (
+        1 => 
+        array (
+          0 => '/var/www/html/Prueba/system/Helpers/url_helper.php',
+        ),
+      ),
+    ),
+    'Config/Events.php' => 
+    array (
+      'php' => 
+      array (
+        1 => 
+        array (
+          0 => '/var/www/html/Prueba/app/Config/Events.php',
+        ),
+      ),
+    ),
+    'Config/Filters.php' => 
+    array (
+      'php' => 
+      array (
+        1 => 
+        array (
+          0 => '/var/www/html/Prueba/app/Config/Filters.php',
+          1 => '/var/www/html/Prueba/system/Config/Filters.php',
+        ),
+      ),
+    ),
+    'Helpers/array_helper' => 
+    array (
+      'php' => 
+      array (
+        1 => 
+        array (
+          0 => '/var/www/html/Prueba/system/Helpers/array_helper.php',
+        ),
+      ),
+    ),
+    'Config/Routes.php' => 
+    array (
+      'php' => 
+      array (
+        1 => 
+        array (
+          0 => '/var/www/html/Prueba/app/Config/Routes.php',
+        ),
+      ),
+    ),
+    'Language/en/Errors.php' => 
+    array (
+      'php' => 
+      array (
+        0 => 
+        array (
+          0 => '/var/www/html/Prueba/system/Language/en/Errors.php',
+        ),
+      ),
+    ),
+    'Language/en/HTTP.php' => 
+    array (
+      'php' => 
+      array (
+        0 => 
+        array (
+          0 => '/var/www/html/Prueba/system/Language/en/HTTP.php',
+        ),
+      ),
+    ),
+    'Helpers/filesystem_helper' => 
+    array (
+      'php' => 
+      array (
+        1 => 
+        array (
+          0 => '/var/www/html/Prueba/system/Helpers/filesystem_helper.php',
+        ),
+      ),
+    ),
+    'Helpers/security_helper' => 
+    array (
+      'php' => 
+      array (
+        1 => 
+        array (
+          0 => '/var/www/html/Prueba/system/Helpers/security_helper.php',
+        ),
+      ),
+    ),
+    'Helpers/number_helper' => 
+    array (
+      'php' => 
+      array (
+        1 => 
+        array (
+          0 => '/var/www/html/Prueba/system/Helpers/number_helper.php',
+        ),
+      ),
+    ),
+    'Language/en/Number.php' => 
+    array (
+      'php' => 
+      array (
+        0 => 
+        array (
+          0 => '/var/www/html/Prueba/system/Language/en/Number.php',
+        ),
+      ),
+    ),
+  ),
+  'findQualifiedNameFromPath' => 
+  array (
+    '/var/www/html/Prueba/app/Config/Services.php' => 'Config\\Services',
+    '/var/www/html/Prueba/system/Commands/Cache/ClearCache.php' => 'CodeIgniter\\Commands\\Cache\\ClearCache',
+    '/var/www/html/Prueba/system/Commands/Cache/InfoCache.php' => 'CodeIgniter\\Commands\\Cache\\InfoCache',
+    '/var/www/html/Prueba/system/Commands/Database/CreateDatabase.php' => 'CodeIgniter\\Commands\\Database\\CreateDatabase',
+    '/var/www/html/Prueba/system/Commands/Database/Migrate.php' => 'CodeIgniter\\Commands\\Database\\Migrate',
+    '/var/www/html/Prueba/system/Commands/Database/MigrateRefresh.php' => 'CodeIgniter\\Commands\\Database\\MigrateRefresh',
+    '/var/www/html/Prueba/system/Commands/Database/MigrateRollback.php' => 'CodeIgniter\\Commands\\Database\\MigrateRollback',
+    '/var/www/html/Prueba/system/Commands/Database/MigrateStatus.php' => 'CodeIgniter\\Commands\\Database\\MigrateStatus',
+    '/var/www/html/Prueba/system/Commands/Database/Seed.php' => 'CodeIgniter\\Commands\\Database\\Seed',
+    '/var/www/html/Prueba/system/Commands/Database/ShowTableInfo.php' => 'CodeIgniter\\Commands\\Database\\ShowTableInfo',
+    '/var/www/html/Prueba/system/Commands/Encryption/GenerateKey.php' => 'CodeIgniter\\Commands\\Encryption\\GenerateKey',
+    '/var/www/html/Prueba/system/Commands/Generators/CellGenerator.php' => 'CodeIgniter\\Commands\\Generators\\CellGenerator',
+    '/var/www/html/Prueba/system/Commands/Generators/CommandGenerator.php' => 'CodeIgniter\\Commands\\Generators\\CommandGenerator',
+    '/var/www/html/Prueba/system/Commands/Generators/ConfigGenerator.php' => 'CodeIgniter\\Commands\\Generators\\ConfigGenerator',
+    '/var/www/html/Prueba/system/Commands/Generators/ControllerGenerator.php' => 'CodeIgniter\\Commands\\Generators\\ControllerGenerator',
+    '/var/www/html/Prueba/system/Commands/Generators/EntityGenerator.php' => 'CodeIgniter\\Commands\\Generators\\EntityGenerator',
+    '/var/www/html/Prueba/system/Commands/Generators/FilterGenerator.php' => 'CodeIgniter\\Commands\\Generators\\FilterGenerator',
+    '/var/www/html/Prueba/system/Commands/Generators/MigrationGenerator.php' => 'CodeIgniter\\Commands\\Generators\\MigrationGenerator',
+    '/var/www/html/Prueba/system/Commands/Generators/ModelGenerator.php' => 'CodeIgniter\\Commands\\Generators\\ModelGenerator',
+    '/var/www/html/Prueba/system/Commands/Generators/ScaffoldGenerator.php' => 'CodeIgniter\\Commands\\Generators\\ScaffoldGenerator',
+    '/var/www/html/Prueba/system/Commands/Generators/SeederGenerator.php' => 'CodeIgniter\\Commands\\Generators\\SeederGenerator',
+    '/var/www/html/Prueba/system/Commands/Generators/TestGenerator.php' => 'CodeIgniter\\Commands\\Generators\\TestGenerator',
+    '/var/www/html/Prueba/system/Commands/Generators/ValidationGenerator.php' => 'CodeIgniter\\Commands\\Generators\\ValidationGenerator',
+    '/var/www/html/Prueba/system/Commands/Generators/Views/cell.tpl.php' => false,
+    '/var/www/html/Prueba/system/Commands/Generators/Views/cell_view.tpl.php' => false,
+    '/var/www/html/Prueba/system/Commands/Generators/Views/command.tpl.php' => false,
+    '/var/www/html/Prueba/system/Commands/Generators/Views/config.tpl.php' => false,
+    '/var/www/html/Prueba/system/Commands/Generators/Views/controller.tpl.php' => false,
+    '/var/www/html/Prueba/system/Commands/Generators/Views/entity.tpl.php' => false,
+    '/var/www/html/Prueba/system/Commands/Generators/Views/filter.tpl.php' => false,
+    '/var/www/html/Prueba/system/Commands/Generators/Views/migration.tpl.php' => false,
+    '/var/www/html/Prueba/system/Commands/Generators/Views/model.tpl.php' => false,
+    '/var/www/html/Prueba/system/Commands/Generators/Views/seeder.tpl.php' => false,
+    '/var/www/html/Prueba/system/Commands/Generators/Views/test.tpl.php' => false,
+    '/var/www/html/Prueba/system/Commands/Generators/Views/validation.tpl.php' => false,
+    '/var/www/html/Prueba/system/Commands/Help.php' => 'CodeIgniter\\Commands\\Help',
+    '/var/www/html/Prueba/system/Commands/Housekeeping/ClearDebugbar.php' => 'CodeIgniter\\Commands\\Housekeeping\\ClearDebugbar',
+    '/var/www/html/Prueba/system/Commands/Housekeeping/ClearLogs.php' => 'CodeIgniter\\Commands\\Housekeeping\\ClearLogs',
+    '/var/www/html/Prueba/system/Commands/ListCommands.php' => 'CodeIgniter\\Commands\\ListCommands',
+    '/var/www/html/Prueba/system/Commands/Server/Serve.php' => 'CodeIgniter\\Commands\\Server\\Serve',
+    '/var/www/html/Prueba/system/Commands/Translation/LocalizationFinder.php' => 'CodeIgniter\\Commands\\Translation\\LocalizationFinder',
+    '/var/www/html/Prueba/system/Commands/Utilities/ConfigCheck.php' => 'CodeIgniter\\Commands\\Utilities\\ConfigCheck',
+    '/var/www/html/Prueba/system/Commands/Utilities/Environment.php' => 'CodeIgniter\\Commands\\Utilities\\Environment',
+    '/var/www/html/Prueba/system/Commands/Utilities/FilterCheck.php' => 'CodeIgniter\\Commands\\Utilities\\FilterCheck',
+    '/var/www/html/Prueba/system/Commands/Utilities/Namespaces.php' => 'CodeIgniter\\Commands\\Utilities\\Namespaces',
+    '/var/www/html/Prueba/system/Commands/Utilities/Optimize.php' => 'CodeIgniter\\Commands\\Utilities\\Optimize',
+    '/var/www/html/Prueba/system/Commands/Utilities/PhpIniCheck.php' => 'CodeIgniter\\Commands\\Utilities\\PhpIniCheck',
+    '/var/www/html/Prueba/system/Commands/Utilities/Publish.php' => 'CodeIgniter\\Commands\\Utilities\\Publish',
+    '/var/www/html/Prueba/system/Commands/Utilities/Routes.php' => 'CodeIgniter\\Commands\\Utilities\\Routes',
+    '/var/www/html/Prueba/system/Commands/Utilities/Routes/AutoRouteCollector.php' => 'CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouteCollector',
+    '/var/www/html/Prueba/system/Commands/Utilities/Routes/AutoRouterImproved/AutoRouteCollector.php' => 'CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\AutoRouteCollector',
+    '/var/www/html/Prueba/system/Commands/Utilities/Routes/AutoRouterImproved/ControllerMethodReader.php' => 'CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\ControllerMethodReader',
+    '/var/www/html/Prueba/system/Commands/Utilities/Routes/ControllerFinder.php' => 'CodeIgniter\\Commands\\Utilities\\Routes\\ControllerFinder',
+    '/var/www/html/Prueba/system/Commands/Utilities/Routes/ControllerMethodReader.php' => 'CodeIgniter\\Commands\\Utilities\\Routes\\ControllerMethodReader',
+    '/var/www/html/Prueba/system/Commands/Utilities/Routes/FilterCollector.php' => 'CodeIgniter\\Commands\\Utilities\\Routes\\FilterCollector',
+    '/var/www/html/Prueba/system/Commands/Utilities/Routes/FilterFinder.php' => 'CodeIgniter\\Commands\\Utilities\\Routes\\FilterFinder',
+    '/var/www/html/Prueba/system/Commands/Utilities/Routes/SampleURIGenerator.php' => 'CodeIgniter\\Commands\\Utilities\\Routes\\SampleURIGenerator',
+  ),
+  'getClassname' => 
+  array (
+    '/var/www/html/Prueba/app/Config/Filters.php' => 'Config\\Filters',
+    '/var/www/html/Prueba/system/Config/Filters.php' => 'CodeIgniter\\Config\\Filters',
+  ),
+  'listFiles' => 
+  array (
+    'Commands/' => 
+    array (
+      0 => '/var/www/html/Prueba/system/Commands/Cache/ClearCache.php',
+      1 => '/var/www/html/Prueba/system/Commands/Cache/InfoCache.php',
+      2 => '/var/www/html/Prueba/system/Commands/Database/CreateDatabase.php',
+      3 => '/var/www/html/Prueba/system/Commands/Database/Migrate.php',
+      4 => '/var/www/html/Prueba/system/Commands/Database/MigrateRefresh.php',
+      5 => '/var/www/html/Prueba/system/Commands/Database/MigrateRollback.php',
+      6 => '/var/www/html/Prueba/system/Commands/Database/MigrateStatus.php',
+      7 => '/var/www/html/Prueba/system/Commands/Database/Seed.php',
+      8 => '/var/www/html/Prueba/system/Commands/Database/ShowTableInfo.php',
+      9 => '/var/www/html/Prueba/system/Commands/Encryption/GenerateKey.php',
+      10 => '/var/www/html/Prueba/system/Commands/Generators/CellGenerator.php',
+      11 => '/var/www/html/Prueba/system/Commands/Generators/CommandGenerator.php',
+      12 => '/var/www/html/Prueba/system/Commands/Generators/ConfigGenerator.php',
+      13 => '/var/www/html/Prueba/system/Commands/Generators/ControllerGenerator.php',
+      14 => '/var/www/html/Prueba/system/Commands/Generators/EntityGenerator.php',
+      15 => '/var/www/html/Prueba/system/Commands/Generators/FilterGenerator.php',
+      16 => '/var/www/html/Prueba/system/Commands/Generators/MigrationGenerator.php',
+      17 => '/var/www/html/Prueba/system/Commands/Generators/ModelGenerator.php',
+      18 => '/var/www/html/Prueba/system/Commands/Generators/ScaffoldGenerator.php',
+      19 => '/var/www/html/Prueba/system/Commands/Generators/SeederGenerator.php',
+      20 => '/var/www/html/Prueba/system/Commands/Generators/TestGenerator.php',
+      21 => '/var/www/html/Prueba/system/Commands/Generators/ValidationGenerator.php',
+      22 => '/var/www/html/Prueba/system/Commands/Generators/Views/cell.tpl.php',
+      23 => '/var/www/html/Prueba/system/Commands/Generators/Views/cell_view.tpl.php',
+      24 => '/var/www/html/Prueba/system/Commands/Generators/Views/command.tpl.php',
+      25 => '/var/www/html/Prueba/system/Commands/Generators/Views/config.tpl.php',
+      26 => '/var/www/html/Prueba/system/Commands/Generators/Views/controller.tpl.php',
+      27 => '/var/www/html/Prueba/system/Commands/Generators/Views/entity.tpl.php',
+      28 => '/var/www/html/Prueba/system/Commands/Generators/Views/filter.tpl.php',
+      29 => '/var/www/html/Prueba/system/Commands/Generators/Views/migration.tpl.php',
+      30 => '/var/www/html/Prueba/system/Commands/Generators/Views/model.tpl.php',
+      31 => '/var/www/html/Prueba/system/Commands/Generators/Views/seeder.tpl.php',
+      32 => '/var/www/html/Prueba/system/Commands/Generators/Views/test.tpl.php',
+      33 => '/var/www/html/Prueba/system/Commands/Generators/Views/validation.tpl.php',
+      34 => '/var/www/html/Prueba/system/Commands/Help.php',
+      35 => '/var/www/html/Prueba/system/Commands/Housekeeping/ClearDebugbar.php',
+      36 => '/var/www/html/Prueba/system/Commands/Housekeeping/ClearLogs.php',
+      37 => '/var/www/html/Prueba/system/Commands/ListCommands.php',
+      38 => '/var/www/html/Prueba/system/Commands/Server/Serve.php',
+      39 => '/var/www/html/Prueba/system/Commands/Translation/LocalizationFinder.php',
+      40 => '/var/www/html/Prueba/system/Commands/Utilities/ConfigCheck.php',
+      41 => '/var/www/html/Prueba/system/Commands/Utilities/Environment.php',
+      42 => '/var/www/html/Prueba/system/Commands/Utilities/FilterCheck.php',
+      43 => '/var/www/html/Prueba/system/Commands/Utilities/Namespaces.php',
+      44 => '/var/www/html/Prueba/system/Commands/Utilities/Optimize.php',
+      45 => '/var/www/html/Prueba/system/Commands/Utilities/PhpIniCheck.php',
+      46 => '/var/www/html/Prueba/system/Commands/Utilities/Publish.php',
+      47 => '/var/www/html/Prueba/system/Commands/Utilities/Routes.php',
+      48 => '/var/www/html/Prueba/system/Commands/Utilities/Routes/AutoRouteCollector.php',
+      49 => '/var/www/html/Prueba/system/Commands/Utilities/Routes/AutoRouterImproved/AutoRouteCollector.php',
+      50 => '/var/www/html/Prueba/system/Commands/Utilities/Routes/AutoRouterImproved/ControllerMethodReader.php',
+      51 => '/var/www/html/Prueba/system/Commands/Utilities/Routes/ControllerFinder.php',
+      52 => '/var/www/html/Prueba/system/Commands/Utilities/Routes/ControllerMethodReader.php',
+      53 => '/var/www/html/Prueba/system/Commands/Utilities/Routes/FilterCollector.php',
+      54 => '/var/www/html/Prueba/system/Commands/Utilities/Routes/FilterFinder.php',
+      55 => '/var/www/html/Prueba/system/Commands/Utilities/Routes/SampleURIGenerator.php',
+    ),
+  ),
+);
