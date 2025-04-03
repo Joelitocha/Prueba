@@ -213,7 +213,7 @@
     /* Tabla - Versión responsive para PC y móviles */
     .tabla-container {
         padding: 20px;
-        margin-left: 250px;
+
         transition: margin-left 0.3s ease;
         overflow-x: auto;
         width: calc(100% - 250px);
