@@ -23,73 +23,24 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/css/mod2.css'); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
+        /* === ESTILOS GENERALES === */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("../images/bg1.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+
         .content {
             margin-left: 250px;
             padding: 20px;
             transition: all 0.3s ease-in-out;
         }
 
-        body {
-            background: #F5F5F5;
-            font-family: Arial, sans-serif;
-        }
-
-        .modificar {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin-left: 265px;
-            padding: 20px;
-            width: 35%;
-            background-color: #ffffff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            margin-top: 50px;
-            align-items: stretch;
-        }
-
-        body {
-            background-color: #E5E5E5;
-        }
-
-        .modificar h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        .modificar label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-            color: #555;
-        }
-
-        .modificar input, .modificar select {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 14px;
-            box-sizing: border-box;
-        }
-
-        .modificar input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            padding: 12px;
-            margin-top: 10px;
-            font-size: 16px;
-        }
-
-        .modificar input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-
-        /* Estilos para el Sidebar */
+        /* === SIDEBAR (Mismo estilo que el primer archivo) === */
         .sidebar {
             height: 100vh;
             width: 250px;
@@ -104,6 +55,7 @@
             box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
             overflow-y: auto;
             scrollbar-width: none;
+            z-index: 1000;
         }
 
         .sidebar::-webkit-scrollbar {
@@ -177,67 +129,97 @@
         .sidebar a:last-of-type {
             margin-bottom: 30px;
         }
-        
-        .sidebar .menu .cerrar-sesion {
-            margin-top: auto;
-            padding-bottom: 10px;
+
+        /* === FORMULARIO (Mismo estilo que el primer archivo) === */
+        .modificar {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 265px;
+            padding: 30px;
+            width: 35%;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 50px;
+            align-items: stretch;
         }
-        
-        .sidebar .logout {
-            position: absolute;
-            bottom: 20px;
-            width: 100%;
+
+        .modificar h1 {
             text-align: center;
+            color: #333;
+            margin-bottom: 20px;
         }
 
-        .sidebar .logout a {
-            transition: transform 0.3s ease, color 0.3s ease;
+        .modificar label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
         }
 
-        .sidebar .logout a:hover {
-            color: #fff;
-            transform: scale(1.1);
+        .modificar input, 
+        .modificar select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            box-sizing: border-box;
         }
 
-        /* Enlace activo */
-        .sidebar a.active {
-            background-color: #bfac8b;
-            color: #000706;
+        .modificar input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            font-size: 16px;
+            transition: background-color 0.3s;
         }
 
-        /* Animaciones */
+        .modificar input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .modificar a {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .modificar a:hover {
+            text-decoration: underline;
+        }
+
+        /* === MENSAJES DE ERROR/ÉXITO === */
+        .error {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .success {
+            color: green;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* === ANIMACIONES === */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-
-        /* Estilos para el contenido fuera del sidebar */
-        .content {
-            margin-left: 250px;
-            padding: 20px;
-            transition: all 0.3s ease-in-out;
-        }
-
-        body {
-            background-image: url("../images/bg1.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-        }
-
-        /* Estilos para el contenedor principal */
-        .welcome-container {
-            background: linear-gradient(135deg, #00272d, #0c7e7e);
-            padding: 50px;
-            border-radius: 20px;
-            max-width: 800px;
-            margin: 50px auto;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        }
     </style>
 </head>
 <body>
-<!-- Incluir Sidebar -->
+<!-- === SIDEBAR (Mismo que el primer archivo) === -->
 <div class="sidebar">
   <div class="logo">
     <?php 
@@ -292,23 +274,25 @@
   <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
 </a>
 </div>
-<!-- Fin Sidebar -->
+<!-- === FIN SIDEBAR === -->
+
+<!-- === CONTENIDO PRINCIPAL (Formulario de modificación) === -->
 <div class="modificar">
     <h1>Modificar Usuario</h1>
     <form action="<?php echo site_url('/actualizar-usuario') ?>" method="post">
         
         <label for="Nombre">Nombre de Usuario</label>
-        <input type="text" name="Nombre" id="Nombre" value="<?= esc($user[0]['Nombre']) ?>" required maxlength="50"><br><br>
+        <input type="text" name="Nombre" id="Nombre" value="<?= esc($user[0]['Nombre']) ?>" required maxlength="50">
 
         <label for="Email">Correo Electrónico</label>
-        <input type="email" name="Email" id="Email" value="<?= esc($user[0]['Email']) ?>" required maxlength="100"><br><br>
+        <input type="email" name="Email" id="Email" value="<?= esc($user[0]['Email']) ?>" required maxlength="100">
 
         <label for="ID_Rol">ID Rol</label>
         <select name="ID_Rol" id="ID_Rol" required>
             <option value="5" <?= ($user[0]['ID_Rol'] == 5) ? 'selected' : ''; ?>>Administrador</option>
             <option value="6" <?= ($user[0]['ID_Rol'] == 6) ? 'selected' : ''; ?>>Supervisor</option>
             <option value="7" <?= ($user[0]['ID_Rol'] == 7) ? 'selected' : ''; ?>>Usuario</option>
-        </select><br><br>
+        </select>
 
         <label for="ID_Tarjeta">ID Tarjeta</label>
         <select name="ID_Tarjeta" id="ID_Tarjeta" required>
@@ -321,19 +305,21 @@
         </select>
 
         <input type="hidden" value="<?php echo $user[0]['ID_Usuario']?>" name="id">
-        <br><br>
         <input type="submit" value="Actualizar">
-        <center><a href="modificar-usuario">Volver</a> </center>
+        <a href="modificar-usuario">Volver</a>
     </form>
 </div>
+
+<!-- === MENSAJES DE ERROR/ÉXITO === -->
 <?php
     if (isset($error)) {
-        echo "<p style='color: red;'>$error</p>";
+        echo "<p class='error'>$error</p>";
     } elseif (isset($success)) {
-        echo "<p style='color: green;'>$success</p>";
+        echo "<p class='success'>$success</p>";
     }
 ?>
 
+<!-- === SCRIPT PARA CERRAR SESIÓN === -->
 <script>
 function cerrarsesion(url){
   if(confirm('¿Seguro Queres Cerrar Sesion?')){
