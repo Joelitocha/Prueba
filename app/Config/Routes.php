@@ -47,6 +47,8 @@ $routes->post('/modificar-tarjeta2', 'TarjetaController::VistaModificar2');  // 
 $routes->post('/actualizar-tarjeta', 'TarjetaController::update');  // Proceso de actualización de tarjeta
 $routes->get('/eliminar-tarjeta', 'TarjetaController::gestionar');  // Vista para eliminar tarjeta
 $routes->post('/eliminar-tarjeta', 'TarjetaController::delete');  // Proceso de eliminación de tarjeta
+$routes->post('bloquear-tarjeta', 'TarjetaController::bloquearTarjeta');
+$routes->post('desbloquear-tarjeta', 'TarjetaController::desbloquearTarjeta');
 
 // Rutas para el registro de accesos a través de tarjeta
 $routes->get('/ver-accesos-tarjeta', 'RegistrosAccesoController::verRegistros');  // Ver registros de acceso por tarjeta

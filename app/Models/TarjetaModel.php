@@ -10,7 +10,16 @@ class TarjetaModel extends Model
     protected $primaryKey = 'ID_Tarjeta'; // Clave primaria de la tabla
     protected $useAutoIncrement = true; // Indica si la clave primaria es auto-incrementable
     
-    protected $allowedFields = ['ID_Tarjeta', 'Estado', 'Fecha_emision', 'UID']; // Campos permitidos para operaciones de inserción y actualización
+    protected $allowedFields = [
+        'ID_Tarjeta', 
+        'Estado', 
+        'Fecha_emision', 
+        'UID',
+        'Fecha_Expiracion',
+        'Intentos_Fallidos',
+        'Bloqueada',
+        'Horario_Uso'
+    ];
 
     // Método para obtener todas las tarjetas
     public function getAllTarjetas()

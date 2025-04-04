@@ -117,25 +117,6 @@ class TarjetaController extends BaseController
         return view('modificar-tarjeta', ['tarjeta' => $tarjeta]);
     }
 
-    // Actualiza los datos de una tarjeta en la base de datos
-    public function update()
-    {
-        $tarjetaModel = new TarjetaModel(); // Crea una instancia del modelo de tarjetas
-
-        // Obtiene los datos del formulario para actualizar la tarjeta
-        $id = $this->request->getPost('ID_Tarjeta');
-        $data = [
-            'Estado' => $this->request->getPost('estado') 
-
-        ];
-
-        // Actualiza la tarjeta en la base de datos
-        $tarjetaModel->update($id, $data);
-
-        // Redirige a la vista de modificación con un mensaje de éxito
-        return redirect()->to('/modificar-tarjeta')->with('success', 'Tarjeta actualizada exitosamente');
-    }
-
     // Ver el estado de una tarjeta específica
     public function verEstadoTarjeta()
     {
@@ -161,6 +142,55 @@ class TarjetaController extends BaseController
             return view('consultar-rfid', ['error' => 'ID de tarjeta no proporcionado']);
         }
     }
+    // En TarjetaController.php
+
+public function bloquearTarjeta()
+{
+    $id = $this->request->getPost('ID_Tarjeta');
+    $model = new TarjetaModel();
+    
+    $model->update($id, [
+        'Bloqueada' => 1,
+        'Intentos_Fallidos' => 3 // Forzar bloqueo
+    ]);
+    
+    return redirect()->to('/modificar-tarjeta')->with('success', 'Tarjeta bloqueada exitosamente');
+}
+
+public function desbloquearTarjeta()
+{
+    $id = $this->request->getPost('ID_Tarjeta');
+    $model = new TarjetaModel();
+    
+    $model->update($id, [
+        'Bloqueada' => 0,
+        'Intentos_Fallidos' => 0 // Resetear intentos
+    ]);
+    
+    return redirect()->to('/modificar-tarjeta')->with('success', 'Tarjeta desbloqueada exitosamente');
+}
+
+public function update()
+{
+    $model = new TarjetaModel();
+    $id = $this->request->getPost('ID_Tarjeta');
+    
+    $data = [
+        'Estado' => $this->request->getPost('estado'),
+        'Fecha_Expiracion' => $this->request->getPost('fecha_expiracion'),
+        'Horario_Uso' => $this->request->getPost('horario_uso'),
+        'Bloqueada' => $this->request->getPost('bloqueada'),
+        'Intentos_Fallidos' => $this->request->getPost('intentos_fallidos')
+    ];
+    
+    // Si se desbloquea manualmente, resetear intentos
+    if ($data['Bloqueada'] == 0) {
+        $data['Intentos_Fallidos'] = 0;
+    }
+    
+    $model->update($id, $data);
+    return redirect()->to('/modificar-tarjeta')->with('success', 'Tarjeta actualizada exitosamente');
+}
 }
 
 ?>

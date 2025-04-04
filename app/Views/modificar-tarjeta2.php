@@ -375,8 +375,8 @@
 
   <!-- Contenido principal -->
   <div class="content">
-    <div class="form-container">
-      <h1>Modificar Tarjeta</h1>
+  <div class="form-container">
+      <h1>Modificar Tarjeta <?= esc($tarjeta['ID_Tarjeta']); ?></h1>
       <form action="<?= site_url('actualizar-tarjeta') ?>" method="post">
           <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
           
@@ -388,6 +388,36 @@
               </select>
           </div>
           
+          <div class="form-group">
+              <label for="fecha_expiracion">Fecha de Expiración</label>
+              <input type="date" name="fecha_expiracion" id="fecha_expiracion" 
+                     value="<?= esc($tarjeta['Fecha_Expiracion'] ?? ''); ?>">
+              <small class="form-text text-muted">Dejar vacío para tarjeta sin expiración</small>
+          </div>
+          
+          <div class="form-group">
+              <label for="horario_uso">Horario de Uso</label>
+              <input type="text" name="horario_uso" id="horario_uso" 
+                     value="<?= esc($tarjeta['Horario_Uso'] ?? ''); ?>"
+                     placeholder="Ej: 08:00-18:00 o L-V:08:00-18:00,S-D:10:00-15:00">
+              <small class="form-text text-muted">Formato: HH:MM-HH:MM o Días:HH:MM-HH:MM</small>
+          </div>
+          
+          <div class="form-group">
+              <label for="bloqueada">Estado de Bloqueo</label>
+              <select name="bloqueada" id="bloqueada">
+                <option value="0" <?= $tarjeta['Bloqueada'] == 0 ? 'selected' : '' ?>>Desbloqueada</option>
+                <option value="1" <?= $tarjeta['Bloqueada'] == 1 ? 'selected' : '' ?>>Bloqueada</option>
+              </select>
+          </div>
+          
+          <div class="form-group">
+              <label for="intentos_fallidos">Intentos Fallidos</label>
+              <input type="number" name="intentos_fallidos" id="intentos_fallidos" 
+                     value="<?= esc($tarjeta['Intentos_Fallidos'] ?? 0); ?>" min="0" max="3">
+              <small class="form-text text-muted">Máximo 3 intentos antes de bloqueo automático</small>
+          </div>
+
           <button type="submit" class="btn-submit">Actualizar Tarjeta</button>
           <a href="<?= site_url('modificar-tarjeta') ?>" class="btn-volver">Volver</a>
       </form>
