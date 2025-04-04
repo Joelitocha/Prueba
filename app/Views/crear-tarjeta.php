@@ -141,7 +141,7 @@
 <div class="crear">
     <h1>Crear Tarjeta</h1>
 
-    <form action="<?php echo site_url('/crear-tarjeta/store') ?>" method="post">
+    <form action="<?php echo site_url('/crear-tarjeta') ?>" method="post">
         <div class="form-group">
             <label for="Estado">Estado</label>
             <select name="Estado" required>

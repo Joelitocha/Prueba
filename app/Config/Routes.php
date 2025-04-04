@@ -60,6 +60,7 @@ $routes->post('/historial-cambios/ver', 'HistorialController::verArchivo');
 // Rutas adicionales
 $routes->get('/crear-tarjeta', 'CrearTarjetaController::index');  // Vista para crear tarjeta
 $routes->post('/crear-tarjeta', 'CrearTarjetaController::store');  // Proceso de creación de tarjeta
+
 $routes->post('/consultar-rfid', 'TarjetaController::verEstadoTarjeta');  // Consultar estado de la tarjeta
 
 // Rutas para ESP32
