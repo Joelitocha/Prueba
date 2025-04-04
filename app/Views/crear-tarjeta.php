@@ -158,14 +158,15 @@
 
         <div class="form-group">
             <label for="Fecha_Expiracion">Fecha de Expiración</label>
-            <input type="date" name="Fecha_Expiracion" id="Fecha_Expiracion">
+            <input type="date" name="Fecha_Expiracion" id="Fecha_Expiracion" value="">
             <p class="form-note">Dejar vacío para tarjeta sin fecha de expiración</p>
         </div>
 
+
         <div class="form-group">
             <label for="Horario_Uso">Horario de Uso</label>
-            <input type="text" name="Horario_Uso" id="Horario_Uso" placeholder="Ej: 08:00-18:00 o L-V:08:00-18:00,S-D:10:00-15:00">
-            <p class="form-note">Formato: HH:MM-HH:MM o Días:HH:MM-HH:MM</p>
+            <input type="text" name="Horario_Uso" id="Horario_Uso" value="" placeholder="Ej: 08:00-18:00 o L-V:08:00-18:00,S-D:10:00-15:00">
+            <p class="form-note">Dejar vacío para tarjeta sin restricción horaria</p>
         </div>
 
         <div class="form-group">

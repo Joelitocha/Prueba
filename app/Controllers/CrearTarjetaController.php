@@ -16,30 +16,33 @@ class CrearTarjetaController extends BaseController
     public function store()
     {
         $model = new TarjetaModel();
-
-        // Obtener datos del formulario con los nuevos campos
+    
+        // Obtener datos del formulario
         $data = [
             'Estado' => $this->request->getPost('Estado'),
             'UID' => $this->request->getPost('UID'),
-            'Fecha_Expiracion' => $this->request->getPost('Fecha_Expiracion'),
-            'Horario_Uso' => $this->request->getPost('Horario_Uso'),
-            'Intentos_Fallidos' => 0, // Por defecto, 0 intentos fallidos
-            'Bloqueada' => 0 // Por defecto, no bloqueada
+            'Intentos_Fallidos' => $this->request->getPost('Intentos_Fallidos') ?? 0,
+            'Bloqueada' => 0
         ];
-
-        // Validar que el UID no esté vacío
+    
+        // Manejar Fecha_Expiracion (convertir vacío a null)
+        $fechaExpiracion = $this->request->getPost('Fecha_Expiracion');
+        $data['Fecha_Expiracion'] = empty($fechaExpiracion) ? null : $fechaExpiracion;
+    
+        // Manejar Horario_Uso (convertir vacío a null)
+        $horarioUso = trim($this->request->getPost('Horario_Uso'));
+        $data['Horario_Uso'] = empty($horarioUso) ? null : $horarioUso;
+    
+        // Validar UID
         if (empty($data['UID'])) {
             return redirect()->back()->with('error', 'El UID de la tarjeta es requerido');
         }
-
+    
         // Verificar si la tarjeta ya existe
-        $existingTarjeta = $model->where('UID', $data['UID'])->first();
-
-        if ($existingTarjeta) {
+        if ($model->where('UID', $data['UID'])->first()) {
             return redirect()->back()->with('error', 'La tarjeta ya está registrada');
         }
-
-        // Insertar la nueva tarjeta
+    
         try {
             $model->insert($data);
             return redirect()->back()->with('success', 'Tarjeta creada exitosamente');

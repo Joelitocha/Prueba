@@ -389,18 +389,15 @@
           </div>
           
           <div class="form-group">
-              <label for="fecha_expiracion">Fecha de Expiración</label>
-              <input type="date" name="fecha_expiracion" id="fecha_expiracion" 
-                     value="<?= esc($tarjeta['Fecha_Expiracion'] ?? ''); ?>">
-              <small class="form-text text-muted">Dejar vacío para tarjeta sin expiración</small>
-          </div>
+                <label for="fecha_expiracion">Fecha de Expiración</label>
+                <input type="date" name="fecha_expiracion" id="fecha_expiracion" value="<?= !empty($tarjeta['Fecha_Expiracion']) ? esc($tarjeta['Fecha_Expiracion']) : '' ?>">
+                <small class="form-text text-muted">Dejar vacío para tarjeta sin expiración</small>
+          </div>      
           
           <div class="form-group">
-              <label for="horario_uso">Horario de Uso</label>
-              <input type="text" name="horario_uso" id="horario_uso" 
-                     value="<?= esc($tarjeta['Horario_Uso'] ?? ''); ?>"
-                     placeholder="Ej: 08:00-18:00 o L-V:08:00-18:00,S-D:10:00-15:00">
-              <small class="form-text text-muted">Formato: HH:MM-HH:MM o Días:HH:MM-HH:MM</small>
+            <label for="horario_uso">Horario de Uso</label>
+            <input type="text" name="horario_uso" id="horario_uso" value="<?= !empty($tarjeta['Horario_Uso']) ? esc($tarjeta['Horario_Uso']) : '' ?>"placeholder="Ej: 08:00-18:00 o L-V:08:00-18:00,S-D:10:00-15:00">
+            <small class="form-text text-muted">Dejar vacío para tarjeta sin restricción horaria</small>
           </div>
           
           <div class="form-group">
