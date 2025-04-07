@@ -136,13 +136,12 @@
 
     /* Tarjeta de estado */
     .card-container {
-        max-width: 500px;
+        max-width: 600px;
         margin: 50px auto;
         padding: 30px;
         background-color: #fff;
         border-radius: 8px;
         box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-        text-align: center;
         position: relative;
         overflow: hidden;
     }
@@ -167,41 +166,59 @@
         color: #3498db;
         position: relative;
         z-index: 1;
+        text-align: center;
     }
 
-    .card-status {
-        font-size: 18px;
-        margin: 15px 0;
-        padding: 15px;
-        border-radius: 6px;
+    /* Estilos para los detalles de la tarjeta */
+    .card-details {
+        margin-top: 20px;
+        text-align: left;
         position: relative;
         z-index: 1;
     }
 
+    .detail-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 0;
+        border-bottom: 1px solid #eee;
+        align-items: center;
+    }
+
+    .detail-label {
+        font-weight: bold;
+        color: #555;
+        flex: 1;
+    }
+
+    .detail-value {
+        flex: 1;
+        text-align: right;
+        color: #333;
+    }
+
+    /* Estilos para estados */
     .status-active {
-        background-color: rgba(39, 174, 96, 0.1);
         color: #27ae60;
-        border: 1px solid #27ae60;
+        background-color: rgba(39, 174, 96, 0.1);
+        padding: 8px 12px;
+        border-radius: 4px;
     }
 
     .status-inactive {
-        background-color: rgba(231, 76, 60, 0.1);
         color: #e74c3c;
-        border: 1px solid #e74c3c;
+        background-color: rgba(231, 76, 60, 0.1);
+        padding: 8px 12px;
+        border-radius: 4px;
     }
 
     .status-error {
-        background-color: rgba(231, 76, 60, 0.1);
         color: #e74c3c;
+        background-color: rgba(231, 76, 60, 0.1);
         border: 1px solid #e74c3c;
-    }
-
-    .card-id {
-        font-size: 16px;
-        color: #555;
-        margin-top: 20px;
-        position: relative;
-        z-index: 1;
+        padding: 15px;
+        border-radius: 6px;
+        text-align: center;
     }
 
     /* Mensajes de error/éxito */
@@ -259,9 +276,16 @@
             font-size: 22px;
         }
         
-        .card-status {
-            font-size: 16px;
-            padding: 12px;
+        .detail-row {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 10px 0;
+        }
+        
+        .detail-value {
+            text-align: left;
+            margin-top: 5px;
+            width: 100%;
         }
     }
 
@@ -287,8 +311,12 @@
         .card-container {
             padding: 15px;
         }
+        
+        .detail-row {
+            padding: 8px 0;
+        }
     }
-    </style>
+</style>
   </head>
   <body>
     <!-- Botón para mostrar/ocultar menú en móviles -->
