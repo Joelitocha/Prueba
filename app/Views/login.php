@@ -37,7 +37,6 @@
     <!-- ========== ESTILOS ========== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-    /* === ESTILOS GENERALES === */
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
@@ -50,7 +49,6 @@
         align-items: center;
     }
 
-    /* === CONTENEDOR LOGIN === */
     .login-container {
         background-color: #2b2b2b;
         padding: 40px;
@@ -69,7 +67,6 @@
         font-weight: 600;
     }
 
-    /* === FORMULARIO === */
     .form-login {
         display: flex;
         flex-direction: column;
@@ -95,104 +92,51 @@
     .input-group input:focus {
         border-color: #3498db;
         outline: none;
-        background-color: #444;
-        box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
     }
 
-    .input-group i {
-        position: absolute;
-        left: 15px;
-        top: 50%;
-        transform: translateY(-50%);
-        color: #7f8c8d;
-    }
-
-    .input-group input {
-        padding-left: 40px;
-    }
-
-    /* === BOTÓN === */
     .btn-login {
-        width: 100%;
-        padding: 14px;
-        border-radius: 6px;
-        border: none;
         background-color: #3498db;
-        color: white;
+        color: #fff;
+        padding: 14px;
+        border: none;
+        border-radius: 6px;
         font-size: 16px;
-        font-weight: 500;
         cursor: pointer;
-        transition: all 0.3s ease;
-        margin-top: 10px;
+        transition: background-color 0.3s ease;
     }
 
     .btn-login:hover {
         background-color: #2980b9;
-        transform: translateY(-2px);
     }
 
-    .btn-login:active {
-        transform: translateY(0);
-    }
-
-    /* === MENSAJES === */
-    .alert {
-        padding: 12px 15px;
-        border-radius: 4px;
-        margin-bottom: 20px;
-        font-size: 15px;
-    }
-
-    .alert-error {
+    .error-message {
         color: #e74c3c;
-        background-color: #fdecea;
-        border: 1px solid #f5c6cb;
-    }
-
-    .alert-success {
-        color: #27ae60;
-        background-color: #e8f5e9;
-        border: 1px solid #c3e6cb;
-    }
-
-    /* === RESPONSIVE === */
-    @media (max-width: 576px) {
-        .login-container {
-            padding: 30px 20px;
-        }
+        background: #1a1a1a;
+        padding: 10px;
+        border-radius: 5px;
     }
     </style>
 </head>
 <body>
     <div class="login-container">
-        <h2><i class="fas fa-lock"></i> Iniciar Sesión</h2>
+        <h2>Iniciar Sesión en RackON</h2>
         
-        <?php if (session()->getFlashdata('error')): ?>
-            <div class="alert alert-error">
-                <?= session()->getFlashdata('error') ?>
-            </div>
-        <?php endif; ?>
-        
-        <?php if (session()->getFlashdata('success')): ?>
-            <div class="alert alert-success">
-                <?= session()->getFlashdata('success') ?>
-            </div>
-        <?php endif; ?>
-        
-        <form action="<?= base_url('login') ?>" method="POST" class="form-login">
+        <form action="<?= base_url('login') ?>" method="post" class="form-login">
+            <?= csrf_field() ?>
+
             <div class="input-group">
-                <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Correo Electrónico" name="Email" required>
+                <input type="email" name="email" placeholder="Correo electrónico" required>
             </div>
-            
+
             <div class="input-group">
-                <i class="fas fa-key"></i>
-                <input type="password" placeholder="Contraseña" name="Contraseña" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
             </div>
-            
-            <button type="submit" class="btn-login">
-                <i class="fas fa-sign-in-alt"></i> Entrar
-            </button>
+
+            <?php if(session()->getFlashdata('error')): ?>
+                <div class="error-message"><?= session()->getFlashdata('error') ?></div>
+            <?php endif; ?>
+
+            <button type="submit" class="btn-login">Ingresar</button>
         </form>
     </div>
 </body>
