@@ -25,6 +25,7 @@
     'Config\\Session' => 'Config\\Session',
     'Config\\Database' => 'Config\\Database',
     'Config\\Email' => 'Config\\Email',
+    'Config\\Validation' => 'Config\\Validation',
   ),
   'instances' => 
   array (
@@ -644,6 +645,21 @@
        'BCCBatchMode' => false,
        'BCCBatchSize' => 200,
        'DSN' => false,
+    )),
+    'Config\\Validation' => 
+    Config\Validation::__set_state(array(
+       'ruleSets' => 
+      array (
+        0 => 'CodeIgniter\\Validation\\StrictRules\\Rules',
+        1 => 'CodeIgniter\\Validation\\StrictRules\\FormatRules',
+        2 => 'CodeIgniter\\Validation\\StrictRules\\FileRules',
+        3 => 'CodeIgniter\\Validation\\StrictRules\\CreditCardRules',
+      ),
+       'templates' => 
+      array (
+        'list' => 'CodeIgniter\\Validation\\Views\\list',
+        'single' => 'CodeIgniter\\Validation\\Views\\single',
+      ),
     )),
   ),
 );
