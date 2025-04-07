@@ -1,38 +1,14 @@
 <!doctype html>
 <html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- ========== METADATOS SEO ========== -->
-    <title>RackON - Sistema de Control de Acceso RFID | Argentina</title>
-    <meta name="description" content="Sistema profesional de gestión de accesos mediante tarjetas RFID. Inicie sesión para administrar su cuenta.">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="RackON - Control de Acceso con Tecnología RFID">
-    <meta property="og:description" content="Solución segura para gestión de accesos en empresas y organizaciones">
-    <meta property="og:image" content="https://rackon.tech/assets/img/rackon-og.jpg">
-    <meta property="og:url" content="https://rackon.tech/">
-    <meta property="og:type" content="website">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    
-    <!-- Schema.org -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "RackON",
-      "url": "https://rackon.tech/",
-      "description": "Sistema de control de acceso con tecnología RFID",
-      "potentialAction": {
-        "@type": "LoginAction",
-        "target": "https://rackon.tech/",
-        "method": "POST"
-      }
-    }
-    </script>
+    <title>RackON – Seguridad de Racks con RFID y Sensores</title>
+    <meta name="description" content="RackON es un sistema de seguridad inteligente para racks que combina tecnología RFID, sensores y cámaras. Protege tus servidores y controla el acceso de forma eficiente.">
+    <meta name="keywords" content="RackON, seguridad de racks, RFID, sensores, IoT, control de accesos, CodeIgniter">
+    <meta name="author" content="RackON.tech">
+    <link rel="icon" href="<?= base_url('favicon.ico') ?>" type="image/x-icon">
     
     <!-- ========== ESTILOS ========== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
