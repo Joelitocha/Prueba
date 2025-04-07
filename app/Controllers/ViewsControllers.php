@@ -1,33 +1,39 @@
 <?php 
+namespace App\Controllers;
 
-namespace App\Controllers; // Definición del espacio de nombres para el controlador
+use App\Models\UserModel;
+use App\Models\TarjetaModel;
 
-use App\Models\UserModel; // Importación del modelo UserModel (aunque no se utiliza en este controlador)
-use App\Models\TarjetaModel; // Importación del modelo UserModel (aunque no se utiliza en este controlador)
-
-class ViewsControllers extends BaseController // Definición de la clase ViewsControllers que extiende de BaseController
+class ViewsControllers extends BaseController
 {
-    // Método para cargar la vista de asignación de tarjeta
     public function VistaAsignar() {
-        return view("asignar-tarjeta"); // Retorna la vista 'asignar-tarjeta'
+        return view("asignar-tarjeta");
     }
 
-    // Método para cargar la vista de gestión de tarjetas
     public function VistaGestionar() {
-        return view("gestionar-tarjeta"); // Retorna la vista 'gestionar-tarjeta'
+        return view("gestionar-tarjeta");
     }
 
-    // Método para cargar la vista de consulta de RFID
     public function VistaConsultar() {
-        $tarjetamodel=new TarjetaModel;
-        $id=session()->get('ID_tarjeta');
-        $data=$tarjetamodel->obtenerEstado($id);
-        return view("consultar-rfid",["estado" => $data]); // Retorna la vista 'consultar-rfid'
+        $tarjetamodel = new TarjetaModel;
+        $id = session()->get('ID_tarjeta');
+        $data = $tarjetamodel->obtenerEstado($id);
+        
+        // Procesar los datos para la vista
+        $tarjetaData = [
+            'id' => $data[0]['ID_Tarjeta'],
+            'estado' => $data[0]['Estado'] == 1 ? 'Activa' : 'Inactiva',
+            'fecha_emision' => $data[0]['Fecha_emision'],
+            'fecha_expiracion' => $data[0]['Fecha_Expiracion'] ?? 'No expira',
+            'intentos_fallidos' => $data[0]['Intentos_Fallidos'],
+            'bloqueada' => $data[0]['Bloqueada'] == 1 ? 'Sí' : 'No',
+            'horario_uso' => $data[0]['Horario_Uso'] ?? 'Sin restricción'
+        ];
+        
+        return view("consultar-rfid", ["tarjeta" => $tarjetaData]);
     }
 
-    // Método para cargar la vista de alertas
     public function VistaAlertas() {
-        return view("ver-alertas"); // Retorna la vista 'ver-alertas'
+        return view("ver-alertas");
     }
 }
-?>

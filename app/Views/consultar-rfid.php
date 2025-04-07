@@ -352,22 +352,46 @@
 
     <!-- Contenido principal -->
     <div class="content">
-      <div class="card-container">
-        <h1>Estado de Tarjeta RFID</h1>
-        <?php if (isset($estado)): ?>
-          <div class="card-status <?php echo $estado[0]["Estado"] == 1 ? 'status-active' : 'status-inactive'; ?>">
-            Estado: <?php echo $estado[0]["Estado"] == 1 ? 'Activa' : 'Inactiva'; ?>
-          </div>
-          <div class="card-id">
-            ID: <?php echo esc($estado[0]["ID_Tarjeta"]); ?>
-          </div>
+    <div class="card-container">
+        <h1>Información de Tarjeta RFID</h1>
+        <?php if (isset($tarjeta)): ?>
+            <div class="card-details">
+                <div class="detail-row">
+                    <span class="detail-label">ID:</span>
+                    <span class="detail-value"><?= esc($tarjeta['id']) ?></span>
+                </div>
+                <div class="detail-row <?= $tarjeta['estado'] == 'Activa' ? 'status-active' : 'status-inactive' ?>">
+                    <span class="detail-label">Estado:</span>
+                    <span class="detail-value"><?= $tarjeta['estado'] ?></span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Fecha Emisión:</span>
+                    <span class="detail-value"><?= $tarjeta['fecha_emision'] ?></span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Fecha Expiración:</span>
+                    <span class="detail-value"><?= $tarjeta['fecha_expiracion'] ?></span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Intentos Fallidos:</span>
+                    <span class="detail-value"><?= $tarjeta['intentos_fallidos'] ?></span>
+                </div>
+                <div class="detail-row <?= $tarjeta['bloqueada'] == 'Sí' ? 'status-inactive' : '' ?>">
+                    <span class="detail-label">Bloqueada:</span>
+                    <span class="detail-value"><?= $tarjeta['bloqueada'] ?></span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Horario Uso:</span>
+                    <span class="detail-value"><?= $tarjeta['horario_uso'] ?></span>
+                </div>
+            </div>
         <?php elseif (isset($error)): ?>
-          <div class="card-status status-error">
-            <?php echo $error; ?>
-          </div>
+            <div class="card-status status-error">
+                <?= $error ?>
+            </div>
         <?php endif; ?>
-      </div>
     </div>
+</div>
 
     <script>
       // Mostrar/ocultar sidebar en móviles
