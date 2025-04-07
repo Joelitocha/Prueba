@@ -9,7 +9,14 @@ class AuthController extends BaseController
 {
     public function index()
     {
-        return view('login');
+        $data = [
+            // SEO Solo para la página principal
+            'meta_title' => "RackON - Control de Acceso con Tecnología RFID | Argentina",
+            'meta_description' => "Sistema profesional de gestión de accesos mediante tarjetas RFID para empresas. Soluciones seguras en Buenos Aires.",
+            'og_image' => base_url('assets/img/rackon-og.jpg'), // Imagen 1200x630px
+            'canonical_url' => base_url()
+        ];
+        return view('login', $data);
     }
 
     public function loginUser()
