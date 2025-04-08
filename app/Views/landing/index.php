@@ -184,6 +184,7 @@
                     <li class="nav-item"><a class="nav-link" href="#introduction">¿Qué es RackON?</a></li>
                     <li class="nav-item"><a class="nav-link" href="#funcionamiento">Cómo funciona</a></li>
                     <li class="nav-item"><a class="nav-link" href="#hardware">Hardware</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#planes">Planes de Compra</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
                     <li class="nav-item"><a class="nav-link" href="login">Acceder</a></li>
                 </ul>
@@ -347,45 +348,101 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="fullpage-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center mb-5">
-                    <h2>Lo que dicen nuestros clientes</h2>
-                </div>
+<!-- Planes de Compra -->
+<section id="planes" class="fullpage-section bg-light py-5">
+    <div class="container">
+        <div class="row mb-5 text-center">
+            <div class="col-lg-12">
+                <h2 class="mb-3">Planes de Compra de RackON</h2>
+                <p class="lead">Elige el plan que mejor se adapte a las necesidades de tu empresa. Todos los planes incluyen acceso a la plataforma web.</p>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="swiper-container testimonial-slider">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide text-center">
-                                <img class="testimonial-image" src="assets/images/testimonial-1.jpg" alt="Cliente 1">
-                                <p class="testimonial-text">"RackON ha transformado nuestra seguridad física. Ahora tenemos control total sobre quién accede a nuestros racks y cuándo."</p>
-                                <div class="testimonial-author">Carlos Méndez</div>
-                                <div class="testimonial-position">CTO - DataCenter Solutions</div>
-                            </div>
-                            
-                            <div class="swiper-slide text-center">
-                                <img class="testimonial-image" src="assets/images/testimonial-2.jpg" alt="Cliente 2">
-                                <p class="testimonial-text">"La combinación de RFID, sensores y cámara nos da una seguridad en capas que ningún otro producto ofrece."</p>
-                                <div class="testimonial-author">Ana Rodríguez</div>
-                                <div class="testimonial-position">Directora de IT - SecureNet</div>
-                            </div>
-                            
-                            <div class="swiper-slide text-center">
-                                <img class="testimonial-image" src="assets/images/testimonial-3.jpg" alt="Cliente 3">
-                                <p class="testimonial-text">"Implementamos RackON en todos nuestros racks críticos. La interfaz web es intuitiva y los reportes detallados."</p>
-                                <div class="testimonial-author">Luis Fernández</div>
-                                <div class="testimonial-position">Gerente de Infraestructura - CloudTech</div>
-                            </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
+        </div>
+        <div class="row text-center">
+
+            <!-- Plan Básico -->
+            <div class="col-md-6 col-lg-3 offset-lg-0 offset-md-3 mb-4">
+                <div class="card h-100 shadow-sm border-success">
+                    <div class="card-body">
+                        <h4 class="card-title">🥉 Secure Access</h4>
+                        <p class="card-text"><strong>Ideal para pequeñas empresas</strong></p>
+                        <ul class="list-unstyled text-start small">
+                            <li>✔ Acceso a 1 rack con RFID</li>
+                            <li>✔ 1 capa de seguridad</li>
+                            <li>✔ Registro en tiempo real</li>
+                            <li>✔ Consulta web de accesos</li>
+                            <li>✔ Soporte básico</li>
+                            <li>➕ Monitoreo opcional</li>
+                        </ul>
+                        <hr>
+                        <p><strong>Mensual:</strong> $25 USD</p>
+                        <p><strong>Anual (10% off):</strong> $270 USD</p>
+                        <p><strong>Dispositivo:</strong> $150 USD</p>
                     </div>
                 </div>
             </div>
+
+            <!-- Plan Intermedio -->
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100 shadow-sm border-primary">
+                    <div class="card-body">
+                        <h4 class="card-title">🥈 Secure Plus</h4>
+                        <p class="card-text"><strong>Para empresas medianas</strong></p>
+                        <ul class="list-unstyled text-start small">
+                            <li>✔ Hasta 5 racks</li>
+                            <li>✔ 2 capas: RFID + Cámara</li>
+                            <li>✔ Alertas por email</li>
+                            <li>✔ Gestión web integrada</li>
+                            <li>✔ Soporte prioritario</li>
+                            <li>➕ Notificaciones móviles</li>
+                        </ul>
+                        <hr>
+                        <p><strong>Mensual:</strong> $45 USD</p>
+                        <p><strong>Anual (15% off):</strong> $459 USD</p>
+                        <p><strong>Dispositivo:</strong> $250 USD</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plan Avanzado -->
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100 shadow-sm border-danger">
+                    <div class="card-body">
+                        <h4 class="card-title">🥇 Secure Pro</h4>
+                        <p class="card-text"><strong>Para máxima protección</strong></p>
+                        <ul class="list-unstyled text-start small">
+                            <li>✔ Acceso ilimitado</li>
+                            <li>✔ 3 capas: RFID + Cámara + Sensor</li>
+                            <li>✔ Terminal de cambios</li>
+                            <li>✔ Encriptación avanzada</li>
+                            <li>✔ Soporte 24/7</li>
+                            <li>➕ Consultoría incluida</li>
+                        </ul>
+                        <hr>
+                        <p><strong>Mensual:</strong> $70 USD</p>
+                        <p><strong>Anual (20% off):</strong> $672 USD</p>
+                        <p><strong>Dispositivo:</strong> $350 USD</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plan Personalizado -->
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100 shadow border-dark">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h4 class="card-title">🛠️ Plan Personalizado</h4>
+                            <p class="card-text"><strong>¿Necesitas algo especial?</strong></p>
+                            <p class="small">Contáctanos para recibir una propuesta a medida, adaptada a tus necesidades específicas de seguridad y gestión.</p>
+                        </div>
+                        <a href="#contacto" class="btn btn-outline-dark mt-3">Solicitar Cotización</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Contact -->
     <section id="contact" class="fullpage-section">
