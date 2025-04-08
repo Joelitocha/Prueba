@@ -53,7 +53,7 @@
                         <a class="nav-link active" aria-current="page" href="#header">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#que-es-rackon">¿Qué es RackON?</a>
+                        <a class="nav-link" href="#introduction">¿Qué es RackON?</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#hardware-utilizado">Hardware Utilizado</a>
@@ -94,59 +94,69 @@
     <!-- end of header -->
 
 
-    <!-- Introduction -->
-    <div id="introduction" class="cards-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="h2-heading">Complete social media services</h2>
-                    <p class="p-heading">Increasing impression interested expression he my at. Respect invited request charmed me warrant to. Expect no more pretty as do though so genius afraid cousin</p>
-                </div>
+<!-- Introduction -->
+<div id="introduction" class="cards-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="h2-heading">¿Qué es RackON?</h2>
+                <p class="p-heading">
+                    <strong>RackON</strong> es un sistema inteligente de control de acceso físico diseñado para racks de servidores. 
+                    Combina tecnologías como RFID, sensores de vibración y cámaras de vigilancia para ofrecer una solución de seguridad robusta y en capas.
+                </p>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
 
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-icon">
-                            <span class="fas fa-camera"></span>
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Photo Shooting</h4>
-                            <div class="card-text">Girl when of ye snug poor draw. Mistake totally of in chiefly. Justice visitor him entered for. Continue delicate as</div>
+                <!-- Card -->
+                <div class="card">
+                    <div class="card-icon">
+                        <span class="fas fa-id-card"></span>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Identificación RFID</h4>
+                        <div class="card-text">
+                            Permite validar el acceso mediante tarjetas RFID, registrando quién accede al rack y cuándo lo hace.
                         </div>
                     </div>
-                    <!-- end of card -->
-
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-icon">
-                            <span class="fas fa-video"></span>
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Video Production</h4>
-                            <div class="card-text">Continue delicate as unlocked entirely mr relation diverted in. Known not end fully being style hose whom down kept</div>
-                        </div>
-                    </div>
-                    <!-- end of card -->
-
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-icon">
-                            <span class="fas fa-paint-brush"></span>
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Digital illustration</h4>
-                            <div class="card-text">Wrong do point avoid by fruit learn or in death. So passage however besides invited comfort elderly be me. Walls began</div>
-                        </div>
-                    </div>
-                    <!-- end of card -->
-
                 </div>
+                <!-- end of card -->
+
+                <!-- Card -->
+                <div class="card">
+                    <div class="card-icon">
+                        <span class="fas fa-bolt"></span>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Detección de Vibración</h4>
+                        <div class="card-text">
+                            Añade un nivel extra de seguridad detectando intentos de manipulación física o golpes no autorizados.
+                        </div>
+                    </div>
+                </div>
+                <!-- end of card -->
+
+                <!-- Card -->
+                <div class="card">
+                    <div class="card-icon">
+                        <span class="fas fa-video"></span>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Monitoreo por Cámara</h4>
+                        <div class="card-text">
+                            Captura imágenes o video del acceso en tiempo real, permitiendo una supervisión visual directa del entorno del rack.
+                        </div>
+                    </div>
+                </div>
+                <!-- end of card -->
+
             </div>
         </div>
     </div>
-    <!-- end of introduction -->
+</div>
+<!-- end of introduction -->
+
 
 
     <!-- Details -->
