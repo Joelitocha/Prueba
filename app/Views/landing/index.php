@@ -61,25 +61,45 @@
         text-align: center;
     }
     
+    /* ===== ESTILOS PARA COMPACTAR AMBAS COLUMNAS ===== */
     #funcionamiento {
-        padding: 23px 0; /* Exactamente 23px como solicitaste */
+        padding: 23px 0;
+        background-color: white;
     }
 
+    /* Elimina altura forzada y ajusta layout */
     #funcionamiento .min-vh-100 {
-        min-height: auto !important; /* Elimina altura forzada */
+        min-height: auto !important;
+        height: auto;
     }
 
-    /* Columnas ajustadas */
-    #funcionamiento .row {
-        align-items: flex-start; /* Alinea al inicio para evitar estiramiento */
+    /* Columna de imagen compacta */
+    #funcionamiento .image-column {
+        height: 500px; /* Altura fija en lugar de porcentual */
+        overflow: hidden;
     }
 
-    /* Contenido compacto */
+    #funcionamiento .image-column img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* Overlay más compacto */
+    #funcionamiento .image-overlay h2 {
+        font-size: 2rem;
+        padding: 0 1rem;
+        text-align: center;
+    }
+
+    /* Columna de texto ultra compacta */
     #funcionamiento .content-column {
         padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
     }
 
-    /* Texto más compacto */
+    /* Texto más denso */
     #funcionamiento h2.text-primary {
         font-size: 1.5rem;
         margin-bottom: 1rem;
@@ -112,37 +132,30 @@
         margin-right: 0.75rem;
     }
 
-    /* Resumen compacto */
-    #funcionamiento .bg-light {
-        padding: 0.75rem;
-        font-size: 0.9rem;
-    }
-
-    /* Imagen ajustada */
-    #funcionamiento .image-container {
-        height: auto;
-        min-height: 400px;
-    }
-
     /* Responsive */
     @media (max-width: 992px) {
-        #funcionamiento .image-container {
-            min-height: 350px;
+        #funcionamiento .image-column {
+            height: 400px;
+            order: 2;
+            margin-top: 1.5rem;
         }
         
         #funcionamiento .content-column {
             padding: 1rem;
         }
+        
+        #funcionamiento .image-overlay h2 {
+            font-size: 1.75rem;
+        }
     }
 
     @media (max-width: 768px) {
-        #funcionamiento .card-body {
-            padding: 0.75rem;
+        #funcionamiento .image-column {
+            height: 350px;
         }
         
-        #funcionamiento .badge {
-            width: 24px;
-            height: 24px;
+        #funcionamiento .card-body {
+            padding: 0.75rem;
         }
     }
     /* Componentes reutilizables */
