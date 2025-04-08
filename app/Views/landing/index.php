@@ -62,59 +62,66 @@
     }
     
     #funcionamiento {
-        padding: 23px 0;
-        background-color: white;
+        padding: 23px 0; /* Exactamente 23px como solicitaste */
     }
 
     #funcionamiento .min-vh-100 {
-        min-height: auto !important;
+        min-height: auto !important; /* Elimina altura forzada */
     }
 
+    /* Columnas ajustadas */
+    #funcionamiento .row {
+        align-items: flex-start; /* Alinea al inicio para evitar estiramiento */
+    }
+
+    /* Contenido compacto */
     #funcionamiento .content-column {
-        padding: 1.5rem 2rem;
+        padding: 1.5rem;
     }
 
+    /* Texto más compacto */
     #funcionamiento h2.text-primary {
-        font-size: 1.75rem;
-        margin-bottom: 1.25rem;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
     }
 
     #funcionamiento .lead {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+        margin-bottom: 1.25rem;
+        line-height: 1.5;
     }
 
+    /* Tarjetas optimizadas */
     #funcionamiento .card {
-        margin-bottom: 1rem;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        margin-bottom: 0.75rem;
+        border-radius: 6px;
     }
 
     #funcionamiento .card-body {
-        padding: 1.25rem;
-    }
-
-    #funcionamiento .badge {
-        width: 32px;
-        height: 32px;
-        font-size: 0.9rem;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #funcionamiento .bg-light {
         padding: 1rem;
     }
 
-    /* Imagen con overlay */
-    #funcionamiento .image-container {
-        height: 100%;
-        min-height: 400px;
+    #funcionamiento .badge {
+        width: 28px;
+        height: 28px;
+        font-size: 0.85rem;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0.75rem;
     }
 
-    #funcionamiento .image-overlay h2 {
-        font-size: 2.25rem;
+    /* Resumen compacto */
+    #funcionamiento .bg-light {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    /* Imagen ajustada */
+    #funcionamiento .image-container {
+        height: auto;
+        min-height: 400px;
     }
 
     /* Responsive */
@@ -124,30 +131,18 @@
         }
         
         #funcionamiento .content-column {
-            padding: 1.25rem;
-        }
-        
-        #funcionamiento h2.text-primary {
-            font-size: 1.5rem;
-        }
-        
-        #funcionamiento .image-overlay h2 {
-            font-size: 1.75rem;
+            padding: 1rem;
         }
     }
 
     @media (max-width: 768px) {
-        #funcionamiento {
-            padding: 15px 0;
-        }
-        
         #funcionamiento .card-body {
-            padding: 1rem;
+            padding: 0.75rem;
         }
         
         #funcionamiento .badge {
-            width: 28px;
-            height: 28px;
+            width: 24px;
+            height: 24px;
         }
     }
     /* Componentes reutilizables */
