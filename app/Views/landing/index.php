@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Sistema de control de acceso inteligente para racks de servidores con RFID, sensores y cámaras. Seguridad de siguiente nivel.">
     <meta name="author" content="Federico Arias - Joel Martinez Vilche">
-    <meta property="og:image" content="assets/images/header-background.jpg">
+
+        <!-- Etiquetas Open Graph -->
+    <meta property="og:title" content="RackON - Seguridad Inteligente para Racks">
+    <meta property="og:description" content="Sistema IoT de seguridad para racks con acceso RFID y sensores.">
+    <meta property="og:image" content=""> 
+    <meta property="og:url" content="https://www.rackon.tech">
+    <meta property="og:type" content="website">
     <title>RackON - Rack Security</title>
     
     <!-- Bootstrap CSS -->
@@ -483,7 +489,7 @@
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="assets/images/logo.svg" alt="RackON Logo" style="height: 40px;">
+                
             </a>
             
             <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
