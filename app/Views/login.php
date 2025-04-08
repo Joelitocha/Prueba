@@ -1,83 +1,93 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>RackON - Sistema de Control de Acceso RFID | Argentina</title>
-  <meta name="description" content="Sistema profesional de gestión de accesos mediante tarjetas RFID. Inicie sesión para administrar su cuenta.">
-
-  <!-- Estilos y fuentes -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RackON - Presentación</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   <style>
+    /* === GENERAL === */
     body {
       margin: 0;
+      padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                  url('https://www.celmad.com/wp-content/uploads/2023/11/Que-es-un-centro-de-datos-y-por-que-estan-en-auge-2048x1170.jpg') no-repeat center center fixed;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('https://www.celmad.com/wp-content/uploads/2023/11/Que-es-un-centro-de-datos-y-por-que-estan-en-auge-2048x1170.jpg') no-repeat center center fixed;
       background-size: cover;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
       color: white;
       text-align: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin-bottom: 30px;
+      font-size: 3em;
+      margin-bottom: 20px;
     }
 
     .btn-show-login {
-      background-color: #0c7e7e;
-      color: white;
-      padding: 14px 28px;
-      font-size: 16px;
+      padding: 15px 30px;
+      background-color: #3498db;
       border: none;
+      color: white;
+      font-size: 1em;
       border-radius: 8px;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: 0.3s ease;
     }
 
     .btn-show-login:hover {
-      background-color: #0a5f5f;
+      background-color: #2980b9;
     }
 
-    /* === Modal login === */
+    /* === MODAL === */
     .modal {
-      display: none;
       position: fixed;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0,0,0,0.8);
+      background-color: rgba(0, 0, 0, 0.7);
+      display: none;
       justify-content: center;
       align-items: center;
-      z-index: 999;
+      z-index: 1000;
+    }
+
+    .modal.active {
+      display: flex;
     }
 
     .login-container {
       background-color: #2b2b2b;
       padding: 40px;
-      border-radius: 10px;
-      width: 100%;
+      border-radius: 8px;
+      width: 90%;
       max-width: 400px;
-      box-shadow: 0 0 30px rgba(0,0,0,0.7);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      text-align: center;
       position: relative;
     }
 
     .login-container h2 {
       color: #3498db;
       margin-bottom: 30px;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      cursor: pointer;
+      color: #aaa;
+    }
+
+    .close-modal:hover {
+      color: #fff;
     }
 
     .form-login {
@@ -92,115 +102,81 @@
 
     .input-group input {
       width: 100%;
-      padding: 14px 40px;
+      padding: 14px 20px;
+      padding-left: 40px;
+      border: 1px solid #444;
       border-radius: 6px;
       background-color: #3a3a3a;
-      border: 1px solid #444;
-      color: white;
+      color: #fff;
       font-size: 15px;
     }
 
     .input-group i {
       position: absolute;
-      left: 12px;
+      left: 15px;
       top: 50%;
       transform: translateY(-50%);
-      color: #aaa;
+      color: #7f8c8d;
     }
 
     .btn-login {
       padding: 14px;
-      background-color: #3498db;
-      border: none;
       border-radius: 6px;
+      background-color: #3498db;
       color: white;
       font-size: 16px;
+      font-weight: 500;
+      border: none;
       cursor: pointer;
     }
 
     .btn-login:hover {
       background-color: #2980b9;
     }
-
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 20px;
-      color: #ccc;
-      cursor: pointer;
-    }
-
-    .close-btn:hover {
-      color: white;
-    }
-
-    @media (max-width: 500px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      .login-container {
-        padding: 30px 20px;
-      }
-    }
   </style>
 </head>
 <body>
+  <h1>Bienvenido a RackON</h1>
+  <button class="btn-show-login" onclick="mostrarModal()">Iniciar sesión</button>
 
-  <h1><i class="fas fa-server"></i> RackON</h1>
-  <p>Sistema inteligente de gestión de acceso a racks y centros de datos mediante tecnología RFID. Seguridad, eficiencia y control desde un solo lugar.</p>
-
-  <button class="btn-show-login" onclick="mostrarLogin()">Iniciar Sesión</button>
-
-  <!-- MODAL -->
-  <div class="modal" id="loginModal">
-    <div class="login-container">
-      <span class="close-btn" onclick="cerrarLogin()">&times;</span>
+  <!-- Modal con formulario -->
+  <div class="modal" id="modalLogin" onclick="cerrarModal(event)">
+    <div class="login-container" onclick="event.stopPropagation()">
+      <span class="close-modal" onclick="ocultarModal()">&times;</span>
       <h2><i class="fas fa-lock"></i> Iniciar Sesión</h2>
-
-      <?php if (session()->getFlashdata('error')): ?>
-        <div class="alert alert-error">
-          <?= session()->getFlashdata('error') ?>
-        </div>
-      <?php endif; ?>
-
-      <?php if (session()->getFlashdata('success')): ?>
-        <div class="alert alert-success">
-          <?= session()->getFlashdata('success') ?>
-        </div>
-      <?php endif; ?>
 
       <form action="<?= base_url('login') ?>" method="POST" class="form-login">
         <div class="input-group">
           <i class="fas fa-envelope"></i>
-          <input type="text" name="Email" placeholder="Correo Electrónico" required>
+          <input type="text" name="Email" placeholder="Correo Electrónico" required />
         </div>
+
         <div class="input-group">
           <i class="fas fa-key"></i>
-          <input type="password" name="Contraseña" placeholder="Contraseña" required>
+          <input type="password" name="Contraseña" placeholder="Contraseña" required />
         </div>
-        <button type="submit" class="btn-login"><i class="fas fa-sign-in-alt"></i> Entrar</button>
+
+        <button type="submit" class="btn-login">
+          <i class="fas fa-sign-in-alt"></i> Entrar
+        </button>
       </form>
     </div>
   </div>
 
   <script>
-    function mostrarLogin() {
-      document.getElementById('loginModal').style.display = 'flex';
+    function mostrarModal() {
+      document.getElementById('modalLogin').classList.add('active');
     }
 
-    function cerrarLogin() {
-      document.getElementById('loginModal').style.display = 'none';
+    function ocultarModal() {
+      document.getElementById('modalLogin').classList.remove('active');
     }
 
-    // Cerrar el modal si se hace clic fuera del contenedor
-    window.onclick = function(event) {
-      const modal = document.getElementById('loginModal');
-      if (event.target === modal) {
-        modal.style.display = "none";
+    function cerrarModal(e) {
+      if (e.target.id === 'modalLogin') {
+        ocultarModal();
       }
-    };
+    }
   </script>
 </body>
 </html>
