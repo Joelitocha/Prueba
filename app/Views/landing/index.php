@@ -22,160 +22,207 @@
     
     <!-- Estilos personalizados -->
     <style>
+    /* ===== ESTILOS GENERALES ===== */
     :root {
         --primary-color: #7dc22b;
         --dark-color: #161223;
         --light-color: #f7f9fd;
         --text-color: #53575a;
     }
-    
-    body {
-        font-family: 'Open Sans', sans-serif;
-        color: var(--text-color);
-        overflow-x: hidden;
-        scroll-behavior: smooth;
-    }
-    
-    h1, h2, h3, h4, h5, h6 {
-        font-family: 'Poppins', sans-serif;
-        color: var(--dark-color);
-        font-weight: 600;
-    }
 
-    /* Secciones */
-    .fullpage-section {
-        width: 100%;
-        min-height: 100vh;
-        position: relative;
-        overflow: hidden;
-        padding: 80px 0;
-        display: flex;
-        align-items: center;
-    }
-
-    /* Header */
-    #header {
-        background: linear-gradient(rgba(21, 35, 63, 0.7), rgba(21, 35, 63, 0.7)), url('assets/images/rackon-og.jpg') center center no-repeat;
-        background-size: cover;
-        color: white;
-        text-align: center;
-    }
-    
-    /* Sección Funcionamiento - Versión compacta */
+    /* ===== SECCIÓN FUNCIONAMIENTO ===== */
     #funcionamiento {
-        padding: 2rem 0;
-        min-height: auto;
+        padding: 23px 0;
+        background-color: white;
     }
-    
-    #funcionamiento .h4 {
-        font-size: 1.25rem;
-        font-weight: 600;
+
+    /* Contenedor Principal */
+    #funcionamiento .container-fluid {
+        max-width: 1400px;
+        margin: 0 auto;
     }
-    
-    #funcionamiento .small {
-        font-size: 0.85rem;
-        line-height: 1.4;
+
+    /* Columnas */
+    #funcionamiento .row {
+        align-items: stretch;
+        margin: 0;
     }
-    
-    #funcionamiento .badge {
-        width: 24px;
-        height: 24px;
-        line-height: 24px;
-        font-size: 0.8rem;
+
+    /* Columna de Imagen */
+    #funcionamiento .image-column {
+        position: relative;
+        min-height: 400px;
     }
-    
-    #funcionamiento img {
+
+    #funcionamiento .image-column img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
         transition: transform 0.3s ease;
     }
-    
-    #funcionamiento img:hover {
+
+    #funcionamiento .image-column:hover img {
         transform: scale(1.02);
     }
 
-    /* Componentes reutilizables */
-    .bg-cover {
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+    /* Overlay de Texto en Imagen */
+    #funcionamiento .image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    
-    .object-fit-cover {
-        object-fit: cover;
-        object-position: center;
-    }
-    
-    .btn-solid-lg {
-        display: inline-block;
-        padding: 15px 30px;
-        border: 1px solid var(--primary-color);
-        border-radius: 4px;
-        background-color: var(--primary-color);
+
+    #funcionamiento .image-overlay h2 {
         color: white;
-        font-weight: 600;
-        text-decoration: none;
-        transition: all 0.3s;
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     }
-    
-    .btn-solid-lg:hover {
-        background-color: transparent;
+
+    /* Columna de Contenido */
+    #funcionamiento .content-column {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* Títulos */
+    #funcionamiento .content-column h2 {
         color: var(--primary-color);
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
     }
-    
-    .card {
+
+    /* Tarjetas de Niveles */
+    #funcionamiento .level-card {
+        margin-bottom: 1.25rem;
         border: none;
         border-radius: 8px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        transition: transform 0.3s;
-        height: 100%;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
     }
-    
-    .card:hover {
-        transform: translateY(-5px);
+
+    #funcionamiento .level-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
-    
-    .card-icon {
-        font-size: 2.5rem;
+
+    #funcionamiento .level-card .card-body {
+        padding: 1.25rem;
+    }
+
+    #funcionamiento .level-card .badge {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        font-weight: 600;
+        background-color: var(--primary-color);
+        margin-right: 1rem;
+    }
+
+    #funcionamiento .level-card h4 {
         color: var(--primary-color);
-        margin-bottom: 20px;
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
     }
 
-    /* Contacto */
-    #contact {
-        background: linear-gradient(rgba(2, 15, 29, 0.8), rgba(2, 15, 29, 0.8)), url('assets/images/contact-background.jpg') center center no-repeat;
-        background-size: cover;
-        color: white;
-    }
-    
-    /* Footer */
-    footer {
-        background-color: var(--dark-color);
-        color: white;
-        padding: 50px 0 20px;
+    #funcionamiento .level-card p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 0;
     }
 
-    /* Responsive */
-    @media (max-width: 992px) {
-        .fullpage-section {
-            padding: 60px 0;
-            min-height: auto;
-        }
-        
-        #header .h1-large {
-            font-size: 2.5rem;
-        }
-        
-        .ratio-16x9 {
-            --bs-aspect-ratio: 66.66%;
-        }
+    /* Área de Resumen */
+    #funcionamiento .summary-box {
+        background-color: var(--light-color);
+        border-radius: 8px;
+        padding: 1.25rem;
+        margin-top: 1rem;
     }
-    
-    @media (max-width: 768px) {
-        #header .h1-large {
+
+    #funcionamiento .summary-box i {
+        color: var(--primary-color);
+        margin-right: 0.5rem;
+    }
+
+    #funcionamiento .summary-box strong {
+        font-weight: 600;
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 1199.98px) {
+        #funcionamiento .image-overlay h2 {
             font-size: 2rem;
         }
         
+        #funcionamiento .content-column {
+            padding: 1.5rem;
+        }
+    }
+
+    @media (max-width: 991.98px) {
+        #funcionamiento .image-column {
+            min-height: 300px;
+            order: 2;
+        }
+        
+        #funcionamiento .content-column {
+            order: 1;
+            padding-bottom: 0;
+        }
+        
+        #funcionamiento .image-overlay h2 {
+            font-size: 1.75rem;
+        }
+    }
+
+    @media (max-width: 767.98px) {
         #funcionamiento {
-            padding: 1.5rem 0;
+            padding: 15px 0;
+        }
+        
+        #funcionamiento .content-column h2 {
+            font-size: 1.5rem;
+        }
+        
+        #funcionamiento .level-card h4 {
+            font-size: 1.1rem;
+        }
+        
+        #funcionamiento .level-card p {
+            font-size: 0.9rem;
+        }
+    }
+
+    @media (max-width: 575.98px) {
+        #funcionamiento .content-column {
+            padding: 1rem;
+        }
+        
+        #funcionamiento .image-overlay h2 {
+            font-size: 1.5rem;
+        }
+        
+        #funcionamiento .level-card .card-body {
+            padding: 1rem;
+        }
+        
+        #funcionamiento .level-card .badge {
+            width: 28px;
+            height: 28px;
+            font-size: 0.9rem;
+            margin-right: 0.75rem;
         }
     }
 </style>
@@ -276,85 +323,63 @@
     </section>
 
 <!--sección de funcionamiento-->
-<section id="funcionamiento" class="container-fluid p-0 bg-white">
-    <div class="row g-0 min-vh-100 align-items-stretch">
-        <!-- Columna de Imagen -->
-        <div class="col-lg-6 order-lg-1 order-2 position-relative">
-            <div class="h-100 w-100 overflow-hidden">
+<section id="funcionamiento" class="container-fluid bg-white py-4"> <!-- 23px aprox de padding -->
+    <div class="row g-0 align-items-center"> <!-- Eliminado min-vh-100 -->
+        <!-- Columna de Imagen Compacta -->
+        <div class="col-lg-6 order-lg-1 order-2">
+            <div class="ratio ratio-16x9"> <!-- Proporción controlada -->
                 <img src="<?= base_url('assets/images/details-background.jpg') ?>" 
-                     alt="Tecnología RackON en acción"
-                     class="img-fluid w-100 h-100 object-fit-cover">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(0,0,0,0.3);">
-                    <h2 class="text-white display-4 fw-bold">Tecnología en Capas</h2>
+                     alt="Tecnología RackON"
+                     class="object-fit-cover">
+                <div class="d-flex align-items-center justify-content-center position-absolute top-0 start-0 w-100 h-100" 
+                     style="background: rgba(0,0,0,0.3);">
+                    <h3 class="text-white m-0">Tecnología en Capas</h3> <!-- Título más pequeño -->
                 </div>
             </div>
         </div>
         
-        <!-- Columna de Texto Mejorada -->
-        <div class="col-lg-6 order-lg-2 order-1 d-flex align-items-center py-5">
-            <div class="px-4 px-md-5 py-lg-0" style="max-width: 700px; margin: 0 auto;">
-                <h2 class="mb-4 text-primary">¿Cómo funciona RackON?</h2>
-                <p class="lead mb-4">
-                    El sistema RackON combina tecnología de identificación, sensores físicos y vigilancia electrónica para ofrecer una solución de seguridad en capas. Su funcionamiento se basa en tres niveles que actúan de forma secuencial y complementaria:
+        <!-- Columna de Texto Compacta -->
+        <div class="col-lg-6 order-lg-2 order-1 py-3 py-lg-4 px-3 px-lg-4"> <!-- Padding reducido -->
+            <div>
+                <h2 class="h4 text-primary mb-3">¿Cómo funciona RackON?</h2> <!-- Título más compacto -->
+                <p class="small mb-3"> <!-- Texto más pequeño -->
+                    Sistema de seguridad en capas que combina identificación, sensores y vigilancia electrónica:
                 </p>
                 
-                <!-- Nivel 1 -->
-                <div class="card mb-4 border-0 shadow-sm">
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <div class="me-4">
-                                <span class="badge bg-primary rounded-circle p-3">1</span>
-                            </div>
-                            <div>
-                                <h4 class="text-primary">Verificación RFID</h4>
-                                <p class="mb-0">
-                                    Cada usuario autorizado posee una tarjeta RFID única. Al acercarla al lector, el sistema valida la identidad del usuario en la base de datos. Si la tarjeta está habilitada y el acceso es permitido, se registra el evento y se activa el siguiente nivel de seguridad.
-                                </p>
-                            </div>
+                <!-- Lista compacta con iconos -->
+                <div class="vstack gap-3 mb-4"> <!-- Espaciado vertical controlado -->
+                    <div class="d-flex">
+                        <span class="badge bg-primary rounded-circle flex-shrink-0 me-3" 
+                              style="width:28px;height:28px;line-height:28px;">1</span>
+                        <div>
+                            <h5 class="h6 text-primary mb-1">Verificación RFID</h5>
+                            <p class="small mb-0">Validación de tarjetas únicas con registro de acceso y activación del siguiente nivel de seguridad.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex">
+                        <span class="badge bg-primary rounded-circle flex-shrink-0 me-3" 
+                              style="width:28px;height:28px;line-height:28px;">2</span>
+                        <div>
+                            <h5 class="h6 text-primary mb-1">Detección de Impacto</h5>
+                            <p class="small mb-0">Monitoreo en tiempo real de vibraciones y movimientos sospechosos con generación de alertas.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex">
+                        <span class="badge bg-primary rounded-circle flex-shrink-0 me-3" 
+                              style="width:28px;height:28px;line-height:28px;">3</span>
+                        <div>
+                            <h5 class="h6 text-primary mb-1">Captura Visual</h5>
+                            <p class="small mb-0">Registro automático de imágenes/video como evidencia del acceso.</p>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Nivel 2 -->
-                <div class="card mb-4 border-0 shadow-sm">
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <div class="me-4">
-                                <span class="badge bg-primary rounded-circle p-3">2</span>
-                            </div>
-                            <div>
-                                <h4 class="text-primary">Detección de Impacto</h4>
-                                <p class="mb-0">
-                                    Un sensor de vibración monitorea el rack en tiempo real. Si se detecta un golpe, movimiento brusco o intento de apertura forzada sin autenticación previa, el sistema genera una alerta automática y registra el incidente como un intento de intrusión.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Nivel 3 -->
-                <div class="card mb-4 border-0 shadow-sm">
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <div class="me-4">
-                                <span class="badge bg-primary rounded-circle p-3">3</span>
-                            </div>
-                            <div>
-                                <h4 class="text-primary">Captura Visual</h4>
-                                <p class="mb-0">
-                                    En cada acceso (ya sea autorizado o no), se activa una cámara que captura imágenes o video del entorno inmediato del rack. Esta evidencia se almacena automáticamente y puede ser revisada desde el panel de administración web.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Resumen -->
-                <div class="bg-light p-4 rounded">
-                    <p class="mb-0">
-                        <i class="fas fa-database text-primary me-2"></i>
-                        <strong>Registro completo:</strong> Todos los eventos —accesos válidos, intentos fallidos, impactos detectados y grabaciones— quedan registrados en una base de datos segura. La información puede ser consultada desde la plataforma web de RackON, donde administradores y supervisores pueden acceder al historial completo, recibir alertas en tiempo real y analizar el comportamiento del sistema para reforzar la seguridad.
-                    </p>
+                <!-- Resumen ultracompacto -->
+                <div class="bg-light p-3 small rounded">
+                    <i class="fas fa-database text-primary me-2"></i>
+                    <strong>Registro completo:</strong> Todos los eventos se almacenan en base de datos segura para monitoreo y análisis desde la plataforma web.
                 </div>
             </div>
         </div>
