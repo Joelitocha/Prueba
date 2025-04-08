@@ -53,7 +53,7 @@
                         <a class="nav-link active" aria-current="page" href="#header">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#services">Características</a>
+                        <a class="nav-link" href="#que-es-rackon">¿Qué es RackON?</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contactar</a>
@@ -186,70 +186,22 @@
     <!-- end of details -->
 
 
-    <!-- Services 1 -->
-    <div id="services" class="basic-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7">
-                    <div class="image-container">
-                        <img class="img-fluid" src="<?= base_url('assets/images/services-1.jpg') ?>" alt="alternative">
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="text-container">
-                        <h2>Photo shooting and image editing services</h2>
-                        <p>who eat she defective applauded departure joy. Get dissimilar not introduced day her apartment Fully as taste he mr do smile abode every. Luckily we have words offered article led</p>
-                        <a class="read-more no-line green" href="<?= base_url('article') ?>">Learn more <span class="fas fa-long-arrow-alt-right"></span></a>
-                    </div>
-                </div>
+    <!-- Qué es RackON -->
+<section id="que-es-rackon" class="py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <h2 class="mb-4">¿Qué es RackON?</h2>
+                <p class="lead">
+                    <strong>RackON</strong> es un sistema de control de acceso inteligente para racks de servidores, diseñado como solución integral de seguridad física. 
+                    Utiliza tecnología RFID, sensores de vibración y cámaras para ofrecer tres niveles de seguridad. 
+                    El sistema permite administrar accesos, monitorear eventos en tiempo real y gestionar usuarios a través de una plataforma web con roles diferenciados: Administrador, Supervisor y Usuario.
+                </p>
             </div>
         </div>
     </div>
-    <!-- end of services 1 -->
+</section>
 
-
-    <!-- Services 2 -->
-    <div class="basic-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7">
-                    <div class="image-container">
-                        <img class="img-fluid" src="<?= base_url('assets/images/services-2.jpg') ?>" alt="alternative">
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="text-container">
-                        <h2>Video production and editing services</h2>
-                        <p>Smile abode every. Luckily offered article led lasting country minutes nor old. Happen people things oh is oppose up parish effect. Law hands old outweigh humoured far appetite</p>
-                        <a class="read-more no-line green" href="<?= base_url('article') ?>">Learn more <span class="fas fa-long-arrow-alt-right"></span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end of services 2 -->
-    
-    
-    <!-- Services 3 -->
-    <div class="basic-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7">
-                    <div class="image-container">
-                        <img class="img-fluid" src="<?= base_url('assets/images/services-3.jpg') ?>" alt="alternative">
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="text-container">
-                        <h2>Digital illustration and animation service</h2>
-                        <p>Am if number no up period regard sudden better. Decisively surrounded all admiration and not you. Out particular sympathize not favourable introduced insipidity but ham rather</p>
-                        <a class="read-more no-line green" href="<?= base_url('article') ?>">Learn more <span class="fas fa-long-arrow-alt-right"></span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end of services 3 -->
 
 
     <!-- Projects -->
