@@ -9,13 +9,13 @@
     <meta name="author" content="Your name">
 
     <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
-	<meta property="og:site_name" content="" /> <!-- website name -->
-	<meta property="og:site" content="" /> <!-- website link -->
-	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
-	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
-	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
-	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
-	<meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
+    <meta property="og:site_name" content="" /> <!-- website name -->
+    <meta property="og:site" content="" /> <!-- website link -->
+    <meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+    <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+    <meta property="og:image" content="<?= base_url('images/header-background.jpg') ?>" /> <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+    <meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
 
     <!-- Webpage Title -->
     <title>Desi Webpage Title</title>
@@ -23,13 +23,13 @@
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/fontawesome-all.min.css" rel="stylesheet">
-    <link href="css/swiper.css" rel="stylesheet">
-	<link href="css/styles.css" rel="stylesheet">
-	
-	<!-- Favicon  -->
-    <link rel="icon" href="images/favicon.png">
+    <link href="<?= base_url('css/bootstrap.min.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('css/fontawesome-all.min.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('css/swiper.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('css/styles.css') ?>" rel="stylesheet">
+    
+    <!-- Favicon  -->
+    <link rel="icon" href="<?= base_url('images/favicon.png') ?>">
 </head>
 <body>
     
@@ -38,10 +38,10 @@
         <div class="container">
 
             <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a> 
+            <a class="navbar-brand logo-image" href="<?= base_url() ?>"><img src="<?= base_url('images/logo.svg') ?>" alt="alternative"></a> 
 
             <!-- Text Logo - Use this if you don't have a graphic logo -->
-            <!-- <a class="navbar-brand logo-text" href="index.html">Desi</a> -->
+            <!-- <a class="navbar-brand logo-text" href="<?= base_url() ?>">Desi</a> -->
 
             <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -61,11 +61,11 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Drop</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown01">
-                            <li><a class="dropdown-item" href="article.html">Article Details</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('article') ?>">Article Details</a></li>
                             <li><div class="dropdown-divider"></div></li>
-                            <li><a class="dropdown-item" href="terms.html">Terms Conditions</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('terms') ?>">Terms Conditions</a></li>
                             <li><div class="dropdown-divider"></div></li>
-                            <li><a class="dropdown-item" href="privacy.html">Privacy Policy</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('privacy') ?>">Privacy Policy</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -106,8 +106,8 @@
         </div> <!-- end of header-content -->
         
         <!-- Video Background -->
-        <video autoplay loop muted id="video-background" poster="images/header-background.jpg" playsinline>
-            <source src="images/header-background-video.mp4" type="video/mp4" />
+        <video autoplay loop muted id="video-background" poster="<?= base_url('images/header-background.jpg') ?>" playsinline>
+            <source src="<?= base_url('images/header-background-video.mp4') ?>" type="video/mp4" />
         </video>
         <!-- end of video background -->
 
@@ -171,9 +171,9 @@
 
 
     <!-- Details -->
-	<div class="split">
-		<div class="area-1">
-		</div><!-- end of area-1 on same line and no space between comments to eliminate margin white space --><div class="area-2 bg-gray">
+    <div class="split">
+        <div class="area-1">
+        </div><!-- end of area-1 on same line and no space between comments to eliminate margin white space --><div class="area-2 bg-gray">
             <div class="container">    
                 <div class="row">
                     <div class="col-lg-12">     
@@ -191,7 +191,7 @@
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
             </div> <!-- end of container -->
-		</div> <!-- end of area-2 -->
+        </div> <!-- end of area-2 -->
     </div> <!-- end of split -->
     <!-- end of details -->
 
@@ -202,14 +202,14 @@
             <div class="row">
                 <div class="col-lg-7">
                     <div class="image-container">
-                        <img class="img-fluid" src="images/services-1.jpg" alt="alternative">
+                        <img class="img-fluid" src="<?= base_url('images/services-1.jpg') ?>" alt="alternative">
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-5">
                     <div class="text-container">
                         <h2>Photo shooting and image editing services</h2>
                         <p>who eat she defective applauded departure joy. Get dissimilar not introduced day her apartment Fully as taste he mr do smile abode every. Luckily we have words offered article led</p>
-                        <a class="read-more no-line green" href="article.html">Learn more <span class="fas fa-long-arrow-alt-right"></span></a>
+                        <a class="read-more no-line green" href="<?= base_url('article') ?>">Learn more <span class="fas fa-long-arrow-alt-right"></span></a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -224,14 +224,14 @@
             <div class="row">
                 <div class="col-lg-7">
                     <div class="image-container">
-                        <img class="img-fluid" src="images/services-2.jpg" alt="alternative">
+                        <img class="img-fluid" src="<?= base_url('images/services-2.jpg') ?>" alt="alternative">
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-5">
                     <div class="text-container">
                         <h2>Video production and editing services</h2>
                         <p>Smile abode every. Luckily offered article led lasting country minutes nor old. Happen people things oh is oppose up parish effect. Law hands old outweigh humoured far appetite</p>
-                        <a class="read-more no-line green" href="article.html">Learn more <span class="fas fa-long-arrow-alt-right"></span></a>
+                        <a class="read-more no-line green" href="<?= base_url('article') ?>">Learn more <span class="fas fa-long-arrow-alt-right"></span></a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -246,14 +246,14 @@
             <div class="row">
                 <div class="col-lg-7">
                     <div class="image-container">
-                        <img class="img-fluid" src="images/services-3.jpg" alt="alternative">
+                        <img class="img-fluid" src="<?= base_url('images/services-3.jpg') ?>" alt="alternative">
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-5">
                     <div class="text-container">
                         <h2>Digital illustration and animation service</h2>
                         <p>Am if number no up period regard sudden better. Decisively surrounded all admiration and not you. Out particular sympathize not favourable introduced insipidity but ham rather</p>
-                        <a class="read-more no-line green" href="article.html">Learn more <span class="fas fa-long-arrow-alt-right"></span></a>
+                        <a class="read-more no-line green" href="<?= base_url('article') ?>">Learn more <span class="fas fa-long-arrow-alt-right"></span></a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -263,8 +263,8 @@
 
 
     <!-- Projects -->
-	<div id="projects" class="filter bg-gray">
-		<div class="container">
+    <div id="projects" class="filter bg-gray">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <h2 class="h2-heading">Projects That We're Proud Of</h2>
@@ -282,56 +282,56 @@
                     </div> <!-- end of button group -->
                     <div class="grid">
                         <div class="element-item finance">
-                            <a href="article.html">
-                                <img class="img-fluid" src="images/project-1.jpg" alt="alternative">
+                            <a href="<?= base_url('article') ?>">
+                                <img class="img-fluid" src="<?= base_url('images/project-1.jpg') ?>" alt="alternative">
                                 <p><strong>Online banking</strong> - delivered to and to major company in pharmace ski jump from</p>
                             </a>
                         </div>
                         <div class="element-item finance">
-                            <a href="article.html">
-                                <img class="img-fluid" src="images/project-2.jpg" alt="alternative">
+                            <a href="<?= base_url('article') ?>">
+                                <img class="img-fluid" src="<?= base_url('images/project-2.jpg') ?>" alt="alternative">
                                 <p><strong>Loans company</strong> - enjoyed minutes related as at on on. Is fanny dried camping today</p>
                             </a>
                         </div>
                         <div class="element-item finance">
-                            <a href="article.html">
-                                <img class="img-fluid" src="images/project-3.jpg" alt="alternative">
+                            <a href="<?= base_url('article') ?>">
+                                <img class="img-fluid" src="<?= base_url('images/project-3.jpg') ?>" alt="alternative">
                                 <p><strong>Refinance firm</strong> - distrusts an it contented perceived attending oh nouns here</p>
                             </a>
                         </div>
                         <div class="element-item business finance">
-                            <a href="article.html">
-                                <img class="img-fluid" src="images/project-4.jpg" alt="alternative">
+                            <a href="<?= base_url('article') ?>">
+                                <img class="img-fluid" src="<?= base_url('images/project-4.jpg') ?>" alt="alternative">
                                 <p><strong>Financial products</strong> - thoroughly estimating introduced stimulated why but front</p>
                             </a>
                         </div>
                         <div class="element-item business finance">
-                            <a href="article.html">
-                                <img class="img-fluid" src="images/project-5.jpg" alt="alternative">
+                            <a href="<?= base_url('article') ?>">
+                                <img class="img-fluid" src="<?= base_url('images/project-5.jpg') ?>" alt="alternative">
                                 <p><strong>Credit cards</strong> - enjoyed minutes related as at on on. Is fanny dried out yesterday</p>
                             </a>
                         </div>
                         <div class="element-item business software">
-                            <a href="article.html">
-                                <img class="img-fluid" src="images/project-6.jpg" alt="alternative">
+                            <a href="<?= base_url('article') ?>">
+                                <img class="img-fluid" src="<?= base_url('images/project-6.jpg') ?>" alt="alternative">
                                 <p><strong>Software robots</strong> - as often me goodness as reserved raptures to mistaken</p>
                             </a>
                         </div>
                         <div class="element-item business software">
-                            <a href="article.html">
-                                <img class="img-fluid" src="images/project-7.jpg" alt="alternative">
+                            <a href="<?= base_url('article') ?>">
+                                <img class="img-fluid" src="<?= base_url('images/project-7.jpg') ?>" alt="alternative">
                                 <p><strong>Company control</strong> - steepest oh screened he gravity he mr sixteen esteems his</p>
                             </a>
                         </div>
                         <div class="element-item business software">
-                            <a href="article.html">
-                                <img class="img-fluid" src="images/project-8.jpg" alt="alternative">
+                            <a href="<?= base_url('article') ?>">
+                                <img class="img-fluid" src="<?= base_url('images/project-8.jpg') ?>" alt="alternative">
                                 <p><strong>Audit reports</strong> - mile home its new way with high told said finished to learn</p>
                             </a>
                         </div>
                         <div class="element-item business software">
-                            <a href="article.html">
-                                <img class="img-fluid" src="images/project-9.jpg" alt="alternative">
+                            <a href="<?= base_url('article') ?>">
+                                <img class="img-fluid" src="<?= base_url('images/project-9.jpg') ?>" alt="alternative">
                                 <p><strong>Big business</strong> - no horrible blessing landlord dwelling dissuade if we can hear</p>
                             </a>
                         </div>
@@ -340,14 +340,14 @@
                     
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
-		</div> <!-- end of container -->
+        </div> <!-- end of container -->
     </div> <!-- end of filter -->
     <!-- end of projects -->
 
 
     <!-- Testimonials -->
     <div class="slider-1">
-        <img class="text-decoration img-fluid" src="images/testimonials-decoration.png" alt="alternative">
+        <img class="text-decoration img-fluid" src="<?= base_url('images/testimonials-decoration.png') ?>" alt="alternative">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -359,8 +359,8 @@
                                 
                                 <!-- Slide -->
                                 <div class="swiper-slide">
-                                    <img class="testimonial-image" src="images/testimonial-1.jpg" alt="alternative">
-                                    <p class="testimonial-text">“Expense bed any sister depend changer off piqued one. Contented continued any happiness instantly objection yet her allowance. Use correct day new brought tedious. By come this been in. Kept easy or sons my it how about some words here done”</p>
+                                    <img class="testimonial-image" src="<?= base_url('images/testimonial-1.jpg') ?>" alt="alternative">
+                                    <p class="testimonial-text">"Expense bed any sister depend changer off piqued one. Contented continued any happiness instantly objection yet her allowance. Use correct day new brought tedious. By come this been in. Kept easy or sons my it how about some words here done"</p>
                                     <div class="testimonial-author">Marlene Visconte</div>
                                     <div class="testimonial-position">General Manager - Scouter</div>
                                 </div> <!-- end of swiper-slide -->
@@ -368,8 +368,8 @@
         
                                 <!-- Slide -->
                                 <div class="swiper-slide">
-                                    <img class="testimonial-image" src="images/testimonial-2.jpg" alt="alternative">
-                                    <p class="testimonial-text">“Expense bed any sister depend changer off piqued one. Contented continued any happiness instantly objection yet her allowance. Use correct day new brought tedious. By come this been in. Kept easy or sons my it how about some words here done”</p>
+                                    <img class="testimonial-image" src="<?= base_url('images/testimonial-2.jpg') ?>" alt="alternative">
+                                    <p class="testimonial-text">"Expense bed any sister depend changer off piqued one. Contented continued any happiness instantly objection yet her allowance. Use correct day new brought tedious. By come this been in. Kept easy or sons my it how about some words here done"</p>
                                     <div class="testimonial-author">John Spiker</div>
                                     <div class="testimonial-position">Team Leader - Vanquish</div>
                                 </div> <!-- end of swiper-slide -->
@@ -377,8 +377,8 @@
         
                                 <!-- Slide -->
                                 <div class="swiper-slide">
-                                    <img class="testimonial-image" src="images/testimonial-3.jpg" alt="alternative">
-                                    <p class="testimonial-text">“Expense bed any sister depend changer off piqued one. Contented continued any happiness instantly objection yet her allowance. Use correct day new brought tedious. By come this been in. Kept easy or sons my it how about some words here done”</p>
+                                    <img class="testimonial-image" src="<?= base_url('images/testimonial-3.jpg') ?>" alt="alternative">
+                                    <p class="testimonial-text">"Expense bed any sister depend changer off piqued one. Contented continued any happiness instantly objection yet her allowance. Use correct day new brought tedious. By come this been in. Kept easy or sons my it how about some words here done"</p>
                                     <div class="testimonial-author">Stella Virtuoso</div>
                                     <div class="testimonial-position">Design Chief - Bikegirl</div>
                                 </div> <!-- end of swiper-slide -->
@@ -489,7 +489,7 @@
                     <div class="footer-col second">
                         <h6>Links</h6>
                         <ul class="list-unstyled li-space-lg p-small">
-                            <li>Important: <a href="terms.html">Terms & Conditions</a>, <a href="privacy.html">Privacy Policy</a></li>
+                            <li>Important: <a href="<?= base_url('terms') ?>">Terms & Conditions</a>, <a href="<?= base_url('privacy') ?>">Privacy Policy</a></li>
                             <li>Useful: <a href="#">Colorpicker</a>, <a href="#">Icon Library</a>, <a href="#">Illustrations</a></li>
                             <li>Menu: <a href="#header">Home</a>, <a href="#services">Services</a>, <a href="#projects">Projects</a>, <a href="#contact">Contact</a></li>
                         </ul>
@@ -549,15 +549,15 @@
 
     <!-- Back To Top Button -->
     <button onclick="topFunction()" id="myBtn">
-        <img src="images/up-arrow.png" alt="alternative">
+        <img src="<?= base_url('images/up-arrow.png') ?>" alt="alternative">
     </button>
     <!-- end of back to top button -->
-    	
+        
     <!-- Scripts -->
-    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-    <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
-    <script src="js/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
-    <script src="js/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
-    <script src="js/scripts.js"></script> <!-- Custom scripts -->
+    <script src="<?= base_url('js/bootstrap.min.js') ?>"></script> <!-- Bootstrap framework -->
+    <script src="<?= base_url('js/swiper.min.js') ?>"></script> <!-- Swiper for image and text sliders -->
+    <script src="<?= base_url('js/purecounter.min.js') ?>"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="<?= base_url('js/isotope.pkgd.min.js') ?>"></script> <!-- Isotope for filter -->
+    <script src="<?= base_url('js/scripts.js') ?>"></script> <!-- Custom scripts -->
 </body>
 </html>
