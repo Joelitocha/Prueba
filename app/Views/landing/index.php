@@ -489,7 +489,7 @@
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="assets/images/RackON.png" alt="RackON Logo" style="height: 40px;">
+                <img src="assets/images/pro.png" alt="RackON Logo" style="height: 40px;">
             </a>
             
             <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
