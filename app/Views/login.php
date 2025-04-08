@@ -187,7 +187,7 @@
 
   <script>
     function mostrarLogin() {
-      document.getElementById('loginModal').style.display = 'grid';
+      document.getElementById('loginModal').style.display = 'flex';
     }
 
     function cerrarLogin() {
