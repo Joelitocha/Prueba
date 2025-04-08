@@ -96,7 +96,7 @@
         </div>
         
         <!-- Video Background -->
-        <video autoplay loop muted id="video-background" poster="<?= base_url('assets/images/header-background.jpg') ?>" playsinline>
+        <video autoplay loop muted id="video-background" poster="<?= base_url('assets/images/rackon-og.jpg') ?>" playsinline>
             <source src="<?= base_url('assets/images/rackon-og.jpg') ?>" type="video/mp4" />
         </video>
         <!-- end of video background -->
