@@ -11,6 +11,7 @@ $routes->get('/', 'AuthController::index');  // Página de login
 
 // Proceso de login
 $routes->post('/login', 'AuthController::loginUser');  // Iniciar sesión
+$routes->get('/login', 'AuthController::inicio');  // Página de bienvenida
 
 // Ruta para la página de bienvenida después de iniciar sesión
 $routes->get('/bienvenido', 'AuthController::welcome');  // Página de bienvenida

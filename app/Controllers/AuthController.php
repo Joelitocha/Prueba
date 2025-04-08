@@ -16,9 +16,11 @@ class AuthController extends BaseController
             'og_image' => base_url('assets/img/rackon-og.jpg'), // Imagen 1200x630px
             'canonical_url' => base_url()
         ];
-        return view('login', $data);
+        return view('landig/index', $data);
     }
-
+    public function inicio(){
+        return view("login");
+    }
     public function loginUser()
     {
         $model = new UserModel();
