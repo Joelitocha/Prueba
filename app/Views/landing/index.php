@@ -56,6 +56,9 @@
                         <a class="nav-link" href="#introduction">¿Qué es RackON?</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#funcionamiento">Funcionamiento</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#hardware-utilizado">Hardware Utilizado</a>
                     </li>
                     <li class="nav-item">
@@ -159,31 +162,38 @@
 
 
 
-    <!-- Details -->
-    <div class="split">
-        <div class="area-1">
-        </div><div class="area-2 bg-gray">
-          <section id="que-es-rackon" class="py-5 bg-light">
+<!-- Details -->
+<div class="split">
+    <div class="area-1"></div>
+    <div class="area-2 bg-gray">
+        <section id="funcionamiento" class="py-5 bg-light">
             <div class="container">    
                 <div class="row">
                     <div class="col-lg-12">     
                         <!-- Text Container -->
                         <div class="text-container">
-                        <h2 class="mb-4">¿Qué es RackON?</h2>
+                            <h2 class="mb-4">¿Cómo funciona RackON?</h2>
                             <p class="lead">
-                                <strong>RackON</strong> es un sistema de control de acceso inteligente para racks de servidores, diseñado como solución integral de seguridad física. 
-                                Utiliza tecnología RFID, sensores de vibración y cámaras para ofrecer tres niveles de seguridad. 
-                                El sistema permite administrar accesos, monitorear eventos en tiempo real y gestionar usuarios a través de una plataforma web con roles diferenciados.
+                                RackON está compuesto por tres niveles de seguridad que trabajan en conjunto para proteger el acceso físico a los racks:
+                            </p>
+                            <ul class="list-unstyled">
+                                <li><strong>1. Verificación RFID:</strong> El usuario escanea su tarjeta RFID. El sistema consulta la base de datos para validar el acceso. Si es aprobado, continúa al siguiente nivel.</li>
+                                <li><strong>2. Detección de impacto:</strong> Un sensor de vibración detecta cualquier intento de manipulación física del rack, generando una alerta inmediata si se activa sin autorización.</li>
+                                <li><strong>3. Captura visual:</strong> Se activa una cámara para registrar el evento, capturando evidencia visual del acceso o intento de intrusión.</li>
+                            </ul>
+                            <p class="mt-3">
+                                Todos los eventos son almacenados en la base de datos y pueden ser consultados desde una plataforma web, accesible según los privilegios del usuario.
                             </p>
                         </div>
                         <!-- end of text container -->
                     </div>
                 </div>
             </div>
-          </section>
-        </div>
+        </section>
     </div>
-    <!-- end of details -->
+</div>
+<!-- end of details -->
+
 
     <!-- Hardware Utilizado -->
 <section id="hardware-utilizado" class="py-5">
