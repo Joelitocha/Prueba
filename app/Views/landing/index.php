@@ -286,9 +286,7 @@
         <div class="row h-100 g-0"> <!-- g-0 elimina el gutter de Bootstrap -->
             <!-- Columna de imagen -->
             <div class="col-lg-6 p-0 h-100">
-            <img src="<?= base_url('assets/images/details-background.jpg') ?>" 
-         alt="Funcionamiento RackON"
-         class="w-100 h-100 object-fit-cover">
+            <img src="<?= base_url('assets/images/details-background.jpg') ?>" alt="Funcionamiento RackON" class="w-100 h-100 object-fit-cover">
             </div>
             
             <!-- Columna de texto -->
