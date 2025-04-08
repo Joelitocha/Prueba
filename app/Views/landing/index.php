@@ -41,7 +41,7 @@
             <a class="navbar-brand logo-image" href="<?= base_url() ?>"><img src="<?= base_url('assets/images/logo.svg') ?>" alt="alternative"></a> 
 
             <!-- Text Logo -->
-            <!-- <a class="navbar-brand logo-text" href="<?= base_url() ?>">Desi</a> -->
+            <!-- <a class="navbar-brand logo-text" href="<?= base_url() ?>">RackON</a> -->
 
             <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
