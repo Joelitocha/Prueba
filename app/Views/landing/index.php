@@ -166,31 +166,24 @@
 <div class="split">
     <div class="area-1"></div>
     <div class="area-2 bg-gray">
-        <div class="container">    
-            <div class="row">
-                <div class="col-lg-12">     
-                    <!-- Text Container -->
-                    <div id="funcionamiento" class="text-container">
-                        <h2 class="mb-4">¿Cómo funciona RackON?</h2>
-                        <p class="lead">
-                            RackON está compuesto por tres niveles de seguridad que trabajan en conjunto para proteger el acceso físico a los racks:
-                        </p>
-                        <ul class="list-unstyled">
-                            <li><strong>1. Verificación RFID:</strong> El usuario escanea su tarjeta RFID. El sistema consulta la base de datos para validar el acceso. Si es aprobado, continúa al siguiente nivel.</li>
-                            <li><strong>2. Detección de impacto:</strong> Un sensor de vibración detecta cualquier intento de manipulación física del rack, generando una alerta inmediata si se activa sin autorización.</li>
-                            <li><strong>3. Captura visual:</strong> Se activa una cámara para registrar el evento, capturando evidencia visual del acceso o intento de intrusión.</li>
-                        </ul>
-                        <p class="mt-3">
-                            Todos los eventos son almacenados en la base de datos y pueden ser consultados desde una plataforma web, accesible según los privilegios del usuario.
-                        </p>
-                    </div>
-                    <!-- end of text container -->
-                </div>
-            </div>
+        <div class="text-container" id="funcionamiento">
+            <h2 class="mb-4">¿Cómo funciona RackON?</h2>
+            <p>
+                RackON está compuesto por tres niveles de seguridad que trabajan en conjunto para proteger el acceso físico a los racks:
+            </p>
+            <ul class="list-unstyled">
+                <li><strong>1. Verificación RFID:</strong> El usuario escanea su tarjeta RFID. El sistema consulta la base de datos para validar el acceso.</li>
+                <li><strong>2. Detección de impacto:</strong> Un sensor de vibración detecta cualquier intento de manipulación física no autorizada.</li>
+                <li><strong>3. Captura visual:</strong> Se activa una cámara que registra el evento y almacena evidencia visual del acceso.</li>
+            </ul>
+            <p>
+                Todos los eventos quedan registrados en la base de datos y pueden ser monitoreados desde la plataforma web.
+            </p>
         </div>
     </div>
 </div>
 <!-- end of details -->
+
 
 
 
