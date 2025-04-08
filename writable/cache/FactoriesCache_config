@@ -26,6 +26,7 @@
     'Config\\Database' => 'Config\\Database',
     'Config\\Email' => 'Config\\Email',
     'Config\\Validation' => 'Config\\Validation',
+    'Config\\Security' => 'Config\\Security',
   ),
   'instances' => 
   array (
@@ -660,6 +661,18 @@
         'list' => 'CodeIgniter\\Validation\\Views\\list',
         'single' => 'CodeIgniter\\Validation\\Views\\single',
       ),
+    )),
+    'Config\\Security' => 
+    Config\Security::__set_state(array(
+       'csrfProtection' => 'cookie',
+       'tokenRandomize' => false,
+       'tokenName' => 'csrf_test_name',
+       'headerName' => 'X-CSRF-TOKEN',
+       'cookieName' => 'csrf_cookie_name',
+       'expires' => 7200,
+       'regenerate' => true,
+       'redirect' => true,
+       'samesite' => 'Lax',
     )),
   ),
 );
