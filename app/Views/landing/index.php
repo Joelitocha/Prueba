@@ -280,13 +280,15 @@
         </div>
     </section>
 
-    <!-- Funcionamiento -->
+<!--sección de funcionamiento-->
 <section id="funcionamiento" class="fullpage-section p-0">
     <div class="container-fluid h-100">
-        <div class="row h-100">
+        <div class="row h-100 g-0"> <!-- g-0 elimina el gutter de Bootstrap -->
             <!-- Columna de imagen -->
             <div class="col-lg-6 p-0 h-100">
-                <div class="h-100 w-100 bg-cover" style="background-image: url('assets/images/details-background.jpg');"></div>
+                <div class="h-100 w-100 bg-cover" 
+                     style="background-image: url('<?= base_url('assets/images/details-background.jpg') ?>');">
+                </div>
             </div>
             
             <!-- Columna de texto -->
