@@ -165,7 +165,7 @@
         #funcionamiento .col-lg-6 {
             min-height: 100vh;
         }
-    
+    }
     /* Responsive */
     @media (max-width: 992px) {
         #header .h1-large {
