@@ -68,6 +68,31 @@
             margin-top: 0.5rem;
         }
     }
+    .navbar-brand {
+    margin-right: 0;
+    padding-right: 0;
+}
+
+/* Empuja el menú y el botón toggle completamente a la derecha */
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 991.98px) {
+    .navbar-toggler {
+        margin-left: auto; /* Empuja el botón toggle a la derecha */
+    }
+    
+    .navbar-collapse {
+        padding-top: 1rem;
+        text-align: right; /* Alinea el menú colapsado a la derecha */
+    }
+    
+    .navbar-nav {
+        align-items: flex-end;
+    }
+}
     /* Secciones */
     .fullpage-section {
         width: 100%;
