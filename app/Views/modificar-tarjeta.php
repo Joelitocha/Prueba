@@ -606,7 +606,6 @@
         <thead>
           <tr>
             <th>ID Tarjeta</th>
-            <th>UID</th>
             <th>Estado</th>
             <th>Bloqueada</th>
             <th>Intentos Fallidos</th>
@@ -619,7 +618,6 @@
           <?php foreach ($tarjetas as $tarjeta): ?>
             <tr>
               <td data-label="ID Tarjeta"><?= esc($tarjeta['ID_Tarjeta']); ?></td>
-              <td data-label="UID"><?= esc($tarjeta['UID']); ?></td>
               <td data-label="Estado" class="<?= $tarjeta['Estado'] == 1 ? 'estado-activa' : 'estado-inactiva'; ?>">
                 <?= $tarjeta['Estado'] == 1 ? 'Activa' : 'Inactiva'; ?>
               </td>
