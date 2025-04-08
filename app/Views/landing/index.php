@@ -316,17 +316,17 @@
         </div>
     </nav>
 
-    <!-- Header -->
-    <section id="header" class="fullpage-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h1 class="h1-large" style="color: white:;">Sistema Inteligente de Seguridad para Racks de Servidores</h1>
-                    <a class="btn-solid-lg mt-3" href="#introduction">Conocer más</a>
-                </div>
+<!-- Header Modificado -->
+<section id="header" class="fullpage-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="h1-large text-white">Sistema Inteligente de Seguridad para Racks de Servidores</h1>
+                <a class="btn-solid-lg mt-3" href="#introduction">Conocer más</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Introduction -->
     <section id="introduction" class="fullpage-section">
