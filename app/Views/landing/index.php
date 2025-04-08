@@ -41,7 +41,33 @@
         color: var(--dark-color);
         font-weight: 600;
     }
-
+    
+    /* Estilo para el botón Acceder */
+    #navbar .btn-outline-light {
+        border-color: rgba(255,255,255,0.5);
+        color: white;
+        transition: all 0.3s ease;
+        padding: 0.375rem 1rem;
+        white-space: nowrap;
+    }
+    
+    #navbar .btn-outline-light:hover {
+        background-color: rgba(255,255,255,0.1);
+        border-color: white;
+    }
+    
+    /* Ajustes para móviles */
+    @media (max-width: 991.98px) {
+        #navbar .navbar-collapse {
+            padding-top: 1rem;
+        }
+        
+        #navbar .btn-outline-light {
+            display: inline-block;
+            width: auto;
+            margin-top: 0.5rem;
+        }
+    }
     /* Secciones */
     .fullpage-section {
         width: 100%;
@@ -295,26 +321,36 @@
     
     <!-- Navigation -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: var(--dark-color);">
-        <div class="container">
-            <a class="navbar-brand" href="">
-                <img src="assets/images/logo.svg" alt="RackON Logo" style="height: 40px;">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#header">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#introduction">¿Qué es RackON?</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#funcionamiento">Cómo funciona</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#hardware">Hardware</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#planes">Planes de Compra</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login">Acceder</a></li>
-                </ul>
-            </div>
+    <div class="container">
+        <!-- Logo a la izquierda -->
+        <a class="navbar-brand me-auto" href="#">
+            <img src="assets/images/logo.svg" alt="RackON Logo" style="height: 40px;">
+        </a>
+
+        <!-- Botón toggle para móviles -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Elementos de navegación a la derecha -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="#header">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#introduction">¿Qué es RackON?</a></li>
+                <li class="nav-item"><a class="nav-link" href="#funcionamiento">Cómo funciona</a></li>
+                <li class="nav-item"><a class="nav-link" href="#hardware">Hardware</a></li>
+                <li class="nav-item"><a class="nav-link" href="#planes">Planes de Compra</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                <!-- Botón de Acceder con estilo especial -->
+                <li class="nav-item ms-lg-3 my-2 my-lg-0">
+                    <a class="btn btn-outline-light" href="login">
+                        <i class="fas fa-sign-in-alt me-2"></i>Acceder
+                    </a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
 <!-- Header Modificado -->
 <section id="header" class="fullpage-section">
