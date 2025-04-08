@@ -18,7 +18,66 @@
     <link rel="icon" href="<?= base_url('assets/images/favicon.png') ?>">
     
     <style>
-    /* Estilos responsive adicionales */
+    /* Estilos para el scroll de secciones completas */
+    html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+    }
+    
+    body {
+        overflow-x: hidden;
+    }
+    
+    .fullpage-section {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+        scroll-snap-align: start;
+    }
+    
+    .section-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    /* Ajustes específicos para cada sección */
+    #header {
+        background: linear-gradient(rgba(21, 35, 63, 0.7), url('<?= base_url('assets/images/rackon-og.jpg') ?>') center center no-repeat;
+        background-size: cover;
+    }
+    
+    #introduction {
+        background-color: #ffffff;
+    }
+    
+    #funcionamiento .area-1 {
+        background: url('<?= base_url('assets/images/details-background.jpg') ?>') center center no-repeat;
+        background-size: cover;
+    }
+    
+    #hardware-utilizado {
+        background-color: #f7f9fd;
+    }
+    
+    .slider-1 {
+        background-color: #ffffff;
+    }
+    
+    .counter {
+        background-color: #f7f9fd;
+    }
+    
+    #contact {
+        background: linear-gradient(rgba(2, 15, 29, 0.1), rgba(2, 15, 29, 0.1)), url('../images/contact-background.jpg') center center no-repeat;
+        background-size: cover;
+    }
+    
+    /* Ajustes responsive */
     @media (max-width: 992px) {
         .navbar-collapse {
             background-color: #161223;
@@ -31,24 +90,6 @@
             font-size: 2.5rem;
             line-height: 3rem;
         }
-        
-        .header-content {
-            padding-top: 8rem !important;
-            padding-bottom: 6rem !important;
-        }
-        
-        .cards-1 .card {
-            margin-bottom: 2rem;
-        }
-        
-        .split .area-1 {
-            height: 300px;
-        }
-        
-        .split .area-2 {
-            padding-top: 3rem;
-            padding-bottom: 3rem;
-        }
     }
     
     @media (max-width: 768px) {
@@ -57,17 +98,8 @@
             line-height: 2.5rem;
         }
         
-        .header-content {
-            padding-top: 6rem !important;
-            padding-bottom: 4rem !important;
-        }
-        
         .hardware-card {
             margin-bottom: 1.5rem;
-        }
-        
-        .testimonial-text {
-            font-size: 1rem !important;
         }
     }
     
@@ -85,18 +117,9 @@
         #video-background {
             display: none;
         }
-        
-        .header {
-            background: linear-gradient(rgba(21, 35, 63, 0.7), rgba(21, 35, 63, 0.7)), url('<?= base_url('assets/images/rackon-og.jpg') ?>') center center no-repeat;
-            background-size: cover;
-        }
     }
     
     /* Estilos para el hardware section */
-    .hardware-section {
-        padding: 3rem 0;
-    }
-    
     .hardware-card {
         height: 100%;
         transition: transform 0.3s ease;
@@ -110,6 +133,38 @@
         font-size: 2.5rem;
         margin-bottom: 1.5rem;
         color: #7dc22b;
+    }
+    
+    /* Ajustes para el split section */
+    .split-section {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    .split-section .area-1 {
+        flex: 1;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .split-section .area-2 {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        padding: 2rem;
+    }
+    
+    @media (min-width: 992px) {
+        .split-section {
+            flex-direction: row;
+        }
+        
+        .split-section .area-1,
+        .split-section .area-2 {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
     }
     </style>
 </head>
@@ -152,8 +207,8 @@
     </nav>
 
     <!-- Header -->
-    <header id="header" class="header">
-        <div class="header-content">
+    <section id="header" class="fullpage-section">
+        <div class="section-container">
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">
@@ -163,78 +218,74 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Video Background -->
-        <video autoplay loop muted id="video-background" poster="<?= base_url('assets/images/rackon-og.jpg') ?>" playsinline>
-            <source src="<?= base_url('assets/images/rackon-og.jpg') ?>" type="video/mp4">
-        </video>
-    </header>
+    </section>
 
     <!-- Introduction -->
-    <div id="introduction" class="cards-1 py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="h2-heading">¿Qué es RackON?</h2>
-                    <p class="p-heading">
-                        <strong>RackON</strong> es un sistema inteligente de control de acceso físico diseñado para racks de servidores. 
-                        Combina tecnologías como RFID, sensores de vibración y cámaras de vigilancia para ofrecer una solución de seguridad robusta y en capas.
-                    </p>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body text-center">
-                            <div class="card-icon">
-                                <i class="fas fa-id-card"></i>
-                            </div>
-                            <h4 class="card-title">Identificación RFID</h4>
-                            <p class="card-text">
-                                Permite validar el acceso mediante tarjetas RFID, registrando quién accede al rack y cuándo lo hace.
-                            </p>
-                        </div>
+    <section id="introduction" class="fullpage-section">
+        <div class="section-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="h2-heading">¿Qué es RackON?</h2>
+                        <p class="p-heading">
+                            <strong>RackON</strong> es un sistema inteligente de control de acceso físico diseñado para racks de servidores. 
+                            Combina tecnologías como RFID, sensores de vibración y cámaras de vigilancia para ofrecer una solución de seguridad robusta y en capas.
+                        </p>
                     </div>
                 </div>
-                
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body text-center">
-                            <div class="card-icon">
-                                <i class="fas fa-bolt"></i>
+                <div class="row mt-4">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <div class="card-icon">
+                                    <i class="fas fa-id-card"></i>
+                                </div>
+                                <h4 class="card-title">Identificación RFID</h4>
+                                <p class="card-text">
+                                    Permite validar el acceso mediante tarjetas RFID, registrando quién accede al rack y cuándo lo hace.
+                                </p>
                             </div>
-                            <h4 class="card-title">Detección de Vibración</h4>
-                            <p class="card-text">
-                                Añade un nivel extra de seguridad detectando intentos de manipulación física o golpes no autorizados.
-                            </p>
                         </div>
                     </div>
-                </div>
-                
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body text-center">
-                            <div class="card-icon">
-                                <i class="fas fa-video"></i>
+                    
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <div class="card-icon">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <h4 class="card-title">Detección de Vibración</h4>
+                                <p class="card-text">
+                                    Añade un nivel extra de seguridad detectando intentos de manipulación física o golpes no autorizados.
+                                </p>
                             </div>
-                            <h4 class="card-title">Monitoreo por Cámara</h4>
-                            <p class="card-text">
-                                Captura imágenes o video del acceso en tiempo real, permitiendo una supervisión visual directa del entorno del rack.
-                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <div class="card-icon">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                                <h4 class="card-title">Monitoreo por Cámara</h4>
+                                <p class="card-text">
+                                    Captura imágenes o video del acceso en tiempo real, permitiendo una supervisión visual directa del entorno del rack.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Details -->
-    <div id="funcionamiento" class="split">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6 p-0 area-1" style="background: url('<?= base_url('assets/images/details-background.jpg') ?>') center center no-repeat; background-size: cover; min-height: 400px;">
-                </div>
-                <div class="col-lg-6 p-4 p-lg-5 area-2 bg-gray d-flex align-items-center">
+    <section id="funcionamiento" class="fullpage-section p-0">
+        <div class="split-section">
+            <div class="area-1"></div>
+            <div class="area-2 bg-gray">
+                <div class="container">
                     <div class="text-container">
                         <h2 class="mb-4">¿Cómo funciona RackON?</h2>
                         <p>
@@ -252,183 +303,189 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Hardware Utilizado -->
-    <section id="hardware-utilizado" class="py-5 hardware-section bg-gray">
-        <div class="container">
-            <div class="row text-center mb-4">
-                <div class="col-lg-12">
-                    <h2>Hardware Utilizado</h2>
-                    <p class="lead">Los siguientes dispositivos permiten implementar los tres niveles de seguridad del sistema RackON.</p>
+    <section id="hardware-utilizado" class="fullpage-section">
+        <div class="section-container">
+            <div class="container">
+                <div class="row text-center mb-4">
+                    <div class="col-lg-12">
+                        <h2>Hardware Utilizado</h2>
+                        <p class="lead">Los siguientes dispositivos permiten implementar los tres niveles de seguridad del sistema RackON.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 hardware-card shadow-sm">
+                            <div class="card-body text-center">
+                                <i class="fas fa-microchip card-icon"></i>
+                                <h5 class="card-title">ESP32</h5>
+                                <p class="card-text">Microcontrolador principal que gestiona la lectura de tarjetas RFID, sensores y comunicación con la base de datos.</p>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 hardware-card shadow-sm">
-                        <div class="card-body text-center">
-                            <i class="fas fa-microchip card-icon"></i>
-                            <h5 class="card-title">ESP32</h5>
-                            <p class="card-text">Microcontrolador principal que gestiona la lectura de tarjetas RFID, sensores y comunicación con la base de datos.</p>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 hardware-card shadow-sm">
+                            <div class="card-body text-center">
+                                <i class="fas fa-id-card card-icon"></i>
+                                <h5 class="card-title">Lector RFID RC522</h5>
+                                <p class="card-text">Dispositivo de lectura de tarjetas para autenticar el acceso físico al rack mediante identificación por radiofrecuencia.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 hardware-card shadow-sm">
+                            <div class="card-body text-center">
+                                <i class="fas fa-bolt card-icon"></i>
+                                <h5 class="card-title">Sensor de Vibración</h5>
+                                <p class="card-text">Detecta intentos de manipulación física del rack, como golpes o movimientos bruscos no autorizados.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 hardware-card shadow-sm">
+                            <div class="card-body text-center">
+                                <i class="fas fa-video card-icon"></i>
+                                <h5 class="card-title">Cámara de Vigilancia</h5>
+                                <p class="card-text">Captura imágenes o video del acceso en tiempo real, permitiendo registrar eventos sospechosos visualmente.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 hardware-card shadow-sm">
+                            <div class="card-body text-center">
+                                <i class="fas fa-lock card-icon"></i>
+                                <h5 class="card-title">Mecanismo de Bloqueo</h5>
+                                <p class="card-text">Sistema electromecánico que permite o deniega el acceso al rack físicamente tras la validación.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 hardware-card shadow-sm">
-                        <div class="card-body text-center">
-                            <i class="fas fa-id-card card-icon"></i>
-                            <h5 class="card-title">Lector RFID RC522</h5>
-                            <p class="card-text">Dispositivo de lectura de tarjetas para autenticar el acceso físico al rack mediante identificación por radiofrecuencia.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 hardware-card shadow-sm">
-                        <div class="card-body text-center">
-                            <i class="fas fa-bolt card-icon"></i>
-                            <h5 class="card-title">Sensor de Vibración</h5>
-                            <p class="card-text">Detecta intentos de manipulación física del rack, como golpes o movimientos bruscos no autorizados.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100 hardware-card shadow-sm">
-                        <div class="card-body text-center">
-                            <i class="fas fa-video card-icon"></i>
-                            <h5 class="card-title">Cámara de Vigilancia</h5>
-                            <p class="card-text">Captura imágenes o video del acceso en tiempo real, permitiendo registrar eventos sospechosos visualmente.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100 hardware-card shadow-sm">
-                        <div class="card-body text-center">
-                            <i class="fas fa-lock card-icon"></i>
-                            <h5 class="card-title">Mecanismo de Bloqueo</h5>
-                            <p class="card-text">Sistema electromecánico que permite o deniega el acceso al rack físicamente tras la validación.</p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
     <!-- Testimonials -->
-    <div class="slider-1 py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="mb-5">Lo que dicen nuestros clientes</h2>
+    <section class="fullpage-section">
+        <div class="section-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="mb-5">Lo que dicen nuestros clientes</h2>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="slider-container">
-                        <div class="swiper-container card-slider">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img class="testimonial-image" src="<?= base_url('assets/images/testimonial-1.jpg') ?>" alt="alternative">
-                                    <p class="testimonial-text">"RackON ha transformado nuestra seguridad física. Ahora tenemos control total sobre quién accede a nuestros racks y cuándo."</p>
-                                    <div class="testimonial-author">Carlos Méndez</div>
-                                    <div class="testimonial-position">CTO - DataCenter Solutions</div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="slider-container">
+                            <div class="swiper-container card-slider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img class="testimonial-image" src="<?= base_url('assets/images/testimonial-1.jpg') ?>" alt="alternative">
+                                        <p class="testimonial-text">"RackON ha transformado nuestra seguridad física. Ahora tenemos control total sobre quién accede a nuestros racks y cuándo."</p>
+                                        <div class="testimonial-author">Carlos Méndez</div>
+                                        <div class="testimonial-position">CTO - DataCenter Solutions</div>
+                                    </div>
+                                    
+                                    <div class="swiper-slide">
+                                        <img class="testimonial-image" src="<?= base_url('assets/images/testimonial-2.jpg') ?>" alt="alternative">
+                                        <p class="testimonial-text">"La combinación de RFID, sensores y cámara nos da una seguridad en capas que ningún otro producto ofrece."</p>
+                                        <div class="testimonial-author">Ana Rodríguez</div>
+                                        <div class="testimonial-position">Directora de IT - SecureNet</div>
+                                    </div>
+                                    
+                                    <div class="swiper-slide">
+                                        <img class="testimonial-image" src="<?= base_url('assets/images/testimonial-3.jpg') ?>" alt="alternative">
+                                        <p class="testimonial-text">"Implementamos RackON en todos nuestros racks críticos. La interfaz web es intuitiva y los reportes detallados."</p>
+                                        <div class="testimonial-author">Luis Fernández</div>
+                                        <div class="testimonial-position">Gerente de Infraestructura - CloudTech</div>
+                                    </div>
                                 </div>
-                                
-                                <div class="swiper-slide">
-                                    <img class="testimonial-image" src="<?= base_url('assets/images/testimonial-2.jpg') ?>" alt="alternative">
-                                    <p class="testimonial-text">"La combinación de RFID, sensores y cámara nos da una seguridad en capas que ningún otro producto ofrece."</p>
-                                    <div class="testimonial-author">Ana Rodríguez</div>
-                                    <div class="testimonial-position">Directora de IT - SecureNet</div>
-                                </div>
-                                
-                                <div class="swiper-slide">
-                                    <img class="testimonial-image" src="<?= base_url('assets/images/testimonial-3.jpg') ?>" alt="alternative">
-                                    <p class="testimonial-text">"Implementamos RackON en todos nuestros racks críticos. La interfaz web es intuitiva y los reportes detallados."</p>
-                                    <div class="testimonial-author">Luis Fernández</div>
-                                    <div class="testimonial-position">Gerente de Infraestructura - CloudTech</div>
-                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
                             </div>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Statistics -->
-    <div class="counter py-5 bg-gray">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-6 col-md-3 mb-4 mb-md-0">
-                    <div class="counter-cell">
-                        <div data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="3" class="purecounter">0</div>
-                        <div class="counter-info">Clientes satisfechos</div>
+    <section class="fullpage-section bg-gray">
+        <div class="section-container">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-6 col-md-3 mb-4 mb-md-0">
+                        <div class="counter-cell">
+                            <div data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="3" class="purecounter">0</div>
+                            <div class="counter-info">Clientes satisfechos</div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-6 col-md-3 mb-4 mb-md-0">
-                    <div class="counter-cell">
-                        <div data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1.5" class="purecounter">0</div>
-                        <div class="counter-info">Países</div>
+                    <div class="col-6 col-md-3 mb-4 mb-md-0">
+                        <div class="counter-cell">
+                            <div data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1.5" class="purecounter">0</div>
+                            <div class="counter-info">Países</div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="counter-cell">
-                        <div data-purecounter-start="0" data-purecounter-end="99" data-purecounter-duration="3" class="purecounter">0</div>
-                        <div class="counter-info">% Disponibilidad</div>
+                    <div class="col-6 col-md-3">
+                        <div class="counter-cell">
+                            <div data-purecounter-start="0" data-purecounter-end="99" data-purecounter-duration="3" class="purecounter">0</div>
+                            <div class="counter-info">% Disponibilidad</div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="counter-cell">
-                        <div data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="3" class="purecounter">0</div>
-                        <div class="counter-info">Racks protegidos</div>
+                    <div class="col-6 col-md-3">
+                        <div class="counter-cell">
+                            <div data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="3" class="purecounter">0</div>
+                            <div class="counter-info">Racks protegidos</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Contact -->
-    <div id="contact" class="form-1 py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="h2-heading text-white">Contáctenos</h2>
-                    <p class="p-heading text-white">Complete el formulario y nos pondremos en contacto con usted</p>
+    <section id="contact" class="fullpage-section">
+        <div class="section-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="h2-heading text-white">Contáctenos</h2>
+                        <p class="p-heading text-white">Complete el formulario y nos pondremos en contacto con usted</p>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <form>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group mb-3">
-                                    <input type="text" class="form-control-input" placeholder="Nombre" required>
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group mb-3">
+                                        <input type="text" class="form-control-input" placeholder="Nombre" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group mb-3">
+                                        <input type="email" class="form-control-input" placeholder="Email" required>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group mb-3">
-                                    <input type="email" class="form-control-input" placeholder="Email" required>
-                                </div>
+                            <div class="form-group mb-3">
+                                <textarea class="form-control-textarea" placeholder="Mensaje" required></textarea>
                             </div>
-                        </div>
-                        <div class="form-group mb-3">
-                            <textarea class="form-control-textarea" placeholder="Mensaje" required></textarea>
-                        </div>
-                        <div class="form-group text-center">
-                            <button type="submit" class="btn-solid-lg">Enviar Mensaje</button>
-                        </div>
-                    </form>
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn-solid-lg">Enviar Mensaje</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer py-5">
