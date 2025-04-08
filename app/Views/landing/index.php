@@ -147,6 +147,24 @@
         color: white;
         padding: 50px 0 20px;
     }
+    .bg-cover {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    #funcionamiento {
+        min-height: 100vh;
+    }
+    
+    #funcionamiento .col-lg-6 {
+        min-height: 50vh;
+    }
+    
+    @media (min-width: 992px) {
+        #funcionamiento .col-lg-6 {
+            min-height: 100vh;
+        }
     
     /* Responsive */
     @media (max-width: 992px) {
@@ -262,17 +280,22 @@
         </div>
     </section>
 
-    <!-- Details -->
-    <section id="funcionamiento" class="fullpage-section p-0">
-        <div class="split-section">
-            <div class="area-1"></div>
-            <div class="area-2">
-                <div class="container">
-                    <h2>¿Cómo funciona RackON?</h2>
+<section id="funcionamiento" class="fullpage-section p-0">
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <!-- Columna de imagen -->
+            <div class="col-lg-6 p-0 h-100">
+                <div class="h-100 w-100 bg-cover" style="background-image: url('assets/images/details-background.jpg');"></div>
+            </div>
+            
+            <!-- Columna de texto -->
+            <div class="col-lg-6 p-5 d-flex align-items-center bg-light">
+                <div class="px-lg-5">
+                    <h2 class="mb-4">¿Cómo funciona RackON?</h2>
                     <p>
                         RackON está compuesto por tres niveles de seguridad que trabajan en conjunto para proteger el acceso físico a los racks:
                     </p>
-                    <ul>
+                    <ul class="list-unstyled">
                         <li class="mb-3"><strong>1. Verificación RFID:</strong> El usuario escanea su tarjeta RFID. El sistema consulta la base de datos para validar el acceso.</li>
                         <li class="mb-3"><strong>2. Detección de impacto:</strong> Un sensor de vibración detecta cualquier intento de manipulación física no autorizada.</li>
                         <li class="mb-3"><strong>3. Captura visual:</strong> Se activa una cámara que registra el evento y almacena evidencia visual del acceso.</li>
@@ -283,8 +306,8 @@
                 </div>
             </div>
         </div>
-    </section>
-
+    </div>
+</section>
     <!-- Hardware -->
     <section id="hardware" class="fullpage-section bg-light">
         <div class="container">
