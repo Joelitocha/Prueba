@@ -186,7 +186,38 @@
     #funcionamiento img:hover {
         transform: scale(1.02);
     }
-
+    /* Estilos para la sección mejorada */
+    #funcionamiento .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    #funcionamiento .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+    }
+    
+    .badge.rounded-circle {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+    }
+    
+    @media (max-width: 992px) {
+        #funcionamiento .min-vh-100 {
+            min-height: auto !important;
+        }
+        
+        #funcionamiento img {
+            max-height: 50vh;
+        }
+        
+        #funcionamiento .position-absolute h2 {
+            font-size: 2.5rem !important;
+        }
+    }
     #funcionamiento {
         min-height: 100vh;
     }
@@ -315,50 +346,86 @@
     </section>
 
 <!--sección de funcionamiento-->
-<section id="funcionamiento" class="container-fluid p-0">
-    <div class="row g-0 min-vh-100"> <!-- 100% del viewport vertical -->
-        <!-- Columna de Imagen (ocupará 50% en desktop, 100% altura) -->
-        <div class="col-lg-6 order-lg-1 order-2">
-            <div class="h-100">
+<section id="funcionamiento" class="container-fluid p-0 bg-white">
+    <div class="row g-0 min-vh-100 align-items-stretch">
+        <!-- Columna de Imagen -->
+        <div class="col-lg-6 order-lg-1 order-2 position-relative">
+            <div class="h-100 w-100 overflow-hidden">
                 <img src="<?= base_url('assets/images/details-background.jpg') ?>" 
-                     alt="Funcionamiento de RackON"
-                     class="img-fluid w-100 h-100 object-fit-cover"
-                     style="min-height: 300px;">
+                     alt="Tecnología RackON en acción"
+                     class="img-fluid w-100 h-100 object-fit-cover">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(0,0,0,0.3);">
+                    <h2 class="text-white display-4 fw-bold">Tecnología en Capas</h2>
+                </div>
             </div>
         </div>
         
-        <!-- Columna de Texto (ocupará 50% en desktop, contenido centrado) -->
-        <div class="col-lg-6 order-lg-2 order-1 d-flex align-items-center bg-light py-5">
-            <div class="px-4 px-md-5 py-lg-0 py-4" style="max-width: 600px; margin: 0 auto;">
-                <h2 class="mb-4">¿Cómo funciona RackON?</h2>
-                <p class="lead">
-                    RackON está compuesto por tres niveles de seguridad que trabajan en conjunto para proteger el acceso físico a los racks:
+        <!-- Columna de Texto Mejorada -->
+        <div class="col-lg-6 order-lg-2 order-1 d-flex align-items-center py-5">
+            <div class="px-4 px-md-5 py-lg-0" style="max-width: 700px; margin: 0 auto;">
+                <h2 class="mb-4 text-primary">¿Cómo funciona RackON?</h2>
+                <p class="lead mb-4">
+                    El sistema RackON combina tecnología de identificación, sensores físicos y vigilancia electrónica para ofrecer una solución de seguridad en capas. Su funcionamiento se basa en tres niveles que actúan de forma secuencial y complementaria:
                 </p>
                 
-                <div class="d-flex mb-3">
-                    <div class="me-3 text-primary fw-bold">1.</div>
-                    <div>
-                        <strong>Verificación RFID:</strong> El usuario escanea su tarjeta RFID. El sistema consulta la base de datos para validar el acceso.
+                <!-- Nivel 1 -->
+                <div class="card mb-4 border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <div class="me-4">
+                                <span class="badge bg-primary rounded-circle p-3">1</span>
+                            </div>
+                            <div>
+                                <h4 class="text-primary">Verificación RFID</h4>
+                                <p class="mb-0">
+                                    Cada usuario autorizado posee una tarjeta RFID única. Al acercarla al lector, el sistema valida la identidad del usuario en la base de datos. Si la tarjeta está habilitada y el acceso es permitido, se registra el evento y se activa el siguiente nivel de seguridad.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="d-flex mb-3">
-                    <div class="me-3 text-primary fw-bold">2.</div>
-                    <div>
-                        <strong>Detección de impacto:</strong> Un sensor de vibración detecta cualquier intento de manipulación física no autorizada.
+                <!-- Nivel 2 -->
+                <div class="card mb-4 border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <div class="me-4">
+                                <span class="badge bg-primary rounded-circle p-3">2</span>
+                            </div>
+                            <div>
+                                <h4 class="text-primary">Detección de Impacto</h4>
+                                <p class="mb-0">
+                                    Un sensor de vibración monitorea el rack en tiempo real. Si se detecta un golpe, movimiento brusco o intento de apertura forzada sin autenticación previa, el sistema genera una alerta automática y registra el incidente como un intento de intrusión.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="d-flex mb-4">
-                    <div class="me-3 text-primary fw-bold">3.</div>
-                    <div>
-                        <strong>Captura visual:</strong> Se activa una cámara que registra el evento y almacena evidencia visual del acceso.
+                <!-- Nivel 3 -->
+                <div class="card mb-4 border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <div class="me-4">
+                                <span class="badge bg-primary rounded-circle p-3">3</span>
+                            </div>
+                            <div>
+                                <h4 class="text-primary">Captura Visual</h4>
+                                <p class="mb-0">
+                                    En cada acceso (ya sea autorizado o no), se activa una cámara que captura imágenes o video del entorno inmediato del rack. Esta evidencia se almacena automáticamente y puede ser revisada desde el panel de administración web.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <p>
-                    Todos los eventos quedan registrados en la base de datos y pueden ser monitoreados desde la plataforma web.
-                </p>
+                <!-- Resumen -->
+                <div class="bg-light p-4 rounded">
+                    <p class="mb-0">
+                        <i class="fas fa-database text-primary me-2"></i>
+                        <strong>Registro completo:</strong> Todos los eventos —accesos válidos, intentos fallidos, impactos detectados y grabaciones— quedan registrados en una base de datos segura. La información puede ser consultada desde la plataforma web de RackON, donde administradores y supervisores pueden acceder al historial completo, recibir alertas en tiempo real y analizar el comportamiento del sistema para reforzar la seguridad.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
