@@ -153,6 +153,40 @@
         background-repeat: no-repeat;
     }
     
+        /* Asegura que la imagen cubra todo el espacio disponible */
+        .object-fit-cover {
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    /* Responsive: En móviles imagen abajo */
+    @media (max-width: 992px) {
+        #funcionamiento .min-vh-100 {
+            min-height: auto !important;
+        }
+        
+        #funcionamiento .order-1 {
+            order: 1 !important;
+        }
+        
+        #funcionamiento .order-2 {
+            order: 2 !important;
+        }
+        
+        #funcionamiento img {
+            max-height: 50vh;
+        }
+    }
+    
+    /* Efecto hover para la imagen */
+    #funcionamiento img {
+        transition: transform 0.3s ease;
+    }
+    
+    #funcionamiento img:hover {
+        transform: scale(1.02);
+    }
+
     #funcionamiento {
         min-height: 100vh;
     }
@@ -281,30 +315,50 @@
     </section>
 
 <!--sección de funcionamiento-->
-<section id="funcionamiento" class="fullpage-section p-0">
-    <div class="container-fluid h-100">
-        <div class="row h-100 g-0"> <!-- g-0 elimina el gutter de Bootstrap -->
-            <!-- Columna de imagen -->
-            <div class="col-lg-6 p-0 h-100">
-            <img src="<?= base_url('assets/images/details-background.jpg') ?>" alt="Funcionamiento RackON" class="w-100 h-100 object-fit-cover">
+<section id="funcionamiento" class="container-fluid p-0">
+    <div class="row g-0 min-vh-100"> <!-- 100% del viewport vertical -->
+        <!-- Columna de Imagen (ocupará 50% en desktop, 100% altura) -->
+        <div class="col-lg-6 order-lg-1 order-2">
+            <div class="h-100">
+                <img src="<?= base_url('assets/images/details-background.jpg') ?>" 
+                     alt="Funcionamiento de RackON"
+                     class="img-fluid w-100 h-100 object-fit-cover"
+                     style="min-height: 300px;">
             </div>
-            
-            <!-- Columna de texto -->
-            <div class="col-lg-6 p-5 d-flex align-items-center bg-light">
-                <div class="px-lg-5">
-                    <h2 class="mb-4">¿Cómo funciona RackON?</h2>
-                    <p>
-                        RackON está compuesto por tres niveles de seguridad que trabajan en conjunto para proteger el acceso físico a los racks:
-                    </p>
-                    <ul class="list-unstyled">
-                        <li class="mb-3"><strong>1. Verificación RFID:</strong> El usuario escanea su tarjeta RFID. El sistema consulta la base de datos para validar el acceso.</li>
-                        <li class="mb-3"><strong>2. Detección de impacto:</strong> Un sensor de vibración detecta cualquier intento de manipulación física no autorizada.</li>
-                        <li class="mb-3"><strong>3. Captura visual:</strong> Se activa una cámara que registra el evento y almacena evidencia visual del acceso.</li>
-                    </ul>
-                    <p class="mt-4">
-                        Todos los eventos quedan registrados en la base de datos y pueden ser monitoreados desde la plataforma web.
-                    </p>
+        </div>
+        
+        <!-- Columna de Texto (ocupará 50% en desktop, contenido centrado) -->
+        <div class="col-lg-6 order-lg-2 order-1 d-flex align-items-center bg-light py-5">
+            <div class="px-4 px-md-5 py-lg-0 py-4" style="max-width: 600px; margin: 0 auto;">
+                <h2 class="mb-4">¿Cómo funciona RackON?</h2>
+                <p class="lead">
+                    RackON está compuesto por tres niveles de seguridad que trabajan en conjunto para proteger el acceso físico a los racks:
+                </p>
+                
+                <div class="d-flex mb-3">
+                    <div class="me-3 text-primary fw-bold">1.</div>
+                    <div>
+                        <strong>Verificación RFID:</strong> El usuario escanea su tarjeta RFID. El sistema consulta la base de datos para validar el acceso.
+                    </div>
                 </div>
+                
+                <div class="d-flex mb-3">
+                    <div class="me-3 text-primary fw-bold">2.</div>
+                    <div>
+                        <strong>Detección de impacto:</strong> Un sensor de vibración detecta cualquier intento de manipulación física no autorizada.
+                    </div>
+                </div>
+                
+                <div class="d-flex mb-4">
+                    <div class="me-3 text-primary fw-bold">3.</div>
+                    <div>
+                        <strong>Captura visual:</strong> Se activa una cámara que registra el evento y almacena evidencia visual del acceso.
+                    </div>
+                </div>
+                
+                <p>
+                    Todos los eventos quedan registrados en la base de datos y pueden ser monitoreados desde la plataforma web.
+                </p>
             </div>
         </div>
     </div>
