@@ -280,6 +280,7 @@
         </div>
     </section>
 
+    <!-- Funcionamiento -->
 <section id="funcionamiento" class="fullpage-section p-0">
     <div class="container-fluid h-100">
         <div class="row h-100">
@@ -308,6 +309,8 @@
         </div>
     </div>
 </section>
+
+
     <!-- Hardware -->
     <section id="hardware" class="fullpage-section bg-light">
         <div class="container">
