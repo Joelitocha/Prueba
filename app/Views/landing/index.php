@@ -293,7 +293,11 @@
     .contact-form .form-control::placeholder {
         color: rgba(255,255,255,0.7);
     }
-    
+
+    #contact .section-title h2 {
+    color: white !important;
+    }
+
     /* FOOTER */
     footer {
         background-color: var(--dark-color);
@@ -493,7 +497,7 @@
                     <li class="nav-item"><a class="nav-link" href="#funcionamiento">Cómo funciona</a></li>
                     <li class="nav-item"><a class="nav-link" href="#hardware">Hardware</a></li>
                     <li class="nav-item"><a class="nav-link" href="#planes">Planes</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contáctenos</a></li>
                     <li class="nav-item ms-lg-3 my-2 my-lg-0">
                         <a class="btn btn-outline-light" href="login">
                             <i class="fas fa-sign-in-alt me-2"></i>Acceder
@@ -808,11 +812,11 @@
 
     <!-- Contact -->
     <section id="contact" class="fullpage-section">
-        <div class="container">
-            <div class="section-title text-white">
-                <h2>Contáctenos</h2>
-                <p class="lead">Complete el formulario y nos pondremos en contacto con usted</p>
-            </div>
+    <div class="container">
+        <div class="section-title text-white">
+            <h2>Contáctenos</h2>
+            <p class="lead">Complete el formulario y nos pondremos en contacto con usted</p>
+        </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <form class="contact-form">
