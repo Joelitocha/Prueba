@@ -158,6 +158,51 @@
             padding: 0.75rem;
         }
     }
+    footer {
+        background-color: #161223;
+        color: #9ba3b1;
+    }
+    
+    footer a {
+        color: #9ba3b1;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    
+    footer a:hover {
+        color: var(--primary-color);
+    }
+    
+    .social-icons a {
+        width: 36px;
+        height: 36px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+    }
+    
+    .social-icons a:hover {
+        transform: translateY(-3px);
+    }
+    
+    .nav-link {
+        padding: 0.25rem 0;
+    }
+    
+    @media (max-width: 768px) {
+        .footer-brand {
+            text-align: center;
+        }
+        
+        .social-icons {
+            justify-content: center;
+        }
+        
+        .app-badges {
+            text-align: center;
+        }
+    }
     /* Componentes reutilizables */
     .bg-cover {
         background-size: cover;
@@ -619,36 +664,89 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <h6>Sobre RackON</h6>
-                    <p>Sistema de seguridad en capas para racks de servidores que combina RFID, sensores y cámaras para protección física de infraestructura crítica.</p>
+    <footer class="bg-dark text-white pt-4 pb-3">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Columna Información -->
+            <div class="col-lg-4 col-md-6">
+                <div class="footer-brand mb-3">
+                    <img src="<?= base_url('assets/images/logo-light.svg') ?>" alt="RackON Logo" style="height: 40px;">
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <h6>Enlaces</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Términos y Condiciones</a></li>
-                        <li><a href="#">Política de Privacidad</a></li>
-                        <li><a href="#header">Inicio</a></li>
-                        <li><a href="#introduction">Características</a></li>
-                        <li><a href="#contact">Contacto</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <h6>Redes Sociales</h6>
-                    <div class="social-icons mb-3">
-                        <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="me-2"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                <p class="small text-muted">Sistema de seguridad en capas para racks de servidores que combina RFID, sensores y cámaras para protección física de infraestructura crítica.</p>
+                <div class="mt-3">
+                    <h6 class="text-uppercase text-primary mb-2">Newsletter</h6>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control form-control-sm" placeholder="Tu correo">
+                        <button class="btn btn-primary btn-sm" type="button">Suscribir</button>
                     </div>
-                    <p>Contáctenos: <a href="mailto:info@rackon.com">info@rackon.com</a></p>
+                </div>
+            </div>
+
+            <!-- Columna Enlaces -->
+            <div class="col-lg-2 col-md-6">
+                <h6 class="text-uppercase text-primary mb-3">Enlaces</h6>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Términos y Condiciones</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Política de Privacidad</a></li>
+                    <li class="nav-item mb-2"><a href="#header" class="nav-link p-0 text-muted">Inicio</a></li>
+                    <li class="nav-item mb-2"><a href="#introduction" class="nav-link p-0 text-muted">Características</a></li>
+                    <li class="nav-item mb-2"><a href="#contact" class="nav-link p-0 text-muted">Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna Contacto -->
+            <div class="col-lg-3 col-md-6">
+                <h6 class="text-uppercase text-primary mb-3">Contacto</h6>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <i class="fas fa-envelope me-2 text-primary"></i>
+                        <a href="mailto:info@rackon.com" class="text-muted">info@rackon.com</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <i class="fas fa-phone me-2 text-primary"></i>
+                        <span class="text-muted">+1 (555) 123-4567</span>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <i class="fas fa-map-marker-alt me-2 text-primary"></i>
+                        <span class="text-muted">Av. Tecnología 123, CDMX</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Columna Redes Sociales -->
+            <div class="col-lg-3 col-md-6">
+                <h6 class="text-uppercase text-primary mb-3">Síguenos</h6>
+                <div class="social-icons d-flex mb-3">
+                    <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i class="fab fa-instagram"></i></a>
+                </div>
+                <h6 class="text-uppercase text-primary mb-2">Descarga nuestra app</h6>
+                <div class="app-badges">
+                    <a href="#" class="d-inline-block me-2 mb-2">
+                        <img src="<?= base_url('assets/images/google-play-badge.png') ?>" alt="Google Play" style="height: 40px;">
+                    </a>
+                    <a href="#" class="d-inline-block mb-2">
+                        <img src="<?= base_url('assets/images/app-store-badge.png') ?>" alt="App Store" style="height: 40px;">
+                    </a>
                 </div>
             </div>
         </div>
-    </footer>
+
+        <hr class="my-4 border-secondary">
+
+        <!-- Copyright -->
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="small text-muted mb-0">&copy; <script>document.write(new Date().getFullYear())</script> RackON. Todos los derechos reservados.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <p class="small text-muted mb-0">Desarrollado con <i class="fas fa-heart text-danger"></i> por tu equipo</p>
+            </div>
+        </div>
+    </div>
+</footer>
 
     <!-- Copyright -->
     <div class="text-center py-3" style="background-color: rgba(0,0,0,0.2);">
