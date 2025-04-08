@@ -56,6 +56,9 @@
                         <a class="nav-link" href="#que-es-rackon">¿Qué es RackON?</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#hardware-utilizado">Hardware Utilizado</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#contact">Contactar</a>
                     </li>
                     <li class="nav-item">
@@ -168,18 +171,16 @@
             <div class="container">    
                 <div class="row">
                     <div class="col-lg-12">     
-                        
                         <!-- Text Container -->
                         <div class="text-container">
                         <h2 class="mb-4">¿Qué es RackON?</h2>
                             <p class="lead">
                                 <strong>RackON</strong> es un sistema de control de acceso inteligente para racks de servidores, diseñado como solución integral de seguridad física. 
                                 Utiliza tecnología RFID, sensores de vibración y cámaras para ofrecer tres niveles de seguridad. 
-                                El sistema permite administrar accesos, monitorear eventos en tiempo real y gestionar usuarios a través de una plataforma web con roles diferenciados: Administrador, Supervisor y Usuario.
+                                El sistema permite administrar accesos, monitorear eventos en tiempo real y gestionar usuarios a través de una plataforma web con roles diferenciados.
                             </p>
                         </div>
                         <!-- end of text container -->
-
                     </div>
                 </div>
             </div>
@@ -188,87 +189,71 @@
     </div>
     <!-- end of details -->
 
-    <!-- Projects -->
-    <div id="projects" class="filter bg-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="h2-heading">Projects That We're Proud Of</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    
-                    <!-- Filter -->
-                    <div class="button-group filters-button-group">
-                        <button class="button is-checked" data-filter="*">SHOW ALL</button>
-                        <button class="button" data-filter=".business">BUSINESS</button>
-                        <button class="button" data-filter=".finance">FINANCE</button>
-                        <button class="button" data-filter=".software">SOFTWARE</button>
-                    </div>
-                    <div class="grid">
-                        <div class="element-item finance">
-                            <a href="<?= base_url('article') ?>">
-                                <img class="img-fluid" src="<?= base_url('assets/images/project-1.jpg') ?>" alt="alternative">
-                                <p><strong>Online banking</strong> - delivered to and to major company in pharmace ski jump from</p>
-                            </a>
-                        </div>
-                        <div class="element-item finance">
-                            <a href="<?= base_url('article') ?>">
-                                <img class="img-fluid" src="<?= base_url('assets/images/project-2.jpg') ?>" alt="alternative">
-                                <p><strong>Loans company</strong> - enjoyed minutes related as at on on. Is fanny dried camping today</p>
-                            </a>
-                        </div>
-                        <div class="element-item finance">
-                            <a href="<?= base_url('article') ?>">
-                                <img class="img-fluid" src="<?= base_url('assets/images/project-3.jpg') ?>" alt="alternative">
-                                <p><strong>Refinance firm</strong> - distrusts an it contented perceived attending oh nouns here</p>
-                            </a>
-                        </div>
-                        <div class="element-item business finance">
-                            <a href="<?= base_url('article') ?>">
-                                <img class="img-fluid" src="<?= base_url('assets/images/project-4.jpg') ?>" alt="alternative">
-                                <p><strong>Financial products</strong> - thoroughly estimating introduced stimulated why but front</p>
-                            </a>
-                        </div>
-                        <div class="element-item business finance">
-                            <a href="<?= base_url('article') ?>">
-                                <img class="img-fluid" src="<?= base_url('assets/images/project-5.jpg') ?>" alt="alternative">
-                                <p><strong>Credit cards</strong> - enjoyed minutes related as at on on. Is fanny dried out yesterday</p>
-                            </a>
-                        </div>
-                        <div class="element-item business software">
-                            <a href="<?= base_url('article') ?>">
-                                <img class="img-fluid" src="<?= base_url('assets/images/project-6.jpg') ?>" alt="alternative">
-                                <p><strong>Software robots</strong> - as often me goodness as reserved raptures to mistaken</p>
-                            </a>
-                        </div>
-                        <div class="element-item business software">
-                            <a href="<?= base_url('article') ?>">
-                                <img class="img-fluid" src="<?= base_url('assets/images/project-7.jpg') ?>" alt="alternative">
-                                <p><strong>Company control</strong> - steepest oh screened he gravity he mr sixteen esteems his</p>
-                            </a>
-                        </div>
-                        <div class="element-item business software">
-                            <a href="<?= base_url('article') ?>">
-                                <img class="img-fluid" src="<?= base_url('assets/images/project-8.jpg') ?>" alt="alternative">
-                                <p><strong>Audit reports</strong> - mile home its new way with high told said finished to learn</p>
-                            </a>
-                        </div>
-                        <div class="element-item business software">
-                            <a href="<?= base_url('article') ?>">
-                                <img class="img-fluid" src="<?= base_url('assets/images/project-9.jpg') ?>" alt="alternative">
-                                <p><strong>Big business</strong> - no horrible blessing landlord dwelling dissuade if we can hear</p>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- end of grid -->
-                    
-                </div>
+    <!-- Hardware Utilizado -->
+<section id="hardware-utilizado" class="py-5">
+    <div class="container">
+        <div class="row text-center mb-4">
+            <div class="col-lg-12">
+                <h2 class="mb-3">Hardware Utilizado</h2>
+                <p class="lead">Los siguientes dispositivos permiten implementar los tres niveles de seguridad del sistema RackON.</p>
             </div>
         </div>
+        <div class="row text-center">
+
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <i class="fas fa-microchip fa-3x mb-3 text-primary"></i>
+                        <h5 class="card-title">ESP32</h5>
+                        <p class="card-text">Microcontrolador principal que gestiona la lectura de tarjetas RFID, sensores y comunicación con la base de datos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <i class="fas fa-id-card fa-3x mb-3 text-success"></i>
+                        <h5 class="card-title">Lector RFID RC522</h5>
+                        <p class="card-text">Dispositivo de lectura de tarjetas para autenticar el acceso físico al rack mediante identificación por radiofrecuencia.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <i class="fas fa-bolt fa-3x mb-3 text-danger"></i>
+                        <h5 class="card-title">Sensor de Vibración</h5>
+                        <p class="card-text">Detecta intentos de manipulación física del rack, como golpes o movimientos bruscos no autorizados.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <i class="fas fa-video fa-3x mb-3 text-warning"></i>
+                        <h5 class="card-title">Cámara de Vigilancia</h5>
+                        <p class="card-text">Captura imágenes o video del acceso en tiempo real, permitiendo registrar eventos sospechosos visualmente.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <i class="fas fa-lock fa-3x mb-3 text-dark"></i>
+                        <h5 class="card-title">Mecanismo de Bloqueo</h5>
+                        <p class="card-text">Sistema electromecánico que permite o deniega el acceso al rack físicamente tras la validación.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-    <!-- end of projects -->
+</section>
+
 
 
     <!-- Testimonials -->
