@@ -73,17 +73,17 @@
         height: auto;
     }
 
-    /* Columna de imagen compacta */
     #funcionamiento .image-column {
-        height: 500px; /* Altura fija en lugar de porcentual */
-        overflow: hidden;
-    }
+    box-sizing: content-box !important; /* Temporal para ajustes */
+    height: auto !important; /* Remueve restricciones */
+    min-height: unset !important;
+}
 
-    #funcionamiento .image-column img {
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-    }
+#funcionamiento .image-column img {
+    max-height: 400px; /* Altura máxima ajustable */
+    width: auto; /* Mantiene proporción */
+    object-fit: contain; /* Ajuste no-crop */
+}
 
     /* Overlay más compacto */
     #funcionamiento .image-overlay h2 {
