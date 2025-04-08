@@ -343,7 +343,6 @@
                      alt="Tecnología RackON en acción"
                      class="img-fluid w-100 h-100 object-fit-cover">
                 <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(0,0,0,0.3);">
-                    <h2 class="text-white display-4 fw-bold">Tecnología en Capas</h2>
                 </div>
             </div>
         </div>
