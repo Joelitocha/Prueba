@@ -748,12 +748,6 @@
     </div>
 </footer>
 
-    <!-- Copyright -->
-    <div class="text-center py-3" style="background-color: rgba(0,0,0,0.2);">
-        <div class="container">
-            <p class="mb-0">Copyright © <script>document.write(new Date().getFullYear())</script> RackON</p>
-        </div>
-    </div>
 
     <!-- Back To Top Button -->
     <button id="backToTop" class="btn btn-primary rounded-circle" style="position: fixed; bottom: 20px; right: 20px; display: none;">
