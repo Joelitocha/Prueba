@@ -61,61 +61,35 @@
         text-align: center;
     }
     
-        /* ===== EXCLUSIVO PARA SECCIÓN FUNCIONAMIENTO ===== */
-        #funcionamiento {
-        padding: 23px 0; /* Exactamente 23px de espacio arriba/abajo */
+    /* Sección Funcionamiento - Versión compacta */
+    #funcionamiento {
+        padding: 2rem 0;
+        min-height: auto;
     }
     
-    #funcionamiento .min-vh-100 {
-        min-height: auto !important; /* Elimina altura completa */
+    #funcionamiento .h4 {
+        font-size: 1.25rem;
+        font-weight: 600;
     }
     
-    #funcionamiento .content-column {
-        padding: 1.5rem 2rem; /* Reduce espacio interno */
-    }
-    
-    #funcionamiento h2 {
-        font-size: 1.5rem; /* Título más compacto */
-        margin-bottom: 1rem;
-    }
-    
-    #funcionamiento .lead {
-        font-size: 0.95rem; /* Texto intro más pequeño */
-        margin-bottom: 1.5rem;
-    }
-    
-    #funcionamiento .card {
-        margin-bottom: 0.75rem; /* Reduce espacio entre tarjetas */
-        border-radius: 6px;
-    }
-    
-    #funcionamiento .card-body {
-        padding: 1rem; /* Menos padding interno */
+    #funcionamiento .small {
+        font-size: 0.85rem;
+        line-height: 1.4;
     }
     
     #funcionamiento .badge {
-        width: 30px;
-        height: 30px;
-        font-size: 0.9rem; /* Badges más pequeños */
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        font-size: 0.8rem;
     }
     
-    #funcionamiento .bg-light {
-        padding: 0.75rem; /* Resumen más compacto */
+    #funcionamiento img {
+        transition: transform 0.3s ease;
     }
     
-    /* Ajustes para móviles */
-    @media (max-width: 768px) {
-        #funcionamiento .content-column {
-            padding: 1rem;
-        }
-        
-        #funcionamiento h2 {
-            font-size: 1.3rem;
-        }
-        
-        #funcionamiento .card-body {
-            padding: 0.75rem;
-        }
+    #funcionamiento img:hover {
+        transform: scale(1.02);
     }
 
     /* Componentes reutilizables */
@@ -302,63 +276,52 @@
     </section>
 
 <!--sección de funcionamiento-->
-<section id="funcionamiento" class="container-fluid bg-white py-4"> <!-- 23px aprox de padding -->
-    <div class="row g-0 align-items-center"> <!-- Eliminado min-vh-100 -->
-        <!-- Columna de Imagen Compacta -->
-        <div class="col-lg-6 order-lg-1 order-2">
-            <div class="ratio ratio-16x9"> <!-- Proporción controlada -->
-                <img src="<?= base_url('assets/images/details-background.jpg') ?>" 
-                     alt="Tecnología RackON"
-                     class="object-fit-cover">
-                <div class="d-flex align-items-center justify-content-center position-absolute top-0 start-0 w-100 h-100" 
-                     style="background: rgba(0,0,0,0.3);">
-                    <h3 class="text-white m-0">Tecnología en Capas</h3> <!-- Título más pequeño -->
+<section id="funcionamiento" class="py-4 bg-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Columna de Texto Compacta -->
+            <div class="col-lg-6 pe-lg-4">
+                <h2 class="h4 mb-3">¿Cómo funciona RackON?</h2>
+                <p class="small mb-3">El sistema combina tecnología de identificación, sensores físicos y vigilancia electrónica en tres niveles secuenciales:</p>
+                
+                <!-- Lista Compacta -->
+                <ul class="list-unstyled mb-3">
+                    <li class="mb-2 d-flex">
+                        <span class="badge bg-primary me-2 flex-shrink-0" style="width:24px;height:24px;line-height:24px;">1</span>
+                        <div>
+                            <strong class="d-block">Verificación RFID</strong>
+                            <span class="small">Validación de tarjetas únicas en base de datos. Registra acceso y activa siguiente nivel.</span>
+                        </div>
+                    </li>
+                    <li class="mb-2 d-flex">
+                        <span class="badge bg-primary me-2 flex-shrink-0" style="width:24px;height:24px;line-height:24px;">2</span>
+                        <div>
+                            <strong class="d-block">Detección de Impacto</strong>
+                            <span class="small">Sensor de vibración detecta golpes o aperturas forzadas, generando alertas.</span>
+                        </div>
+                    </li>
+                    <li class="mb-3 d-flex">
+                        <span class="badge bg-primary me-2 flex-shrink-0" style="width:24px;height:24px;line-height:24px;">3</span>
+                        <div>
+                            <strong class="d-block">Captura Visual</strong>
+                            <span class="small">Cámara registra imágenes/video del acceso para evidencia visual.</span>
+                        </div>
+                    </li>
+                </ul>
+                
+                <!-- Resumen Compacto -->
+                <div class="bg-light p-2 small rounded">
+                    <i class="fas fa-database text-primary me-1"></i>
+                    <strong>Registro completo:</strong> Todos los eventos (accesos, intentos fallidos, impactos y grabaciones) se almacenan en base de datos segura para monitoreo y análisis.
                 </div>
             </div>
-        </div>
-        
-        <!-- Columna de Texto Compacta -->
-        <div class="col-lg-6 order-lg-2 order-1 py-3 py-lg-4 px-3 px-lg-4"> <!-- Padding reducido -->
-            <div>
-                <h2 class="h4 text-primary mb-3">¿Cómo funciona RackON?</h2> <!-- Título más compacto -->
-                <p class="small mb-3"> <!-- Texto más pequeño -->
-                    Sistema de seguridad en capas que combina identificación, sensores y vigilancia electrónica:
-                </p>
-                
-                <!-- Lista compacta con iconos -->
-                <div class="vstack gap-3 mb-4"> <!-- Espaciado vertical controlado -->
-                    <div class="d-flex">
-                        <span class="badge bg-primary rounded-circle flex-shrink-0 me-3" 
-                              style="width:28px;height:28px;line-height:28px;">1</span>
-                        <div>
-                            <h5 class="h6 text-primary mb-1">Verificación RFID</h5>
-                            <p class="small mb-0">Validación de tarjetas únicas con registro de acceso y activación del siguiente nivel de seguridad.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="d-flex">
-                        <span class="badge bg-primary rounded-circle flex-shrink-0 me-3" 
-                              style="width:28px;height:28px;line-height:28px;">2</span>
-                        <div>
-                            <h5 class="h6 text-primary mb-1">Detección de Impacto</h5>
-                            <p class="small mb-0">Monitoreo en tiempo real de vibraciones y movimientos sospechosos con generación de alertas.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="d-flex">
-                        <span class="badge bg-primary rounded-circle flex-shrink-0 me-3" 
-                              style="width:28px;height:28px;line-height:28px;">3</span>
-                        <div>
-                            <h5 class="h6 text-primary mb-1">Captura Visual</h5>
-                            <p class="small mb-0">Registro automático de imágenes/video como evidencia del acceso.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Resumen ultracompacto -->
-                <div class="bg-light p-3 small rounded">
-                    <i class="fas fa-database text-primary me-2"></i>
-                    <strong>Registro completo:</strong> Todos los eventos se almacenan en base de datos segura para monitoreo y análisis desde la plataforma web.
+            
+            <!-- Columna de Imagen Compacta -->
+            <div class="col-lg-6 mt-3 mt-lg-0">
+                <div class="ratio ratio-16x9 rounded overflow-hidden border">
+                    <img src="<?= base_url('assets/images/details-background.jpg') ?>" 
+                         alt="Tecnología RackON" 
+                         class="object-fit-cover">
                 </div>
             </div>
         </div>
