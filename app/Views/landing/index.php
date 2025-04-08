@@ -349,7 +349,7 @@
     <div class="container">
         <!-- Logo a la izquierda -->
         <a class="navbar-brand" href="#">
-            <img src="assets/images/logo.svg" alt="RackON Logo" style="height: 40px;">
+            <img alt="RackON Logo" style="height: 40px;">
         </a>
 
         <!-- Botón toggle para móviles -->
