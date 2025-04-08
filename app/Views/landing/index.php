@@ -61,37 +61,95 @@
         text-align: center;
     }
     
-    /* Sección Funcionamiento - Versión compacta */
     #funcionamiento {
-        padding: 2rem 0;
-        min-height: auto;
-    }
-    
-    #funcionamiento .h4 {
-        font-size: 1.25rem;
-        font-weight: 600;
-    }
-    
-    #funcionamiento .small {
-        font-size: 0.85rem;
-        line-height: 1.4;
-    }
-    
-    #funcionamiento .badge {
-        width: 24px;
-        height: 24px;
-        line-height: 24px;
-        font-size: 0.8rem;
-    }
-    
-    #funcionamiento img {
-        transition: transform 0.3s ease;
-    }
-    
-    #funcionamiento img:hover {
-        transform: scale(1.02);
+        padding: 23px 0;
+        background-color: white;
     }
 
+    #funcionamiento .min-vh-100 {
+        min-height: auto !important;
+    }
+
+    #funcionamiento .content-column {
+        padding: 1.5rem 2rem;
+    }
+
+    #funcionamiento h2.text-primary {
+        font-size: 1.75rem;
+        margin-bottom: 1.25rem;
+    }
+
+    #funcionamiento .lead {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    #funcionamiento .card {
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    #funcionamiento .card-body {
+        padding: 1.25rem;
+    }
+
+    #funcionamiento .badge {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #funcionamiento .bg-light {
+        padding: 1rem;
+    }
+
+    /* Imagen con overlay */
+    #funcionamiento .image-container {
+        height: 100%;
+        min-height: 400px;
+    }
+
+    #funcionamiento .image-overlay h2 {
+        font-size: 2.25rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+        #funcionamiento .image-container {
+            min-height: 350px;
+        }
+        
+        #funcionamiento .content-column {
+            padding: 1.25rem;
+        }
+        
+        #funcionamiento h2.text-primary {
+            font-size: 1.5rem;
+        }
+        
+        #funcionamiento .image-overlay h2 {
+            font-size: 1.75rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #funcionamiento {
+            padding: 15px 0;
+        }
+        
+        #funcionamiento .card-body {
+            padding: 1rem;
+        }
+        
+        #funcionamiento .badge {
+            width: 28px;
+            height: 28px;
+        }
+    }
     /* Componentes reutilizables */
     .bg-cover {
         background-size: cover;
