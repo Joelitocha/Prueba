@@ -276,52 +276,85 @@
     </section>
 
 <!--sección de funcionamiento-->
-<section id="funcionamiento" class="py-4 bg-white">
-    <div class="container">
-        <div class="row align-items-center">
-            <!-- Columna de Texto Compacta -->
-            <div class="col-lg-6 pe-lg-4">
-                <h2 class="h4 mb-3">¿Cómo funciona RackON?</h2>
-                <p class="small mb-3">El sistema combina tecnología de identificación, sensores físicos y vigilancia electrónica en tres niveles secuenciales:</p>
-                
-                <!-- Lista Compacta -->
-                <ul class="list-unstyled mb-3">
-                    <li class="mb-2 d-flex">
-                        <span class="badge bg-primary me-2 flex-shrink-0" style="width:24px;height:24px;line-height:24px;">1</span>
-                        <div>
-                            <strong class="d-block">Verificación RFID</strong>
-                            <span class="small">Validación de tarjetas únicas en base de datos. Registra acceso y activa siguiente nivel.</span>
-                        </div>
-                    </li>
-                    <li class="mb-2 d-flex">
-                        <span class="badge bg-primary me-2 flex-shrink-0" style="width:24px;height:24px;line-height:24px;">2</span>
-                        <div>
-                            <strong class="d-block">Detección de Impacto</strong>
-                            <span class="small">Sensor de vibración detecta golpes o aperturas forzadas, generando alertas.</span>
-                        </div>
-                    </li>
-                    <li class="mb-3 d-flex">
-                        <span class="badge bg-primary me-2 flex-shrink-0" style="width:24px;height:24px;line-height:24px;">3</span>
-                        <div>
-                            <strong class="d-block">Captura Visual</strong>
-                            <span class="small">Cámara registra imágenes/video del acceso para evidencia visual.</span>
-                        </div>
-                    </li>
-                </ul>
-                
-                <!-- Resumen Compacto -->
-                <div class="bg-light p-2 small rounded">
-                    <i class="fas fa-database text-primary me-1"></i>
-                    <strong>Registro completo:</strong> Todos los eventos (accesos, intentos fallidos, impactos y grabaciones) se almacenan en base de datos segura para monitoreo y análisis.
+<section id="funcionamiento" class="container-fluid p-0 bg-white">
+    <div class="row g-0 min-vh-100 align-items-stretch">
+        <!-- Columna de Imagen -->
+        <div class="col-lg-6 order-lg-1 order-2 position-relative">
+            <div class="h-100 w-100 overflow-hidden">
+                <img src="<?= base_url('assets/images/details-background.jpg') ?>" 
+                     alt="Tecnología RackON en acción"
+                     class="img-fluid w-100 h-100 object-fit-cover">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(0,0,0,0.3);">
+                    <h2 class="text-white display-4 fw-bold">Tecnología en Capas</h2>
                 </div>
             </div>
-            
-            <!-- Columna de Imagen Compacta -->
-            <div class="col-lg-6 mt-3 mt-lg-0">
-                <div class="ratio ratio-16x9 rounded overflow-hidden border">
-                    <img src="<?= base_url('assets/images/details-background.jpg') ?>" 
-                         alt="Tecnología RackON" 
-                         class="object-fit-cover">
+        </div>
+        
+        <!-- Columna de Texto Mejorada -->
+        <div class="col-lg-6 order-lg-2 order-1 d-flex align-items-center py-5">
+            <div class="px-4 px-md-5 py-lg-0" style="max-width: 700px; margin: 0 auto;">
+                <h2 class="mb-4 text-primary">¿Cómo funciona RackON?</h2>
+                <p class="lead mb-4">
+                    El sistema RackON combina tecnología de identificación, sensores físicos y vigilancia electrónica para ofrecer una solución de seguridad en capas. Su funcionamiento se basa en tres niveles que actúan de forma secuencial y complementaria:
+                </p>
+                
+                <!-- Nivel 1 -->
+                <div class="card mb-4 border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <div class="me-4">
+                                <span class="badge bg-primary rounded-circle p-3">1</span>
+                            </div>
+                            <div>
+                                <h4 class="text-primary">Verificación RFID</h4>
+                                <p class="mb-0">
+                                    Cada usuario autorizado posee una tarjeta RFID única. Al acercarla al lector, el sistema valida la identidad del usuario en la base de datos. Si la tarjeta está habilitada y el acceso es permitido, se registra el evento y se activa el siguiente nivel de seguridad.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Nivel 2 -->
+                <div class="card mb-4 border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <div class="me-4">
+                                <span class="badge bg-primary rounded-circle p-3">2</span>
+                            </div>
+                            <div>
+                                <h4 class="text-primary">Detección de Impacto</h4>
+                                <p class="mb-0">
+                                    Un sensor de vibración monitorea el rack en tiempo real. Si se detecta un golpe, movimiento brusco o intento de apertura forzada sin autenticación previa, el sistema genera una alerta automática y registra el incidente como un intento de intrusión.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Nivel 3 -->
+                <div class="card mb-4 border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <div class="me-4">
+                                <span class="badge bg-primary rounded-circle p-3">3</span>
+                            </div>
+                            <div>
+                                <h4 class="text-primary">Captura Visual</h4>
+                                <p class="mb-0">
+                                    En cada acceso (ya sea autorizado o no), se activa una cámara que captura imágenes o video del entorno inmediato del rack. Esta evidencia se almacena automáticamente y puede ser revisada desde el panel de administración web.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Resumen -->
+                <div class="bg-light p-4 rounded">
+                    <p class="mb-0">
+                        <i class="fas fa-database text-primary me-2"></i>
+                        <strong>Registro completo:</strong> Todos los eventos —accesos válidos, intentos fallidos, impactos detectados y grabaciones— quedan registrados en una base de datos segura. La información puede ser consultada desde la plataforma web de RackON, donde administradores y supervisores pueden acceder al historial completo, recibir alertas en tiempo real y analizar el comportamiento del sistema para reforzar la seguridad.
+                    </p>
                 </div>
             </div>
         </div>
