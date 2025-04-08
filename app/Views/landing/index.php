@@ -22,207 +22,186 @@
     
     <!-- Estilos personalizados -->
     <style>
-    /* ===== ESTILOS GENERALES ===== */
     :root {
         --primary-color: #7dc22b;
         --dark-color: #161223;
         --light-color: #f7f9fd;
         --text-color: #53575a;
     }
-
-    /* ===== SECCIÓN FUNCIONAMIENTO ===== */
-    #funcionamiento {
-        padding: 23px 0;
-        background-color: white;
+    
+    body {
+        font-family: 'Open Sans', sans-serif;
+        color: var(--text-color);
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Poppins', sans-serif;
+        color: var(--dark-color);
+        font-weight: 600;
     }
 
-    /* Contenedor Principal */
-    #funcionamiento .container-fluid {
-        max-width: 1400px;
-        margin: 0 auto;
-    }
-
-    /* Columnas */
-    #funcionamiento .row {
-        align-items: stretch;
-        margin: 0;
-    }
-
-    /* Columna de Imagen */
-    #funcionamiento .image-column {
+    /* Secciones */
+    .fullpage-section {
+        width: 100%;
+        min-height: 100vh;
         position: relative;
-        min-height: 400px;
-    }
-
-    #funcionamiento .image-column img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        transition: transform 0.3s ease;
-    }
-
-    #funcionamiento .image-column:hover img {
-        transform: scale(1.02);
-    }
-
-    /* Overlay de Texto en Imagen */
-    #funcionamiento .image-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        padding: 80px 0;
         display: flex;
         align-items: center;
-        justify-content: center;
     }
 
-    #funcionamiento .image-overlay h2 {
+    /* Header */
+    #header {
+        background: linear-gradient(rgba(21, 35, 63, 0.7), rgba(21, 35, 63, 0.7)), url('assets/images/rackon-og.jpg') center center no-repeat;
+        background-size: cover;
         color: white;
-        font-size: 2.5rem;
-        font-weight: 700;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        text-align: center;
     }
-
-    /* Columna de Contenido */
+    
+        /* ===== EXCLUSIVO PARA SECCIÓN FUNCIONAMIENTO ===== */
+        #funcionamiento {
+        padding: 23px 0; /* Exactamente 23px de espacio arriba/abajo */
+    }
+    
+    #funcionamiento .min-vh-100 {
+        min-height: auto !important; /* Elimina altura completa */
+    }
+    
     #funcionamiento .content-column {
-        padding: 2rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        padding: 1.5rem 2rem; /* Reduce espacio interno */
     }
-
-    /* Títulos */
-    #funcionamiento .content-column h2 {
-        color: var(--primary-color);
-        font-size: 1.75rem;
+    
+    #funcionamiento h2 {
+        font-size: 1.5rem; /* Título más compacto */
+        margin-bottom: 1rem;
+    }
+    
+    #funcionamiento .lead {
+        font-size: 0.95rem; /* Texto intro más pequeño */
         margin-bottom: 1.5rem;
     }
+    
+    #funcionamiento .card {
+        margin-bottom: 0.75rem; /* Reduce espacio entre tarjetas */
+        border-radius: 6px;
+    }
+    
+    #funcionamiento .card-body {
+        padding: 1rem; /* Menos padding interno */
+    }
+    
+    #funcionamiento .badge {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem; /* Badges más pequeños */
+    }
+    
+    #funcionamiento .bg-light {
+        padding: 0.75rem; /* Resumen más compacto */
+    }
+    
+    /* Ajustes para móviles */
+    @media (max-width: 768px) {
+        #funcionamiento .content-column {
+            padding: 1rem;
+        }
+        
+        #funcionamiento h2 {
+            font-size: 1.3rem;
+        }
+        
+        #funcionamiento .card-body {
+            padding: 0.75rem;
+        }
+    }
 
-    /* Tarjetas de Niveles */
-    #funcionamiento .level-card {
-        margin-bottom: 1.25rem;
+    /* Componentes reutilizables */
+    .bg-cover {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    .object-fit-cover {
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    .btn-solid-lg {
+        display: inline-block;
+        padding: 15px 30px;
+        border: 1px solid var(--primary-color);
+        border-radius: 4px;
+        background-color: var(--primary-color);
+        color: white;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+    
+    .btn-solid-lg:hover {
+        background-color: transparent;
+        color: var(--primary-color);
+    }
+    
+    .card {
         border: none;
         border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: transform 0.3s;
+        height: 100%;
     }
-
-    #funcionamiento .level-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    
+    .card:hover {
+        transform: translateY(-5px);
     }
-
-    #funcionamiento .level-card .card-body {
-        padding: 1.25rem;
-    }
-
-    #funcionamiento .level-card .badge {
-        width: 32px;
-        height: 32px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1rem;
-        font-weight: 600;
-        background-color: var(--primary-color);
-        margin-right: 1rem;
-    }
-
-    #funcionamiento .level-card h4 {
+    
+    .card-icon {
+        font-size: 2.5rem;
         color: var(--primary-color);
-        font-size: 1.25rem;
-        margin-bottom: 0.5rem;
+        margin-bottom: 20px;
     }
 
-    #funcionamiento .level-card p {
-        font-size: 0.95rem;
-        line-height: 1.5;
-        margin-bottom: 0;
+    /* Contacto */
+    #contact {
+        background: linear-gradient(rgba(2, 15, 29, 0.8), rgba(2, 15, 29, 0.8)), url('assets/images/contact-background.jpg') center center no-repeat;
+        background-size: cover;
+        color: white;
+    }
+    
+    /* Footer */
+    footer {
+        background-color: var(--dark-color);
+        color: white;
+        padding: 50px 0 20px;
     }
 
-    /* Área de Resumen */
-    #funcionamiento .summary-box {
-        background-color: var(--light-color);
-        border-radius: 8px;
-        padding: 1.25rem;
-        margin-top: 1rem;
+    /* Responsive */
+    @media (max-width: 992px) {
+        .fullpage-section {
+            padding: 60px 0;
+            min-height: auto;
+        }
+        
+        #header .h1-large {
+            font-size: 2.5rem;
+        }
+        
+        .ratio-16x9 {
+            --bs-aspect-ratio: 66.66%;
+        }
     }
-
-    #funcionamiento .summary-box i {
-        color: var(--primary-color);
-        margin-right: 0.5rem;
-    }
-
-    #funcionamiento .summary-box strong {
-        font-weight: 600;
-    }
-
-    /* ===== RESPONSIVE DESIGN ===== */
-    @media (max-width: 1199.98px) {
-        #funcionamiento .image-overlay h2 {
+    
+    @media (max-width: 768px) {
+        #header .h1-large {
             font-size: 2rem;
         }
         
-        #funcionamiento .content-column {
-            padding: 1.5rem;
-        }
-    }
-
-    @media (max-width: 991.98px) {
-        #funcionamiento .image-column {
-            min-height: 300px;
-            order: 2;
-        }
-        
-        #funcionamiento .content-column {
-            order: 1;
-            padding-bottom: 0;
-        }
-        
-        #funcionamiento .image-overlay h2 {
-            font-size: 1.75rem;
-        }
-    }
-
-    @media (max-width: 767.98px) {
         #funcionamiento {
-            padding: 15px 0;
-        }
-        
-        #funcionamiento .content-column h2 {
-            font-size: 1.5rem;
-        }
-        
-        #funcionamiento .level-card h4 {
-            font-size: 1.1rem;
-        }
-        
-        #funcionamiento .level-card p {
-            font-size: 0.9rem;
-        }
-    }
-
-    @media (max-width: 575.98px) {
-        #funcionamiento .content-column {
-            padding: 1rem;
-        }
-        
-        #funcionamiento .image-overlay h2 {
-            font-size: 1.5rem;
-        }
-        
-        #funcionamiento .level-card .card-body {
-            padding: 1rem;
-        }
-        
-        #funcionamiento .level-card .badge {
-            width: 28px;
-            height: 28px;
-            font-size: 0.9rem;
-            margin-right: 0.75rem;
+            padding: 1.5rem 0;
         }
     }
 </style>
