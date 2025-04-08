@@ -164,45 +164,29 @@
     <div class="split">
         <div class="area-1">
         </div><div class="area-2 bg-gray">
+          <section id="que-es-rackon" class="py-5 bg-light">
             <div class="container">    
                 <div class="row">
                     <div class="col-lg-12">     
                         
                         <!-- Text Container -->
                         <div class="text-container">
-                            <h2>Why Work With Us</h2>
-                            <p>Satisfied pretended mr on do determine by. Old post took and ask seen fact rich. Man entrance settling believed eat joy. Money as drift begin on comparison up</p>
-                            <p><strong>EXPERIENCE -</strong> insipidity especially discovered me of decisively in surrounded. Points six way enough she its</p>
-                            <p><strong>PASSION -</strong> On recommend tolerably my belonging or am. Mutual has cannot beauty indeed now sussex merely</p>
-                            <p><strong>CREATIVITY -</strong> possible no husbands jennings ye offended packages pleasant he recommend engrossed</p>
+                        <h2 class="mb-4">¿Qué es RackON?</h2>
+                            <p class="lead">
+                                <strong>RackON</strong> es un sistema de control de acceso inteligente para racks de servidores, diseñado como solución integral de seguridad física. 
+                                Utiliza tecnología RFID, sensores de vibración y cámaras para ofrecer tres niveles de seguridad. 
+                                El sistema permite administrar accesos, monitorear eventos en tiempo real y gestionar usuarios a través de una plataforma web con roles diferenciados: Administrador, Supervisor y Usuario.
+                            </p>
                         </div>
                         <!-- end of text container -->
 
                     </div>
                 </div>
             </div>
+          </section>
         </div>
     </div>
     <!-- end of details -->
-
-
-    <!-- Qué es RackON -->
-<section id="que-es-rackon" class="py-5 bg-light">
-    <div class="container">
-        <div class="row justify-content-center text-center">
-            <div class="col-lg-8">
-                <h2 class="mb-4">¿Qué es RackON?</h2>
-                <p class="lead">
-                    <strong>RackON</strong> es un sistema de control de acceso inteligente para racks de servidores, diseñado como solución integral de seguridad física. 
-                    Utiliza tecnología RFID, sensores de vibración y cámaras para ofrecer tres niveles de seguridad. 
-                    El sistema permite administrar accesos, monitorear eventos en tiempo real y gestionar usuarios a través de una plataforma web con roles diferenciados: Administrador, Supervisor y Usuario.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-
 
     <!-- Projects -->
     <div id="projects" class="filter bg-gray">
