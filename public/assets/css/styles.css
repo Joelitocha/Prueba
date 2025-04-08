@@ -1305,7 +1305,9 @@ a:hover {
 
 	/* Details */
 	.split {
-		height: 708px;
+		height: auto;
+		display: flex;
+		flex-wrap: wrap;
 	}
 
 	.split .text-container {
