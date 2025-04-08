@@ -280,30 +280,30 @@
         </div>
     </section>
 
-<!-- Sección Funcionamiento -->
+    <!-- Funcionamiento -->
 <section id="funcionamiento" class="fullpage-section p-0">
     <div class="container-fluid h-100">
-        <div class="row g-0 h-100"> <!-- g-0 elimina gutters -->
+        <div class="row h-100">
             <!-- Columna de imagen -->
-            <div class="col-lg-6 h-100">
-                <div class="position-relative h-100">
-                    <img src="assets/images/details-background.jpg" 
-                         alt="Cómo funciona RackON"
-                         class="w-100 h-100 object-fit-cover"
-                         style="min-height: 300px;">
-                    <!-- Mensaje de respaldo -->
-                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center bg-secondary bg-opacity-25"
-                         style="display: none !important;" id="imageFallback">
-                        <p class="text-white">Imagen no disponible</p>
-                    </div>
-                </div>
+            <div class="col-lg-6 p-0 h-100">
+                <div class="h-100 w-100 bg-cover" style="background-image: url('assets/images/details-background.jpg');"></div>
             </div>
             
             <!-- Columna de texto -->
-            <div class="col-lg-6 p-4 p-md-5 d-flex align-items-center bg-light">
-                <div>
+            <div class="col-lg-6 p-5 d-flex align-items-center bg-light">
+                <div class="px-lg-5">
                     <h2 class="mb-4">¿Cómo funciona RackON?</h2>
-                    <!-- ... (mantén el mismo contenido de texto) ... -->
+                    <p>
+                        RackON está compuesto por tres niveles de seguridad que trabajan en conjunto para proteger el acceso físico a los racks:
+                    </p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><strong>1. Verificación RFID:</strong> El usuario escanea su tarjeta RFID. El sistema consulta la base de datos para validar el acceso.</li>
+                        <li class="mb-3"><strong>2. Detección de impacto:</strong> Un sensor de vibración detecta cualquier intento de manipulación física no autorizada.</li>
+                        <li class="mb-3"><strong>3. Captura visual:</strong> Se activa una cámara que registra el evento y almacena evidencia visual del acceso.</li>
+                    </ul>
+                    <p class="mt-4">
+                        Todos los eventos quedan registrados en la base de datos y pueden ser monitoreados desde la plataforma web.
+                    </p>
                 </div>
             </div>
         </div>
@@ -588,14 +588,6 @@
         } else {
             navbar.style.boxShadow = 'none';
         }
-    });
-
-    document.addEventListener('DOMContentLoaded', function() {
-    const img = document.querySelector('#funcionamiento img');
-    img.onerror = function() {
-        this.style.display = 'none';
-        document.getElementById('imageFallback').style.display = 'flex';
-    };
     });
     </script>
 </body>
