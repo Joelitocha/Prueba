@@ -42,7 +42,37 @@
         font-weight: 600;
     }
     
-    /* Estilo para el botón Acceder */
+    /* NAVBAR STYLES */
+    #navbar {
+        padding: 0.5rem 0;
+    }
+    
+    #navbar .navbar-brand {
+        margin-right: 0;
+        padding-right: 0;
+        display: flex;
+        align-items: center;
+    }
+    
+    #navbar .navbar-toggler {
+        margin-left: auto;
+        border: none;
+        padding: 0.5rem;
+    }
+    
+    #navbar .navbar-collapse {
+        justify-content: flex-end;
+        flex-grow: 0;
+    }
+    
+    #navbar .navbar-nav {
+        align-items: center;
+    }
+    
+    #navbar .nav-item {
+        margin-left: 0.5rem;
+    }
+    
     #navbar .btn-outline-light {
         border-color: rgba(255,255,255,0.5);
         color: white;
@@ -56,18 +86,28 @@
         border-color: white;
     }
     
-    /* Ajustes para móviles */
+    /* Mobile adjustments */
     @media (max-width: 991.98px) {
         #navbar .navbar-collapse {
-            padding-top: 1rem;
+            padding: 1rem 0;
+            text-align: right;
+        }
+        
+        #navbar .navbar-nav {
+            align-items: flex-end;
+        }
+        
+        #navbar .nav-item {
+            margin: 0.5rem 0;
         }
         
         #navbar .btn-outline-light {
+            margin-top: 0.5rem;
             display: inline-block;
             width: auto;
-            margin-top: 0.5rem;
         }
     }
+    
     /* Secciones */
     .fullpage-section {
         width: 100%;
@@ -87,6 +127,7 @@
         text-align: center;
     }
     
+    /* Resto de tus estilos existentes... */
     /* ===== ESTILOS PARA COMPACTAR AMBAS COLUMNAS ===== */
     #funcionamiento {
         padding: 23px 0;
@@ -100,16 +141,16 @@
     }
 
     #funcionamiento .image-column {
-    box-sizing: content-box !important; /* Temporal para ajustes */
-    height: auto !important; /* Remueve restricciones */
-    min-height: unset !important;
-}
+        box-sizing: content-box !important;
+        height: auto !important;
+        min-height: unset !important;
+    }
 
-#funcionamiento .image-column img {
-    max-height: 400px; /* Altura máxima ajustable */
-    width: auto; /* Mantiene proporción */
-    object-fit: contain; /* Ajuste no-crop */
-}
+    #funcionamiento .image-column img {
+        max-height: 400px;
+        width: auto;
+        object-fit: contain;
+    }
 
     /* Overlay más compacto */
     #funcionamiento .image-overlay h2 {
@@ -184,6 +225,8 @@
             padding: 0.75rem;
         }
     }
+    
+    /* Resto de tus estilos... */
     footer {
         background-color: #161223;
         color: #9ba3b1;
@@ -229,106 +272,20 @@
             text-align: center;
         }
     }
-    /* Componentes reutilizables */
-    .bg-cover {
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    
-    .object-fit-cover {
-        object-fit: cover;
-        object-position: center;
-    }
-    
-    .btn-solid-lg {
-        display: inline-block;
-        padding: 15px 30px;
-        border: 1px solid var(--primary-color);
-        border-radius: 4px;
-        background-color: var(--primary-color);
-        color: white;
-        font-weight: 600;
-        text-decoration: none;
-        transition: all 0.3s;
-    }
-    
-    .btn-solid-lg:hover {
-        background-color: transparent;
-        color: var(--primary-color);
-    }
-    
-    .card {
-        border: none;
-        border-radius: 8px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        transition: transform 0.3s;
-        height: 100%;
-    }
-    
-    .card:hover {
-        transform: translateY(-5px);
-    }
-    
-    .card-icon {
-        font-size: 2.5rem;
-        color: var(--primary-color);
-        margin-bottom: 20px;
-    }
-
-    /* Contacto */
-    #contact {
-        background: linear-gradient(rgba(2, 15, 29, 0.8), rgba(2, 15, 29, 0.8)), url('assets/images/contact-background.jpg') center center no-repeat;
-        background-size: cover;
-        color: white;
-    }
-    
-    /* Footer */
-    footer {
-        background-color: var(--dark-color);
-        color: white;
-        padding: 50px 0 20px;
-    }
-
-    /* Responsive */
-    @media (max-width: 992px) {
-        .fullpage-section {
-            padding: 60px 0;
-            min-height: auto;
-        }
-        
-        #header .h1-large {
-            font-size: 2.5rem;
-        }
-        
-        .ratio-16x9 {
-            --bs-aspect-ratio: 66.66%;
-        }
-    }
-    
-    @media (max-width: 768px) {
-        #header .h1-large {
-            font-size: 2rem;
-        }
-        
-        #funcionamiento {
-            padding: 1.5rem 0;
-        }
-    }
 </style>
 </head>
 <body>
     
     <!-- Navigation -->
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: var(--dark-color);">
+<nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: var(--dark-color);">
     <div class="container">
         <!-- Logo a la izquierda -->
-        <a class="navbar-brand me-auto" href="#">
+        <a class="navbar-brand" href="#">
             <img src="assets/images/logo.svg" alt="RackON Logo" style="height: 40px;">
         </a>
 
         <!-- Botón toggle para móviles -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -351,7 +308,6 @@
         </div>
     </div>
 </nav>
-
 <!-- Header Modificado -->
 <section id="header" class="fullpage-section">
     <div class="container">
