@@ -31,7 +31,7 @@
     <!-- Favicon  -->
     <link rel="icon" href="<?= base_url('images/favicon.png') ?>">
 </head>
-<body>
+<body href="<?= base_url() ?>">
     
     <!-- Navigation -->
     <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark" aria-label="Main navigation">
