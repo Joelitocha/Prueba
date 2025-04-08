@@ -41,8 +41,8 @@
         color: var(--dark-color);
         font-weight: 600;
     }
-    
-    /* Secciones de página completa */
+
+    /* Secciones */
     .fullpage-section {
         width: 100%;
         min-height: 100vh;
@@ -52,7 +52,7 @@
         display: flex;
         align-items: center;
     }
-    
+
     /* Header */
     #header {
         background: linear-gradient(rgba(21, 35, 63, 0.7), rgba(21, 35, 63, 0.7)), url('assets/images/rackon-og.jpg') center center no-repeat;
@@ -61,13 +61,49 @@
         text-align: center;
     }
     
-    #header .h1-large {
-        font-size: 3rem;
-        line-height: 1.2;
-        margin-bottom: 30px;
+    /* Sección Funcionamiento - Versión compacta */
+    #funcionamiento {
+        padding: 2rem 0;
+        min-height: auto;
     }
     
-    /* Botones */
+    #funcionamiento .h4 {
+        font-size: 1.25rem;
+        font-weight: 600;
+    }
+    
+    #funcionamiento .small {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+    
+    #funcionamiento .badge {
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        font-size: 0.8rem;
+    }
+    
+    #funcionamiento img {
+        transition: transform 0.3s ease;
+    }
+    
+    #funcionamiento img:hover {
+        transform: scale(1.02);
+    }
+
+    /* Componentes reutilizables */
+    .bg-cover {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    .object-fit-cover {
+        object-fit: cover;
+        object-position: center;
+    }
+    
     .btn-solid-lg {
         display: inline-block;
         padding: 15px 30px;
@@ -85,7 +121,6 @@
         color: var(--primary-color);
     }
     
-    /* Tarjetas */
     .card {
         border: none;
         border-radius: 8px;
@@ -95,7 +130,7 @@
     }
     
     .card:hover {
-        transform: translateY(-10px);
+        transform: translateY(-5px);
     }
     
     .card-icon {
@@ -103,37 +138,7 @@
         color: var(--primary-color);
         margin-bottom: 20px;
     }
-    
-    /* Sección dividida */
-    .split-section {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    
-    .split-section .area-1 {
-        flex: 1;
-        min-height: 400px;
-        background: url('assets/images/details-background.jpg') center center no-repeat;
-        background-size: cover;
-    }
-    
-    .split-section .area-2 {
-        flex: 1;
-        padding: 50px;
-        display: flex;
-        align-items: center;
-        background-color: var(--light-color);
-    }
-    
-    /* Testimonios */
-    .testimonial-image {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-bottom: 20px;
-    }
-    
+
     /* Contacto */
     #contact {
         background: linear-gradient(rgba(2, 15, 29, 0.8), rgba(2, 15, 29, 0.8)), url('assets/images/contact-background.jpg') center center no-repeat;
@@ -147,99 +152,20 @@
         color: white;
         padding: 50px 0 20px;
     }
-    .bg-cover {
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    
-        /* Asegura que la imagen cubra todo el espacio disponible */
-        .object-fit-cover {
-        object-fit: cover;
-        object-position: center;
-    }
-    
-    /* Responsive: En móviles imagen abajo */
-    @media (max-width: 992px) {
-        #funcionamiento .min-vh-100 {
-            min-height: auto !important;
-        }
-        
-        #funcionamiento .order-1 {
-            order: 1 !important;
-        }
-        
-        #funcionamiento .order-2 {
-            order: 2 !important;
-        }
-        
-        #funcionamiento img {
-            max-height: 50vh;
-        }
-    }
-    
-    /* Efecto hover para la imagen */
-    #funcionamiento img {
-        transition: transform 0.3s ease;
-    }
-    
-    #funcionamiento img:hover {
-        transform: scale(1.02);
-    }
-    /* Estilos para la sección mejorada */
-    #funcionamiento .card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    #funcionamiento .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
-    }
-    
-    .badge.rounded-circle {
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2rem;
-    }
-    
-    @media (max-width: 992px) {
-        #funcionamiento .min-vh-100 {
-            min-height: auto !important;
-        }
-        
-        #funcionamiento img {
-            max-height: 50vh;
-        }
-        
-        #funcionamiento .position-absolute h2 {
-            font-size: 2.5rem !important;
-        }
-    }
-    #funcionamiento {
-        min-height: 100vh;
-    }
-    
-    #funcionamiento .col-lg-6 {
-        min-height: 50vh;
-    }
-    
-    @media (min-width: 992px) {
-        #funcionamiento .col-lg-6 {
-            min-height: 100vh;
-        }
-    }
+
     /* Responsive */
     @media (max-width: 992px) {
+        .fullpage-section {
+            padding: 60px 0;
+            min-height: auto;
+        }
+        
         #header .h1-large {
             font-size: 2.5rem;
         }
         
-        .split-section .area-1,
-        .split-section .area-2 {
-            flex: 100%;
+        .ratio-16x9 {
+            --bs-aspect-ratio: 66.66%;
         }
     }
     
@@ -247,8 +173,12 @@
         #header .h1-large {
             font-size: 2rem;
         }
+        
+        #funcionamiento {
+            padding: 1.5rem 0;
+        }
     }
-    </style>
+</style>
 </head>
 <body>
     
@@ -346,85 +276,52 @@
     </section>
 
 <!--sección de funcionamiento-->
-<section id="funcionamiento" class="container-fluid p-0 bg-white">
-    <div class="row g-0 min-vh-100 align-items-stretch">
-        <!-- Columna de Imagen -->
-        <div class="col-lg-6 order-lg-1 order-2 position-relative">
-            <div class="h-100 w-100 overflow-hidden">
-                <img src="<?= base_url('assets/images/details-background.jpg') ?>" 
-                     alt="Tecnología RackON en acción"
-                     class="img-fluid w-100 h-100 object-fit-cover">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(0,0,0,0.3);">
-                    <h2 class="text-white display-4 fw-bold">Tecnología en Capas</h2>
+<section id="funcionamiento" class="py-4 bg-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Columna de Texto Compacta -->
+            <div class="col-lg-6 pe-lg-4">
+                <h2 class="h4 mb-3">¿Cómo funciona RackON?</h2>
+                <p class="small mb-3">El sistema combina tecnología de identificación, sensores físicos y vigilancia electrónica en tres niveles secuenciales:</p>
+                
+                <!-- Lista Compacta -->
+                <ul class="list-unstyled mb-3">
+                    <li class="mb-2 d-flex">
+                        <span class="badge bg-primary me-2 flex-shrink-0" style="width:24px;height:24px;line-height:24px;">1</span>
+                        <div>
+                            <strong class="d-block">Verificación RFID</strong>
+                            <span class="small">Validación de tarjetas únicas en base de datos. Registra acceso y activa siguiente nivel.</span>
+                        </div>
+                    </li>
+                    <li class="mb-2 d-flex">
+                        <span class="badge bg-primary me-2 flex-shrink-0" style="width:24px;height:24px;line-height:24px;">2</span>
+                        <div>
+                            <strong class="d-block">Detección de Impacto</strong>
+                            <span class="small">Sensor de vibración detecta golpes o aperturas forzadas, generando alertas.</span>
+                        </div>
+                    </li>
+                    <li class="mb-3 d-flex">
+                        <span class="badge bg-primary me-2 flex-shrink-0" style="width:24px;height:24px;line-height:24px;">3</span>
+                        <div>
+                            <strong class="d-block">Captura Visual</strong>
+                            <span class="small">Cámara registra imágenes/video del acceso para evidencia visual.</span>
+                        </div>
+                    </li>
+                </ul>
+                
+                <!-- Resumen Compacto -->
+                <div class="bg-light p-2 small rounded">
+                    <i class="fas fa-database text-primary me-1"></i>
+                    <strong>Registro completo:</strong> Todos los eventos (accesos, intentos fallidos, impactos y grabaciones) se almacenan en base de datos segura para monitoreo y análisis.
                 </div>
             </div>
-        </div>
-        
-        <!-- Columna de Texto Mejorada -->
-        <div class="col-lg-6 order-lg-2 order-1 d-flex align-items-center py-5">
-            <div class="px-4 px-md-5 py-lg-0" style="max-width: 700px; margin: 0 auto;">
-                <h2 class="mb-4 text-primary">¿Cómo funciona RackON?</h2>
-                <p class="lead mb-4">
-                    El sistema RackON combina tecnología de identificación, sensores físicos y vigilancia electrónica para ofrecer una solución de seguridad en capas. Su funcionamiento se basa en tres niveles que actúan de forma secuencial y complementaria:
-                </p>
-                
-                <!-- Nivel 1 -->
-                <div class="card mb-4 border-0 shadow-sm">
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <div class="me-4">
-                                <span class="badge bg-primary rounded-circle p-3">1</span>
-                            </div>
-                            <div>
-                                <h4 class="text-primary">Verificación RFID</h4>
-                                <p class="mb-0">
-                                    Cada usuario autorizado posee una tarjeta RFID única. Al acercarla al lector, el sistema valida la identidad del usuario en la base de datos. Si la tarjeta está habilitada y el acceso es permitido, se registra el evento y se activa el siguiente nivel de seguridad.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Nivel 2 -->
-                <div class="card mb-4 border-0 shadow-sm">
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <div class="me-4">
-                                <span class="badge bg-primary rounded-circle p-3">2</span>
-                            </div>
-                            <div>
-                                <h4 class="text-primary">Detección de Impacto</h4>
-                                <p class="mb-0">
-                                    Un sensor de vibración monitorea el rack en tiempo real. Si se detecta un golpe, movimiento brusco o intento de apertura forzada sin autenticación previa, el sistema genera una alerta automática y registra el incidente como un intento de intrusión.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Nivel 3 -->
-                <div class="card mb-4 border-0 shadow-sm">
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <div class="me-4">
-                                <span class="badge bg-primary rounded-circle p-3">3</span>
-                            </div>
-                            <div>
-                                <h4 class="text-primary">Captura Visual</h4>
-                                <p class="mb-0">
-                                    En cada acceso (ya sea autorizado o no), se activa una cámara que captura imágenes o video del entorno inmediato del rack. Esta evidencia se almacena automáticamente y puede ser revisada desde el panel de administración web.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Resumen -->
-                <div class="bg-light p-4 rounded">
-                    <p class="mb-0">
-                        <i class="fas fa-database text-primary me-2"></i>
-                        <strong>Registro completo:</strong> Todos los eventos —accesos válidos, intentos fallidos, impactos detectados y grabaciones— quedan registrados en una base de datos segura. La información puede ser consultada desde la plataforma web de RackON, donde administradores y supervisores pueden acceder al historial completo, recibir alertas en tiempo real y analizar el comportamiento del sistema para reforzar la seguridad.
-                    </p>
+            
+            <!-- Columna de Imagen Compacta -->
+            <div class="col-lg-6 mt-3 mt-lg-0">
+                <div class="ratio ratio-16x9 rounded overflow-hidden border">
+                    <img src="<?= base_url('assets/images/details-background.jpg') ?>" 
+                         alt="Tecnología RackON" 
+                         class="object-fit-cover">
                 </div>
             </div>
         </div>
