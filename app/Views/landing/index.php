@@ -163,10 +163,10 @@
 
 
 <!-- Details -->
-<div class="split">
+<div id="funcionamiento" class="split">
     <div class="area-1"></div>
-    <div class="area-2 bg-gray">
-        <div class="text-container" id="funcionamiento">
+    <div class="area-2 bg-gray d-flex align-items-center">
+        <div class="text-container">
             <h2 class="mb-4">¿Cómo funciona RackON?</h2>
             <p>
                 RackON está compuesto por tres niveles de seguridad que trabajan en conjunto para proteger el acceso físico a los racks:
@@ -183,8 +183,6 @@
     </div>
 </div>
 <!-- end of details -->
-
-
 
 
     <!-- Hardware Utilizado -->
