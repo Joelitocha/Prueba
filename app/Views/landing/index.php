@@ -974,7 +974,7 @@
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2">
                             <i class="fas fa-envelope me-2 text-primary"></i>
-                            <a href="mailto:info@rackon.com">rackonoficial@gmail.com</a>
+                            <a href="mailto:rackonoficial@gmail.com">rackonoficial@gmail.com</a>
                         </li>
                         <li class="nav-item mb-2">
                             <i class="fas fa-phone me-2 text-primary"></i>
