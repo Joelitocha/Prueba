@@ -751,7 +751,7 @@
 <!-- SDK PayPal SANDBOX -->
 <script src="https://www.paypal.com/sdk/js?client-id=AXn6zeaT-kutunjZDVGKpbDSQ6WCCPgvHvsdaVYjrQvy4udAukapA5ISWF9QIR268HG_K-eDjk8ETcYs&currency=USD"></script>
 
-<!-- Modal Bootstrap -->
+<!-- MODAL -->
 <div class="modal fade" id="modalCompra" tabindex="-1" aria-labelledby="modalCompraLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content p-3">
@@ -771,7 +771,7 @@
 </div>
 
 <!-- SECCIÓN PLANES -->
-<section id="planes" class="py-5 bg-light">
+<section id="planes" class="py-5">
   <div class="container">
     <div class="section-title text-center mb-5">
       <h2>Planes de Compra de RackON</h2>
@@ -779,7 +779,7 @@
     </div>
     <div class="row">
 
-      <!-- PLAN: Secure Access -->
+      <!-- PLAN 1 -->
       <div class="col-md-6 col-lg-4 mb-4">
         <div class="card plan-card border-success h-100">
           <div class="card-body d-flex flex-column">
@@ -795,19 +795,18 @@
             </ul>
             <a href="#" class="ver-mas text-primary mb-3">Ver más</a>
             <a href="#" class="ver-menos text-danger mb-3 d-none">Ver menos</a>
-
             <div class="mt-auto">
               <p><strong>Dispositivo:</strong> $92 USD</p>
               <p><strong>Mensual:</strong> $25 USD</p>
               <p><strong>Anual:</strong> $270 USD</p>
-              <button class="btn btn-outline-success w-100" 
+              <button class="btn btn-outline-success w-100"
                       onclick="abrirModalCompra('Secure Access', 117, 362)">Comprar</button>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- PLAN: Secure Plus -->
+      <!-- PLAN 2 -->
       <div class="col-md-6 col-lg-4 mb-4">
         <div class="card plan-card border-primary h-100">
           <div class="card-body d-flex flex-column">
@@ -823,19 +822,18 @@
             </ul>
             <a href="#" class="ver-mas text-primary mb-3">Ver más</a>
             <a href="#" class="ver-menos text-danger mb-3 d-none">Ver menos</a>
-
             <div class="mt-auto">
               <p><strong>Dispositivo:</strong> $462 USD</p>
               <p><strong>Mensual:</strong> $45 USD</p>
               <p><strong>Anual:</strong> $459 USD</p>
-              <button class="btn btn-outline-primary w-100" 
+              <button class="btn btn-outline-primary w-100"
                       onclick="abrirModalCompra('Secure Plus', 507, 921)">Comprar</button>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- PLAN: Secure Pro -->
+      <!-- PLAN 3 -->
       <div class="col-md-6 col-lg-4 mb-4">
         <div class="card plan-card border-danger h-100">
           <div class="card-body d-flex flex-column">
@@ -851,12 +849,11 @@
             </ul>
             <a href="#" class="ver-mas text-primary mb-3">Ver más</a>
             <a href="#" class="ver-menos text-danger mb-3 d-none">Ver menos</a>
-
             <div class="mt-auto">
               <p><strong>Dispositivo:</strong> $924 USD</p>
               <p><strong>Mensual:</strong> $70 USD</p>
               <p><strong>Anual:</strong> $672 USD</p>
-              <button class="btn btn-outline-danger w-100" 
+              <button class="btn btn-outline-danger w-100"
                       onclick="abrirModalCompra('Secure Pro', 994, 1596)">Comprar</button>
             </div>
           </div>
@@ -1033,9 +1030,9 @@
         });
     });
     </script>
-<!--Script Ver más y Ver menos -->
 <script>
-      document.querySelectorAll('.ver-mas').forEach(btn => {
+  // Ver más / Ver menos
+  document.querySelectorAll('.ver-mas').forEach(btn => {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
       const card = btn.closest('.card-body');
@@ -1054,9 +1051,8 @@
       card.querySelector('.ver-mas').classList.remove('d-none');
     });
   });
-</script>
-    <!-- Script PayPal Buttons -->
-    <script>
+
+  // PayPal modal rendering
   let modalActualMensual = null;
   let modalActualAnual = null;
 
@@ -1065,11 +1061,9 @@
     document.getElementById('modalPrecioMensual').innerText = precioMensual;
     document.getElementById('modalPrecioAnual').innerText = precioAnual;
 
-    // Destruir botones anteriores (si existen)
     if (modalActualMensual) modalActualMensual.close();
     if (modalActualAnual) modalActualAnual.close();
 
-    // Crear nuevos botones PayPal
     modalActualMensual = paypal.Buttons({
       createOrder: (data, actions) => actions.order.create({
         purchase_units: [{ amount: { value: precioMensual.toString() } }]
@@ -1088,7 +1082,6 @@
       )
     }).render('#paypal-button-modal-anual');
 
-    // Mostrar modal
     const modal = new bootstrap.Modal(document.getElementById('modalCompra'));
     modal.show();
   }
