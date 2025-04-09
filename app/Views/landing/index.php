@@ -488,7 +488,7 @@
     <!-- Navigation -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="">
                 <img src="assets/images/pro.png" alt="RackON Logo" style="height: 40px;">
             </a>
             
@@ -724,97 +724,112 @@
         </div>
     </section>
 
-    <!-- Planes de Compra -->
-    <section id="planes" class="fullpage-section bg-light py-5">
-        <div class="container">
-            <div class="section-title">
-                <h2>Planes de Compra de RackON</h2>
-                <p class="lead">Elige el plan que mejor se adapte a las necesidades de tu empresa. Todos los planes incluyen acceso a la plataforma web.</p>
+<!-- Planes de Compra -->
+<section id="planes" class="fullpage-section bg-light py-5">
+    <div class="container">
+        <div class="section-title">
+            <h2>Planes de Compra de RackON</h2>
+            <p class="lead">Elige el plan que mejor se adapte a las necesidades de tu empresa. Todos los planes incluyen acceso a la plataforma web.</p>
+        </div>
+        <div class="row">
+
+            <!-- Plan Básico -->
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100 plan-card border-success">
+                    <div class="card-body">
+                        <h4 class="card-title">🥉 Secure Access</h4>
+                        <p class="card-text"><strong>Ideal para pequeñas empresas o negocios que buscan un sistema de acceso confiable y sencillo.</strong></p>
+                        <ul class="mb-4">
+                            <li>Protección de 1 rack</li>
+                            <li>1 capa de seguridad: RFID</li>
+                            <li>Registro en tiempo real</li>
+                            <li>Consulta de historial vía web</li>
+                            <li>Soporte técnico básico</li>
+                            <li class="text-muted">➕ Notificaciones por correo (opcional)</li>
+                            <li class="text-muted">➕ Monitoreo web en tiempo real (opcional)</li>
+                        </ul>
+                        <hr>
+                        <p><strong>Hardware (1 dispositivo):</strong> $92 USD</p>
+                        <p><strong>Mensual:</strong> $25 USD</p>
+                        <p><strong>Anual (10% off):</strong> $270 USD</p>
+                    </div>
+                </div>
             </div>
-            <div class="row">
 
-                <!-- Plan Básico -->
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="card h-100 plan-card border-success">
-                        <div class="card-body">
-                            <h4 class="card-title">🥉 Secure Access</h4>
-                            <p class="card-text"><strong>Ideal para pequeñas empresas</strong></p>
-                            <ul class="mb-4">
-                                <li>Acceso a 1 rack con RFID</li>
-                                <li>1 capa de seguridad</li>
-                                <li>Registro en tiempo real</li>
-                                <li>Consulta web de accesos</li>
-                                <li>Soporte básico</li>
-                                <li>➕ Monitoreo opcional</li>
-                            </ul>
-                            <hr>
-                            <p><strong>Mensual:</strong> $25 USD</p>
-                            <p><strong>Anual (10% off):</strong> $270 USD</p>
-                            <p><strong>Dispositivo:</strong> $150 USD</p>
-                        </div>
+            <!-- Plan Intermedio -->
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100 plan-card border-primary">
+                    <div class="card-body">
+                        <h4 class="card-title">🥈 Secure Plus</h4>
+                        <p class="card-text"><strong>Perfecto para empresas medianas que requieren monitoreo constante y mayor protección.</strong></p>
+                        <ul class="mb-4">
+                            <li>Hasta 5 racks</li>
+                            <li>2 capas: RFID + Cámara</li>
+                            <li>Detección de accesos no autorizados</li>
+                            <li>Alertas por correo electrónico</li>
+                            <li>Accesos en tiempo real</li>
+                            <li>Soporte técnico prioritario</li>
+                            <li class="text-muted">➕ Notificaciones móviles</li>
+                            <li class="text-muted">➕ Mantenimiento remoto</li>
+                            <li class="text-muted">➕ Historial por 6 meses</li>
+                        </ul>
+                        <hr>
+                        <p><strong>Hardware (5 dispositivos):</strong> $462 USD</p>
+                        <p><strong>Mensual:</strong> $45 USD</p>
+                        <p><strong>Anual (15% off):</strong> $459 USD</p>
                     </div>
                 </div>
+            </div>
 
-                <!-- Plan Intermedio -->
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="card h-100 plan-card border-primary">
-                        <div class="card-body">
-                            <h4 class="card-title">🥈 Secure Plus</h4>
-                            <p class="card-text"><strong>Para empresas medianas</strong></p>
-                            <ul class="mb-4">
-                                <li>Hasta 5 racks</li>
-                                <li>2 capas: RFID + Cámara</li>
-                                <li>Alertas por email</li>
-                                <li>Gestión web integrada</li>
-                                <li>Soporte prioritario</li>
-                                <li>➕ Notificaciones móviles</li>
-                            </ul>
-                            <hr>
-                            <p><strong>Mensual:</strong> $45 USD</p>
-                            <p><strong>Anual (15% off):</strong> $459 USD</p>
-                            <p><strong>Dispositivo:</strong> $250 USD</p>
-                        </div>
+            <!-- Plan Avanzado -->
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100 plan-card border-danger">
+                    <div class="card-body">
+                        <h4 class="card-title">🥇 Secure Pro</h4>
+                        <p class="card-text"><strong>La solución definitiva para instalaciones de alta seguridad o empresas con múltiples puntos críticos.</strong></p>
+                        <ul class="mb-4">
+                            <li>Hasta 10 racks (ampliable)</li>
+                            <li>3 capas: RFID + Cámara + Sensor</li>
+                            <li>Detección de intrusos y golpes</li>
+                            <li>Integración IoT y sensores</li>
+                            <li>Terminal de historial de cambios</li>
+                            <li>Encriptación avanzada</li>
+                            <li>Soporte técnico 24/7</li>
+                            <li class="text-muted">➕ Actualizaciones automáticas</li>
+                            <li class="text-muted">➕ Consultoría de seguridad</li>
+                            <li class="text-muted">➕ Análisis de vulnerabilidades</li>
+                        </ul>
+                        <hr>
+                        <p><strong>Hardware (10 dispositivos):</strong> $924 USD</p>
+                        <p><strong>Mensual:</strong> $70 USD</p>
+                        <p><strong>Anual (20% off):</strong> $672 USD</p>
                     </div>
                 </div>
+            </div>
 
-                <!-- Plan Avanzado -->
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="card h-100 plan-card border-danger">
-                        <div class="card-body">
-                            <h4 class="card-title">🥇 Secure Pro</h4>
-                            <p class="card-text"><strong>Para máxima protección</strong></p>
-                            <ul class="mb-4">
-                                <li>Acceso ilimitado</li>
-                                <li>3 capas: RFID + Cámara + Sensor</li>
-                                <li>Terminal de cambios</li>
-                                <li>Encriptación avanzada</li>
-                                <li>Soporte 24/7</li>
-                                <li>➕ Consultoría incluida</li>
+            <!-- Plan Personalizado -->
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100 plan-card border-dark">
+                    <div class="card-body d-flex flex-column">
+                        <div>
+                            <h4 class="card-title">🛠️ Plan Personalizado</h4>
+                            <p class="card-text"><strong>¿Necesitas algo especial?</strong></p>
+                            <p class="small">Contáctanos para una propuesta a medida según tus necesidades específicas de seguridad, cantidad de racks o funciones especiales.</p>
+                            <ul class="small text-muted">
+                                <li>Acceso a plataforma web incluido</li>
+                                <li>Dispositivos adicionales: $92 USD por unidad</li>
+                                <li>Posibilidad de ampliación y personalización total</li>
                             </ul>
-                            <hr>
-                            <p><strong>Mensual:</strong> $70 USD</p>
-                            <p><strong>Anual (20% off):</strong> $672 USD</p>
-                            <p><strong>Dispositivo:</strong> $350 USD</p>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Plan Personalizado -->
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="card h-100 plan-card border-dark">
-                        <div class="card-body d-flex flex-column">
-                            <div>
-                                <h4 class="card-title">🛠️ Plan Personalizado</h4>
-                                <p class="card-text"><strong>¿Necesitas algo especial?</strong></p>
-                                <p class="small">Contáctanos para recibir una propuesta a medida, adaptada a tus necesidades específicas de seguridad y gestión.</p>
-                            </div>
-                            <a href="#contact" class="btn btn-outline-dark mt-3 align-self-start">Solicitar Cotización</a>
-                        </div>
+                        <a href="#contact" class="btn btn-outline-dark mt-3 align-self-start">Solicitar Cotización</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+
 
     <!-- Contact -->
     <section id="contact" class="fullpage-section">
