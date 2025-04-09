@@ -6,7 +6,7 @@
     <meta name="description" content="Sistema de control de acceso inteligente para racks de servidores con RFID, sensores y cámaras. Seguridad de siguiente nivel.">
     <meta name="author" content="Federico Arias - Joel Martinez Vilche">
 
-        <!-- Etiquetas Open Graph -->
+    <!-- Etiquetas Open Graph -->
     <meta property="og:title" content="RackON - Seguridad Inteligente para Racks">
     <meta property="og:description" content="Sistema IoT de seguridad para racks con acceso RFID y sensores.">
     <meta property="og:image" content=""> 
@@ -246,66 +246,65 @@
         text-align: center;
         padding: 2rem 1rem;
     }
-    
-/* SECCIÓN PLANES */
-#planes {
-    background-color: var(--light-color);
-}
 
-.plan-card {
-    transition: all 0.3s;
-}
+    /* SECCIÓN PLANES */
+    #planes {
+        background-color: var(--light-color);
+    }
 
-.plan-card:hover {
-    transform: translateY(-10px);
-}
+    .plan-card {
+        transition: all 0.3s;
+    }
 
-.plan-card .card-body {
-    padding: 2rem;
-}
+    .plan-card:hover {
+        transform: translateY(-10px);
+    }
 
-.plan-card ul {
-    padding-left: 0;
-    list-style: none;
-}
+    .plan-card .card-body {
+        padding: 2rem;
+    }
 
-.plan-card ul li {
-    margin-bottom: 0.5rem;
-    position: relative;
-    padding-left: 1.5rem;
-}
+    .plan-card ul {
+        padding-left: 0;
+        list-style: none;
+    }
 
-.plan-card ul li:before {
-    content: "✔";
-    position: absolute;
-    left: 0;
-    color: var(--primary-color);
-}
+    .plan-card ul li {
+        margin-bottom: 0.5rem;
+        position: relative;
+        padding-left: 1.5rem;
+    }
 
-/* NUEVO: Mostrar/Ocultar contenido */
-.ver-mas-contenido {
-    display: none;
-}
+    .plan-card ul li:before {
+        content: "✔";
+        position: absolute;
+        left: 0;
+        color: var(--primary-color);
+    }
 
-.ver-mas-contenido.mostrar {
-    display: block;
-}
+    /* NUEVO: Mostrar/Ocultar contenido */
+    .ver-mas-contenido {
+        display: none;
+    }
 
-.ver-mas-btn {
-    cursor: pointer;
-    color: var(--primary-color);
-    text-decoration: underline;
-    font-size: 0.9rem;
-    display: inline-block;
-    margin-top: 0.5rem;
-}
+    .ver-mas-contenido.mostrar {
+        display: block;
+    }
 
-/* Botón "Comprar" siempre abajo */
-.btn-compra {
-    margin-top: auto;
-    font-weight: 500;
-}
+    .ver-mas-btn {
+        cursor: pointer;
+        color: var(--primary-color);
+        text-decoration: underline;
+        font-size: 0.9rem;
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
 
+    /* Botón "Comprar" siempre abajo */
+    .btn-compra {
+        margin-top: auto;
+        font-weight: 500;
+    }
 
     /* SECCIÓN CONTACTO */
     #contact {
@@ -326,7 +325,7 @@
     }
 
     #contact .section-title h2 {
-    color: white !important;
+        color: white !important;
     }
 
     /* FOOTER */
@@ -489,6 +488,23 @@
         .plan-card {
             margin-bottom: 1.5rem;
         }
+        
+        /* Ajustes para sección de contacto */
+        #contact .contact-form {
+            padding: 0 15px;
+        }
+        
+        /* Ajustes para footer */
+        footer .col-lg-4, 
+        footer .col-lg-3, 
+        footer .col-lg-2 {
+            margin-bottom: 2rem;
+        }
+        
+        footer .text-md-start, 
+        footer .text-md-end {
+            text-align: center !important;
+        }
     }
     
     /* Dispositivos muy pequeños (menos de 400px) */
@@ -505,6 +521,32 @@
             padding: 12px 24px;
             font-size: 0.9rem;
         }
+        
+        .section-title h2 {
+            font-size: 1.8rem;
+        }
+        
+        .section-title .lead {
+            font-size: 1rem;
+        }
+        
+        /* Ajustes para tarjetas de hardware */
+        .hardware-card {
+            padding: 1.5rem 0.5rem;
+        }
+        
+        /* Ajustes para formulario de contacto */
+        .contact-form .form-control {
+            padding: 10px 12px;
+        }
+    }
+    
+    /* Ajustes específicos para pantallas muy pequeñas en modo horizontal */
+    @media (max-height: 500px) and (orientation: landscape) {
+        .fullpage-section {
+            min-height: auto;
+            padding: 60px 0;
+        }
     }
     </style>
 </head>
@@ -517,7 +559,7 @@
                 <img src="assets/images/pro.png" alt="RackON Logo" style="height: 40px;">
             </a>
             
-            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
@@ -562,7 +604,7 @@
                 </p>
             </div>
             <div class="row mt-5">
-                <div class="col-md-4">
+                <div class="col-md-4 mb-4">
                     <div class="card h-100">
                         <div class="card-body text-center">
                             <div class="card-icon">
@@ -576,7 +618,7 @@
                     </div>
                 </div>
                 
-                <div class="col-md-4">
+                <div class="col-md-4 mb-4">
                     <div class="card h-100">
                         <div class="card-body text-center">
                             <div class="card-icon">
@@ -590,7 +632,7 @@
                     </div>
                 </div>
                 
-                <div class="col-md-4">
+                <div class="col-md-4 mb-4">
                     <div class="card h-100">
                         <div class="card-body text-center">
                             <div class="card-icon">
@@ -624,7 +666,7 @@
                 
                 <!-- Columna de Texto -->
                 <div class="col-lg-6 order-lg-2 order-1 d-flex align-items-center content-column">
-                    <div class="px-4 px-md-5 py-lg-0">
+                    <div class="px-4 px-md-5 py-lg-0 py-4">
                         <h2 class="mb-4 text-primary">¿Cómo funciona RackON?</h2>
                         <p class="lead mb-4">
                             El sistema RackON combina tecnología de identificación, sensores físicos y vigilancia electrónica para ofrecer una solución de seguridad en capas. Su funcionamiento se basa en tres niveles que actúan de forma secuencial y complementaria:
@@ -696,7 +738,7 @@
                 <p class="lead">Los siguientes dispositivos permiten implementar los tres niveles de seguridad del sistema RackON.</p>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 mb-4">
                     <div class="card hardware-card">
                         <div class="card-body text-center">
                             <i class="fas fa-microchip card-icon"></i>
@@ -706,7 +748,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-4 mb-4">
                     <div class="card hardware-card">
                         <div class="card-body text-center">
                             <i class="fas fa-id-card card-icon"></i>
@@ -716,7 +758,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-4 mb-4">
                     <div class="card hardware-card">
                         <div class="card-body text-center">
                             <i class="fas fa-bolt card-icon"></i>
@@ -726,7 +768,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-6 mb-4">
                     <div class="card hardware-card">
                         <div class="card-body text-center">
                             <i class="fas fa-video card-icon"></i>
@@ -736,7 +778,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-6 mb-4">
                     <div class="card hardware-card">
                         <div class="card-body text-center">
                             <i class="fas fa-lock card-icon"></i>
@@ -748,6 +790,7 @@
             </div>
         </div>
     </section>
+
 <!-- SDK PayPal SANDBOX -->
 <script src="https://www.paypal.com/sdk/js?client-id=AXn6zeaT-kutunjZDVGKpbDSQ6WCCPgvHvsdaVYjrQvy4udAukapA5ISWF9QIR268HG_K-eDjk8ETcYs&currency=USD"></script>
 
@@ -863,7 +906,6 @@
     </div>
   </div>
 </section>
-
 
     <!-- Contact -->
     <section id="contact" class="fullpage-section">
@@ -1057,7 +1099,7 @@
     document.getElementById('modalPrecioMensual').innerText = precioMensual;
     document.getElementById('modalPrecioAnual').innerText = precioAnual;
 
-    // 🧹 Limpiar contenedores PayPal antes de renderizar
+    // Limpiar contenedores PayPal antes de renderizar
     document.getElementById('paypal-button-modal-mensual').innerHTML = '';
     document.getElementById('paypal-button-modal-anual').innerHTML = '';
 
