@@ -748,7 +748,7 @@
             </div>
         </div>
     </section>
-
+    <script src="https://www.paypal.com/sdk/js?client-id=AXn6zeaT-kutunjZDVGKpbDSQ6WCCPgvHvsdaVYjrQvy4udAukapA5ISWF9QIR268HG_K-eDjk8ETcYs&currency=USD"></script>
 <!-- Sección Planes -->
 <section id="planes" class="fullpage-section bg-light py-5">
     <div class="container">
@@ -1070,7 +1070,5 @@
         })
     }).render('#paypal-pro');
 </script>
-<!-- PayPal SDK (Sandbox) -->
-<script src="https://www.paypal.com/sdk/js?client-id=AXn6zeaT-kutunjZDVGKpbDSQ6WCCPgvHvsdaVYjrQvy4udAukapA5ISWF9QIR268HG_K-eDjk8ETcYs&currency=USD"></script>
 </body>
 </html>
