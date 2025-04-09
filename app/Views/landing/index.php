@@ -974,7 +974,7 @@
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2">
                             <i class="fas fa-envelope me-2 text-primary"></i>
-                            <a href="mailto:info@rackon.com">info@rackon.com</a>
+                            <a href="mailto:info@rackon.com">rackonoficial@gmail.com</a>
                         </li>
                         <li class="nav-item mb-2">
                             <i class="fas fa-phone me-2 text-primary"></i>
@@ -982,7 +982,7 @@
                         </li>
                         <li class="nav-item mb-2">
                             <i class="fas fa-map-marker-alt me-2 text-primary"></i>
-                            <span>Av. Tecnología 123, CDMX</span>
+                            <span>2 De Abril 1175 X5850 Río Tercero, Córdoba</span>
                         </li>
                     </ul>
                 </div>
