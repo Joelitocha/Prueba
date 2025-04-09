@@ -247,41 +247,66 @@
         padding: 2rem 1rem;
     }
     
-    /* SECCIÓN PLANES */
-    #planes {
-        background-color: var(--light-color);
-    }
-    
-    .plan-card {
-        transition: all 0.3s;
-    }
-    
-    .plan-card:hover {
-        transform: translateY(-10px);
-    }
-    
-    .plan-card .card-body {
-        padding: 2rem;
-    }
-    
-    .plan-card ul {
-        padding-left: 0;
-        list-style: none;
-    }
-    
-    .plan-card ul li {
-        margin-bottom: 0.5rem;
-        position: relative;
-        padding-left: 1.5rem;
-    }
-    
-    .plan-card ul li:before {
-        content: "✔";
-        position: absolute;
-        left: 0;
-        color: var(--primary-color);
-    }
-    
+/* SECCIÓN PLANES */
+#planes {
+    background-color: var(--light-color);
+}
+
+.plan-card {
+    transition: all 0.3s;
+}
+
+.plan-card:hover {
+    transform: translateY(-10px);
+}
+
+.plan-card .card-body {
+    padding: 2rem;
+}
+
+.plan-card ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.plan-card ul li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.plan-card ul li:before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+/* NUEVO: Mostrar/Ocultar contenido */
+.ver-mas-contenido {
+    display: none;
+}
+
+.ver-mas-contenido.mostrar {
+    display: block;
+}
+
+.ver-mas-btn {
+    cursor: pointer;
+    color: var(--primary-color);
+    text-decoration: underline;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+/* Botón "Comprar" siempre abajo */
+.btn-compra {
+    margin-top: auto;
+    font-weight: 500;
+}
+
+
     /* SECCIÓN CONTACTO */
     #contact {
         background: linear-gradient(rgba(2, 15, 29, 0.8), rgba(2, 15, 29, 0.8)), url('assets/images/contact-background.jpg') center center no-repeat;
