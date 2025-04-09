@@ -749,7 +749,7 @@
         </div>
     </section>
 
-<!-- Planes de Compra -->
+<!-- Sección Planes -->
 <section id="planes" class="fullpage-section bg-light py-5">
     <div class="container">
         <div class="section-title">
@@ -758,97 +758,96 @@
         </div>
         <div class="row">
 
-            <!-- Plan Básico -->
+            <!-- PLAN BÁSICO -->
             <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 plan-card border-success d-flex flex-column">
+                <div class="card h-100 plan-card border-success">
                     <div class="card-body d-flex flex-column">
                         <h4 class="card-title">🥉 Secure Access</h4>
-                        <p class="card-text"><strong>Ideal para pequeñas empresas o negocios que buscan un sistema de acceso confiable y sencillo.</strong></p>
-                        <ul>
-                            <li>Protección de 1 rack</li>
-                            <li>1 capa de seguridad: RFID</li>
-                            <li>Registro de accesos en tiempo real</li>
-                            <li>Consulta de historial desde la web</li>
-                            <li>Soporte técnico básico</li>
-                        </ul>
-                        <div class="ver-mas-contenido" id="contenido1">
-                            <ul>
-                                <li>Notificaciones por correo electrónico</li>
-                                <li>Visualización de registros históricos</li>
-                                <li>Monitoreo en tiempo real</li>
+                        <p><strong>Ideal para pequeñas empresas</strong></p>
+                        <div class="plan-description">
+                            <ul class="mb-3">
+                                <li>Protección de 1 rack</li>
+                                <li>1 capa: RFID</li>
+                                <li>Accesos en tiempo real</li>
+                                <li>Consulta desde la web</li>
+                                <li>Soporte básico</li>
                             </ul>
+                            <div class="more-text d-none">
+                                <ul>
+                                    <li>Servicios opcionales: email, monitoreo, historial</li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-link p-0 toggle-more">Ver más</button>
                         </div>
-                        <span class="ver-mas-btn" id="btn-contenido1" onclick="toggleVerMas('contenido1')">Ver más</span>
                         <hr>
-                        <p><strong>Hardware:</strong> $92 USD</p>
-                        <p><strong>Mensual:</strong> $25 USD</p>
-                        <p><strong>Anual (10% off):</strong> $270 USD</p>
-                        <a href="#" class="btn btn-success mt-auto btn-compra">Comprar</a>
+                        <p>💼 <strong>Hardware:</strong> $92 USD</p>
+                        <p>🌐 <strong>Mensual:</strong> $25 USD</p>
+                        <p>🌐 <strong>Anual:</strong> $270 USD</p>
+                        <div id="paypal-basic" class="mt-auto"></div>
                     </div>
                 </div>
             </div>
 
-            <!-- Plan Intermedio -->
+            <!-- PLAN INTERMEDIO -->
             <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 plan-card border-primary d-flex flex-column">
+                <div class="card h-100 plan-card border-primary">
                     <div class="card-body d-flex flex-column">
                         <h4 class="card-title">🥈 Secure Plus</h4>
-                        <p class="card-text"><strong>Perfecto para empresas medianas que requieren monitoreo constante y mayor protección.</strong></p>
-                        <ul>
-                            <li>Protección de hasta 5 racks</li>
-                            <li>2 capas: RFID + Cámara</li>
-                            <li>Detección de accesos no autorizados</li>
-                            <li>Alertas automáticas por correo</li>
-                            <li>Visualización en tiempo real</li>
-                            <li>Soporte prioritario</li>
-                        </ul>
-                        <div class="ver-mas-contenido" id="contenido2">
-                            <ul>
-                                <li>Notificaciones en móviles</li>
-                                <li>Mantenimiento remoto</li>
-                                <li>Historial por 6 meses</li>
+                        <p><strong>Para empresas medianas</strong></p>
+                        <div class="plan-description">
+                            <ul class="mb-3">
+                                <li>Hasta 5 racks</li>
+                                <li>2 capas: RFID + Cámara</li>
+                                <li>Alertas por email</li>
+                                <li>Visualización en tiempo real</li>
+                                <li>Soporte prioritario</li>
                             </ul>
+                            <div class="more-text d-none">
+                                <ul>
+                                    <li>Mantenimiento remoto, móviles, historial 6 meses</li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-link p-0 toggle-more">Ver más</button>
                         </div>
-                        <span class="ver-mas-btn" id="btn-contenido2" onclick="toggleVerMas('contenido2')">Ver más</span>
                         <hr>
-                        <p><strong>Hardware:</strong> $462 USD</p>
-                        <p><strong>Mensual:</strong> $45 USD</p>
-                        <p><strong>Anual (15% off):</strong> $459 USD</p>
-                        <a href="#" class="btn btn-primary mt-auto btn-compra">Comprar</a>
+                        <p>💼 <strong>Hardware:</strong> $462 USD</p>
+                        <p>🌐 <strong>Mensual:</strong> $45 USD</p>
+                        <p>🌐 <strong>Anual:</strong> $459 USD</p>
+                        <div id="paypal-plus" class="mt-auto"></div>
                     </div>
                 </div>
             </div>
 
-            <!-- Plan Avanzado -->
+            <!-- PLAN AVANZADO -->
             <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 plan-card border-danger d-flex flex-column">
+                <div class="card h-100 plan-card border-danger">
                     <div class="card-body d-flex flex-column">
                         <h4 class="card-title">🥇 Secure Pro</h4>
-                        <p class="card-text"><strong>La solución definitiva para instalaciones de alta seguridad o empresas con múltiples puntos críticos.</strong></p>
-                        <ul>
-                            <li>Hasta 10 racks (ampliable)</li>
-                            <li>3 capas: RFID + Cámara + Sensor</li>
-                            <li>Detección de golpes/intrusos</li>
-                            <li>Integración con IoT</li>
-                            <li>Terminal de historial de cambios</li>
-                            <li>Encriptación avanzada</li>
-                        </ul>
-                        <div class="ver-mas-contenido" id="contenido3">
-                            <ul>
-                                <li>Actualizaciones automáticas</li>
-                                <li>Consultoría mensual</li>
-                                <li>Análisis de vulnerabilidades</li>
+                        <p><strong>Máxima protección</strong></p>
+                        <div class="plan-description">
+                            <ul class="mb-3">
+                                <li>Hasta 10 racks</li>
+                                <li>3 capas: RFID + Cámara + Sensor</li>
+                                <li>Terminal de historial</li>
+                                <li>Encriptación y reportes</li>
+                                <li>Soporte 24/7</li>
                             </ul>
+                            <div class="more-text d-none">
+                                <ul>
+                                    <li>Firmware, consultoría, análisis de seguridad</li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-link p-0 toggle-more">Ver más</button>
                         </div>
-                        <span class="ver-mas-btn" id="btn-contenido3" onclick="toggleVerMas('contenido3')">Ver más</span>
                         <hr>
-                        <p><strong>Hardware:</strong> $924 USD</p>
-                        <p><strong>Mensual:</strong> $70 USD</p>
-                        <p><strong>Anual (20% off):</strong> $672 USD</p>
-                        <a href="#" class="btn btn-danger mt-auto btn-compra">Comprar</a>
+                        <p>💼 <strong>Hardware:</strong> $924 USD</p>
+                        <p>🌐 <strong>Mensual:</strong> $70 USD</p>
+                        <p>🌐 <strong>Anual:</strong> $672 USD</p>
+                        <div id="paypal-pro" class="mt-auto"></div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
@@ -1033,5 +1032,45 @@
     }
 
     </script>
+    <!-- Renderizar botones de pago -->
+<script>
+    paypal.Buttons({
+        createOrder: (data, actions) => actions.order.create({
+            purchase_units: [{
+                description: 'Plan Básico - RackON',
+                amount: { value: '25.00' }
+            }]
+        }),
+        onApprove: (data, actions) => actions.order.capture().then(details => {
+            alert(`Pago exitoso por ${details.payer.name.given_name}`);
+        })
+    }).render('#paypal-basic');
+
+    paypal.Buttons({
+        createOrder: (data, actions) => actions.order.create({
+            purchase_units: [{
+                description: 'Plan Intermedio - RackON',
+                amount: { value: '45.00' }
+            }]
+        }),
+        onApprove: (data, actions) => actions.order.capture().then(details => {
+            alert(`Pago exitoso por ${details.payer.name.given_name}`);
+        })
+    }).render('#paypal-plus');
+
+    paypal.Buttons({
+        createOrder: (data, actions) => actions.order.create({
+            purchase_units: [{
+                description: 'Plan Avanzado - RackON',
+                amount: { value: '70.00' }
+            }]
+        }),
+        onApprove: (data, actions) => actions.order.capture().then(details => {
+            alert(`Pago exitoso por ${details.payer.name.given_name}`);
+        })
+    }).render('#paypal-pro');
+</script>
+<!-- PayPal SDK (Sandbox) -->
+<script src="https://www.paypal.com/sdk/js?client-id=AXn6zeaT-kutunjZDVGKpbDSQ6WCCPgvHvsdaVYjrQvy4udAukapA5ISWF9QIR268HG_K-eDjk8ETcYs&currency=USD"></script>
 </body>
 </html>
