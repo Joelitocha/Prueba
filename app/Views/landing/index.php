@@ -748,108 +748,115 @@
             </div>
         </div>
     </section>
-    <script src="https://www.paypal.com/sdk/js?client-id=AXn6zeaT-kutunjZDVGKpbDSQ6WCCPgvHvsdaVYjrQvy4udAukapA5ISWF9QIR268HG_K-eDjk8ETcYs&currency=USD"></script>
+<!-- Incluir SDK de PayPal Sandbox -->
+<script src="https://www.paypal.com/sdk/js?client-id=AXn6zeaT-kutunjZDVGKpbDSQ6WCCPgvHvsdaVYjrQvy4udAukapA5ISWF9QIR268HG_K-eDjk8ETcYs&currency=USD"></script>
+
 <!-- Sección Planes -->
 <section id="planes" class="fullpage-section bg-light py-5">
     <div class="container">
-        <div class="section-title">
+        <div class="section-title text-center">
             <h2>Planes de Compra de RackON</h2>
-            <p class="lead">Elige el plan que mejor se adapte a las necesidades de tu empresa. Todos los planes incluyen acceso a la plataforma web.</p>
+            <p class="lead">Elige el plan que mejor se adapte a tu empresa. Todos los planes incluyen acceso a la plataforma web.</p>
         </div>
         <div class="row">
-
-            <!-- PLAN BÁSICO -->
+            <!-- Plan Card: Componente reutilizable -->
+            <!-- Solo reemplaza los valores donde indique para cada plan -->
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card h-100 plan-card border-success">
                     <div class="card-body d-flex flex-column">
                         <h4 class="card-title">🥉 Secure Access</h4>
                         <p><strong>Ideal para pequeñas empresas</strong></p>
-                        <div class="plan-description">
-                            <ul class="mb-3">
-                                <li>Protección de 1 rack</li>
-                                <li>1 capa: RFID</li>
-                                <li>Accesos en tiempo real</li>
-                                <li>Consulta desde la web</li>
-                                <li>Soporte básico</li>
-                            </ul>
-                            <div class="more-text d-none">
-                                <ul>
-                                    <li>Servicios opcionales: email, monitoreo, historial</li>
-                                </ul>
+                        <div class="plan-description mb-3">
+                            <div class="short-text">
+                                Protección de 1 rack. <br>
+                                1 capa: RFID. <br>
+                                Soporte básico. <br>
+                                <a href="#" class="text-primary ver-mas">Ver más</a>
                             </div>
-                            <button class="btn btn-link p-0 toggle-more">Ver más</button>
+                            <div class="full-text d-none">
+                                Registro en tiempo real, acceso desde la web, notificaciones por correo electrónico, monitoreo en tiempo real. <br>
+                                Dispositivo: $92 USD <br>
+                                Servicio mensual: $25 USD<br>
+                                Servicio anual: $270 USD (-10%)<br>
+                                <a href="#" class="text-danger ver-menos">Ver menos</a>
+                            </div>
                         </div>
-                        <hr>
-                        <p>💼 <strong>Hardware:</strong> $92 USD</p>
-                        <p>🌐 <strong>Mensual:</strong> $25 USD</p>
-                        <p>🌐 <strong>Anual:</strong> $270 USD</p>
-                        <div id="paypal-basic" class="mt-auto"></div>
+                        <div class="mt-auto">
+                            <p><strong>Total mensual:</strong> $117 USD</p>
+                            <div id="paypal-button-monthly-basic"></div>
+                            <hr>
+                            <p><strong>Total anual:</strong> $362 USD</p>
+                            <div id="paypal-button-annual-basic"></div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- PLAN INTERMEDIO -->
+            <!-- Plan Intermedio -->
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card h-100 plan-card border-primary">
                     <div class="card-body d-flex flex-column">
                         <h4 class="card-title">🥈 Secure Plus</h4>
                         <p><strong>Para empresas medianas</strong></p>
-                        <div class="plan-description">
-                            <ul class="mb-3">
-                                <li>Hasta 5 racks</li>
-                                <li>2 capas: RFID + Cámara</li>
-                                <li>Alertas por email</li>
-                                <li>Visualización en tiempo real</li>
-                                <li>Soporte prioritario</li>
-                            </ul>
-                            <div class="more-text d-none">
-                                <ul>
-                                    <li>Mantenimiento remoto, móviles, historial 6 meses</li>
-                                </ul>
+                        <div class="plan-description mb-3">
+                            <div class="short-text">
+                                Hasta 5 racks. <br>
+                                2 capas: RFID + Cámara. <br>
+                                Soporte prioritario. <br>
+                                <a href="#" class="text-primary ver-mas">Ver más</a>
                             </div>
-                            <button class="btn btn-link p-0 toggle-more">Ver más</button>
+                            <div class="full-text d-none">
+                                Detección de accesos no autorizados, alertas por correo, monitoreo remoto, historial 6 meses. <br>
+                                Dispositivo: $462 USD <br>
+                                Servicio mensual: $45 USD<br>
+                                Servicio anual: $459 USD (-15%)<br>
+                                <a href="#" class="text-danger ver-menos">Ver menos</a>
+                            </div>
                         </div>
-                        <hr>
-                        <p>💼 <strong>Hardware:</strong> $462 USD</p>
-                        <p>🌐 <strong>Mensual:</strong> $45 USD</p>
-                        <p>🌐 <strong>Anual:</strong> $459 USD</p>
-                        <div id="paypal-plus" class="mt-auto"></div>
+                        <div class="mt-auto">
+                            <p><strong>Total mensual:</strong> $507 USD</p>
+                            <div id="paypal-button-monthly-plus"></div>
+                            <hr>
+                            <p><strong>Total anual:</strong> $921 USD</p>
+                            <div id="paypal-button-annual-plus"></div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- PLAN AVANZADO -->
+            <!-- Plan Avanzado -->
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card h-100 plan-card border-danger">
                     <div class="card-body d-flex flex-column">
                         <h4 class="card-title">🥇 Secure Pro</h4>
-                        <p><strong>Máxima protección</strong></p>
-                        <div class="plan-description">
-                            <ul class="mb-3">
-                                <li>Hasta 10 racks</li>
-                                <li>3 capas: RFID + Cámara + Sensor</li>
-                                <li>Terminal de historial</li>
-                                <li>Encriptación y reportes</li>
-                                <li>Soporte 24/7</li>
-                            </ul>
-                            <div class="more-text d-none">
-                                <ul>
-                                    <li>Firmware, consultoría, análisis de seguridad</li>
-                                </ul>
+                        <p><strong>Para alta seguridad</strong></p>
+                        <div class="plan-description mb-3">
+                            <div class="short-text">
+                                Hasta 10 racks. <br>
+                                3 capas: RFID + Cámara + Sensor. <br>
+                                Soporte premium. <br>
+                                <a href="#" class="text-primary ver-mas">Ver más</a>
                             </div>
-                            <button class="btn btn-link p-0 toggle-more">Ver más</button>
+                            <div class="full-text d-none">
+                                Detección de intrusos y golpes, IoT, historial tipo terminal, actualizaciones y consultoría. <br>
+                                Dispositivo: $924 USD <br>
+                                Servicio mensual: $70 USD<br>
+                                Servicio anual: $672 USD (-20%)<br>
+                                <a href="#" class="text-danger ver-menos">Ver menos</a>
+                            </div>
                         </div>
-                        <hr>
-                        <p>💼 <strong>Hardware:</strong> $924 USD</p>
-                        <p>🌐 <strong>Mensual:</strong> $70 USD</p>
-                        <p>🌐 <strong>Anual:</strong> $672 USD</p>
-                        <div id="paypal-pro" class="mt-auto"></div>
+                        <div class="mt-auto">
+                            <p><strong>Total mensual:</strong> $994 USD</p>
+                            <div id="paypal-button-monthly-pro"></div>
+                            <hr>
+                            <p><strong>Total anual:</strong> $1,596 USD</p>
+                            <div id="paypal-button-annual-pro"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
-    </div>
+    </div> 
 </section>
 
 
@@ -1018,57 +1025,58 @@
         });
     });
 
-    function toggleVerMas(id) {
-        const contenido = document.getElementById(id);
-        const boton = document.getElementById("btn-" + id);
+    document.querySelectorAll('.ver-mas').forEach(btn => {
+        btn.addEventListener('click', e => {
+            e.preventDefault();
+            const parent = e.target.closest('.plan-description');
+            parent.querySelector('.short-text').classList.add('d-none');
+            parent.querySelector('.full-text').classList.remove('d-none');
+        });
+    });
 
-        if (contenido.classList.contains("mostrar")) {
-            contenido.classList.remove("mostrar");
-            boton.innerText = "Ver más";
-        } else {
-            contenido.classList.add("mostrar");
-            boton.innerText = "Ver menos";
-        }
-    }
-
+    document.querySelectorAll('.ver-menos').forEach(btn => {
+        btn.addEventListener('click', e => {
+            e.preventDefault();
+            const parent = e.target.closest('.plan-description');
+            parent.querySelector('.full-text').classList.add('d-none');
+            parent.querySelector('.short-text').classList.remove('d-none');
+        });
+    });
     </script>
-    <!-- Renderizar botones de pago -->
+    <!-- Script PayPal Buttons -->
 <script>
-    paypal.Buttons({
-        createOrder: (data, actions) => actions.order.create({
-            purchase_units: [{
-                description: 'Plan Básico - RackON',
-                amount: { value: '25.00' }
-            }]
-        }),
-        onApprove: (data, actions) => actions.order.capture().then(details => {
-            alert(`Pago exitoso por ${details.payer.name.given_name}`);
-        })
-    }).render('#paypal-basic');
+    const createPayPalButton = (containerId, amount) => {
+        paypal.Buttons({
+            style: {
+                shape: 'pill',
+                color: 'blue',
+                layout: 'vertical',
+                label: 'paypal',
+            },
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: amount.toString()
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('Pago completado por ' + details.payer.name.given_name);
+                });
+            }
+        }).render('#' + containerId);
+    };
 
-    paypal.Buttons({
-        createOrder: (data, actions) => actions.order.create({
-            purchase_units: [{
-                description: 'Plan Intermedio - RackON',
-                amount: { value: '45.00' }
-            }]
-        }),
-        onApprove: (data, actions) => actions.order.capture().then(details => {
-            alert(`Pago exitoso por ${details.payer.name.given_name}`);
-        })
-    }).render('#paypal-plus');
-
-    paypal.Buttons({
-        createOrder: (data, actions) => actions.order.create({
-            purchase_units: [{
-                description: 'Plan Avanzado - RackON',
-                amount: { value: '70.00' }
-            }]
-        }),
-        onApprove: (data, actions) => actions.order.capture().then(details => {
-            alert(`Pago exitoso por ${details.payer.name.given_name}`);
-        })
-    }).render('#paypal-pro');
+    // Inicializar botones por plan
+    createPayPalButton('paypal-button-monthly-basic', 117);
+    createPayPalButton('paypal-button-annual-basic', 362);
+    createPayPalButton('paypal-button-monthly-plus', 507);
+    createPayPalButton('paypal-button-annual-plus', 921);
+    createPayPalButton('paypal-button-monthly-pro', 994);
+    createPayPalButton('paypal-button-annual-pro', 1596);
 </script>
 </body>
 </html>
