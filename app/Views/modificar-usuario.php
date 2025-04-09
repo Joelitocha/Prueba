@@ -37,7 +37,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 20px 20px 10px;
+        padding: 20px;
         text-align: center;
         margin-left: 250px;
         transition: margin-left 0.3s ease;
@@ -57,6 +57,7 @@
         gap: 15px;
         margin-top: 10px;
         flex-wrap: wrap;
+        width: 100%;
     }
 
     /* Botón "Añadir Usuario" */
@@ -72,6 +73,7 @@
         text-decoration: none;
         cursor: pointer;
         transition: background-color 0.3s ease;
+        white-space: nowrap;
     }
 
     .titulo .menu-item:hover {
@@ -88,6 +90,7 @@
         max-width: 100%;
         box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
         transition: border-color 0.3s ease;
+        flex-grow: 1;
     }
 
     .barra-busqueda:focus {
@@ -375,21 +378,27 @@
         
         .titulo, .tabla-container, .mensaje {
             margin-left: 0;
+            padding: 15px;
         }
         
         .menu-toggle {
             display: block;
+        }
+        
+        .tabla-container {
+            padding: 15px 10px;
         }
     }
 
     @media (max-width: 768px) {
         .titulo .acciones {
             flex-direction: column;
-            width: 100%;
+            gap: 10px;
         }
         
         .barra-busqueda {
             width: 100%;
+            max-width: 100%;
         }
         
         .modificar th, 
@@ -403,28 +412,94 @@
             padding: 6px 10px;
             font-size: 13px;
         }
-    }
-
-    @media (max-width: 576px) {
-        .sidebar {
-            width: 220px;
-        }
-        
-        .sidebar a {
-            padding: 10px 12px;
-            font-size: 15px;
-        }
-        
-        .sidebar .logo {
-            font-size: 22px;
-        }
         
         .titulo h1 {
             font-size: 20px;
         }
         
+        .sidebar {
+            width: 220px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .sidebar {
+            width: 200px;
+        }
+        
+        .sidebar a {
+            padding: 10px 12px;
+            font-size: 14px;
+        }
+        
+        .sidebar .logo {
+            font-size: 20px;
+        }
+        
+        .titulo h1 {
+            font-size: 18px;
+        }
+        
         .mensaje {
             margin: 15px 10px;
+            font-size: 14px;
+        }
+        
+        .modificar th, 
+        .modificar td {
+            padding: 6px 8px;
+            font-size: 13px;
+        }
+        
+        .btn-modificar, 
+        .btn-eliminar {
+            padding: 5px 8px;
+            font-size: 12px;
+        }
+    }
+    
+    @media (max-width: 400px) {
+        .sidebar {
+            width: 180px;
+        }
+        
+        .sidebar a {
+            padding: 8px 10px;
+            font-size: 13px;
+        }
+        
+        .sidebar .logo {
+            font-size: 18px;
+        }
+        
+        .menu-toggle {
+            padding: 8px;
+        }
+        
+        .titulo {
+            padding: 15px 10px;
+        }
+        
+        .titulo h1 {
+            font-size: 16px;
+        }
+        
+        .mensaje {
+            font-size: 13px;
+            padding: 10px;
+        }
+        
+        #modalConfirmacion div {
+            padding: 15px;
+        }
+        
+        #modalConfirmacion h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        
+        #modalConfirmacion button {
+            padding: 8px 15px;
             font-size: 14px;
         }
     }
@@ -633,6 +708,13 @@
     window.addEventListener('resize', () => {
       if (window.innerWidth > 992) {
         sidebar.classList.remove('active');
+      }
+    });
+    
+    // Cerrar modal al hacer clic fuera
+    document.getElementById('modalConfirmacion').addEventListener('click', function(e) {
+      if (e.target === this) {
+        cerrarModal();
       }
     });
   </script>
