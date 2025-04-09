@@ -830,8 +830,6 @@
 </section>
 
 
-
-
     <!-- Contact -->
     <section id="contact" class="fullpage-section">
     <div class="container">
