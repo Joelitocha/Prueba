@@ -1019,6 +1019,20 @@
             behavior: 'smooth'
         });
     });
+
+    function toggleVerMas(id) {
+        const contenido = document.getElementById(id);
+        const boton = document.getElementById("btn-" + id);
+
+        if (contenido.classList.contains("mostrar")) {
+            contenido.classList.remove("mostrar");
+            boton.innerText = "Ver más";
+        } else {
+            contenido.classList.add("mostrar");
+            boton.innerText = "Ver menos";
+        }
+    }
+
     </script>
 </body>
 </html>
