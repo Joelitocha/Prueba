@@ -748,115 +748,123 @@
             </div>
         </div>
     </section>
-<!-- Incluir SDK de PayPal Sandbox -->
+<!-- SDK PayPal SANDBOX -->
 <script src="https://www.paypal.com/sdk/js?client-id=AXn6zeaT-kutunjZDVGKpbDSQ6WCCPgvHvsdaVYjrQvy4udAukapA5ISWF9QIR268HG_K-eDjk8ETcYs&currency=USD"></script>
 
-<!-- Sección Planes -->
-<section id="planes" class="fullpage-section bg-light py-5">
-    <div class="container">
-        <div class="section-title text-center">
-            <h2>Planes de Compra de RackON</h2>
-            <p class="lead">Elige el plan que mejor se adapte a tu empresa. Todos los planes incluyen acceso a la plataforma web.</p>
-        </div>
-        <div class="row">
-            <!-- Plan Card: Componente reutilizable -->
-            <!-- Solo reemplaza los valores donde indique para cada plan -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 plan-card border-success">
-                    <div class="card-body d-flex flex-column">
-                        <h4 class="card-title">🥉 Secure Access</h4>
-                        <p><strong>Ideal para pequeñas empresas</strong></p>
-                        <div class="plan-description mb-3">
-                            <div class="short-text">
-                                Protección de 1 rack. <br>
-                                1 capa: RFID. <br>
-                                Soporte básico. <br>
-                                <a href="#" class="text-primary ver-mas">Ver más</a>
-                            </div>
-                            <div class="full-text d-none">
-                                Registro en tiempo real, acceso desde la web, notificaciones por correo electrónico, monitoreo en tiempo real. <br>
-                                Dispositivo: $92 USD <br>
-                                Servicio mensual: $25 USD<br>
-                                Servicio anual: $270 USD (-10%)<br>
-                                <a href="#" class="text-danger ver-menos">Ver menos</a>
-                            </div>
-                        </div>
-                        <div class="mt-auto">
-                            <p><strong>Total mensual:</strong> $117 USD</p>
-                            <div id="paypal-button-monthly-basic"></div>
-                            <hr>
-                            <p><strong>Total anual:</strong> $362 USD</p>
-                            <div id="paypal-button-annual-basic"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- Modal Bootstrap -->
+<div class="modal fade" id="modalCompra" tabindex="-1" aria-labelledby="modalCompraLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-3">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalCompraLabel">Selecciona una opción de compra</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body text-center">
+        <p id="modalPlanNombre" class="fw-bold mb-3"></p>
+        <p><strong>Mensual:</strong> $<span id="modalPrecioMensual"></span></p>
+        <div id="paypal-button-modal-mensual" class="mb-4"></div>
+        <p><strong>Anual:</strong> $<span id="modalPrecioAnual"></span></p>
+        <div id="paypal-button-modal-anual"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
-            <!-- Plan Intermedio -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 plan-card border-primary">
-                    <div class="card-body d-flex flex-column">
-                        <h4 class="card-title">🥈 Secure Plus</h4>
-                        <p><strong>Para empresas medianas</strong></p>
-                        <div class="plan-description mb-3">
-                            <div class="short-text">
-                                Hasta 5 racks. <br>
-                                2 capas: RFID + Cámara. <br>
-                                Soporte prioritario. <br>
-                                <a href="#" class="text-primary ver-mas">Ver más</a>
-                            </div>
-                            <div class="full-text d-none">
-                                Detección de accesos no autorizados, alertas por correo, monitoreo remoto, historial 6 meses. <br>
-                                Dispositivo: $462 USD <br>
-                                Servicio mensual: $45 USD<br>
-                                Servicio anual: $459 USD (-15%)<br>
-                                <a href="#" class="text-danger ver-menos">Ver menos</a>
-                            </div>
-                        </div>
-                        <div class="mt-auto">
-                            <p><strong>Total mensual:</strong> $507 USD</p>
-                            <div id="paypal-button-monthly-plus"></div>
-                            <hr>
-                            <p><strong>Total anual:</strong> $921 USD</p>
-                            <div id="paypal-button-annual-plus"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- SECCIÓN PLANES -->
+<section id="planes" class="py-5 bg-light">
+  <div class="container">
+    <div class="section-title text-center mb-5">
+      <h2>Planes de Compra de RackON</h2>
+      <p class="lead">Elige el plan que mejor se adapte a tu empresa.</p>
+    </div>
+    <div class="row">
 
-            <!-- Plan Avanzado -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 plan-card border-danger">
-                    <div class="card-body d-flex flex-column">
-                        <h4 class="card-title">🥇 Secure Pro</h4>
-                        <p><strong>Para alta seguridad</strong></p>
-                        <div class="plan-description mb-3">
-                            <div class="short-text">
-                                Hasta 10 racks. <br>
-                                3 capas: RFID + Cámara + Sensor. <br>
-                                Soporte premium. <br>
-                                <a href="#" class="text-primary ver-mas">Ver más</a>
-                            </div>
-                            <div class="full-text d-none">
-                                Detección de intrusos y golpes, IoT, historial tipo terminal, actualizaciones y consultoría. <br>
-                                Dispositivo: $924 USD <br>
-                                Servicio mensual: $70 USD<br>
-                                Servicio anual: $672 USD (-20%)<br>
-                                <a href="#" class="text-danger ver-menos">Ver menos</a>
-                            </div>
-                        </div>
-                        <div class="mt-auto">
-                            <p><strong>Total mensual:</strong> $994 USD</p>
-                            <div id="paypal-button-monthly-pro"></div>
-                            <hr>
-                            <p><strong>Total anual:</strong> $1,596 USD</p>
-                            <div id="paypal-button-annual-pro"></div>
-                        </div>
-                    </div>
-                </div>
+      <!-- PLAN: Secure Access -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card plan-card border-success h-100">
+          <div class="card-body d-flex flex-column">
+            <h4 class="card-title">🥉 Secure Access</h4>
+            <p><strong>Ideal para pequeñas empresas</strong></p>
+            <ul>
+              <li>Protección para 1 rack</li>
+              <li>1 capa de seguridad: RFID</li>
+              <li>Soporte básico</li>
+              <li class="extra d-none">Notificaciones por correo</li>
+              <li class="extra d-none">Monitoreo en tiempo real</li>
+              <li class="extra d-none">Plataforma web incluida</li>
+            </ul>
+            <a href="#" class="ver-mas text-primary mb-3">Ver más</a>
+            <a href="#" class="ver-menos text-danger mb-3 d-none">Ver menos</a>
+
+            <div class="mt-auto">
+              <p><strong>Dispositivo:</strong> $92 USD</p>
+              <p><strong>Mensual:</strong> $25 USD</p>
+              <p><strong>Anual:</strong> $270 USD</p>
+              <button class="btn btn-outline-success w-100" 
+                      onclick="abrirModalCompra('Secure Access', 117, 362)">Comprar</button>
             </div>
+          </div>
         </div>
-    </div> 
+      </div>
+
+      <!-- PLAN: Secure Plus -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card plan-card border-primary h-100">
+          <div class="card-body d-flex flex-column">
+            <h4 class="card-title">🥈 Secure Plus</h4>
+            <p><strong>Para empresas medianas</strong></p>
+            <ul>
+              <li>Hasta 5 racks</li>
+              <li>2 capas: RFID + Cámara</li>
+              <li>Soporte prioritario</li>
+              <li class="extra d-none">Historial de accesos</li>
+              <li class="extra d-none">Alertas en tiempo real</li>
+              <li class="extra d-none">Acceso web multiusuario</li>
+            </ul>
+            <a href="#" class="ver-mas text-primary mb-3">Ver más</a>
+            <a href="#" class="ver-menos text-danger mb-3 d-none">Ver menos</a>
+
+            <div class="mt-auto">
+              <p><strong>Dispositivo:</strong> $462 USD</p>
+              <p><strong>Mensual:</strong> $45 USD</p>
+              <p><strong>Anual:</strong> $459 USD</p>
+              <button class="btn btn-outline-primary w-100" 
+                      onclick="abrirModalCompra('Secure Plus', 507, 921)">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PLAN: Secure Pro -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card plan-card border-danger h-100">
+          <div class="card-body d-flex flex-column">
+            <h4 class="card-title">🥇 Secure Pro</h4>
+            <p><strong>Para máxima seguridad</strong></p>
+            <ul>
+              <li>Hasta 10 racks</li>
+              <li>3 capas: RFID + Cámara + Sensor</li>
+              <li>Soporte premium</li>
+              <li class="extra d-none">Detección de golpes</li>
+              <li class="extra d-none">Interfaz tipo terminal</li>
+              <li class="extra d-none">Actualizaciones incluidas</li>
+            </ul>
+            <a href="#" class="ver-mas text-primary mb-3">Ver más</a>
+            <a href="#" class="ver-menos text-danger mb-3 d-none">Ver menos</a>
+
+            <div class="mt-auto">
+              <p><strong>Dispositivo:</strong> $924 USD</p>
+              <p><strong>Mensual:</strong> $70 USD</p>
+              <p><strong>Anual:</strong> $672 USD</p>
+              <button class="btn btn-outline-danger w-100" 
+                      onclick="abrirModalCompra('Secure Pro', 994, 1596)">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 
@@ -1024,59 +1032,66 @@
             behavior: 'smooth'
         });
     });
-
-    document.querySelectorAll('.ver-mas').forEach(btn => {
-        btn.addEventListener('click', e => {
-            e.preventDefault();
-            const parent = e.target.closest('.plan-description');
-            parent.querySelector('.short-text').classList.add('d-none');
-            parent.querySelector('.full-text').classList.remove('d-none');
-        });
-    });
-
-    document.querySelectorAll('.ver-menos').forEach(btn => {
-        btn.addEventListener('click', e => {
-            e.preventDefault();
-            const parent = e.target.closest('.plan-description');
-            parent.querySelector('.full-text').classList.add('d-none');
-            parent.querySelector('.short-text').classList.remove('d-none');
-        });
-    });
     </script>
-    <!-- Script PayPal Buttons -->
+<!--Script Ver más y Ver menos -->
 <script>
-    const createPayPalButton = (containerId, amount) => {
-        paypal.Buttons({
-            style: {
-                shape: 'pill',
-                color: 'blue',
-                layout: 'vertical',
-                label: 'paypal',
-            },
-            createOrder: function(data, actions) {
-                return actions.order.create({
-                    purchase_units: [{
-                        amount: {
-                            value: amount.toString()
-                        }
-                    }]
-                });
-            },
-            onApprove: function(data, actions) {
-                return actions.order.capture().then(function(details) {
-                    alert('Pago completado por ' + details.payer.name.given_name);
-                });
-            }
-        }).render('#' + containerId);
-    };
+      document.querySelectorAll('.ver-mas').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      const card = btn.closest('.card-body');
+      card.querySelectorAll('.extra').forEach(el => el.classList.remove('d-none'));
+      card.querySelector('.ver-mas').classList.add('d-none');
+      card.querySelector('.ver-menos').classList.remove('d-none');
+    });
+  });
 
-    // Inicializar botones por plan
-    createPayPalButton('paypal-button-monthly-basic', 117);
-    createPayPalButton('paypal-button-annual-basic', 362);
-    createPayPalButton('paypal-button-monthly-plus', 507);
-    createPayPalButton('paypal-button-annual-plus', 921);
-    createPayPalButton('paypal-button-monthly-pro', 994);
-    createPayPalButton('paypal-button-annual-pro', 1596);
+  document.querySelectorAll('.ver-menos').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      const card = btn.closest('.card-body');
+      card.querySelectorAll('.extra').forEach(el => el.classList.add('d-none'));
+      card.querySelector('.ver-menos').classList.add('d-none');
+      card.querySelector('.ver-mas').classList.remove('d-none');
+    });
+  });
+</script>
+    <!-- Script PayPal Buttons -->
+    <script>
+  let modalActualMensual = null;
+  let modalActualAnual = null;
+
+  function abrirModalCompra(planNombre, precioMensual, precioAnual) {
+    document.getElementById('modalPlanNombre').innerText = planNombre;
+    document.getElementById('modalPrecioMensual').innerText = precioMensual;
+    document.getElementById('modalPrecioAnual').innerText = precioAnual;
+
+    // Destruir botones anteriores (si existen)
+    if (modalActualMensual) modalActualMensual.close();
+    if (modalActualAnual) modalActualAnual.close();
+
+    // Crear nuevos botones PayPal
+    modalActualMensual = paypal.Buttons({
+      createOrder: (data, actions) => actions.order.create({
+        purchase_units: [{ amount: { value: precioMensual.toString() } }]
+      }),
+      onApprove: (data, actions) => actions.order.capture().then(detalles =>
+        alert('Pago mensual completado: ' + detalles.payer.name.given_name)
+      )
+    }).render('#paypal-button-modal-mensual');
+
+    modalActualAnual = paypal.Buttons({
+      createOrder: (data, actions) => actions.order.create({
+        purchase_units: [{ amount: { value: precioAnual.toString() } }]
+      }),
+      onApprove: (data, actions) => actions.order.capture().then(detalles =>
+        alert('Pago anual completado: ' + detalles.payer.name.given_name)
+      )
+    }).render('#paypal-button-modal-anual');
+
+    // Mostrar modal
+    const modal = new bootstrap.Modal(document.getElementById('modalCompra'));
+    modal.show();
+  }
 </script>
 </body>
 </html>
