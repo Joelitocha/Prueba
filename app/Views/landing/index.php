@@ -1052,19 +1052,17 @@
     });
   });
 
-  // PayPal modal rendering
-  let modalActualMensual = null;
-  let modalActualAnual = null;
-
   function abrirModalCompra(planNombre, precioMensual, precioAnual) {
     document.getElementById('modalPlanNombre').innerText = planNombre;
     document.getElementById('modalPrecioMensual').innerText = precioMensual;
     document.getElementById('modalPrecioAnual').innerText = precioAnual;
 
-    if (modalActualMensual) modalActualMensual.close();
-    if (modalActualAnual) modalActualAnual.close();
+    // 🧹 Limpiar contenedores PayPal antes de renderizar
+    document.getElementById('paypal-button-modal-mensual').innerHTML = '';
+    document.getElementById('paypal-button-modal-anual').innerHTML = '';
 
-    modalActualMensual = paypal.Buttons({
+    // Render botón mensual
+    paypal.Buttons({
       createOrder: (data, actions) => actions.order.create({
         purchase_units: [{ amount: { value: precioMensual.toString() } }]
       }),
@@ -1073,7 +1071,8 @@
       )
     }).render('#paypal-button-modal-mensual');
 
-    modalActualAnual = paypal.Buttons({
+    // Render botón anual
+    paypal.Buttons({
       createOrder: (data, actions) => actions.order.create({
         purchase_units: [{ amount: { value: precioAnual.toString() } }]
       }),
