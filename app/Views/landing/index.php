@@ -944,7 +944,7 @@
                 <!-- Columna Información -->
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-brand mb-3">
-                        <img src="assets/images/logo-light.svg" alt="RackON Logo" style="height: 40px;">
+                        <img src="assets/images/pro.png" alt="RackON Logo" style="height: 40px;">
                     </div>
                     <p class="small">Sistema de seguridad en capas para racks de servidores que combina RFID, sensores y cámaras para protección física de infraestructura crítica.</p>
                     <div class="mt-3">
