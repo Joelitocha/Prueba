@@ -10,7 +10,7 @@
     <meta property="og:title" content="RackON - Seguridad Inteligente para Racks">
     <meta property="og:description" content="Sistema IoT de seguridad para racks con acceso RFID y sensores.">
     <meta property="og:image" content=""> 
-    <meta property="og:url" content="https://www.rackon.tech">
+    <meta property="og:url" content="https://rackon.tech">
     <meta property="og:type" content="website">
     <title>RackON - Rack Security</title>
     
