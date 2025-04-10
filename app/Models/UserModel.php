@@ -6,73 +6,60 @@ use CodeIgniter\Model;
 
 class UserModel extends Model
 {
-    protected $table      = 'usuario'; // Nombre de la tabla en la base de datos
-    protected $primaryKey = 'ID_Usuario'; // Clave primaria de la tabla
-
-    protected $useAutoIncrement = true; // Indica si la clave primaria es auto-incrementable
-
-    protected $returnType     = 'array'; // Tipo de retorno para los resultados
-    protected $useSoftDeletes = false; // Indica si se utilizarán eliminaciones suaves
-
+    protected $table      = 'usuario';
+    protected $primaryKey = 'ID_Usuario';
+    protected $useAutoIncrement = true;
+    protected $returnType     = 'array';
+    protected $useSoftDeletes = false;
     protected $allowedFields = ['Nombre', 'Contraseña', 'Email', 'Ultimo_Acceso', 'ID_Rol', 'ID_Tarjeta', 'Token', 'Verificado'];
+    protected $useTimestamps = false;
 
-    protected $useTimestamps = false; // Indica si se utilizarán marcas de tiempo
-
-    // Método para insertar un nuevo usuario
     public function insertUser($data)
     {
-        return $this->db->table($this->table)->insert($data); // Inserta un nuevo usuario en la tabla
+        return $this->db->table($this->table)->insert($data);
     }
 
-    // Método para verificar si un usuario existe por su correo o nombre
     public function userExists($email, $nombre)
     {
         return $this->where('Email', $email)
                     ->orWhere('Nombre', $nombre)
-                    ->first(); // Devuelve el primer usuario que coincide con el correo o nombre
+                    ->first();
     }
 
-    // Método para obtener el nombre del rol según su ID
     public function getRoleName($id_rol)
     {
-        $db = \Config\Database::connect(); // Conecta a la base de datos
-        $query = $db->table('rol')->select('N_Rol')->where('ID_Rol', $id_rol)->get(); // Consulta el nombre del rol
-        $result = $query->getRowArray(); // Obtiene el resultado como un array
-        return $result ? $result['N_Rol'] : null; // Devuelve el nombre del rol o null si no existe
+        $db = \Config\Database::connect();
+        $query = $db->table('rol')->select('N_Rol')->where('ID_Rol', $id_rol)->get();
+        $result = $query->getRowArray();
+        return $result ? $result['N_Rol'] : null;
     }
 
-    // Método para obtener todos los usuarios
     public function getUser()
     {
-        $tabla = $this->db->table('usuario')->select('*'); // Selecciona todos los campos de la tabla 'usuario'
-        $query = $tabla->get()->getResultArray(); // Obtiene todos los resultados como un array
-        return $query; // Devuelve el array de usuarios
+        $tabla = $this->db->table('usuario')->select('*');
+        $query = $tabla->get()->getResultArray();
+        return $query;
     }
 
-    // Método para actualizar un usuario existente
-public function updateUser($id, $data)
-{
-    return $this->db->table($this->table) // Utiliza la propiedad $table en lugar de escribir 'usuario' directamente
-                    ->where(['ID_Usuario' => $id]) // Busca el usuario por ID
-                    ->update($data); // Realiza la actualización y devuelve true o false
-}
+    public function updateUser($id, $data)
+    {
+        return $this->db->table($this->table)
+                        ->where(['ID_Usuario' => $id])
+                        ->update($data);
+    }
 
-
-    // Método para obtener un usuario específico por su ID
     public function getUserbyid($id)
     {
-        $tabla = $this->db->table('usuario')->select('*'); // Selecciona todos los campos de la tabla 'usuario'
-        $tabla->where(['ID_Usuario' => $id]); // Aplica una condición para buscar el usuario por ID
-        $query = $tabla->get()->getResultArray(); // Obtiene el resultado como un array
-        return $query; // Devuelve el usuario encontrado
+        $tabla = $this->db->table('usuario')->select('*');
+        $tabla->where(['ID_Usuario' => $id]);
+        $query = $tabla->get()->getResultArray();
+        return $query;
     }
 
-    // Método para eliminar un usuario
     public function deleteUser($id)
     {
-        $builder = $this->db->table('usuario'); // Accede a la tabla 'usuario'
-        $builder->where('ID_Usuario', $id); // Aplica una condición para buscar el usuario por ID
-        return $builder->delete(); // Elimina el usuario de la tabla
+        $builder = $this->db->table('usuario');
+        $builder->where('ID_Usuario', $id);
+        return $builder->delete();
     }
 }
-?>

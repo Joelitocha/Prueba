@@ -6,57 +6,49 @@ use CodeIgniter\Model;
 
 class TarjetaModel extends Model
 {
-    protected $table = 'tarjeta_acceso'; // Nombre de la tabla en la base de datos
-    protected $primaryKey = 'ID_Tarjeta'; // Clave primaria de la tabla
-    protected $useAutoIncrement = true; // Indica si la clave primaria es auto-incrementable
+    protected $table = 'tarjeta_acceso';
+    protected $primaryKey = 'ID_Tarjeta';
+    protected $useAutoIncrement = true;
     protected $allowedFields = [
         'ID_Tarjeta', 
         'Estado', 
         'Fecha_emision', 
         'UID',
-        'Fecha_Expiracion',  // Permitirá NULL
+        'Fecha_Expiracion',
         'Intentos_Fallidos',
         'Bloqueada',
-        'Horario_Uso'       // Permitirá NULL
+        'Horario_Uso'
     ];
 
-    // Método para obtener todas las tarjetas
     public function getAllTarjetas()
     {
-        return $this->findAll(); // Devuelve todas las filas de la tabla
+        return $this->findAll();
     }
 
-    // Método para obtener una tarjeta específica por su ID
     public function getTarjetaById($id)
     {
-        return $this->find($id); // Devuelve una tarjeta según el ID proporcionado
+        return $this->find($id);
     }
 
-    // Método para insertar una nueva tarjeta
     public function insertTarjeta($data)
     {
-        return $this->insert($data); // Inserta una nueva tarjeta en la tabla
+        return $this->insert($data);
     }
 
-    // Método para actualizar una tarjeta existente
     public function updateTarjeta($id, $data)
     {
-        return $this->update($id, $data); // Actualiza una tarjeta según el ID y los datos proporcionados
+        return $this->update($id, $data);
     }
 
-    // Método para eliminar una tarjeta
     public function deleteTarjeta($id)
     {
-        return $this->delete($id); // Elimina una tarjeta según el ID proporcionado
+        return $this->delete($id);
     }
 
-    // Función para obtener el estado de la tarjeta según su ID
     public function obtenerEstado($idTarjeta)
     {
-        $tabla = $this->db->table("tarjeta_acceso"); // Accede a la tabla 'tarjeta_acceso'
-        $tabla->where('ID_Tarjeta', $idTarjeta); // Aplica una condición para buscar la tarjeta por ID
-        return $tabla->get()->getResultArray(); // Devuelve el resultado de la búsqueda como un array
+        $tabla = $this->db->table("tarjeta_acceso");
+        $tabla->where('ID_Tarjeta', $idTarjeta);
+        return $tabla->get()->getResultArray();
     }
-    
 }
-?>
