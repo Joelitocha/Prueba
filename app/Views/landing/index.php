@@ -960,11 +960,11 @@
                 <div class="col-lg-2 col-md-6">
                     <h6 class="text-uppercase text-primary mb-3">Enlaces</h6>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Términos y Condiciones</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Política de Privacidad</a></li>
                         <li class="nav-item mb-2"><a href="#header" class="nav-link p-0">Inicio</a></li>
                         <li class="nav-item mb-2"><a href="#introduction" class="nav-link p-0">Características</a></li>
                         <li class="nav-item mb-2"><a href="#contact" class="nav-link p-0">Contacto</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Política de Privacidad</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Términos y Condiciones</a></li>
                     </ul>
                 </div>
 
