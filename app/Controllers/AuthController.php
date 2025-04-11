@@ -48,7 +48,7 @@ class AuthController extends BaseController
 
             return redirect()->to('/bienvenido');
         } else {
-            return redirect()->to('/')->with('error', 'Usuario o clave incorrectos');
+            return redirect()->to('/login')->with('error', 'Usuario o clave incorrectos');
         }
     }
 
