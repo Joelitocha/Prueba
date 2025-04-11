@@ -149,7 +149,7 @@
     
     /* HEADER */
     #header {
-        background: linear-gradient(rgba(21, 35, 63, 0.7), rgba(21, 35, 63, 0.7)), url('assets/images/princ-img.jpg') center center no-repeat;
+        background: linear-gradient(rgba(21, 35, 63, 0.7), rgba(21, 35, 63, 0.7)), url('assets/images/princ.jpg') center center no-repeat;
         background-size: cover;
         color: white;
         text-align: center;
