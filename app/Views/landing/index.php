@@ -686,8 +686,23 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Nivel 2 -->
+                        <div class="card mb-4 step-card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-start">
+                                    <span class="badge bg-primary rounded-circle p-3 step-badge">3</span>
+                                    <div>
+                                        <h4 class="text-primary">Captura Visual</h4>
+                                        <p class="mb-0">
+                                            En cada acceso (ya sea autorizado o no), se activa una cámara que captura imágenes o video del entorno inmediato del rack. Esta evidencia se almacena automáticamente y puede ser revisada desde el panel de administración web.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Nivel 3 -->
                         <div class="card mb-4 step-card">
                             <div class="card-body">
                                 <div class="d-flex align-items-start">
@@ -702,20 +717,6 @@
                             </div>
                         </div>
                         
-                        <!-- Nivel 3 -->
-                        <div class="card mb-4 step-card">
-                            <div class="card-body">
-                                <div class="d-flex align-items-start">
-                                    <span class="badge bg-primary rounded-circle p-3 step-badge">3</span>
-                                    <div>
-                                        <h4 class="text-primary">Captura Visual</h4>
-                                        <p class="mb-0">
-                                            En cada acceso (ya sea autorizado o no), se activa una cámara que captura imágenes o video del entorno inmediato del rack. Esta evidencia se almacena automáticamente y puede ser revisada desde el panel de administración web.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         
                         <!-- Resumen -->
                         <div class="bg-light p-4 rounded">
