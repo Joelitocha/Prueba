@@ -691,7 +691,7 @@
                         <div class="card mb-4 step-card">
                             <div class="card-body">
                                 <div class="d-flex align-items-start">
-                                    <span class="badge bg-primary rounded-circle p-3 step-badge">3</span>
+                                    <span class="badge bg-primary rounded-circle p-3 step-badge">2</span>
                                     <div>
                                         <h4 class="text-primary">Captura Visual</h4>
                                         <p class="mb-0">
@@ -706,7 +706,7 @@
                         <div class="card mb-4 step-card">
                             <div class="card-body">
                                 <div class="d-flex align-items-start">
-                                    <span class="badge bg-primary rounded-circle p-3 step-badge">2</span>
+                                    <span class="badge bg-primary rounded-circle p-3 step-badge">3</span>
                                     <div>
                                         <h4 class="text-primary">Detección de Impacto</h4>
                                         <p class="mb-0">
