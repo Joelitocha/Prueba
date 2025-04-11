@@ -148,10 +148,10 @@ class AuthController extends BaseController
                 "Tu cuenta ha sido verificada correctamente. Ahora puedes iniciar sesión con tu email y la contraseña que acabas de establecer."
             );
 
-            return redirect()->to('/')->with('success', 'Registro completado. Ahora puedes iniciar sesión.');
+            return redirect()->to('/login')->with('success', 'Registro completado. Ahora puedes iniciar sesión.');
         }
 
-        return redirect()->to('/')->with('error', 'Token inválido o expirado.');
+        return redirect()->to('/login')->with('error', 'Token inválido o expirado.');
     }
 
     public function registerUser()
