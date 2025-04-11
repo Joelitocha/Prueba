@@ -174,3 +174,496 @@ INFO - 2025-04-11 08:10:45 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2025-04-11 08:10:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2025-04-11 08:10:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2025-04-11 08:10:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 08:11:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 08:15:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 08:17:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 08:33:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 08:34:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 08:34:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 08:34:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 08:34:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 08:34:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 08:34:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 08:34:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 08:34:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-04-11 09:24:04 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/.aws/config%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 09:24:04 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/.digitalocean/doctl/config.yaml%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 09:24:05 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/.env.mailer_url%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 09:24:06 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/.env.sparkpost%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 09:24:06 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/.s3cfg%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 09:24:07 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/api/.env%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 09:24:08 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/backups/%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 09:24:09 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/config.yml%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 09:24:09 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/configuration.php%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 09:24:10 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/database/.env%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 09:24:11 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/mailinabox/.env%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 09:24:11 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/options.php%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 09:24:12 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/private/.env%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 09:24:12 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/src/.env%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 09:24:13 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/website/config.env%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 09:24:14 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/wp-config.php%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-04-11 09:41:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:41:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:41:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:42:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:42:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:43:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:43:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:43:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:44:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:44:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:44:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:44:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:44:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:44:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:45:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:45:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:45:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:46:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:46:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:46:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:46:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:46:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:46:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:47:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:47:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:47:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:47:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:47:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:48:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:48:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:48:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:48:53 --> ✅ Cambio registrado correctamente: [09:48:53] MU: El usuario con ID "38" cambió su nombre de "Prueba" a "joel".
+
+INFO - 2025-04-11 09:48:53 --> 📥 Actualización de usuario realizada: MU: El usuario con ID "38" cambió su nombre de "Prueba" a "joel".
+INFO - 2025-04-11 09:48:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:48:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:48:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:49:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:49:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:49:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:49:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:49:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:49:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:49:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:49:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:50:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:50:04 --> ✅ Cambio registrado correctamente: [09:50:04] MR: El usuario "joel" cambió su rol de "5" a "6".
+
+INFO - 2025-04-11 09:50:04 --> 📥 Actualización de usuario realizada: MR: El usuario "joel" cambió su rol de "5" a "6".
+INFO - 2025-04-11 09:50:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:50:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:50:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:50:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:50:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:50:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:50:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:50:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:50:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:50:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:50:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:50:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:50:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:50:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:50:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:50:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:50:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:50:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:50:43 --> ✅ Cambio registrado correctamente: [09:50:43] MR: El usuario "joel" cambió su rol de "6" a "7".
+
+INFO - 2025-04-11 09:50:43 --> 📥 Actualización de usuario realizada: MR: El usuario "joel" cambió su rol de "6" a "7".
+INFO - 2025-04-11 09:50:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:50:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:50:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:50:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:50:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:50:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:50:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:51:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:51:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:51:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:51:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:52:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:52:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:52:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:52:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:53:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:53:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:53:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:53:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:53:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:53:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:53:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:53:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:53:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:53:25 --> ✅ Cambio registrado correctamente: [09:53:25] MR: El usuario "joel" cambió su rol de "7" a "5".
+
+INFO - 2025-04-11 09:53:25 --> 📥 Actualización de usuario realizada: MR: El usuario "joel" cambió su rol de "7" a "5".
+INFO - 2025-04-11 09:53:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:53:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:53:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:53:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:53:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:54:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:54:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:54:14 --> ✅ Cambio registrado correctamente: [09:54:14] MU: El usuario con ID "38" cambió su nombre de "joel" a "eigerg".
+
+INFO - 2025-04-11 09:54:14 --> 📥 Actualización de usuario realizada: MU: El usuario con ID "38" cambió su nombre de "joel" a "eigerg".
+INFO - 2025-04-11 09:54:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:54:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:54:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:54:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:54:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:54:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:55:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:55:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:55:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:55:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:55:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:55:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:55:38 --> ✅ Cambio registrado correctamente: [09:55:38] MT: El usuario "Joel Martinez Vilche" cambió su tarjeta de "2" a "41".
+
+INFO - 2025-04-11 09:55:38 --> 📥 Actualización de usuario realizada: MT: El usuario "Joel Martinez Vilche" cambió su tarjeta de "2" a "41".
+INFO - 2025-04-11 09:55:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:55:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:55:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:55:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:56:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:56:36 --> ✅ Cambio registrado correctamente: [09:56:36] MT: El usuario "Joel Martinez Vilche" cambió su tarjeta de "41" a "2".
+
+INFO - 2025-04-11 09:56:36 --> 📥 Actualización de usuario realizada: MT: El usuario "Joel Martinez Vilche" cambió su tarjeta de "41" a "2".
+INFO - 2025-04-11 09:56:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:56:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:56:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:56:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:56:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:57:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:57:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:57:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:57:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 09:57:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 10:58:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 10:58:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 10:58:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 11:46:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 11:46:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 11:46:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 11:46:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 11:46:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 11:46:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 11:46:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 11:46:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 11:46:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 11:46:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 11:46:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 11:46:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 11:46:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 11:46:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 11:46:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 11:46:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 11:46:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-04-11 11:46:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-04-11 13:04:43 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/.aws/config%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 13:04:44 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/.digitalocean/doctl/config.yaml%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 13:04:45 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/.env.mailer_url%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 13:04:46 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/.env.sparkpost%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 13:04:47 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/.s3cfg%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 13:04:47 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/api/.env%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 13:04:48 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/backups/%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 13:04:49 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/config.yml%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 13:04:50 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/configuration.php%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 13:04:50 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/database/.env%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 13:04:51 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/mailinabox/.env%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 13:04:52 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/options.php%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 13:04:53 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/private/.env%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 13:04:53 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/src/.env%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 13:04:54 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/website/config.env%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-11 13:04:55 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: """
+[Method: GET, Route: %22/wp-config.php%22]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
