@@ -622,6 +622,20 @@
                     <div class="card h-100">
                         <div class="card-body text-center">
                             <div class="card-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <h4>Monitoreo por Cámara</h4>
+                            <p>
+                                Captura imágenes o video del acceso en tiempo real, permitiendo una supervisión visual directa del entorno del rack.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <div class="card-icon">
                                 <i class="fas fa-bolt"></i>
                             </div>
                             <h4>Detección de Vibración</h4>
@@ -632,19 +646,6 @@
                     </div>
                 </div>
                 
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body text-center">
-                            <div class="card-icon">
-                                <i class="fas fa-video"></i>
-                            </div>
-                            <h4>Monitoreo por Cámara</h4>
-                            <p>
-                                Captura imágenes o video del acceso en tiempo real, permitiendo una supervisión visual directa del entorno del rack.
-                            </p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
