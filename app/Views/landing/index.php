@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Sistema de control de acceso inteligente para racks de servidores con RFID, sensores y cámaras. Seguridad de siguiente nivel.">
     <meta name="author" content="Federico Arias - Joel Martinez Vilche">
-    <meta name="keywords" content="seguridad racks, control acceso RFID, protección servidores, sistema IoT seguridad">
+    <meta name="keywords" content="seguridad racks, control acceso RFID, protección servidores, sistema IoT seguridad, rackon, rackon sistema de seguridad">
 
     <!-- Etiquetas Open Graph -->
     <meta property="og:title" content="RackON - Seguridad Inteligente para Racks">
