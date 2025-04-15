@@ -6,7 +6,7 @@
     <meta name="description" content="Sistema de control de acceso inteligente para racks de servidores con RFID, sensores y cámaras. Seguridad de siguiente nivel.">
     <meta name="author" content="Federico Arias - Joel Martinez Vilche">
     <meta name="keywords" content="seguridad racks, control acceso RFID, protección servidores, sistema IoT seguridad">
-    
+
     <!-- Etiquetas Open Graph -->
     <meta property="og:title" content="RackON - Seguridad Inteligente para Racks">
     <meta property="og:description" content="Sistema IoT de seguridad para racks con acceso RFID y sensores.">
@@ -1037,6 +1037,18 @@
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     
     <!-- Scripts personalizados -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "RackON",
+  "description": "Sistema de seguridad inteligente para racks de servidores",
+  "brand": {
+    "@type": "Brand",
+    "name": "RackON"
+  }
+}
+</script>
     <script>
     // Efecto de scroll para el navbar
     window.addEventListener('scroll', function() {
