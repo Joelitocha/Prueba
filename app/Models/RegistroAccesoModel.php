@@ -13,7 +13,6 @@ class RegistroAccesoModel extends Model
         'Fecha_Hora',
         'Resultado',
         'Accion_Tomada',
-        'Fecha_Hora_Grabacion',
         'Archivo_Video',
         'Ubicacion_Camara',
         'ID_Usuario',
