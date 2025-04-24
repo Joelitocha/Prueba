@@ -49,13 +49,15 @@
 
     .input-group input {
         width: 100%;
-        padding: 14px 20px 14px 40px;
+        padding: 14px 20px;
         border: 1px solid #444;
         border-radius: 6px;
         background-color: #3a3a3a;
         color: #fff;
         font-size: 15px;
         transition: all 0.3s ease;
+        box-sizing: border-box;
+        padding-left: 40px;
     }
 
     .input-group input:focus {
@@ -84,6 +86,7 @@
         font-weight: 500;
         cursor: pointer;
         transition: all 0.3s ease;
+        margin-top: 10px;
     }
 
     .btn-login:hover {
@@ -119,6 +122,22 @@
             padding: 30px 20px;
         }
     }
+
+    .btn-volver {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 20px;
+        background-color: #2ecc71;
+        color: white;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-volver:hover {
+        background-color: #27ae60;
+    }
     </style>
 </head>
 <body>
@@ -130,7 +149,7 @@
                 <?= session()->getFlashdata('error') ?>
             </div>
         <?php endif; ?>
-        
+
         <?php if (session()->getFlashdata('success')): ?>
             <div class="alert alert-success">
                 <?= session()->getFlashdata('success') ?>
@@ -153,12 +172,10 @@
             </button>
         </form>
 
-        <!-- Botón para volver -->
-        <form action="index.php" method="get" style="margin-top: 15px;">
-            <button type="submit" class="btn-login">
-                <i class="fas fa-arrow-left"></i> Volver a la página principal
-            </button>
-        </form>
+        <!-- Botón para volver al index -->
+        <a href="index.php" class="btn-volver">
+            <i class="fas fa-arrow-left"></i> Volver a la página principal
+        </a>
     </div>
 </body>
 </html>
