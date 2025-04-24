@@ -3,10 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
     <!-- ========== ESTILOS ========== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
+    /* === ESTILOS GENERALES === */
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
@@ -19,6 +20,7 @@
         align-items: center;
     }
 
+    /* === CONTENEDOR LOGIN === */
     .login-container {
         background-color: #2b2b2b;
         padding: 40px;
@@ -37,6 +39,7 @@
         font-weight: 600;
     }
 
+    /* === FORMULARIO === */
     .form-login {
         display: flex;
         flex-direction: column;
@@ -75,6 +78,7 @@
         color: #7f8c8d;
     }
 
+    /* === BOTÓN === */
     .btn-login {
         width: 100%;
         padding: 14px;
@@ -87,6 +91,9 @@
         cursor: pointer;
         transition: all 0.3s ease;
         margin-top: 10px;
+        display: block;
+        text-decoration: none;
+        text-align: center;
     }
 
     .btn-login:hover {
@@ -98,6 +105,7 @@
         transform: translateY(0);
     }
 
+    /* === MENSAJES === */
     .alert {
         padding: 12px 15px;
         border-radius: 4px;
@@ -117,75 +125,50 @@
         border: 1px solid #c3e6cb;
     }
 
+    /* === RESPONSIVE === */
     @media (max-width: 576px) {
         .login-container {
             padding: 30px 20px;
         }
-    }
-
-    .btn-volver {
-        width: 100%;
-        padding: 14px;
-        border-radius: 6px;
-        border: none;
-        background-color: #2ecc71;
-        color: white;
-        font-size: 16px;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        margin-top: 10px;
-        text-decoration: none;
-        display: block;
-        box-sizing: border-box;
-    }
-
-    .btn-volver:hover {
-        background-color: #27ae60;
-        transform: translateY(-2px);
-    }
-
-    .btn-volver:active {
-        transform: translateY(0);
     }
     </style>
 </head>
 <body>
     <div class="login-container">
         <h2><i class="fas fa-lock"></i> Iniciar Sesión</h2>
-
+        
         <?php if (session()->getFlashdata('error')): ?>
             <div class="alert alert-error">
                 <?= session()->getFlashdata('error') ?>
             </div>
         <?php endif; ?>
-
+        
         <?php if (session()->getFlashdata('success')): ?>
             <div class="alert alert-success">
                 <?= session()->getFlashdata('success') ?>
             </div>
         <?php endif; ?>
-
+        
         <form action="<?= base_url('login') ?>" method="POST" class="form-login">
             <div class="input-group">
                 <i class="fas fa-envelope"></i>
                 <input type="text" placeholder="Correo Electrónico" name="Email" required>
             </div>
-
+            
             <div class="input-group">
                 <i class="fas fa-key"></i>
                 <input type="password" placeholder="Contraseña" name="Contraseña" required>
             </div>
-
+            
             <button type="submit" class="btn-login">
                 <i class="fas fa-sign-in-alt"></i> Entrar
             </button>
-        </form>
 
-        <!-- Botón para volver al index -->
-        <a href="index.php" class="btn-volver">
-            <i class="fas fa-arrow-left"></i> Volver a la página principal
-        </a>
+            <!-- Botón Volver -->
+            <a href="index.php" class="btn-login">
+                <i class="fas fa-arrow-left"></i> Volver a la página principal
+            </a>
+        </form>
     </div>
 </body>
 </html>
