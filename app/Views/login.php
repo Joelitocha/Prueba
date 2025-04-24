@@ -128,7 +128,7 @@
         padding: 14px;
         border-radius: 6px;
         border: none;
-        background-color: #2ecc71;
+        background-color: #3498db; /* Azul idéntico al botón "Entrar" */
         color: white;
         font-size: 16px;
         font-weight: 500;
@@ -141,7 +141,7 @@
     }
 
     .btn-volver:hover {
-        background-color: #27ae60;
+        background-color: #2980b9; /* Azul oscuro idéntico al hover de "Entrar" */
         transform: translateY(-2px);
     }
 
@@ -182,7 +182,7 @@
             </button>
         </form>
 
-        <!-- Botón para volver al index -->
+        <!-- Botón para volver al index (ahora en azul) -->
         <a href="index.php" class="btn-volver">
             <i class="fas fa-arrow-left"></i> Volver a la página principal
         </a>
