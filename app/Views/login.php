@@ -124,19 +124,29 @@
     }
 
     .btn-volver {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 12px 20px;
+        width: 100%;
+        padding: 14px;
+        border-radius: 6px;
+        border: none;
         background-color: #2ecc71;
         color: white;
-        border-radius: 6px;
-        text-decoration: none;
+        font-size: 16px;
         font-weight: 500;
-        transition: background-color 0.3s ease;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+        text-decoration: none;
+        display: block;
+        box-sizing: border-box;
     }
 
     .btn-volver:hover {
         background-color: #27ae60;
+        transform: translateY(-2px);
+    }
+
+    .btn-volver:active {
+        transform: translateY(0);
     }
     </style>
 </head>
