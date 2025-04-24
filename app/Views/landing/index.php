@@ -973,7 +973,7 @@
 
                 <!-- Columna Contacto -->
                 <div class="col-lg-3 col-md-6">
-                    <h6 class="text-uppercase text-primary mb-3">Contacto</h6>
+                    <h6 class="text-uppercase text-primary mb-3">Contacto NDEA</h6>
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2">
                             <i class="fas fa-envelope me-2 text-primary"></i>
