@@ -75,27 +75,37 @@
         color: #7f8c8d;
     }
 
-    .btn-login {
+    /* Estilos para ambos botones (ahora idénticos) */
+    .btn-login, .btn-volver {
         width: 100%;
         padding: 14px;
         border-radius: 6px;
         border: none;
         background-color: #3498db;
         color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Misma fuente que el body */
         font-size: 16px;
-        font-weight: 500;
+        font-weight: 500; /* Mismo peso que el título h2 */
         cursor: pointer;
         transition: all 0.3s ease;
         margin-top: 10px;
+        text-align: center;
+        box-sizing: border-box;
     }
 
-    .btn-login:hover {
+    .btn-login:hover, .btn-volver:hover {
         background-color: #2980b9;
         transform: translateY(-2px);
     }
 
-    .btn-login:active {
+    .btn-login:active, .btn-volver:active {
         transform: translateY(0);
+    }
+
+    /* Estilo específico para el enlace (btn-volver) */
+    .btn-volver {
+        text-decoration: none;
+        display: block;
     }
 
     .alert {
@@ -121,32 +131,6 @@
         .login-container {
             padding: 30px 20px;
         }
-    }
-
-    .btn-volver {
-        width: 100%;
-        padding: 14px;
-        border-radius: 6px;
-        border: none;
-        background-color: #3498db; /* Azul idéntico al botón "Entrar" */
-        color: white;
-        font-size: 16px;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        margin-top: 10px;
-        text-decoration: none;
-        display: block;
-        box-sizing: border-box;
-    }
-
-    .btn-volver:hover {
-        background-color: #2980b9; /* Azul oscuro idéntico al hover de "Entrar" */
-        transform: translateY(-2px);
-    }
-
-    .btn-volver:active {
-        transform: translateY(0);
     }
     </style>
 </head>
@@ -182,7 +166,7 @@
             </button>
         </form>
 
-        <!-- Botón para volver al index (ahora en azul) -->
+        <!-- Botón para volver al index (ahora idéntico al botón "Entrar") -->
         <a href="index.php" class="btn-volver">
             <i class="fas fa-arrow-left"></i> Volver a la página principal
         </a>
