@@ -914,7 +914,7 @@
     <section id="contact" class="fullpage-section">
     <div class="container">
         <div class="section-title text-white">
-            <h2>Contáctenossss</h2>
+            <h2>Contáctenos</h2>
             <p class="lead">Complete el formulario y nos pondremos en contacto con usted</p>
         </div>
             <div class="row justify-content-center">
