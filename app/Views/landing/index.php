@@ -919,29 +919,31 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-8">
-            <form class="contact-form" action="https://formsubmit.co/rackonoficial@gmail.com" method="POST">
-    <input type="hidden" name="_next" value="https://rackon.tech/">
-    <input type="hidden" name="_from" value="Formulario de Contacto <rackonoficial@gmail.com>">
-    <input type="hidden" name="_subject" value="Nuevo mensaje desde Rackon.tech">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="text" name="_honey" style="display:none">
-    
-    <!-- Resto de tus campos del formulario -->
-    <div class="row">
-        <div class="col-md-6 mb-3">
-            <input type="text" name="nombre" class="form-control" placeholder="Nombre" required>
-        </div>
-        <div class="col-md-6 mb-3">
-            <input type="email" name="email" class="form-control" placeholder="Email" required>
-        </div>
-    </div>
-    <div class="mb-3">
-        <textarea class="form-control" name="mensaje" rows="5" placeholder="Mensaje" required></textarea>
-    </div>
-    <div class="text-center">
-        <button type="submit" class="btn-solid-lg">Enviar Mensaje</button>
-    </div>
-</form>
+                <form class="contact-form" action="https://formsubmit.co/rackonoficial@gmail.com" method="POST">
+                    <!-- Input oculto para redirección después del envío -->
+                    <input type="hidden" name="_next" value="https://rackon.tech/">
+                    <!-- Token para evitar spam -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <!-- Asunto personalizado -->
+                    <input type="hidden" name="_subject" value="Nuevo mensaje desde Rackon.tech">
+                    <!-- Para evitar que los spammers usen el formulario -->
+                    <input type="text" name="_honey" style="display:none">
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <input type="text" name="nombre" class="form-control" placeholder="Nombre" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <input type="email" name="email" class="form-control" placeholder="Email" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" name="mensaje" rows="5" placeholder="Mensaje" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn-solid-lg">Enviar Mensaje</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
