@@ -28,7 +28,528 @@
     <link href="https://unpkg.com/swiper@7/swiper-bundle.min.css" rel="stylesheet">
     
     <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="styles.css">
+    <style>
+    :root {
+        --primary-color: #7dc22b;
+        --dark-color: #161223;
+        --light-color: #f7f9fd;
+        --text-color: #53575a;
+    }
+    
+    /* Estilos base */
+    body {
+        font-family: 'Open Sans', sans-serif;
+        color: var(--text-color);
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        padding-top: 70px; /* Para el navbar fixed */
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Poppins', sans-serif;
+        color: var(--dark-color);
+        font-weight: 600;
+    }
+    
+    /* NAVBAR RESPONSIVE */
+    #navbar {
+        padding: 0.5rem 1rem;
+        background-color: var(--dark-color) !important;
+        transition: all 0.3s ease;
+    }
+    
+    #navbar .navbar-brand {
+        margin-right: 0;
+        padding: 0;
+        height: 40px;
+        display: flex;
+        align-items: center;
+    }
+    
+    #navbar .navbar-brand img {
+        height: 100%;
+        width: auto;
+    }
+    
+    #navbar .navbar-toggler {
+        margin-left: auto;
+        padding: 0.5rem;
+        border: none;
+        font-size: 1.25rem;
+        color: rgba(255,255,255,0.8);
+    }
+    
+    #navbar .navbar-collapse {
+        flex-basis: 100%;
+        justify-content: flex-end;
+    }
+    
+    #navbar .navbar-nav {
+        align-items: center;
+        padding-top: 0.5rem;
+    }
+    
+    #navbar .nav-item {
+        margin-left: 0.5rem;
+    }
+    
+    #navbar .nav-link {
+        color: rgba(255,255,255,0.8);
+        padding: 0.5rem 1rem;
+        transition: all 0.3s ease;
+    }
+    
+    #navbar .nav-link:hover,
+    #navbar .nav-link.active {
+        color: white;
+    }
+    
+    #navbar .btn-outline-light {
+        border-color: rgba(255,255,255,0.5);
+        color: white;
+        padding: 0.375rem 1rem;
+        white-space: nowrap;
+        transition: all 0.3s ease;
+        margin-left: 0.5rem;
+    }
+    
+    #navbar .btn-outline-light:hover {
+        background-color: rgba(255,255,255,0.1);
+        border-color: white;
+    }
+    
+    #navbar.scrolled {
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        padding: 0.25rem 1rem;
+    }
+    
+    /* SECCIONES GENERALES */
+    .fullpage-section {
+        width: 100%;
+        min-height: 100vh;
+        padding: 80px 0;
+        display: flex;
+        align-items: center;
+    }
+    
+    .section-title {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    
+    .section-title h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .section-title .lead {
+        font-size: 1.25rem;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    /* HEADER */
+    #header {
+        background: linear-gradient(rgba(21, 35, 63, 0.7), rgba(21, 35, 63, 0.7)), url('assets/images/princ.png') center center no-repeat;
+        background-size: cover;
+        color: white;
+        text-align: center;
+    }
+    
+    #header .h1-large {
+        font-size: 3.5rem;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* BOTONES */
+    .btn-solid-lg {
+        display: inline-block;
+        padding: 15px 30px;
+        border: 1px solid var(--primary-color);
+        border-radius: 4px;
+        background-color: var(--primary-color);
+        color: white;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+    
+    .btn-solid-lg:hover {
+        background-color: transparent;
+        color: var(--primary-color);
+    }
+    
+    /* TARJETAS */
+    .card {
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: transform 0.3s;
+        height: 100%;
+        margin-bottom: 1.5rem;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .card-icon {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+    }
+    
+    /* SECCIÓN FUNCIONAMIENTO */
+    #funcionamiento {
+        background-color: white;
+    }
+    
+    #funcionamiento .image-column {
+        min-height: 400px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    #funcionamiento .image-column img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    #funcionamiento .content-column {
+        padding: 2rem;
+    }
+    
+    #funcionamiento .step-card {
+        margin-bottom: 1.5rem;
+        border: none;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    #funcionamiento .step-badge {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+        flex-shrink: 0;
+    }
+    
+    /* SECCIÓN HARDWARE */
+    #hardware {
+        background-color: var(--light-color);
+    }
+    
+    .hardware-card {
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    /* SECCIÓN PLANES */
+    #planes {
+        background-color: var(--light-color);
+    }
+
+    .plan-card {
+        transition: all 0.3s;
+    }
+
+    .plan-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .plan-card .card-body {
+        padding: 2rem;
+    }
+
+    .plan-card ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .plan-card ul li {
+        margin-bottom: 0.5rem;
+        position: relative;
+        padding-left: 1.5rem;
+    }
+
+    .plan-card ul li:before {
+        content: "✔";
+        position: absolute;
+        left: 0;
+        color: var(--primary-color);
+    }
+
+    /* NUEVO: Mostrar/Ocultar contenido */
+    .ver-mas-contenido {
+        display: none;
+    }
+
+    .ver-mas-contenido.mostrar {
+        display: block;
+    }
+
+    .ver-mas-btn {
+        cursor: pointer;
+        color: var(--primary-color);
+        text-decoration: underline;
+        font-size: 0.9rem;
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+
+    /* Botón "Comprar" siempre abajo */
+    .btn-compra {
+        margin-top: auto;
+        font-weight: 500;
+    }
+
+    /* SECCIÓN CONTACTO */
+    #contact {
+        background: linear-gradient(rgba(2, 15, 29, 0.8), rgba(2, 15, 29, 0.8)), url('assets/images/contact-background.jpg') center center no-repeat;
+        background-size: cover;
+        color: white;
+    }
+    
+    .contact-form .form-control {
+        background-color: rgba(255,255,255,0.1);
+        border: 1px solid rgba(255,255,255,0.2);
+        color: white;
+        padding: 12px 15px;
+    }
+    
+    .contact-form .form-control::placeholder {
+        color: rgba(255,255,255,0.7);
+    }
+
+    #contact .section-title h2 {
+        color: white !important;
+    }
+
+    /* FOOTER */
+    footer {
+        background-color: var(--dark-color);
+        color: #9ba3b1;
+    }
+    
+    footer a {
+        color: #9ba3b1;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    
+    footer a:hover {
+        color: var(--primary-color);
+    }
+    
+    .social-icons a {
+        width: 40px;
+        height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: rgba(255,255,255,0.1);
+        margin-right: 0.5rem;
+        transition: all 0.3s;
+    }
+    
+    .social-icons a:hover {
+        background-color: var(--primary-color);
+        color: white;
+        transform: translateY(-3px);
+    }
+    
+    /* BOTÓN SUBIR */
+    #backToTop {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        z-index: 99;
+    }
+    
+    /* ========================================= */
+    /* MEDIA QUERIES PARA RESPONSIVE */
+    /* ========================================= */
+    
+    /* Dispositivos medianos (tablets, 768px y más) */
+    @media (min-width: 768px) {
+        #header .h1-large {
+            font-size: 4rem;
+        }
+        
+        #navbar .navbar-collapse {
+            flex-basis: auto;
+            padding-top: 0;
+        }
+        
+        #navbar .navbar-nav {
+            padding-top: 0;
+        }
+        
+        #navbar .nav-item {
+            margin-left: 0.75rem;
+        }
+        
+        .section-title h2 {
+            font-size: 3rem;
+        }
+    }
+    
+    /* Dispositivos grandes (desktops, 992px y más) */
+    @media (min-width: 992px) {
+        #navbar {
+            padding: 0.75rem 1.5rem;
+        }
+        
+        #navbar .nav-item {
+            margin-left: 1rem;
+        }
+        
+        #navbar .nav-link {
+            padding: 0.5rem 1rem;
+        }
+        
+        #navbar .btn-outline-light {
+            padding: 0.5rem 1.25rem;
+            margin-left: 1rem;
+        }
+        
+        #navbar.scrolled {
+            padding: 0.5rem 1.5rem;
+        }
+        
+        #header .h1-large {
+            font-size: 5rem;
+        }
+        
+        #funcionamiento .content-column {
+            padding: 3rem;
+        }
+    }
+    
+    /* Dispositivos pequeños (teléfonos, menos de 768px) */
+    @media (max-width: 767.98px) {
+        body {
+            padding-top: 60px;
+        }
+        
+        #header .h1-large {
+            font-size: 2.5rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+        }
+        
+        #navbar .navbar-collapse {
+            background-color: var(--dark-color);
+            padding: 1rem;
+            margin-top: 0.5rem;
+            border-radius: 0.25rem;
+            text-align: right;
+        }
+        
+        #navbar .navbar-nav {
+            align-items: flex-end;
+        }
+        
+        #navbar .nav-item {
+            margin: 0.5rem 0;
+            width: 100%;
+        }
+        
+        #navbar .nav-link {
+            padding: 0.5rem 0;
+            display: inline-block;
+        }
+        
+        #navbar .btn-outline-light {
+            margin: 0.5rem 0 0;
+            width: auto;
+            display: inline-block;
+        }
+        
+        #funcionamiento .image-column {
+            min-height: 300px;
+            order: 2;
+        }
+        
+        #funcionamiento .content-column {
+            padding: 1.5rem;
+        }
+        
+        .plan-card {
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Ajustes para sección de contacto */
+        #contact .contact-form {
+            padding: 0 15px;
+        }
+        
+        /* Ajustes para footer */
+        footer .col-lg-4, 
+        footer .col-lg-3, 
+        footer .col-lg-2 {
+            margin-bottom: 2rem;
+        }
+        
+        footer .text-md-start, 
+        footer .text-md-end {
+            text-align: center !important;
+        }
+    }
+    
+    /* Dispositivos muy pequeños (menos de 400px) */
+    @media (max-width: 400px) {
+        #header .h1-large {
+            font-size: 2rem;
+        }
+        
+        #navbar .navbar-brand img {
+            height: 35px;
+        }
+        
+        .btn-solid-lg {
+            padding: 12px 24px;
+            font-size: 0.9rem;
+        }
+        
+        .section-title h2 {
+            font-size: 1.8rem;
+        }
+        
+        .section-title .lead {
+            font-size: 1rem;
+        }
+        
+        /* Ajustes para tarjetas de hardware */
+        .hardware-card {
+            padding: 1.5rem 0.5rem;
+        }
+        
+        /* Ajustes para formulario de contacto */
+        .contact-form .form-control {
+            padding: 10px 12px;
+        }
+    }
+    
+    /* Ajustes específicos para pantallas muy pequeñas en modo horizontal */
+    @media (max-height: 500px) and (orientation: landscape) {
+        .fullpage-section {
+            min-height: auto;
+            padding: 60px 0;
+        }
+    }
+    </style>
 </head>
 <body>
     
