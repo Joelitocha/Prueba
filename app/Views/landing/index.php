@@ -1005,10 +1005,10 @@
                     <h6 class="text-uppercase text-primary mb-2">Descarga nuestra app</h6>
                     <div class="app-badges">
                         <a href="#" class="d-inline-block me-2 mb-2">
-                            <img src="assets/images/google-play-badge.png" alt="Google Play" style="height: 40px;">
+                            <img src="assets/images/playstore.png" alt="Google Play" style="height: 40px;">
                         </a>
                         <a href="#" class="d-inline-block mb-2">
-                            <img src="assets/images/app-store-badge.png" alt="App Store" style="height: 40px;">
+                            <img src="assets/images/appstore.png" alt="App Store" style="height: 40px;">
                         </a>
                     </div>
                 </div>
