@@ -1008,7 +1008,7 @@
                             <img src="assets/images/playstore.png" alt="Google Play" style="height: 40px;">
                         </a>
                         <a href="#" class="d-inline-block mb-2">
-                            <img src="assets/images/appstore.png" alt="App Store" style="height: 40px;">
+                            <img src="assets/images/app.png" alt="App Store" style="height: 40px;">
                         </a>
                     </div>
                 </div>
