@@ -911,34 +911,43 @@
 </section>
 
     <!-- Contact -->
-    <section id="contact" class="fullpage-section">
+<section id="contact" class="fullpage-section">
     <div class="container">
         <div class="section-title text-white">
             <h2>Contáctenos</h2>
             <p class="lead">Complete el formulario y nos pondremos en contacto con usted</p>
         </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <form class="contact-form">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" placeholder="Nombre" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <input type="email" class="form-control" placeholder="Email" required>
-                            </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <form class="contact-form" action="https://formsubmit.co/rackonoficial@gmail.com" method="POST">
+                    <!-- Input oculto para redirección después del envío -->
+                    <input type="hidden" name="_next" value="https://rackon.tech/">
+                    <!-- Token para evitar spam -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <!-- Asunto personalizado -->
+                    <input type="hidden" name="_subject" value="Nuevo mensaje desde Rackon.tech">
+                    <!-- Para evitar que los spammers usen el formulario -->
+                    <input type="text" name="_honey" style="display:none">
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <input type="text" name="nombre" class="form-control" placeholder="Nombre" required>
                         </div>
-                        <div class="mb-3">
-                            <textarea class="form-control" rows="5" placeholder="Mensaje" required></textarea>
+                        <div class="col-md-6 mb-3">
+                            <input type="email" name="email" class="form-control" placeholder="Email" required>
                         </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn-solid-lg">Enviar Mensaje</button>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" name="mensaje" rows="5" placeholder="Mensaje" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn-solid-lg">Enviar Mensaje</button>
+                    </div>
+                </form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="py-5">
