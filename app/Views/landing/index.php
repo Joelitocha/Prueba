@@ -959,13 +959,7 @@
                         <img src="assets/images/pro.png" alt="RackON Logo" style="height: 40px;">
                     </div>
                     <p class="small">Sistema de seguridad en capas para racks de servidores que combina RFID, sensores y cámaras para protección física de infraestructura crítica.</p>
-                    <div class="mt-3">
-                        <h6 class="text-uppercase text-primary mb-2">Newsletter</h6>
-                        <div class="input-group mb-3">
-                            <input type="email" class="form-control form-control-sm" placeholder="Tu correo">
-                            <button class="btn btn-primary btn-sm" type="button">Suscribir</button>
-                        </div>
-                    </div>
+
                 </div>
 
                 <!-- Columna Enlaces -->
