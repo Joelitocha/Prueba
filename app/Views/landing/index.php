@@ -969,8 +969,8 @@
                         <li class="nav-item mb-2"><a href="#header" class="nav-link p-0">Inicio</a></li>
                         <li class="nav-item mb-2"><a href="#introduction" class="nav-link p-0">Características</a></li>
                         <li class="nav-item mb-2"><a href="#contact" class="nav-link p-0">Contacto</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Política de Privacidad</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Términos y Condiciones</a></li>
+                        <li class="nav-item mb-2"><a href="#En Proceso" class="nav-link p-0">Política de Privacidad</a></li>
+                        <li class="nav-item mb-2"><a href="#En Proceso" class="nav-link p-0">Términos y Condiciones</a></li>
                     </ul>
                 </div>
 
@@ -1020,9 +1020,6 @@
             <div class="row">
                 <div class="col-md-6 text-center text-md-start">
                     <p class="small mb-0">&copy; <script>document.write(new Date().getFullYear())</script> RackON. Todos los derechos reservados.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <p class="small mb-0">Desarrollado con <i class="fas fa-heart text-danger"></i> por tu equipo</p>
                 </div>
             </div>
         </div>
