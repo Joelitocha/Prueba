@@ -587,7 +587,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h1 class="h1-large text-white">Sistema Inteligente de Seguridad para Racks de Servidores</h1>
+                    <h1 class="h1-large text-white">Sistema Inteligente de Seguridad para Servidores Rack</h1>
                     <a class="btn-solid-lg mt-3" href="#introduction">Conocer más</a>
                 </div>
             </div>
