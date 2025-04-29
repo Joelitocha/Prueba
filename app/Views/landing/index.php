@@ -30,10 +30,10 @@
     <!-- Estilos personalizados -->
     <style>
     :root {
-        --primary-color: #7dc22b;
+        --primary-color: #0d6efd;
         --dark-color: #161223;
         --light-color: #f7f9fd;
-        --text-color: #53575a;
+        --text-color: #000000;
     }
     
     /* Estilos base */
