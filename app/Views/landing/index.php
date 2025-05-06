@@ -1037,18 +1037,26 @@
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     
     <!-- Scripts personalizados -->
-    <script type="application/ld+json">
+<script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "https://schema.org/",
   "@type": "Product",
   "name": "RackON",
   "description": "Sistema de seguridad inteligente para racks de servidores",
   "brand": {
     "@type": "Brand",
     "name": "RackON"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "MXN",
+    "price": "1999.00",
+    "availability": "https://schema.org/InStock",
+    "url": "https://rackon.tech/"
   }
 }
 </script>
+
     <script>
     // Efecto de scroll para el navbar
     window.addEventListener('scroll', function() {
