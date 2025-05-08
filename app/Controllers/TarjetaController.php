@@ -162,7 +162,7 @@ public function desbloquearTarjeta()
     $id = $this->request->getPost('ID_Tarjeta');
     $model = new TarjetaModel();
     
-    $model->update($id, [
+    $model->updateTarjeta($id, [
         'Estado' => 0,
         'Intentos_Fallidos' => 0 // Resetear intentos
     ]);
