@@ -395,8 +395,8 @@
           <div class="form-group">
               <label for="bloqueada">Estado de Bloqueo</label>
               <select name="bloqueada" id="bloqueada">
-                <option value="0" <?= $tarjeta['Estado'] == 0 ? 'selected' : '' ?>>Desbloqueada</option>
-                <option value="1" <?= $tarjeta['Estado'] == 1 ? 'selected' : '' ?>>Bloqueada</option>
+                <option value="0" <?= $tarjeta['Bloqueada'] == 0 ? 'selected' : '' ?>>Desbloqueada</option>
+                <option value="1" <?= $tarjeta['Bloqueada'] == 1 ? 'selected' : '' ?>>Bloqueada</option>
               </select>
           </div>
           
