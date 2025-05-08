@@ -404,10 +404,6 @@
                     <span class="detail-label">Intentos Fallidos:</span>
                     <span class="detail-value"><?= $tarjeta['intentos_fallidos'] ?></span>
                 </div>
-                <div class="detail-row <?= $tarjeta['bloqueada'] == 'Sí' ? 'status-inactive' : '' ?>">
-                    <span class="detail-label">Bloqueada:</span>
-                    <span class="detail-value"><?= $tarjeta['bloqueada'] ?></span>
-                </div>
                 <div class="detail-row">
                     <span class="detail-label">Horario Uso:</span>
                     <span class="detail-value"><?= $tarjeta['horario_uso'] ?></span>
