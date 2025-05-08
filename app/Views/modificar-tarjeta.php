@@ -603,58 +603,54 @@
     
     <div class="tabla-container">
     <table class="modificar">
-        <thead>
-          <tr>
-            <th>ID Tarjeta</th>
-            <th>UID</th>
-            <th>Estado</th>
-            <th>Bloqueada</th>
-            <th>Intentos Fallidos</th>
-            <th>Fecha Expiración</th>
-            <th>Horario Uso</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php foreach ($tarjetas as $tarjeta): ?>
-            <tr>
-              <td data-label="ID Tarjeta"><?= esc($tarjeta['ID_Tarjeta']); ?></td>
-              <td data-label="UID"><?= esc($tarjeta['UID']); ?></td>
-              <td data-label="Estado" class="<?= $tarjeta['Estado'] == 1 ? 'estado-activa' : 'estado-inactiva'; ?>">
-                <?= $tarjeta['Estado'] == 1 ? 'Activa' : 'Inactiva'; ?>
-              </td>
-              <td data-label="Bloqueada" class="<?= $tarjeta['Estado'] == 1 ? 'estado-bloqueada' : ''; ?>">
-                <?= $tarjeta['Estado'] == 1 ? 'Sí' : 'No'; ?>
-              </td>
-              <td data-label="Intentos Fallidos"><?= esc($tarjeta['Intentos_Fallidos']); ?></td>
-              <td data-label="Fecha Expiración"><?= esc($tarjeta['Fecha_Expiracion'] ?? 'Sin expiración'); ?></td>
-              <td data-label="Horario Uso"><?= esc($tarjeta['Horario_Uso'] ?? 'Sin restricción'); ?></td>
-              <td data-label="Acciones">
-                <div class="btn-group">
-                  <form action="<?= site_url('modificar-tarjeta2') ?>" method="post">
-                    <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
-                    <input type="submit" value="Modificar" class="btn-modificar">
-                  </form>
-                  <?php if ($tarjeta['Bloqueada'] == 1): ?>
-                    <form action="<?= site_url('desbloquear-tarjeta') ?>" method="post">
-                      <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
-                      <input type="submit" value="Desbloquear" class="btn-modificar" style="background-color: #27ae60;">
-                    </form>
-                  <?php else: ?>
-                    <form action="<?= site_url('bloquear-tarjeta') ?>" method="post">
-                      <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
-                      <input type="submit" value="Bloquear" class="btn-modificar" style="background-color: #e67e22;">
-                    </form>
-                  <?php endif; ?>
-                  <button type="button" class="btn-eliminar" onclick="mostrarModal('<?= esc($tarjeta['ID_Tarjeta']); ?>')">
-                    Eliminar
-                  </button>
-                </div>
-              </td>
-            </tr>
-          <?php endforeach; ?>
-        </tbody>
-      </table>
+    <thead>
+      <tr>
+        <th>ID Tarjeta</th>
+        <th>UID</th>
+        <th>Estado</th>
+        <th>Intentos Fallidos</th>
+        <th>Fecha Expiración</th>
+        <th>Horario Uso</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach ($tarjetas as $tarjeta): ?>
+        <tr>
+          <td data-label="ID Tarjeta"><?= esc($tarjeta['ID_Tarjeta']); ?></td>
+          <td data-label="UID"><?= esc($tarjeta['UID']); ?></td>
+          <td data-label="Estado" class="<?= $tarjeta['Estado'] == 1 ? 'estado-activa' : 'estado-inactiva'; ?>">
+            <?= $tarjeta['Estado'] == 1 ? 'Activa' : 'Inactiva'; ?>
+          </td>
+          <td data-label="Intentos Fallidos"><?= esc($tarjeta['Intentos_Fallidos']); ?></td>
+          <td data-label="Fecha Expiración"><?= esc($tarjeta['Fecha_Expiracion'] ?? 'Sin expiración'); ?></td>
+          <td data-label="Horario Uso"><?= esc($tarjeta['Horario_Uso'] ?? 'Sin restricción'); ?></td>
+          <td data-label="Acciones">
+            <div class="btn-group">
+              <form action="<?= site_url('modificar-tarjeta2') ?>" method="post">
+                <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
+                <input type="submit" value="Modificar" class="btn-modificar">
+              </form>
+              <?php if ($tarjeta['Bloqueada'] == 1): ?>
+                <form action="<?= site_url('desbloquear-tarjeta') ?>" method="post">
+                  <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
+                  <input type="submit" value="Desbloquear" class="btn-modificar" style="background-color: #27ae60;">
+                </form>
+              <?php else: ?>
+                <form action="<?= site_url('bloquear-tarjeta') ?>" method="post">
+                  <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
+                  <input type="submit" value="Bloquear" class="btn-modificar" style="background-color: #e67e22;">
+                </form>
+              <?php endif; ?>
+              <button type="button" class="btn-eliminar" onclick="mostrarModal('<?= esc($tarjeta['ID_Tarjeta']); ?>')">
+                Eliminar
+              </button>
+            </div>
+          </td>
+        </tr>
+      <?php endforeach; ?>
+    </tbody>
+  </table>
     </div>
   </div>
 
