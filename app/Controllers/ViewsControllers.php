@@ -26,7 +26,6 @@ class ViewsControllers extends BaseController
             'fecha_emision' => $data[0]['Fecha_emision'],
             'fecha_expiracion' => $data[0]['Fecha_Expiracion'] ?? 'No expira',
             'intentos_fallidos' => $data[0]['Intentos_Fallidos'],
-            'bloqueada' => $data[0]['Bloqueada'] == 1 ? 'Sí' : 'No',
             'horario_uso' => $data[0]['Horario_Uso'] ?? 'Sin restricción'
         ];
         
