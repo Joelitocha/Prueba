@@ -392,12 +392,6 @@
             <small class="form-text text-muted">Dejar vacío para tarjeta sin restricción horaria</small>
           </div>
           
-          <div class="form-group">
-              <label for="intentos_fallidos">Intentos Fallidos</label>
-              <input type="number" name="intentos_fallidos" id="intentos_fallidos" 
-                     value="<?= esc($tarjeta['Intentos_Fallidos'] ?? 0); ?>" min="0" max="3">
-              <small class="form-text text-muted">Máximo 3 intentos antes de bloqueo automático</small>
-          </div>
 
           <button type="submit" class="btn-submit">Actualizar Tarjeta</button>
           <a href="<?= site_url('modificar-tarjeta') ?>" class="btn-volver">Volver</a>
