@@ -393,14 +393,6 @@
           </div>
           
           <div class="form-group">
-              <label for="bloqueada">Estado de Bloqueo</label>
-              <select name="bloqueada" id="bloqueada">
-                <option value="0" <?= $tarjeta['Bloqueada'] == 0 ? 'selected' : '' ?>>Desbloqueada</option>
-                <option value="1" <?= $tarjeta['Bloqueada'] == 1 ? 'selected' : '' ?>>Bloqueada</option>
-              </select>
-          </div>
-          
-          <div class="form-group">
               <label for="intentos_fallidos">Intentos Fallidos</label>
               <input type="number" name="intentos_fallidos" id="intentos_fallidos" 
                      value="<?= esc($tarjeta['Intentos_Fallidos'] ?? 0); ?>" min="0" max="3">
