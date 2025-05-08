@@ -631,7 +631,7 @@
                 <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
                 <input type="submit" value="Modificar" class="btn-modificar">
               </form>
-              <?php if ($tarjeta['Estado'] == 1): ?>
+              <?php if ($tarjeta['Estado'] == 0): ?>
                 <form action="<?= site_url('desbloquear-tarjeta') ?>" method="post">
                   <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
                   <input type="submit" value="Desbloquear" class="btn-modificar" style="background-color: #27ae60;">
