@@ -38,7 +38,9 @@ class TarjetaModel extends Model
     {
         $update=$this->db->table($this->table);
 
-        return $update->update($data, [$this->primaryKey => $id]);
+        if($update->update($data, [$this->primaryKey => $id])){
+            return true;
+        }
     }
 
     public function deleteTarjeta($id)
