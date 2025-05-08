@@ -623,8 +623,8 @@
               <td data-label="Estado" class="<?= $tarjeta['Estado'] == 1 ? 'estado-activa' : 'estado-inactiva'; ?>">
                 <?= $tarjeta['Estado'] == 1 ? 'Activa' : 'Inactiva'; ?>
               </td>
-              <td data-label="Bloqueada" class="<?= $tarjeta['Bloqueada'] == 1 ? 'estado-bloqueada' : ''; ?>">
-                <?= $tarjeta['Bloqueada'] == 1 ? 'Sí' : 'No'; ?>
+              <td data-label="Bloqueada" class="<?= $tarjeta['Estado'] == 1 ? 'estado-bloqueada' : ''; ?>">
+                <?= $tarjeta['Estado'] == 1 ? 'Sí' : 'No'; ?>
               </td>
               <td data-label="Intentos Fallidos"><?= esc($tarjeta['Intentos_Fallidos']); ?></td>
               <td data-label="Fecha Expiración"><?= esc($tarjeta['Fecha_Expiracion'] ?? 'Sin expiración'); ?></td>
