@@ -568,7 +568,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="#header">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#introduction">¿Qué es RackON?</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#funcionamiento">Cómo funciona</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#funcionamiento">¿Cómo funciona?</a></li>
                     <li class="nav-item"><a class="nav-link" href="#hardware">Hardware</a></li>
                     <li class="nav-item"><a class="nav-link" href="#planes">Planes</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contáctenos</a></li>
