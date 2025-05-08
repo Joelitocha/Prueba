@@ -381,14 +381,6 @@
           <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
           
           <div class="form-group">
-              <label for="estado">Estado de la Tarjeta</label>
-              <select name="estado" id="estado" required>
-                <option value="1" <?= $tarjeta['Estado'] == 1 ? 'selected' : '' ?>>Activa</option>
-                <option value="0" <?= $tarjeta['Estado'] == 0 ? 'selected' : '' ?>>Inactiva</option>
-              </select>
-          </div>
-          
-          <div class="form-group">
                 <label for="fecha_expiracion">Fecha de Expiración</label>
                 <input type="date" name="fecha_expiracion" id="fecha_expiracion" value="<?= !empty($tarjeta['Fecha_Expiracion']) ? esc($tarjeta['Fecha_Expiracion']) : '' ?>">
                 <small class="form-text text-muted">Dejar vacío para tarjeta sin expiración</small>
@@ -403,8 +395,8 @@
           <div class="form-group">
               <label for="bloqueada">Estado de Bloqueo</label>
               <select name="bloqueada" id="bloqueada">
-                <option value="0" <?= $tarjeta['Bloqueada'] == 0 ? 'selected' : '' ?>>Desbloqueada</option>
-                <option value="1" <?= $tarjeta['Bloqueada'] == 1 ? 'selected' : '' ?>>Bloqueada</option>
+                <option value="0" <?= $tarjeta['Estado'] == 0 ? 'selected' : '' ?>>Desbloqueada</option>
+                <option value="1" <?= $tarjeta['Estado'] == 1 ? 'selected' : '' ?>>Bloqueada</option>
               </select>
           </div>
           
