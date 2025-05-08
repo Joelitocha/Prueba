@@ -148,16 +148,13 @@ public function bloquearTarjeta()
 {
     $id = $this->request->getPost('ID_Tarjeta');
     $model = new TarjetaModel();
-    
-    echo $id;
 
-    var_dump($model);
-    // $model->updateTarjeta($id, [
-    //     'Estado' => 1,
-    //     'Intentos_Fallidos' => 3 // Forzar bloqueo
-    // ]);
+     $model->updateTarjeta($id, [
+         'Estado' => 1,
+         'Intentos_Fallidos' => 3 // Forzar bloqueo
+     ]);
     
-    // return redirect()->to('/modificar-tarjeta')->with('success', 'Tarjeta bloqueada exitosamente');
+     return redirect()->to('/modificar-tarjeta')->with('success', 'Tarjeta bloqueada exitosamente');
 }
 
 public function desbloquearTarjeta()
