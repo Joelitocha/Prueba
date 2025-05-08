@@ -601,7 +601,6 @@
       </div>
     </div>
     
-    <div class="tabla-container">
     <table class="modificar">
     <thead>
       <tr>
@@ -631,15 +630,17 @@
                 <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
                 <input type="submit" value="Modificar" class="btn-modificar">
               </form>
-              <?php if ($tarjeta['Bloqueada'] == 1): ?>
-                <form action="<?= site_url('desbloquear-tarjeta') ?>" method="post">
+              <?php if ($tarjeta['Estado'] == 1): ?>
+                <form action="<?= site_url('cambiar-estado-tarjeta') ?>" method="post">
                   <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
-                  <input type="submit" value="Desbloquear" class="btn-modificar" style="background-color: #27ae60;">
+                  <input type="hidden" name="nuevo_estado" value="0">
+                  <input type="submit" value="Desactivar" class="btn-modificar" style="background-color: #e67e22;">
                 </form>
               <?php else: ?>
-                <form action="<?= site_url('bloquear-tarjeta') ?>" method="post">
+                <form action="<?= site_url('cambiar-estado-tarjeta') ?>" method="post">
                   <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
-                  <input type="submit" value="Bloquear" class="btn-modificar" style="background-color: #e67e22;">
+                  <input type="hidden" name="nuevo_estado" value="1">
+                  <input type="submit" value="Activar" class="btn-modificar" style="background-color: #27ae60;">
                 </form>
               <?php endif; ?>
               <button type="button" class="btn-eliminar" onclick="mostrarModal('<?= esc($tarjeta['ID_Tarjeta']); ?>')">
