@@ -36,7 +36,9 @@ class TarjetaModel extends Model
 
     public function updateTarjeta($id, $data)
     {
-        return $this->update($id, $data);
+        $update=$this->db->table($this->table);
+
+        return $update->update($id, $data);
     }
 
     public function deleteTarjeta($id)

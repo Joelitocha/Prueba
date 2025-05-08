@@ -150,7 +150,7 @@ public function bloquearTarjeta()
     $model = new TarjetaModel();
 
      $model->updateTarjeta($id, [
-         'Estado' => 1,
+         'Estado' => 0,
          'Intentos_Fallidos' => 3 // Forzar bloqueo
      ]);
     
@@ -163,7 +163,7 @@ public function desbloquearTarjeta()
     $model = new TarjetaModel();
     
     $model->updateTarjeta($id, [
-        'Estado' => 0,
+        'Estado' => 1,
         'Intentos_Fallidos' => 0 // Resetear intentos
     ]);
     
