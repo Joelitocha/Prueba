@@ -5,7 +5,7 @@ COSAS QUE HACER
 
 
 ESTO ES TOTALMENTE NECESARIO DE AGREGAR Y TENER EN CUENTA:
-✅ FLUJO PROPUESTO: Desde la compra hasta la conexión remota
+FLUJO PROPUESTO: Desde la compra hasta la conexión remota
 Aquí te presento un flujo realista, seguro y escalable para lo que estás construyendo:
 
 1. Compra del dispositivo
@@ -99,7 +99,7 @@ Si tiene éxito, la guarda como principal.
 
 Si falla, sigue usando la anterior o vuelve al modo Access Point.
 
-✅ Recomendaciones técnicas
+Recomendaciones técnicas
 Elemento	Herramienta recomendada
 Firmware seguro	MicroPython congelado o C/C++ (Arduino IDE)
 Clave de acceso	Token único por dispositivo (guardado en config.json)
@@ -107,7 +107,7 @@ Modo AP + servidor web	MicroPython + socket o picoweb
 Comunicaciones servidor	HTTP(S) POST con JSON
 Panel web de gestión	Ya lo tienes con CodeIgniter 4, puedes ampliarlo
 
-🔐 Seguridad
+Seguridad
 Nunca guardes contraseñas de WiFi sin cifrar en el dispositivo.
 
 El archivo config.json debe estar protegido si es posible.
