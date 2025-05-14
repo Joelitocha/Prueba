@@ -42,7 +42,7 @@
         color: var(--text-color);
         overflow-x: hidden;
         scroll-behavior: smooth;
-        padding-top: 70px; /* Para el navbar fixed */
+        padding-top: 50px; 
     }
     
     h1, h2, h3, h4, h5, h6 {
