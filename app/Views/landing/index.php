@@ -251,6 +251,8 @@
     /* SECCIÓN PLANES */
     #planes {
         background-color: var(--light-color);
+        padding-top: 80px;
+        padding-bottom: 80px;
     }
 
     .plan-card {
@@ -817,7 +819,7 @@
 </div>
 
 <!-- SECCIÓN PLANES -->
-<section id="planes" class="py-5">
+<section id="planes" class="fullpage-section">
   <div class="container">
     <div class="section-title text-center mb-5">
       <h2>Planes de Compra de RackON</h2>
