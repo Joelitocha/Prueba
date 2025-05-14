@@ -923,12 +923,11 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-8">
-            <form class="contact-form" action="https://formsubmit.co/rackonoficial@gmail.com" method="POST">
+            <form id="contactForm" class="contact-form" action="https://formsubmit.co/rackonoficial@gmail.com" method="POST">
                 <!-- Configuración mejorada -->
-                <input type="hidden" name="_next" value="https://rackon.tech"> 
                 <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_timeout" value="10000">
-                <input type="text" name="_honey" style="display:none"> <!-- Trampa para bots -->
+                <input type="hidden" name="_template" value="box">
+                <input type="text" name="_honey" style="display:none">
                 <textarea name="_blacklist" style="display:none"></textarea> <!-- Permite enlaces -->
 
                 <!-- Campos normales -->
@@ -951,6 +950,19 @@
         </div>
     </div>
 </section>
+<!-- Modal de agradecimiento -->
+<div class="modal fade" id="thanksModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center p-5">
+                <i class="fas fa-check-circle text-success mb-4" style="font-size: 3rem;"></i>
+                <h3>¡Gracias por contactarnos!</h3>
+                <p class="mb-4">Tu mensaje ha sido enviado correctamente. Nos pondremos en contacto pronto.</p>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
     <!-- Footer -->
     <footer class="py-5">
@@ -1059,6 +1071,35 @@
   }
 }
 </script>
+    <script>
+    // Versión con JavaScript puro (vanilla)
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Envía el formulario manualmente
+    fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this)
+    })
+    .then(response => {
+        if (response.ok) {
+            // Muestra el modal
+            const modal = new bootstrap.Modal(document.getElementById('thanksModal'));
+            modal.show();
+            
+            // Desplázate suavemente a #contact sin cambiar la URL
+            document.querySelector('#contact').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+            
+            // Resetea el formulario
+            this.reset();
+        }
+    })
+    .catch(error => console.error('Error:', error));
+});
+    </script>
 
     <script>
     // Efecto de scroll para el navbar
