@@ -925,7 +925,7 @@
             <div class="col-lg-8">
             <form class="contact-form" action="https://formsubmit.co/rackonoficial@gmail.com" method="POST">
                 <!-- Configuración mejorada -->
-                <input type="hidden" name="_next" value="https://rackon.tech/gracias.html"> 
+                <input type="hidden" name="_next" value="https://rackon.tech"> 
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_timeout" value="10000">
                 <input type="text" name="_honey" style="display:none"> <!-- Trampa para bots -->
