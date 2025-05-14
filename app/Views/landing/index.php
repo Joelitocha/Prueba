@@ -847,8 +847,8 @@
             <a href="#" class="ver-menos text-danger mb-3 d-none">Ver menos</a>
             <div class="mt-auto">
               <p><strong>Dispositivo:</strong> $92 USD</p>
-              <p><strong>Mensual:</strong> $25 USD</p>
-              <p><strong>Anual:</strong> $270 USD</p>
+              <p><strong>Servicio Mensual:</strong> $25 USD</p>
+              <p><strong>Servicio Anual:</strong> $270 USD</p>
               <button class="btn btn-outline-success w-100"
                       onclick="abrirModalCompra('Secure Access', 117, 362)">Comprar</button>
             </div>
@@ -874,8 +874,8 @@
             <a href="#" class="ver-menos text-danger mb-3 d-none">Ver menos</a>
             <div class="mt-auto">
               <p><strong>Dispositivo:</strong> $462 USD</p>
-              <p><strong>Mensual:</strong> $45 USD</p>
-              <p><strong>Anual:</strong> $459 USD</p>
+              <p><strong>Servicio Mensual:</strong> $45 USD</p>
+              <p><strong>Servicio Anual:</strong> $459 USD</p>
               <button class="btn btn-outline-primary w-100"
                       onclick="abrirModalCompra('Secure Plus', 507, 921)">Comprar</button>
             </div>
@@ -901,8 +901,8 @@
             <a href="#" class="ver-menos text-danger mb-3 d-none">Ver menos</a>
             <div class="mt-auto">
               <p><strong>Dispositivo:</strong> $924 USD</p>
-              <p><strong>Mensual:</strong> $70 USD</p>
-              <p><strong>Anual:</strong> $672 USD</p>
+              <p><strong>Servicio Mensual:</strong> $70 USD</p>
+              <p><strong>Servicio Anual:</strong> $672 USD</p>
               <button class="btn btn-outline-danger w-100"
                       onclick="abrirModalCompra('Secure Pro', 994, 1596)">Comprar</button>
             </div>
