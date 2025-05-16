@@ -12,22 +12,22 @@ class AuthFilter implements FilterInterface
     {
         $session = session();
         
-        // Verificar si el usuario no está logueado
         if (!$session->get('logged_in')) {
-            return redirect()->to('/login')->with('error', 'Por favor inicia sesión');
+            return redirect()->to('/login')
+                ->with('error', 'Por favor inicia sesión para acceder a esta página');
         }
-        
-        // Verificar rol si es necesario (para rutas específicas)
-        if (!empty($arguments)) {
-            $userRol = $session->get('ID_Rol');
-            if (!in_array($userRol, $arguments)) {
-                return redirect()->back()->with('error', 'No tienes permisos para acceder a esta sección');
+
+        if ($arguments) {
+            $userRole = $session->get('ID_Rol');
+            if (!in_array($userRole, explode(',', $arguments))) {
+                return redirect()->back()
+                    ->with('error', 'No tienes permisos para acceder a esta sección');
             }
         }
     }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        // No es necesario hacer nada después
+        // No es necesario implementar nada aquí
     }
 }
