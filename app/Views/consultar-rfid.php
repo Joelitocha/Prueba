@@ -1,6 +1,11 @@
 <?php
     $session = session();
     $rol = $session->get("ID_Rol");
+
+        // Verificar si la sesión está iniciada
+        if (!isset($session)) {
+            $session = session();
+        }
 ?>
 
 <!doctype html>
