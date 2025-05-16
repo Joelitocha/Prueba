@@ -7,13 +7,12 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 // Configuración de grupos de rutas con filtros
-$routes->group('', ['filter' => 'authfilter'], function($routes) {
-
+$routes->group('', ['filter' => '\App\Filters\AuthFilter'], function($routes) {
     // Rutas que requieren autenticación (cualquier rol)
     $routes->get('/bienvenido', 'AuthController::welcome');
     
     // Rutas para gestión de usuarios (solo admin - rol 5)
-    $routes->group('', ['filter' => 'authfilter:5'], function($routes) {
+    $routes->group('', ['filter' => 'authfilter'], function($routes) {
         $routes->get('/modificar-usuario', 'UserController::VistaModificar');
         $routes->post('/modificar-usuario2', 'UserController::VistaModificar2');
         $routes->get('/eliminar-usuarios', 'UserController::VistaEliminar');
