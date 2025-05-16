@@ -1,6 +1,8 @@
 <?php
 
 use CodeIgniter\Router\RouteCollection;
+use App\Controllers\AuthController;
+use App\Filters\AuthFilter;
 
 /**
  * @var RouteCollection $routes
