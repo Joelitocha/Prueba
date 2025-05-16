@@ -1,12 +1,16 @@
-<?php
-    $session = session();
-    $rol = $session->get("ID_Rol");
-
-        // Verificar si la sesión está iniciada
-        if (!isset($session)) {
-            $session = session();
-        }
+    <?php 
+$session = session();
+$rol = $session->get("ID_Rol");
 ?>
+
+<!-- Mostrar opciones según rol -->
+<?php if ($rol == 5): ?>
+<!-- Opciones para administrador -->
+<?php elseif ($rol == 6): ?>
+<!-- Opciones para supervisor -->
+<?php elseif ($rol == 7): ?>
+<!-- Opciones para usuario normal -->
+<?php endif; ?>
 
 <!doctype html>
 <html lang="en">

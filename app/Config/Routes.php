@@ -6,67 +6,60 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
-// Ruta para la página de inicio de sesión
-$routes->get('/', 'AuthController::index');  // Página de login
+// Configuración de grupos de rutas con filtros
+$routes->group('', ['filter' => 'auth'], function($routes) {
+    // Rutas que requieren autenticación (cualquier rol)
+    $routes->get('/bienvenido', 'AuthController::welcome');
+    
+    // Rutas para gestión de usuarios (solo admin - rol 5)
+    $routes->group('', ['filter' => 'auth:5'], function($routes) {
+        $routes->get('/modificar-usuario', 'UserController::VistaModificar');
+        $routes->post('/modificar-usuario2', 'UserController::VistaModificar2');
+        $routes->get('/eliminar-usuarios', 'UserController::VistaEliminar');
+        $routes->post('/actualizar-usuario', 'UserController::actualizarUsuario');
+        $routes->post('/eliminar-usuarios', 'UserController::eliminarUsuario');
+        $routes->get('/register', 'AuthController::registro');
+        $routes->post('/register2', 'AuthController::registerUser');
+        
+        // Rutas para gestión de tarjetas (solo admin)
+        $routes->get('/modificar-tarjeta', 'TarjetaController::VistaModificar');
+        $routes->post('/modificar-tarjeta2', 'TarjetaController::VistaModificar2');
+        $routes->post('/actualizar-tarjeta', 'TarjetaController::update');
+        $routes->get('/eliminar-tarjeta', 'TarjetaController::gestionar');
+        $routes->post('/eliminar-tarjeta', 'TarjetaController::delete');
+        $routes->get('/crear-tarjeta', 'CrearTarjetaController::index');
+        $routes->post('/crear-tarjeta', 'CrearTarjetaController::store');
+    });
+    
+    // Rutas para admin y supervisor (roles 5 y 6)
+    $routes->group('', ['filter' => 'auth:5,6'], function($routes) {
+        $routes->get('/ver-alertas', 'ViewsControllers::VistaAlertas');
+        $routes->get('/ver-accesos-tarjeta', 'RegistrosAccesoController::verRegistros');
+        $routes->get('/historial-cambios', 'HistorialController::index');
+        $routes->post('/historial-cambios/ver', 'HistorialController::verArchivo');
+    });
+    
+    // Rutas para todos los usuarios autenticados (roles 5, 6 y 7)
+    $routes->get('/consultar-rfid', 'ViewsControllers::VistaConsultar');
+    $routes->post('/consultar-rfid', 'TarjetaController::verEstadoTarjeta');
+    $routes->post('bloquear-tarjeta', 'TarjetaController::bloquearTarjeta');
+    $routes->post('desbloquear-tarjeta', 'TarjetaController::desbloquearTarjeta');
+});
 
-// Proceso de login
-$routes->post('/login', 'AuthController::loginUser');  // Iniciar sesión
-$routes->get('/login', 'AuthController::inicio');  // Página de bienvenida
+// Rutas públicas (sin autenticación)
+$routes->get('/', 'AuthController::index');
+$routes->post('/login', 'AuthController::loginUser');
+$routes->get('/login', 'AuthController::inicio');
+$routes->get('/verify', 'AuthController::verifyEmail');
+$routes->get('/set-password', 'AuthController::showSetPassword');
+$routes->post('/complete-registration', 'AuthController::completeRegistration');
+$routes->get('/logout', 'AuthController::logout');
+$routes->post('/logout', 'AuthController::logout');
 
-// Ruta para la página de bienvenida después de iniciar sesión
-$routes->get('/bienvenido', 'AuthController::welcome');  // Página de bienvenida
+// Rutas para ESP32 (públicas o con autenticación alternativa si es necesario)
+$routes->post('cargar_acceso', 'esp32controller::insertar_registro');
 
-// Rutas para registro y verificación de usuario
-$routes->get('/register', 'AuthController::registro');  // Formulario de registro
-$routes->post('/register2', 'AuthController::registerUser');  // Proceso de registro
-$routes->get('/verify', 'AuthController::verifyEmail'); // Verificación de email (GET)
-
-// Nuevas rutas para el flujo de establecimiento de contraseña
-$routes->get('/set-password', 'AuthController::showSetPassword'); // Mostrar formulario para establecer contraseña
-$routes->post('/complete-registration', 'AuthController::completeRegistration'); // Procesar contraseña
-
-// Rutas para cerrar sesión
-$routes->get('/logout', 'AuthController::logout');  // Cerrar sesión (GET)
-$routes->post('/logout', 'AuthController::logout');  // Cerrar sesión (POST)
-
-// Rutas protegidas (protegidas por el filtro 'auth')
-$routes->get('/modificar-usuario', 'UserController::VistaModificar');  // Vista para modificar usuario
-$routes->post('/modificar-usuario2', 'UserController::VistaModificar2');  // Proceso de modificación de usuario
-$routes->get('/eliminar-usuarios', 'UserController::VistaEliminar');  // Vista para eliminar usuarios
-$routes->get('/consultar-rfid', 'ViewsControllers::VistaConsultar');  // Vista para consultar RFID
-$routes->get('/ver-alertas', 'ViewsControllers::VistaAlertas');  // Vista para ver alertas
-
-// Otras rutas protegidas
-$routes->post('/actualizar-usuario', 'UserController::actualizarUsuario');  // Proceso de actualización de usuario
-$routes->post('/eliminar-usuarios', 'UserController::eliminarUsuario');  // Proceso de eliminación de usuario
-
-// Rutas para gestión de tarjetas
-$routes->get('/gestionar-tarjeta', 'TarjetaController::store-tarjeta');  // Vista para gestionar tarjetas
-$routes->post('/store-tarjeta', 'TarjetaController::store');  // Proceso de creación de tarjeta
-$routes->get('/modificar-tarjeta', 'TarjetaController::VistaModificar');  // Vista para modificar tarjeta
-$routes->post('/modificar-tarjeta2', 'TarjetaController::VistaModificar2');  // Proceso de modificación de tarjeta
-$routes->post('/actualizar-tarjeta', 'TarjetaController::update');  // Proceso de actualización de tarjeta
-$routes->get('/eliminar-tarjeta', 'TarjetaController::gestionar');  // Vista para eliminar tarjeta
-$routes->post('/eliminar-tarjeta', 'TarjetaController::delete');  // Proceso de eliminación de tarjeta
-$routes->post('bloquear-tarjeta', 'TarjetaController::bloquearTarjeta');
-$routes->post('desbloquear-tarjeta', 'TarjetaController::desbloquearTarjeta');
-
-// Rutas para el registro de accesos a través de tarjeta
-$routes->get('/ver-accesos-tarjeta', 'RegistrosAccesoController::verRegistros');  // Ver registros de acceso por tarjeta
-
-// Rutas para ver los registros 
-$routes->get('/historial-cambios', 'HistorialController::index');
-$routes->post('/historial-cambios/ver', 'HistorialController::verArchivo');
-
-// Rutas adicionales
-$routes->get('/crear-tarjeta', 'CrearTarjetaController::index');  // Vista para crear tarjeta
-$routes->post('/crear-tarjeta', 'CrearTarjetaController::store');  // Proceso de creación de tarjeta
-
-$routes->post('/consultar-rfid', 'TarjetaController::verEstadoTarjeta');  // Consultar estado de la tarjeta
-
-// Rutas para ESP32 deaaa
-
-$routes->post('cargar_acceso', 'esp32controller::insertar_registro');  // Registrar acceso desde ESP32
-
-
-
+// Ruta de fallback para páginas no encontradas
+$routes->set404Override(function() {
+    return view('errors/html/error_404');
+});

@@ -190,9 +190,16 @@ class AuthController extends BaseController
     public function welcome()
     {
         $session = session();
-        if (!$session->has('username')) {
-            return redirect()->to('/');
+        if (!$session->get('logged_in')) {
+            return redirect()->to('/login')->with('error', 'Por favor inicia sesión');
         }
+        
+        // Verificar rol para mostrar contenido específico
+        $rol = $session->get('ID_Rol');
+        if (!in_array($rol, [5, 6, 7])) {
+            return redirect()->to('/login')->with('error', 'Rol no válido');
+        }
+        
         return view("inicio");
     }
 
