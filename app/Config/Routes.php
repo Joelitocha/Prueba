@@ -12,7 +12,7 @@ $routes->group('', ['filter' => '\App\Filters\AuthFilter'], function($routes) {
     $routes->get('/bienvenido', 'AuthController::welcome');
     
     // Rutas para gestión de usuarios (solo admin - rol 5)
-    $routes->group('', ['filter' => 'auth:5'], function($routes) {
+    $routes->group('', ['filter' => 'authfilter:5'], function($routes) {
         $routes->get('/modificar-usuario', 'UserController::VistaModificar');
         $routes->post('/modificar-usuario2', 'UserController::VistaModificar2');
         $routes->get('/eliminar-usuarios', 'UserController::VistaEliminar');
@@ -32,7 +32,7 @@ $routes->group('', ['filter' => '\App\Filters\AuthFilter'], function($routes) {
     });
     
     // Rutas para admin y supervisor (roles 5 y 6)
-    $routes->group('', ['filter' => 'auth:5,6'], function($routes) {
+    $routes->group('', ['filter' => 'authfilter:5,6'], function($routes) {
         $routes->get('/ver-alertas', 'ViewsControllers::VistaAlertas');
         $routes->get('/ver-accesos-tarjeta', 'RegistrosAccesoController::verRegistros');
         $routes->get('/historial-cambios', 'HistorialController::index');
