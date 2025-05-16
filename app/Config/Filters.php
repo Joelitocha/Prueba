@@ -34,7 +34,7 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
-        'auth'     => AuthFilter::class, // Asegúrate de usar la barra invertida inicia
+        'auth'     => \App\Filters\AuthFilter::class, // Asegúrate de usar la barra invertida inicia
     ];
 
     /**
