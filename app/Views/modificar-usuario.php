@@ -12,7 +12,14 @@
         echo "No tienes permiso para entrar en esta vista";
         exit;
     }
-?>
+    ?>
+<?php if ($rol == 5): ?>
+<!-- Opciones para administrador -->
+<?php elseif ($rol == 6): ?>
+<!-- Opciones para supervisor -->
+<?php elseif ($rol == 7): ?>
+<!-- Opciones para usuario normal -->
+<?php endif; ?>
 
 <!DOCTYPE html>
 <html lang="en">
