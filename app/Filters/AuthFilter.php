@@ -11,26 +11,33 @@ class AuthFilter implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-        $session = Services::session(); // Usamos el helper confiable de CodeIgniter
-
-        // Verifica si el usuario ha iniciado sesión
-        if (!$session->get('logged_in')) {
+        $session = \Config\Services::session();
+        
+        // Debug: Verificar contenido completo de la sesión
+        // var_dump($session->get()); exit;
+    
+        // Verificar autenticación
+        if (!$session->has('logged_in') || $session->get('logged_in') !== true) {
             return redirect()->to('/login')
-                ->with('error', 'Por favor inicia sesión para acceder a esta página');
+                   ->with('error', 'Por favor inicia sesión para acceder a esta página');
         }
-
-        // Si se especificaron roles permitidos, validarlos
-        if ($arguments) {
+    
+        // Verificar roles si se especifican
+        if (!empty($arguments)) {
             $userRole = $session->get('ID_Rol');
-
-            // Si no tiene rol o no está permitido, redirige
-            if ($userRole === null || !in_array($userRole, $arguments)) {
+            
+            if ($userRole === null) {
+                $session->destroy();
+                return redirect()->to('/login')
+                       ->with('error', 'Sesión inválida: rol no definido');
+            }
+    
+            if (!in_array($userRole, $arguments)) {
                 return redirect()->back()
-                    ->with('error', 'No tienes permisos para acceder a esta sección');
+                       ->with('error', 'No tienes permisos para esta sección');
             }
         }
-
-        // Si todo está correcto, deja pasar
+    
         return null;
     }
 
