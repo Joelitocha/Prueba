@@ -12,7 +12,7 @@ class AuthFilter implements FilterInterface
     {
         $session = session();
         
-        if ($session->get('logged_in')) {
+        if (!$session->get('logged_in')) {
             return redirect()->to('/login')
                 ->with('error', 'Por favor inicia sesión para acceder a esta página');
         }
