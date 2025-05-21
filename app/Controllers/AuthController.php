@@ -26,26 +26,35 @@ class AuthController extends BaseController
         $model = new UserModel();
         $email = $this->request->getPost('Email');
         $password = $this->request->getPost('Contraseña');
-
+    
         $user = $model->where('Email', $email)->first();
-
+    
         if ($user && password_verify($password, $user['Contraseña'])) {
             if ($user['Verificado'] == 0) {
                 return redirect()->to('/')->with('error', 'Cuenta no verificada. Por favor, revisa tu correo.');
             }
-
+    
             $model->update($user['ID_Usuario'], ['Ultimo_Acceso' => date('Y-m-d H:i:s')]);
-
-            $session = session();
-            $datos = [
-                "user_id" => $user["ID_Usuario"],
-                "logged_in" => true,
-                "username" => $user["Nombre"],
-                "ID_Rol" => $user["ID_Rol"],
+    
+            // Regenerar ID de sesión para prevenir fixation attacks
+            session()->regenerate(true);
+            
+            $sessionData = [
+                "user_id"    => $user["ID_Usuario"],
+                "logged_in"  => true,
+                "username"   => $user["Nombre"],
+                "ID_Rol"     => $user["ID_Rol"],
                 "ID_tarjeta" => $user["ID_Tarjeta"]
             ];
-            $session->set($datos);
-
+            
+            session()->set($sessionData);
+    
+            // Verificar inmediatamente que los datos se guardaron
+            if (session()->get('user_id') !== $user["ID_Usuario"]) {
+                log_message('error', 'Falló al guardar datos de sesión para usuario: ' . $user["ID_Usuario"]);
+                return redirect()->to('/login')->with('error', 'Error al iniciar sesión. Intente nuevamente.');
+            }
+    
             return redirect()->to('/bienvenido');
         } else {
             return redirect()->to('/login')->with('error', 'Usuario o clave incorrectos');
