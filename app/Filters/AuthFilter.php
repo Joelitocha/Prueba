@@ -24,6 +24,9 @@ class AuthFilter implements FilterInterface
                     ->with('error', 'No tienes permisos para acceder a esta sección');
             }
         }
+        if($session->get('logged_in')){
+            return redirect()->to('/bienvenido');
+        }
     }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
