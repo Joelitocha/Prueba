@@ -1,598 +1,6 @@
-CRITICAL - 2025-05-16 00:59:16 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "pack-*.pack"
-[Method: GET, Route: .git/objects/pack/pack-%2A.pack]
-in SYSTEMPATH/Router/Router.php on line 737.
- 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
- 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
- 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 01:00:32 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "pack-*.pack"
-[Method: GET, Route: .git/objects/pack/pack-%2A.pack]
-in SYSTEMPATH/Router/Router.php on line 737.
- 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
- 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
- 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 07:54:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 07:55:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 07:55:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 07:55:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 07:55:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 07:55:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 07:55:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 07:55:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 07:55:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 07:55:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 07:55:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 07:55:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 07:55:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 07:56:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:32:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:32:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:32:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:33:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:33:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:33:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:33:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:33:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:34:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:34:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:45:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:45:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:46:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:46:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:46:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:46:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:46:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:46:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:58:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:58:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:58:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:58:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:58:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:58:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:58:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:58:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:58:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:58:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:58:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:58:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:59:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:59:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:59:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:59:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:59:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 09:59:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:00:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:00:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:00:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:00:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:00:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:00:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:01:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:01:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:01:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:01:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:01:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:01:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:01:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:02:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:02:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:02:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:02:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:05:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:05:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:05:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:20:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:20:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:20:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:20:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:21:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:21:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:22:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:22:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:22:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:22:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:22:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:27:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:27:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:27:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 10:27:53 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: bienvenido]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 10:28:04 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: bienvenido]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 10:28:04 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: bienvenido]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 10:28:05 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: bienvenido]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 10:28:05 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: bienvenido]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 10:28:05 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: bienvenido]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 10:28:06 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: bienvenido]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 10:28:06 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: bienvenido]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 10:29:10 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: bienvenido]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 10:31:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:31:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 10:31:24 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: bienvenido]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 10:36:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:40:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:40:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:40:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 10:40:50 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: modificar-usuario]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 10:47:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:47:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:48:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:49:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:49:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:49:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 10:49:13 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: modificar-usuario]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 10:49:15 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: modificar-usuario]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 10:49:16 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: modificar-usuario]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 10:49:16 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: modificar-usuario]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 10:49:25 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: modificar-tarjeta]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 10:49:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 10:49:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 11:00:49 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: modificar-usuario]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 11:00:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 11:00:52 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: modificar-usuario]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 11:01:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 11:02:01 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: modificar-tarjeta]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 11:02:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 11:02:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 11:02:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 11:02:13 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: ver-alertas]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 11:02:15 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: ver-accesos-tarjeta]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 11:02:17 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: historial-cambios]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 11:02:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 11:02:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 11:02:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 11:02:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 11:02:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 11:03:31 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: modificar-tarjeta]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 11:03:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 11:04:29 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: modificar-usuario]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 11:11:37 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: modificar-usuario]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 11:11:38 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: modificar-usuario]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 11:16:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 11:16:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 11:16:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 11:16:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 11:16:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 11:16:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 11:20:23 --> CodeIgniter\Filters\Exceptions\FilterException: "authfilter" filter must have a matching alias defined.
-[Method: GET, Route: modificar-usuario]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 11:20:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 11:20:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 11:22:43 --> CodeIgniter\Filters\Exceptions\FilterException: "authfilter" filter must have a matching alias defined.
-[Method: GET, Route: modificar-usuario]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 11:22:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 11:24:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 11:24:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 11:24:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 11:25:27 --> CodeIgniter\Filters\Exceptions\FilterException: "auth" filter must have a matching alias defined.
-[Method: GET, Route: modificar-tarjeta]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 11:25:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 11:26:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 11:26:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 11:27:34 --> CodeIgniter\Filters\Exceptions\FilterException: "authfilter" filter must have a matching alias defined.
-[Method: GET, Route: bienvenido]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 11:27:58 --> CodeIgniter\Filters\Exceptions\FilterException: "authfilter" filter must have a matching alias defined.
-[Method: GET, Route: bienvenido]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 11:28:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 11:28:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 11:28:02 --> CodeIgniter\Filters\Exceptions\FilterException: "authfilter" filter must have a matching alias defined.
-[Method: GET, Route: bienvenido]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 11:28:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 11:32:12 --> CodeIgniter\Filters\Exceptions\FilterException: "authfilter" filter must have a matching alias defined.
-[Method: GET, Route: bienvenido]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 11:35:06 --> CodeIgniter\Filters\Exceptions\FilterException: "authfilter" filter must have a matching alias defined.
-[Method: GET, Route: bienvenido]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 11:40:01 --> CodeIgniter\Filters\Exceptions\FilterException: "authfilter" filter must have a matching alias defined.
-[Method: GET, Route: bienvenido]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 11:40:13 --> CodeIgniter\Filters\Exceptions\FilterException: "authfilter" filter must have a matching alias defined.
-[Method: GET, Route: bienvenido]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 12:05:42 --> CodeIgniter\Filters\Exceptions\FilterException: "authfilter" filter must have a matching alias defined.
-[Method: GET, Route: bienvenido]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 12:07:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 12:45:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 12:51:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:00:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:00:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 13:00:29 --> CodeIgniter\Filters\Exceptions\FilterException: "authfilter" filter must have a matching alias defined.
-[Method: GET, Route: bienvenido]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 13:00:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:00:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:01:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:01:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:01:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:01:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 13:01:43 --> CodeIgniter\Filters\Exceptions\FilterException: "authfilter" filter must have a matching alias defined.
-[Method: GET, Route: modificar-usuario]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 13:01:45 --> CodeIgniter\Filters\Exceptions\FilterException: "authfilter" filter must have a matching alias defined.
-[Method: GET, Route: modificar-tarjeta]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 13:01:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 13:01:49 --> CodeIgniter\Filters\Exceptions\FilterException: "authfilter" filter must have a matching alias defined.
-[Method: GET, Route: ver-alertas]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 13:01:52 --> CodeIgniter\Filters\Exceptions\FilterException: "authfilter" filter must have a matching alias defined.
-[Method: GET, Route: ver-accesos-tarjeta]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 13:01:55 --> CodeIgniter\Filters\Exceptions\FilterException: "authfilter" filter must have a matching alias defined.
-[Method: GET, Route: historial-cambios]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 13:02:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:02:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:02:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:03:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 13:03:41 --> ErrorException: Undefined variable $message
-[Method: GET, Route: wp-content/plugins/paid-memberships-pro/js/pmpro-checkout.js]
+INFO - 2025-05-21 00:00:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-21 00:53:21 --> ErrorException: Undefined variable $message
+[Method: GET, Route: dns-query]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -604,44 +12,16 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 13:04:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:04:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:04:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:04:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:04:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:04:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:04:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:04:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:04:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:04:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:05:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:05:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:05:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:05:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 13:06:04 --> CodeIgniter\Filters\Exceptions\FilterException: "authfilter" filter must have a matching alias defined.
-[Method: GET, Route: modificar-usuario]
-in SYSTEMPATH/Filters/Filters.php on line 495.
- 1 SYSTEMPATH/Filters/Filters.php(495): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
- 2 SYSTEMPATH/Filters/Filters.php(547): CodeIgniter\Filters\Filters->enableFilter()
- 3 SYSTEMPATH/CodeIgniter.php(469): CodeIgniter\Filters\Filters->enableFilters()
- 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
- 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
- 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 13:06:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:06:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:06:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:06:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:06:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:06:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:06:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:06:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:06:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:06:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:06:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:32:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 13:38:27 --> ErrorException: Undefined variable $message
-[Method: GET, Route: .git/config]
+INFO - 2025-05-21 01:20:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 01:21:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 01:29:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 01:29:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 01:30:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 01:30:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 01:31:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 01:41:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-21 01:51:06 --> ErrorException: Undefined variable $message
+[Method: GET, Route: sitemaps.xml]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -653,14 +33,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 13:49:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 13:59:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 14:08:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 14:19:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 14:22:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 14:24:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 14:25:16 --> ErrorException: Undefined variable $message
-[Method: GET, Route: cdn.js]
+CRITICAL - 2025-05-21 01:51:11 --> ErrorException: Undefined variable $message
+[Method: GET, Route: sitemap_index.xml]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -672,8 +46,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 14:25:16 --> ErrorException: Undefined variable $message
-[Method: GET, Route: dist/js/bootstrap.bundle.min.js]
+CRITICAL - 2025-05-21 01:52:42 --> ErrorException: Undefined variable $message
+[Method: GET, Route: sitemap_index.xml]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -685,8 +59,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 14:25:16 --> ErrorException: Undefined variable $message
-[Method: GET, Route: swiper-bundle.min.js]
+CRITICAL - 2025-05-21 01:52:42 --> ErrorException: Undefined variable $message
+[Method: GET, Route: atom.xml]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -698,14 +72,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 14:29:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 14:30:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 14:31:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 14:38:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 15:05:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 15:16:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 15:21:04 --> ErrorException: Undefined variable $message
-[Method: GET, Route: .git/config]
+CRITICAL - 2025-05-21 01:53:56 --> ErrorException: Undefined variable $message
+[Method: GET, Route: sitemap.txt]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -717,8 +85,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 15:41:45 --> ErrorException: Undefined variable $message
-[Method: GET, Route: wordpress/wp-admin/setup-config.php]
+CRITICAL - 2025-05-21 01:54:11 --> ErrorException: Undefined variable $message
+[Method: GET, Route: atom.xml]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -730,8 +98,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 15:41:45 --> ErrorException: Undefined variable $message
-[Method: GET, Route: wp-admin/setup-config.php]
+CRITICAL - 2025-05-21 01:56:01 --> ErrorException: Undefined variable $message
+[Method: GET, Route: sitemap.xml.gz]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -743,8 +111,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 15:42:48 --> ErrorException: Undefined variable $message
-[Method: GET, Route: wp-admin/setup-config.php]
+CRITICAL - 2025-05-21 01:56:06 --> ErrorException: Undefined variable $message
+[Method: GET, Route: sitemaps.xml]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -756,8 +124,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 15:45:35 --> ErrorException: Undefined variable $message
-[Method: GET, Route: wordpress/wp-admin/setup-config.php]
+CRITICAL - 2025-05-21 01:59:57 --> ErrorException: Undefined variable $message
+[Method: GET, Route: sitemap.txt]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -769,8 +137,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 16:12:27 --> ErrorException: Undefined variable $message
-[Method: POST, Route: api/v1/validate/code]
+CRITICAL - 2025-05-21 02:14:13 --> ErrorException: Undefined variable $message
+[Method: GET, Route: sitemap.xml.gz]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -782,8 +150,9 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 16:16:59 --> ErrorException: Undefined variable $message
-[Method: GET, Route: assets/images/rackon-og.jpg]
+INFO - 2025-05-21 02:47:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-21 02:47:20 --> ErrorException: Undefined variable $message
+[Method: GET, Route: phpinfo.php]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -795,12 +164,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 17:07:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 18:35:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 18:38:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 18:49:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 18:59:51 --> ErrorException: Undefined variable $message
-[Method: GET, Route: ALFA_DATA]
+CRITICAL - 2025-05-21 02:47:21 --> ErrorException: Undefined variable $message
+[Method: GET, Route: test.php]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -812,9 +177,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 19:00:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 19:05:22 --> ErrorException: Undefined variable $message
-[Method: GET, Route: .vscode/sftp.json]
+CRITICAL - 2025-05-21 02:47:22 --> ErrorException: Undefined variable $message
+[Method: GET, Route: _profiler/phpinfo]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -826,327 +190,7 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 19:08:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 19:10:51 --> ErrorException: Undefined variable $message
-[Method: GET, Route: deployment-config.json]
-in APPPATH/Views/errors/html/error_404.php on line 77.
- 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
- 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
- 5 APPPATH/Config/Routes.php(64): view()
- 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
- 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
- 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
-10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 19:13:42 --> ErrorException: Undefined variable $message
-[Method: GET, Route: sftp-config.json]
-in APPPATH/Views/errors/html/error_404.php on line 77.
- 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
- 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
- 5 APPPATH/Config/Routes.php(64): view()
- 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
- 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
- 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
-10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 19:16:30 --> ErrorException: Undefined variable $message
-[Method: GET, Route: sftp.json]
-in APPPATH/Views/errors/html/error_404.php on line 77.
- 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
- 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
- 5 APPPATH/Config/Routes.php(64): view()
- 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
- 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
- 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
-10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 19:19:13 --> ErrorException: Undefined variable $message
-[Method: GET, Route: .git/config]
-in APPPATH/Views/errors/html/error_404.php on line 77.
- 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
- 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
- 5 APPPATH/Config/Routes.php(64): view()
- 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
- 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
- 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
-10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 19:21:15 --> ErrorException: Undefined variable $message
-[Method: GET, Route: .ftpconfig]
-in APPPATH/Views/errors/html/error_404.php on line 77.
- 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
- 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
- 5 APPPATH/Config/Routes.php(64): view()
- 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
- 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
- 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
-10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 19:23:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 19:24:15 --> ErrorException: Undefined variable $message
-[Method: GET, Route: config.json]
-in APPPATH/Views/errors/html/error_404.php on line 77.
- 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
- 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
- 5 APPPATH/Config/Routes.php(64): view()
- 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
- 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
- 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
-10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 19:25:06 --> ErrorException: Undefined variable $message
-[Method: GET, Route: wordpress/wp-admin/setup-config.php]
-in APPPATH/Views/errors/html/error_404.php on line 77.
- 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
- 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
- 5 APPPATH/Config/Routes.php(64): view()
- 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
- 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
- 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
-10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 19:25:50 --> ErrorException: Undefined variable $message
-[Method: GET, Route: config/configuration.yml]
-in APPPATH/Views/errors/html/error_404.php on line 77.
- 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
- 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
- 5 APPPATH/Config/Routes.php(64): view()
- 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
- 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
- 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
-10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 19:26:33 --> ErrorException: Undefined variable $message
-[Method: GET, Route: wp-admin/setup-config.php]
-in APPPATH/Views/errors/html/error_404.php on line 77.
- 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
- 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
- 5 APPPATH/Config/Routes.php(64): view()
- 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
- 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
- 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
-10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 19:27:26 --> ErrorException: Undefined variable $message
-[Method: GET, Route: wordpress/wp-admin/setup-config.php]
-in APPPATH/Views/errors/html/error_404.php on line 77.
- 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
- 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
- 5 APPPATH/Config/Routes.php(64): view()
- 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
- 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
- 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
-10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 19:27:30 --> ErrorException: Undefined variable $message
-[Method: GET, Route: config/databases.yml]
-in APPPATH/Views/errors/html/error_404.php on line 77.
- 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
- 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
- 5 APPPATH/Config/Routes.php(64): view()
- 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
- 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
- 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
-10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 19:27:55 --> ErrorException: Undefined variable $message
-[Method: GET, Route: wp-admin/setup-config.php]
-in APPPATH/Views/errors/html/error_404.php on line 77.
- 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
- 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
- 5 APPPATH/Config/Routes.php(64): view()
- 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
- 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
- 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
-10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 19:28:15 --> ErrorException: Undefined variable $message
-[Method: GET, Route: wordpress/wp-admin/setup-config.php]
-in APPPATH/Views/errors/html/error_404.php on line 77.
- 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
- 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
- 5 APPPATH/Config/Routes.php(64): view()
- 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
- 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
- 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
-10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 19:30:31 --> ErrorException: Undefined variable $message
-[Method: GET, Route: application.properties]
-in APPPATH/Views/errors/html/error_404.php on line 77.
- 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
- 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
- 5 APPPATH/Config/Routes.php(64): view()
- 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
- 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
- 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
-10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 19:31:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 19:34:32 --> ErrorException: Undefined variable $message
-[Method: GET, Route: config/secrets.yml]
-in APPPATH/Views/errors/html/error_404.php on line 77.
- 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
- 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
- 5 APPPATH/Config/Routes.php(64): view()
- 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
- 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
- 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
-10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 19:37:06 --> ErrorException: Undefined variable $message
-[Method: GET, Route: etc/postfix/main.cf]
-in APPPATH/Views/errors/html/error_404.php on line 77.
- 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
- 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
- 5 APPPATH/Config/Routes.php(64): view()
- 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
- 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
- 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
-10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 19:38:53 --> ErrorException: Undefined variable $message
-[Method: GET, Route: sites/default/settings.php]
-in APPPATH/Views/errors/html/error_404.php on line 77.
- 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
- 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
- 5 APPPATH/Config/Routes.php(64): view()
- 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
- 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
- 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
-10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 19:40:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 19:41:03 --> ErrorException: Undefined variable $message
-[Method: GET, Route: settings.py]
-in APPPATH/Views/errors/html/error_404.php on line 77.
- 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
- 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
- 5 APPPATH/Config/Routes.php(64): view()
- 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
- 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
- 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
-10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 19:44:37 --> ErrorException: Undefined variable $message
-[Method: GET, Route: app/etc/local.xml]
-in APPPATH/Views/errors/html/error_404.php on line 77.
- 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
- 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
- 5 APPPATH/Config/Routes.php(64): view()
- 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
- 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
- 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
-10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 19:46:58 --> ErrorException: Undefined variable $message
-[Method: GET, Route: etc/mail/sendmail.cf]
-in APPPATH/Views/errors/html/error_404.php on line 77.
- 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
- 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
- 5 APPPATH/Config/Routes.php(64): view()
- 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
- 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
- 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
-10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 19:49:59 --> ErrorException: Undefined variable $message
-[Method: GET, Route: .aws/credentials]
-in APPPATH/Views/errors/html/error_404.php on line 77.
- 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
- 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
- 5 APPPATH/Config/Routes.php(64): view()
- 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
- 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
- 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
-10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 19:51:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 19:51:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 19:52:12 --> ErrorException: Undefined variable $message
-[Method: GET, Route: mailer.ini]
-in APPPATH/Views/errors/html/error_404.php on line 77.
- 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
- 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
- 5 APPPATH/Config/Routes.php(64): view()
- 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
- 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
- 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
-10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 19:54:31 --> ErrorException: Undefined variable $message
-[Method: GET, Route: config.json]
-in APPPATH/Views/errors/html/error_404.php on line 77.
- 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
- 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
- 5 APPPATH/Config/Routes.php(64): view()
- 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
- 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
- 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
-10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 19:54:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 19:56:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 19:57:41 --> ErrorException: Undefined variable $message
-[Method: GET, Route: .ftpconfig]
-in APPPATH/Views/errors/html/error_404.php on line 77.
- 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
- 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
- 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
- 5 APPPATH/Config/Routes.php(64): view()
- 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
- 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
- 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
-10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 19:58:03 --> ErrorException: Undefined variable $message
+CRITICAL - 2025-05-21 02:47:24 --> ErrorException: Undefined variable $message
 [Method: GET, Route: .env]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
@@ -1159,7 +203,103 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:02:04 --> ErrorException: Undefined variable $message
+INFO - 2025-05-21 02:47:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 02:47:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-21 02:47:28 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .aws/credentials]
+in APPPATH/Views/errors/html/error_404.php on line 77.
+ 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(64): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-05-21 03:07:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 03:07:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-21 03:17:49 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .git/config]
+in APPPATH/Views/errors/html/error_404.php on line 77.
+ 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(64): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-05-21 03:20:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-21 03:27:39 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wp-admin/setup-config.php]
+in APPPATH/Views/errors/html/error_404.php on line 77.
+ 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(64): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-21 03:27:44 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wordpress/wp-admin/setup-config.php]
+in APPPATH/Views/errors/html/error_404.php on line 77.
+ 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(64): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-21 03:29:34 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wordpress/wp-admin/setup-config.php]
+in APPPATH/Views/errors/html/error_404.php on line 77.
+ 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(64): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-21 03:30:51 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wp-admin/setup-config.php]
+in APPPATH/Views/errors/html/error_404.php on line 77.
+ 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(64): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-21 04:24:29 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .env]
+in APPPATH/Views/errors/html/error_404.php on line 77.
+ 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(64): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-21 04:24:29 --> ErrorException: Undefined variable $message
 [Method: GET, Route: api/.env]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
@@ -1172,8 +312,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:03:58 --> ErrorException: Undefined variable $message
-[Method: GET, Route: backend/.env]
+CRITICAL - 2025-05-21 04:24:30 --> ErrorException: Undefined variable $message
+[Method: GET, Route: app/.env]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1185,8 +325,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:05:52 --> ErrorException: Undefined variable $message
-[Method: GET, Route: core/.env]
+CRITICAL - 2025-05-21 04:24:31 --> ErrorException: Undefined variable $message
+[Method: GET, Route: current/.env]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1198,8 +338,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:07:21 --> ErrorException: Undefined variable $message
-[Method: GET, Route: sftp.json]
+CRITICAL - 2025-05-21 04:24:31 --> ErrorException: Undefined variable $message
+[Method: GET, Route: laravel/.env]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1211,8 +351,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:10:49 --> ErrorException: Undefined variable $message
-[Method: GET, Route: a2billing/customer/templates/default/footer.tpl]
+CRITICAL - 2025-05-21 04:24:32 --> ErrorException: Undefined variable $message
+[Method: GET, Route: i.php]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1224,14 +364,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 20:11:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 20:43:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 20:43:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 20:43:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 20:43:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 20:43:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 20:43:31 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 04:24:32 --> ErrorException: Undefined variable $message
+[Method: GET, Route: info]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1243,8 +377,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:43:31 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 04:24:33 --> ErrorException: Undefined variable $message
+[Method: GET, Route: info.php]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1256,8 +390,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:43:34 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 04:24:33 --> ErrorException: Undefined variable $message
+[Method: GET, Route: phpinfo.php]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1269,8 +403,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:43:35 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 04:24:34 --> ErrorException: Undefined variable $message
+[Method: GET, Route: phpinfo]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1282,8 +416,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:43:35 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 04:24:35 --> ErrorException: Undefined variable $message
+[Method: GET, Route: php_info]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1295,8 +429,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:43:36 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 04:24:35 --> ErrorException: Undefined variable $message
+[Method: GET, Route: _profiler/phpinfo]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1308,8 +442,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:43:38 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 04:24:36 --> ErrorException: Undefined variable $message
+[Method: GET, Route: app_dev.php/_profiler/phpinfo]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1321,8 +455,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:43:38 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 04:24:36 --> ErrorException: Undefined variable $message
+[Method: POST, Route: /]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1334,8 +468,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:43:39 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 04:24:37 --> ErrorException: Undefined variable $message
+[Method: POST, Route: /]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1347,8 +481,9 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:43:43 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+INFO - 2025-05-21 04:58:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-21 05:35:22 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wp-admin/setup-config.php]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1360,8 +495,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:43:43 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 05:35:31 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wordpress/wp-admin/setup-config.php]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1373,8 +508,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:43:45 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 05:35:45 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wordpress/wp-admin/setup-config.php]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1386,8 +521,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:43:45 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 05:36:10 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wp-admin/setup-config.php]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1399,8 +534,20 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:43:45 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+INFO - 2025-05-21 05:39:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 05:57:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 06:02:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 06:02:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 06:02:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 06:02:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 06:12:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 06:34:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 06:39:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 06:48:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 06:55:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 07:14:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-21 07:37:31 --> ErrorException: Undefined variable $message
+[Method: GET, Route: recordings/theme/main.css]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1412,8 +559,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:43:46 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:39:48 --> ErrorException: Undefined variable $message
+[Method: OPTIONS, Route: /]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1425,8 +572,19 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:43:46 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+INFO - 2025-05-21 07:39:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-21 07:39:51 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "nice ports,"
+[Method: GET, Route: nice%20ports,/Trinity.txt.bak]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-21 07:50:30 --> ErrorException: Undefined variable $message
+[Method: GET, Route: x86]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1438,8 +596,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:43:46 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:50:30 --> ErrorException: Undefined variable $message
+[Method: GET, Route: 1.exe]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1451,8 +609,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:43:47 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:50:30 --> ErrorException: Undefined variable $message
+[Method: GET, Route: test.dat]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1464,8 +622,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:43:49 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:50:30 --> ErrorException: Undefined variable $message
+[Method: GET, Route: DBds]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1477,8 +635,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:43:49 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:50:30 --> ErrorException: Undefined variable $message
+[Method: GET, Route: font/main-webfont.woff2]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1490,8 +648,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:43:51 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:50:30 --> ErrorException: Undefined variable $message
+[Method: GET, Route: ui/authentication]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1503,8 +661,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:43:57 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:50:30 --> ErrorException: Undefined variable $message
+[Method: GET, Route: test6.jpg]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1516,8 +674,11 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:43:57 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+INFO - 2025-05-21 07:50:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 07:50:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 07:50:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-21 07:50:40 --> ErrorException: Undefined variable $message
+[Method: GET, Route: search/s.php]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1529,8 +690,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:43:57 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:50:42 --> ErrorException: Undefined variable $message
+[Method: GET, Route: MYMj]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1542,13 +703,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 20:50:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 20:50:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 20:50:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 20:50:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 20:50:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 20:50:25 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 07:50:42 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fssdcsrweqww.ini]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1560,8 +716,9 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:50:26 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+INFO - 2025-05-21 07:50:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-21 07:50:45 --> ErrorException: Undefined variable $message
+[Method: GET, Route: test.dat]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1573,8 +730,9 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:50:27 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+INFO - 2025-05-21 07:50:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-21 07:50:47 --> ErrorException: Undefined variable $message
+[Method: GET, Route: Dem7kTu/Login.php]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1586,8 +744,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:50:27 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 07:50:47 --> ErrorException: Undefined variable $message
+[Method: GET, Route: beacons]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1599,8 +757,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:50:27 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 07:50:47 --> ErrorException: Undefined variable $message
+[Method: GET, Route: statistic/finishtask]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1612,8 +770,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:50:29 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 07:50:47 --> ErrorException: Undefined variable $message
+[Method: GET, Route: jquery-3.3.1.min.js]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1625,8 +783,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:50:30 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 07:50:50 --> ErrorException: Undefined variable $message
+[Method: GET, Route: 2jjd7VgJVdKDI4Ih4eB63gTcZqdcCuq-35nmN8xhwTM8_uHq3BUqs9Zb_nf_C7AzNzvltmRoSf6-WRNz-]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1638,8 +796,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:50:31 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 07:50:54 --> ErrorException: Undefined variable $message
+[Method: GET, Route: blink]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1651,8 +809,10 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:50:32 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+INFO - 2025-05-21 07:50:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 07:50:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-21 07:50:58 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wL7b]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1664,8 +824,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:50:35 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 07:51:00 --> ErrorException: Undefined variable $message
+[Method: POST, Route: api/attach]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1677,8 +837,10 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:50:36 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+INFO - 2025-05-21 07:51:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 07:51:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-21 07:51:02 --> ErrorException: Undefined variable $message
+[Method: GET, Route: tat]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1690,8 +852,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:50:37 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:51:02 --> ErrorException: Undefined variable $message
+[Method: GET, Route: 1.txt]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1703,8 +865,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:50:37 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:51:02 --> ErrorException: Undefined variable $message
+[Method: POST, Route: nation.php]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1716,8 +878,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:50:38 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 07:51:02 --> ErrorException: Undefined variable $message
+[Method: GET, Route: s]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1729,8 +891,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:50:38 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:51:03 --> ErrorException: Undefined variable $message
+[Method: GET, Route: 45.txt]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1742,8 +904,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:50:39 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:51:03 --> ErrorException: Undefined variable $message
+[Method: GET, Route: MSyD]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1755,8 +917,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:50:39 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:51:05 --> ErrorException: Undefined variable $message
+[Method: GET, Route: common2/out/1]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1768,8 +930,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:50:40 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:51:11 --> ErrorException: Undefined variable $message
+[Method: GET, Route: c2]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1781,8 +943,9 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:50:42 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+INFO - 2025-05-21 07:51:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-21 07:51:11 --> ErrorException: Undefined variable $message
+[Method: GET, Route: zMLUH93A]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1794,8 +957,9 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:50:42 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+INFO - 2025-05-21 07:51:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-21 07:51:14 --> ErrorException: Undefined variable $message
+[Method: GET, Route: jquery/2.0.1/jquery.min.js]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1807,8 +971,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:50:44 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:51:14 --> ErrorException: Undefined variable $message
+[Method: GET, Route: Qi7wAH39]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1820,8 +984,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:50:47 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:51:16 --> ErrorException: Undefined variable $message
+[Method: GET, Route: test.jpg]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1833,8 +997,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:50:48 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:51:16 --> ErrorException: Undefined variable $message
+[Method: GET, Route: jquery.js]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1846,8 +1010,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:50:50 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:51:16 --> ErrorException: Undefined variable $message
+[Method: GET, Route: jquery-3.3.1.min.js]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1859,13 +1023,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 20:59:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 20:59:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 20:59:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 20:59:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 20:59:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 20:59:46 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 07:51:18 --> ErrorException: Undefined variable $message
+[Method: POST, Route: QKBFJBVZsPKeqFS/HAchGeCttVyEtqZ.php]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1877,8 +1036,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:59:48 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 07:51:20 --> ErrorException: Undefined variable $message
+[Method: GET, Route: extensions/a586bc8a-728c-4d06-8180-befb9e20c408]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1890,8 +1049,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:59:48 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 07:51:21 --> ErrorException: Undefined variable $message
+[Method: GET, Route: 202312082118335862cd360.bmp]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1903,8 +1062,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:59:51 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 07:51:22 --> ErrorException: Undefined variable $message
+[Method: GET, Route: upaid.exe]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1916,8 +1075,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:59:52 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 07:51:26 --> ErrorException: Undefined variable $message
+[Method: POST, Route: kpi]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1929,8 +1088,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:59:53 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 07:51:27 --> ErrorException: Undefined variable $message
+[Method: GET, Route: s1/index.htm]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1942,8 +1101,10 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:59:54 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+INFO - 2025-05-21 07:51:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 07:51:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-21 07:51:30 --> ErrorException: Undefined variable $message
+[Method: GET, Route: i.dat]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1955,8 +1116,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:59:55 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 07:51:30 --> ErrorException: Undefined variable $message
+[Method: GET, Route: mine/random.exe]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1968,8 +1129,9 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:59:58 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+INFO - 2025-05-21 07:51:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-21 07:51:32 --> ErrorException: Undefined variable $message
+[Method: GET, Route: manjusaka/static]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1981,8 +1143,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:59:58 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 07:51:32 --> ErrorException: Undefined variable $message
+[Method: GET, Route: cmdoutput]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -1994,8 +1156,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 20:59:59 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:51:35 --> ErrorException: Undefined variable $message
+[Method: GET, Route: api/getit]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -2007,8 +1169,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 21:00:01 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 07:51:39 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wh/glass.php]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -2020,8 +1182,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 21:00:01 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:51:40 --> ErrorException: Undefined variable $message
+[Method: POST, Route: nvidia_license_upd.php]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -2033,8 +1195,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 21:00:02 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:51:41 --> ErrorException: Undefined variable $message
+[Method: GET, Route: c/msdownload/update/software/update/2021/11/6632de33-967441-x86.cab]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -2046,8 +1208,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 21:00:04 --> ErrorException: Undefined variable $message
-[Method: POST, Route: json_rpc]
+CRITICAL - 2025-05-21 07:51:44 --> ErrorException: Undefined variable $message
+[Method: GET, Route: BoPai.xq]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -2059,8 +1221,10 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 21:00:04 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+INFO - 2025-05-21 07:51:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 07:51:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-21 07:51:47 --> ErrorException: Undefined variable $message
+[Method: GET, Route: ymybisvimqjoknhmgryit/getocmskdmsm]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -2072,8 +1236,11 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 21:00:06 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+INFO - 2025-05-21 07:51:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 07:51:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 07:51:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-21 07:51:52 --> ErrorException: Undefined variable $message
+[Method: GET, Route: llq.rar]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -2085,8 +1252,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 21:00:06 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:51:54 --> ErrorException: Undefined variable $message
+[Method: GET, Route: bin.sh]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -2098,8 +1265,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 21:00:08 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:51:58 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fw6I]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -2111,8 +1278,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 21:00:08 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:52:01 --> ErrorException: Undefined variable $message
+[Method: GET, Route: center/user_sid]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -2124,8 +1291,9 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 21:00:11 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+INFO - 2025-05-21 07:52:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-21 07:52:01 --> ErrorException: Undefined variable $message
+[Method: GET, Route: Tan.jpg]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -2137,8 +1305,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 21:00:11 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:52:01 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fsxlxhxzaf.png]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -2150,8 +1318,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 21:00:13 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:52:03 --> ErrorException: Undefined variable $message
+[Method: GET, Route: 9lqF]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -2163,8 +1331,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 21:00:17 --> ErrorException: Undefined variable $message
-[Method: GET, Route: pool_info]
+CRITICAL - 2025-05-21 07:52:03 --> ErrorException: Undefined variable $message
+[Method: GET, Route: JYNl]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -2176,17 +1344,14 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 21:05:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 21:05:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 21:05:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 21:05:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 21:06:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 21:07:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 21:13:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 21:21:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 21:32:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 21:32:50 --> ErrorException: Undefined variable $message
-[Method: GET, Route: th1s_1s_a_4o4.html]
+INFO - 2025-05-21 07:56:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 08:04:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 08:04:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 08:09:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 08:09:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-21 08:09:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-21 08:18:39 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .circleci/configs/development.yml]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -2198,21 +1363,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 21:32:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 21:32:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 21:32:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 21:32:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 21:42:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 21:47:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 21:54:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 22:38:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 22:51:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 22:51:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 22:58:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 23:08:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2025-05-16 23:22:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2025-05-16 23:23:22 --> ErrorException: Undefined variable $message
-[Method: POST, Route: wp-json/rsvpmaker/v1/stripesuccess/anythinghere]
+CRITICAL - 2025-05-21 08:18:49 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .AWS_/credentials]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -2224,8 +1376,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 23:23:22 --> ErrorException: Undefined variable $message
-[Method: POST, Route: wp-admin/admin-ajax.php]
+CRITICAL - 2025-05-21 08:18:54 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .aws/credentials]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -2237,8 +1389,8 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-CRITICAL - 2025-05-16 23:23:22 --> ErrorException: Undefined variable $message
-[Method: GET, Route: wp-admin/admin-ajax.php]
+CRITICAL - 2025-05-21 08:18:55 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .env.bak]
 in APPPATH/Views/errors/html/error_404.php on line 77.
  1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
  2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
@@ -2250,4 +1402,108 @@ in APPPATH/Views/errors/html/error_404.php on line 77.
  8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
-INFO - 2025-05-16 23:45:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-21 08:19:01 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .env.local]
+in APPPATH/Views/errors/html/error_404.php on line 77.
+ 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(64): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-21 08:19:06 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .env.prod]
+in APPPATH/Views/errors/html/error_404.php on line 77.
+ 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(64): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-21 08:19:19 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .env.stage]
+in APPPATH/Views/errors/html/error_404.php on line 77.
+ 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(64): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-21 08:19:31 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .git]
+in APPPATH/Views/errors/html/error_404.php on line 77.
+ 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(64): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-21 08:19:35 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .git/FETCH_HEAD]
+in APPPATH/Views/errors/html/error_404.php on line 77.
+ 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(64): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-21 08:19:41 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .git/ORIG_HEAD]
+in APPPATH/Views/errors/html/error_404.php on line 77.
+ 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(64): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-21 08:19:47 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .git/description]
+in APPPATH/Views/errors/html/error_404.php on line 77.
+ 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(64): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-21 08:26:41 --> ErrorException: Undefined variable $message
+[Method: HEAD, Route: /]
+in APPPATH/Views/errors/html/error_404.php on line 77.
+ 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(64): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-05-21 08:28:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
