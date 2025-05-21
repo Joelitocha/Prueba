@@ -35,7 +35,8 @@ class Filters extends BaseFilters
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
         'authfilter' => \App\Filters\AuthFilter::class,
-        
+        'sessioncheck' => \App\Filters\SessionCheck::class,
+
     ];
 
     /**
@@ -74,6 +75,7 @@ class Filters extends BaseFilters
             // 'honeypot',
             // 'csrf',
             // 'invalidchars',
+            'sessioncheck'
         ],
         'after' => [
             // 'honeypot',

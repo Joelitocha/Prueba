@@ -9,11 +9,18 @@ class AuthController extends BaseController
 {
     public function index()
     {
-            // Verificar si hay sesión activa
-    $session = \Config\Services::session();
-    if ($session->get('logged_in')) {
-        return redirect()->to('/bienvenido');
-    }
+        $session = \Config\Services::session();
+    
+        // Verificar sesión activa con mayor robustez
+        if ($session->has('logged_in') && $session->get('logged_in') === true) {
+            // Verificar que los datos mínimos de sesión existen
+            if ($session->has('user_id') && $session->has('ID_Rol')) {
+                return redirect()->to('/bienvenido')->withCookies();
+            } else {
+                // Sesión corrupta, limpiar y mostrar landing
+                $session->destroy();
+            }
+        }
         $data = [
             // SEO Solo para la página principal
             'meta_title' => "RackON - Control de Acceso con Tecnología RFID | Argentina",
