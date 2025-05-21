@@ -7,7 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 // Rutas públicas
-$routes->get('/', 'AuthController::inicio'); // login form
+$routes->get('/', 'AuthController'); // login form
 $routes->post('/login', 'AuthController::loginUser');
 $routes->get('/verify', 'AuthController::verifyEmail');
 $routes->get('/set-password', 'AuthController::showSetPassword');
