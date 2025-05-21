@@ -13,16 +13,21 @@ class AuthFilter implements FilterInterface
     {
         $session = \Config\Services::session();
         
-        // Debug: Verificar contenido completo de la sesión
-        // var_dump($session->get()); exit;
-    
-        // Verificar autenticación
-        if (!$session->has('logged_in') || $session->get('logged_in') !== true) {
-            return redirect()->to('/login')
-                   ->with('error', 'Por favor inicia sesión para acceder a esta página');
+        // Limpiar mensajes de error previos no consumidos
+        if ($session->has('error') && $session->get('error') === 'Por favor inicia sesión para acceder a esta página') {
+            $session->remove('error');
         }
     
-        // Verificar roles si se especifican
+        // Verificar autenticación básica
+        if (!$session->get('logged_in')) {
+            // Solo establecer mensaje si no es una ruta de API
+            if (!in_array($request->getPath(), ['/login', '/'])) {
+                $session->setFlashdata('error', 'Por favor inicia sesión para acceder a esta página');
+            }
+            return redirect()->to('/login');
+        }
+    
+        // Verificación de roles si se especifican
         if (!empty($arguments)) {
             $userRole = $session->get('ID_Rol');
             
