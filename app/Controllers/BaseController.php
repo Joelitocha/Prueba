@@ -128,12 +128,7 @@ abstract class BaseController extends Controller
         ];
         $this->userRole = $this->session->get('ID_Rol');
     }
-    /**
-     * Check if user has required role
-     * 
-     * @param array|int $requiredRoles
-     * @throws \CodeIgniter\Router\Exceptions\RedirectException
-     */
+
     protected function checkRole($requiredRoles)
     {
         if (!is_array($requiredRoles)) {
