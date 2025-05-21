@@ -35,7 +35,7 @@ class AuthController extends BaseController
     }
     public function loginUser()
     {
-        // Limpiar sesión completamente antes de nuevo login
+        // Inicializar y regenerar sesión de forma segura
         session()->start();
         session()->regenerate(true);
     
@@ -47,36 +47,59 @@ class AuthController extends BaseController
     
         if ($user && password_verify($password, $user['Contraseña'])) {
             if ($user['Verificado'] == 0) {
-                return redirect()->to('/login')->with('error', 'Cuenta no verificada');
+                return redirect()->to('/login')->with('error', 'Cuenta no verificada. Por favor verifica tu email.');
             }
     
+            // Actualizar último acceso
             $model->update($user['ID_Usuario'], ['Ultimo_Acceso' => date('Y-m-d H:i:s')]);
     
-            // Establecer datos de sesión
+            // Configurar datos de sesión persistentes
             $sessionData = [
                 "user_id"    => $user["ID_Usuario"],
-                "logged_in"  => true, // Asegurar que es booleano
+                "logged_in"  => true,
                 "username"   => $user["Nombre"],
                 "ID_Rol"     => $user["ID_Rol"],
-                "ID_tarjeta" => $user["ID_Tarjeta"]
+                "ID_tarjeta" => $user["ID_Tarjeta"],
+                "last_activity" => time()
             ];
             
             session()->set($sessionData);
     
-            // Verificación inmediata
-            if (session()->get('logged_in') !== true) {
-                log_message('error', 'Error crítico: No se pudo establecer sesión para '.$email);
-                return redirect()->to('/login')->with('error', 'Error al iniciar sesión');
+            // Configurar cookie persistente (30 días)
+            $cookieParams = [
+                'expires'  => time() + 2592000, // 30 días en segundos
+                'path'     => '/',
+                'domain'   => $_SERVER['HTTP_HOST'],
+                'secure'   => !empty($_SERVER['HTTPS']), // true si es HTTPS
+                'httponly' => true,
+                'samesite' => 'Lax'
+            ];
+            
+            setcookie(
+                config('Session')->cookieName,
+                session_id(),
+                $cookieParams
+            );
+    
+            // Verificación de sesión
+            if (!session()->get('logged_in')) {
+                log_message('error', 'Falló al establecer sesión para: ' . $email);
+                return redirect()->to('/login')->with('error', 'Error técnico al iniciar sesión');
             }
     
-            // Limpiar mensajes flash previos
+            // Limpiar mensajes temporales
             session()->removeTempdata('error');
     
-            // Redirigir a URL previa o a bienvenido por defecto
-            return redirect()->to(session()->get('redirect_url') ?? '/bienvenido');
+            // Redirección inteligente
+            $redirectUrl = session()->get('redirect_url') ?? '/bienvenido';
+            session()->remove('redirect_url'); // Limpiar después de usar
+    
+            return redirect()->to($redirectUrl)->withCookies();
         }
     
-        return redirect()->to('/login')->with('error', 'Credenciales incorrectas');
+        return redirect()->to('/login')
+               ->with('error', 'Email o contraseña incorrectos')
+               ->withInput(); // Mantener el email en el formulario
     }
 
     private function generarToken()
