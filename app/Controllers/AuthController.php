@@ -23,6 +23,11 @@ class AuthController extends BaseController
     }
     public function loginUser()
     {
+        // Limpiar sesión completamente antes de nuevo login
+        session()->destroy();
+        session()->start();
+        session()->regenerate(true);
+    
         $model = new UserModel();
         $email = $this->request->getPost('Email');
         $password = $this->request->getPost('Contraseña');
@@ -31,17 +36,15 @@ class AuthController extends BaseController
     
         if ($user && password_verify($password, $user['Contraseña'])) {
             if ($user['Verificado'] == 0) {
-                return redirect()->to('/')->with('error', 'Cuenta no verificada. Por favor, revisa tu correo.');
+                return redirect()->to('/login')->with('error', 'Cuenta no verificada');
             }
     
             $model->update($user['ID_Usuario'], ['Ultimo_Acceso' => date('Y-m-d H:i:s')]);
     
-            // Regenerar ID de sesión para prevenir fixation attacks
-            session()->regenerate(true);
-            
+            // Establecer datos de sesión
             $sessionData = [
                 "user_id"    => $user["ID_Usuario"],
-                "logged_in"  => true,
+                "logged_in"  => true, // Asegurar que es booleano
                 "username"   => $user["Nombre"],
                 "ID_Rol"     => $user["ID_Rol"],
                 "ID_tarjeta" => $user["ID_Tarjeta"]
@@ -49,16 +52,20 @@ class AuthController extends BaseController
             
             session()->set($sessionData);
     
-            // Verificar inmediatamente que los datos se guardaron
-            if (session()->get('user_id') !== $user["ID_Usuario"]) {
-                log_message('error', 'Falló al guardar datos de sesión para usuario: ' . $user["ID_Usuario"]);
-                return redirect()->to('/login')->with('error', 'Error al iniciar sesión. Intente nuevamente.');
+            // Verificación inmediata
+            if (session()->get('logged_in') !== true) {
+                log_message('error', 'Error crítico: No se pudo establecer sesión para '.$email);
+                return redirect()->to('/login')->with('error', 'Error al iniciar sesión');
             }
     
-            return redirect()->to('/bienvenido');
-        } else {
-            return redirect()->to('/login')->with('error', 'Usuario o clave incorrectos');
+            // Limpiar mensajes flash previos
+            session()->removeTempdata('error');
+    
+            // Redirigir a URL previa o a bienvenido por defecto
+            return redirect()->to(session()->get('redirect_url') ?? '/bienvenido');
         }
+    
+        return redirect()->to('/login')->with('error', 'Credenciales incorrectas');
     }
 
     private function generarToken()

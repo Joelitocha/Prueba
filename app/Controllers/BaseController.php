@@ -65,29 +65,19 @@ abstract class BaseController extends Controller
      */
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
-        // Do Not Edit This Line
         parent::initController($request, $response, $logger);
-
-        // Initialize session
+    
         $this->session = \Config\Services::session();
-
-        // Load common services
         $this->validation = \Config\Services::validation();
-
-        // Check authentication for non-API and non-CLI requests
+    
+        // Excluir rutas públicas de verificación
         if (!$request instanceof CLIRequest && !$this->isAuthRoute()) {
-            $this->checkAuthentication();
+            $this->checkSessionConsistency();
         }
-
-        // Set user data if logged in
+    
+        // Cargar datos de usuario si está autenticado
         if ($this->session->get('logged_in')) {
-            $this->userData = [
-                'id' => $this->session->get('user_id'),
-                'username' => $this->session->get('username'),
-                'role' => $this->session->get('ID_Rol'),
-                'tarjeta' => $this->session->get('ID_tarjeta')
-            ];
-            $this->userRole = $this->session->get('ID_Rol');
+            $this->loadUserData();
         }
     }
 
@@ -109,7 +99,35 @@ abstract class BaseController extends Controller
                 ->with('error', 'Por favor inicia sesión para acceder a esta página');
         }
     }
+    protected function checkSessionConsistency()
+{
+    // Verificar que todos los datos requeridos existen
+    $requiredKeys = ['logged_in', 'user_id', 'ID_Rol', 'username'];
+    foreach ($requiredKeys as $key) {
+        if (!$this->session->has($key)) {
+            $this->session->destroy();
+            return redirect()->to('/login')
+                   ->with('error', 'Sesión incompleta, por favor ingresa nuevamente');
+        }
+    }
 
+    // Verificar que logged_in es booleano true
+    if ($this->session->get('logged_in') !== true) {
+        $this->session->destroy();
+        return redirect()->to('/login')
+               ->with('error', 'Sesión inválida');
+    }
+}
+    protected function loadUserData()
+    {
+        $this->userData = [
+            'id' => $this->session->get('user_id'),
+            'username' => $this->session->get('username'),
+            'role' => $this->session->get('ID_Rol'),
+            'tarjeta' => $this->session->get('ID_tarjeta')
+        ];
+        $this->userRole = $this->session->get('ID_Rol');
+    }
     /**
      * Check if user has required role
      * 
