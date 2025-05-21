@@ -24,7 +24,6 @@ class AuthController extends BaseController
     public function loginUser()
     {
         // Limpiar sesión completamente antes de nuevo login
-        session()->destroy();
         session()->start();
         session()->regenerate(true);
     
