@@ -35,6 +35,8 @@ $routes->group('', ['filter' => '\App\Filters\AuthFilter'], function($routes) {
         $routes->post('/eliminar-tarjeta', 'TarjetaController::delete');
         $routes->get('/crear-tarjeta', 'CrearTarjetaController::index');
         $routes->post('/crear-tarjeta', 'CrearTarjetaController::store');
+        $routes->post('/bloquear-tarjeta', 'TarjetaController::bloquearTarjeta');
+        $routes->post('/desbloquear-tarjeta', 'TarjetaController::desbloquearTarjeta');
     });
 
     // Admin y Supervisor (roles 5 y 6)
@@ -45,11 +47,8 @@ $routes->group('', ['filter' => '\App\Filters\AuthFilter'], function($routes) {
         $routes->post('/historial-cambios/ver', 'HistorialController::verArchivo');
     });
 
-    // Todos los usuarios autenticados (roles 5, 6, 7)
-    $routes->get('/consultar-rfid', 'ViewsControllers::VistaConsultar');
-    $routes->post('/consultar-rfid', 'TarjetaController::verEstadoTarjeta');
-    $routes->post('/bloquear-tarjeta', 'TarjetaController::bloquearTarjeta');
-    $routes->post('/desbloquear-tarjeta', 'TarjetaController::desbloquearTarjeta');
+    $routes->get('/consultar-rfid', 'ViewsControllers::VistaConsultar', ['filter' => 'authfilter:5,6,7']);
+    $routes->post('/consultar-rfid', 'TarjetaController::verEstadoTarjeta', ['filter' => 'authfilter:5,6,7']);
 });
 
 // Rutas públicas para ESP32
