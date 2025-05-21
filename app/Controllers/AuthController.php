@@ -20,39 +20,37 @@ class AuthController extends BaseController
     }
     public function inicio(){
         return view("login");
-    }public function loginUser()
+    }
+    public function loginUser()
     {
         $model = new UserModel();
         $email = $this->request->getPost('Email');
         $password = $this->request->getPost('Contraseña');
-    
+
         $user = $model->where('Email', $email)->first();
-    
+
         if ($user && password_verify($password, $user['Contraseña'])) {
             if ($user['Verificado'] == 0) {
-                return redirect()->to('/login')->with('error', 'Cuenta no verificada. Por favor, revisa tu correo.');
+                return redirect()->to('/')->with('error', 'Cuenta no verificada. Por favor, revisa tu correo.');
             }
-    
-            // Actualizar último acceso
+
             $model->update($user['ID_Usuario'], ['Ultimo_Acceso' => date('Y-m-d H:i:s')]);
-    
-            // Crear sesión
+
             $session = session();
             $datos = [
-                "user_id"    => $user["ID_Usuario"],
-                "logged_in"  => true,
-                "username"   => $user["Nombre"],
-                "ID_Rol"     => $user["ID_Rol"],
+                "user_id" => $user["ID_Usuario"],
+                "logged_in" => true,
+                "username" => $user["Nombre"],
+                "ID_Rol" => $user["ID_Rol"],
                 "ID_tarjeta" => $user["ID_Tarjeta"]
             ];
             $session->set($datos);
-    
+
             return redirect()->to('/bienvenido');
         } else {
-            return redirect()->to('/login')->with('error', 'Usuario o contraseña incorrectos');
+            return redirect()->to('/login')->with('error', 'Usuario o clave incorrectos');
         }
     }
-    
 
     private function generarToken()
     {
@@ -191,7 +189,16 @@ class AuthController extends BaseController
 
     public function welcome()
     {
+        $session = session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to('/login')->with('error', 'Por favor inicia sesión');
+        }
         
+        // Verificar rol para mostrar contenido específico
+        $rol = $session->get('ID_Rol');
+        if (!in_array($rol, [5, 6, 7])) {
+            return redirect()->to('/login')->with('error', 'Rol no válido');
+        }
         
         return view("inicio");
     }
