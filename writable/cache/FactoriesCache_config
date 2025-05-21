@@ -27,6 +27,7 @@
     'Config\\Email' => 'Config\\Email',
     'Config\\Validation' => 'Config\\Validation',
     'Config\\Security' => 'Config\\Security',
+    'Session' => 'Config\\Session',
   ),
   'instances' => 
   array (
@@ -558,6 +559,12 @@
        'DBGroup' => NULL,
        'lockRetryInterval' => 100000,
        'lockMaxRetries' => 300,
+       'cookieDomain' => NULL,
+       'cookiePath' => NULL,
+       'cookieSecure' => NULL,
+       'cookieHTTPOnly' => NULL,
+       'cookieSameSite' => NULL,
+       'cookieLifetime' => NULL,
     )),
     'Config\\Database' => 
     Config\Database::__set_state(array(
