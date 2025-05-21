@@ -9,6 +9,11 @@ class AuthController extends BaseController
 {
     public function index()
     {
+            // Verificar si hay sesión activa
+    $session = \Config\Services::session();
+    if ($session->get('logged_in')) {
+        return redirect()->to('/bienvenido');
+    }
         $data = [
             // SEO Solo para la página principal
             'meta_title' => "RackON - Control de Acceso con Tecnología RFID | Argentina",
