@@ -126,9 +126,9 @@ class Session extends BaseConfig
     public int $lockMaxRetries = 300;
 
     public $cookieDomain = 'rackon.tech';    // Tu dominio (ej: '.tudominio.com')
-public $cookiePath = '/';
-public $cookieSecure = false; // true si usas HTTPS
-public $cookieHTTPOnly = true;
-public $cookieSameSite = 'Lax';
-public $cookieLifetime = 7200; // Igual que expiration (2 horas)
+    public $cookiePath = '/';
+    public $cookieSecure = true; // true si usas HTTPS
+    public $cookieHTTPOnly = true;
+    public $cookieSameSite = 'Lax';
+    public $cookieLifetime = 7200; // Igual que expiration (2 horas)
 }
