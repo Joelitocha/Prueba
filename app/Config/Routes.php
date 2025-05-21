@@ -7,7 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 // Configuración de grupos de rutas con filtros
-$routes->group('', ['filter' => '\App\Filters\AuthFilter'], function($routes) {
+
     // Rutas que requieren autenticación (cualquier rol)
     $routes->get('/bienvenido', 'AuthController::welcome');
     
@@ -30,7 +30,6 @@ $routes->group('', ['filter' => '\App\Filters\AuthFilter'], function($routes) {
         $routes->get('/crear-tarjeta', 'CrearTarjetaController::index');
         $routes->post('/crear-tarjeta', 'CrearTarjetaController::store');
 
-    
     // Rutas para admin y supervisor (roles 5 y 6)
 
         $routes->get('/ver-alertas', 'ViewsControllers::VistaAlertas');
@@ -38,13 +37,12 @@ $routes->group('', ['filter' => '\App\Filters\AuthFilter'], function($routes) {
         $routes->get('/historial-cambios', 'HistorialController::index');
         $routes->post('/historial-cambios/ver', 'HistorialController::verArchivo');
 
-    
     // Rutas para todos los usuarios autenticados (roles 5, 6 y 7)
     $routes->get('/consultar-rfid', 'ViewsControllers::VistaConsultar');
     $routes->post('/consultar-rfid', 'TarjetaController::verEstadoTarjeta');
     $routes->post('bloquear-tarjeta', 'TarjetaController::bloquearTarjeta');
     $routes->post('desbloquear-tarjeta', 'TarjetaController::desbloquearTarjeta');
-});
+
 
 // Rutas públicas (sin autenticación)
 $routes->get('/', 'AuthController::index');
