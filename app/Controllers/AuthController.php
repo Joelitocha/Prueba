@@ -9,7 +9,7 @@ class AuthController extends BaseController
 {
     public function index()
     {
-        $session = \Config\Services::session();
+        $session = Services::session();
     
         // Verificar sesión activa con mayor robustez
         if ($session->has('logged_in') && $session->get('logged_in') === true) {
