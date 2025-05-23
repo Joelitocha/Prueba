@@ -229,8 +229,7 @@ private function enviarCorreoVerificacion($email, $token)
 
     private function enviarCredenciales($email, $nombre, $mensaje)
     {
-        // Asegúrate de tener una URL de logo o reemplazarla por texto
-        $logoUrl = base_url("assets/images/rackon_logo.png"); // Ejemplo de URL de logo
+
 
         $cuerpo = "
         <!DOCTYPE html>
