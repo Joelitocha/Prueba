@@ -106,16 +106,124 @@ class AuthController extends BaseController
     {
         return bin2hex(random_bytes(16));
     }
-
     private function enviarCorreoVerificacion($email, $token)
     {
         $verificationLink = base_url("verify?token=" . $token);
+        $logoUrl = base_url("assets/images/prueba_de_logo.png"); // Ejemplo de URL de logo
+
         $cuerpo = "
-            <h2>¡Bienvenido a RackON!</h2>
-            <p>Haz clic en el siguiente enlace para verificar tu cuenta:</p>
-            <a href='$verificationLink'>Verificar Cuenta</a>
-            <p>Después de la verificación, podrás establecer tu contraseña.</p>
-            <p>Si no solicitaste esta cuenta, ignora este mensaje.</p>
+        <!DOCTYPE html>
+        <html lang='es'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Verificación de Cuenta - RackON</title>
+            <style>
+                body {
+                    margin: 0;
+                    padding: 0;
+                    background-color: #f4f4f4;
+                    font-family: Arial, sans-serif;
+                    color: #333333;
+                }
+                .container {
+                    width: 100%;
+                    max-width: 600px;
+                    margin: 20px auto;
+                    background-color: #ffffff;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+                }
+                .header {
+                    background-color: #007bff; /* Color principal de RackON */
+                    color: #ffffff;
+                    padding: 20px;
+                    text-align: center;
+                }
+                .header img {
+                    max-width: 150px;
+                    margin-bottom: 10px;
+                }
+                .header h1 {
+                    margin: 0;
+                    font-size: 24px;
+                }
+                .content {
+                    padding: 30px;
+                    line-height: 1.6;
+                }
+                .content h2 {
+                    color: #007bff; /* Color principal de RackON */
+                    font-size: 20px;
+                }
+                .content p {
+                    margin-bottom: 15px;
+                }
+                .button-container {
+                    text-align: center;
+                    margin: 25px 0;
+                }
+                .button {
+                    background-color: #28a745; /* Color del botón de acción */
+                    color: #ffffff !important; /* Importante para anular estilos de cliente de correo */
+                    padding: 12px 25px;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    display: inline-block;
+                }
+                .footer {
+                    background-color: #f0f0f0;
+                    color: #777777;
+                    padding: 20px;
+                    text-align: center;
+                    font-size: 12px;
+                }
+                .footer p {
+                    margin: 5px 0;
+                }
+            </style>
+        </head>
+        <body>
+            <table width='100%' border='0' cellspacing='0' cellpadding='0' style='background-color: #f4f4f4;'>
+                <tr>
+                    <td align='center'>
+                        <table class='container' width='100%' border='0' cellspacing='0' cellpadding='0' style='max-width: 600px; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1);'>
+                            <tr>
+                                <td class='header' style='background-color: #007bff; color: #ffffff; padding: 20px; text-align: center;'>
+                                    <h1 style='margin: 0; font-size: 24px;'>RackON</h1>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class='content' style='padding: 30px; line-height: 1.6;'>
+                                    <h2 style='color: #007bff; font-size: 20px;'>¡Bienvenido a RackON!</h2>
+                                    <p>Gracias por registrarte. Para completar tu registro y asegurar tu cuenta, por favor verifica tu dirección de correo electrónico haciendo clic en el botón de abajo:</p>
+                                    <table width='100%' border='0' cellspacing='0' cellpadding='0' class='button-container' style='text-align: center; margin: 25px 0;'>
+                                        <tr>
+                                            <td align='center'>
+                                                <a href='" . $verificationLink . "' class='button' style='background-color: #28a745; color: #ffffff !important; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-size: 16px; font-weight: bold; display: inline-block;'>Verificar Mi Cuenta</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <p>Después de la verificación, podrás establecer tu contraseña y comenzar a utilizar nuestros servicios.</p>
+                                    <p>Si no solicitaste esta cuenta o tienes alguna pregunta, por favor ignora este mensaje o contacta a nuestro equipo de soporte.</p>
+                                    <p>¡El equipo de RackON!</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class='footer' style='background-color: #f0f0f0; color: #777777; padding: 20px; text-align: center; font-size: 12px;'>
+                                    <p>&copy; " . date("Y") . " RackON. Todos los derechos reservados.</p>
+                                    <p>Este es un mensaje automático, por favor no respondas directamente a este correo.</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </body>
+        </html>
         ";
         return Services::sendEmail($email, 'Verificación de cuenta - RackON', $cuerpo);
     }
