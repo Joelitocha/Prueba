@@ -106,10 +106,9 @@ class AuthController extends BaseController
     {
         return bin2hex(random_bytes(16));
     }
-    private function enviarCorreoVerificacion($email, $token)
+private function enviarCorreoVerificacion($email, $token)
     {
         $verificationLink = base_url("verify?token=" . $token);
-        $logoUrl = base_url("assets/images/prueba_de_logo.png"); // Ejemplo de URL de logo
 
         $cuerpo = "
         <!DOCTYPE html>
