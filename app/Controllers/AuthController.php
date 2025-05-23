@@ -229,12 +229,114 @@ private function enviarCorreoVerificacion($email, $token)
 
     private function enviarCredenciales($email, $nombre, $mensaje)
     {
+        // Asegúrate de tener una URL de logo o reemplazarla por texto
+        $logoUrl = base_url("assets/images/rackon_logo.png"); // Ejemplo de URL de logo
+
         $cuerpo = "
-            <h2>Cuenta Verificada</h2>
-            <p>Hola $nombre,</p>
-            <p>$mensaje</p>
-            <p>Puedes acceder a la plataforma utilizando tu correo electrónico y la contraseña que estableciste.</p>
-            <p>Gracias por unirte a RackON!</p>
+        <!DOCTYPE html>
+        <html lang='es'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Cuenta Verificada - RackON</title>
+            <style>
+                body {
+                    margin: 0;
+                    padding: 0;
+                    background-color: #f4f4f4;
+                    font-family: Arial, sans-serif;
+                    color: #333333;
+                }
+                .container {
+                    width: 100%;
+                    max-width: 600px;
+                    margin: 20px auto;
+                    background-color: #ffffff;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+                }
+                .header {
+                    background-color: #007bff; /* Color principal de RackON */
+                    color: #ffffff;
+                    padding: 20px;
+                    text-align: center;
+                }
+                .header img {
+                    max-width: 150px;
+                    margin-bottom: 10px;
+                }
+                .header h1 {
+                    margin: 0;
+                    font-size: 24px;
+                }
+                .content {
+                    padding: 30px;
+                    line-height: 1.6;
+                }
+                .content h2 {
+                    color: #007bff; /* Color principal de RackON */
+                    font-size: 20px;
+                }
+                .content p {
+                    margin-bottom: 15px;
+                }
+                .highlight { /* Para el mensaje variable */
+                    background-color: #e9ecef;
+                    padding: 15px;
+                    border-left: 4px solid #007bff;
+                    margin: 20px 0;
+                }
+                .footer {
+                    background-color: #f0f0f0;
+                    color: #777777;
+                    padding: 20px;
+                    text-align: center;
+                    font-size: 12px;
+                }
+                .footer p {
+                    margin: 5px 0;
+                }
+            </style>
+        </head>
+        <body>
+            <table width='100%' border='0' cellspacing='0' cellpadding='0' style='background-color: #f4f4f4;'>
+                <tr>
+                    <td align='center'>
+                        <table class='container' width='100%' border='0' cellspacing='0' cellpadding='0' style='max-width: 600px; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.1);'>
+                            <tr>
+                                <td class='header' style='background-color: #007bff; color: #ffffff; padding: 20px; text-align: center;'>
+                                    <h1 style='margin: 0; font-size: 24px;'>RackON</h1>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class='content' style='padding: 30px; line-height: 1.6;'>
+                                    <h2 style='color: #007bff; font-size: 20px;'>¡Tu Cuenta Ha Sido Verificada Exitosamente!</h2>
+                                    <p>Hola " . htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8') . ",</p>
+                                    <p>Nos complace informarte que tu cuenta en RackON ha sido verificada correctamente.</p>
+                                    
+                                    <div class='highlight' style='background-color: #e9ecef; padding: 15px; border-left: 4px solid #007bff; margin: 20px 0;'>
+                                        <p style='margin:0;'><em>" . htmlspecialchars($mensaje, ENT_QUOTES, 'UTF-8') . "</em></p>
+                                    </div>
+                                    
+                                    <p>Ahora puedes acceder a la plataforma utilizando tu dirección de correo electrónico y la contraseña que estableciste.</p>
+                                    <p>Si tienes alguna pregunta o necesitas asistencia, no dudes en contactarnos.</p>
+                                    <p>¡Gracias por unirte a RackON!</p>
+                                    <p>Atentamente,<br>El equipo de RackON</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class='footer' style='background-color: #f0f0f0; color: #777777; padding: 20px; text-align: center; font-size: 12px;'>
+                                    <p>&copy; " . date("Y") . " RackON. Todos los derechos reservados.</p>
+                                    <p>Este es un mensaje automático, por favor no respondas directamente a este correo.</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </body>
+        </html>
         ";
         return Services::sendEmail($email, 'Cuenta verificada - RackON', $cuerpo);
     }
