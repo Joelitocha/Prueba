@@ -40,7 +40,7 @@ class Session extends BaseConfig
      * The number of SECONDS you want the session to last.
      * Setting to 0 (zero) means expire when the browser is closed.
      */
-    public int $expiration = 7200;
+    public int $expiration = 2592000;
 
     /**
      * --------------------------------------------------------------------------
@@ -69,7 +69,7 @@ class Session extends BaseConfig
      * WARNING: If you're using the database driver, don't forget to update
      *          your session table's PRIMARY KEY when changing this setting.
      */
-    public bool $matchIP = false;
+    public bool $matchIP = true;
 
     /**
      * --------------------------------------------------------------------------
@@ -125,10 +125,11 @@ class Session extends BaseConfig
      */
     public int $lockMaxRetries = 300;
 
-    public $cookieDomain = 'rackon.tech';    // Tu dominio (ej: '.tudominio.com')
+    // CONFIGURACIÓN DE COOKIE
+    public $cookieDomain = 'rackon.tech';
     public $cookiePath = '/';
-    public $cookieSecure = true; // true si usas HTTPS
+    public $cookieSecure = true;
     public $cookieHTTPOnly = true;
     public $cookieSameSite = 'Lax';
-    public $cookieLifetime = 7200; // Igual que expiration (2 horas)
+    public $cookieLifetime = 2592000;
 }
