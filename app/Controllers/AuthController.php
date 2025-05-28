@@ -84,6 +84,7 @@ class AuthController extends BaseController
                ->with('error', 'Email o contraseña incorrectos')
                ->withInput(); // Mantener el email en el formulario
     }
+    
 
     private function generarToken()
     {
