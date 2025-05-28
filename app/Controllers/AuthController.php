@@ -10,19 +10,22 @@ class AuthController extends BaseController
     public function index()
     {
         $session = Services::session();
-
+    
+        // Verificar sesión activa con mayor robustez
         if ($session->has('logged_in') && $session->get('logged_in') === true) {
+            // Verificar que los datos mínimos de sesión existen
             if ($session->has('user_id') && $session->has('ID_Rol')) {
                 return redirect()->to('/bienvenido')->withCookies();
             } else {
+                // Sesión corrupta, limpiar y mostrar landing
                 $session->destroy();
             }
         }
-
         $data = [
+            // SEO Solo para la página principal
             'meta_title' => "RackON - Control de Acceso con Tecnología RFID | Argentina",
             'meta_description' => "Sistema profesional de gestión de accesos mediante tarjetas RFID para empresas. Soluciones seguras en Buenos Aires.",
-            'og_image' => base_url('assets/img/rackon-og.jpg'),
+            'og_image' => base_url('assets/img/rackon-og.jpg'), // Imagen 1200x630px
             'canonical_url' => base_url()
         ];
         return view('landing/index', $data);
@@ -35,18 +38,21 @@ class AuthController extends BaseController
         $model = new UserModel();
         $email = $this->request->getPost('Email');
         $password = $this->request->getPost('Contraseña');
-
+    
         $user = $model->where('Email', $email)->first();
-
+    
         if ($user && password_verify($password, $user['Contraseña'])) {
             if ($user['Verificado'] == 0) {
                 return redirect()->to('/login')->with('error', 'Cuenta no verificada. Por favor verifica tu email.');
             }
-
+    
+            // Actualizar último acceso
             $model->update($user['ID_Usuario'], ['Ultimo_Acceso' => date('Y-m-d H:i:s')]);
-
+    
+            // Regenerar la sesión de forma segura (solo después de login exitoso)
             session()->regenerate(true);
-
+    
+            // Configurar datos de sesión persistentes
             $sessionData = [
                 "user_id"    => $user["ID_Usuario"],
                 "logged_in"  => true,
@@ -55,48 +61,30 @@ class AuthController extends BaseController
                 "ID_tarjeta" => $user["ID_Tarjeta"],
                 "last_activity" => time()
             ];
-
+    
             session()->set($sessionData);
-
+    
+            // Verificación de sesión
             if (!session()->get('logged_in')) {
                 log_message('error', 'Falló al establecer sesión para: ' . $email);
                 return redirect()->to('/login')->with('error', 'Error técnico al iniciar sesión');
             }
-
+    
+            // Limpiar mensajes temporales
             session()->removeTempdata('error');
-
+    
+            // Redirección inteligente
             $redirectUrl = session()->get('redirect_url') ?? '/bienvenido';
-            session()->remove('redirect_url');
-
+            session()->remove('redirect_url'); // Limpiar después de usar
+    
             return redirect()->to($redirectUrl);
         }
-
+    
         return redirect()->to('/login')
-            ->with('error', 'Email o contraseña incorrectos')
-            ->withInput();
+               ->with('error', 'Email o contraseña incorrectos')
+               ->withInput(); // Mantener el email en el formulario
     }
-    public function verify()
-    {
-        $token = $this->request->getGet('token');
 
-        if (!$token) {
-            return redirect()->to('/login')->with('error', 'Token inválido');
-        }
-
-        $model = new UserModel();
-        $user = $model->where('Token', $token)->first();
-
-        if (!$user) {
-            return redirect()->to('/login')->with('error', 'Token inválido o expirado');
-        }
-
-        $model->update($user['ID_Usuario'], [
-            'Verificado' => 1,
-            'Token' => null
-        ]);
-
-        return redirect()->to('/login')->with('success', 'Cuenta verificada correctamente. Ya puedes iniciar sesión.');
-    }
     private function generarToken()
     {
         return bin2hex(random_bytes(16));
