@@ -35,6 +35,10 @@ class AuthController extends BaseController
     }
     public function loginUser()
     {
+        // Inicializar y regenerar sesión de forma segura
+        session()->start();
+        session()->regenerate(true);
+    
         $model = new UserModel();
         $email = $this->request->getPost('Email');
         $password = $this->request->getPost('Contraseña');
@@ -49,9 +53,6 @@ class AuthController extends BaseController
             // Actualizar último acceso
             $model->update($user['ID_Usuario'], ['Ultimo_Acceso' => date('Y-m-d H:i:s')]);
     
-            // Regenerar la sesión de forma segura (solo después de login exitoso)
-            session()->regenerate(true);
-    
             // Configurar datos de sesión persistentes
             $sessionData = [
                 "user_id"    => $user["ID_Usuario"],
@@ -61,8 +62,24 @@ class AuthController extends BaseController
                 "ID_tarjeta" => $user["ID_Tarjeta"],
                 "last_activity" => time()
             ];
-    
+            
             session()->set($sessionData);
+    
+            // Configurar cookie persistente (30 días)
+            $cookieParams = [
+                'expires'  => time() + 2592000, // 30 días en segundos
+                'path'     => '/',
+                'domain'   => $_SERVER['HTTP_HOST'],
+                'secure'   => !empty($_SERVER['HTTPS']), // true si es HTTPS
+                'httponly' => true,
+                'samesite' => 'Lax'
+            ];
+            
+            setcookie(
+                config('Session')->cookieName,
+                session_id(),
+                $cookieParams
+            );
     
             // Verificación de sesión
             if (!session()->get('logged_in')) {
@@ -77,14 +94,13 @@ class AuthController extends BaseController
             $redirectUrl = session()->get('redirect_url') ?? '/bienvenido';
             session()->remove('redirect_url'); // Limpiar después de usar
     
-            return redirect()->to($redirectUrl);
+            return redirect()->to($redirectUrl)->withCookies();
         }
     
         return redirect()->to('/login')
                ->with('error', 'Email o contraseña incorrectos')
                ->withInput(); // Mantener el email en el formulario
     }
-    
 
     private function generarToken()
     {
