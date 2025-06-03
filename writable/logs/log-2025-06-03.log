@@ -369,3 +369,19 @@ in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
 10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
 11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-06-03 12:12:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-03 12:17:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-03 12:17:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-03 12:27:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-03 12:39:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-03 12:39:21 --> ErrorException: Undefined array key 0
+[Method: POST, Route: cargar_acceso]
+in APPPATH/Models/Esp32Model.php on line 15.
+ 1 APPPATH/Models/Esp32Model.php(15): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/esp32controller.php(15): App\Models\Esp32Model->insertar_registro()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\esp32controller->insertar_registro()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
