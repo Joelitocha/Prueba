@@ -26,37 +26,35 @@
             min-height: 100vh;
             background: 
                 linear-gradient(rgba(36, 45, 67, 0.85), rgba(36, 45, 67, 0.9)),
-                url('assets/images/fondo-negro-con-foco-blanco.jpg') center/cover no-repeat fixed;
+                url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
             font-family: 'Roboto', sans-serif;
             color: var(--text-color);
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             padding: 2rem;
-            line-height: 1.6;
         }
         
-        .logo {
-            height: 100px;
-            opacity: 0.9;
-            margin-bottom: 1rem;
-            filter: drop-shadow(0 0 10px rgba(0, 198, 255, 0.7));
+        .main-container {
+            width: 75vw;
+            max-width: 1200px;
+            min-height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
         .wrap {
-            max-width: 800px;
             width: 100%;
-            margin: 2rem auto;
             padding: 4rem 3rem;
             background: rgba(36, 45, 67, 0.7);
             text-align: center;
             border-radius: 10px;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-            position: relative;
-            overflow: hidden;
             border: 1px solid rgba(122, 130, 156, 0.3);
             backdrop-filter: blur(8px);
+            position: relative;
+            overflow: hidden;
         }
         
         .wrap::before {
@@ -67,6 +65,13 @@
             width: 6px;
             height: 100%;
             background: linear-gradient(to bottom, var(--color-accent), transparent);
+        }
+        
+        .logo {
+            height: 100px;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 0 10px rgba(0, 198, 255, 0.7));
         }
         
         h1 {
@@ -126,8 +131,6 @@
             font-size: 1.1rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            position: relative;
-            overflow: hidden;
         }
         
         .btn:hover {
@@ -170,18 +173,17 @@
             }
         }
         
-        @media (max-width: 992px) {
-            body {
-                padding: 1.5rem;
-            }
-            
-            .wrap {
-                max-width: 90%;
-                padding: 3rem 2rem;
+        @media (max-width: 1200px) {
+            .main-container {
+                width: 85vw;
             }
         }
         
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
+            .main-container {
+                width: 90vw;
+            }
+            
             h1 {
                 font-size: 5rem;
             }
@@ -189,9 +191,23 @@
             h2 {
                 font-size: 1.6rem;
             }
+        }
+        
+        @media (max-width: 768px) {
+            .main-container {
+                width: 95vw;
+            }
+            
+            .wrap {
+                padding: 3rem 2rem;
+            }
             
             .logo {
                 height: 80px;
+            }
+            
+            h1 {
+                font-size: 4rem;
             }
             
             .btn {
@@ -202,29 +218,31 @@
     </style>
 </head>
 <body>
-    <div class="wrap">
-        <img src="https://rackon.tech/logo.png" alt="RackON.tech Logo" class="logo" onerror="this.style.display='none'">
-        
-        <h1 class="glow">404</h1>
-        <h2>Recurso no disponible</h2>
-        
-        <p>
-            <?php if (ENVIRONMENT !== 'production') : ?>
-                <div class="error-details">
-                    <?= nl2br(esc($message)) ?>
-                </div>
-            <?php else : ?>
-                El servidor no puede encontrar el recurso solicitado.<br>
-                Puede que la página haya sido movida o eliminada.
-            <?php endif; ?>
-        </p>
-        
-        <div class="actions">
-            <a href="/" class="btn">Volver al Dashboard</a>
-        </div>
-        
-        <div class="footer">
-            <p>Sistema RackON &copy; <?= date('Y') ?> <a href="https://rackon.tech" target="_blank">RackON.tech</a> | Todos los derechos reservados</p>
+    <div class="main-container">
+        <div class="wrap">
+            <img src="https://rackon.tech/logo.png" alt="RackON.tech Logo" class="logo" onerror="this.style.display='none'">
+            
+            <h1 class="glow">404</h1>
+            <h2>Recurso no disponible</h2>
+            
+            <p>
+                <?php if (ENVIRONMENT !== 'production') : ?>
+                    <div class="error-details">
+                        <?= nl2br(esc($message)) ?>
+                    </div>
+                <?php else : ?>
+                    El servidor no puede encontrar el recurso solicitado.<br>
+                    Puede que la página haya sido movida o eliminada.
+                <?php endif; ?>
+            </p>
+            
+            <div class="actions">
+                <a href="/" class="btn">Volver al Dashboard</a>
+            </div>
+            
+            <div class="footer">
+                <p>Sistema RackON &copy; <?= date('Y') ?> <a href="https://rackon.tech" target="_blank">RackON.tech</a> | Todos los derechos reservados</p>
+            </div>
         </div>
     </div>
 </body>
