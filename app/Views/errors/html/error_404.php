@@ -26,7 +26,7 @@
             min-height: 100vh;
             background: 
                 linear-gradient(rgba(36, 45, 67, 0.85), rgba(36, 45, 67, 0.9)),
-                url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
+                url('assets/images/fondo-negro-con-foco-blanco.jpg') center/cover no-repeat fixed;
             font-family: 'Roboto', sans-serif;
             color: var(--text-color);
             display: flex;
