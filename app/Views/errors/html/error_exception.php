@@ -5,23 +5,250 @@ use CodeIgniter\CodeIgniter;
 
 $errorId = uniqid('error', true);
 ?>
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="robots" content="noindex">
-
-    <title><?= esc($title) ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= esc($title) ?> | RackON.tech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
     <style>
-        <?= preg_replace('#[\r\n\t ]+#', ' ', file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . 'debug.css')) ?>
+        :root {
+            --color-dark: #242d43;
+            --color-primary: #3a4259;
+            --color-secondary: #4f5870;
+            --color-medium: #656d86;
+            --color-light: #7a829c;
+            --color-accent: #00c6ff;
+            --text-color: #f0f2f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            background: 
+                linear-gradient(rgba(36, 45, 67, 0.9), rgba(36, 45, 67, 0.95)),
+                url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+        
+        .main-container {
+            width: 75vw;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(36, 45, 67, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(122, 130, 156, 0.3);
+            backdrop-filter: blur(8px);
+            overflow: hidden;
+        }
+        
+        .header {
+            padding: 2rem;
+            border-bottom: 1px solid var(--color-primary);
+        }
+        
+        .environment {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--color-light);
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--color-primary);
+        }
+        
+        h1 {
+            font-family: 'Share Tech Mono', monospace;
+            color: var(--color-accent);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(0, 198, 255, 0.5);
+        }
+        
+        .container {
+            padding: 2rem;
+            border-bottom: 1px solid var(--color-primary);
+        }
+        
+        p, pre {
+            margin: 1rem 0;
+            color: var(--color-light);
+            font-size: 1rem;
+        }
+        
+        a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: white;
+            text-shadow: 0 0 5px rgba(0, 198, 255, 0.7);
+        }
+        
+        .source {
+            background: rgba(58, 66, 89, 0.6);
+            border-radius: 5px;
+            padding: 1rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        
+        .source pre {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+        
+        .source .line {
+            display: block;
+            min-height: 1.2rem;
+        }
+        
+        .source .line.highlight {
+            background: rgba(0, 198, 255, 0.15);
+            border-left: 3px solid var(--color-accent);
+        }
+        
+        .source .line-number {
+            color: var(--color-medium);
+            display: inline-block;
+            width: 3rem;
+            text-align: right;
+            padding-right: 1rem;
+            user-select: none;
+            opacity: 0.7;
+        }
+        
+        .tabs {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1rem 0;
+            border-bottom: 1px solid var(--color-primary);
+        }
+        
+        .tabs li {
+            margin-right: 1rem;
+        }
+        
+        .tabs a {
+            display: block;
+            padding: 0.5rem 1rem;
+            border-radius: 5px 5px 0 0;
+            background: rgba(58, 66, 89, 0.3);
+        }
+        
+        .tabs a:hover {
+            background: rgba(0, 198, 255, 0.1);
+        }
+        
+        .content {
+            display: none;
+        }
+        
+        .content.active {
+            display: block;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        table th, table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--color-primary);
+        }
+        
+        table th {
+            background: rgba(58, 66, 89, 0.5);
+            color: var(--color-accent);
+        }
+        
+        .alert {
+            background: rgba(239, 35, 60, 0.2);
+            border-left: 3px solid #ef233c;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .trace ol {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .trace li {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: rgba(58, 66, 89, 0.3);
+            border-radius: 5px;
+        }
+        
+        .args {
+            display: none;
+            margin-top: 1rem;
+        }
+        
+        .args table {
+            background: rgba(36, 45, 67, 0.7);
+        }
+        
+        @media (max-width: 1200px) {
+            .main-container {
+                width: 85vw;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .main-container {
+                width: 90vw;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .main-container {
+                width: 95vw;
+            }
+            
+            .header, .container {
+                padding: 1.5rem;
+            }
+            
+            .tabs {
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
     </style>
-
-    <script>
-        <?= file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . 'debug.js') ?>
-    </script>
 </head>
-<body onload="init()">
+<body>
 
+<div class="main-container">
     <!-- Header -->
     <div class="header">
         <div class="environment">
@@ -89,7 +316,7 @@ $errorId = uniqid('error', true);
         <div class="tab-content">
 
             <!-- Backtrace -->
-            <div class="content" id="backtrace">
+            <div class="content active" id="backtrace">
 
                 <ol class="trace">
                 <?php foreach ($trace as $index => $row) : ?>
@@ -425,6 +652,45 @@ $errorId = uniqid('error', true);
 
     </div> <!-- /container -->
     <?php endif; ?>
+</div> <!-- /main-container -->
+
+<script>
+    function init() {
+        // Activate first tab by default
+        document.querySelector('.tabs a').classList.add('active');
+        
+        // Tab functionality
+        const tabs = document.querySelectorAll('.tabs a');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Hide all content
+                document.querySelectorAll('.content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Deactivate all tabs
+                tabs.forEach(t => {
+                    t.classList.remove('active');
+                });
+                
+                // Activate current tab
+                this.classList.add('active');
+                
+                // Show corresponding content
+                const contentId = this.getAttribute('href').substring(1);
+                document.getElementById(contentId).classList.add('active');
+            });
+        });
+    }
+    
+    function toggle(id) {
+        const element = document.getElementById(id);
+        element.style.display = element.style.display === 'none' ? 'block' : 'none';
+        return false;
+    }
+</script>
 
 </body>
 </html>
