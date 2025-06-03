@@ -10,7 +10,7 @@ class esp32controller extends BaseController
     public function insertar_registro()
     {
         $a = $this->request->getJSON(); // Obtiene el JSON enviado por el ESP32 a través de una solicitud HTTP
-        $dato = $a->parametro1; // Extrae el valor de 'parametro1' (presumiblemente el UID de la tarjeta) del JSON recibido
+        $dato = $a->uid; // Extrae el valor de 'parametro1' (presumiblemente el UID de la tarjeta) del JSON recibido
         $modelo = new Esp32Model; // Crea una instancia del modelo Esp32Model para realizar operaciones en la base de datos
         $modelo->insertar_registro($dato); // Llama al método 'insertar_registro' en el modelo, pasando el dato extraído para guardarlo en la base de datos
     }
