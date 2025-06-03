@@ -5,7 +5,6 @@
     <title>Página no encontrada | RackON.tech</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-
     <style>
         :root {
             --color-dark: #242d43;
@@ -15,7 +14,6 @@
             --color-light: #7a829c;
             --color-accent: #00c6ff;
             --text-color: #f0f2f5;
-            --bg-gradient: linear-gradient(135deg, var(--color-dark) 0%, var(--color-primary) 100%);
         }
         
         * {
@@ -26,37 +24,39 @@
         
         body {
             min-height: 100vh;
-            background: var(--bg-gradient);
+            background: 
+                linear-gradient(rgba(36, 45, 67, 0.85), rgba(36, 45, 67, 0.9)),
+                url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
             font-family: 'Roboto', sans-serif;
             color: var(--text-color);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 1rem;
+            padding: 2rem;
             line-height: 1.6;
         }
         
         .logo {
-            height: 80px;
-            opacity: 0.8;
-            margin-bottom: 1.5rem;
-            filter: drop-shadow(0 0 5px rgba(0, 198, 255, 0.5));
+            height: 100px;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 0 10px rgba(0, 198, 255, 0.7));
         }
         
         .wrap {
-            max-width: 650px;
+            max-width: 800px;
             width: 100%;
             margin: 2rem auto;
-            padding: 3rem 2.5rem;
-            background: rgba(36, 45, 67, 0.8);
+            padding: 4rem 3rem;
+            background: rgba(36, 45, 67, 0.7);
             text-align: center;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
             position: relative;
             overflow: hidden;
-            border: 1px solid var(--color-medium);
-            backdrop-filter: blur(5px);
+            border: 1px solid rgba(122, 130, 156, 0.3);
+            backdrop-filter: blur(8px);
         }
         
         .wrap::before {
@@ -64,7 +64,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 5px;
+            width: 6px;
             height: 100%;
             background: linear-gradient(to bottom, var(--color-accent), transparent);
         }
@@ -72,104 +72,93 @@
         h1 {
             font-family: 'Share Tech Mono', monospace;
             font-weight: 500;
-            font-size: 6rem;
+            font-size: 7rem;
             margin: 0.5rem 0;
             color: var(--color-accent);
-            text-shadow: 0 0 10px rgba(0, 198, 255, 0.5);
+            text-shadow: 0 0 15px rgba(0, 198, 255, 0.7);
             letter-spacing: -5px;
         }
         
         h2 {
             font-weight: 400;
-            font-size: 1.8rem;
+            font-size: 2rem;
             margin-bottom: 1.5rem;
             color: var(--text-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         p {
-            margin: 1.5rem 0;
+            margin: 2rem 0;
             color: var(--color-light);
-            font-size: 1.05rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
         
         .error-details {
-            background-color: rgba(58, 66, 89, 0.5);
+            background-color: rgba(58, 66, 89, 0.6);
             border-left: 3px solid var(--color-accent);
-            padding: 1rem;
-            margin: 1.5rem 0;
+            padding: 1.2rem;
+            margin: 2rem 0;
             text-align: left;
-            border-radius: 0 4px 4px 0;
+            border-radius: 0 6px 6px 0;
             font-family: 'Share Tech Mono', monospace;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--color-light);
             overflow-x: auto;
         }
         
         .actions {
-            margin: 2.5rem 0 1.5rem;
+            margin: 3rem 0 2rem;
         }
         
         .btn {
             display: inline-block;
-            padding: 0.8rem 2rem;
+            padding: 1rem 2.5rem;
             background: transparent;
             color: var(--color-accent);
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 6px;
             font-weight: 500;
-            transition: all 0.3s ease;
-            border: 1px solid var(--color-accent);
+            transition: all 0.4s ease;
+            border: 2px solid var(--color-accent);
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 1.1rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             position: relative;
             overflow: hidden;
         }
         
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 198, 255, 0.2), transparent);
-            transition: 0.5s;
-        }
-        
         .btn:hover {
-            background: rgba(0, 198, 255, 0.1);
-            box-shadow: 0 0 10px rgba(0, 198, 255, 0.3);
-        }
-        
-        .btn:hover::before {
-            left: 100%;
+            background: rgba(0, 198, 255, 0.15);
+            box-shadow: 0 0 20px rgba(0, 198, 255, 0.4);
+            transform: translateY(-2px);
         }
         
         .footer {
-            margin-top: 2rem;
+            margin-top: 3rem;
             text-align: center;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--color-medium);
             width: 100%;
             border-top: 1px solid var(--color-primary);
-            padding-top: 1rem;
+            padding-top: 1.5rem;
         }
         
         a {
             color: var(--color-accent);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
         
         a:hover {
             color: white;
-            text-shadow: 0 0 5px rgba(0, 198, 255, 0.7);
+            text-shadow: 0 0 8px rgba(0, 198, 255, 0.8);
         }
         
         .glow {
-            animation: glow 2s ease-in-out infinite alternate;
+            animation: glow 1.5s ease-in-out infinite alternate;
         }
         
         @keyframes glow {
@@ -177,26 +166,37 @@
                 text-shadow: 0 0 5px rgba(0, 198, 255, 0.5);
             }
             to {
-                text-shadow: 0 0 10px rgba(0, 198, 255, 0.8), 0 0 15px rgba(0, 198, 255, 0.5);
+                text-shadow: 0 0 15px rgba(0, 198, 255, 0.9), 0 0 20px rgba(0, 198, 255, 0.6);
+            }
+        }
+        
+        @media (max-width: 992px) {
+            body {
+                padding: 1.5rem;
+            }
+            
+            .wrap {
+                max-width: 90%;
+                padding: 3rem 2rem;
             }
         }
         
         @media (max-width: 768px) {
             h1 {
-                font-size: 4rem;
-                letter-spacing: -3px;
+                font-size: 5rem;
             }
             
             h2 {
-                font-size: 1.4rem;
-            }
-            
-            .wrap {
-                padding: 2rem 1.5rem;
+                font-size: 1.6rem;
             }
             
             .logo {
-                height: 60px;
+                height: 80px;
+            }
+            
+            .btn {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
             }
         }
     </style>
@@ -206,7 +206,7 @@
         <img src="https://rackon.tech/logo.png" alt="RackON.tech Logo" class="logo" onerror="this.style.display='none'">
         
         <h1 class="glow">404</h1>
-        <h2>RECURSO NO ENCONTRADO</h2>
+        <h2>Recurso no disponible</h2>
         
         <p>
             <?php if (ENVIRONMENT !== 'production') : ?>
@@ -214,17 +214,17 @@
                     <?= nl2br(esc($message)) ?>
                 </div>
             <?php else : ?>
-                El recurso solicitado no existe o ha sido movido.<br>
-                Por favor verifica la URL o navega desde nuestra página principal.
+                El servidor no puede encontrar el recurso solicitado.<br>
+                Puede que la página haya sido movida o eliminada.
             <?php endif; ?>
         </p>
         
         <div class="actions">
-            <a href="/" class="btn">Ir al Inicio</a>
+            <a href="/" class="btn">Volver al Dashboard</a>
         </div>
         
         <div class="footer">
-            <p>Sistema Operativo RackON &copy; <?= date('Y') ?> <a href="https://rackon.tech" target="_blank">RackON.tech</a></p>
+            <p>Sistema RackON &copy; <?= date('Y') ?> <a href="https://rackon.tech" target="_blank">RackON.tech</a> | Todos los derechos reservados</p>
         </div>
     </div>
 </body>
