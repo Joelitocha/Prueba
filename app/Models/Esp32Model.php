@@ -14,7 +14,6 @@ class Esp32Model extends Model
         $data = array(
             "Resultado" => $tarjeta[0]["Estado"],
             "Accion_Tomada" => NULL,
-            "Fecha_Hora_Grabacion" => NULL,
             "Archivo_Video" => NULL,
             "Ubicacion_Camara" => NULL,
             "ID_Sistema" => NULL,
