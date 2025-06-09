@@ -750,3 +750,132 @@ INFO - 2025-06-09 16:02:46 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2025-06-09 16:02:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2025-06-09 16:02:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2025-06-09 16:02:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-09 16:09:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-09 16:09:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-09 16:09:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-09 16:11:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-09 16:11:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-09 16:11:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-09 16:11:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-09 16:11:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-09 16:13:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-09 16:13:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-09 16:17:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-09 16:21:25 --> ErrorException: Undefined variable $message
+[Method: GET, Route: assets/images/rackon-og.jpg]
+in APPPATH/Views/errors/html/error_404.php on line 231.
+ 1 APPPATH/Views/errors/html/error_404.php(231): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(60): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-06-09 16:27:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-09 16:30:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-09 16:38:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-09 17:17:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-09 17:26:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-09 17:32:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-09 17:36:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-09 17:36:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-09 17:40:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-09 18:02:38 --> ErrorException: Undefined variable $message
+[Method: GET, Route: developmentserver/metadatauploader]
+in APPPATH/Views/errors/html/error_404.php on line 231.
+ 1 APPPATH/Views/errors/html/error_404.php(231): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(60): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-06-09 18:12:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-09 18:23:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-09 18:46:43 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wordpress/wp-admin/setup-config.php]
+in APPPATH/Views/errors/html/error_404.php on line 231.
+ 1 APPPATH/Views/errors/html/error_404.php(231): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(60): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-06-09 18:49:39 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wp-admin/setup-config.php]
+in APPPATH/Views/errors/html/error_404.php on line 231.
+ 1 APPPATH/Views/errors/html/error_404.php(231): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(60): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-06-09 18:50:13 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wp-admin/setup-config.php]
+in APPPATH/Views/errors/html/error_404.php on line 231.
+ 1 APPPATH/Views/errors/html/error_404.php(231): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(60): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-06-09 18:50:33 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wordpress/wp-admin/setup-config.php]
+in APPPATH/Views/errors/html/error_404.php on line 231.
+ 1 APPPATH/Views/errors/html/error_404.php(231): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(60): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-06-09 19:26:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-06-09 19:36:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-09 20:01:44 --> ErrorException: Undefined variable $message
+[Method: GET, Route: login.php]
+in APPPATH/Views/errors/html/error_404.php on line 231.
+ 1 APPPATH/Views/errors/html/error_404.php(231): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(60): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-06-09 20:07:34 --> ErrorException: Undefined variable $message
+[Method: POST, Route: xmlrpc.php]
+in APPPATH/Views/errors/html/error_404.php on line 231.
+ 1 APPPATH/Views/errors/html/error_404.php(231): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(60): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-06-09 20:22:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
