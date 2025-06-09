@@ -28,6 +28,7 @@
     'Config\\Validation' => 'Config\\Validation',
     'Config\\Security' => 'Config\\Security',
     'Session' => 'Config\\Session',
+    'Config\\Format' => 'Config\\Format',
   ),
   'instances' => 
   array (
@@ -680,6 +681,27 @@
        'regenerate' => true,
        'redirect' => true,
        'samesite' => 'Lax',
+    )),
+    'Config\\Format' => 
+    Config\Format::__set_state(array(
+       'supportedResponseFormats' => 
+      array (
+        0 => 'application/json',
+        1 => 'application/xml',
+        2 => 'text/xml',
+      ),
+       'formatters' => 
+      array (
+        'application/json' => 'CodeIgniter\\Format\\JSONFormatter',
+        'application/xml' => 'CodeIgniter\\Format\\XMLFormatter',
+        'text/xml' => 'CodeIgniter\\Format\\XMLFormatter',
+      ),
+       'formatterOptions' => 
+      array (
+        'application/json' => 320,
+        'application/xml' => 0,
+        'text/xml' => 0,
+      ),
     )),
   ),
 );
