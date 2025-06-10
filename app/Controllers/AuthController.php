@@ -16,10 +16,7 @@ class AuthController extends BaseController
             // Verificar que los datos mínimos de sesión existen
             if ($session->has('user_id') && $session->has('ID_Rol')) {
                 return redirect()->to('/bienvenido')->withCookies();
-            } else {
-                // Sesión corrupta, limpiar y mostrar landing
-                $session->destroy();
-            }
+            } 
         }
         $data = [
             // SEO Solo para la página principal
