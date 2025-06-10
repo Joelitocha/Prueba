@@ -31,7 +31,7 @@ class SessionCheck implements FilterInterface
             }
 
             // Control de inactividad (30 minutos)
-            $timeout = 30; 
+            $timeout = 5; 
             if ($session->has('last_activity')) {
                 $inactiveTime = time() - $session->get('last_activity');
 
