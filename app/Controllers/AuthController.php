@@ -437,12 +437,20 @@ private function enviarCorreoVerificacion($email, $token)
         return view('register', ['tarjetas' => $tarjetas]);
     }
 
-    public function logout()
-    {
-        $session = session();
-        $session->destroy();
-        setcookie(session_name(), '', time() - 3600);
-        return redirect()->to('/');
-    }
+public function logout()
+{
+    $session = session();
+    $session->destroy();
+    // Eliminar la cookie de manera compatible
+    setcookie(config('Session')->cookieName, '', [
+        'expires' => time() - 3600,
+        'path' => config('Session')->cookiePath,
+        'domain' => config('Session')->cookieDomain,
+        'secure' => config('Session')->cookieSecure,
+        'httponly' => config('Session')->cookieHTTPOnly,
+        'samesite' => config('Session')->cookieSameSite
+    ]);
+    return redirect()->to('/');
+}
 
 }
