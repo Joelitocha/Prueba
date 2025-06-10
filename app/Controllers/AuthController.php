@@ -30,73 +30,55 @@ class AuthController extends BaseController
     public function inicio(){
         return view("login");
     }
-    public function loginUser()
-    {
-        // Inicializar y regenerar sesión de forma segura
-        session()->start();
-        session()->regenerate(true);
-    
-        $model = new UserModel();
-        $email = $this->request->getPost('Email');
-        $password = $this->request->getPost('Contraseña');
-    
-        $user = $model->where('Email', $email)->first();
-    
-        if ($user && password_verify($password, $user['Contraseña'])) {
-            if ($user['Verificado'] == 0) {
-                return redirect()->to('/login')->with('error', 'Cuenta no verificada. Por favor verifica tu email.');
-            }
-    
-            // Actualizar último acceso
-            $model->update($user['ID_Usuario'], ['Ultimo_Acceso' => date('Y-m-d H:i:s')]);
-    
-            // Configurar datos de sesión persistentes
-            $sessionData = [
-                "user_id"    => $user["ID_Usuario"],
-                "logged_in"  => true,
-                "username"   => $user["Nombre"],
-                "ID_Rol"     => $user["ID_Rol"],
-                "ID_tarjeta" => $user["ID_Tarjeta"],
-            ];
-            
-            session()->set($sessionData);
-    
-            // Configurar cookie persistente (30 días)
-            $cookieParams = [
-                'expires'  => time() + 2592000, // 30 días en segundos
-                'path'     => '/',
-                'domain'   => $_SERVER['HTTP_HOST'],
-                'secure'   => !empty($_SERVER['HTTPS']), // true si es HTTPS
-                'httponly' => true,
-                'samesite' => 'None'
-            ];
-            
-            setcookie(
-                config('Session')->cookieName,
-                session_id(),
-                $cookieParams
-            );
-    
-            // Verificación de sesión
-            if (!session()->get('logged_in')) {
-                log_message('error', 'Falló al establecer sesión para: ' . $email);
-                return redirect()->to('/login')->with('error', 'Error técnico al iniciar sesión');
-            }
-    
-            // Limpiar mensajes temporales
-            session()->removeTempdata('error');
-    
-            // Redirección inteligente
-            $redirectUrl = session()->get('redirect_url') ?? '/bienvenido';
-            session()->remove('redirect_url'); // Limpiar después de usar
-    
-            return redirect()->to($redirectUrl)->withCookies();
+public function loginUser()
+{
+    // Inicializar y regenerar sesión de forma segura
+    session()->start();
+    session()->regenerate(true);
+
+    $model = new UserModel();
+    $email = $this->request->getPost('Email');
+    $password = $this->request->getPost('Contraseña');
+
+    $user = $model->where('Email', $email)->first();
+
+    if ($user && password_verify($password, $user['Contraseña'])) {
+        if ($user['Verificado'] == 0) {
+            return redirect()->to('/login')->with('error', 'Cuenta no verificada. Por favor verifica tu email.');
         }
-    
-        return redirect()->to('/login')
-               ->with('error', 'Email o contraseña incorrectos')
-               ->withInput(); // Mantener el email en el formulario
+
+        // Actualizar último acceso
+        $model->update($user['ID_Usuario'], ['Ultimo_Acceso' => date('Y-m-d H:i:s')]);
+
+        // Configurar datos de sesión persistentes
+        $sessionData = [
+            "user_id"    => $user["ID_Usuario"],
+            "logged_in"  => true,
+            "username"   => $user["Nombre"],
+            "ID_Rol"     => $user["ID_Rol"],
+            "ID_tarjeta" => $user["ID_Tarjeta"],
+            "last_activity" => time() // ← Añadido para control de inactividad
+        ];
+        
+        session()->set($sessionData);
+
+        // Verificación de sesión
+        if (!session()->get('logged_in')) {
+            log_message('error', 'Falló al establecer sesión para: ' . $email);
+            return redirect()->to('/login')->with('error', 'Error técnico al iniciar sesión');
+        }
+
+        // Redirección
+        $redirectUrl = session()->get('redirect_url') ?? '/bienvenido';
+        session()->remove('redirect_url');
+
+        return redirect()->to($redirectUrl);
     }
+
+    return redirect()->to('/login')
+           ->with('error', 'Email o contraseña incorrectos')
+           ->withInput();
+}
 
     private function generarToken()
     {
