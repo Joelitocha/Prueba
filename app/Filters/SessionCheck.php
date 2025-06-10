@@ -30,8 +30,8 @@ class SessionCheck implements FilterInterface
                 return redirect()->to('/login?error=1');
             }
 
-            // Control de inactividad (15 minutos)
-            $timeout = 1800; // 15 * 60
+            // Control de inactividad (30 minutos)
+            $timeout = 30; 
             if ($session->has('last_activity')) {
                 $inactiveTime = time() - $session->get('last_activity');
 
