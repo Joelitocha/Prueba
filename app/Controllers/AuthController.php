@@ -57,7 +57,6 @@ class AuthController extends BaseController
                 "username"   => $user["Nombre"],
                 "ID_Rol"     => $user["ID_Rol"],
                 "ID_tarjeta" => $user["ID_Tarjeta"],
-                "last_activity" => time()
             ];
             
             session()->set($sessionData);
