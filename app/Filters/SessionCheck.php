@@ -29,18 +29,6 @@ class SessionCheck implements FilterInterface
                 $session->destroy();
                 return redirect()->to('/login?error=1');
             }
-
-            // Control de inactividad (30 minutos)
-            $timeout = 5; 
-            if ($session->has('last_activity')) {
-                $inactiveTime = time() - $session->get('last_activity');
-
-                if ($inactiveTime > $timeout) {
-                    $session->destroy();
-                    return redirect()->to('/login?error=1');
-                }
-            }
-
             // Si todo OK, actualizar tiempo de actividad
             $session->set('last_activity', time());
         }
