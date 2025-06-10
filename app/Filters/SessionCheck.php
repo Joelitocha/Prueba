@@ -27,7 +27,7 @@ class SessionCheck implements FilterInterface
             // Verificación de integridad
             if (!$session->has('user_id') || !$session->has('ID_Rol')) {
                 $session->destroy();
-                return redirect()->to('/login?error=1');
+                return redirect()->to('/login?error=4');
             }
         }
     }
