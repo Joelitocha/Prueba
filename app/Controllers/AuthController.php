@@ -69,7 +69,7 @@ class AuthController extends BaseController
                 'domain'   => $_SERVER['HTTP_HOST'],
                 'secure'   => !empty($_SERVER['HTTPS']), // true si es HTTPS
                 'httponly' => true,
-                'samesite' => 'Lax'
+                'samesite' => 'None'
             ];
             
             setcookie(
