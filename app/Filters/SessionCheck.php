@@ -21,13 +21,13 @@ class SessionCheck implements FilterInterface
 
             // Si no hay sesión activa, redirigir
             if (!$session->get('logged_in')) {
-                return redirect()->to('/login?error=3');
+                return redirect()->to('/login?error=2');
             }
 
             // Verificación de integridad
             if (!$session->has('user_id') || !$session->has('ID_Rol')) {
                 $session->destroy();
-                return redirect()->to('/login?error=4');
+                return redirect()->to('/login?error=3');
             }
         }
     }
