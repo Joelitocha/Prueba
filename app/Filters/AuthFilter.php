@@ -12,11 +12,6 @@ class AuthFilter implements FilterInterface
     {
         $session = session();
 
-        if (!$session->get('logged_in')) {
-            // Redirección sin activar sesión: pasamos el mensaje por query string
-            return redirect()->to('/login?error=1');
-        }
-
         if ($arguments) {
             $userRole = $session->get('ID_Rol');
             if (!in_array($userRole, explode(',', $arguments))) {
