@@ -29,14 +29,12 @@ class SessionCheck implements FilterInterface
                 $session->destroy();
                 return redirect()->to('/login?error=1');
             }
-            // Si todo OK, actualizar tiempo de actividad
-            $session->set('last_activity', time());
         }
     }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        // No es necesario implementar nada acá por ahora
+        // Nada que hacer aquí por ahora
     }
 }
 
