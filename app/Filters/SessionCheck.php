@@ -12,35 +12,43 @@ class SessionCheck implements FilterInterface
     {
         $session = \Config\Services::session();
         $currentPath = trim($request->uri->getPath(), '/');
-        
-        // Excluir rutas públicas
+
+        // Rutas públicas donde no se requiere sesión
         $publicRoutes = ['login', 'register', '', 'verify'];
 
+        // Si NO es ruta pública, aplicamos chequeo de sesión
         if (!in_array($currentPath, $publicRoutes)) {
+
+            // Si no hay sesión activa, redirigir
             if (!$session->get('logged_in')) {
-                return redirect()->to('/login');
+                return redirect()->to('/login?error=1');
             }
 
-            // Verificar integridad de la sesión
+            // Verificación de integridad
             if (!$session->has('user_id') || !$session->has('ID_Rol')) {
                 $session->destroy();
-                return redirect()->to('/login');
+                return redirect()->to('/login?error=1');
             }
 
-            // Verificar inactividad (15 minutos)
-            $timeout = 900;
-            if ($session->has('last_activity') && (time() - $session->get('last_activity')) > $timeout) {
-                $session->destroy();
-                return redirect()->to('/login')->with('error', 'Sesión expirada por inactividad.');
+            // Control de inactividad (15 minutos)
+            $timeout = 1800; // 15 * 60
+            if ($session->has('last_activity')) {
+                $inactiveTime = time() - $session->get('last_activity');
+
+                if ($inactiveTime > $timeout) {
+                    $session->destroy();
+                    return redirect()->to('/login?error=1');
+                }
             }
 
-            // Actualizar actividad
+            // Si todo OK, actualizar tiempo de actividad
             $session->set('last_activity', time());
         }
     }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        // Nada que hacer aquí
+        // No es necesario implementar nada acá por ahora
     }
 }
+
