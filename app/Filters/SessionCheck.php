@@ -29,20 +29,6 @@ class SessionCheck implements FilterInterface
                 $session->destroy();
                 return redirect()->to('/login?error=4');
             }
-
-            // ✅ Refrescar cookie de sesión para extender 30 días
-            setcookie(
-                config('Session')->cookieName,
-                session_id(),
-                [
-                    'expires' => time() + config('Session')->expiration,
-                    'path' => config('Session')->cookiePath,
-                    'domain' => config('Session')->cookieDomain,
-                    'secure' => config('Session')->cookieSecure,
-                    'httponly' => config('Session')->cookieHTTPOnly,
-                    'samesite' => config('Session')->cookieSameSite
-                ]
-            );
         }
     }
 
