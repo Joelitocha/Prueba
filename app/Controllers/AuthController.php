@@ -16,10 +16,7 @@ class AuthController extends BaseController
             // Verificar que los datos mínimos de sesión existen
             if ($session->has('user_id') && $session->has('ID_Rol')) {
                 return redirect()->to('/bienvenido')->withCookies();
-            } else {
-                // Sesión corrupta, limpiar y mostrar landing
-                $session->destroy();
-            }
+            } 
         }
         $data = [
             // SEO Solo para la página principal
@@ -60,7 +57,6 @@ class AuthController extends BaseController
                 "username"   => $user["Nombre"],
                 "ID_Rol"     => $user["ID_Rol"],
                 "ID_tarjeta" => $user["ID_Tarjeta"],
-                "last_activity" => time()
             ];
             
             session()->set($sessionData);
@@ -72,7 +68,7 @@ class AuthController extends BaseController
                 'domain'   => $_SERVER['HTTP_HOST'],
                 'secure'   => !empty($_SERVER['HTTPS']), // true si es HTTPS
                 'httponly' => true,
-                'samesite' => 'Lax'
+                'samesite' => 'None'
             ];
             
             setcookie(
