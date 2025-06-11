@@ -23,12 +23,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
     /* Estilos generales */
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-    
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
@@ -37,20 +31,180 @@
         min-height: 100vh;
     }
 
-    /* Botón para mostrar/ocultar menú en móviles */
-    .menu-toggle {
-        display: none;
-        position: fixed;
-        top: 15px;
-        left: 15px;
+    /* Contenedor del título */
+    .titulo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        text-align: center;
+        margin-left: 250px;
+        transition: margin-left 0.3s ease;
+    }
+
+    .titulo h1 {
+        margin: 0;
+        font-size: 24px;
+        color: #333;
+    }
+
+    /* Contenedor de acciones */
+    .titulo .acciones {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    /* Botón "Añadir Tarjeta" */
+    .titulo .menu-item {
+        display: inline-flex;
+        align-items: center;
         background-color: #3498db;
-        color: white;
+        color: #fff;
         border: none;
+        padding: 8px 16px;
         border-radius: 4px;
-        padding: 10px;
-        z-index: 1100;
+        font-size: 14px;
+        text-decoration: none;
         cursor: pointer;
-        font-size: 18px;
+        transition: background-color 0.3s ease;
+        white-space: nowrap;
+    }
+
+    .titulo .menu-item:hover {
+        background-color: #2980b9;
+    }
+
+    /* Barra de búsqueda */
+    .barra-busqueda {
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        width: 250px;
+        max-width: 100%;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        transition: border-color 0.3s ease;
+        flex-grow: 1;
+    }
+
+    .barra-busqueda:focus {
+        border-color: #3498db;
+        outline: none;
+    }
+
+    /* Tabla */
+    .tabla-container {
+        padding: 20px;
+        margin-left: 250px;
+        transition: margin-left 0.3s ease;
+        overflow-x: auto;
+    }
+
+    .modificar {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        min-width: 600px;
+    }
+
+    .modificar th,
+    .modificar td {
+        padding: 12px 15px;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
+
+    .modificar th {
+        background-color: #f8f9fa;
+        font-weight: bold;
+        color: #3498db;
+    }
+
+    .modificar tr:nth-child(even) {
+        background-color: #f8f9fa;
+    }
+
+    .modificar tr:hover {
+        background-color: #f1f8ff;
+    }
+
+    /* Estados de tarjeta */
+    .estado-activa {
+        color: #27ae60;
+        font-weight: bold;
+    }
+
+    .estado-inactiva {
+        color: #e74c3c;
+        font-weight: bold;
+    }
+
+    /* Botones */
+    .btn-modificar {
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin: 2px;
+    }
+
+    .btn-bloquear {
+        background-color: #e67e22;
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin: 2px;
+    }
+
+    .btn-desbloquear {
+        background-color: #27ae60;
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin: 2px;
+    }
+
+    .btn-eliminar {
+        background-color: #e74c3c;
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin: 2px;
+    }
+
+    .btn-modificar:hover {
+        background-color: #2980b9;
+    }
+
+    .btn-bloquear:hover {
+        background-color: #d35400;
+    }
+
+    .btn-desbloquear:hover {
+        background-color: #219653;
+    }
+
+    .btn-eliminar:hover {
+        background-color: #c0392b;
     }
 
     /* Sidebar - Versión responsive */
@@ -141,247 +295,19 @@
         letter-spacing: 1px;
     }
 
-    /* Contenido principal */
-    .content {
-        margin-left: 250px;
-        padding: 20px;
-        transition: margin-left 0.3s ease;
-    }
-
-    /* Contenedor del título */
-    .titulo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 20px 20px 10px;
-        text-align: center;
-    }
-
-    .titulo h1 {
-        margin: 0;
-        font-size: 24px;
-        color: #333;
-    }
-
-    /* Contenedor de acciones */
-    .titulo .acciones {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 15px;
-        margin-top: 10px;
-        flex-wrap: wrap;
-    }
-
-    /* Botón "Añadir Tarjeta" */
-    .titulo .menu-item {
-        display: inline-flex;
-        align-items: center;
+    /* Botón para mostrar/ocultar sidebar en móviles */
+    .menu-toggle {
+        display: none;
+        position: fixed;
+        top: 15px;
+        left: 15px;
         background-color: #3498db;
-        color: #fff;
+        color: white;
         border: none;
-        padding: 8px 16px;
         border-radius: 4px;
-        font-size: 14px;
-        text-decoration: none;
+        padding: 10px;
+        z-index: 1100;
         cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    .titulo .menu-item:hover {
-        background-color: #2980b9;
-    }
-
-    /* Barra de búsqueda */
-    .barra-busqueda {
-        padding: 8px 12px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        font-size: 14px;
-        width: 250px;
-        max-width: 100%;
-        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-        transition: border-color 0.3s ease;
-    }
-
-    .barra-busqueda:focus {
-        border-color: #3498db;
-        outline: none;
-    }
-
-    /* Estilos para la tabla - Versión responsive */
-    .tabla-container {
-        padding: 20px;
-        overflow-x: auto;
-        width: calc(100% - 250px);
-        transition: margin-left 0.3s ease;
-    }
-
-    .modificar {
-        width: 100%;
-        border-collapse: collapse;
-        background-color: #fff;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        min-width: 600px; /* Ancho mínimo para PC */
-    }
-
-    /* Versión para pantallas grandes (PC) */
-    @media (min-width: 769px) {
-        .modificar th,
-        .modificar td {
-            padding: 12px 15px;
-            text-align: center;
-            border-bottom: 1px solid #eee;
-        }
-
-        .modificar th {
-            background-color: #f8f9fa;
-            font-weight: bold;
-            color: #3498db;
-            position: sticky;
-            top: 0;
-        }
-
-        .modificar tr:nth-child(even) {
-            background-color: #f8f9fa;
-        }
-
-        .modificar tr:hover {
-            background-color: #f1f8ff;
-        }
-    }
-
-    /* Versión para móviles */
-    @media (max-width: 768px) {
-        .tabla-container {
-            padding: 10px;
-            width: 100%;
-            margin-left: 0;
-        }
-
-        .modificar {
-            min-width: 100%;
-            display: block;
-        }
-
-        .modificar thead {
-            display: none;
-        }
-
-        .modificar tbody {
-            display: block;
-            width: 100%;
-        }
-
-        .modificar tr {
-            display: block;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .modificar td {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            text-align: right;
-            padding: 10px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .modificar td::before {
-            content: attr(data-label);
-            font-weight: bold;
-            margin-right: 15px;
-            color: #3498db;
-            text-align: left;
-        }
-
-        .modificar td:last-child {
-            border-bottom: none;
-        }
-
-        .btn-group {
-            justify-content: flex-end;
-            width: 100%;
-        }
-    }
-
-    /* Para pantallas muy pequeñas */
-    @media (max-width: 480px) {
-        .modificar td {
-            flex-direction: column;
-            align-items: flex-start;
-            text-align: left;
-        }
-
-        .modificar td::before {
-            margin-bottom: 5px;
-        }
-
-        .btn-group {
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .btn-modificar, 
-        .btn-eliminar {
-            width: 100%;
-        }
-    }
-
-    /* Estado de las tarjetas */
-    .estado-activa {
-        color: #27ae60;
-        font-weight: bold;
-    }
-
-    .estado-inactiva {
-        color: #e74c3c;
-        font-weight: bold;
-    }
-
-    /* Botones */
-    .btn-group {
-        display: flex;
-        justify-content: center;
-        gap: 5px;
-        flex-wrap: wrap;
-    }
-
-    .btn-modificar {
-        background-color: #3498db;
-        color: #fff;
-        border: none;
-        padding: 8px 12px;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        margin: 2px;
-        white-space: nowrap;
-    }
-
-    .btn-eliminar {
-        background-color: #e74c3c;
-        color: #fff;
-        border: none;
-        padding: 8px 12px;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        margin: 2px;
-        white-space: nowrap;
-    }
-
-    .btn-modificar:hover {
-        background-color: #2980b9;
-    }
-
-    .btn-eliminar:hover {
-        background-color: #c0392b;
     }
 
     /* Modal de confirmación */
@@ -472,46 +398,134 @@
             transform: translateX(0);
         }
         
-        .content, .mensaje {
+        .titulo, .tabla-container, .mensaje {
             margin-left: 0;
+            padding: 15px;
         }
         
         .menu-toggle {
             display: block;
+        }
+        
+        .tabla-container {
+            padding: 15px 10px;
         }
     }
 
     @media (max-width: 768px) {
         .titulo .acciones {
             flex-direction: column;
-            width: 100%;
+            gap: 10px;
         }
         
         .barra-busqueda {
             width: 100%;
+            max-width: 100%;
+        }
+        
+        .modificar th, 
+        .modificar td {
+            padding: 8px 10px;
+            font-size: 14px;
+        }
+        
+        .btn-modificar, 
+        .btn-eliminar,
+        .btn-bloquear,
+        .btn-desbloquear {
+            padding: 6px 10px;
+            font-size: 13px;
         }
         
         .titulo h1 {
-            font-size: 22px;
+            font-size: 20px;
+        }
+        
+        .sidebar {
+            width: 220px;
         }
     }
 
     @media (max-width: 576px) {
         .sidebar {
-            width: 220px;
+            width: 200px;
         }
         
         .sidebar a {
             padding: 10px 12px;
-            font-size: 15px;
+            font-size: 14px;
         }
         
         .sidebar .logo {
-            font-size: 22px;
+            font-size: 20px;
+        }
+        
+        .titulo h1 {
+            font-size: 18px;
         }
         
         .mensaje {
             margin: 15px 10px;
+            font-size: 14px;
+        }
+        
+        .modificar th, 
+        .modificar td {
+            padding: 6px 8px;
+            font-size: 13px;
+        }
+        
+        .btn-modificar, 
+        .btn-eliminar,
+        .btn-bloquear,
+        .btn-desbloquear {
+            padding: 5px 8px;
+            font-size: 12px;
+        }
+    }
+    
+    @media (max-width: 400px) {
+        .sidebar {
+            width: 180px;
+        }
+        
+        .sidebar a {
+            padding: 8px 10px;
+            font-size: 13px;
+        }
+        
+        .sidebar .logo {
+            font-size: 18px;
+        }
+        
+        .menu-toggle {
+            padding: 8px;
+        }
+        
+        .titulo {
+            padding: 15px 10px;
+        }
+        
+        .titulo h1 {
+            font-size: 16px;
+        }
+        
+        .mensaje {
+            font-size: 13px;
+            padding: 10px;
+        }
+        
+        #modalConfirmacion div {
+            padding: 15px;
+        }
+        
+        #modalConfirmacion h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        
+        #modalConfirmacion button {
+            padding: 8px 15px;
             font-size: 14px;
         }
     }
@@ -602,55 +616,55 @@
     </div>
     
     <div class="tabla-container">
-    <table class="modificar">
-    <thead>
-      <tr>
-        <th>ID Tarjeta</th>
-        <th>UID</th>
-        <th>Estado</th>
-        <th>Intentos Fallidos</th>
-        <th>Fecha Expiración</th>
-        <th>Horario Uso</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php foreach ($tarjetas as $tarjeta): ?>
-        <tr>
-          <td data-label="ID Tarjeta"><?= esc($tarjeta['ID_Tarjeta']); ?></td>
-          <td data-label="UID"><?= esc($tarjeta['UID']); ?></td>
-          <td data-label="Estado" class="<?= $tarjeta['Estado'] == 1 ? 'estado-activa' : 'estado-inactiva'; ?>">
-            <?= $tarjeta['Estado'] == 1 ? 'Activa' : 'Inactiva'; ?>
-          </td>
-          <td data-label="Intentos Fallidos"><?= esc($tarjeta['Intentos_Fallidos']); ?></td>
-          <td data-label="Fecha Expiración"><?= esc($tarjeta['Fecha_Expiracion'] ?? 'Sin expiración'); ?></td>
-          <td data-label="Horario Uso"><?= esc($tarjeta['Horario_Uso'] ?? 'Sin restricción'); ?></td>
-          <td data-label="Acciones">
-            <div class="btn-group">
-              <form action="<?= site_url('modificar-tarjeta2') ?>" method="post">
-                <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
-                <input type="submit" value="Modificar" class="btn-modificar">
-              </form>
-              <?php if ($tarjeta['Estado'] == 0): ?>
-                <form action="<?= site_url('desbloquear-tarjeta') ?>" method="post">
-                  <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
-                  <input type="submit" value="Desbloquear" class="btn-modificar" style="background-color: #27ae60;">
-                </form>
-              <?php else: ?>
-                <form action="<?= site_url('bloquear-tarjeta') ?>" method="post">
-                  <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
-                  <input type="submit" value="Bloquear" class="btn-modificar" style="background-color: #e67e22;">
-                </form>
-              <?php endif; ?>
-              <button type="button" class="btn-eliminar" onclick="mostrarModal('<?= esc($tarjeta['ID_Tarjeta']); ?>')">
-                Eliminar
-              </button>
-            </div>
-          </td>
-        </tr>
-      <?php endforeach; ?>
-    </tbody>
-  </table>
+      <table class="modificar">
+        <thead>
+          <tr>
+            <th>ID Tarjeta</th>
+            <th>UID</th>
+            <th>Estado</th>
+            <th>Intentos Fallidos</th>
+            <th>Fecha Expiración</th>
+            <th>Horario Uso</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach ($tarjetas as $tarjeta): ?>
+            <tr>
+              <td><?= esc($tarjeta['ID_Tarjeta']); ?></td>
+              <td><?= esc($tarjeta['UID']); ?></td>
+              <td class="<?= $tarjeta['Estado'] == 1 ? 'estado-activa' : 'estado-inactiva'; ?>">
+                <?= $tarjeta['Estado'] == 1 ? 'Activa' : 'Inactiva'; ?>
+              </td>
+              <td><?= esc($tarjeta['Intentos_Fallidos']); ?></td>
+              <td><?= esc($tarjeta['Fecha_Expiracion'] ?? 'Sin expiración'); ?></td>
+              <td><?= esc($tarjeta['Horario_Uso'] ?? 'Sin restricción'); ?></td>
+              <td>
+                <div class="btn-group">
+                  <form action="<?= site_url('modificar-tarjeta2') ?>" method="post">
+                    <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
+                    <input type="submit" value="Modificar" class="btn-modificar">
+                  </form>
+                  <?php if ($tarjeta['Estado'] == 0): ?>
+                    <form action="<?= site_url('desbloquear-tarjeta') ?>" method="post">
+                      <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
+                      <input type="submit" value="Desbloquear" class="btn-desbloquear">
+                    </form>
+                  <?php else: ?>
+                    <form action="<?= site_url('bloquear-tarjeta') ?>" method="post">
+                      <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
+                      <input type="submit" value="Bloquear" class="btn-bloquear">
+                    </form>
+                  <?php endif; ?>
+                  <button type="button" class="btn-eliminar" onclick="mostrarModal('<?= esc($tarjeta['ID_Tarjeta']); ?>')">
+                    Eliminar
+                  </button>
+                </div>
+              </td>
+            </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
     </div>
   </div>
 
@@ -699,10 +713,10 @@
 
       filasTarjeta.forEach(fila => {
         const idTarjeta = fila.querySelector('td:first-child').innerText.toLowerCase();
-        const estadoTarjeta = fila.querySelector('td:nth-child(2)').innerText.toLowerCase();
-        const fechaEmision = fila.querySelector('td:nth-child(3)').innerText.toLowerCase();
+        const uidTarjeta = fila.querySelector('td:nth-child(2)').innerText.toLowerCase();
+        const estadoTarjeta = fila.querySelector('td:nth-child(3)').innerText.toLowerCase();
 
-        if (idTarjeta.includes(valorBusqueda) || estadoTarjeta.includes(valorBusqueda) || fechaEmision.includes(valorBusqueda)) {
+        if (idTarjeta.includes(valorBusqueda) || uidTarjeta.includes(valorBusqueda) || estadoTarjeta.includes(valorBusqueda)) {
           fila.style.display = '';
         } else {
           fila.style.display = 'none';
@@ -716,16 +730,11 @@
         sidebar.classList.remove('active');
       }
     });
-
-    // Ejecutar al cargar
-    document.addEventListener('DOMContentLoaded', function() {
-      // Asegurar que los data-labels estén configurados correctamente en móviles
-      if (window.innerWidth <= 768) {
-        document.querySelectorAll('.modificar td').forEach(td => {
-          const headerIndex = Array.from(td.parentNode.children).indexOf(td);
-          const headerText = document.querySelectorAll('.modificar th')[headerIndex].innerText;
-          td.setAttribute('data-label', headerText);
-        });
+    
+    // Cerrar modal al hacer clic fuera
+    document.getElementById('modalConfirmacion').addEventListener('click', function(e) {
+      if (e.target === this) {
+        cerrarModal();
       }
     });
   </script>
