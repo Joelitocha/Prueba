@@ -5,6 +5,9 @@ from mfrc522 import MFRC522
 import network
 import urequests
 
+# --------- CONFIGURACIÓN CÓDIGO DE VINCULACIÓN ---------
+vincod = "ABC123"
+
 # --------- CONFIGURACIÓN WIFI ---------
 CONFIG_FILE = "wifi_config.json"
 URL_API = "https://rackon.tech/cargar_acceso"
