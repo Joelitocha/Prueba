@@ -207,6 +207,7 @@
         display: flex;
         justify-content: center;
         margin: 20px 0;
+        flex-wrap: wrap;
     }
 
     .paginacion a {
@@ -217,6 +218,7 @@
         text-decoration: none;
         border-radius: 4px;
         transition: background-color 0.3s;
+        margin-bottom: 5px;
     }
 
     .paginacion a:hover {
@@ -226,28 +228,6 @@
     .paginacion a.activa {
         background-color: #2980b9;
         font-weight: bold;
-    }
-
-    /* Mensajes de error/éxito */
-    .mensaje {
-        padding: 12px 15px;
-        margin: 15px 20px 15px 270px;
-        border-radius: 4px;
-        text-align: center;
-        font-size: 15px;
-        transition: margin-left 0.3s ease;
-    }
-
-    .error {
-        color: #e74c3c;
-        background-color: #fdecea;
-        border: 1px solid #f5c6cb;
-    }
-
-    .success {
-        color: #27ae60;
-        background-color: #e8f5e9;
-        border: 1px solid #c3e6cb;
     }
 
     /* Media Queries para responsive */
@@ -260,7 +240,7 @@
             transform: translateX(0);
         }
         
-        .content, .mensaje {
+        .content {
             margin-left: 0;
         }
         
@@ -302,11 +282,6 @@
         
         .sidebar .logo {
             font-size: 22px;
-        }
-        
-        .mensaje {
-            margin: 15px 10px;
-            font-size: 14px;
         }
         
         .titulo h1 {
@@ -414,9 +389,50 @@
     
     <?php if ($totalPaginas > 1): ?>
     <div class="paginacion">
-      <?php for ($i = 1; $i <= $totalPaginas; $i++): ?>
-        <a href="?pagina=<?= $i; ?>" class="<?= $i == $paginaActual ? 'activa' : ''; ?>"><?= $i; ?></a>
-      <?php endfor; ?>
+        <?php 
+        // Mostrar botón para la primera página
+        if ($paginaActual > 1): ?>
+            <a href="?pagina=1">« Primera</a>
+        <?php endif; ?>
+        
+        <?php 
+        // Mostrar botón para página anterior
+        if ($paginaActual > 1): ?>
+            <a href="?pagina=<?= $paginaActual - 1; ?>">‹ Anterior</a>
+        <?php endif; ?>
+        
+        <?php 
+        // Definir rango de páginas a mostrar
+        $rango = 2; // Número de páginas a mostrar a cada lado de la actual
+        $inicio = max(1, $paginaActual - $rango);
+        $fin = min($totalPaginas, $paginaActual + $rango);
+        
+        // Mostrar puntos suspensivos si hay páginas antes del rango
+        if ($inicio > 1): ?>
+            <span>...</span>
+        <?php endif;
+        
+        // Mostrar páginas en el rango calculado
+        for ($i = $inicio; $i <= $fin; $i++): ?>
+            <a href="?pagina=<?= $i; ?>" class="<?= $i == $paginaActual ? 'activa' : ''; ?>"><?= $i; ?></a>
+        <?php endfor; 
+        
+        // Mostrar puntos suspensivos si hay páginas después del rango
+        if ($fin < $totalPaginas): ?>
+            <span>...</span>
+        <?php endif; ?>
+        
+        <?php 
+        // Mostrar botón para página siguiente
+        if ($paginaActual < $totalPaginas): ?>
+            <a href="?pagina=<?= $paginaActual + 1; ?>">Siguiente ›</a>
+        <?php endif; ?>
+        
+        <?php 
+        // Mostrar botón para la última página
+        if ($paginaActual < $totalPaginas): ?>
+            <a href="?pagina=<?= $totalPaginas; ?>">Última »</a>
+        <?php endif; ?>
     </div>
     <?php endif; ?>
   </div>
