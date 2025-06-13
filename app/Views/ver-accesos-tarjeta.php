@@ -398,7 +398,7 @@
         <?php 
         // Mostrar botón para página anterior
         if ($paginaActual > 1): ?>
-            <a href="?pagina=<?= $paginaActual - 1; ?>">‹ Anterior</a>
+            <a href="?pagina=<?= $paginaActual - 1; ?>">‹</a>
         <?php endif; ?>
         
         <?php 
@@ -425,7 +425,7 @@
         <?php 
         // Mostrar botón para página siguiente
         if ($paginaActual < $totalPaginas): ?>
-            <a href="?pagina=<?= $paginaActual + 1; ?>">Siguiente ›</a>
+            <a href="?pagina=<?= $paginaActual + 1; ?>">›</a>
         <?php endif; ?>
         
         <?php 
