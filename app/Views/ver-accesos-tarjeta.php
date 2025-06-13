@@ -388,54 +388,45 @@
     </div>
     
     <?php if ($totalPaginas > 1): ?>
-    <div class="paginacion">
-        <?php 
-        // Mostrar botón para la primera página
-        if ($paginaActual > 1): ?>
-            <a href="?pagina=1">« Primera</a>
-        <?php endif; ?>
-        
-        <?php 
-        // Mostrar botón para página anterior
-        if ($paginaActual > 1): ?>
-            <a href="?pagina=<?= $paginaActual - 1; ?>">‹</a>
-        <?php endif; ?>
-        
-        <?php 
-        // Definir rango de páginas a mostrar
-        $rango = 2; // Número de páginas a mostrar a cada lado de la actual
-        $inicio = max(1, $paginaActual - $rango);
-        $fin = min($totalPaginas, $paginaActual + $rango);
-        
-        // Mostrar puntos suspensivos si hay páginas antes del rango
-        if ($inicio > 1): ?>
-            <span>...</span>
-        <?php endif;
-        
-        // Mostrar páginas en el rango calculado
-        for ($i = $inicio; $i <= $fin; $i++): ?>
-            <a href="?pagina=<?= $i; ?>" class="<?= $i == $paginaActual ? 'activa' : ''; ?>"><?= $i; ?></a>
-        <?php endfor; 
-        
-        // Mostrar puntos suspensivos si hay páginas después del rango
-        if ($fin < $totalPaginas): ?>
-            <span>...</span>
-        <?php endif; ?>
-        
-        <?php 
-        // Mostrar botón para página siguiente
-        if ($paginaActual < $totalPaginas): ?>
-            <a href="?pagina=<?= $paginaActual + 1; ?>">›</a>
-        <?php endif; ?>
-        
-        <?php 
-        // Mostrar botón para la última página
-        if ($paginaActual < $totalPaginas): ?>
-            <a href="?pagina=<?= $totalPaginas; ?>">Última »</a>
-        <?php endif; ?>
-    </div>
+<div class="paginacion">
+    <?php 
+    // Mostrar botón para página anterior
+    if ($paginaActual > 1): ?>
+        <a href="?pagina=<?= $paginaActual - 1; ?>">‹ Anterior</a>
     <?php endif; ?>
-  </div>
+    
+    <?php 
+    // Mostrar las primeras 3 páginas
+    for ($i = 1; $i <= min(3, $totalPaginas); $i++): ?>
+        <a href="?pagina=<?= $i; ?>" class="<?= $i == $paginaActual ? 'activa' : ''; ?>"><?= $i; ?></a>
+    <?php endfor; 
+    
+    // Mostrar puntos suspensivos y página actual si está en el medio
+    if ($paginaActual > 3 && $paginaActual < $totalPaginas - 2): ?>
+        <span>...</span>
+        <a href="?pagina=<?= $paginaActual; ?>" class="activa"><?= $paginaActual; ?></a>
+        <span>...</span>
+    <?php elseif ($totalPaginas > 4 && $paginaActual <= $totalPaginas - 3): ?>
+        <span>...</span>
+    <?php endif; 
+    
+    // Mostrar las últimas páginas si la actual no está cerca
+    if ($paginaActual >= $totalPaginas - 2 && $totalPaginas > 3):
+        for ($i = max(4, $totalPaginas - 2); $i <= $totalPaginas; $i++): ?>
+            <a href="?pagina=<?= $i; ?>" class="<?= $i == $paginaActual ? 'activa' : ''; ?>"><?= $i; ?></a>
+        <?php endfor;
+    // Mostrar solo la última página si la actual no está cerca
+    elseif ($totalPaginas > 3): ?>
+        <a href="?pagina=<?= $totalPaginas; ?>" class="<?= $paginaActual == $totalPaginas ? 'activa' : ''; ?>"><?= $totalPaginas; ?></a>
+    <?php endif; ?>
+    
+    <?php 
+    // Mostrar botón para página siguiente
+    if ($paginaActual < $totalPaginas): ?>
+        <a href="?pagina=<?= $paginaActual + 1; ?>">Siguiente ›</a>
+    <?php endif; ?>
+</div>
+<?php endif; ?>
 
   <script>
     // Mostrar/ocultar sidebar en móviles
