@@ -39,35 +39,40 @@ RELAY.off()
 
 def conectar_wifi(reintentos=5):
     """
-    Conecta el dispositivo al WiFi configurado.
-    Retorna True si la conexión fue exitosa, False si no.
+    Conecta el dispositivo al WiFi usando los datos guardados en wifi_config.json.
     """
+    try:
+        with open(CONFIG_FILE, "r") as f:
+            config = ujson.load(f)
+            ssid = config.get("ssid", "")
+            password = config.get("password", "")
+    except:
+        print("No se pudo leer el archivo de configuración WiFi.")
+        return False
+
     wifi = network.WLAN(network.STA_IF)
     wifi.active(True)
 
     if not wifi.isconnected():
-        print(f"Conectando a {SSID}...")
-        wifi.connect(SSID, PASSWORD)
+        print(f"Conectando a {ssid}...")
+        wifi.connect(ssid, password)
 
         for i in range(reintentos):
             if wifi.isconnected():
                 break
-            time.sleep(5)
+            time.sleep(2)
             print(f"Intento {i+1}/{reintentos}")
 
     if wifi.isconnected():
         print("WiFi OK! IP:", wifi.ifconfig()[0])
-
-        # ----------- MOSTRAR MAC -----------
         mac = wifi.config('mac')
         mac_str = ':'.join('{:02X}'.format(b) for b in mac)
         print("MAC Address:", mac_str)
-        # -----------------------------------
-
         return True
     else:
         print("Error WiFi")
         return False
+
 
 def enviar_uid(uid_bytes):
     """
@@ -160,3 +165,4 @@ if __name__ == "__main__":
         LED_G.off()
         LED_R.off()
         RELAY.off()
+
