@@ -5,7 +5,7 @@ use App\Models\DispositivoModel;
 
 class DispositivoController extends BaseController
 {
-    public function index()
+    public function vistadisp()
     {
         $model = new DispositivoModel();
         $data['dispositivos'] = $model->findAll();
