@@ -1,11 +1,3 @@
-<?php
-// --- Verificación de sesión ---
-session_start();
-if (!isset($_SESSION['usuario']) || $_SESSION['rol'] !== 'admin') {
-    header('Location: login.php');
-    exit();
-}
-?>
 
 <!DOCTYPE html>
 <html lang="es">
