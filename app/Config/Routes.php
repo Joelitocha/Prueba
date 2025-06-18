@@ -34,7 +34,7 @@ $routes->group('', ['filter' => '\App\Filters\AuthFilter'], function($routes) {
         $routes->post('/guardar-dispositivo', 'DispositivoController::guardar');
         $routes->get('/configurar-dispositivo/(:num)', 'DispositivoController::configurar/$1');
         $routes->post('/actualizar-dispositivo/(:num)', 'DispositivoController::actualizar/$1');
-        $routes->get('/eliminar-dispositivo/(:num)', 'DispositivoController:eliminar/$1');
+        $routes->get('/eliminar-dispositivo/(:num)', 'DispositivoController::eliminar/$1');
 
     
     // Rutas para admin y supervisor (roles 5 y 6)
