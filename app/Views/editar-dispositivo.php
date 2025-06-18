@@ -34,17 +34,17 @@
 <body>
   <div class="form-container">
     <h2>Editar Dispositivo</h2>
-    <form action="<?= site_url('/actualizar-dispositivo/'.$dispositivo['ID_Dispositivo']) ?>" method="post">
+    <form action="<?= site_url('/actualizar-dispositivo/'.$dispositivo['ID_Sistema']) ?>" method="post">
       <label>Nombre del dispositivo:</label>
-      <input type="text" name="nombre" value="<?= $dispositivo['Nombre'] ?>" required>
+      <input type="text" name="nombre" value="<?= $dispositivo['nombre'] ?>" required>
 
       <label>Dirección MAC:</label>
-      <input type="text" name="mac" value="<?= $dispositivo['MAC'] ?>" required>
+      <input type="text" name="mac" value="<?= $dispositivo['mac_address'] ?>" required>
 
       <label>Estado:</label>
       <select name="estado">
-        <option value="activo" <?= $dispositivo['Estado'] == 'activo' ? 'selected' : '' ?>>Activo</option>
-        <option value="inactivo" <?= $dispositivo['Estado'] == 'inactivo' ? 'selected' : '' ?>>Inactivo</option>
+        <option value="activo" <?= $dispositivo['estado'] == 'activo' ? 'selected' : '' ?>>Activo</option>
+        <option value="inactivo" <?= $dispositivo['estado'] == 'inactivo' ? 'selected' : '' ?>>Inactivo</option>
       </select>
 
       <button type="submit">Actualizar</button>
