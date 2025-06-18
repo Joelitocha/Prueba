@@ -5,181 +5,238 @@ use CodeIgniter\CodeIgniter;
 
 $errorId = uniqid('error', true);
 ?>
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="robots" content="noindex">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= esc($title) ?> | RackON.tech</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    
+
+    <title><?= esc($title) ?></title>
     <style>
-    :root {
-        --bg-light: #f5f5f5;    /* color1 */
-        --bg-lighter: #e9e9e9;  /* color2 */
-        --accent-dark: #006666; /* color3 */
-        --accent-light: #008584;/* color4 */
-        --border-color: #cccccc; /* color5 */
-        --text-dark: #333333;
-        --text-light: #555555;
-    }
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-        background-color: var(--bg-light);
-        color: var(--text-dark);
-        line-height: 1.6;
-        padding: 20px;
-    }
-
-    .main-container {
-        background: white;
-        border-radius: 4px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        overflow: hidden;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .header, .container {
-        padding: 20px;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .environment {
-        font-family: monospace;
-        font-size: 0.85em;
-        color: var(--text-light);
-        margin-bottom: 15px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    h1 {
-        color: var(--accent-dark);
-        font-size: 1.5em;
-        margin-bottom: 10px;
-    }
-
-    p, pre {
-        margin: 10px 0;
-        color: var(--text-dark);
-    }
-
-    a {
-        color: var(--accent-light);
-        text-decoration: none;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    .source {
-        background-color: var(--bg-lighter);
-        padding: 15px;
-        margin: 15px 0;
-        border-left: 3px solid var(--accent-dark);
-        overflow-x: auto;
-    }
-
-    .source pre {
-        font-family: 'Courier New', monospace;
-        font-size: 0.9em;
-    }
-
-    .line.highlight {
-        background-color: rgba(0, 102, 102, 0.1);
-    }
-
-    .line-number {
-        color: var(--text-light);
-        display: inline-block;
-        width: 30px;
-        user-select: none;
-    }
-
-    .tabs {
-        display: flex;
-        list-style: none;
-        margin: 0 0 15px 0;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .tabs li {
-        margin-right: 5px;
-    }
-
-    .tabs a {
-        display: block;
-        padding: 8px 15px;
-        color: var(--text-light);
-        border-bottom: 2px solid transparent;
-    }
-
-    .tabs a:hover, .tabs a.active {
-        color: var(--accent-dark);
-        border-bottom-color: var(--accent-light);
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 15px 0;
-        font-size: 0.9em;
-    }
-
-    th, td {
-        padding: 8px 10px;
-        text-align: left;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    th {
-        background-color: var(--bg-lighter);
-        color: var(--accent-dark);
-    }
-
-    .trace li {
-        padding: 12px;
-        margin-bottom: 8px;
-        background-color: var(--bg-lighter);
-        border-left: 3px solid var(--border-color);
-    }
-
-    .alert {
-        background-color: rgba(204, 204, 204, 0.2);
-        padding: 12px;
-        border-left: 3px solid var(--accent-dark);
-        margin: 15px 0;
-    }
-
-    @media (max-width: 768px) {
+        :root {
+            --color1: #4d807e;
+            --color2: #3a6564;
+            --color3: #274b49;
+            --color4: #13302f;
+            --color5: #001614;
+            --text-light: #f8f9fa;
+            --text-dark: #212529;
+            --border-color: #dee2e6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            padding: 10px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--text-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 20px;
         }
         
         .header, .container {
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .environment {
+            font-family: monospace;
+            font-size: 0.85em;
+            color: var(--color2);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        h1 {
+            color: var(--color4);
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        
+        h3 {
+            color: var(--color3);
+            margin: 15px 0 10px 0;
+        }
+        
+        p, pre {
+            margin: 10px 0;
+        }
+        
+        a {
+            color: var(--color1);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: var(--color3);
+            text-decoration: underline;
+        }
+        
+        .source {
+            background-color: var(--text-light);
             padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid var(--color1);
+            overflow-x: auto;
+        }
+        
+        .source pre {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        
+        .line.highlight {
+            background-color: rgba(61, 129, 126, 0.1);
+        }
+        
+        .line-number {
+            color: var(--color2);
+            display: inline-block;
+            width: 30px;
+            user-select: none;
         }
         
         .tabs {
-            overflow-x: auto;
-            padding-bottom: 5px;
+            display: flex;
+            list-style: none;
+            margin: 0 0 15px 0;
+            border-bottom: 1px solid var(--border-color);
         }
-    }
-</style>
-</head>
-<body>
+        
+        .tabs li {
+            margin-right: 5px;
+        }
+        
+        .tabs a {
+            display: block;
+            padding: 8px 15px;
+            color: var(--color3);
+            border-bottom: 2px solid transparent;
+        }
+        
+        .tabs a:hover, .tabs a.active {
+            color: var(--color4);
+            border-bottom-color: var(--color1);
+        }
+        
+        .content {
+            display: none;
+        }
+        
+        .content.active {
+            display: block;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9em;
+        }
+        
+        th, td {
+            padding: 8px 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        th {
+            background-color: var(--color1);
+            color: white;
+        }
+        
+        .trace li {
+            padding: 12px;
+            margin-bottom: 8px;
+            background-color: var(--text-light);
+            border-left: 3px solid var(--color1);
+        }
+        
+        .alert {
+            background-color: rgba(61, 129, 126, 0.1);
+            padding: 12px;
+            border-left: 3px solid var(--color4);
+            margin: 15px 0;
+        }
+        
+        .args {
+            display: none;
+            margin-top: 10px;
+        }
+        
+        code {
+            background-color: rgba(61, 129, 126, 0.1);
+            padding: 2px 4px;
+            border-radius: 3px;
+            color: var(--color4);
+            font-family: monospace;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header, .container {
+                padding: 15px;
+            }
+            
+            .tabs {
+                overflow-x: auto;
+                padding-bottom: 5px;
+            }
+        }
+    </style>
 
-<div class="main-container">
+    <script>
+        function init() {
+            // Activate first tab by default
+            document.querySelector('.tabs a').classList.add('active');
+            
+            // Tab functionality
+            const tabs = document.querySelectorAll('.tabs a');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Hide all content
+                    document.querySelectorAll('.content').forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    // Deactivate all tabs
+                    tabs.forEach(t => {
+                        t.classList.remove('active');
+                    });
+                    
+                    // Activate current tab
+                    this.classList.add('active');
+                    
+                    // Show corresponding content
+                    const contentId = this.getAttribute('href').substring(1);
+                    document.getElementById(contentId).classList.add('active');
+                });
+            });
+        }
+        
+        function toggle(id) {
+            const element = document.getElementById(id);
+            element.style.display = element.style.display === 'none' ? 'block' : 'none';
+            return false;
+        }
+    </script>
+</head>
+<body onload="init()">
+
     <!-- Header -->
     <div class="header">
         <div class="environment">
@@ -247,7 +304,7 @@ $errorId = uniqid('error', true);
         <div class="tab-content">
 
             <!-- Backtrace -->
-            <div class="content active" id="backtrace">
+            <div class="content" id="backtrace">
 
                 <ol class="trace">
                 <?php foreach ($trace as $index => $row) : ?>
@@ -583,45 +640,6 @@ $errorId = uniqid('error', true);
 
     </div> <!-- /container -->
     <?php endif; ?>
-</div> <!-- /main-container -->
-
-<script>
-    function init() {
-        // Activate first tab by default
-        document.querySelector('.tabs a').classList.add('active');
-        
-        // Tab functionality
-        const tabs = document.querySelectorAll('.tabs a');
-        tabs.forEach(tab => {
-            tab.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Hide all content
-                document.querySelectorAll('.content').forEach(content => {
-                    content.classList.remove('active');
-                });
-                
-                // Deactivate all tabs
-                tabs.forEach(t => {
-                    t.classList.remove('active');
-                });
-                
-                // Activate current tab
-                this.classList.add('active');
-                
-                // Show corresponding content
-                const contentId = this.getAttribute('href').substring(1);
-                document.getElementById(contentId).classList.add('active');
-            });
-        });
-    }
-    
-    function toggle(id) {
-        const element = document.getElementById(id);
-        element.style.display = element.style.display === 'none' ? 'block' : 'none';
-        return false;
-    }
-</script>
 
 </body>
 </html>
