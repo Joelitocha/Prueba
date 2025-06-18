@@ -16,11 +16,13 @@ $errorId = uniqid('error', true);
     
     <style>
     :root {
-        --bg: #fff;
-        --text: #222;
-        --accent: #06c;
-        --border: #ddd;
-        --code-bg: #f8f8f8;
+        --bg-light: #f5f5f5;    /* color1 */
+        --bg-lighter: #e9e9e9;  /* color2 */
+        --accent-dark: #006666; /* color3 */
+        --accent-light: #008584;/* color4 */
+        --border-color: #cccccc; /* color5 */
+        --text-dark: #333333;
+        --text-light: #555555;
     }
 
     * {
@@ -30,22 +32,49 @@ $errorId = uniqid('error', true);
     }
 
     body {
-        font: 14px/1.5 -apple-system, BlinkMacSystemFont, sans-serif;
-        color: var(--text);
-        background: var(--bg);
+        font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        background-color: var(--bg-light);
+        color: var(--text-dark);
+        line-height: 1.6;
         padding: 20px;
+    }
+
+    .main-container {
+        background: white;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        overflow: hidden;
         max-width: 1200px;
         margin: 0 auto;
     }
 
+    .header, .container {
+        padding: 20px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .environment {
+        font-family: monospace;
+        font-size: 0.85em;
+        color: var(--text-light);
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
     h1 {
+        color: var(--accent-dark);
         font-size: 1.5em;
-        color: var(--accent);
-        margin: 0 0 10px 0;
+        margin-bottom: 10px;
+    }
+
+    p, pre {
+        margin: 10px 0;
+        color: var(--text-dark);
     }
 
     a {
-        color: var(--accent);
+        color: var(--accent-light);
         text-decoration: none;
     }
 
@@ -53,44 +82,25 @@ $errorId = uniqid('error', true);
         text-decoration: underline;
     }
 
-    .environment {
-        font-family: monospace;
-        font-size: 0.8em;
-        color: #666;
-        margin-bottom: 15px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid var(--border);
-    }
-
-    .container {
-        margin-bottom: 20px;
-        padding-bottom: 20px;
-        border-bottom: 1px solid var(--border);
-    }
-
-    pre {
-        white-space: pre-wrap;
-        margin: 10px 0;
-    }
-
     .source {
-        background: var(--code-bg);
-        padding: 10px;
-        margin: 10px 0;
+        background-color: var(--bg-lighter);
+        padding: 15px;
+        margin: 15px 0;
+        border-left: 3px solid var(--accent-dark);
         overflow-x: auto;
     }
 
     .source pre {
-        font-family: monospace;
+        font-family: 'Courier New', monospace;
         font-size: 0.9em;
     }
 
     .line.highlight {
-        background: rgba(0, 102, 204, 0.1);
+        background-color: rgba(0, 102, 102, 0.1);
     }
 
     .line-number {
-        color: #999;
+        color: var(--text-light);
         display: inline-block;
         width: 30px;
         user-select: none;
@@ -100,7 +110,7 @@ $errorId = uniqid('error', true);
         display: flex;
         list-style: none;
         margin: 0 0 15px 0;
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1px solid var(--border-color);
     }
 
     .tabs li {
@@ -109,36 +119,46 @@ $errorId = uniqid('error', true);
 
     .tabs a {
         display: block;
-        padding: 5px 10px;
+        padding: 8px 15px;
+        color: var(--text-light);
+        border-bottom: 2px solid transparent;
     }
 
-    .tabs a.active {
-        font-weight: bold;
-        color: var(--text);
+    .tabs a:hover, .tabs a.active {
+        color: var(--accent-dark);
+        border-bottom-color: var(--accent-light);
     }
 
     table {
         width: 100%;
         border-collapse: collapse;
-        margin: 10px 0;
+        margin: 15px 0;
         font-size: 0.9em;
     }
 
     th, td {
-        padding: 6px;
+        padding: 8px 10px;
         text-align: left;
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1px solid var(--border-color);
     }
 
     th {
-        background: var(--code-bg);
+        background-color: var(--bg-lighter);
+        color: var(--accent-dark);
     }
 
     .trace li {
-        padding: 10px;
-        margin-bottom: 5px;
-        background: var(--code-bg);
-        border-left: 2px solid var(--border);
+        padding: 12px;
+        margin-bottom: 8px;
+        background-color: var(--bg-lighter);
+        border-left: 3px solid var(--border-color);
+    }
+
+    .alert {
+        background-color: rgba(204, 204, 204, 0.2);
+        padding: 12px;
+        border-left: 3px solid var(--accent-dark);
+        margin: 15px 0;
     }
 
     @media (max-width: 768px) {
@@ -146,8 +166,13 @@ $errorId = uniqid('error', true);
             padding: 10px;
         }
         
+        .header, .container {
+            padding: 15px;
+        }
+        
         .tabs {
             overflow-x: auto;
+            padding-bottom: 5px;
         }
     }
 </style>
