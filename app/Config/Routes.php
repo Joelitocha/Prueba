@@ -28,12 +28,13 @@ $routes->group('', ['filter' => '\App\Filters\AuthFilter'], function($routes) {
         $routes->post('/eliminar-tarjeta', 'TarjetaController::delete');
         $routes->get('/crear-tarjeta', 'CrearTarjetaController::index');
         $routes->post('/crear-tarjeta', 'CrearTarjetaController::store');
-        
+
         $routes->get('/dispositivo', 'DispositivoController::vistadisp');
         $routes->get('/configurar-dispositivo', 'DispositivoController::nuevo');
         $routes->post('/guardar-dispositivo', 'DispositivoController::guardar');
         $routes->get('/configurar-dispositivo/(:num)', 'DispositivoController::configurar/$1');
         $routes->post('/actualizar-dispositivo/(:num)', 'DispositivoController::actualizar/$1');
+        $routes->get('/eliminar-dispositivo/(:num)', 'DispositivoController:eliminar/$1');
 
     
     // Rutas para admin y supervisor (roles 5 y 6)
