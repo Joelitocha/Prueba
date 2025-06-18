@@ -16,200 +16,138 @@ $errorId = uniqid('error', true);
     
     <style>
     :root {
-        --color-dark: #1a1a1a;
-        --color-light: #f5f5f5;
-        --color-accent: #2563eb;
-        --color-border: #e5e7eb;
+        --bg: #fff;
+        --text: #222;
+        --accent: #06c;
+        --border: #ddd;
+        --code-bg: #f8f8f8;
     }
-    
+
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
-    
+
     body {
-        min-height: 100vh;
-        background-color: var(--color-light);
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        color: var(--color-dark);
-        line-height: 1.6;
-        padding: 1rem;
-    }
-    
-    .main-container {
-        width: 90%;
-        max-width: 1000px;
+        font: 14px/1.5 -apple-system, BlinkMacSystemFont, sans-serif;
+        color: var(--text);
+        background: var(--bg);
+        padding: 20px;
+        max-width: 1200px;
         margin: 0 auto;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        border: 1px solid var(--color-border);
-        overflow: hidden;
     }
-    
-    .header, .container {
-        padding: 1.5rem;
-        border-bottom: 1px solid var(--color-border);
-    }
-    
-    .environment {
-        font-family: monospace;
-        font-size: 0.8rem;
-        color: #666;
-        margin-bottom: 1rem;
-        padding-bottom: 1rem;
-        border-bottom: 1px solid var(--color-border);
-    }
-    
+
     h1 {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-        color: var(--color-accent);
+        font-size: 1.5em;
+        color: var(--accent);
+        margin: 0 0 10px 0;
     }
-    
-    p, pre {
-        margin: 1rem 0;
-        color: #333;
-        font-size: 1rem;
-    }
-    
+
     a {
-        color: var(--color-accent);
+        color: var(--accent);
         text-decoration: none;
     }
-    
+
     a:hover {
         text-decoration: underline;
     }
-    
-    .source {
-        background: #f8f9fa;
-        border-radius: 4px;
-        padding: 1rem;
-        margin: 1rem 0;
-        overflow-x: auto;
-        border-left: 3px solid var(--color-accent);
+
+    .environment {
+        font-family: monospace;
+        font-size: 0.8em;
+        color: #666;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--border);
     }
-    
+
+    .container {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    pre {
+        white-space: pre-wrap;
+        margin: 10px 0;
+    }
+
+    .source {
+        background: var(--code-bg);
+        padding: 10px;
+        margin: 10px 0;
+        overflow-x: auto;
+    }
+
     .source pre {
         font-family: monospace;
-        font-size: 0.9rem;
-        line-height: 1.5;
-        margin: 0;
+        font-size: 0.9em;
     }
-    
-    .source .line {
-        display: block;
-        min-height: 1.2rem;
+
+    .line.highlight {
+        background: rgba(0, 102, 204, 0.1);
     }
-    
-    .source .line.highlight {
-        background: rgba(37, 99, 235, 0.1);
-    }
-    
-    .source .line-number {
+
+    .line-number {
         color: #999;
         display: inline-block;
-        width: 3rem;
-        text-align: right;
-        padding-right: 1rem;
+        width: 30px;
         user-select: none;
     }
-    
+
     .tabs {
         display: flex;
         list-style: none;
-        padding: 0;
-        margin: 0 0 1rem 0;
-        border-bottom: 1px solid var(--color-border);
+        margin: 0 0 15px 0;
+        border-bottom: 1px solid var(--border);
     }
-    
+
     .tabs li {
-        margin-right: 0.5rem;
+        margin-right: 5px;
     }
-    
+
     .tabs a {
         display: block;
-        padding: 0.5rem 1rem;
-        border-radius: 4px 4px 0 0;
-        color: #666;
+        padding: 5px 10px;
     }
-    
-    .tabs a:hover, .tabs a.active {
-        color: var(--color-accent);
-        background: #f8f9fa;
+
+    .tabs a.active {
+        font-weight: bold;
+        color: var(--text);
     }
-    
-    .content {
-        display: none;
-    }
-    
-    .content.active {
-        display: block;
-    }
-    
+
     table {
         width: 100%;
         border-collapse: collapse;
-        margin: 1rem 0;
-        font-size: 0.9rem;
+        margin: 10px 0;
+        font-size: 0.9em;
     }
-    
-    table th, table td {
-        padding: 0.5rem;
+
+    th, td {
+        padding: 6px;
         text-align: left;
-        border-bottom: 1px solid var(--color-border);
+        border-bottom: 1px solid var(--border);
     }
-    
-    table th {
-        background: #f8f9fa;
-        color: var(--color-dark);
+
+    th {
+        background: var(--code-bg);
     }
-    
-    .alert {
-        background: #fef2f2;
-        border-left: 3px solid #dc2626;
-        padding: 1rem;
-        margin: 1rem 0;
-        border-radius: 0 4px 4px 0;
-        color: #991b1b;
-    }
-    
-    .trace ol {
-        list-style: none;
-        padding-left: 0;
-    }
-    
+
     .trace li {
-        padding: 1rem;
-        margin-bottom: 0.5rem;
-        background: #f8f9fa;
-        border-radius: 4px;
-        border-left: 3px solid var(--color-border);
+        padding: 10px;
+        margin-bottom: 5px;
+        background: var(--code-bg);
+        border-left: 2px solid var(--border);
     }
-    
-    .args {
-        display: none;
-        margin-top: 0.5rem;
-    }
-    
+
     @media (max-width: 768px) {
         body {
-            padding: 0.5rem;
-        }
-        
-        .main-container {
-            width: 100%;
-        }
-        
-        .header, .container {
-            padding: 1rem;
+            padding: 10px;
         }
         
         .tabs {
             overflow-x: auto;
-            white-space: nowrap;
         }
     }
 </style>
