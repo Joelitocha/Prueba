@@ -52,4 +52,12 @@ class DispositivoModel extends Model
         $tabla->update(['Nombre' => $nombre, 'mac_address' => $mac, 'estado' =>$estado, 'usuario_id' =>$usuario,'nivel' => $nivel, 'ID_rack' => $idrack]);
 
     }
+
+    public function eliminar($id){
+        $tabla =$this->db->table('sistema_seguridad');
+
+        $tabla->where(['ID_Sistema' => $id]);
+
+        $tabla->delete();
+    }
 }

@@ -48,4 +48,13 @@ class DispositivoController extends BaseController
         );
         return redirect()->to('/dispositivo');
     }
+
+    public function eliminar($id){
+        $model = new DispositivoModel();
+
+        $model->eliminar($id);
+
+        return redirect()->to('/dispositivo');
+
+    }
 }

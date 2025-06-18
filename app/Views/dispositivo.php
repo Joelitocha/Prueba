@@ -85,7 +85,11 @@ $rol = $session->get("ID_Rol");
           <td><?= esc($d['estado']) ?></td>
           <td>  <a class="btn-agregar" href="<?= site_url('configurar-dispositivo/'.$d['ID_Sistema']) ?>">
     <i class="fas fa-plus"></i> Editar Dispositivo
-  </a></td>
+  </a>
+<a class="btn-agregar" href="<?= site_url('eliminar-dispositivo/'.$d['ID_Sistema']) ?>">
+    <i class="fas fa-plus"></i> Eliminar Dispositivo
+  </a>
+</td>
           
         </tr>
       <?php endforeach; ?>
