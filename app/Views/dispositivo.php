@@ -86,7 +86,7 @@ $rol = $session->get("ID_Rol");
       <?php endforeach; ?>
     </table>
   <?php else: ?>
-    <p>No hay dispositivos registrados todavía, papurri.</p>
+    <p>No hay dispositivos registrados todavía.</p>
   <?php endif; ?>
 
   <a class="btn-agregar" href="<?= site_url('configurar-dispositivo') ?>">
