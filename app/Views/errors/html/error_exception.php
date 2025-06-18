@@ -15,236 +15,204 @@ $errorId = uniqid('error', true);
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     
     <style>
-        :root {
-            --color-dark: #242d43;
-            --color-primary: #3a4259;
-            --color-secondary: #4f5870;
-            --color-medium: #656d86;
-            --color-light: #7a829c;
-            --color-accent: #00c6ff;
-            --text-color: #f0f2f5;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+    :root {
+        --color-dark: #1a1a1a;
+        --color-light: #f5f5f5;
+        --color-accent: #2563eb;
+        --color-border: #e5e7eb;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        min-height: 100vh;
+        background-color: var(--color-light);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        color: var(--color-dark);
+        line-height: 1.6;
+        padding: 1rem;
+    }
+    
+    .main-container {
+        width: 90%;
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border: 1px solid var(--color-border);
+        overflow: hidden;
+    }
+    
+    .header, .container {
+        padding: 1.5rem;
+        border-bottom: 1px solid var(--color-border);
+    }
+    
+    .environment {
+        font-family: monospace;
+        font-size: 0.8rem;
+        color: #666;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--color-border);
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: var(--color-accent);
+    }
+    
+    p, pre {
+        margin: 1rem 0;
+        color: #333;
+        font-size: 1rem;
+    }
+    
+    a {
+        color: var(--color-accent);
+        text-decoration: none;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    
+    .source {
+        background: #f8f9fa;
+        border-radius: 4px;
+        padding: 1rem;
+        margin: 1rem 0;
+        overflow-x: auto;
+        border-left: 3px solid var(--color-accent);
+    }
+    
+    .source pre {
+        font-family: monospace;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin: 0;
+    }
+    
+    .source .line {
+        display: block;
+        min-height: 1.2rem;
+    }
+    
+    .source .line.highlight {
+        background: rgba(37, 99, 235, 0.1);
+    }
+    
+    .source .line-number {
+        color: #999;
+        display: inline-block;
+        width: 3rem;
+        text-align: right;
+        padding-right: 1rem;
+        user-select: none;
+    }
+    
+    .tabs {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1rem 0;
+        border-bottom: 1px solid var(--color-border);
+    }
+    
+    .tabs li {
+        margin-right: 0.5rem;
+    }
+    
+    .tabs a {
+        display: block;
+        padding: 0.5rem 1rem;
+        border-radius: 4px 4px 0 0;
+        color: #666;
+    }
+    
+    .tabs a:hover, .tabs a.active {
+        color: var(--color-accent);
+        background: #f8f9fa;
+    }
+    
+    .content {
+        display: none;
+    }
+    
+    .content.active {
+        display: block;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+        font-size: 0.9rem;
+    }
+    
+    table th, table td {
+        padding: 0.5rem;
+        text-align: left;
+        border-bottom: 1px solid var(--color-border);
+    }
+    
+    table th {
+        background: #f8f9fa;
+        color: var(--color-dark);
+    }
+    
+    .alert {
+        background: #fef2f2;
+        border-left: 3px solid #dc2626;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 0 4px 4px 0;
+        color: #991b1b;
+    }
+    
+    .trace ol {
+        list-style: none;
+        padding-left: 0;
+    }
+    
+    .trace li {
+        padding: 1rem;
+        margin-bottom: 0.5rem;
+        background: #f8f9fa;
+        border-radius: 4px;
+        border-left: 3px solid var(--color-border);
+    }
+    
+    .args {
+        display: none;
+        margin-top: 0.5rem;
+    }
+    
+    @media (max-width: 768px) {
         body {
-            min-height: 100vh;
-            background: 
-                linear-gradient(rgba(36, 45, 67, 0.9), rgba(36, 45, 67, 0.95)),
-                url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
-            font-family: 'Roboto', sans-serif;
-            color: var(--text-color);
-            line-height: 1.6;
-            padding: 2rem;
+            padding: 0.5rem;
         }
         
         .main-container {
-            width: 75vw;
-            max-width: 1200px;
-            margin: 0 auto;
-            background: rgba(36, 45, 67, 0.8);
-            border-radius: 10px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(122, 130, 156, 0.3);
-            backdrop-filter: blur(8px);
-            overflow: hidden;
+            width: 100%;
         }
         
-        .header {
-            padding: 2rem;
-            border-bottom: 1px solid var(--color-primary);
-        }
-        
-        .environment {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.8rem;
-            color: var(--color-light);
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--color-primary);
-        }
-        
-        h1 {
-            font-family: 'Share Tech Mono', monospace;
-            color: var(--color-accent);
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 0 0 10px rgba(0, 198, 255, 0.5);
-        }
-        
-        .container {
-            padding: 2rem;
-            border-bottom: 1px solid var(--color-primary);
-        }
-        
-        p, pre {
-            margin: 1rem 0;
-            color: var(--color-light);
-            font-size: 1rem;
-        }
-        
-        a {
-            color: var(--color-accent);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        a:hover {
-            color: white;
-            text-shadow: 0 0 5px rgba(0, 198, 255, 0.7);
-        }
-        
-        .source {
-            background: rgba(58, 66, 89, 0.6);
-            border-radius: 5px;
+        .header, .container {
             padding: 1rem;
-            margin: 1rem 0;
-            overflow-x: auto;
-        }
-        
-        .source pre {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin: 0;
-        }
-        
-        .source .line {
-            display: block;
-            min-height: 1.2rem;
-        }
-        
-        .source .line.highlight {
-            background: rgba(0, 198, 255, 0.15);
-            border-left: 3px solid var(--color-accent);
-        }
-        
-        .source .line-number {
-            color: var(--color-medium);
-            display: inline-block;
-            width: 3rem;
-            text-align: right;
-            padding-right: 1rem;
-            user-select: none;
-            opacity: 0.7;
         }
         
         .tabs {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            margin: 0 0 1rem 0;
-            border-bottom: 1px solid var(--color-primary);
+            overflow-x: auto;
+            white-space: nowrap;
         }
-        
-        .tabs li {
-            margin-right: 1rem;
-        }
-        
-        .tabs a {
-            display: block;
-            padding: 0.5rem 1rem;
-            border-radius: 5px 5px 0 0;
-            background: rgba(58, 66, 89, 0.3);
-        }
-        
-        .tabs a:hover {
-            background: rgba(0, 198, 255, 0.1);
-        }
-        
-        .content {
-            display: none;
-        }
-        
-        .content.active {
-            display: block;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0;
-        }
-        
-        table th, table td {
-            padding: 0.75rem;
-            text-align: left;
-            border-bottom: 1px solid var(--color-primary);
-        }
-        
-        table th {
-            background: rgba(58, 66, 89, 0.5);
-            color: var(--color-accent);
-        }
-        
-        .alert {
-            background: rgba(239, 35, 60, 0.2);
-            border-left: 3px solid #ef233c;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 0 5px 5px 0;
-        }
-        
-        .trace ol {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .trace li {
-            padding: 1rem;
-            margin-bottom: 1rem;
-            background: rgba(58, 66, 89, 0.3);
-            border-radius: 5px;
-        }
-        
-        .args {
-            display: none;
-            margin-top: 1rem;
-        }
-        
-        .args table {
-            background: rgba(36, 45, 67, 0.7);
-        }
-        
-        @media (max-width: 1200px) {
-            .main-container {
-                width: 85vw;
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .main-container {
-                width: 90vw;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            body {
-                padding: 1rem;
-            }
-            
-            .main-container {
-                width: 95vw;
-            }
-            
-            .header, .container {
-                padding: 1.5rem;
-            }
-            
-            .tabs {
-                overflow-x: auto;
-                white-space: nowrap;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
 
