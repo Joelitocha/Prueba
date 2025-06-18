@@ -41,11 +41,11 @@ class DispositivoController extends BaseController
     public function actualizar($id)
     {
         $model = new DispositivoModel();
-        $model->update($id, [
-            'Nombre' => $this->request->getPost('nombre'),
-            'MAC' => $this->request->getPost('mac'),
-            'Estado' => $this->request->getPost('estado')
-        ]);
+        $model->actualizar($id, 
+             $this->request->getPost('nombre'),
+            $this->request->getPost('mac'),
+            $this->request->getPost('estado'),session()->get('user_id'),1,1
+        );
         return redirect()->to('/dispositivo');
     }
 }
