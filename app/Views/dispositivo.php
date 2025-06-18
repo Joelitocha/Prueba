@@ -79,7 +79,6 @@ $rol = $session->get("ID_Rol");
       </tr>
       <?php foreach ($dispositivos as $d): ?>
         <tr>
-          <td><?= esc($d['id']) ?></td>
           <td><?= esc($d['nombre']) ?></td>
           <td><?= esc($d['mac']) ?></td>
           <td><?= esc($d['estado']) ?></td>
