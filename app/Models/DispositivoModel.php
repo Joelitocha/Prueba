@@ -47,7 +47,7 @@ class DispositivoModel extends Model
     public function actualizar($id, $nombre, $mac, $estado, $usuario, $nivel, $idrack){
         $tabla =$this->db->table('sistema_seguridad');
 
-        $tabla->where('ID_Sistema' => $id);
+        $tabla->where(['ID_Sistema' => $id]);
 
         $tabla->update(['Nombre' => $nombre, 'mac_address' => $mac, 'estado' =>$estado, 'usuario_id' =>$usuario,'nivel' => $nivel, 'ID_rack' => $idrack]);
 
