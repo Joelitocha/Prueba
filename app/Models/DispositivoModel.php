@@ -37,7 +37,7 @@ class DispositivoModel extends Model
     public function insertar_esp($nombre, $mac, $estado, $usuario, $nivel, $idrack){
         $tabla =$this->db->table('sistema_seguridad');
 
-        if($tabla->insert($nombre, $mac, $estado, $usuario, $nivel, $idrack)){
+        if($tabla->insert(['Nombre' => $nombre, 'mac_address' => $mac, 'estado' =>$estado, 'usuario_id' =>$usuario,'nivel' => $nivel, 'ID_rack' => $idrack])){
             return true;
         }
 
