@@ -21,7 +21,7 @@ class DispositivoController extends BaseController
     {
         $model = new DispositivoModel();
         if($model->insertar_esp($this->request->getPost('nombre'), $this->request->getPost('mac'), $this->request->getPost('estado'), session()->get('user_id'),1,1)){
-            echo "bien";
+            return redirect()->to('/dispositivo');
         }else{
             echo "troll";
         }
