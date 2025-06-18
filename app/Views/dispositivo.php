@@ -83,8 +83,13 @@ $rol = $session->get("ID_Rol");
           <td><?= esc($d['nombre']) ?></td>
           <td><?= esc($d['mac_address']) ?></td>
           <td><?= esc($d['estado']) ?></td>
-          <td>  <a class="btn-agregar" href="<?= site_url('editar-dispositivo') ?>">
-    <i class="fas fa-plus"></i> Editar Dispositivo
+          <form method="post" action="<?= site_url('actualizar-dispositivo/'.$d['ID_Sistema']) ?>">
+            <input type="hidden" value="<?= esc($d['nombre']) ?>" name="nombre">
+            <input type="hidden" value="<?= esc($d['mac_address']) ?>" name="mac">
+            <input type="hidden" value="<?= esc($d['estado']) ?>" name="estado">
+
+          <input type="submit" value="Editar">
+      </form>
   </a></td>
         </tr>
       <?php endforeach; ?>
