@@ -72,7 +72,7 @@ $rol = $session->get("ID_Rol");
   <?php if (!empty($dispositivos)): ?>
     <table>
       <tr>
-        <th>ID</th>
+      
         <th>Nombre</th>
         <th>MAC</th>
         <th>Estado</th>
