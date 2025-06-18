@@ -59,3 +59,6 @@ $routes->post('cargar_acceso', 'esp32controller::insertar_registro');
 $routes->set404Override(function() {
     return view('errors/html/error_404');
 });
+
+
+$routes->get('/dispositivo', 'DispositivoController::index');

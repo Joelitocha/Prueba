@@ -287,7 +287,14 @@
       <a href="<?php echo site_url('/consultar-rfid');?>" class="menu-item">
         <i class="fas fa-search"></i> Consultar Estado
       </a>
-      
+      <!-- Opciones para Dispositivos -->
+      <?php if ($rol == 5): ?>
+      <div class="menu-heading">Dispositivos</div>
+      <a href="<?php echo site_url('/dispositivo');?>" class="menu-item">
+      <i class="fas fa-microchip"></i> Gestionar Dispositivos
+      </a>
+      <?php endif; ?>
+
       <!-- Opciones para Supervisor y Administrador -->
       <?php if ($rol == 5 || $rol == 6): ?>
       <div class="menu-heading">Reportes</div>
