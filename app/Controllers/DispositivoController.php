@@ -8,7 +8,7 @@ class DispositivoController extends BaseController
     {
         $session = session();
         if ($session->get('ID_Rol') != 5) {
-            return redirect()->to('/bienvenido')->with('error', 'Acceso denegado');
+            return redirect()->to('/dispositivo')->with('error', 'Acceso denegado');
         }
 
         return view('dispositivo'); // Vista dispositivo.php en app/Views
