@@ -13,145 +13,7 @@ $errorId = uniqid('error', true);
 
     <title><?= esc($title) ?></title>
     <style>
-        /* Paleta de Colores Aplicada */
-        :root {
-            --color1: #4d807e;
-            --color2: #3a6564;
-            --color3: #274b49;
-            --color4: #13302f;
-            --color5: #001614;
-            --font-color: #DDE6E6; /* Color de fuente legible sobre fondos oscuros */
-        }
-
-        body {
-            background-color: var(--color5);
-            color: var(--font-color);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-            font-size: 16px;
-            line-height: 1.5;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem;
-        }
-        .header {
-            background-color: var(--color4);
-            padding: 1rem;
-            border-bottom: 1px solid var(--color3);
-        }
-        .header h1 {
-            color: var(--color1);
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        .header p {
-            font-size: 1.1rem;
-            margin: 0.5rem 0 0;
-        }
-        .environment {
-            color: #999;
-            font-size: 0.9rem;
-            padding-bottom: 1rem;
-        }
-        a {
-            color: var(--color2);
-            text-decoration: none;
-        }
-        a:hover {
-            color: var(--color1);
-            text-decoration: underline;
-        }
-        .source {
-            background-color: var(--color4);
-            border: 1px solid var(--color3);
-            padding: 1rem;
-            margin-top: 1rem;
-            overflow-x: auto;
-        }
-        .source pre {
-            margin: 0;
-        }
-        .trace li {
-            padding: 0.5rem;
-            border-bottom: 1px solid var(--color3);
-        }
-        .trace li:last-child {
-            border-bottom: none;
-        }
-        .tabs {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            border-bottom: 1px solid var(--color3);
-        }
-        .tabs li a {
-            display: block;
-            padding: 0.8rem 1.2rem;
-            color: var(--font-color);
-            border-top: 4px solid transparent;
-        }
-        .tabs li a.active, .tabs li a:hover {
-            background-color: var(--color3);
-            color: #fff;
-            border-top-color: var(--color1);
-            text-decoration: none;
-        }
-        .tab-content .content {
-            padding: 1rem;
-            display: none;
-        }
-        .tab-content .content.active {
-            display: block;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-        }
-        table th, table td {
-            padding: 0.8rem;
-            border: 1px solid var(--color3);
-            text-align: left;
-            vertical-align: top;
-        }
-        table th {
-            background-color: var(--color3);
-            font-weight: bold;
-        }
-        table td code {
-            font-family: "Courier New", Courier, monospace;
-            color: var(--color1);
-        }
-        table pre {
-            margin: 0;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-        }
-        .args {
-            display: none;
-            padding-top: 1rem;
-        }
-        .args table td {
-             background-color: var(--color4);
-        }
-        .alert {
-            padding: 1rem;
-            background-color: var(--color3);
-            border: 1px solid var(--color2);
-            color: var(--font-color);
-            margin-top: 1rem;
-        }
-        .highlight {
-            color: #E3E3E3;
-            background-color: rgba(61, 128, 126, 0.2); /* Color1 con transparencia */
-        }
-        ol.trace {
-            padding-left: 1.5rem;
-        }
+        <?= preg_replace('#[\r\n\t ]+#', ' ', file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . 'debug.css')) ?>
     </style>
 
     <script>
@@ -160,6 +22,7 @@ $errorId = uniqid('error', true);
 </head>
 <body onload="init()">
 
+    <!-- Header -->
     <div class="header">
         <div class="environment">
             Displayed at <?= esc(date('H:i:sa')) ?> &mdash;
@@ -177,6 +40,7 @@ $errorId = uniqid('error', true);
         </div>
     </div>
 
+    <!-- Source -->
     <div class="container">
         <p><b><?= esc(clean_path($file)) ?></b> at line <b><?= esc($line) ?></b></p>
 
@@ -224,6 +88,7 @@ $errorId = uniqid('error', true);
 
         <div class="tab-content">
 
+            <!-- Backtrace -->
             <div class="content" id="backtrace">
 
                 <ol class="trace">
@@ -231,6 +96,7 @@ $errorId = uniqid('error', true);
 
                     <li>
                         <p>
+                            <!-- Trace info -->
                             <?php if (isset($row['file']) && is_file($row['file'])) : ?>
                                 <?php
                                 if (isset($row['function']) && in_array($row['function'], ['include', 'include_once', 'require', 'require_once'], true)) {
@@ -243,6 +109,7 @@ $errorId = uniqid('error', true);
                                 {PHP internal code}
                             <?php endif; ?>
 
+                            <!-- Class/Method -->
                             <?php if (isset($row['class'])) : ?>
                                 &nbsp;&nbsp;&mdash;&nbsp;&nbsp;<?= esc($row['class'] . $row['type'] . $row['function']) ?>
                                 <?php if (! empty($row['args'])) : ?>
@@ -274,10 +141,11 @@ $errorId = uniqid('error', true);
                             <?php endif; ?>
 
                             <?php if (! isset($row['class']) && isset($row['function'])) : ?>
-                                &nbsp;&nbsp;&mdash;&nbsp;&nbsp;   <?= esc($row['function']) ?>()
+                                &nbsp;&nbsp;&mdash;&nbsp;&nbsp;    <?= esc($row['function']) ?>()
                             <?php endif; ?>
                         </p>
 
+                        <!-- Source? -->
                         <?php if (isset($row['file']) && is_file($row['file']) && isset($row['class'])) : ?>
                             <div class="source">
                                 <?= static::highlightFile($row['file'], $row['line']) ?>
@@ -290,6 +158,7 @@ $errorId = uniqid('error', true);
 
             </div>
 
+            <!-- Server -->
             <div class="content" id="server">
                 <?php foreach (['_SERVER', '_SESSION'] as $var) : ?>
                     <?php
@@ -324,6 +193,7 @@ $errorId = uniqid('error', true);
 
                 <?php endforeach ?>
 
+                <!-- Constants -->
                 <?php $constants = get_defined_constants(true); ?>
                 <?php if (! empty($constants['user'])) : ?>
                     <h3>Constants</h3>
@@ -353,6 +223,7 @@ $errorId = uniqid('error', true);
                 <?php endif; ?>
             </div>
 
+            <!-- Request -->
             <div class="content" id="request">
                 <?php $request = Services::request(); ?>
 
@@ -470,6 +341,7 @@ $errorId = uniqid('error', true);
                 <?php endif; ?>
             </div>
 
+            <!-- Response -->
             <?php
                 $response = Services::response();
                 $response->setStatusCode(http_response_code());
@@ -516,6 +388,7 @@ $errorId = uniqid('error', true);
                 <?php endif; ?>
             </div>
 
+            <!-- Files -->
             <div class="content" id="files">
                 <?php $files = get_included_files(); ?>
 
@@ -526,6 +399,7 @@ $errorId = uniqid('error', true);
                 </ol>
             </div>
 
+            <!-- Memory -->
             <div class="content" id="memory">
 
                 <table>
@@ -547,7 +421,10 @@ $errorId = uniqid('error', true);
 
             </div>
 
-        </div>  </div> <?php endif; ?>
+        </div>  <!-- /tab-content -->
+
+    </div> <!-- /container -->
+    <?php endif; ?>
 
 </body>
 </html>
