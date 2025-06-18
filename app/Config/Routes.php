@@ -28,7 +28,7 @@ $routes->group('', ['filter' => '\App\Filters\AuthFilter'], function($routes) {
         $routes->post('/eliminar-tarjeta', 'TarjetaController::delete');
         $routes->get('/crear-tarjeta', 'CrearTarjetaController::index');
         $routes->post('/crear-tarjeta', 'CrearTarjetaController::store');
-        $routes->get('/dispositivo', 'DispositivoController::index');
+        $routes->get('/dispositivo', 'DispositivoController::vistadisp');
     
     // Rutas para admin y supervisor (roles 5 y 6)
         $routes->get('/ver-alertas', 'ViewsControllers::VistaAlertas');
