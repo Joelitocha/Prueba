@@ -33,4 +33,14 @@ class DispositivoModel extends Model
             'regex_match' => 'La dirección MAC no es válida, hermano.'
         ]
     ];
+
+    public function insertar_esp($nombre, $mac, $estado, $usuario, $nivel, $idrack){
+        $tabla =$this->db->table('sistema_seguridad');
+
+        if($tabla->insert($nombre, $mac, $estado, $usuario, $nivel, $idrack)){
+            return true;
+        }
+
+        return false;
+    }
 }

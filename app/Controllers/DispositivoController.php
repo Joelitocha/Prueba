@@ -20,14 +20,7 @@ class DispositivoController extends BaseController
     public function guardar()
     {
         $model = new DispositivoModel();
-        if($model->insert([
-            'Nombre' => $this->request->getPost('nombre'),
-            'MAC' => $this->request->getPost('mac'),
-            'Estado' => $this->request->getPost('estado'),
-            "usuario_id" => session()->get("user_id"),
-            "Nivel" => 1,
-            "ID_Rack" => 1
-        ])){
+        if($model->insertar_esp($this->request->getPost('nombre'), $this->request->getPost('mac'), $this->request->getPost('estado'), session()->get('user_id'),1,1)){
             echo "bien";
         }else{
             echo "troll";
