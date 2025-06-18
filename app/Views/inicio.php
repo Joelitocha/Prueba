@@ -287,6 +287,7 @@
       <a href="<?php echo site_url('/consultar-rfid');?>" class="menu-item">
         <i class="fas fa-search"></i> Consultar Estado
       </a>
+      
       <!-- Opciones para Dispositivos -->
       <?php if ($rol == 5): ?>
       <div class="menu-heading">Dispositivos</div>
