@@ -20,10 +20,13 @@ class DispositivoController extends BaseController
     public function guardar()
     {
         $model = new DispositivoModel();
-        $model->save([
+        $model->insert([
             'Nombre' => $this->request->getPost('nombre'),
             'MAC' => $this->request->getPost('mac'),
-            'Estado' => $this->request->getPost('estado')
+            'Estado' => $this->request->getPost('estado'),
+            "usuario_id" => session()->get("user_id"),
+            "Nivel" => 1,
+            "ID_Rack" => 1
         ]);
         return redirect()->to('/dispositivo');
     }
