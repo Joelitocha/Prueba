@@ -80,7 +80,7 @@ $rol = $session->get("ID_Rol");
       <?php foreach ($dispositivos as $d): ?>
         <tr>
           <td><?= esc($d['nombre']) ?></td>
-          <td><?= esc($d['mac']) ?></td>
+          <td><?= esc($d['mac_address']) ?></td>
           <td><?= esc($d['estado']) ?></td>
         </tr>
       <?php endforeach; ?>
