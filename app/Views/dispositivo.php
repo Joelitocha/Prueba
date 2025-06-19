@@ -8,28 +8,41 @@ $rol = $session->get("ID_Rol");
   <?php return; ?>
 <?php endif; ?>
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Dispositivos</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <style>
+  <head>
+    <title>Dispositivos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+      /* Estilos generales */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      body {
+        background-color: #f8f9fa;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        min-height: 100vh;
+      }
+
       /* Botón para mostrar/ocultar menú en móviles */
       .menu-toggle {
         display: none;
         position: fixed;
         top: 15px;
         left: 15px;
-        background-color: #3498db;
+        background-color: #2c3e50;
         color: white;
         border: none;
         border-radius: 4px;
-        padding: 10px;
+        padding: 10px 15px;
         z-index: 1100;
         cursor: pointer;
         font-size: 18px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
       }
 
       /* Estilos para el Sidebar - Versión responsive */
@@ -39,10 +52,10 @@ $rol = $session->get("ID_Rol");
         position: fixed;
         top: 0;
         left: 0;
-        background-color: #2b2b2b;
+        background-color: #2c3e50;
         padding-top: 20px;
         color: #fff;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+        box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
         overflow-y: auto;
         scrollbar-width: none;
         z-index: 1000;
@@ -54,14 +67,14 @@ $rol = $session->get("ID_Rol");
       }
 
       .sidebar a {
-        padding: 12px 15px;
+        padding: 12px 20px;
         text-decoration: none;
-        font-size: 16px;
-        color: #fff;
+        font-size: 15px;
+        color: #ecf0f1;
         display: flex;
         align-items: center;
-        margin: 8px 15px;
-        border-radius: 6px;
+        margin: 5px 10px;
+        border-radius: 4px;
         transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
@@ -69,197 +82,246 @@ $rol = $session->get("ID_Rol");
 
       /* Efecto hover */
       .sidebar a:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-        box-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
+        background-color: #34495e;
+        transform: translateX(5px);
       }
 
       /* Efecto para íconos */
       .sidebar a i {
-        margin-right: 10px;
-        font-size: 18px;
+        margin-right: 12px;
+        font-size: 16px;
         color: #3498db;
-        transition: transform 0.3s ease;
+        transition: all 0.3s ease;
+        width: 20px;
+        text-align: center;
       }
 
       .sidebar a:hover i {
-        transform: scale(1.15);
+        color: #ecf0f1;
       }
 
       /* Elemento activo */
       .sidebar a.active {
-        background-color: #4a4a4a;
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+        background-color: #3498db;
+        color: white;
       }
 
-      .sidebar a.active::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 4px;
-        background-color: #3498db;
+      .sidebar a.active i {
+        color: white;
       }
 
       .sidebar .logo {
         text-align: center;
-        font-size: 24px;
+        font-size: 22px;
         font-weight: bold;
         margin-bottom: 30px;
-        color: #3498db;
+        color: #ecf0f1;
         padding: 0 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .sidebar .logo .role {
+        font-size: 14px;
+        margin-top: 5px;
+        color: #bdc3c7;
+        font-weight: normal;
       }
 
       .sidebar .menu-heading {
-        padding: 10px 15px;
+        padding: 10px 20px;
         text-transform: uppercase;
         font-weight: bold;
-        margin-top: 25px;
-        font-size: 14px;
-        color: #3498db;
+        margin-top: 20px;
+        font-size: 12px;
+        color: #bdc3c7;
         letter-spacing: 1px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
       }
 
-    /* Contenido principal */
-    .content {
-      margin-left: 250px;
-      padding: 30px;
-      transition: margin-left 0.3s ease;
-      background-color: #f2f2f2;
-      min-height: 100vh;
-    }
-
-    /* Estilos específicos de la vista de dispositivos */
-    h1 {
-      color: #3498db;
-      margin-bottom: 20px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background-color: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    th, td {
-      padding: 12px;
-      border-bottom: 1px solid #ddd;
-      text-align: left;
-    }
-
-    th {
-      background-color: #3498db;
-      color: white;
-    }
-
-    tr:hover {
-      background-color: #f1f1f1;
-    }
-
-    .btn-action {
-      display: inline-block;
-      color: white;
-      padding: 8px 15px;
-      border: none;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: 0.3s;
-      margin-right: 5px;
-      font-size: 14px;
-    }
-
-    .btn-edit {
-      background-color: #f39c12;
-    }
-
-    .btn-delete {
-      background-color: #e74c3c;
-    }
-
-    .btn-add {
-      background-color: #2ecc71;
-      padding: 10px 20px;
-      margin-top: 20px;
-    }
-
-    .btn-action:hover {
-      opacity: 0.9;
-    }
-
-    .btn-action i {
-      margin-right: 5px;
-    }
-
-    /* Responsive */
-    @media (max-width: 992px) {
-      .sidebar {
-        transform: translateX(-100%);
-      }
-      
-      .sidebar.active {
-        transform: translateX(0);
-      }
-      
+      /* Contenido principal */
       .content {
-        margin-left: 0;
+        margin-left: 250px;
+        padding: 30px;
+        transition: margin-left 0.3s ease;
+        min-height: 100vh;
       }
-      
-      .menu-toggle {
-        display: block;
-      }
-    }
 
-    @media (max-width: 768px) {
-      .content {
-        padding: 20px;
+      /* Estilos específicos para dispositivos */
+      h1 {
+        color: #2c3e50;
+        margin-bottom: 20px;
+        font-weight: 600;
       }
-      
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+      }
+
       th, td {
-        padding: 8px;
+        padding: 12px 15px;
+        border-bottom: 1px solid #eee;
+        text-align: left;
       }
-    }
-  </style>
-</head>
-<body>
-  <!-- Botón para móviles -->
-  <button class="menu-toggle" id="menuToggle" style="display: none;">
-    <i class="fas fa-bars"></i>
-  </button>
+
+      th {
+        background-color: #3498db;
+        color: white;
+        font-weight: 500;
+      }
+
+      tr:hover {
+        background-color: #f8f9fa;
+      }
+
+      .btn-action {
+        display: inline-flex;
+        align-items: center;
+        color: white;
+        padding: 8px 15px;
+        border: none;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        margin-right: 8px;
+        font-size: 14px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+
+      .btn-edit {
+        background-color: #f39c12;
+      }
+
+      .btn-delete {
+        background-color: #e74c3c;
+      }
+
+      .btn-add {
+        background-color: #2ecc71;
+        padding: 10px 20px;
+        margin-top: 10px;
+        display: inline-flex;
+      }
+
+      .btn-action:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        opacity: 0.9;
+      }
+
+      .btn-action i {
+        margin-right: 8px;
+        font-size: 14px;
+      }
+
+      /* Mensajes */
+      .no-devices {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        margin-bottom: 20px;
+      }
+
+      /* Media Queries para responsive */
+      @media (max-width: 992px) {
+        .sidebar {
+          transform: translateX(-100%);
+        }
+        
+        .sidebar.active {
+          transform: translateX(0);
+        }
+        
+        .content {
+          margin-left: 0;
+        }
+        
+        .menu-toggle {
+          display: block;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .content {
+          padding: 20px;
+        }
+        
+        th, td {
+          padding: 10px;
+          font-size: 14px;
+        }
+
+        .btn-action {
+          padding: 6px 10px;
+          font-size: 13px;
+          margin-right: 5px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .sidebar {
+          width: 220px;
+        }
+        
+        table {
+          display: block;
+          overflow-x: auto;
+        }
+        
+        .btn-action {
+          margin-bottom: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Botón para mostrar/ocultar menú en móviles -->
+    <button class="menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i> Menú
+    </button>
 
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
       <div class="logo">
         <?php 
           if ($rol == 5) {
-              echo "Administrador";
+              echo "Panel de Control";
+              echo '<span class="role">Administrador</span>';
           } elseif ($rol == 6) {
-              echo "Supervisor";
+              echo "Panel Supervisor";
+              echo '<span class="role">Supervisor</span>';
           } elseif ($rol == 7) {
-              echo "Usuario";
+              echo "Bienvenido";
+              echo '<span class="role">Usuario</span>';
           }
         ?>
       </div>
 
-      <a href="<?php echo site_url('/bienvenido');?>" class="menu-item active">
+      <a href="<?php echo site_url('/bienvenido');?>" class="menu-item">
         <i class="fas fa-home"></i> Inicio
       </a>
       
       <!-- Opciones para Administrador -->
       <?php if ($rol == 5): ?>
-      <div class="menu-heading">Usuarios</div>
+      <div class="menu-heading">Administración</div>
       <a href="<?php echo site_url('/modificar-usuario');?>" class="menu-item">
-        <i class="fas fa-user-edit"></i> Gestor de Usuarios
+        <i class="fas fa-users-cog"></i> Gestión de Usuarios
       </a>
       <?php endif; ?>
       
       <!-- Opciones para Tarjetas -->
-      <div class="menu-heading">Tarjetas</div>
+      <div class="menu-heading">Tarjetas RFID</div>
       <?php if ($rol == 5): ?>
       <a href="<?php echo site_url('/modificar-tarjeta');?>" class="menu-item">
-        <i class="fas fa-credit-card"></i> Gestor de Tarjetas
+        <i class="fas fa-credit-card"></i> Gestión de Tarjetas
       </a>
       <?php endif; ?>
       <a href="<?php echo site_url('/consultar-rfid');?>" class="menu-item">
@@ -269,8 +331,8 @@ $rol = $session->get("ID_Rol");
       <!-- Opciones para Dispositivos -->
       <?php if ($rol == 5): ?>
       <div class="menu-heading">Dispositivos</div>
-      <a href="<?php echo site_url('/dispositivo');?>" class="menu-item">
-      <i class="fas fa-microchip"></i> Gestionar Dispositivos
+      <a href="<?php echo site_url('/dispositivo');?>" class="menu-item active">
+      <i class="fas fa-network-wired"></i> Gestionar Dispositivos
       </a>
       <?php endif; ?>
 
@@ -278,91 +340,101 @@ $rol = $session->get("ID_Rol");
       <?php if ($rol == 5 || $rol == 6): ?>
       <div class="menu-heading">Reportes</div>
       <a href="<?php echo site_url('/ver-alertas');?>" class="menu-item">
-        <i class="fas fa-exclamation-triangle"></i> Ver Alertas
+        <i class="fas fa-bell"></i> Alertas
       </a>
       <a href="<?php echo site_url('/ver-accesos-tarjeta');?>" class="menu-item">
-        <i class="fas fa-key"></i> Ver Accesos
+        <i class="fas fa-door-open"></i> Accesos
       </a>
       <a href="<?php echo site_url('/historial-cambios');?>" class="menu-item">
         <i class="fas fa-history"></i> Historial
       </a>
       <?php endif; ?>
       
-      <div class="menu-heading">Sesión</div>
+      <div class="menu-heading">Cuenta</div>
       <a onclick="cerrarsesion('<?php echo site_url('/logout');?>')" class="menu-item">
         <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
       </a>
     </div>
-  <!-- Contenido principal -->
-  <div class="content">
-    <h1>Lista de Dispositivos</h1>
 
-    <?php if (!empty($dispositivos)): ?>
-      <table>
-        <tr>
-          <th>Nombre</th>
-          <th>MAC</th>
-          <th>Estado</th>
-          <th>Acciones</th>
-        </tr>
-        <?php foreach ($dispositivos as $d): ?>
+    <!-- Contenido principal -->
+    <div class="content">
+      <h1>Lista de Dispositivos</h1>
+
+      <?php if (!empty($dispositivos)): ?>
+        <table>
           <tr>
-            <td><?= esc($d['nombre']) ?></td>
-            <td><?= esc($d['mac_address']) ?></td>
-            <td><?= esc($d['estado']) ?></td>
-            <td>
-              <a class="btn-action btn-edit" href="<?= site_url('configurar-dispositivo/'.$d['ID_Sistema']) ?>">
-                <i class="fas fa-edit"></i> Editar
-              </a>
-              <a class="btn-action btn-delete" href="<?= site_url('eliminar-dispositivo/'.$d['ID_Sistema']) ?>">
-                <i class="fas fa-trash"></i> Eliminar
-              </a>
-            </td>
+            <th>Nombre</th>
+            <th>MAC</th>
+            <th>Estado</th>
+            <th>Acciones</th>
           </tr>
-        <?php endforeach; ?>
-      </table>
-    <?php else: ?>
-      <p>No hay dispositivos registrados todavía.</p>
-    <?php endif; ?>
+          <?php foreach ($dispositivos as $d): ?>
+            <tr>
+              <td><?= esc($d['nombre']) ?></td>
+              <td><?= esc($d['mac_address']) ?></td>
+              <td><?= esc($d['estado']) ?></td>
+              <td>
+                <a class="btn-action btn-edit" href="<?= site_url('configurar-dispositivo/'.$d['ID_Sistema']) ?>">
+                  <i class="fas fa-edit"></i> Editar
+                </a>
+                <a class="btn-action btn-delete" href="<?= site_url('eliminar-dispositivo/'.$d['ID_Sistema']) ?>">
+                  <i class="fas fa-trash"></i> Eliminar
+                </a>
+              </td>
+            </tr>
+          <?php endforeach; ?>
+        </table>
+      <?php else: ?>
+        <div class="no-devices">
+          <p>No hay dispositivos registrados todavía.</p>
+        </div>
+      <?php endif; ?>
 
-    <a class="btn-action btn-add" href="<?= site_url('configurar-dispositivo') ?>">
-      <i class="fas fa-plus"></i> Agregar Dispositivo
-    </a>
-  </div>
+      <a class="btn-action btn-add" href="<?= site_url('configurar-dispositivo') ?>">
+        <i class="fas fa-plus"></i> Agregar Dispositivo
+      </a>
+    </div>
 
-  <script>
-    // Toggle para móviles
-    document.addEventListener('DOMContentLoaded', function() {
+    <script>
+      // Mostrar/ocultar sidebar en móviles
       const menuToggle = document.getElementById('menuToggle');
       const sidebar = document.getElementById('sidebar');
       
-      // Mostrar/ocultar sidebar en móviles
-      if (window.innerWidth <= 992) {
-        menuToggle.style.display = 'block';
-        sidebar.style.transform = 'translateX(-100%)';
-        
-        menuToggle.addEventListener('click', () => {
-          sidebar.classList.toggle('active');
-        });
+      menuToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+      });
 
-        // Cerrar sidebar al hacer clic en un enlace
-        document.querySelectorAll('.sidebar a').forEach(item => {
-          item.addEventListener('click', () => {
+      // Cerrar sidebar al hacer clic en un enlace (en móviles)
+      const menuItems = document.querySelectorAll('.sidebar a');
+      menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+          if (window.innerWidth <= 992) {
             sidebar.classList.remove('active');
-          });
+          }
         });
+      });
+
+      // Cerrar sesión
+      function cerrarsesion(url){
+        if(confirm('¿Estás seguro de que deseas cerrar sesión?')){
+          window.location.href=url;
+        }
       }
 
-      // Redimensionar
+      // Redimensionar la ventana
       window.addEventListener('resize', () => {
         if (window.innerWidth > 992) {
-          menuToggle.style.display = 'none';
-          sidebar.style.transform = 'translateX(0)';
-        } else {
-          menuToggle.style.display = 'block';
+          sidebar.classList.remove('active');
         }
       });
-    });
-  </script>
-</body>
+    </script>
+
+    <?php
+      if (isset($error)) {
+        echo '<div class="mensaje error">'.$error.'</div>';
+      } elseif (isset($success)) {
+        echo '<div class="mensaje success">'.$success.'</div>';
+      }
+    ?>
+  </body>
 </html>
