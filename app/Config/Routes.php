@@ -41,12 +41,12 @@ $routes->group('', ['filter' => '\App\Filters\AuthFilter'], function($routes) {
         $routes->get('/ver-accesos-tarjeta', 'RegistrosAccesoController::verRegistros');
         $routes->get('/historial-cambios', 'HistorialController::index');
         $routes->post('/historial-cambios/ver', 'HistorialController::verArchivo');
+        $routes->post('bloquear-tarjeta', 'TarjetaController::bloquearTarjeta');
+        $routes->post('desbloquear-tarjeta', 'TarjetaController::desbloquearTarjeta');
     
     // Rutas para todos los usuarios autenticados (roles 5, 6 y 7)
     $routes->get('/consultar-rfid', 'ViewsControllers::VistaConsultar');
     $routes->post('/consultar-rfid', 'TarjetaController::verEstadoTarjeta');
-    $routes->post('bloquear-tarjeta', 'TarjetaController::bloquearTarjeta');
-    $routes->post('desbloquear-tarjeta', 'TarjetaController::desbloquearTarjeta');
 });
 
 // Rutas públicas (sin autenticación)
