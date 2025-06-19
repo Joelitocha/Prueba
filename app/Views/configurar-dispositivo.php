@@ -146,7 +146,7 @@ $rol = $session->get("ID_Rol");
     /* Estilos del formulario */
     .form-container {
       max-width: 600px;
-      margin: 30px auto;
+      margin: 20px auto;
       background-color: #fff;
       padding: 40px;
       border-radius: 10px;
@@ -176,7 +176,38 @@ $rol = $session->get("ID_Rol");
       box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
     }
 
-    button {
+    /* Estilos para los botones */
+    .btn-volver {
+      display: inline-block;
+      background-color: #6c757d;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .btn-volver:hover {
+      background-color: #5a6268;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .btn-volver i {
+      margin-right: 8px;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .button-container button {
       background-color: #3498db;
       color: white;
       border: none;
@@ -184,47 +215,21 @@ $rol = $session->get("ID_Rol");
       font-size: 16px;
       border-radius: 6px;
       cursor: pointer;
-      width: 100%;
+      flex: 1;
       transition: all 0.3s;
-      margin-top: 10px;
     }
 
-    button:hover {
+    .button-container button:hover {
       background-color: #2980b9;
       transform: translateY(-2px);
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
-    label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-      color: #555;
-    }
-
-    /* Mensajes de error/éxito */
-    .mensaje {
-      padding: 12px 15px;
-      margin: 15px 20px 15px 270px;
-      border-radius: 4px;
+    .button-container a {
+      flex: 1;
       text-align: center;
-      font-size: 15px;
-      transition: margin-left 0.3s ease;
     }
 
-    .error {
-      color: #e74c3c;
-      background-color: #fdecea;
-      border: 1px solid #f5c6cb;
-    }
-
-    .success {
-      color: #27ae60;
-      background-color: #e8f5e9;
-      border: 1px solid #c3e6cb;
-    }
-
-    /* Media Queries para responsive */
     @media (max-width: 992px) {
       .sidebar {
         transform: translateX(-100%);
@@ -240,10 +245,6 @@ $rol = $session->get("ID_Rol");
       
       .menu-toggle {
         display: block;
-      }
-
-      .mensaje {
-        margin: 15px 20px;
       }
 
       .form-container {
@@ -279,6 +280,10 @@ $rol = $session->get("ID_Rol");
       .form-container {
         padding: 20px;
         margin: 15px;
+      }
+
+      .button-container {
+        flex-direction: column;
       }
     }
   </style>
@@ -359,6 +364,10 @@ $rol = $session->get("ID_Rol");
 
   <!-- Contenido principal -->
   <div class="content">
+    <a href="<?php echo site_url('/dispositivo'); ?>" class="btn-volver">
+      <i class="fas fa-arrow-left"></i> Volver a Dispositivos
+    </a>
+    
     <div class="form-container">
       <h2>Agregar Nuevo Dispositivo</h2>
       <form action="<?php echo site_url('/guardar-dispositivo'); ?>" method="post">
@@ -374,7 +383,14 @@ $rol = $session->get("ID_Rol");
           <option value="inactivo">Inactivo</option>
         </select>
 
-        <button type="submit">Guardar Dispositivo</button>
+        <div class="button-container">
+          <a href="<?php echo site_url('/dispositivo'); ?>" class="btn-volver">
+            <i class="fas fa-times"></i> Cancelar
+          </a>
+          <button type="submit">
+            <i class="fas fa-save"></i> Guardar Dispositivo
+          </button>
+        </div>
       </form>
     </div>
   </div>

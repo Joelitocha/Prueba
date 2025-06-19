@@ -146,9 +146,9 @@ $rol = $session->get("ID_Rol");
       /* Estilos del formulario */
       .form-container {
         max-width: 600px;
-        margin: 30px auto;
-        background: white;
-        padding: 30px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 40px;
         border-radius: 10px;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
       }
@@ -156,8 +156,8 @@ $rol = $session->get("ID_Rol");
       .form-container h2 {
         color: #2c3e50;
         margin-bottom: 25px;
-        font-weight: 600;
         text-align: center;
+        font-size: 28px;
       }
 
       .form-group {
@@ -167,7 +167,7 @@ $rol = $session->get("ID_Rol");
       label {
         display: block;
         margin-bottom: 8px;
-        font-weight: 500;
+        font-weight: 600;
         color: #555;
       }
 
@@ -177,35 +177,69 @@ $rol = $session->get("ID_Rol");
         padding: 12px 15px;
         border: 1px solid #ddd;
         border-radius: 6px;
-        font-size: 15px;
-        transition: all 0.3s ease;
+        font-size: 16px;
+        transition: all 0.3s;
       }
 
       input[type="text"]:focus, 
       select:focus {
         border-color: #3498db;
-        box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
         outline: none;
+        box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
       }
 
-      .btn-submit {
-        background-color: #3498db;
+      /* Estilos para los botones */
+      .btn-volver {
+        display: inline-block;
+        background-color: #6c757d;
         color: white;
-        padding: 12px;
-        border: none;
+        padding: 12px 20px;
         border-radius: 6px;
+        text-decoration: none;
+        transition: all 0.3s;
+        border: none;
         cursor: pointer;
         font-size: 16px;
-        font-weight: 500;
-        width: 100%;
-        transition: all 0.3s ease;
-        margin-top: 10px;
+        margin-bottom: 20px;
       }
 
-      .btn-submit:hover {
+      .btn-volver:hover {
+        background-color: #5a6268;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+
+      .btn-volver i {
+        margin-right: 8px;
+      }
+
+      .button-container {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .button-container button {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        flex: 1;
+        transition: all 0.3s;
+      }
+
+      .button-container button:hover {
         background-color: #2980b9;
         transform: translateY(-2px);
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+
+      .button-container a {
+        flex: 1;
+        text-align: center;
       }
 
       /* Mensajes de error/éxito */
@@ -253,14 +287,18 @@ $rol = $session->get("ID_Rol");
         }
 
         .form-container {
-          padding: 25px;
+          padding: 30px;
         }
       }
 
       @media (max-width: 768px) {
         .form-container {
-          padding: 20px;
+          padding: 25px;
           margin: 20px auto;
+        }
+        
+        .form-container h2 {
+          font-size: 24px;
         }
       }
 
@@ -269,13 +307,22 @@ $rol = $session->get("ID_Rol");
           width: 220px;
         }
         
-        .form-container {
-          padding: 15px;
+        .sidebar a {
+          padding: 10px 15px;
+          font-size: 14px;
         }
         
-        input[type="text"], 
-        select {
-          padding: 10px 12px;
+        .sidebar .logo {
+          font-size: 20px;
+        }
+        
+        .form-container {
+          padding: 20px;
+          margin: 15px;
+        }
+
+        .button-container {
+          flex-direction: column;
         }
       }
     </style>
@@ -356,6 +403,10 @@ $rol = $session->get("ID_Rol");
 
     <!-- Contenido principal -->
     <div class="content">
+      <a href="<?php echo site_url('/dispositivo'); ?>" class="btn-volver">
+        <i class="fas fa-arrow-left"></i> Volver a Dispositivos
+      </a>
+      
       <div class="form-container">
         <h2>Editar Dispositivo</h2>
         <form action="<?= site_url('/actualizar-dispositivo/'.$dispositivo['ID_Sistema']) ?>" method="post">
@@ -377,7 +428,14 @@ $rol = $session->get("ID_Rol");
             </select>
           </div>
 
-          <button type="submit" class="btn-submit">Actualizar Dispositivo</button>
+          <div class="button-container">
+            <a href="<?php echo site_url('/dispositivo'); ?>" class="btn-volver">
+              <i class="fas fa-times"></i> Cancelar
+            </a>
+            <button type="submit">
+              <i class="fas fa-save"></i> Actualizar Dispositivo
+            </button>
+          </div>
         </form>
       </div>
     </div>
