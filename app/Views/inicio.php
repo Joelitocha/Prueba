@@ -148,7 +148,7 @@
         background-color: #fff;
         padding: 40px;
         border-radius: 10px;
-        max-width: 900px;
+        max-width: 1000px;
         margin: 30px auto;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         text-align: center;
@@ -168,45 +168,87 @@
         margin-bottom: 30px;
       }
 
-      /* Grid de iconos */
-      .icon-grid {
+      /* Grid de iconos estilo masonry/ladrillos */
+      .masonry-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        grid-auto-rows: 120px;
+        grid-gap: 20px;
         margin-top: 30px;
       }
 
-      .icon-item {
+      .masonry-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         background-color: #f8f9fa;
         border-radius: 8px;
         padding: 20px;
-        text-align: center;
         transition: all 0.3s ease;
         box-shadow: 0 3px 10px rgba(0,0,0,0.05);
         cursor: pointer;
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
       }
 
-      .icon-item i {
-        font-size: 28px;
-        margin-bottom: 10px;
+      /* Variación de alturas para efecto masonry */
+      .masonry-item:nth-child(3n+1) {
+        grid-row: span 2;
+        height: 260px;
+      }
+
+      .masonry-item:nth-child(5n+2) {
+        grid-row: span 1;
+        height: 120px;
+      }
+
+      .masonry-item:nth-child(7n+3) {
+        grid-row: span 3;
+        height: 400px;
+      }
+
+      .masonry-item i {
+        font-size: 32px;
+        margin-bottom: 15px;
         color: #3498db;
+        transition: all 0.3s ease;
       }
 
-      .icon-item p {
-        font-size: 14px;
+      .masonry-item p {
+        font-size: 15px;
         color: #555;
-        margin-top: 8px;
+        text-align: center;
+        transition: all 0.3s ease;
       }
 
-      .icon-item:hover {
+      .masonry-item:hover {
         transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         background-color: #3498db;
       }
 
-      .icon-item:hover i,
-      .icon-item:hover p {
+      .masonry-item:hover i,
+      .masonry-item:hover p {
         color: white;
+      }
+
+      /* Efecto de borde inferior al hover */
+      .masonry-item::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: #3498db;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      .masonry-item:hover::after {
+        transform: scaleX(1);
       }
 
       /* Mensajes de error/éxito */
@@ -232,6 +274,12 @@
       }
 
       /* Media Queries para responsive */
+      @media (max-width: 1200px) {
+        .masonry-grid {
+          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+      }
+
       @media (max-width: 992px) {
         .sidebar {
           transform: translateX(-100%);
@@ -252,6 +300,10 @@
         .mensaje {
           margin: 15px 20px;
         }
+
+        .masonry-grid {
+          grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        }
       }
 
       @media (max-width: 768px) {
@@ -266,6 +318,11 @@
         
         .welcome-message p {
           font-size: 15px;
+        }
+
+        .masonry-item:nth-child(n) {
+          grid-row: span 1;
+          height: 120px;
         }
       }
 
@@ -290,6 +347,24 @@
         
         .welcome-header h1 {
           font-size: 22px;
+        }
+
+        .masonry-grid {
+          grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+          grid-auto-rows: 100px;
+        }
+
+        .masonry-item {
+          padding: 15px;
+        }
+
+        .masonry-item i {
+          font-size: 24px;
+          margin-bottom: 10px;
+        }
+
+        .masonry-item p {
+          font-size: 13px;
         }
       }
     </style>
@@ -386,74 +461,102 @@
           ?>
         </div>
         
-        <div class="icon-grid">
+        <div class="masonry-grid">
           <?php if ($rol == 5): ?>
             <!-- Iconos para Administrador -->
-            <a class="icon-item">
+            <a class="masonry-item">
               <i class="fas fa-users-cog"></i>
               <p>Gestión de Usuarios</p>
             </a>
-            <a class="icon-item">
+            <a class="masonry-item">
               <i class="fas fa-id-card"></i>
               <p>Gestión de Tarjetas</p>
             </a>
-            <a class="icon-item">
+            <a class="masonry-item">
               <i class="fas fa-server"></i>
               <p>Dispositivos</p>
             </a>
-            <a class="icon-item">
+            <a class="masonry-item">
               <i class="fas fa-exclamation-triangle"></i>
-              <p>Alertas</p>
+              <p>Alertas del Sistema</p>
             </a>
-            <a class="icon-item">
+            <a class="masonry-item">
               <i class="fas fa-history"></i>
-              <p>Historial</p>
+              <p>Historial Completo</p>
+            </a>
+            <a class="masonry-item">
+              <i class="fas fa-door-open"></i>
+              <p>Control de Accesos</p>
+            </a>
+            <a href="#" class="masonry-item">
+              <i class="fas fa-chart-pie"></i>
+              <p>Estadísticas</p>
+            </a>
+            <a href="#" class="masonry-item">
+              <i class="fas fa-cogs"></i>
+              <p>Configuración Avanzada</p>
             </a>
             
           <?php elseif ($rol == 6): ?>
             <!-- Iconos para Supervisor -->
-            <a class="icon-item">
+            <a class="masonry-item">
               <i class="fas fa-search"></i>
               <p>Consultar Estado</p>
             </a>
-            <a class="icon-item">
+            <a class="masonry-item">
               <i class="fas fa-bell"></i>
-              <p>Alertas</p>
+              <p>Alertas Recientes</p>
             </a>
-            <a class="icon-item">
+            <a class="masonry-item">
               <i class="fas fa-door-open"></i>
-              <p>Accesos</p>
+              <p>Registro de Accesos</p>
             </a>
-            <a class="icon-item">
+            <a class="masonry-item">
               <i class="fas fa-chart-bar"></i>
-              <p>Reportes</p>
+              <p>Reportes Diarios</p>
             </a>
-            <a href="#" class="icon-item">
+            <a href="#" class="masonry-item">
               <i class="fas fa-file-export"></i>
               <p>Exportar Datos</p>
+            </a>
+            <a href="#" class="masonry-item">
+              <i class="fas fa-user-shield"></i>
+              <p>Supervisión</p>
+            </a>
+            <a href="#" class="masonry-item">
+              <i class="fas fa-clipboard-check"></i>
+              <p>Verificaciones</p>
             </a>
             
           <?php elseif ($rol == 7): ?>
             <!-- Iconos para Usuario -->
-            <a class="icon-item">
+            <a class="masonry-item">
               <i class="fas fa-id-card"></i>
               <p>Mis Tarjetas</p>
             </a>
-            <a href="#" class="icon-item">
+            <a href="#" class="masonry-item">
               <i class="fas fa-user-edit"></i>
               <p>Mi Perfil</p>
             </a>
-            <a href="#" class="icon-item">
+            <a href="#" class="masonry-item">
               <i class="fas fa-question-circle"></i>
-              <p>Ayuda</p>
+              <p>Centro de Ayuda</p>
             </a>
-            <a href="#" class="icon-item">
+            <a href="#" class="masonry-item">
               <i class="fas fa-file-alt"></i>
               <p>Documentación</p>
             </a>
-            <a href="#" class="icon-item">
+            <a href="#" class="masonry-item">
               <i class="fas fa-cog"></i>
               <p>Configuración</p>
+            </a>
+            <a href="#" class="masonry-item">
+              <i class="fas fa-envelope"></i>
+              <p>Contacto</p>
+            </a>
+            <a href="#" class="masonry-item">
+              <i class="fas fa-info-circle"></i>
+              <p>Acerca del Sistema</p>
             </a>
           <?php endif; ?>
         </div>
@@ -492,6 +595,27 @@
           sidebar.classList.remove('active');
         }
       });
+
+      // Ajustar automáticamente el grid masonry
+      function resizeMasonryItem(item){
+        const grid = document.querySelector('.masonry-grid');
+        const rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
+        const rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+        const contentHeight = item.querySelector('.masonry-content').getBoundingClientRect().height;
+        const rowSpan = Math.ceil((contentHeight + rowGap) / (rowHeight + rowGap));
+        item.style.gridRowEnd = 'span '+rowSpan;
+      }
+
+      function resizeAllMasonryItems(){
+        const allItems = document.querySelectorAll('.masonry-item');
+        allItems.forEach(item => {
+          resizeMasonryItem(item);
+        });
+      }
+
+      // Ejecutar al cargar y al redimensionar
+      window.addEventListener('load', resizeAllMasonryItems);
+      window.addEventListener('resize', resizeAllMasonryItems);
     </script>
 
     <?php
