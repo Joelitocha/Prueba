@@ -171,7 +171,7 @@
       /* Grid de iconos */
       .icon-grid {
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 20px;
         margin-top: 30px;
       }
@@ -183,17 +183,30 @@
         text-align: center;
         transition: all 0.3s ease;
         box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        cursor: pointer;
       }
 
       .icon-item i {
-        font-size: 24px;
-        color: #3498db;
+        font-size: 28px;
         margin-bottom: 10px;
+        color: #3498db;
+      }
+
+      .icon-item p {
+        font-size: 14px;
+        color: #555;
+        margin-top: 8px;
       }
 
       .icon-item:hover {
         transform: translateY(-5px);
         box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        background-color: #3498db;
+      }
+
+      .icon-item:hover i,
+      .icon-item:hover p {
+        color: white;
       }
 
       /* Mensajes de error/éxito */
@@ -239,10 +252,6 @@
         .mensaje {
           margin: 15px 20px;
         }
-
-        .icon-grid {
-          grid-template-columns: repeat(3, 1fr);
-        }
       }
 
       @media (max-width: 768px) {
@@ -257,10 +266,6 @@
         
         .welcome-message p {
           font-size: 15px;
-        }
-
-        .icon-grid {
-          grid-template-columns: repeat(2, 1fr);
         }
       }
 
@@ -285,10 +290,6 @@
         
         .welcome-header h1 {
           font-size: 22px;
-        }
-
-        .icon-grid {
-          grid-template-columns: 1fr;
         }
       }
     </style>
@@ -386,26 +387,75 @@
         </div>
         
         <div class="icon-grid">
-          <div class="icon-item">
-            <i class="fas fa-user-shield"></i>
-            <p>Seguridad</p>
-          </div>
-          <div class="icon-item">
-            <i class="fas fa-chart-line"></i>
-            <p>Estadísticas</p>
-          </div>
-          <div class="icon-item">
-            <i class="fas fa-cog"></i>
-            <p>Configuración</p>
-          </div>
-          <div class="icon-item">
-            <i class="fas fa-bell"></i>
-            <p>Notificaciones</p>
-          </div>
-          <div class="icon-item">
-            <i class="fas fa-question-circle"></i>
-            <p>Ayuda</p>
-          </div>
+          <?php if ($rol == 5): ?>
+            <!-- Iconos para Administrador -->
+            <a href="<?php echo site_url('/modificar-usuario');?>" class="icon-item">
+              <i class="fas fa-users-cog"></i>
+              <p>Gestión de Usuarios</p>
+            </a>
+            <a href="<?php echo site_url('/modificar-tarjeta');?>" class="icon-item">
+              <i class="fas fa-id-card"></i>
+              <p>Gestión de Tarjetas</p>
+            </a>
+            <a href="<?php echo site_url('/dispositivo');?>" class="icon-item">
+              <i class="fas fa-server"></i>
+              <p>Dispositivos</p>
+            </a>
+            <a href="<?php echo site_url('/ver-alertas');?>" class="icon-item">
+              <i class="fas fa-exclamation-triangle"></i>
+              <p>Alertas</p>
+            </a>
+            <a href="<?php echo site_url('/historial-cambios');?>" class="icon-item">
+              <i class="fas fa-history"></i>
+              <p>Historial</p>
+            </a>
+            
+          <?php elseif ($rol == 6): ?>
+            <!-- Iconos para Supervisor -->
+            <a href="<?php echo site_url('/consultar-rfid');?>" class="icon-item">
+              <i class="fas fa-search"></i>
+              <p>Consultar Estado</p>
+            </a>
+            <a href="<?php echo site_url('/ver-alertas');?>" class="icon-item">
+              <i class="fas fa-bell"></i>
+              <p>Alertas</p>
+            </a>
+            <a href="<?php echo site_url('/ver-accesos-tarjeta');?>" class="icon-item">
+              <i class="fas fa-door-open"></i>
+              <p>Accesos</p>
+            </a>
+            <a href="<?php echo site_url('/historial-cambios');?>" class="icon-item">
+              <i class="fas fa-chart-bar"></i>
+              <p>Reportes</p>
+            </a>
+            <a href="#" class="icon-item">
+              <i class="fas fa-file-export"></i>
+              <p>Exportar Datos</p>
+            </a>
+            
+          <?php elseif ($rol == 7): ?>
+            <!-- Iconos para Usuario -->
+            <a href="<?php echo site_url('/consultar-rfid');?>" class="icon-item">
+              <i class="fas fa-id-card"></i>
+              <p>Mis Tarjetas</p>
+            </a>
+            <a href="#" class="icon-item">
+              <i class="fas fa-user-edit"></i>
+              <p>Mi Perfil</p>
+            </a>
+            <a href="#" class="icon-item">
+              <i class="fas fa-question-circle"></i>
+              <p>Ayuda</p>
+            </a>
+            <a href="#" class="icon-item">
+              <i class="fas fa-file-alt"></i>
+              <p>Documentación</p>
+            </a>
+            <a href="#" class="icon-item">
+              <i class="fas fa-cog"></i>
+              <p>Configuración</p>
+            </a>
+          <?php endif; ?>
         </div>
       </div>
     </div>
