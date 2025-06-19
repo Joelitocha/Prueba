@@ -34,6 +34,8 @@ $routes->group('', ['filter' => '\App\Filters\AuthFilter'], function($routes) {
         $routes->get('/configurar-dispositivo/(:num)', 'DispositivoController::configurar/$1');
         $routes->post('/actualizar-dispositivo/(:num)', 'DispositivoController::actualizar/$1');
         $routes->get('/eliminar-dispositivo/(:num)', 'DispositivoController::eliminar/$1');
+        $routes->post('bloquear-tarjeta', 'TarjetaController::bloquearTarjeta');
+        $routes->post('desbloquear-tarjeta', 'TarjetaController::desbloquearTarjeta');
 
     
     // Rutas para admin y supervisor (roles 5 y 6)
@@ -41,8 +43,6 @@ $routes->group('', ['filter' => '\App\Filters\AuthFilter'], function($routes) {
         $routes->get('/ver-accesos-tarjeta', 'RegistrosAccesoController::verRegistros');
         $routes->get('/historial-cambios', 'HistorialController::index');
         $routes->post('/historial-cambios/ver', 'HistorialController::verArchivo');
-        $routes->post('bloquear-tarjeta', 'TarjetaController::bloquearTarjeta');
-        $routes->post('desbloquear-tarjeta', 'TarjetaController::desbloquearTarjeta');
     
     // Rutas para todos los usuarios autenticados (roles 5, 6 y 7)
     $routes->get('/consultar-rfid', 'ViewsControllers::VistaConsultar');
