@@ -4,7 +4,7 @@ $rol = $session->get("ID_Rol");
 ?>
 
 <?php if ($rol != 5): ?>
-  <p>No tenés permiso para ver esta página, mostro.</p>
+  <p>No tenés permiso para ver esta página.</p>
   <?php return; ?>
 <?php endif; ?>
 
