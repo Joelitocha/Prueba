@@ -389,42 +389,42 @@
         <div class="icon-grid">
           <?php if ($rol == 5): ?>
             <!-- Iconos para Administrador -->
-            <a href="<?php echo site_url('/modificar-usuario');?>" class="icon-item">
+            <a class="icon-item">
               <i class="fas fa-users-cog"></i>
               <p>Gestión de Usuarios</p>
             </a>
-            <a href="<?php echo site_url('/modificar-tarjeta');?>" class="icon-item">
+            <a class="icon-item">
               <i class="fas fa-id-card"></i>
               <p>Gestión de Tarjetas</p>
             </a>
-            <a href="<?php echo site_url('/dispositivo');?>" class="icon-item">
+            <a class="icon-item">
               <i class="fas fa-server"></i>
               <p>Dispositivos</p>
             </a>
-            <a href="<?php echo site_url('/ver-alertas');?>" class="icon-item">
+            <a class="icon-item">
               <i class="fas fa-exclamation-triangle"></i>
               <p>Alertas</p>
             </a>
-            <a href="<?php echo site_url('/historial-cambios');?>" class="icon-item">
+            <a class="icon-item">
               <i class="fas fa-history"></i>
               <p>Historial</p>
             </a>
             
           <?php elseif ($rol == 6): ?>
             <!-- Iconos para Supervisor -->
-            <a href="<?php echo site_url('/consultar-rfid');?>" class="icon-item">
+            <a class="icon-item">
               <i class="fas fa-search"></i>
               <p>Consultar Estado</p>
             </a>
-            <a href="<?php echo site_url('/ver-alertas');?>" class="icon-item">
+            <a class="icon-item">
               <i class="fas fa-bell"></i>
               <p>Alertas</p>
             </a>
-            <a href="<?php echo site_url('/ver-accesos-tarjeta');?>" class="icon-item">
+            <a class="icon-item">
               <i class="fas fa-door-open"></i>
               <p>Accesos</p>
             </a>
-            <a href="<?php echo site_url('/historial-cambios');?>" class="icon-item">
+            <a class="icon-item">
               <i class="fas fa-chart-bar"></i>
               <p>Reportes</p>
             </a>
@@ -435,7 +435,7 @@
             
           <?php elseif ($rol == 7): ?>
             <!-- Iconos para Usuario -->
-            <a href="<?php echo site_url('/consultar-rfid');?>" class="icon-item">
+            <a class="icon-item">
               <i class="fas fa-id-card"></i>
               <p>Mis Tarjetas</p>
             </a>
