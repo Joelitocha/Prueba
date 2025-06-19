@@ -264,7 +264,7 @@
           }
         ?>
       </div>
-      <div class="menu-heading">Menu</div>
+
       <a href="<?php echo site_url('/bienvenido');?>" class="menu-item active">
         <i class="fas fa-home"></i> Inicio
       </a>
