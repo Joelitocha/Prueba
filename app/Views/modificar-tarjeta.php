@@ -586,8 +586,8 @@
                     echo empty($tarjeta['Nombre_Usuario']) ? 'No Asignada' : esc($tarjeta['Nombre_Usuario']) . ' ' . esc($tarjeta['Apellido_Usuario']);
                   ?>
                 </td>
-                <td class="<?= $tarjeta['Estado_Tarjeta'] == 1 ? 'estado-activa' : 'estado-inactiva'; ?>">
-                  <?= $tarjeta['Estado_Tarjeta'] == 1 ? 'Activa' : 'Inactiva'; ?>
+                <td class="<?= $tarjeta['Estado'] == 1 ? 'estado-activa' : 'estado-inactiva'; ?>">
+                  <?= $tarjeta['Estado'] == 1 ? 'Activa' : 'Inactiva'; ?>
                 </td>
                 <td>
                   <div class="btn-group">
