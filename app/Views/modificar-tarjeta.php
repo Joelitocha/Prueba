@@ -595,7 +595,7 @@
                       <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
                       <button type="submit" class="action-btn edit-btn">Modificar</button>
                     </form>
-                    <?php if ($tarjeta['Estado'] == 0): ?>
+                    <?php if ($tarjeta['Intentos_Fallidos'] == 0): ?>
                       <form action="<?= site_url('activar-tarjeta') ?>" method="post" style="display: inline-block;">
                         <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
                         <button type="submit" class="action-btn activate-btn">Activar</button>
