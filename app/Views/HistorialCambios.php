@@ -19,6 +19,27 @@ if (!is_dir($directorio)) {
     mkdir($directorio, 0755, true);
 }
 $archivos = array_diff(scandir($directorio, SCANDIR_SORT_DESCENDING), array('.', '..'));
+
+// --- Lógica de paginación ---
+$itemsPerPage = 10;
+$totalArchivos = count($archivos);
+$totalPaginas = ceil($totalArchivos / $itemsPerPage);
+
+// Obtener la página actual de la URL, si no está presente, usar 1
+$paginaActual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+// Asegurarse de que la página actual sea válida
+if ($paginaActual < 1) {
+    $paginaActual = 1;
+} elseif ($paginaActual > $totalPaginas && $totalPaginas > 0) {
+    $paginaActual = $totalPaginas;
+} elseif ($totalPaginas == 0) {
+    $paginaActual = 1; // Si no hay archivos, la página es 1
+}
+
+// Calcular el índice de inicio y fin para la porción de archivos de la página actual
+$startIndex = ($paginaActual - 1) * $itemsPerPage;
+$archivosPagina = array_slice($archivos, $startIndex, $itemsPerPage);
+
 ?>
 
 <!doctype html>
@@ -305,6 +326,55 @@ $archivos = array_diff(scandir($directorio, SCANDIR_SORT_DESCENDING), array('.',
         border: 1px solid #c3e6cb;
       }
 
+      /* Paginación */
+      .paginacion {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px; /* Mayor separación */
+        flex-wrap: wrap;
+        gap: 8px; /* Espacio entre botones */
+      }
+
+      .paginacion a,
+      .paginacion span {
+        padding: 10px 16px; /* Aumentado padding */
+        text-decoration: none;
+        border-radius: 6px; /* Bordes más redondeados */
+        transition: all 0.3s ease;
+        font-size: 14px;
+        min-width: 40px; /* Ancho mínimo para botones */
+        text-align: center;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .paginacion a {
+        background-color: #3498db;
+        color: white;
+      }
+
+      .paginacion a:hover {
+        background-color: #2980b9;
+        transform: translateY(-2px); /* Efecto ligero al pasar el mouse */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+
+      .paginacion a.activa {
+        background-color: #2980b9;
+        font-weight: bold;
+        cursor: default; /* No cambia el cursor para la página activa */
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+      }
+
+      .paginacion span { /* Estilo para los puntos suspensivos */
+        background-color: transparent;
+        color: #555;
+        cursor: default;
+        font-weight: bold;
+      }
+
+
       /* Media Queries para responsive */
       @media (max-width: 992px) {
         .sidebar {
@@ -476,7 +546,7 @@ $archivos = array_diff(scandir($directorio, SCANDIR_SORT_DESCENDING), array('.',
             </div>
             
             <div class="tabla-container"> <!-- Contenedor para tabla, necesario para overflow-x -->
-                <?php if (!empty($archivos)): ?>
+                <?php if (!empty($archivosPagina)): /* Cambiado de $archivos a $archivosPagina */ ?>
                     <table class="historial-table">
                         <thead>
                             <tr>
@@ -485,7 +555,7 @@ $archivos = array_diff(scandir($directorio, SCANDIR_SORT_DESCENDING), array('.',
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($archivos as $archivo): ?>
+                            <?php foreach ($archivosPagina as $archivo): /* Cambiado de $archivos a $archivosPagina */ ?>
                                 <tr>
                                     <td><?= esc($archivo); ?></td>
                                     <td>
@@ -501,6 +571,46 @@ $archivos = array_diff(scandir($directorio, SCANDIR_SORT_DESCENDING), array('.',
                     <p class="no-alertas">No hay registros de cambios disponibles</p>
                 <?php endif; ?>
             </div>
+
+            <?php if ($totalPaginas > 1): ?>
+                <div class="paginacion">
+                    <?php 
+                    // Mostrar botón para página anterior
+                    if ($paginaActual > 1): ?>
+                        <a href="?pagina=<?= $paginaActual - 1; ?>">‹ Anterior</a>
+                    <?php endif; ?>
+                    
+                    <?php 
+                    // Lógica para mostrar las páginas, manteniendo un rango visible
+                    $startPage = max(1, $paginaActual - 2);
+                    $endPage = min($totalPaginas, $paginaActual + 2);
+
+                    if ($startPage > 1) {
+                        echo '<a href="?pagina=1">1</a>';
+                        if ($startPage > 2) {
+                            echo '<span>...</span>';
+                        }
+                    }
+
+                    for ($i = $startPage; $i <= $endPage; $i++): ?>
+                        <a href="?pagina=<?= $i; ?>" class="<?= $i == $paginaActual ? 'activa' : ''; ?>"><?= $i; ?></a>
+                    <?php endfor; 
+                    
+                    if ($endPage < $totalPaginas) {
+                        if ($endPage < $totalPaginas - 1) {
+                            echo '<span>...</span>';
+                        }
+                        echo '<a href="?pagina=' . $totalPaginas . '">' . $totalPaginas . '</a>';
+                    }
+                    ?>
+                    
+                    <?php 
+                    // Mostrar botón para página siguiente
+                    if ($paginaActual < $totalPaginas): ?>
+                        <a href="?pagina=<?= $paginaActual + 1; ?>">Siguiente ›</a>
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 
