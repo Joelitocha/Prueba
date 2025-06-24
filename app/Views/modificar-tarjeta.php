@@ -154,7 +154,7 @@
         min-height: 100vh;
       }
 
-      /* Estilos para la tabla de tarjetas (anteriormente usuarios) */
+      /* Estilos para la tabla de tarjetas */
       .admin-container {
         background-color: #fff;
         padding: 30px;
@@ -185,7 +185,7 @@
         flex-wrap: wrap;
       }
 
-      .add-card-btn { /* Changed from .add-user-btn */
+      .add-card-btn { 
         background-color: #3498db;
         color: #fff;
         border: none;
@@ -200,7 +200,7 @@
         gap: 8px;
       }
 
-      .add-card-btn:hover { /* Changed from .add-user-btn:hover */
+      .add-card-btn:hover { 
         background-color: #2980b9;
       }
 
@@ -218,40 +218,40 @@
         outline: none;
       }
 
-      .cards-table { /* Changed from .users-table */
+      .cards-table { 
         width: 100%;
         border-collapse: collapse;
         margin-top: 20px;
       }
 
-      .cards-table th, /* Changed from .users-table th */
-      .cards-table td { /* Changed from .users-table td */
+      .cards-table th, 
+      .cards-table td { 
         padding: 12px 15px;
         text-align: left;
         border-bottom: 1px solid #eee;
       }
 
-      .cards-table th { /* Changed from .users-table th */
+      .cards-table th { 
         background-color: #f8f9fa;
         font-weight: bold;
         color: #2c3e50;
       }
 
-      .cards-table tr:nth-child(even) { /* Changed from .users-table tr */
+      .cards-table tr:nth-child(even) { 
         background-color: #f8f9fa;
       }
 
-      .cards-table tr:hover { /* Changed from .users-table tr:hover */
+      .cards-table tr:hover { 
         background-color: #f1f8ff;
       }
 
-      /* Estados de tarjeta (adapted from user states) */
-      .estado-activa { /* Changed from .estado-activo */
+      /* Estados de tarjeta */
+      .estado-activa { 
         color: #27ae60;
         font-weight: bold;
       }
 
-      .estado-inactiva { /* Changed from .estado-inactivo */
+      .estado-inactiva { 
         color: #e74c3c;
         font-weight: bold;
       }
@@ -276,21 +276,21 @@
         background-color: #2980b9;
       }
 
-      .activate-btn { /* Changed from .btn-desbloquear */
+      .activate-btn { 
         background-color: #27ae60;
         color: white;
       }
 
-      .activate-btn:hover { /* Changed from .btn-desbloquear:hover */
+      .activate-btn:hover { 
         background-color: #219653;
       }
 
-      .deactivate-btn { /* Changed from .btn-bloquear */
+      .deactivate-btn { 
         background-color: #e67e22;
         color: white;
       }
 
-      .deactivate-btn:hover { /* Changed from .btn-bloquear:hover */
+      .deactivate-btn:hover { 
         background-color: #d35400;
       }
 
@@ -474,10 +474,12 @@
     </style>
   </head>
   <body>
+    <!-- Botón para mostrar/ocultar menú en móviles -->
     <button class="menu-toggle" id="menuToggle">
       <i class="fas fa-bars"></i> Menú
     </button>
 
+    <!-- Modal de confirmación -->
     <div class="modal" id="modalConfirmacion">
       <div class="modal-content">
         <h3 class="modal-title">¿Estás seguro de que deseas eliminar esta tarjeta?</h3>
@@ -491,6 +493,7 @@
       </div>
     </div>
 
+    <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
       <div class="logo">
         <?php 
@@ -511,6 +514,7 @@
         <i class="fas fa-home"></i> Inicio
       </a>
       
+      <!-- Opciones para Administrador -->
       <?php if ($rol == 5): ?>
       <div class="menu-heading">Administración</div>
       <a href="<?php echo site_url('/modificar-usuario');?>" class="menu-item">
@@ -518,6 +522,7 @@
       </a>
       <?php endif; ?>
       
+      <!-- Opciones para Tarjetas -->
       <div class="menu-heading">Tarjetas RFID</div>
       <?php if ($rol == 5): ?>
       <a href="<?php echo site_url('/modificar-tarjeta');?>" class="menu-item active">
@@ -528,6 +533,7 @@
         <i class="fas fa-search"></i> Consultar Estado
       </a>
       
+      <!-- Opciones para Dispositivos -->
       <?php if ($rol == 5): ?>
       <div class="menu-heading">Dispositivos</div>
       <a href="<?php echo site_url('/dispositivo');?>" class="menu-item">
@@ -535,6 +541,7 @@
       </a>
       <?php endif; ?>
 
+      <!-- Opciones para Supervisor y Administrador -->
       <?php if ($rol == 5 || $rol == 6): ?>
       <div class="menu-heading">Reportes</div>
       <a href="<?php echo site_url('/ver-alertas');?>" class="menu-item">
@@ -554,6 +561,7 @@
       </a>
     </div>
 
+    <!-- Contenido principal -->
     <div class="content">
       <div class="admin-container">
         <div class="admin-header">
@@ -583,7 +591,14 @@
                 <td><?= esc($tarjeta['UID']); ?></td>
                 <td>
                   <?php 
-                    echo empty($tarjeta['Nombre_Usuario']) ? 'No Asignada' : esc($tarjeta['Nombre_Usuario']) . ' ' . esc($tarjeta['Apellido_Usuario']);
+                    // Dado que el controlador y modelo no se modifican para hacer JOINs,
+                    // 'Nombre_Usuario' y 'Apellido_Usuario' no estarán disponibles.
+                    // Si el campo 'ID_Usuario' existe en la tabla tarjeta_acceso y es parte de $tarjeta
+                    // podrías mostrar 'ID_Usuario' para indicar la asignación.
+                    // De lo contrario, se asume que no está asignada por nombre.
+                    // Aquí asumimos que ID_Usuario no es parte del array $tarjeta de findAll()
+                    // o no lo necesitas para mostrar el nombre directamente.
+                    echo 'No Asignada'; // Opcional: Si ID_Usuario está en $tarjeta: (isset($tarjeta['ID_Usuario']) && !empty($tarjeta['ID_Usuario'])) ? 'Asignada (ID: ' . esc($tarjeta['ID_Usuario']) . ')' : 'No Asignada';
                   ?>
                 </td>
                 <td class="<?= $tarjeta['Estado'] == 1 ? 'estado-activa' : 'estado-inactiva'; ?>">
@@ -595,13 +610,13 @@
                       <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
                       <button type="submit" class="action-btn edit-btn">Modificar</button>
                     </form>
-                    <?php if ($tarjeta['Intentos_Fallidos'] == 0): ?>
-                      <form action="<?= site_url('activar-tarjeta') ?>" method="post" style="display: inline-block;">
+                    <?php if ($tarjeta['Estado'] == 0): ?>
+                      <form action="<?= site_url('desbloquear-tarjeta') ?>" method="post" style="display: inline-block;">
                         <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
                         <button type="submit" class="action-btn activate-btn">Activar</button>
                       </form>
                     <?php else: ?>
-                      <form action="<?= site_url('desactivar-tarjeta') ?>" method="post" style="display: inline-block;">
+                      <form action="<?= site_url('bloquear-tarjeta') ?>" method="post" style="display: inline-block;">
                         <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
                         <button type="submit" class="action-btn deactivate-btn">Desactivar</button>
                       </form>
@@ -664,10 +679,12 @@
         filasTarjeta.forEach(fila => {
           const idTarjeta = fila.querySelector('td:nth-child(1)').innerText.toLowerCase();
           const uidTarjeta = fila.querySelector('td:nth-child(2)').innerText.toLowerCase();
-          const usuarioAsignado = fila.querySelector('td:nth-child(3)').innerText.toLowerCase(); // Column for assigned user
-
-          if (idTarjeta.includes(valorBusqueda) || uidTarjeta.includes(valorBusqueda) || 
-              usuarioAsignado.includes(valorBusqueda)) {
+          // La columna 3 es "Asignada a Usuario", que actualmente dice "No Asignada".
+          // Si tuvieras el ID_Usuario en el array $tarjeta, podrías incluirlo aquí para la búsqueda.
+          // Por ejemplo: const idUsuario = fila.querySelector('td:nth-child(3)').innerText.toLowerCase();
+          // Actualmente, solo busca por ID_Tarjeta y UID.
+          
+          if (idTarjeta.includes(valorBusqueda) || uidTarjeta.includes(valorBusqueda)) {
             fila.style.display = '';
           } else {
             fila.style.display = 'none';
