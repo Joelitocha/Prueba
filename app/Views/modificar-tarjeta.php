@@ -1,8 +1,3 @@
-I understand\! You want to apply the **visual style** of the second code snippet (the one for users) to your existing card management view, without changing any of the PHP logic or variables related to cards.
-
-Here is your card management view with the updated styling, maintaining all your original PHP for cards:
-
-```php
 <?php
     $session = session();
     $rol = $session->get("ID_Rol");
@@ -704,4 +699,3 @@ Here is your card management view with the updated styling, maintaining all your
     ?>
   </body>
 </html>
-```
