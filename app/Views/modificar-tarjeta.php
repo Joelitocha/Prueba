@@ -1,4 +1,4 @@
-<?php
+necesito que en esta vista: "<?php
     $session = session();
     $rol = $session->get("ID_Rol");
 
@@ -17,7 +17,7 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <title>Administración de Tarjetas</title>
+    <title>Gestión de Usuarios</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
@@ -162,11 +162,12 @@
         justify-content: center;
         padding: 20px;
         text-align: center;
+        margin-bottom: 20px;
       }
 
       .titulo h1 {
         margin: 0;
-        font-size: 24px;
+        font-size: 28px;
         color: #2c3e50;
       }
 
@@ -176,12 +177,12 @@
         justify-content: center;
         align-items: center;
         gap: 15px;
-        margin-top: 20px;
+        margin-top: 15px;
         flex-wrap: wrap;
         width: 100%;
       }
 
-      /* Botón "Añadir Tarjeta" */
+      /* Botón "Añadir Usuario" */
       .titulo .menu-item {
         display: inline-flex;
         align-items: center;
@@ -190,7 +191,7 @@
         border: none;
         padding: 10px 20px;
         border-radius: 4px;
-        font-size: 14px;
+        font-size: 15px;
         text-decoration: none;
         cursor: pointer;
         transition: background-color 0.3s ease;
@@ -206,8 +207,8 @@
         padding: 10px 15px;
         border: 1px solid #ddd;
         border-radius: 4px;
-        font-size: 14px;
-        width: 250px;
+        font-size: 15px;
+        width: 300px;
         max-width: 100%;
         box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
         transition: border-color 0.3s ease;
@@ -224,8 +225,7 @@
         background-color: #fff;
         padding: 20px;
         border-radius: 8px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-        margin-top: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         overflow-x: auto;
       }
 
@@ -256,13 +256,13 @@
         background-color: #f1f8ff;
       }
 
-      /* Estados de tarjeta */
-      .estado-activa {
+      /* Estados de usuario */
+      .estado-activo {
         color: #27ae60;
         font-weight: bold;
       }
 
-      .estado-inactiva {
+      .estado-inactivo {
         color: #e74c3c;
         font-weight: bold;
       }
@@ -418,6 +418,7 @@
         
         .content {
           margin-left: 0;
+          padding: 20px;
         }
         
         .menu-toggle {
@@ -428,8 +429,12 @@
           margin: 15px 20px;
         }
 
-        .titulo, .tabla-container {
-          padding: 15px;
+        .titulo h1 {
+          font-size: 24px;
+        }
+        
+        .barra-busqueda {
+          width: 100%;
         }
       }
 
@@ -437,11 +442,6 @@
         .titulo .acciones {
           flex-direction: column;
           gap: 10px;
-        }
-        
-        .barra-busqueda {
-          width: 100%;
-          max-width: 100%;
         }
         
         .modificar th, 
@@ -459,7 +459,7 @@
         }
         
         .titulo h1 {
-          font-size: 20px;
+          font-size: 22px;
         }
         
         .sidebar {
@@ -482,7 +482,7 @@
         }
         
         .titulo h1 {
-          font-size: 18px;
+          font-size: 20px;
         }
         
         .mensaje {
@@ -515,9 +515,9 @@
     <!-- Modal de confirmación -->
     <div id="modalConfirmacion">
       <div>
-          <h3>¿Quieres borrar esta tarjeta?</h3>
-          <form id="formEliminar" method="post" action="<?= site_url('eliminar-tarjeta') ?>">
-              <input type="hidden" name="ID_Tarjeta" id="idTarjetaEliminar">
+          <h3>¿Quieres borrar este usuario?</h3>
+          <form id="formEliminar" method="post" action="<?= site_url('eliminar-usuario') ?>">
+              <input type="hidden" name="ID_Usuario" id="idUsuarioEliminar">
               <button type="button" onclick="cerrarModal()">Cancelar</button>
               <button type="submit">Eliminar</button>
           </form>
@@ -548,7 +548,7 @@
       <!-- Opciones para Administrador -->
       <?php if ($rol == 5): ?>
       <div class="menu-heading">Administración</div>
-      <a href="<?php echo site_url('/modificar-usuario');?>" class="menu-item">
+      <a href="<?php echo site_url('/modificar-usuario');?>" class="menu-item active">
         <i class="fas fa-users-cog"></i> Gestión de Usuarios
       </a>
       <?php endif; ?>
@@ -556,7 +556,7 @@
       <!-- Opciones para Tarjetas -->
       <div class="menu-heading">Tarjetas RFID</div>
       <?php if ($rol == 5): ?>
-      <a href="<?php echo site_url('/modificar-tarjeta');?>" class="menu-item active">
+      <a href="<?php echo site_url('/modificar-tarjeta');?>" class="menu-item">
         <i class="fas fa-credit-card"></i> Gestión de Tarjetas
       </a>
       <?php endif; ?>
@@ -595,12 +595,12 @@
     <!-- Contenido principal -->
     <div class="content">
       <div class="titulo">
-        <h1>Administración de Tarjetas</h1>
+        <h1>Gestión de Usuarios</h1>
         <div class="acciones">
-          <a href="<?php echo site_url('/crear-tarjeta'); ?>" class="menu-item">
-            <i class="fas fa-id-card"></i> Añadir Tarjeta
+          <a href="<?php echo site_url('/crear-usuario'); ?>" class="menu-item">
+            <i class="fas fa-user-plus"></i> Añadir Usuario
           </a>
-          <input type="text" placeholder="Buscar tarjeta..." class="barra-busqueda" id="searchInput">
+          <input type="text" placeholder="Buscar usuario..." class="barra-busqueda" id="searchInput">
         </div>
       </div>
       
@@ -608,44 +608,54 @@
         <table class="modificar">
           <thead>
             <tr>
-              <th>ID Tarjeta</th>
-              <th>UID</th>
+              <th>ID Usuario</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Email</th>
+              <th>Rol</th>
               <th>Estado</th>
-              <th>Intentos Fallidos</th>
-              <th>Fecha Expiración</th>
-              <th>Horario Uso</th>
               <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
-            <?php foreach ($tarjetas as $tarjeta): ?>
+            <?php foreach ($usuarios as $usuario): ?>
               <tr>
-                <td><?= esc($tarjeta['ID_Tarjeta']); ?></td>
-                <td><?= esc($tarjeta['UID']); ?></td>
-                <td class="<?= $tarjeta['Estado'] == 1 ? 'estado-activa' : 'estado-inactiva'; ?>">
-                  <?= $tarjeta['Estado'] == 1 ? 'Activa' : 'Inactiva'; ?>
+                <td><?= esc($usuario['ID_Usuario']); ?></td>
+                <td><?= esc($usuario['Nombre']); ?></td>
+                <td><?= esc($usuario['Apellido']); ?></td>
+                <td><?= esc($usuario['Email']); ?></td>
+                <td>
+                  <?php 
+                    if ($usuario['ID_Rol'] == 5) {
+                        echo 'Administrador';
+                    } elseif ($usuario['ID_Rol'] == 6) {
+                        echo 'Supervisor';
+                    } elseif ($usuario['ID_Rol'] == 7) {
+                        echo 'Usuario';
+                    }
+                  ?>
                 </td>
-                <td><?= esc($tarjeta['Intentos_Fallidos']); ?></td>
-                <td><?= esc($tarjeta['Fecha_Expiracion'] ?? 'Sin expiración'); ?></td>
-                <td><?= esc($tarjeta['Horario_Uso'] ?? 'Sin restricción'); ?></td>
+                <td class="<?= $usuario['Estado'] == 1 ? 'estado-activo' : 'estado-inactivo'; ?>">
+                  <?= $usuario['Estado'] == 1 ? 'Activo' : 'Inactivo'; ?>
+                </td>
                 <td>
                   <div class="btn-group">
-                    <form action="<?= site_url('modificar-tarjeta2') ?>" method="post">
-                      <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
+                    <form action="<?= site_url('modificar-usuario2') ?>" method="post">
+                      <input type="hidden" name="ID_Usuario" value="<?= esc($usuario['ID_Usuario']); ?>">
                       <input type="submit" value="Modificar" class="btn-modificar">
                     </form>
-                    <?php if ($tarjeta['Estado'] == 0): ?>
-                      <form action="<?= site_url('desbloquear-tarjeta') ?>" method="post">
-                        <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
-                        <input type="submit" value="Desbloquear" class="btn-desbloquear">
+                    <?php if ($usuario['Estado'] == 0): ?>
+                      <form action="<?= site_url('desbloquear-usuario') ?>" method="post">
+                        <input type="hidden" name="ID_Usuario" value="<?= esc($usuario['ID_Usuario']); ?>">
+                        <input type="submit" value="Activar" class="btn-desbloquear">
                       </form>
                     <?php else: ?>
-                      <form action="<?= site_url('bloquear-tarjeta') ?>" method="post">
-                        <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
-                        <input type="submit" value="Bloquear" class="btn-bloquear">
+                      <form action="<?= site_url('bloquear-usuario') ?>" method="post">
+                        <input type="hidden" name="ID_Usuario" value="<?= esc($usuario['ID_Usuario']); ?>">
+                        <input type="submit" value="Desactivar" class="btn-bloquear">
                       </form>
                     <?php endif; ?>
-                    <button type="button" class="btn-eliminar" onclick="mostrarModal('<?= esc($tarjeta['ID_Tarjeta']); ?>')">
+                    <button type="button" class="btn-eliminar" onclick="mostrarModal('<?= esc($usuario['ID_Usuario']); ?>')">
                       Eliminar
                     </button>
                   </div>
@@ -677,8 +687,8 @@
       });
 
       // Modal de confirmación
-      function mostrarModal(idTarjeta) {
-        document.getElementById('idTarjetaEliminar').value = idTarjeta;
+      function mostrarModal(idUsuario) {
+        document.getElementById('idUsuarioEliminar').value = idUsuario;
         document.getElementById('modalConfirmacion').style.display = 'flex';
       }
 
@@ -693,19 +703,21 @@
         }
       }
 
-      // Filtrado en tiempo real para la tabla de tarjetas
+      // Filtrado en tiempo real para la tabla de usuarios
       const barraBusqueda = document.getElementById('searchInput');
-      const filasTarjeta = document.querySelectorAll('.modificar tbody tr');
+      const filasUsuario = document.querySelectorAll('.modificar tbody tr');
 
       barraBusqueda.addEventListener('input', function() {
         const valorBusqueda = barraBusqueda.value.toLowerCase();
 
-        filasTarjeta.forEach(fila => {
-          const idTarjeta = fila.querySelector('td:first-child').innerText.toLowerCase();
-          const uidTarjeta = fila.querySelector('td:nth-child(2)').innerText.toLowerCase();
-          const estadoTarjeta = fila.querySelector('td:nth-child(3)').innerText.toLowerCase();
+        filasUsuario.forEach(fila => {
+          const idUsuario = fila.querySelector('td:first-child').innerText.toLowerCase();
+          const nombreUsuario = fila.querySelector('td:nth-child(2)').innerText.toLowerCase();
+          const apellidoUsuario = fila.querySelector('td:nth-child(3)').innerText.toLowerCase();
+          const emailUsuario = fila.querySelector('td:nth-child(4)').innerText.toLowerCase();
 
-          if (idTarjeta.includes(valorBusqueda) || uidTarjeta.includes(valorBusqueda) || estadoTarjeta.includes(valorBusqueda)) {
+          if (idUsuario.includes(valorBusqueda) || nombreUsuario.includes(valorBusqueda) || 
+              apellidoUsuario.includes(valorBusqueda) || emailUsuario.includes(valorBusqueda)) {
             fila.style.display = '';
           } else {
             fila.style.display = 'none';
@@ -1427,4 +1439,4 @@
       }
     ?>
   </body>
-</html>
+</html>" me refiero en base al apartado de las tablas.
