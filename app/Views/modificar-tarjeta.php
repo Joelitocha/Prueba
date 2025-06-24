@@ -601,7 +601,7 @@
                     echo 'No Asignada'; // Opcional: Si ID_Usuario está en $tarjeta: (isset($tarjeta['ID_Usuario']) && !empty($tarjeta['ID_Usuario'])) ? 'Asignada (ID: ' . esc($tarjeta['ID_Usuario']) . ')' : 'No Asignada';
                   ?>
                 </td>
-                <td class="<?= $tarjeta['Estvdo'] == 1 ? 'estado-activa' : 'estado-inactiva'; ?>">
+                <td class="<?= $tarjeta['Estado'] == 1 ? 'estado-activa' : 'estado-inactiva'; ?>">
                   <?= $tarjeta['Estado'] == 1 ? 'Activa' : 'Inactiva'; ?>
                 </td>
                 <td>
