@@ -561,51 +561,57 @@ $session=session();
 <body>
     
 <!-- Navigation -->
-<nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+<nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top py-2">
     <div class="container">
-        <!-- Logo optimizado con tamaño responsivo -->
+        <!-- Logo más grande con transición suave -->
         <a class="navbar-brand" href="#header">
-            <img src="assets/images/pro.png" alt="RackON Logo" class="img-fluid" style="height: 40px; max-width: 120px;">
+            <img src="assets/images/pro.png" alt="RackON Logo" class="img-fluid" style="height: 50px; max-width: 150px; transition: all 0.3s ease;">
         </a>
         
-        <!-- Botón hamburguesa mejorado -->
+        <!-- Botón hamburguesa con tamaño aumentado -->
         <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
-                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation" style="font-size: 1.5rem;">
             <span class="navbar-toggler-icon"></span>
         </button>
         
-        <!-- Menú principal con mejor estructura -->
+        <!-- Menú principal con tamaño aumentado -->
         <div class="collapse navbar-collapse" id="navbarContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#header" aria-current="page">Inicio</a>
+                    <a class="nav-link active px-3 py-2" href="#header" aria-current="page" style="font-size: 1.1rem;">Inicio</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
-                       data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle px-3 py-2" href="#" id="navbarDropdown" role="button" 
+                       data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 1.1rem;">
                         Producto
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#introduction">¿Qué es RackON?</a></li>
-                        <li><a class="dropdown-item" href="#funcionamiento">¿Cómo funciona?</a></li>
-                        <li><a class="dropdown-item" href="#hardware">Hardware</a></li>
+                        <li><a class="dropdown-item py-2" href="#introduction" style="font-size: 1rem;">¿Qué es RackON?</a></li>
+                        <li><a class="dropdown-item py-2" href="#funcionamiento" style="font-size: 1rem;">¿Cómo funciona?</a></li>
+                        <li><a class="dropdown-item py-2" href="#hardware" style="font-size: 1rem;">Hardware</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#planes">Planes y Precios</a></li>
+                        <li><a class="dropdown-item py-2" href="#planes" style="font-size: 1rem;">Planes y Precios</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contacto</a>
+                    <a class="nav-link px-3 py-2" href="#contact" style="font-size: 1.1rem;">Contacto</a>
                 </li>
                 <li class="nav-item ms-lg-3 my-2 my-lg-0">
-                    <a class="btn btn-outline-light" href="login">
+                    <a class="btn btn-outline-light px-3 py-2" href="login" style="font-size: 1.1rem;">
                         <i class="fas fa-sign-in-alt me-2"></i>Acceder
                     </a>
                 </li>
-                <li class="nav-item d-lg-none mt-2">
+                <li class="nav-item d-lg-none mt-3">
                     <div class="social-icons d-flex justify-content-center">
-                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="btn btn-outline-light rounded-circle me-2" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light rounded-circle me-2" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light rounded-circle" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
                     </div>
                 </li>
             </ul>
