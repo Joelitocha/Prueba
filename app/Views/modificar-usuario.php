@@ -447,7 +447,67 @@
           padding: 20px;
         }
       }
-      
+      @media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    position: fixed;
+    z-index: 1000;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .content {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .mensaje {
+    margin: 15px 20px;
+  }
+
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .admin-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-input {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .users-table th,
+  .users-table td {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .admin-container {
+    padding: 20px;
+  }
+
+  .action-btn {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .modal-content {
+    padding: 20px;
+  }
+}
+
     </style>
   </head>
   <body>
