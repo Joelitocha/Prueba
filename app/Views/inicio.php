@@ -223,17 +223,14 @@
         transition: all 0.3s ease;
       }
 
-      .masonry-item:hover,
-      .masonry-item.hover-effect {
+      .masonry-item:hover {
         transform: translateY(-5px);
         box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         background-color: #3498db;
       }
 
       .masonry-item:hover i,
-      .masonry-item:hover p,
-      .masonry-item.hover-effect i,
-      .masonry-item.hover-effect p {
+      .masonry-item:hover p {
         color: white;
       }
 
@@ -250,8 +247,7 @@
         transition: transform 0.3s ease;
       }
 
-      .masonry-item:hover::after,
-      .masonry-item.hover-effect::after {
+      .masonry-item:hover::after {
         transform: scaleX(1);
       }
 
@@ -369,100 +365,6 @@
 
         .masonry-item p {
           font-size: 13px;
-        }
-      }
-
-      /* Media Queries específicas para móviles */
-      @media (max-width: 480px) {
-        .welcome-container {
-          padding: 15px;
-          margin: 10px;
-        }
-        
-        .welcome-header h1 {
-          font-size: 20px;
-          margin-bottom: 15px;
-        }
-        
-        .welcome-message p {
-          font-size: 14px;
-          margin-bottom: 20px;
-        }
-        
-        .masonry-grid {
-          grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-          grid-auto-rows: 80px;
-          grid-gap: 10px;
-        }
-        
-        .masonry-item {
-          padding: 10px;
-        }
-        
-        .masonry-item i {
-          font-size: 20px;
-          margin-bottom: 5px;
-        }
-        
-        .masonry-item p {
-          font-size: 11px;
-          display: none;
-        }
-        
-        .masonry-item:hover p,
-        .masonry-item.hover-effect p {
-          display: block;
-          position: absolute;
-          bottom: 5px;
-          background: rgba(0,0,0,0.7);
-          padding: 3px;
-          border-radius: 3px;
-          width: calc(100% - 20px);
-        }
-        
-        .menu-toggle {
-          padding: 8px 12px;
-          font-size: 16px;
-        }
-        
-        .sidebar {
-          width: 200px;
-        }
-        
-        .sidebar a {
-          padding: 8px 12px;
-          font-size: 13px;
-        }
-        
-        .sidebar .logo {
-          font-size: 18px;
-          margin-bottom: 20px;
-        }
-        
-        .content {
-          padding: 15px;
-        }
-      }
-
-      @media (max-width: 360px) {
-        .masonry-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        
-        .menu-toggle {
-          top: 10px;
-          left: 10px;
-          padding: 6px 10px;
-          font-size: 14px;
-        }
-        
-        .sidebar {
-          width: 180px;
-        }
-        
-        .sidebar a i {
-          margin-right: 8px;
-          font-size: 14px;
         }
       }
     </style>
@@ -683,10 +585,6 @@
       // Cerrar sesión
       function cerrarsesion(url){
         if(confirm('¿Estás seguro de que deseas cerrar sesión?')){
-          // Cerrar el menú si está abierto en móviles
-          if (window.innerWidth <= 992) {
-            sidebar.classList.remove('active');
-          }
           window.location.href=url;
         }
       }
@@ -718,40 +616,6 @@
       // Ejecutar al cargar y al redimensionar
       window.addEventListener('load', resizeAllMasonryItems);
       window.addEventListener('resize', resizeAllMasonryItems);
-
-      // Cerrar el menú al hacer clic fuera de él en móviles
-      document.addEventListener('click', function(event) {
-        const isClickInsideSidebar = sidebar.contains(event.target);
-        const isClickOnMenuToggle = menuToggle.contains(event.target);
-        
-        if (!isClickInsideSidebar && !isClickOnMenuToggle && window.innerWidth <= 992) {
-          sidebar.classList.remove('active');
-        }
-      });
-
-      // Mejorar el manejo del hover en dispositivos táctiles
-      let lastTouchTime = 0;
-      document.addEventListener('touchstart', function() {
-        lastTouchTime = new Date().getTime();
-      }, true);
-
-      document.addEventListener('touchend', function(event) {
-        const currentTime = new Date().getTime();
-        // Considerar como hover si el toque fue muy breve (menos de 500ms)
-        if (currentTime - lastTouchTime < 500) {
-          // Simular hover en elementos tocados
-          const touchedElement = document.elementFromPoint(
-            event.changedTouches[0].clientX,
-            event.changedTouches[0].clientY
-          );
-          if (touchedElement && touchedElement.classList.contains('masonry-item')) {
-            touchedElement.classList.add('hover-effect');
-            setTimeout(() => {
-              touchedElement.classList.remove('hover-effect');
-            }, 1000);
-          }
-        }
-      }, false);
     </script>
 
     <?php
