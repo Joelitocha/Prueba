@@ -560,10 +560,10 @@ $session=session();
 </head>
 <body>
     
-<!-- Navigation con logo grande -->
+<!-- Navigation con menú completo -->
 <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
     <div class="container">
-        <!-- Logo muy grande con transición suave -->
+        <!-- Logo grande -->
         <a class="navbar-brand" href="#header" style="margin-right: 2rem;">
             <img src="assets/images/pro.png" alt="RackON Logo" 
                  class="img-fluid" 
@@ -576,20 +576,50 @@ $session=session();
             <span class="navbar-toggler-icon"></span>
         </button>
         
-        <!-- Menú principal -->
+        <!-- Menú principal completo -->
         <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
                 <li class="nav-item mx-2">
                     <a class="nav-link active px-3 py-2" href="#header" style="font-size: 1.2rem;">Inicio</a>
                 </li>
+                
+                <!-- Menú desplegable de Producto -->
                 <li class="nav-item mx-2 dropdown">
-                    <a class="nav-link dropdown-toggle px-3 py-2" href="#" style="font-size: 1.2rem;">
+                    <a class="nav-link dropdown-toggle px-3 py-2" href="#" id="productoDropdown" 
+                       role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 1.2rem;">
                         Producto
                     </a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="productoDropdown">
+                        <li><h6 class="dropdown-header">Sobre RackON</h6></li>
+                        <li><a class="dropdown-item py-2" href="#introduction" style="font-size: 1.1rem;">
+                            <i class="fas fa-question-circle me-2"></i>¿Qué es RackON?
+                        </a></li>
+                        <li><a class="dropdown-item py-2" href="#funcionamiento" style="font-size: 1.1rem;">
+                            <i class="fas fa-cogs me-2"></i>¿Cómo funciona?
+                        </a></li>
+                        
+                        <li><hr class="dropdown-divider"></li>
+                        
+                        <li><h6 class="dropdown-header">Componentes</h6></li>
+                        <li><a class="dropdown-item py-2" href="#hardware" style="font-size: 1.1rem;">
+                            <i class="fas fa-microchip me-2"></i>Hardware
+                        </a></li>
+                        <li><a class="dropdown-item py-2" href="#software" style="font-size: 1.1rem;">
+                            <i class="fas fa-code me-2"></i>Software
+                        </a></li>
+                        
+                        <li><hr class="dropdown-divider"></li>
+                        
+                        <li><a class="dropdown-item py-2" href="#planes" style="font-size: 1.1rem;">
+                            <i class="fas fa-tags me-2"></i>Planes y Precios
+                        </a></li>
+                    </ul>
                 </li>
+                
                 <li class="nav-item mx-2">
                     <a class="nav-link px-3 py-2" href="#contact" style="font-size: 1.2rem;">Contacto</a>
                 </li>
+                
                 <li class="nav-item ms-lg-4 mx-2">
                     <a class="btn btn-outline-light px-4 py-2" href="login" style="font-size: 1.2rem;">
                         <i class="fas fa-sign-in-alt me-2"></i>Acceder
@@ -599,6 +629,7 @@ $session=session();
         </div>
     </div>
 </nav>
+
     <!-- Header -->
     <section id="header" class="fullpage-section">
         <div class="container">
