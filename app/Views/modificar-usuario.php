@@ -447,6 +447,74 @@
           padding: 20px;
         }
       }
+      @media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    position: fixed;
+    z-index: 1000;
+    width: 230px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .menu-toggle {
+    display: block;
+    z-index: 1101;
+  }
+
+  .content {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .admin-actions {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .search-input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .users-table th,
+  .users-table td {
+    padding: 10px;
+    font-size: 14px;
+    word-break: break-word;
+  }
+
+  .action-btn {
+    width: 100%;
+    margin: 5px 0;
+    font-size: 14px;
+  }
+
+  .mensaje {
+    margin: 15px 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .modal-content {
+    width: 95%;
+  }
+}
+
     </style>
   </head>
   <body>
