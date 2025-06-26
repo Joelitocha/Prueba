@@ -72,6 +72,7 @@ $session=session();
     #navbar .navbar-brand img {
         height: 100%;
         width: auto;
+        max-width: 100%;
     }
     
     #navbar .navbar-toggler {
@@ -378,12 +379,12 @@ $session=session();
         right: 20px;
         display: none;
         z-index: 99;
-        font-size: 20px; /* Ajusta según necesidad */
-        line-height: 1;  /* Elimina espacio extra */
+        font-size: 20px;
+        line-height: 1;
     }
     
     /* ========================================= */
-    /* MEDIA QUERIES PARA RESPONSIVE */
+    /* MEDIA QUERIES PARA RESPONSIVE - MEJORADAS */
     /* ========================================= */
     
     /* Dispositivos medianos (tablets, 768px y más) */
@@ -442,46 +443,58 @@ $session=session();
         }
     }
     
-    /* Dispositivos pequeños (teléfonos, menos de 768px) */
+    /* Dispositivos pequeños (teléfonos, menos de 768px) - MEJORADO */
     @media (max-width: 767.98px) {
         body {
-            padding-top: 60px;
+            padding-top: 70px;
         }
         
         #header .h1-large {
             font-size: 2.5rem;
+            padding: 0 15px;
         }
         
         .section-title h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
+        }
+        
+        #navbar {
+            padding: 0.75rem 1rem;
+        }
+        
+        #navbar .navbar-brand img {
+            height: 45px;
         }
         
         #navbar .navbar-collapse {
             background-color: var(--dark-color);
             padding: 1rem;
-            margin-top: 0.5rem;
-            border-radius: 0.25rem;
-            text-align: right;
+            margin: 0.5rem -1rem 0 -1rem;
+            border-radius: 0;
+            text-align: left;
         }
         
         #navbar .navbar-nav {
-            align-items: flex-end;
+            align-items: flex-start;
         }
         
         #navbar .nav-item {
-            margin: 0.5rem 0;
+            margin: 0.75rem 0;
             width: 100%;
         }
         
         #navbar .nav-link {
-            padding: 0.5rem 0;
-            display: inline-block;
+            padding: 0.75rem 1rem;
+            font-size: 1.1rem;
+            display: block;
         }
         
         #navbar .btn-outline-light {
-            margin: 0.5rem 0 0;
-            width: auto;
-            display: inline-block;
+            margin: 1rem 0 0;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-size: 1.1rem;
+            text-align: center;
         }
         
         #funcionamiento .image-column {
@@ -490,48 +503,120 @@ $session=session();
         }
         
         #funcionamiento .content-column {
-            padding: 1.5rem;
+            padding: 1.5rem 1rem;
+        }
+        
+        #funcionamiento .step-card {
+            margin-bottom: 1.25rem;
+        }
+        
+        #funcionamiento .step-badge {
+            width: 36px;
+            height: 36px;
+            font-size: 0.9rem;
         }
         
         .plan-card {
             margin-bottom: 1.5rem;
         }
         
+        .plan-card .card-body {
+            padding: 1.5rem;
+        }
+        
+        .ver-mas, .ver-menos {
+            font-size: 1rem;
+            padding: 0.5rem 0;
+            display: block;
+        }
+        
         /* Ajustes para sección de contacto */
         #contact .contact-form {
-            padding: 0 15px;
+            padding: 0 10px;
+        }
+        
+        .contact-form .form-control {
+            padding: 14px 15px;
+            font-size: 1rem;
+        }
+        
+        .btn-solid-lg {
+            padding: 14px 28px;
+            font-size: 1.1rem;
         }
         
         /* Ajustes para footer */
         footer .col-lg-4, 
         footer .col-lg-3, 
         footer .col-lg-2 {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
         
         footer .text-md-start, 
         footer .text-md-end {
             text-align: center !important;
         }
+        
+        .social-icons a {
+            width: 44px;
+            height: 44px;
+            margin-right: 0.75rem;
+        }
+        
+        .app-badges img {
+            height: 45px !important;
+        }
+        
+        /* Ajustes generales */
+        .fullpage-section {
+            padding: 60px 0;
+        }
+        
+        .section-title .lead {
+            font-size: 1.1rem;
+            padding: 0 15px;
+        }
+        
+        .container, .container-fluid {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
+        /* Hardware cards */
+        .hardware-card {
+            padding: 1.75rem 0.75rem;
+        }
+        
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Botón subir */
+        #backToTop {
+            width: 56px;
+            height: 56px;
+            font-size: 24px;
+        }
     }
     
-    /* Dispositivos muy pequeños (menos de 400px) */
+    /* Dispositivos muy pequeños (menos de 400px) - MEJORADO */
     @media (max-width: 400px) {
         #header .h1-large {
             font-size: 2rem;
         }
         
         #navbar .navbar-brand img {
-            height: 35px;
+            height: 40px;
         }
         
         .btn-solid-lg {
             padding: 12px 24px;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
         
         .section-title h2 {
-            font-size: 1.8rem;
+            font-size: 1.9rem;
         }
         
         .section-title .lead {
@@ -543,9 +628,15 @@ $session=session();
             padding: 1.5rem 0.5rem;
         }
         
+        /* Asegurar que las tarjetas no sean demasiado estrechas */
+        .col-md-4, .col-md-6 {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+        
         /* Ajustes para formulario de contacto */
         .contact-form .form-control {
-            padding: 10px 12px;
+            padding: 12px 12px;
         }
     }
     
@@ -555,19 +646,23 @@ $session=session();
             min-height: auto;
             padding: 60px 0;
         }
+        
+        #navbar .navbar-brand img {
+            height: 35px !important;
+        }
     }
     </style>
 </head>
 <body>
     
 <!-- Navigation con menú completo -->
-<nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
+<nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top py-2">
     <div class="container">
         <!-- Logo grande -->
-        <a class="navbar-brand" href="#header" style="margin-right: 2rem;">
+        <a class="navbar-brand" href="#header">
             <img src="assets/images/pro.png" alt="RackON Logo" 
                  class="img-fluid" 
-                 style="height: 70px; width: auto; max-width: 200px; transition: all 0.3s ease;">
+                 style="height: 50px; width: auto; max-width: 150px; transition: all 0.3s ease;">
         </a>
         
         <!-- Botón hamburguesa -->
@@ -579,46 +674,46 @@ $session=session();
         <!-- Menú principal completo -->
         <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
-                <li class="nav-item mx-2">
-                    <a class="nav-link active px-3 py-2" href="#header" style="font-size: 1.2rem;">Inicio</a>
+                <li class="nav-item">
+                    <a class="nav-link active px-2 px-lg-3 py-2" href="#header" style="font-size: 1.1rem;">Inicio</a>
                 </li>
                 
                 <!-- Menú desplegable de Producto -->
-                <li class="nav-item mx-2 dropdown">
-                    <a class="nav-link dropdown-toggle px-3 py-2" href="#" id="productoDropdown" 
-                       role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 1.2rem;">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle px-2 px-lg-3 py-2" href="#" id="productoDropdown" 
+                       role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 1.1rem;">
                         Producto
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="productoDropdown">
                         <li><h6 class="dropdown-header">Sobre RackON</h6></li>
-                        <li><a class="dropdown-item py-2" href="#introduction" style="font-size: 1.1rem;">
+                        <li><a class="dropdown-item py-2" href="#introduction">
                             <i class="fas fa-question-circle me-2"></i>¿Qué es RackON?
                         </a></li>
-                        <li><a class="dropdown-item py-2" href="#funcionamiento" style="font-size: 1.1rem;">
+                        <li><a class="dropdown-item py-2" href="#funcionamiento">
                             <i class="fas fa-cogs me-2"></i>¿Cómo funciona?
                         </a></li>
                         
                         <li><hr class="dropdown-divider"></li>
                         
                         <li><h6 class="dropdown-header">Componentes</h6></li>
-                        <li><a class="dropdown-item py-2" href="#hardware" style="font-size: 1.1rem;">
+                        <li><a class="dropdown-item py-2" href="#hardware">
                             <i class="fas fa-microchip me-2"></i>Hardware
                         </a></li>
                         
                         <li><hr class="dropdown-divider"></li>
                         
-                        <li><a class="dropdown-item py-2" href="#planes" style="font-size: 1.1rem;">
+                        <li><a class="dropdown-item py-2" href="#planes">
                             <i class="fas fa-tags me-2"></i>Planes y Precios
                         </a></li>
                     </ul>
                 </li>
                 
-                <li class="nav-item mx-2">
-                    <a class="nav-link px-3 py-2" href="#contact" style="font-size: 1.2rem;">Contacto</a>
+                <li class="nav-item">
+                    <a class="nav-link px-2 px-lg-3 py-2" href="#contact" style="font-size: 1.1rem;">Contacto</a>
                 </li>
                 
-                <li class="nav-item ms-lg-4 mx-2">
-                    <a class="btn btn-outline-light px-4 py-2" href="login" style="font-size: 1.2rem;">
+                <li class="nav-item ms-lg-3">
+                    <a class="btn btn-outline-light px-3 py-2" href="login" style="font-size: 1.1rem;">
                         <i class="fas fa-sign-in-alt me-2"></i>Acceder
                     </a>
                 </li>
@@ -1012,7 +1107,7 @@ $session=session();
                 <!-- Columna Información -->
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-brand mb-3">
-                        <img src="assets/images/pro.png" alt="RackON Logo" style="height: 40px;">
+                        <img src="assets/images/pro.png" alt="RackON Logo" style="height: 45px;">
                     </div>
                     <p class="small">Sistema de seguridad en capas para racks de servidores que combina RFID, sensores y cámaras para protección física de infraestructura crítica.</p>
 
@@ -1053,18 +1148,26 @@ $session=session();
                 <div class="col-lg-3 col-md-6">
                     <h6 class="text-uppercase text-primary mb-3">Síguenos</h6>
                     <div class="social-icons d-flex mb-3">
-                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-light rounded-circle me-2" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light rounded-circle me-2" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light rounded-circle me-2" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light rounded-circle" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     </div>
                     <h6 class="text-uppercase text-primary mb-2">Descarga nuestra app</h6>
                     <div class="app-badges">
                         <a href="#" class="d-inline-block me-2 mb-2">
-                            <img src="assets/images/playstore.png" alt="Google Play" style="height: 40px;">
+                            <img src="assets/images/playstore.png" alt="Google Play" style="height: 45px;">
                         </a>
                         <a href="#" class="d-inline-block mb-2">
-                            <img src="assets/images/app.png" alt="App Store" style="height: 40px;">
+                            <img src="assets/images/app.png" alt="App Store" style="height: 45px;">
                         </a>
                     </div>
                 </div>
