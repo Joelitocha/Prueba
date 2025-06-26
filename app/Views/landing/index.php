@@ -604,9 +604,6 @@ $session=session();
                         <li><a class="dropdown-item py-2" href="#hardware" style="font-size: 1.1rem;">
                             <i class="fas fa-microchip me-2"></i>Hardware
                         </a></li>
-                        <li><a class="dropdown-item py-2" href="#software" style="font-size: 1.1rem;">
-                            <i class="fas fa-code me-2"></i>Software
-                        </a></li>
                         
                         <li><hr class="dropdown-divider"></li>
                         
