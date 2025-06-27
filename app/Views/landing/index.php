@@ -1101,7 +1101,7 @@ $session=session();
             </div>
             <div class="row mt-4">
                 <div class="col text-center small">
-                    <p class="mb-0">© 2024 RackON. Todos los derechos reservados.</p>
+                    <p class="mb-0">© 2025 RackON. Todos los derechos reservados.</p>
                 </div>
             </div>
         </div>
