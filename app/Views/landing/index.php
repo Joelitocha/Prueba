@@ -1231,7 +1231,7 @@ $session=session();
     </div>
 </div>
 
-<script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=USD&vault=true"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=AXn6zeaT-kutunjZDVGKpbDSQ6WCCPgvHvsdaVYjrQvy4udAukapA5ISWF9QIR268HG_K-eDjk8ETcYs&currency=USD&vault=true"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
@@ -1281,9 +1281,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ===============================================
     // Lógica del Formulario Multi-paso de Compra
-    // ===============================================
 
     const companyRegistrationModal = new bootstrap.Modal(document.getElementById('companyRegistrationModal'));
     const purchaseModal = new bootstrap.Modal(document.getElementById('purchaseModal'));
