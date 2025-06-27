@@ -921,37 +921,96 @@ $session=session();
 
 <section id="contact" class="fullpage-section">
     <div class="container">
-        <div class="section-title">
-            <h2 class="text-white">Contáctanos</h2>
-            <p class="lead text-white-50">¿Tienes preguntas o necesitas una solución personalizada? Completa el formulario y nos pondremos en contacto contigo.</p>
+        <div class="section-title text-white">
+            <h2>Contáctenos</h2>
+            <p class="lead">Complete el formulario y nos pondremos en contacto con usted</p>
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <form class="contact-form text-white">
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="name" required>
+                <form id="contactForm" class="contact-form" action="https://formsubmit.co/rackonoficial@gmail.com" method="POST">
+                    <!-- Configuración avanzada -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table"> <!-- Más organizado -->
+                    <input type="hidden" name="_subject" value="Nuevo contacto desde RackON"> <!-- Asunto personalizado -->
+                    <input type="hidden" name="_autoresponse" value="Gracias por contactarnos. Hemos recibido tu mensaje y te responderemos pronto."> <!-- Autorespuesta -->
+                    <input type="text" name="_honey" style="display:none"> <!-- Trampa para bots -->
+                    
+                    <!-- Campos del formulario -->
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <input type="text" name="nombre" class="form-control" placeholder="Nombre" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <input type="email" name="email" class="form-control" placeholder="Email" required>
+                        </div>
                     </div>
                     <div class="mb-3">
-                        <label for="email" class="form-label">Correo Electrónico</label>
-                        <input type="email" class="form-control" id="email" required>
+                        <input type="text" name="asunto" class="form-control" placeholder="Asunto" required>
                     </div>
                     <div class="mb-3">
-                        <label for="subject" class="form-label">Asunto</label>
-                        <input type="text" class="form-control" id="subject" required>
+                        <textarea class="form-control" name="mensaje" rows="5" placeholder="Mensaje" required></textarea>
                     </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label">Mensaje</label>
-                        <textarea class="form-control" id="message" rows="5" required></textarea>
-                    </div>
-                    <div class="d-grid">
-                        <button type="submit" class="btn btn-primary btn-solid-lg">Enviar Mensaje</button>
+                    
+                    <!-- Feedback para el usuario -->
+                    <div id="formFeedback" class="alert d-none mb-3"></div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="btn-solid-lg">
+                            <span id="submitText">Enviar Mensaje</span>
+                            <span id="submitSpinner" class="spinner-border spinner-border-sm d-none" role="status"></span>
+                        </button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </section>
+
+<!-- JavaScript para manejar el envío -->
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const feedback = document.getElementById('formFeedback');
+    const spinner = document.getElementById('submitSpinner');
+    const submitText = document.getElementById('submitText');
+    
+    // Mostrar spinner
+    spinner.classList.remove('d-none');
+    submitText.textContent = 'Enviando...';
+    submitBtn.disabled = true;
+    
+    // Enviar formulario
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            feedback.textContent = '¡Mensaje enviado con éxito!';
+            feedback.classList.remove('alert-danger', 'd-none');
+            feedback.classList.add('alert-success');
+            form.reset();
+        } else {
+            throw new Error('Error en el envío');
+        }
+    })
+    .catch(error => {
+        feedback.textContent = 'Error al enviar. Por favor, inténtalo de nuevo.';
+        feedback.classList.remove('alert-success', 'd-none');
+        feedback.classList.add('alert-danger');
+    })
+    .finally(() => {
+        spinner.classList.add('d-none');
+        submitText.textContent = 'Enviar Mensaje';
+        submitBtn.disabled = false;
+    });
+});
+</script>
 
 <footer class="py-5">
     <div class="container">
