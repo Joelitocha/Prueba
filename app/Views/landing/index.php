@@ -897,71 +897,21 @@ $session=session();
 <section id="planes" class="fullpage-section">
     <div class="container">
         <div class="section-title">
-            <h2>Nuestros Planes</h2>
-            <p class="lead">Elige el plan que mejor se adapte a tus necesidades y asegura tus racks con RackON.</p>
+            <h2>Personaliza tu Sistema RackON</h2>
+            <p class="lead">Crea tu plan RackON ideal con nuestras opciones de personalización.</p>
         </div>
         <div class="row justify-content-center">
-            <div class="col-md-6 col-lg-4 mb-4 d-flex align-items-stretch">
+            <div class="col-md-8 col-lg-6 mb-4 d-flex align-items-stretch">
                 <div class="card plan-card w-100">
-                    <div class="card-body d-flex flex-column">
-                        <h4 class="card-title text-center text-primary">Plan Básico</h4>
-                        <h3 class="text-center mb-4">229 USD<span class="fs-6">/unidad (pago único)</span></h3>
-                        <ul class="list-unstyled mb-4">
-                            <li>✔ Control RFID</li>
-                            <li>✔ Acceso al panel de administración web</li>
-                            <li>✔ Registro de eventos y logs</li>
-                            <li>✔ Alertas básicas por correo</li>
-                            <li>✔ Soporte técnico por email (24-48h)</li>
-                        </ul>
-                        <button class="btn btn-primary mt-auto btn-compra" data-bs-toggle="modal" data-bs-target="#companyRegistrationModal" 
-                                data-plan-name="Básico" data-precio-mensual="25" data-precio-anual="250"
-                                data-is-base-plan="true">Comprar Plan Básico</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4 d-flex align-items-stretch">
-                <div class="card plan-card w-100">
-                    <div class="card-body d-flex flex-column">
-                        <h4 class="card-title text-center text-primary">Plan Avanzado</h4>
-                        <h3 class="text-center mb-4">229 USD<span class="fs-6">/unidad (pago único)</span></h3>
-                        <ul class="list-unstyled mb-4">
-                            <li>✔ Todas las características del Plan Básico</li>
-                            <li>✔ Verificación por cámara</li>
-                            <li>✔ Detección de impacto/vibración</li>
-                            <li>✔ Alertas avanzadas (SMS/App)</li>
-                            <li>✔ Integración API básica</li>
-                            <div class="ver-mas-contenido">
-                                <li>✔ Reportes de actividad detallados</li>
-                                <li>✔ Actualizaciones de software incluidas</li>
-                            </div>
-                        </ul>
-                        <a href="#" class="ver-mas-btn">Ver más</a>
-                        <button class="btn btn-primary mt-auto btn-compra" data-bs-toggle="modal" data-bs-target="#companyRegistrationModal" 
-                                data-plan-name="Avanzado" data-precio-mensual="45" data-precio-anual="450"
-                                data-is-base-plan="false">Comprar Plan Avanzado</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4 d-flex align-items-stretch">
-                <div class="card plan-card w-100">
-                    <div class="card-body d-flex flex-column">
-                        <h4 class="card-title text-center text-primary">Plan Empresarial</h4>
-                        <h3 class="text-center mb-4">229 USD<span class="fs-6">/unidad (pago único)</span></h3>
-                        <ul class="list-unstyled mb-4">
-                            <li>✔ Todas las características del Plan Avanzado</li>
-                            <li>✔ Múltiples usuarios y roles personalizados</li>
-                            <li>✔ Integración con sistemas de gestión existentes</li>
-                            <li>✔ Soporte 24/7 con SLA</li>
-                            <li>✔ Auditorías de seguridad periódicas</li>
-                            <div class="ver-mas-contenido">
-                                <li>✔ Entrenamiento personalizado para equipos</li>
-                                <li>✔ Opciones de personalización de hardware</li>
-                            </div>
-                        </ul>
-                        <a href="#" class="ver-mas-btn">Ver más</a>
-                        <button class="btn btn-primary mt-auto btn-compra" data-bs-toggle="modal" data-bs-target="#companyRegistrationModal" 
-                                data-plan-name="Empresarial" data-precio-mensual="75" data-precio-anual="750"
-                                data-is-base-plan="false">Comprar Plan Empresarial</button>
+                    <div class="card-body d-flex flex-column text-center">
+                        <h4 class="card-title text-primary">Sistema RackON Personalizado</h4>
+                        <h3 class="mb-4">Desde 229 USD<span class="fs-6">/unidad (pago único)</span></h3>
+                        <p class="mb-4">
+                            Diseña tu RackON a medida. Elige las capas de seguridad, el tipo de soporte técnico, opciones estéticas y la cantidad de dispositivos. El precio final se ajustará a tu selección.
+                        </p>
+                        <button class="btn btn-primary mt-auto btn-compra" data-bs-toggle="modal" data-bs-target="#companyRegistrationModal">
+                            Personalizar y Comprar
+                        </button>
                     </div>
                 </div>
             </div>
@@ -1270,7 +1220,7 @@ $session=session();
                         <hr class="my-4">
                         <div class="text-center">
                             <h6>Pagar con PayPal</h6>
-                            <p class="text-muted small">Haz clic en el botón de PayPal para completar tu pago.</p>
+                            <p class="text-muted small">Haz clic en los botones de PayPal para completar tu pago. Se realizarán dos pagos separados: uno por los dispositivos y opciones, y otro por la suscripción de soporte.</p>
                             <div id="paypal-buttons-container">
                                 </div>
                         </div>
@@ -1317,22 +1267,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Swiper for testimonials (if implemented)
-    // const swiper = new Swiper('.swiper-container', {
-    //     slidesPerView: 1,
-    //     spaceBetween: 30,
-    //     loop: true,
-    //     pagination: {
-    //         el: '.swiper-pagination',
-    //         clickable: true,
-    //     },
-    //     navigation: {
-    //         nextEl: '.swiper-button-next',
-    //         prevEl: '.swiper-button-prev',
-    //     },
-    // });
-
-    // "Ver más" functionality for plan cards
+    // "Ver más" functionality for plan cards (kept for consistency, though only one "plan" now)
     document.querySelectorAll('.ver-mas-btn').forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
@@ -1357,9 +1292,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const formSteps = document.querySelectorAll('.form-step');
     let currentStep = 0;
 
-    let selectedPlanData = {}; // To store the base plan details (monthly/annual price)
+    // Default values for the single customizable plan
+    let selectedPlanData = {
+        planName: "Personalizado",
+        precioMensual: 25, // Base monthly support price
+        precioAnual: 250,  // Base annual support price
+        type: 'monthly' // Default to monthly subscription
+    }; 
+
     let purchaseCalculations = {
-        deviceBasePrice: 229,
+        deviceBasePrice: 229, // Base price per device
         quantity: 1,
         securityLayers: {
             rfid: true,
@@ -1375,7 +1317,7 @@ document.addEventListener('DOMContentLoaded', function() {
             guided: false,
             manual: false
         },
-        // Calculated totals
+        // Calculated totals (will be updated by updatePurchaseSummary)
         currentDeviceTotal: 0,
         currentSupportMonthlyTotal: 0,
         currentSupportAnnualTotal: 0
@@ -1437,8 +1379,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let summaryItems = [];
         let devicePricePerUnit = purchaseCalculations.deviceBasePrice;
-        let supportMonthlyPrice = selectedPlanData.precioMensual;
-        let supportAnnualPrice = selectedPlanData.precioAnual;
+        let baseMonthlySupport = selectedPlanData.precioMensual;
+        let baseAnnualSupport = selectedPlanData.precioAnual;
 
         // 1. Cantidad de Dispositivos
         summaryItems.push(`<li class="list-group-item"><strong>Cantidad:</strong> ${purchaseCalculations.quantity} unidades</li>`);
@@ -1449,6 +1391,7 @@ document.addEventListener('DOMContentLoaded', function() {
             devicePricePerUnit = PRICES.quantityDiscounts['2-4'];
             summaryItems.push(`<li class="list-group-item">Descuento por volumen (2-4): -${229 - devicePricePerUnit} USD/unidad</li>`);
         }
+        
         purchaseCalculations.currentDeviceTotal = devicePricePerUnit * purchaseCalculations.quantity;
         summaryItems.push(`<li class="list-group-item"><strong>Precio Base por Unidad:</strong> ${devicePricePerUnit} USD</li>`);
 
@@ -1464,25 +1407,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // 3. Soporte técnico
-        document.getElementById('supportPlanType').innerText = selectedPlanData.type === 'monthly' ? 'Mensual' : 'Anual';
+        // Determine if monthly or annual based on previous selection or default to monthly for summary
+        let supportTypeDisplay = selectedPlanData.type === 'monthly' ? 'Mensual' : 'Anual';
+        document.getElementById('supportPlanType').innerText = supportTypeDisplay;
         
+        let currentSupportMonthlyPrice = baseMonthlySupport;
+        let currentSupportAnnualPrice = baseAnnualSupport;
+
         switch (purchaseCalculations.techSupport) {
             case 'basic':
-                summaryItems.push(`<li class="list-group-item">Soporte Técnico: Básico (incluido en ${selectedPlanData.type === 'monthly' ? '25 USD/mes' : '250 USD/año'})</li>`);
+                summaryItems.push(`<li class="list-group-item">Soporte Técnico: Básico (incluido en ${baseMonthlySupport} USD/mes o ${baseAnnualSupport} USD/año)</li>`);
                 break;
             case 'premium':
-                supportMonthlyPrice += PRICES.supportPremiumMonthly;
-                supportAnnualPrice += PRICES.supportPremiumAnnual;
+                currentSupportMonthlyPrice += PRICES.supportPremiumMonthly;
+                currentSupportAnnualPrice += PRICES.supportPremiumAnnual;
                 summaryItems.push(`<li class="list-group-item">Soporte Técnico: Premium (+${PRICES.supportPremiumMonthly} USD/mes o +${PRICES.supportPremiumAnnual} USD/año)</li>`);
                 break;
             case 'ultra':
-                supportMonthlyPrice += PRICES.supportUltraMonthly;
-                supportAnnualPrice += PRICES.supportUltraAnnual;
+                currentSupportMonthlyPrice += PRICES.supportUltraMonthly;
+                currentSupportAnnualPrice += PRICES.supportUltraAnnual;
                 summaryItems.push(`<li class="list-group-item">Soporte Técnico: Ultra (+${PRICES.supportUltraMonthly} USD/mes o +${PRICES.supportUltraAnnual} USD/año)</li>`);
                 break;
         }
-        purchaseCalculations.currentSupportMonthlyTotal = supportMonthlyPrice;
-        purchaseCalculations.currentSupportAnnualTotal = supportAnnualPrice;
+        purchaseCalculations.currentSupportMonthlyTotal = currentSupportMonthlyPrice;
+        purchaseCalculations.currentSupportAnnualTotal = currentSupportAnnualPrice;
 
 
         // 4. Personalización estética
@@ -1519,82 +1467,117 @@ document.addEventListener('DOMContentLoaded', function() {
         paypalButtonsContainer.innerHTML = ''; // Clear existing buttons
 
         // Button for Device Purchase (One-time payment)
-        paypal.Buttons({
-            createOrder: function(data, actions) {
-                return actions.order.create({
-                    purchase_units: [{
-                        amount: {
-                            value: purchaseCalculations.currentDeviceTotal.toFixed(2)
-                        },
-                        description: `RackON Device(s) and Customizations`
-                    }]
-                });
-            },
-            onApprove: function(data, actions) {
-                return actions.order.capture().then(function(details) {
-                    alert('Pago de Dispositivo completado: ' + details.payer.name.given_name);
-                    // Here you would typically send data to your backend
-                });
-            },
-            onError: function(err) {
-                console.error('PayPal Device Button Error', err);
-                alert('Hubo un error con el pago del dispositivo. Por favor, inténtalo de nuevo.');
-            }
-        }).render(paypalButtonsContainer);
+        // Only render if device total is greater than 0
+        if (purchaseCalculations.currentDeviceTotal > 0) {
+            const deviceButtonDiv = document.createElement('div');
+            deviceButtonDiv.id = 'paypal-device-button';
+            paypalButtonsContainer.appendChild(deviceButtonDiv);
+
+            paypal.Buttons({
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: purchaseCalculations.currentDeviceTotal.toFixed(2)
+                            },
+                            description: `RackON Device(s) and Customizations`
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        alert('Pago de Dispositivo completado: ' + details.payer.name.given_name);
+                        // Here you would typically send data to your backend
+                    });
+                },
+                onError: function(err) {
+                    console.error('PayPal Device Button Error', err);
+                    alert('Hubo un error con el pago del dispositivo. Por favor, inténtalo de nuevo.');
+                }
+            }).render('#paypal-device-button');
+        }
 
         // Button for Subscription (Monthly or Annual)
-        const subscriptionAmount = selectedPlanData.type === 'monthly' ? purchaseCalculations.currentSupportMonthlyTotal : purchaseCalculations.currentSupportAnnualTotal;
-        const planDescription = selectedPlanData.type === 'monthly' ? 'Soporte RackON Mensual' : 'Soporte RackON Anual';
-        const paypalPlanId = selectedPlanData.type === 'monthly' ? 'P-S-MONTHLYPLANID' : 'P-S-ANNUALPLANID'; // REPLACE WITH ACTUAL PAYPAL PLAN IDs
+        // Allow user to select monthly/annual for support here as well
+        const supportTypeSelector = document.createElement('div');
+        supportTypeSelector.innerHTML = `
+            <div class="form-check form-check-inline mt-3">
+                <input class="form-check-input" type="radio" name="supportBillingCycle" id="billingMonthly" value="monthly" checked>
+                <label class="form-check-label" for="billingMonthly">Pagar Mensual</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="supportBillingCycle" id="billingAnnual" value="annual">
+                <label class="form-check-label" for="billingAnnual">Pagar Anual (Ahorra un 10%)</label>
+            </div>
+        `;
+        paypalButtonsContainer.appendChild(supportTypeSelector);
 
-        // Note: For subscriptions, you typically use `subscription.create` or `product.create` with `plan.create` in your backend.
-        // The frontend PayPal SDK can then link to these plans.
-        // For simplicity in this direct client-side example, we're simulating a single subscription payment,
-        // but real subscriptions require backend setup.
-        // This is a simplified representation. For full PayPal Subscriptions, you'd integrate with your server.
-        
-        const subscriptionButtonDiv = document.createElement('div');
-        subscriptionButtonDiv.id = 'paypal-subscription-button';
-        paypalButtonsContainer.appendChild(subscriptionButtonDiv);
+        // Add event listener to update the total support price display when billing cycle changes
+        supportTypeSelector.querySelectorAll('input[name="supportBillingCycle"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                selectedPlanData.type = this.value; // Update selected type
+                updatePurchaseSummary(); // Recalculate summary to show correct support price
+                renderPayPalSubscriptionButton(); // Re-render subscription button with new price
+            });
+        });
 
-        paypal.Buttons({
-            createSubscription: function(data, actions) {
-                return actions.subscription.create({
-                    plan_id: paypalPlanId, // Replace with your actual PayPal Subscription Plan ID
-                });
-            },
-            onApprove: function(data, actions) {
-                alert('Suscripción completada! ID de Suscripción: ' + data.subscriptionID);
-                // Here you would typically send data to your backend
-            },
-            onError: function(err) {
-                console.error('PayPal Subscription Button Error', err);
-                alert('Hubo un error con la suscripción de soporte. Por favor, inténtalo de nuevo.');
+        // Initial rendering of subscription button
+        renderPayPalSubscriptionButton();
+
+        function renderPayPalSubscriptionButton() {
+            let subscriptionButtonDiv = document.getElementById('paypal-subscription-button');
+            if (!subscriptionButtonDiv) {
+                subscriptionButtonDiv = document.createElement('div');
+                subscriptionButtonDiv.id = 'paypal-subscription-button';
+                paypalButtonsContainer.appendChild(subscriptionButtonDiv);
+            } else {
+                // Clear existing subscription button to re-render
+                subscriptionButtonDiv.innerHTML = '';
             }
-        }).render('#paypal-subscription-button');
+
+            const subscriptionAmount = selectedPlanData.type === 'monthly' ? purchaseCalculations.currentSupportMonthlyTotal : purchaseCalculations.currentSupportAnnualTotal;
+            const planDescription = selectedPlanData.type === 'monthly' ? 'Soporte RackON Mensual' : 'Soporte RackON Anual';
+            
+            // For actual subscriptions, you'd integrate with your server and use PayPal Plans.
+            // This example creates a one-time payment disguised as a "subscription" for client-side demo.
+            // In a real app, 'createSubscription' would be used with a pre-configured Plan ID.
+            paypal.Buttons({
+                createOrder: function(data, actions) { // Using createOrder for simplicity, not createSubscription
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: subscriptionAmount.toFixed(2)
+                            },
+                            description: planDescription
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        alert('Pago de suscripción completado: ' + details.payer.name.given_name);
+                        // Here you would typically send data to your backend to activate subscription
+                    });
+                },
+                onError: function(err) {
+                    console.error('PayPal Subscription Button Error', err);
+                    alert('Hubo un error con el pago de la suscripción. Por favor, inténtalo de nuevo.');
+                }
+            }).render('#paypal-subscription-button');
+        }
     }
 
-    // Event listener for "Comprar Plan" buttons
-    document.querySelectorAll('.btn-compra').forEach(button => {
-        button.addEventListener('click', function() {
-            // Get data from the clicked plan button
-            selectedPlanData = {
-                planName: this.dataset.planName,
-                precioMensual: parseFloat(this.dataset.precioMensual),
-                precioAnual: parseFloat(this.dataset.precioAnual),
-                isBasePlan: this.dataset.isBasePlan === 'true' // Convert string to boolean
-            };
 
-            // Prefill info from company registration modal to purchase modal step 1
-            document.getElementById('displayCompanyName').innerText = document.getElementById('companyName').value;
-            document.getElementById('displayCompanyTaxId').innerText = document.getElementById('companyTaxId').value;
-            document.getElementById('displayCompanyContactPerson').innerText = document.getElementById('companyContactPerson').value;
-            document.getElementById('displayCompanyContactEmail').innerText = document.getElementById('companyContactEmail').value;
-            document.getElementById('displayCompanyContactPhone').innerText = document.getElementById('companyContactPhone').value;
+    // Event listener for "Personalizar y Comprar" button (replaces old btn-compra)
+    document.querySelector('.btn-compra').addEventListener('click', function() {
+        // Prefill info from company registration modal to purchase modal step 1
+        document.getElementById('displayCompanyName').innerText = document.getElementById('companyName').value;
+        document.getElementById('displayCompanyTaxId').innerText = document.getElementById('companyTaxId').value;
+        document.getElementById('displayCompanyContactPerson').innerText = document.getElementById('companyContactPerson').value;
+        document.getElementById('displayCompanyContactEmail').innerText = document.getElementById('companyContactEmail').value;
+        document.getElementById('displayCompanyContactPhone').innerText = document.getElementById('companyContactPhone').value;
 
-            // Show the first step of the purchase form
-            showStep(0);
-        });
+        // Show the first step of the purchase form
+        showStep(0);
     });
 
     // Handle company registration form submission
@@ -1604,9 +1587,7 @@ document.addEventListener('DOMContentLoaded', function() {
         companyRegistrationModal.hide();
         // Open purchase modal
         purchaseModal.show();
-        // Already handled prefilling above when btn-compra is clicked
-        // Show the first step of the purchase form
-        showStep(0);
+        // Show the first step of the purchase form (already handled above in btn-compra click)
     });
 
     // Navigation for multi-step purchase form
@@ -1628,11 +1609,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 showStep(currentStep - 1);
             }
         } else if (e.target.id === 'confirmPurchaseBtn') {
-            // This button now just confirms the order before showing PayPal,
-            // as PayPal buttons are already rendered on summary step load.
-            // In a real app, this would trigger backend order creation.
             alert('Pedido confirmado! Procediendo al pago...');
-            // No direct action needed here as PayPal buttons are already visible and ready.
+            // In a real app, this would trigger backend order creation and then redirect to PayPal or show buttons.
+            // Since buttons are already rendered, this just acts as a final confirmation.
         }
     });
 
@@ -1662,12 +1641,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Set initial values for customization based on selectedPlanData (if applicable, e.g. for base plan features)
-    // When a plan is selected, the initial state of customization needs to reflect that.
-    // For now, only Capa 1 RFID is pre-selected and disabled.
-    // If "Plan Avanzado" means Capa 2 & 3 are included, this logic needs to be enhanced.
-    // For simplicity, current implementation assumes all customization options are additions.
-    // A robust solution would set defaults based on `selectedPlanData.planName` or `isBasePlan`.
+    // Initial calculation when the purchase modal is shown for the first time
+    $('#purchaseModal').on('show.bs.modal', function () {
+        updatePurchaseSummary(); // Ensure initial summary is calculated
+    });
 });
 </script>
 </body>
