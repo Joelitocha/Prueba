@@ -1040,8 +1040,8 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
                 </div>
                 <h5>Descarga la App</h5>
                 <div class="app-badges">
-                    <a href="#"><img src="assets/images/app-store.png" alt="App Store" class="img-fluid me-2" style="height: 40px;"></a>
-                    <a href="#"><img src="assets/images/google-play.png" alt="Google Play" class="img-fluid" style="height: 40px;"></a>
+                    <a href="#"><img src="assets/images/app.png" alt="App Store" class="img-fluid me-2" style="height: 40px;"></a>
+                    <a href="#"><img src="assets/images/googleplay.png" alt="Google Play" class="img-fluid" style="height: 40px;"></a>
                 </div>
             </div>
             <div class="col-lg-2">
