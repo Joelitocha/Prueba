@@ -10,7 +10,6 @@ $session=session();
     <meta name="author" content="Federico Arias - Joel Martinez Vilche">
     <meta name="keywords" content="seguridad racks, control acceso RFID, protección servidores, sistema IoT seguridad, rackon, rackon sistema de seguridad">
 
-    <!-- Etiquetas Open Graph -->
     <meta property="og:title" content="RackON - Seguridad Inteligente para Racks">
     <meta property="og:description" content="Sistema IoT de seguridad para racks con acceso RFID y sensores.">
     <meta property="og:image" content="assets/images/rackon-og.jpg"> 
@@ -18,19 +17,14 @@ $session=session();
     <meta property="og:type" content="website">
     <title>RackON - Rack Security</title>
     
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap" rel="stylesheet">
     
-    <!-- Swiper CSS -->
     <link href="https://unpkg.com/swiper@7/swiper-bundle.min.css" rel="stylesheet">
     
-    <!-- Estilos personalizados -->
     <style>
     :root {
         --primary-color: #0d6efd;
@@ -252,67 +246,14 @@ $session=session();
         padding: 2rem 1rem;
     }
 
-    /* SECCIÓN PLANES */
-    #planes {
+    /* SECCIÓN ADQUIRIR */
+    #adquirir {
         background-color: var(--light-color);
         padding-top: 80px;
         padding-bottom: 80px;
+        text-align: center;
     }
-
-    .plan-card {
-        transition: all 0.3s;
-    }
-
-    .plan-card:hover {
-        transform: translateY(-10px);
-    }
-
-    .plan-card .card-body {
-        padding: 2rem;
-    }
-
-    .plan-card ul {
-        padding-left: 0;
-        list-style: none;
-    }
-
-    .plan-card ul li {
-        margin-bottom: 0.5rem;
-        position: relative;
-        padding-left: 1.5rem;
-    }
-
-    .plan-card ul li:before {
-        content: "✔";
-        position: absolute;
-        left: 0;
-        color: var(--primary-color);
-    }
-
-    /* NUEVO: Mostrar/Ocultar contenido */
-    .ver-mas-contenido {
-        display: none;
-    }
-
-    .ver-mas-contenido.mostrar {
-        display: block;
-    }
-
-    .ver-mas-btn {
-        cursor: pointer;
-        color: var(--primary-color);
-        text-decoration: underline;
-        font-size: 0.9rem;
-        display: inline-block;
-        margin-top: 0.5rem;
-    }
-
-    /* Botón "Comprar" siempre abajo */
-    .btn-compra {
-        margin-top: auto;
-        font-weight: 500;
-    }
-
+    
     /* SECCIÓN CONTACTO */
     #contact {
         background: linear-gradient(rgba(2, 15, 29, 0.8), rgba(2, 15, 29, 0.8)), url('assets/images/contact-background.jpg') center center no-repeat;
@@ -516,20 +457,6 @@ $session=session();
             font-size: 0.9rem;
         }
         
-        .plan-card {
-            margin-bottom: 1.5rem;
-        }
-        
-        .plan-card .card-body {
-            padding: 1.5rem;
-        }
-        
-        .ver-mas, .ver-menos {
-            font-size: 1rem;
-            padding: 0.5rem 0;
-            display: block;
-        }
-        
         /* Ajustes para sección de contacto */
         #contact .contact-form {
             padding: 0 10px;
@@ -655,30 +582,25 @@ $session=session();
 </head>
 <body>
     
-<!-- Navigation con menú completo -->
 <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top py-2">
     <div class="container">
-        <!-- Logo grande -->
         <a class="navbar-brand" href="#header">
             <img src="assets/images/pro.png" alt="RackON Logo" 
                  class="img-fluid" 
                  style="height: 50px; width: auto; max-width: 150px; transition: all 0.3s ease;">
         </a>
         
-        <!-- Botón hamburguesa -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
                 aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         
-        <!-- Menú principal completo -->
         <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
                 <li class="nav-item">
                     <a class="nav-link active px-2 px-lg-3 py-2" href="#header" style="font-size: 1.1rem;">Inicio</a>
                 </li>
                 
-                <!-- Menú desplegable de Producto -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle px-2 px-lg-3 py-2" href="#" id="productoDropdown" 
                        role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 1.1rem;">
@@ -702,8 +624,8 @@ $session=session();
                         
                         <li><hr class="dropdown-divider"></li>
                         
-                        <li><a class="dropdown-item py-2" href="#planes">
-                            <i class="fas fa-tags me-2"></i>Planes y Precios
+                        <li><a class="dropdown-item py-2" href="#adquirir">
+                            <i class="fas fa-tags me-2"></i>Adquirir RackON
                         </a></li>
                     </ul>
                 </li>
@@ -722,7 +644,6 @@ $session=session();
     </div>
 </nav>
 
-    <!-- Header -->
     <section id="header" class="fullpage-section">
         <div class="container">
             <div class="row">
@@ -734,7 +655,6 @@ $session=session();
         </div>
     </section>
 
-    <!-- Introduction -->
     <section id="introduction" class="fullpage-section">
         <div class="container">
             <div class="section-title">
@@ -791,11 +711,9 @@ $session=session();
         </div>
     </section>
 
-    <!-- Sección de funcionamiento -->
     <section id="funcionamiento" class="fullpage-section">
         <div class="container-fluid p-0">
             <div class="row g-0 min-vh-100 align-items-stretch">
-                <!-- Columna de Imagen -->
                 <div class="col-lg-6 order-lg-1 order-2 image-column">
                     <div class="h-100 w-100 overflow-hidden">
                         <img src="assets/images/rack.png" 
@@ -806,7 +724,6 @@ $session=session();
                     </div>
                 </div>
                 
-                <!-- Columna de Texto -->
                 <div class="col-lg-6 order-lg-2 order-1 d-flex align-items-center content-column">
                     <div class="px-4 px-md-5 py-lg-0 py-4">
                         <h2 class="mb-4 text-primary">¿Cómo funciona RackON?</h2>
@@ -814,7 +731,6 @@ $session=session();
                             El sistema RackON combina tecnología de identificación, sensores físicos y vigilancia electrónica para ofrecer una solución de seguridad en capas. Su funcionamiento se basa en tres niveles que actúan de forma secuencial y complementaria:
                         </p>
                         
-                        <!-- Nivel 1 -->
                         <div class="card mb-4 step-card">
                             <div class="card-body">
                                 <div class="d-flex align-items-start">
@@ -829,7 +745,6 @@ $session=session();
                             </div>
                         </div>
 
-                        <!-- Nivel 2 -->
                         <div class="card mb-4 step-card">
                             <div class="card-body">
                                 <div class="d-flex align-items-start">
@@ -844,7 +759,6 @@ $session=session();
                             </div>
                         </div>
 
-                        <!-- Nivel 3 -->
                         <div class="card mb-4 step-card">
                             <div class="card-body">
                                 <div class="d-flex align-items-start">
@@ -860,7 +774,6 @@ $session=session();
                         </div>
                         
                         
-                        <!-- Resumen -->
                         <div class="bg-light p-4 rounded">
                             <p class="mb-0">
                                 <i class="fas fa-database text-primary me-2"></i>
@@ -873,7 +786,6 @@ $session=session();
         </div>
     </section>
 
-    <!-- Hardware -->
     <section id="hardware" class="fullpage-section bg-light">
         <div class="container">
             <div class="section-title">
@@ -934,124 +846,120 @@ $session=session();
         </div>
     </section>
 
-<!-- SDK PayPal SANDBOX -->
+<section id="adquirir" class="fullpage-section">
+    <div class="container">
+        <div class="section-title mb-5">
+            <h2>Adquirir RackON</h2>
+            <p class="lead">Un solo paquete, protección total. Obtenga su dispositivo personalizado RackON y elija el plan de soporte que mejor se adapte a su empresa.</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <div class="card p-4 shadow-sm">
+                    <div class="card-body text-center">
+                        <h3 class="card-title mb-4">Paquete RackON Personalizado</h3>
+                        <p class="lead">Nuestro sistema incluye las 3 capas de seguridad (RFID, Cámara, Sensor de Vibración) para una protección integral.</p>
+                        <p class="fs-4 fw-bold text-primary mb-4">Dispositivo RackON: $229 USD (Pago Único)</p>
+                        
+                        <h5 class="mt-5 mb-3">Soporte Técnico (Planes de Suscripción)</h5>
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100 border-primary">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Soporte Mensual</h6>
+                                        <p class="mb-0 fs-5">$25 USD/mes</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100 border-success">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Soporte Anual</h6>
+                                        <p class="mb-0 fs-5">$250 USD/año</p>
+                                        <small class="text-muted">¡Ahorra $50 USD al año!</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="mt-4">Para iniciar la compra y configurar su cuenta empresarial, por favor, complete el siguiente formulario:</p>
+                        <button class="btn btn-primary btn-lg mt-3" data-bs-toggle="modal" data-bs-target="#companyRegistrationModal">
+                            <i class="fas fa-building me-2"></i> Registrar Empresa y Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <script src="https://www.paypal.com/sdk/js?client-id=AXn6zeaT-kutunjZDVGKpbDSQ6WCCPgvHvsdaVYjrQvy4udAukapA5ISWF9QIR268HG_K-eDjk8ETcYs&currency=USD"></script>
 
-<!-- MODAL -->
-<div class="modal fade" id="modalCompra" tabindex="-1" aria-labelledby="modalCompraLabel" aria-hidden="true">
+<div class="modal fade" id="companyRegistrationModal" tabindex="-1" aria-labelledby="companyRegistrationModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content p-3">
       <div class="modal-header">
-        <h5 class="modal-title" id="modalCompraLabel">Selecciona una opción de compra</h5>
+        <h5 class="modal-title" id="companyRegistrationModalLabel">Registro de Empresa para RackON</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
-      <div class="modal-body text-center">
-        <p id="modalPlanNombre" class="fw-bold mb-3"></p>
-        <p><strong>Mensual:</strong> $<span id="modalPrecioMensual"></span></p>
-        <div id="paypal-button-modal-mensual" class="mb-4"></div>
-        <p><strong>Anual:</strong> $<span id="modalPrecioAnual"></span></p>
-        <div id="paypal-button-modal-anual"></div>
+      <div class="modal-body">
+        <form id="companyRegistrationForm">
+          <div class="mb-3">
+            <label for="companyName" class="form-label">Nombre de la Empresa</label>
+            <input type="text" class="form-control" id="companyName" required>
+          </div>
+          <div class="mb-3">
+            <label for="contactPerson" class="form-label">Persona de Contacto</label>
+            <input type="text" class="form-control" id="contactPerson" required>
+          </div>
+          <div class="mb-3">
+            <label for="companyEmail" class="form-label">Email Corporativo</label>
+            <input type="email" class="form-control" id="companyEmail" required>
+          </div>
+          <div class="mb-3">
+            <label for="companyCuit" class="form-label">CUIT/Tax ID</label>
+            <input type="text" class="form-control" id="companyCuit" required>
+          </div>
+          <div class="mb-3">
+            <label for="companyPhone" class="form-label">Número de Teléfono</label>
+            <input type="tel" class="form-control" id="companyPhone" required>
+          </div>
+          <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary">Continuar a la Compra</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
 </div>
 
-<!-- SECCIÓN PLANES -->
-<section id="planes" class="fullpage-section">
-  <div class="container">
-    <div class="section-title text-center mb-5">
-      <h2>Planes de Compra de RackON</h2>
-      <p class="lead">Elige el plan que mejor se adapte a tu empresa.</p>
-    </div>
-    <div class="row">
-
-      <!-- PLAN 1 -->
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="card plan-card border-success h-100">
-          <div class="card-body d-flex flex-column">
-            <h4 class="card-title">🥉 Secure Access</h4>
-            <p><strong>Ideal para pequeñas empresas</strong></p>
-            <ul>
-              <li>Protección para 1 rack</li>
-              <li>1 capa de seguridad: RFID</li>
-              <li>Soporte básico</li>
-              <li class="extra d-none">Notificaciones por correo</li>
-              <li class="extra d-none">Monitoreo en tiempo real</li>
-              <li class="extra d-none">Plataforma web incluida</li>
-            </ul>
-            <a href="#" class="ver-mas text-primary mb-3">Ver más</a>
-            <a href="#" class="ver-menos text-danger mb-3 d-none">Ver menos</a>
-            <div class="mt-auto">
-              <p><strong>Dispositivo:</strong> $92 USD</p>
-              <p><strong>Servicio Mensual:</strong> $25 USD</p>
-              <p><strong>Servicio Anual:</strong> $270 USD</p>
-              <button class="btn btn-outline-success w-100"
-                      onclick="abrirModalCompra('Secure Access', 117, 362)">Comprar</button>
-            </div>
-          </div>
-        </div>
+<div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="purchaseModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-3">
+      <div class="modal-header">
+        <h5 class="modal-title" id="purchaseModalLabel">Completa tu Compra de RackON</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
+      <div class="modal-body text-center">
+        <p class="fw-bold mb-3">Detalles de tu Plan Personalizado RackON:</p>
+        
+        <h6 class="mt-4 mb-2">Dispositivo RackON (Pago Único)</h6>
+        <p class="fs-4 fw-bold text-primary">$229 USD</p>
+        <div id="paypal-button-device" class="mb-4"></div>
 
-      <!-- PLAN 2 -->
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="card plan-card border-primary h-100">
-          <div class="card-body d-flex flex-column">
-            <h4 class="card-title">🥈 Secure Plus</h4>
-            <p><strong>Para empresas medianas</strong></p>
-            <ul>
-              <li>Hasta 5 racks</li>
-              <li>2 capas: RFID + Cámara</li>
-              <li>Soporte prioritario</li>
-              <li class="extra d-none">Historial de accesos</li>
-              <li class="extra d-none">Alertas en tiempo real</li>
-              <li class="extra d-none">Acceso web multiusuario</li>
-            </ul>
-            <a href="#" class="ver-mas text-primary mb-3">Ver más</a>
-            <a href="#" class="ver-menos text-danger mb-3 d-none">Ver menos</a>
-            <div class="mt-auto">
-              <p><strong>Dispositivo:</strong> $462 USD</p>
-              <p><strong>Servicio Mensual:</strong> $45 USD</p>
-              <p><strong>Servicio Anual:</strong> $459 USD</p>
-              <button class="btn btn-outline-primary w-100"
-                      onclick="abrirModalCompra('Secure Plus', 507, 921)">Comprar</button>
-            </div>
-          </div>
-        </div>
+        <h6 class="mt-5 mb-2">Soporte Técnico Mensual</h6>
+        <p class="fs-5">$25 USD/mes</p>
+        <div id="paypal-button-monthly-support" class="mb-4"></div>
+
+        <h6 class="mt-5 mb-2">Soporte Técnico Anual</h6>
+        <p class="fs-5">$250 USD/año <small class="text-muted">(Ahorra $50 USD)</small></p>
+        <div id="paypal-button-annual-support"></div>
+
       </div>
-
-      <!-- PLAN 3 -->
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="card plan-card border-danger h-100">
-          <div class="card-body d-flex flex-column">
-            <h4 class="card-title">🥇 Secure Pro</h4>
-            <p><strong>Para máxima seguridad</strong></p>
-            <ul>
-              <li>Hasta 10 racks</li>
-              <li>3 capas: RFID + Cámara + Sensor</li>
-              <li>Soporte premium</li>
-              <li class="extra d-none">Detección de golpes</li>
-              <li class="extra d-none">Interfaz tipo terminal</li>
-              <li class="extra d-none">Actualizaciones incluidas</li>
-            </ul>
-            <a href="#" class="ver-mas text-primary mb-3">Ver más</a>
-            <a href="#" class="ver-menos text-danger mb-3 d-none">Ver menos</a>
-            <div class="mt-auto">
-              <p><strong>Dispositivo:</strong> $924 USD</p>
-              <p><strong>Servicio Mensual:</strong> $70 USD</p>
-              <p><strong>Servicio Anual:</strong> $672 USD</p>
-              <button class="btn btn-outline-danger w-100"
-                      onclick="abrirModalCompra('Secure Pro', 994, 1596)">Comprar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
-</section>
+</div>
 
-    <!-- Contact -->
-<section id="contact" class="fullpage-section">
+    <section id="contact" class="fullpage-section">
     <div class="container">
         <div class="section-title text-white">
             <h2>Contáctenos</h2>
@@ -1060,14 +968,10 @@ $session=session();
         <div class="row justify-content-center">
             <div class="col-lg-8">
             <form id="contactForm" class="contact-form" action="https://formsubmit.co/rackonoficial@gmail.com" method="POST">
-                <!-- Configuración mejorada -->
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_template" value="box">
                 <input type="text" name="_honey" style="display:none">
-                <textarea name="_blacklist" style="display:none"></textarea> <!-- Permite enlaces -->
-
-                <!-- Campos normales -->
-                <div class="row">
+                <textarea name="_blacklist" style="display:none"></textarea> <div class="row">
                     <div class="col-md-6 mb-3">
                      <input type="text" name="nombre" class="form-control" placeholder="Nombre" required>
                     </div>
@@ -1086,7 +990,6 @@ $session=session();
         </div>
     </div>
 </section>
-<!-- Modal de agradecimiento -->
 <div class="modal fade" id="thanksModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -1100,11 +1003,9 @@ $session=session();
     </div>
 </div>
 
-    <!-- Footer -->
     <footer class="py-5">
         <div class="container">
             <div class="row g-4">
-                <!-- Columna Información -->
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-brand mb-3">
                         <img src="assets/images/pro.png" alt="RackON Logo" style="height: 45px;">
@@ -1113,7 +1014,6 @@ $session=session();
 
                 </div>
 
-                <!-- Columna Enlaces -->
                 <div class="col-lg-2 col-md-6">
                     <h6 class="text-uppercase text-primary mb-3">Enlaces</h6>
                     <ul class="nav flex-column">
@@ -1125,7 +1025,6 @@ $session=session();
                     </ul>
                 </div>
 
-                <!-- Columna Contacto -->
                 <div class="col-lg-3 col-md-6">
                     <h6 class="text-uppercase text-primary mb-3">Contacto</h6>
                     <ul class="nav flex-column">
@@ -1144,7 +1043,6 @@ $session=session();
                     </ul>
                 </div>
 
-                <!-- Columna Redes Sociales -->
                 <div class="col-lg-3 col-md-6">
                     <h6 class="text-uppercase text-primary mb-3">Síguenos</h6>
                     <div class="social-icons d-flex mb-3">
@@ -1175,7 +1073,6 @@ $session=session();
 
             <hr class="my-4 border-secondary">
 
-            <!-- Copyright -->
             <div class="row">
                 <div class="col-md-6 text-center text-md-start">
                     <p class="small mb-0">&copy; <script>document.write(new Date().getFullYear())</script> RackON. Todos los derechos reservados.</p>
@@ -1184,19 +1081,15 @@ $session=session();
         </div>
     </footer>
 
-    <!-- Back To Top Button -->
     <button id="backToTop" class="btn btn-primary">
         <i class="fas fa-arrow-up"></i>
     </button>
         
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     
-    <!-- Scripts personalizados -->
-<script type="application/ld+json">
+    <script type="application/ld+json">
 {
   "@context": "https://schema.org/",
   "@type": "Product",
@@ -1208,8 +1101,8 @@ $session=session();
   },
   "offers": {
     "@type": "Offer",
-    "priceCurrency": "ARS",
-    "price": "500000.00",
+    "priceCurrency": "USD", // Changed to USD
+    "price": "229.00",      // Updated device price
     "availability": "https://schema.org/InStock",
     "url": "https://rackon.tech/"
   }
@@ -1284,59 +1177,106 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     });
     </script>
 <script>
-  // Ver más / Ver menos
-  document.querySelectorAll('.ver-mas').forEach(btn => {
-    btn.addEventListener('click', function (e) {
-      e.preventDefault();
-      const card = btn.closest('.card-body');
-      card.querySelectorAll('.extra').forEach(el => el.classList.remove('d-none'));
-      card.querySelector('.ver-mas').classList.add('d-none');
-      card.querySelector('.ver-menos').classList.remove('d-none');
+  // COMPANY REGISTRATION MODAL LOGIC
+  document.getElementById('companyRegistrationForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent default form submission
+
+    // Here, you would typically send this data to your backend
+    // to create the company account. For this example, we'll just simulate success.
+    
+    const companyName = document.getElementById('companyName').value;
+    const contactPerson = document.getElementById('contactPerson').value;
+    const companyEmail = document.getElementById('companyEmail').value;
+    const companyCuit = document.getElementById('companyCuit').value;
+    const companyPhone = document.getElementById('companyPhone').value;
+
+    console.log('Company Registration Data:', {
+        companyName,
+        contactPerson,
+        companyEmail,
+        companyCuit,
+        companyPhone
     });
+
+    // Close the company registration modal
+    const companyRegistrationModal = bootstrap.Modal.getInstance(document.getElementById('companyRegistrationModal'));
+    companyRegistrationModal.hide();
+
+    // Open the purchase modal and render PayPal buttons
+    const purchaseModal = new bootstrap.Modal(document.getElementById('purchaseModal'));
+    purchaseModal.show();
+    renderPayPalButtons(); // Call function to render PayPal buttons
   });
 
-  document.querySelectorAll('.ver-menos').forEach(btn => {
-    btn.addEventListener('click', function (e) {
-      e.preventDefault();
-      const card = btn.closest('.card-body');
-      card.querySelectorAll('.extra').forEach(el => el.classList.add('d-none'));
-      card.querySelector('.ver-menos').classList.add('d-none');
-      card.querySelector('.ver-mas').classList.remove('d-none');
-    });
-  });
+  function renderPayPalButtons() {
+    // Clear existing buttons to prevent re-rendering issues
+    document.getElementById('paypal-button-device').innerHTML = '';
+    document.getElementById('paypal-button-monthly-support').innerHTML = '';
+    document.getElementById('paypal-button-annual-support').innerHTML = '';
 
-  function abrirModalCompra(planNombre, precioMensual, precioAnual) {
-    document.getElementById('modalPlanNombre').innerText = planNombre;
-    document.getElementById('modalPrecioMensual').innerText = precioMensual;
-    document.getElementById('modalPrecioAnual').innerText = precioAnual;
-
-    // Limpiar contenedores PayPal antes de renderizar
-    document.getElementById('paypal-button-modal-mensual').innerHTML = '';
-    document.getElementById('paypal-button-modal-anual').innerHTML = '';
-
-    // Render botón mensual
+    // Device Purchase Button
     paypal.Buttons({
       createOrder: (data, actions) => actions.order.create({
-        purchase_units: [{ amount: { value: precioMensual.toString() } }]
+        purchase_units: [{
+          description: 'Dispositivo RackON Personalizado',
+          amount: {
+            value: '229.00' // Device price
+          }
+        }]
       }),
-      onApprove: (data, actions) => actions.order.capture().then(detalles =>
-        alert('Pago mensual completado: ' + detalles.payer.name.given_name)
-      )
-    }).render('#paypal-button-modal-mensual');
+      onApprove: (data, actions) => actions.order.capture().then(detalles => {
+        alert('Compra del Dispositivo completada: ' + detalles.payer.name.given_name);
+        // Here you would typically update your backend about the device purchase
+      }),
+      onError: (err) => {
+        console.error('Error en el pago del dispositivo:', err);
+        alert('Hubo un error con el pago del dispositivo. Por favor, inténtelo de nuevo.');
+      }
+    }).render('#paypal-button-device');
 
-    // Render botón anual
+    // Monthly Support Subscription Button
     paypal.Buttons({
-      createOrder: (data, actions) => actions.order.create({
-        purchase_units: [{ amount: { value: precioAnual.toString() } }]
-      }),
-      onApprove: (data, actions) => actions.order.capture().then(detalles =>
-        alert('Pago anual completado: ' + detalles.payer.name.given_name)
-      )
-    }).render('#paypal-button-modal-anual');
+      createSubscription: (data, actions) => {
+        return actions.subscription.create({
+          plan_id: 'P-XXXXXXXXXXXXXX', // Replace with your actual PayPal plan ID for monthly support
+          // You would need to create this plan in your PayPal developer dashboard
+          // Example: plan_id: 'P-1234567890ABCDEF'
+        });
+      },
+      onApprove: (data, actions) => {
+        alert('Suscripción mensual activada: ' + data.subscriptionID);
+        // Here you would typically update your backend about the monthly subscription
+      },
+      onError: (err) => {
+        console.error('Error en la suscripción mensual:', err);
+        alert('Hubo un error con la suscripción mensual. Por favor, inténtelo de nuevo.');
+      }
+    }).render('#paypal-button-monthly-support');
 
-    const modal = new bootstrap.Modal(document.getElementById('modalCompra'));
-    modal.show();
+    // Annual Support Subscription Button
+    paypal.Buttons({
+      createSubscription: (data, actions) => {
+        return actions.subscription.create({
+          plan_id: 'P-YYYYYYYYYYYYYY', // Replace with your actual PayPal plan ID for annual support
+          // Example: plan_id: 'P-FEDCBA0987654321'
+        });
+      },
+      onApprove: (data, actions) => {
+        alert('Suscripción anual activada: ' + data.subscriptionID);
+        // Here you would typically update your backend about the annual subscription
+      },
+      onError: (err) => {
+        console.error('Error en la suscripción anual:', err);
+        alert('Hubo un error con la suscripción anual. Por favor, inténtelo de nuevo.');
+      }
+    }).render('#paypal-button-annual-support');
   }
+
+  // To trigger the first modal from the "Adquirir RackON" section
+  document.querySelector('#adquirir .btn-primary').addEventListener('click', function() {
+    const companyRegistrationModal = new bootstrap.Modal(document.getElementById('companyRegistrationModal'));
+    companyRegistrationModal.show();
+  });
 </script>
 </body>
 </html>
