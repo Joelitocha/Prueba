@@ -1016,11 +1016,11 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     <div class="container">
         <div class="row">
             <div class="col-lg-4 mb-4 mb-lg-0">
-                <h5>Sobre RackON</h5>
+                <h5 style="color: white;">Sobre RackON</h5>
                 <p>Ofrecemos soluciones innovadoras para la seguridad física de racks de servidores, utilizando tecnología de punta para proteger tus activos.</p>
             </div>
             <div class="col-lg-3 mb-4 mb-lg-0">
-                <h5>Enlaces Rápidos</h5>
+                <h5 style="color: white;">Enlaces Rápidos</h5>
                 <ul class="list-unstyled">
                     <li><a href="#header">Inicio</a></li>
                     <li><a href="#introduction">¿Qué es?</a></li>
@@ -1031,21 +1031,21 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
                 </ul>
             </div>
             <div class="col-lg-3 mb-4 mb-lg-0">
-                <h5>Síguenos</h5>
+                <h5 style="color: white;">Síguenos</h5>
                 <div class="social-icons mb-3">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 </div>
-                <h5>Descarga la App</h5>
+                <h5 style="color: white;">Descarga la App</h5>
                 <div class="app-badges">
                     <a href="#"><img src="assets/images/app.png" alt="App Store" class="img-fluid me-2" style="height: 40px;">App Store</a>
                     <a href="#"><img src="assets/images/playstore.png" alt="Google Play" class="img-fluid" style="height: 40px;">Google Play</a>
                 </div>
             </div>
             <div class="col-lg-2">
-                <h5>Contacto</h5>
+                <h5 style="color: white;">Contacto</h5>
                 <ul class="list-unstyled">
                     <li><i class="fas fa-map-marker-alt me-2"></i>Río Tercero, Córdoba, Argentina</li>
                     <li><i class="fas fa-envelope me-2"></i>info@rackon.tech</li>
