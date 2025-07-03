@@ -1113,6 +1113,13 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
             </div>
             <div class="modal-body">
                 <form id="purchaseForm">
+                    <!-- Campos ocultos para el envío del correo -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_subject" value="Nuevo pedido RackON">
+                    <input type="hidden" name="_autoresponse" value="Gracias por tu pedido en RackON. Hemos recibido tu solicitud y te contactaremos pronto con los detalles de envío.">
+                    <input type="text" name="_honey" style="display:none">
+                    
                     <div class="form-step" id="step-personal">
                         <h6 class="mb-3">1. Información de la Empresa <i class="fas fa-info-circle text-primary"></i></h6>
                         <div class="mb-3">
@@ -1144,26 +1151,26 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
                         <h6 class="mb-3">2. Dirección de Entrega <i class="fas fa-truck text-primary"></i></h6>
                         <div class="mb-3">
                             <label for="deliveryAddress" class="form-label">Dirección</label>
-                            <input type="text" class="form-control" id="deliveryAddress" required>
+                            <input type="text" class="form-control" id="deliveryAddress" name="direccion" required>
                         </div>
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="deliveryCity" class="form-label">Ciudad</label>
-                                <input type="text" class="form-control" id="deliveryCity" required>
+                                <input type="text" class="form-control" id="deliveryCity" name="ciudad" required>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="deliveryState" class="form-label">Provincia/Estado</label>
-                                <input type="text" class="form-control" id="deliveryState" required>
+                                <input type="text" class="form-control" id="deliveryState" name="provincia" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="deliveryZip" class="form-label">Código Postal</label>
-                                <input type="text" class="form-control" id="deliveryZip" required>
+                                <input type="text" class="form-control" id="deliveryZip" name="codigo_postal" required>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="deliveryCountry" class="form-label">País</label>
-                                <input type="text" class="form-control" id="deliveryCountry" required>
+                                <input type="text" class="form-control" id="deliveryCountry" name="pais" required>
                             </div>
                         </div>
                         <div class="d-flex justify-content-between">
@@ -1268,7 +1275,8 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
                         <div class="mb-3">
                             <p class="fw-bold">Detalle del Pedido:</p>
                             <ul id="orderSummaryList" class="list-group mb-3">
-                                </ul>
+                                <!-- Aquí se generará el resumen -->
+                            </ul>
                             <h5 class="mt-4">Total a Pagar (Dispositivos y Opciones): <span id="finalDevicePrice" class="text-primary"></span></h5>
                             <h5 class="mt-2">Suscripción de Soporte (<span id="supportPlanType"></span>): <span id="finalSupportPrice" class="text-primary"></span></h5>
                         </div>
@@ -1281,7 +1289,8 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
                             <h6>Pagar con PayPal</h6>
                             <p class="text-muted small">Haz clic en los botones de PayPal para completar tu pago. Se realizarán dos pagos separados: uno por los dispositivos y opciones, y otro por la suscripción de soporte.</p>
                             <div id="paypal-buttons-container">
-                                </div>
+                                <!-- Aquí se renderizarán los botones de PayPal -->
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -1297,51 +1306,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Scroll a la sección si hay un hash en la URL
-    if (window.location.hash) {
-        document.querySelector(window.location.hash).scrollIntoView({ behavior: 'smooth' });
-    }
-
-    // Navbar scroll effect
-    window.addEventListener('scroll', function() {
-        const navbar = document.getElementById('navbar');
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-
-    // Back to top button
-    const backToTopButton = document.getElementById('backToTop');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            backToTopButton.style.display = 'block';
-        } else {
-            backToTopButton.style.display = 'none';
-        }
-    });
-
-    backToTopButton.addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // "Ver más" functionality for plan cards (kept for consistency, though only one "plan" now)
-    document.querySelectorAll('.ver-mas-btn').forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            const content = this.previousElementSibling;
-            content.classList.toggle('mostrar');
-            if (content.classList.contains('mostrar')) {
-                this.textContent = 'Ver menos';
-            } else {
-                this.textContent = 'Ver más';
-            }
-        });
-    });
-
-    // Lógica del Formulario Multi-paso de Compra
-
+    // Modal y formulario de compra
     const companyRegistrationModal = new bootstrap.Modal(document.getElementById('companyRegistrationModal'));
     const purchaseModal = new bootstrap.Modal(document.getElementById('purchaseModal'));
     const companyRegistrationForm = document.getElementById('companyRegistrationForm');
@@ -1349,23 +1314,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const formSteps = document.querySelectorAll('.form-step');
     let currentStep = 0;
 
-    // Default values for the single customizable plan
+    // Datos del plan y cálculos de compra
     let selectedPlanData = {
         planName: "Personalizado",
-        precioMensual: 25, // Base monthly support price
-        precioAnual: 250,  // Base annual support price
-        type: 'monthly' // Default to monthly subscription
+        precioMensual: 25,
+        precioAnual: 250,
+        type: 'monthly'
     }; 
 
     let purchaseCalculations = {
-        deviceBasePrice: 229, // Base price per device
+        deviceBasePrice: 229,
         quantity: 1,
         securityLayers: {
             rfid: true,
             camera: false,
             sensor: false
         },
-        techSupport: 'basic', // 'basic', 'premium', 'ultra'
+        techSupport: 'basic',
         aestheticCustomization: {
             laser: false,
             colors: false
@@ -1374,7 +1339,6 @@ document.addEventListener('DOMContentLoaded', function() {
             guided: false,
             manual: false
         },
-        // Calculated totals (will be updated by updatePurchaseSummary)
         currentDeviceTotal: 0,
         currentSupportMonthlyTotal: 0,
         currentSupportAnnualTotal: 0
@@ -1398,6 +1362,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
+    // Funciones auxiliares
     function showStep(stepIndex) {
         formSteps.forEach((step, index) => {
             if (index === stepIndex) {
@@ -1413,7 +1378,6 @@ document.addEventListener('DOMContentLoaded', function() {
         let isValid = true;
         const currentFormStep = formSteps[stepIndex];
 
-        // Validation for Delivery Address (step-delivery)
         if (stepIndex === 1) {
             const inputs = currentFormStep.querySelectorAll('input[required]');
             inputs.forEach(input => {
@@ -1425,14 +1389,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }
-        // No specific validation for customization step, as checkboxes/radios have defaults or are optional.
-        // The summary step doesn't require validation.
         return isValid;
     }
 
     function updatePurchaseSummary() {
         const summaryList = document.getElementById('orderSummaryList');
-        summaryList.innerHTML = ''; // Clear previous summary
+        summaryList.innerHTML = '';
 
         let summaryItems = [];
         let devicePricePerUnit = purchaseCalculations.deviceBasePrice;
@@ -1452,7 +1414,6 @@ document.addEventListener('DOMContentLoaded', function() {
         purchaseCalculations.currentDeviceTotal = devicePricePerUnit * purchaseCalculations.quantity;
         summaryItems.push(`<li class="list-group-item"><strong>Precio Base por Unidad:</strong> ${devicePricePerUnit} USD</li>`);
 
-
         // 2. Capas de seguridad
         if (purchaseCalculations.securityLayers.camera) {
             purchaseCalculations.currentDeviceTotal += PRICES.securityLayer2;
@@ -1464,7 +1425,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // 3. Soporte técnico
-        // Determine if monthly or annual based on previous selection or default to monthly for summary
         let supportTypeDisplay = selectedPlanData.type === 'monthly' ? 'Mensual' : 'Anual';
         document.getElementById('supportPlanType').innerText = supportTypeDisplay;
         
@@ -1488,7 +1448,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         purchaseCalculations.currentSupportMonthlyTotal = currentSupportMonthlyPrice;
         purchaseCalculations.currentSupportAnnualTotal = currentSupportAnnualPrice;
-
 
         // 4. Personalización estética
         if (purchaseCalculations.aestheticCustomization.laser) {
@@ -1521,10 +1480,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function renderPayPalButtons() {
         const paypalButtonsContainer = document.getElementById('paypal-buttons-container');
-        paypalButtonsContainer.innerHTML = ''; // Clear existing buttons
+        paypalButtonsContainer.innerHTML = '';
 
-        // Button for Device Purchase (One-time payment)
-        // Only render if device total is greater than 0
+        // Button for Device Purchase
         if (purchaseCalculations.currentDeviceTotal > 0) {
             const deviceButtonDiv = document.createElement('div');
             deviceButtonDiv.id = 'paypal-device-button';
@@ -1537,14 +1495,25 @@ document.addEventListener('DOMContentLoaded', function() {
                             amount: {
                                 value: purchaseCalculations.currentDeviceTotal.toFixed(2)
                             },
-                            description: `RackON Device(s) and Customizations`
+                            description: 'RackON Device(s) and Customizations'
                         }]
                     });
                 },
                 onApprove: function(data, actions) {
                     return actions.order.capture().then(function(details) {
+                        // Enviar confirmación de pago por email
+                        const paymentData = new FormData();
+                        paymentData.append('_subject', 'Confirmación de pago RackON - Dispositivos');
+                        paymentData.append('nombre', document.getElementById('companyName').value);
+                        paymentData.append('email', document.getElementById('companyContactEmail').value);
+                        paymentData.append('mensaje', `Se ha recibido el pago por dispositivos RackON. ID de transacción: ${data.orderID}\n\nDetalles:\n${document.getElementById('orderSummaryList').innerText}`);
+                        
+                        fetch('https://formsubmit.co/ajax/rackonoficial@gmail.com', {
+                            method: 'POST',
+                            body: paymentData
+                        });
+                        
                         alert('Pago de Dispositivo completado: ' + details.payer.name.given_name);
-                        // Here you would typically send data to your backend
                     });
                 },
                 onError: function(err) {
@@ -1554,8 +1523,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }).render('#paypal-device-button');
         }
 
-        // Button for Subscription (Monthly or Annual)
-        // Allow user to select monthly/annual for support here as well
+        // Button for Subscription
         const supportTypeSelector = document.createElement('div');
         supportTypeSelector.innerHTML = `
             <div class="form-check form-check-inline mt-3">
@@ -1569,16 +1537,14 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         paypalButtonsContainer.appendChild(supportTypeSelector);
 
-        // Add event listener to update the total support price display when billing cycle changes
         supportTypeSelector.querySelectorAll('input[name="supportBillingCycle"]').forEach(radio => {
             radio.addEventListener('change', function() {
-                selectedPlanData.type = this.value; // Update selected type
-                updatePurchaseSummary(); // Recalculate summary to show correct support price
-                renderPayPalSubscriptionButton(); // Re-render subscription button with new price
+                selectedPlanData.type = this.value;
+                updatePurchaseSummary();
+                renderPayPalSubscriptionButton();
             });
         });
 
-        // Initial rendering of subscription button
         renderPayPalSubscriptionButton();
 
         function renderPayPalSubscriptionButton() {
@@ -1588,18 +1554,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 subscriptionButtonDiv.id = 'paypal-subscription-button';
                 paypalButtonsContainer.appendChild(subscriptionButtonDiv);
             } else {
-                // Clear existing subscription button to re-render
                 subscriptionButtonDiv.innerHTML = '';
             }
 
             const subscriptionAmount = selectedPlanData.type === 'monthly' ? purchaseCalculations.currentSupportMonthlyTotal : purchaseCalculations.currentSupportAnnualTotal;
             const planDescription = selectedPlanData.type === 'monthly' ? 'Soporte RackON Mensual' : 'Soporte RackON Anual';
             
-            // For actual subscriptions, you'd integrate with your server and use PayPal Plans.
-            // This example creates a one-time payment disguised as a "subscription" for client-side demo.
-            // In a real app, 'createSubscription' would be used with a pre-configured Plan ID.
             paypal.Buttons({
-                createOrder: function(data, actions) { // Using createOrder for simplicity, not createSubscription
+                createOrder: function(data, actions) {
                     return actions.order.create({
                         purchase_units: [{
                             amount: {
@@ -1611,8 +1573,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 onApprove: function(data, actions) {
                     return actions.order.capture().then(function(details) {
+                        // Enviar confirmación de pago por email
+                        const paymentData = new FormData();
+                        paymentData.append('_subject', 'Confirmación de pago RackON - Soporte');
+                        paymentData.append('nombre', document.getElementById('companyName').value);
+                        paymentData.append('email', document.getElementById('companyContactEmail').value);
+                        paymentData.append('mensaje', `Se ha recibido el pago por soporte RackON (${planDescription}). ID de transacción: ${data.orderID}`);
+                        
+                        fetch('https://formsubmit.co/ajax/rackonoficial@gmail.com', {
+                            method: 'POST',
+                            body: paymentData
+                        });
+                        
                         alert('Pago de suscripción completado: ' + details.payer.name.given_name);
-                        // Here you would typically send data to your backend to activate subscription
                     });
                 },
                 onError: function(err) {
@@ -1623,39 +1596,32 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Event listeners
+    document.querySelector('.btn-compra').addEventListener('click', function() {
+        companyRegistrationModal.show();
+    });
 
-// Handle company registration form submission
-companyRegistrationForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Prefill info from company registration modal to purchase modal step 1
-    document.getElementById('displayCompanyName').innerText = document.getElementById('companyName').value;
-    document.getElementById('displayCompanyTaxId').innerText = document.getElementById('companyTaxId').value;
-    document.getElementById('displayCompanyContactPerson').innerText = document.getElementById('companyContactPerson').value;
-    document.getElementById('displayCompanyContactEmail').innerText = document.getElementById('companyContactEmail').value;
-    document.getElementById('displayCompanyContactPhone').innerText = document.getElementById('companyContactPhone').value;
+    companyRegistrationForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Prefill info from company registration modal to purchase modal step 1
+        document.getElementById('displayCompanyName').innerText = document.getElementById('companyName').value;
+        document.getElementById('displayCompanyTaxId').innerText = document.getElementById('companyTaxId').value;
+        document.getElementById('displayCompanyContactPerson').innerText = document.getElementById('companyContactPerson').value;
+        document.getElementById('displayCompanyContactEmail').innerText = document.getElementById('companyContactEmail').value;
+        document.getElementById('displayCompanyContactPhone').innerText = document.getElementById('companyContactPhone').value;
 
-    // Close company registration modal
-    companyRegistrationModal.hide();
-    // Open purchase modal
-    purchaseModal.show();
-    // Show the first step of the purchase form
-    showStep(0);
-});
+        companyRegistrationModal.hide();
+        purchaseModal.show();
+        showStep(0);
+    });
 
-// Event listener for "Personalizar y Comprar" button (replaces old btn-compra)
-document.querySelector('.btn-compra').addEventListener('click', function() {
-    // Simply show the company registration modal first
-    companyRegistrationModal.show();
-});
-
-    // Navigation for multi-step purchase form
     purchaseForm.addEventListener('click', function(e) {
         if (e.target.classList.contains('next-step')) {
             if (validateStep(currentStep)) {
                 if (currentStep < formSteps.length - 1) {
                     showStep(currentStep + 1);
-                    if (currentStep === formSteps.length - 1) { // If it's the last step (summary)
+                    if (currentStep === formSteps.length - 1) {
                         updatePurchaseSummary();
                         renderPayPalButtons();
                     }
@@ -1667,17 +1633,90 @@ document.querySelector('.btn-compra').addEventListener('click', function() {
             if (currentStep > 0) {
                 showStep(currentStep - 1);
             }
-        } else if (e.target.id === 'confirmPurchaseBtn') {
-            alert('Pedido confirmado! Procediendo al pago...');
-            // In a real app, this would trigger backend order creation and then redirect to PayPal or show buttons.
-            // Since buttons are already rendered, this just acts as a final confirmation.
         }
     });
 
-    // Event listeners for customization options to update price
+    document.getElementById('confirmPurchaseBtn').addEventListener('click', function() {
+        const form = document.getElementById('purchaseForm');
+        const submitBtn = this;
+        const feedback = document.createElement('div');
+        feedback.className = 'alert alert-info mt-3';
+        feedback.textContent = 'Procesando tu pedido...';
+        submitBtn.parentNode.insertBefore(feedback, submitBtn.nextSibling);
+        
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status"></span> Procesando...';
+        
+        // Recopilar todos los datos de la compra
+        const formData = new FormData();
+        
+        // Datos de la empresa
+        formData.append('nombre', document.getElementById('companyName').value);
+        formData.append('email', document.getElementById('companyContactEmail').value);
+        formData.append('telefono', document.getElementById('companyContactPhone').value);
+        formData.append('cuit', document.getElementById('companyTaxId').value);
+        formData.append('contacto', document.getElementById('companyContactPerson').value);
+        
+        // Datos de envío
+        formData.append('direccion', document.getElementById('deliveryAddress').value);
+        formData.append('ciudad', document.getElementById('deliveryCity').value);
+        formData.append('provincia', document.getElementById('deliveryState').value);
+        formData.append('codigo_postal', document.getElementById('deliveryZip').value);
+        formData.append('pais', document.getElementById('deliveryCountry').value);
+        
+        // Detalles del pedido
+        formData.append('cantidad', purchaseCalculations.quantity);
+        formData.append('total_dispositivos', purchaseCalculations.currentDeviceTotal.toFixed(2));
+        formData.append('soporte', selectedPlanData.type === 'monthly' ? 
+                       `${purchaseCalculations.currentSupportMonthlyTotal.toFixed(2)} USD/mes` : 
+                       `${purchaseCalculations.currentSupportAnnualTotal.toFixed(2)} USD/año`);
+        
+        // Opciones seleccionadas
+        const options = [];
+        if (purchaseCalculations.securityLayers.camera) options.push('Cámara de verificación');
+        if (purchaseCalculations.securityLayers.sensor) options.push('Sensor de impacto');
+        if (purchaseCalculations.aestheticCustomization.laser) options.push('Grabado láser');
+        if (purchaseCalculations.aestheticCustomization.colors) options.push('Colores personalizados');
+        if (purchaseCalculations.assistedInstallation.guided) options.push('Instalación guiada');
+        if (purchaseCalculations.assistedInstallation.manual) options.push('Manual físico');
+        
+        formData.append('opciones', options.join(', '));
+        formData.append('mensaje', `Nuevo pedido de ${document.getElementById('companyName').value}`);
+        formData.append('_subject', `Nuevo pedido RackON - ${document.getElementById('companyName').value}`);
+        
+        // Enviar los datos
+        fetch('https://formsubmit.co/ajax/rackonoficial@gmail.com', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                feedback.textContent = '¡Pedido realizado con éxito! Te hemos enviado un correo de confirmación.';
+                feedback.className = 'alert alert-success mt-3';
+                
+                setTimeout(() => {
+                    purchaseModal.hide();
+                    document.getElementById('companyRegistrationForm').reset();
+                    document.getElementById('purchaseForm').reset();
+                }, 3000);
+            } else {
+                throw new Error('Error en el envío');
+            }
+        })
+        .catch(error => {
+            feedback.textContent = 'Error al procesar el pedido. Por favor, inténtalo de nuevo.';
+            feedback.className = 'alert alert-danger mt-3';
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Confirmar Pedido y Pagar';
+        });
+    });
+
     document.getElementById('deviceQuantity').addEventListener('change', function() {
         purchaseCalculations.quantity = parseInt(this.value);
-        updatePurchaseSummary(); // Update summary on quantity change
+        updatePurchaseSummary();
     });
 
     document.querySelectorAll('.customization-option').forEach(input => {
@@ -1686,7 +1725,6 @@ document.querySelector('.btn-compra').addEventListener('click', function() {
             const isChecked = this.checked;
             const value = this.value;
 
-            // Update purchaseCalculations object
             if (id.startsWith('securityLayer')) {
                 purchaseCalculations.securityLayers[value] = isChecked;
             } else if (id.startsWith('support')) {
@@ -1696,13 +1734,12 @@ document.querySelector('.btn-compra').addEventListener('click', function() {
             } else if (id.startsWith('install')) {
                 purchaseCalculations.assistedInstallation[value] = isChecked;
             }
-            updatePurchaseSummary(); // Recalculate and update summary
+            updatePurchaseSummary();
         });
     });
 
-    // Initial calculation when the purchase modal is shown for the first time
     $('#purchaseModal').on('show.bs.modal', function () {
-        updatePurchaseSummary(); // Ensure initial summary is calculated
+        updatePurchaseSummary();
     });
 });
 </script>
