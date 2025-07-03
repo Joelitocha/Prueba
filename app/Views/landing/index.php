@@ -1624,28 +1624,30 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-    // Event listener for "Personalizar y Comprar" button (replaces old btn-compra)
-    document.querySelector('.btn-compra').addEventListener('click', function() {
-        // Prefill info from company registration modal to purchase modal step 1
-        document.getElementById('displayCompanyName').innerText = document.getElementById('companyName').value;
-        document.getElementById('displayCompanyTaxId').innerText = document.getElementById('companyTaxId').value;
-        document.getElementById('displayCompanyContactPerson').innerText = document.getElementById('companyContactPerson').value;
-        document.getElementById('displayCompanyContactEmail').innerText = document.getElementById('companyContactEmail').value;
-        document.getElementById('displayCompanyContactPhone').innerText = document.getElementById('companyContactPhone').value;
+// Handle company registration form submission
+companyRegistrationForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Prefill info from company registration modal to purchase modal step 1
+    document.getElementById('displayCompanyName').innerText = document.getElementById('companyName').value;
+    document.getElementById('displayCompanyTaxId').innerText = document.getElementById('companyTaxId').value;
+    document.getElementById('displayCompanyContactPerson').innerText = document.getElementById('companyContactPerson').value;
+    document.getElementById('displayCompanyContactEmail').innerText = document.getElementById('companyContactEmail').value;
+    document.getElementById('displayCompanyContactPhone').innerText = document.getElementById('companyContactPhone').value;
 
-        // Show the first step of the purchase form
-        showStep(0);
-    });
+    // Close company registration modal
+    companyRegistrationModal.hide();
+    // Open purchase modal
+    purchaseModal.show();
+    // Show the first step of the purchase form
+    showStep(0);
+});
 
-    // Handle company registration form submission
-    companyRegistrationForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        // Close company registration modal
-        companyRegistrationModal.hide();
-        // Open purchase modal
-        purchaseModal.show();
-        // Show the first step of the purchase form (already handled above in btn-compra click)
-    });
+// Event listener for "Personalizar y Comprar" button (replaces old btn-compra)
+document.querySelector('.btn-compra').addEventListener('click', function() {
+    // Simply show the company registration modal first
+    companyRegistrationModal.show();
+});
 
     // Navigation for multi-step purchase form
     purchaseForm.addEventListener('click', function(e) {
