@@ -399,6 +399,9 @@ private function enviarCorreoVerificacion($email, $token)
         $uid = $this->request->getPost('ID_Tarjeta');
         $rol = $this->request->getPost('ID_Rol');
 
+        // Obtener id_empresa desde la sesión
+        $idEmpresa = session()->get('id_empresa');
+
         // Verificar si el usuario ya existe
         if ($model->where('Email', $email)->first()) {
             return redirect()->to('/register')->with('error', 'El correo electrónico ya está registrado.');
@@ -415,7 +418,8 @@ private function enviarCorreoVerificacion($email, $token)
             'ID_Rol' => $rol,
             'ID_Tarjeta' => $uid,
             'Token' => $token,
-            'Verificado' => 0
+            'Verificado' => 0,
+            'id_empresa'  => $idEmpresa 
         ]);
 
         // Enviar el correo de verificación con instrucciones
