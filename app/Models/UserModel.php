@@ -34,13 +34,15 @@ class UserModel extends Model
         return $result ? $result['N_Rol'] : null;
     }
 
-    public function getUser()
+    public function getUserByEmpresa($id_empresa)
     {
-        $tabla = $this->db->table('usuario')->select('*');
-        $query = $tabla->get()->getResultArray();
-        return $query;
+        return $this->db->table($this->table)
+                        ->select('*')
+                        ->where('id_empresa', $id_empresa)
+                        ->get()
+                        ->getResultArray();
     }
-
+    
     public function updateUser($id, $data)
     {
         return $this->db->table($this->table)

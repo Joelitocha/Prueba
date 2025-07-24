@@ -115,9 +115,16 @@ class UserController extends BaseController
     public function VistaModificar()
     {
         $userModel = new UserModel();
-        $user = $userModel->getUser();
-        return view("modificar-usuario", ['user' => $user]);
+    
+        // Obtener el id_empresa de la sesión
+        $idEmpresa = session()->get('id_empresa');
+    
+        // Obtener solo los usuarios de esa empresa
+        $usuarios = $userModel->getUserByEmpresa($idEmpresa);
+    
+        return view("modificar-usuario", ['user' => $usuarios]);
     }
+    
 
     // Función para mostrar la vista de modificación de un usuario específico
     public function VistaModificar2()
