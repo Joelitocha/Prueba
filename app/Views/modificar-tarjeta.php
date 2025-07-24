@@ -589,18 +589,6 @@
               <tr>
                 <td><?= esc($tarjeta['ID_Tarjeta']); ?></td>
                 <td><?= esc($tarjeta['UID']); ?></td>
-                <td>
-                  <?php 
-                    // Dado que el controlador y modelo no se modifican para hacer JOINs,
-                    // 'Nombre_Usuario' y 'Apellido_Usuario' no estarán disponibles.
-                    // Si el campo 'ID_Usuario' existe en la tabla tarjeta_acceso y es parte de $tarjeta
-                    // podrías mostrar 'ID_Usuario' para indicar la asignación.
-                    // De lo contrario, se asume que no está asignada por nombre.
-                    // Aquí asumimos que ID_Usuario no es parte del array $tarjeta de findAll()
-                    // o no lo necesitas para mostrar el nombre directamente.
-                    echo 'No Asignada'; // Opcional: Si ID_Usuario está en $tarjeta: (isset($tarjeta['ID_Usuario']) && !empty($tarjeta['ID_Usuario'])) ? 'Asignada (ID: ' . esc($tarjeta['ID_Usuario']) . ')' : 'No Asignada';
-                  ?>
-                </td>
                 <td class="<?= $tarjeta['Estado'] == 1 ? 'estado-activa' : 'estado-inactiva'; ?>">
                   <?= $tarjeta['Estado'] == 1 ? 'Activa' : 'Inactiva'; ?>
                 </td>
