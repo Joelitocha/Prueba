@@ -57,7 +57,7 @@ public function loginUser()
             "username"   => $user["Nombre"],
             "ID_Rol"     => $user["ID_Rol"],
             "ID_tarjeta" => $user["ID_Tarjeta"],
-            "id_empresa" => $user{"id_empresa"},
+            "id_empresa" => $user["id_empresa"],
             "last_activity" => time()
         ];
         
