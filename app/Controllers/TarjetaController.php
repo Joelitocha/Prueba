@@ -80,22 +80,21 @@ class TarjetaController extends BaseController
     // Crea y guarda una nueva tarjeta en la base de datos
     public function store()
     {
-        $tarjetaModel = new TarjetaModel(); // Crea una instancia del modelo de tarjetas
+        $tarjetaModel = new TarjetaModel();
         
-        // Prepara los datos para la nueva tarjeta con la información del formulario
         $data = [
             'ID_Tarjeta' => $this->request->getPost('ID_Tarjeta'),
             'Estado' => $this->request->getPost('Estado'),
             'Fecha_emision' => $this->request->getPost('Fecha_emision'),
-            'UID' => $this->request->getPost('UID')
+            'UID' => $this->request->getPost('UID'),
+            // 'ID_Empresa' => session()->get('id_empresa') // ⚠️ Esto no sirve si la tarjeta no tiene ese campo
         ];
-
-        // Inserta la nueva tarjeta en la base de datos
+    
         $tarjetaModel->insertTarjeta($data);
-
-        // Redirige a la vista de creación de tarjetas con un mensaje de éxito
+    
         return redirect()->to('/crear-tarjeta')->with('success', 'Tarjeta creada exitosamente');
     }
+    
 
     // Carga la vista para editar una tarjeta específica
     public function editar($id)
