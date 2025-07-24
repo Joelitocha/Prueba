@@ -9,12 +9,14 @@ class TarjetaController extends BaseController
     // Muestra la vista para modificar tarjetas
     public function VistaModificar()
     {
-        $tarjetaModel = new TarjetaModel(); // Crea una instancia del modelo de tarjetas
-        
-        // Obtiene todas las tarjetas de la base de datos
-        $tarjetas = $tarjetaModel->findAll(); 
+        $tarjetaModel = new TarjetaModel();
 
-        // Pasa las tarjetas a la vista 'modificar-tarjeta'
+        // Obtener la empresa desde la sesión
+        $idEmpresa = session()->get('id_empresa');
+    
+        // Traer solo las tarjetas de esa empresa
+        $tarjetas = $tarjetaModel->getAllTarjeta($idEmpresa);
+    
         return view('modificar-tarjeta', ['tarjetas' => $tarjetas]);
     }
 
