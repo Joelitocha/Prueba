@@ -10,15 +10,16 @@ class TarjetaController extends BaseController
     public function VistaModificar()
     {
         $tarjetaModel = new TarjetaModel();
-
+    
         // Obtener la empresa desde la sesión
         $idEmpresa = session()->get('id_empresa');
     
         // Traer solo las tarjetas de esa empresa
-        $tarjetas = $tarjetaModel->getAllTarjeta($idEmpresa);
+        $tarjetas = $tarjetaModel->getTarjetasPorEmpresa($idEmpresa);
     
         return view('modificar-tarjeta', ['tarjetas' => $tarjetas]);
     }
+    
 
     // Muestra una tarjeta específica en la vista de modificación
     public function VistaModificar2()

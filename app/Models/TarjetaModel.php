@@ -18,21 +18,16 @@ class TarjetaModel extends Model
         'Intentos_Fallidos',
         'Horario_Uso'
     ];
-/**
- * Obtiene todas las tarjetas asociadas a usuarios de una empresa.
- *
- * @param int $idEmpresa
- * @return array
- */
-    public function getAllTarjetas()
+    public function getTarjetasPorEmpresa($idEmpresa)
     {
         return $this->db->table('tarjeta_acceso')
-        ->select('tarjeta_acceso.*, usuario.Nombre as nombre_usuario')
-        ->join('usuario', 'usuario.ID_Tarjeta = tarjeta_acceso.ID_Tarjeta')
-        ->where('usuario.ID_Empresa', $idEmpresa)
-        ->get()
-        ->getResultArray();
+            ->select('tarjeta_acceso.*, usuario.Nombre as nombre_usuario')
+            ->join('usuario', 'usuario.ID_Tarjeta = tarjeta_acceso.ID_Tarjeta')
+            ->where('usuario.ID_Empresa', $idEmpresa)
+            ->get()
+            ->getResultArray();
     }
+    
 
     public function getTarjetaById($id)
     {
