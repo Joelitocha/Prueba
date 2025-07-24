@@ -11,7 +11,7 @@ class UserModel extends Model
     protected $useAutoIncrement = true;
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
-    protected $allowedFields = ['Nombre', 'Contraseña', 'Email', 'Ultimo_Acceso', 'ID_Rol', 'ID_Tarjeta', 'Token', 'Verificado'];
+    protected $allowedFields = ['Nombre', 'Contraseña', 'Email', 'Ultimo_Acceso', 'ID_Rol', 'ID_Tarjeta', 'Token', 'Verificado', 'id_empresa'];
     protected $useTimestamps = false;
 
     public function insertUser($data)

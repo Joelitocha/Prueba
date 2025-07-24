@@ -57,7 +57,8 @@ public function loginUser()
             "username"   => $user["Nombre"],
             "ID_Rol"     => $user["ID_Rol"],
             "ID_tarjeta" => $user["ID_Tarjeta"],
-            "last_activity" => time() // ← Añadido para control de inactividad
+            "id_empresa" => $user{"id_empresa"},
+            "last_activity" => time()
         ];
         
         session()->set($sessionData);
