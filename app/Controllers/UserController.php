@@ -134,10 +134,16 @@ class UserController extends BaseController
         $tarjetaModel = new \App\Models\TarjetaModel();
         
         $user = $userModel->getUserbyid($id);
-        $tarjetas = $tarjetaModel->getTarjetasPorEmpresa();
-
+    
+        // Obtener ID_Empresa de la sesión
+        $idEmpresa = session()->get('id_empresa');
+    
+        // Obtener solo las tarjetas asociadas a la empresa
+        $tarjetas = $tarjetaModel->getTarjetasPorEmpresa($idEmpresa);
+    
         return view("modificar-usuario2", ['user' => $user, 'tarjetas' => $tarjetas]);
     }
+    
 
     // Función para eliminar un usuario
     public function eliminarUsuario()
