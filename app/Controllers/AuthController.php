@@ -438,9 +438,14 @@ private function enviarCorreoVerificacion($email, $token)
     public function registro()
     {
         $tarjetaModel = new \App\Models\TarjetaModel();
-        $tarjetas = $tarjetaModel->getAllTarjetas();
+    
+        $idEmpresa = session()->get('id_empresa');
+    
+        $tarjetas = $tarjetaModel->getTarjetasPorEmpresa($idEmpresa);
+    
         return view('register', ['tarjetas' => $tarjetas]);
     }
+    
 
 public function logout()
 {
