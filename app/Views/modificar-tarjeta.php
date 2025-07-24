@@ -579,7 +579,6 @@
             <tr>
               <th>ID Tarjeta</th>
               <th>UID</th>
-              <th>Asignada a Usuario</th>
               <th>Estado</th>
               <th>Acciones</th>
             </tr>
