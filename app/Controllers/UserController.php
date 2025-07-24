@@ -134,7 +134,7 @@ class UserController extends BaseController
         $tarjetaModel = new \App\Models\TarjetaModel();
         
         $user = $userModel->getUserbyid($id);
-        $tarjetas = $tarjetaModel->getAllTarjetas();
+        $tarjetas = $tarjetaModel->getTarjetasPorEmpresa();
 
         return view("modificar-usuario2", ['user' => $user, 'tarjetas' => $tarjetas]);
     }
