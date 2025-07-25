@@ -33,7 +33,6 @@ class AuthController extends BaseController
 public function loginUser()
 {
     // Inicializar y regenerar sesión de forma segura
-    session()->start();
     session()->regenerate(true);
 
     $model = new UserModel();
@@ -384,7 +383,8 @@ private function enviarCorreoVerificacion($email, $token)
                 $user['Nombre'], 
                 "Tu cuenta ha sido verificada correctamente. Ahora puedes iniciar sesión con tu email y la contraseña que acabas de establecer."
             );
-
+            
+            session()->destroy();
             return redirect()->to('/login')->with('success', 'Registro completado. Ahora puedes iniciar sesión.');
         }
 
