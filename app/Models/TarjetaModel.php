@@ -16,16 +16,16 @@ class TarjetaModel extends Model
         'UID',
         'Fecha_Expiracion',
         'Intentos_Fallidos',
-        'Horario_Uso'
+        'Horario_Uso',
+        'id_empresa'
     ];
     public function getTarjetasPorEmpresa($idEmpresa)
     {
-        return $this->db->table('tarjeta_acceso')
-            ->select('tarjeta_acceso.*, usuario.Nombre as nombre_usuario')
-            ->join('usuario', 'usuario.ID_Tarjeta = tarjeta_acceso.ID_Tarjeta')
-            ->where('usuario.ID_Empresa', $idEmpresa)
-            ->get()
-            ->getResultArray();
+        return $this->db->table($this->table)
+                        ->select('*')
+                        ->where('id_empresa', $idEmpresa)
+                        ->get()
+                        ->getResultArray();
     }
     
 
