@@ -83,7 +83,7 @@ class TarjetaController extends BaseController
             'Estado' => $this->request->getPost('Estado'),
             'Fecha_emision' => $this->request->getPost('Fecha_emision'),
             'UID' => $this->request->getPost('UID'),
-            // 'ID_Empresa' => session()->get('id_empresa') // ⚠️ Esto no sirve si la tarjeta no tiene ese campo
+            'ID_Empresa' => session()->get('id_empresa')
         ];
     
         $tarjetaModel->insertTarjeta($data);
