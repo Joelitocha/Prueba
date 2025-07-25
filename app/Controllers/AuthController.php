@@ -64,7 +64,6 @@ public function loginUser()
 
         // Verificación de sesión
         if (!session()->get('logged_in')) {
-            log_message('error', 'Falló al establecer sesión para: ' . $email);
             return redirect()->to('/login')->with('error', 'Error técnico al iniciar sesión');
         }
 
@@ -383,7 +382,7 @@ private function enviarCorreoVerificacion($email, $token)
                 $user['Nombre'], 
                 "Tu cuenta ha sido verificada correctamente. Ahora puedes iniciar sesión con tu email y la contraseña que acabas de establecer."
             );
-            
+
             session()->destroy();
             return redirect()->to('/login')->with('success', 'Registro completado. Ahora puedes iniciar sesión.');
         }
