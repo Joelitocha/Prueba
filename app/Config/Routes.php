@@ -58,7 +58,7 @@ $routes->get('/set-password', 'AuthController::showSetPassword');
 $routes->post('/complete-registration', 'AuthController::completeRegistration');
 $routes->get('/logout', 'AuthController::logout');
 $routes->post('/logout', 'AuthController::logout');
-
+$routes->get('/prieba800','AuthController::prueba800');
 // Rutas para ESP32 (públicas o con autenticación alternativa si es necesario)
 $routes->post('cargar_acceso', 'esp32controller::insertar_registro');
 
