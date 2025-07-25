@@ -77,19 +77,27 @@ class TarjetaController extends BaseController
     public function store()
     {
         $tarjetaModel = new TarjetaModel();
-        
+    
+        // Verificamos si existe la sesión
+        $idEmpresa = session()->get('id_empresa');
+        if (!$idEmpresa) {
+            return redirect()->to('/crear-tarjeta')->with('error', 'No se pudo obtener la empresa desde la sesión.');
+        }
+    
+        // Prepara los datos con el id_empresa incluido
         $data = [
-            'ID_Tarjeta' => $this->request->getPost('ID_Tarjeta'),
-            'Estado' => $this->request->getPost('Estado'),
-            'Fecha_emision' => $this->request->getPost('Fecha_emision'),
-            'UID' => $this->request->getPost('UID'),
-            'ID_Empresa' => session()->get('id_empresa')
+            'ID_Tarjeta'     => $this->request->getPost('ID_Tarjeta'),
+            'Estado'         => $this->request->getPost('Estado'),
+            'Fecha_emision'  => $this->request->getPost('Fecha_emision'),
+            'UID'            => $this->request->getPost('UID'),
+            'ID_Empresa'     => $idEmpresa
         ];
     
         $tarjetaModel->insertTarjeta($data);
     
         return redirect()->to('/crear-tarjeta')->with('success', 'Tarjeta creada exitosamente');
     }
+    
     
 
     // Carga la vista para editar una tarjeta específica
