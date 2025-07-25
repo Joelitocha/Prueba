@@ -34,7 +34,7 @@ public function loginUser()
 {
     // Inicializar y regenerar sesión de forma segura
     session()->start();
-    session()->regenerate();
+    session()->regenerate(true);
 
     $model = new UserModel();
     $email = $this->request->getPost('Email');
