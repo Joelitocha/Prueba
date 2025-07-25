@@ -130,6 +130,6 @@ class Session extends BaseConfig
     public $cookiePath = '/';
     public $cookieSecure = true;
     public $cookieHTTPOnly = true;
-    public $cookieSameSite = 'None';
+    public $cookieSameSite = 'Lax';
     public $cookieLifetime = 2592000;
 }
