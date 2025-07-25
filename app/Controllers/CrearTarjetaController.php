@@ -21,6 +21,7 @@ class CrearTarjetaController extends BaseController
         $data = [
             'Estado' => $this->request->getPost('Estado'),
             'UID' => $this->request->getPost('UID'),
+            'id_empresa' => session()->get('id_empresa'),
             'Intentos_Fallidos' => $this->request->getPost('Intentos_Fallidos') ?? 0,
             'Bloqueada' => 0
         ];
