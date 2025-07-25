@@ -462,8 +462,4 @@ public function logout()
     return redirect()->to('/');
 }
 
-public function prueba800(){
-    echo session()->get('id_empresa');
-}
-
 }
