@@ -68,10 +68,10 @@ public function loginUser()
         }
 
         // Redirección
-        $redirectUrl = session()->get('redirect_url') ?? '/bienvenido';
-        session()->remove('redirect_url');
+        // $redirectUrl = session()->get('redirect_url') ?? '/bienvenido';
+        // session()->remove('redirect_url');
 
-        return redirect()->to($redirectUrl);
+        return redirect()->to('/bienvenido');
     }
 
     return redirect()->to('/login')
