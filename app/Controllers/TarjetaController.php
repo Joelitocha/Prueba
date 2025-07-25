@@ -78,10 +78,9 @@ class TarjetaController extends BaseController
     {
         $tarjetaModel = new TarjetaModel();
     
-        // Verificamos si existe la sesión
         $idEmpresa = session()->get('id_empresa');
         if (!$idEmpresa) {
-            return redirect()->to('/crear-tarjeta')->with('error', 'No se pudo obtener la empresa desde la sesión.');
+            dd('La sesión no tiene id_empresa', session()->get());
         }
     
         // Prepara los datos con el id_empresa incluido
