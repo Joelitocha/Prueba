@@ -15,7 +15,6 @@ class RegistroAccesoModel extends Model
         'Accion_Tomada',
         'Archivo_Video',
         'Ubicacion_Camara',
-        'ID_Usuario',
         'ID_Sistema',
         'ID_Tarjeta'
     ];
