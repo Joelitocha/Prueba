@@ -32,6 +32,12 @@ class RegistroAccesoModel extends Model
 
     public function getAllRecords()
     {
-        return $this->orderBy('Fecha_Hora','DESC')->findAll();
+        return $this->db->table($this->table)
+            ->select('registro_acceso_rf.*')
+            ->join('tarjeta_acceso', 'tarjeta_acceso.ID_Tarjeta = registro_acceso_rf.ID_Tarjeta')
+            ->where('tarjeta_acceso.id_empresa', $idEmpresa)
+            ->orderBy('registro_acceso_rf.Fecha_Hora', 'DESC')
+            ->get()
+            ->getResultArray();
     }
 }
