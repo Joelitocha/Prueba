@@ -29,9 +29,4 @@ class RegistroAccesoModel extends Model
     {
         return $this->countAllResults();
     }
-
-    public function getAllRecords()
-    {
-        return $this->orderBy('Fecha_Hora','DESC')->findAll();
-    }
 }
