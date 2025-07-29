@@ -23,7 +23,7 @@ class DispositivoController extends BaseController
 
 
         if($model->insertar_esp($this->request->getPost('nombre'), $this->request->getPost('mac'), $this->request->getPost('estado'), session()->get('user_id'),1,1,null)){
-            echo "Esperando vinculacion"
+            echo "Esperando vinculacion";
         }else{
             echo "troll";
         }
