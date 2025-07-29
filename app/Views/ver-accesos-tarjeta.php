@@ -433,7 +433,6 @@
                 <table class="access-table">
                     <thead>
                         <tr>
-                            <th>ID Acceso</th>
                             <th>Fecha y Hora</th>
                             <th>Resultado</th>
                             <th>ID Tarjeta</th>
@@ -442,7 +441,6 @@
                     <tbody>
                         <?php foreach($registros as $registro): ?>
                         <tr>
-                            <td><?= esc($registro['ID_Acceso']); ?></td>
                             <td><?= esc($registro['Fecha_Hora']); ?></td>
                             <td class="<?= $registro['Resultado'] == 1 ? 'acceso-permitido' : 'acceso-bloqueado'; ?>">
                                 <?= $registro['Resultado'] == 1 ? 'Permitido' : 'Bloqueado'; ?>
