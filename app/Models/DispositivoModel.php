@@ -34,10 +34,10 @@ class DispositivoModel extends Model
         ]
     ];
 
-    public function insertar_esp($nombre, $mac, $estado, $usuario, $nivel, $idrack){
+    public function insertar_esp($nombre, $mac, $estado, $usuario, $nivel, $idrack, $ip){
         $tabla =$this->db->table('sistema_seguridad');
 
-        if($tabla->insert(['Nombre' => $nombre, 'mac_address' => $mac, 'estado' =>$estado, 'usuario_id' =>$usuario,'nivel' => $nivel, 'ID_rack' => $idrack])){
+        if($tabla->insert(['Nombre' => $nombre, 'mac_address' => $mac, 'estado' =>$estado, 'usuario_id' =>$usuario,'nivel' => $nivel, 'ID_rack' => $idrack, 'direccion_ip' => $ip])){
             return true;
         }
 
