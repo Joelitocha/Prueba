@@ -19,14 +19,24 @@ class RegistroAccesoModel extends Model
         'ID_Tarjeta'
     ];
 
-    public function getPaginatedRecords($perPage, $offset)
+    public function getPaginatedRecordsByEmpresa($idEmpresa, $perPage, $offset)
     {
-        return $this->orderBy('Fecha_Hora', 'DESC')
-                    ->findAll($perPage, $offset);
+        return $this->db->table($this->table)
+            ->select('registro_acceso_rf.*')
+            ->join('tarjeta_acceso', 'tarjeta_acceso.ID_Tarjeta = registro_acceso_rf.ID_Tarjeta')
+            ->where('tarjeta_acceso.id_empresa', $idEmpresa)
+            ->orderBy('registro_acceso_rf.Fecha_Hora', 'DESC')
+            ->limit($perPage, $offset)
+            ->get()
+            ->getResultArray();
     }
-
-    public function getTotalRecords()
+    
+    public function getTotalRecordsByEmpresa($idEmpresa)
     {
-        return $this->countAllResults();
+        return $this->db->table($this->table)
+            ->join('tarjeta_acceso', 'tarjeta_acceso.ID_Tarjeta = registro_acceso_rf.ID_Tarjeta')
+            ->where('tarjeta_acceso.id_empresa', $idEmpresa)
+            ->countAllResults();
     }
+    
 }
