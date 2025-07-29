@@ -428,9 +428,7 @@ private function enviarCorreoVerificacion($email, $token)
     }
 
     public function welcome()
-    {
-
-        
+    { 
         return view("inicio");
     }
 
@@ -450,7 +448,6 @@ public function logout()
 {
     $session = session();
     $session->destroy();
-    // Eliminar la cookie de manera compatible
     setcookie(config('Session')->cookieName, '', [
         'expires' => time() - 3600,
         'path' => config('Session')->cookiePath,
