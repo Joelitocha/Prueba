@@ -355,7 +355,7 @@ $rol = $session->get("ID_Rol");
         <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
       </a>
     </div>
-
+ 
     <!-- Contenido principal -->
     <div class="content">
       <h1>Lista de Dispositivos</h1>
