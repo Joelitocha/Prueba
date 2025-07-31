@@ -409,7 +409,7 @@ $rol = $session->get("ID_Rol");
       
       <div class="form-container">
         <h2>Editar Dispositivo</h2>
-        <form action="<?= site_url('/actualizar-dispositivo/'.$dispositivo['ID_Sistema']) ?>" method="post">
+        <form action="<?= site_url('/actualizar-dispositivo'.$dispositivo['ID_Sistema']) ?>" method="post">
           <div class="form-group">
             <label>Nombre del dispositivo:</label>
             <input type="text" name="nombre" value="<?= $dispositivo['nombre'] ?>" required>
@@ -417,7 +417,7 @@ $rol = $session->get("ID_Rol");
           
           <div class="form-group">
             <label>Dirección MAC:</label>
-            <input type="text" name="mac" value="<?= $dispositivo['mac_address'] ?>" required>
+            <input type="text" name="code" value="<?= $dispositivo['codevin'] ?>" required>
           </div>
           
           <div class="form-group">

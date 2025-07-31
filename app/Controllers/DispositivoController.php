@@ -45,7 +45,7 @@ class DispositivoController extends BaseController
         $model = new DispositivoModel();
         $model->actualizar($id, 
              $this->request->getPost('nombre'),
-            $this->request->getPost('codevin'),
+            $this->request->getPost('code'),
             $this->request->getPost('estado'),session()->get('user_id'),1,1
         );
         return redirect()->to('/dispositivo');
