@@ -12,7 +12,7 @@ $session=session();
 
     <meta property="og:title" content="RackON - Seguridad Inteligente para Racks">
     <meta property="og:description" content="Sistema IoT de seguridad para racks con acceso RFID y sensores.">
-    <meta property="og:image" content="assets/images/rackon-og.jpg"> 
+    <meta property="og:image" content="assets/images/RackON.jpg"> 
     <meta property="og:url" content="https://rackon.tech">
     <meta property="og:type" content="website">
     <title>RackON - Rack Security</title>
@@ -652,7 +652,7 @@ $session=session();
 <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top py-2">
     <div class="container">
         <a class="navbar-brand" href="#header">
-            <img src="assets/images/pro.png" alt="RackON Logo" 
+            <img src="assets/images/RackON.jpg" alt="RackON Logo" 
                  class="img-fluid" 
                  style="height: 50px; width: auto; max-width: 150px; transition: all 0.3s ease;">
         </a>
