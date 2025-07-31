@@ -371,7 +371,7 @@ $rol = $session->get("ID_Rol");
           <?php foreach ($dispositivos as $d): ?>
             <tr>
               <td><?= esc($d['nombre']) ?></td>
-              <td><?= esc($d['mac_address']) ?></td>
+              <td><?= esc($d['codevin']) ?></td>
               <td><?= esc($d['estado']) ?></td>
               <td>
                 <a class="btn-action btn-edit" href="<?= site_url('configurar-dispositivo/'.$d['ID_Sistema']) ?>">
