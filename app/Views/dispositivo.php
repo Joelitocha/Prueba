@@ -2,7 +2,7 @@
 $session = session();
 $rol = $session->get("ID_Rol");
 ?>
-
+ 
 <?php if ($rol != 5): ?>
   <p>No tenés permiso para ver esta página.</p>
   <?php return; ?>
@@ -355,7 +355,7 @@ $rol = $session->get("ID_Rol");
         <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
       </a>
     </div>
-
+ 
     <!-- Contenido principal -->
     <div class="content">
       <h1>Lista de Dispositivos</h1>
@@ -364,7 +364,7 @@ $rol = $session->get("ID_Rol");
         <table>
           <tr>
             <th>Nombre</th>
-            <th>MAC</th>
+            <th>Código ESP</th>
             <th>Estado</th>
             <th>Acciones</th>
           </tr>
