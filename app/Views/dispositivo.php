@@ -364,7 +364,7 @@ $rol = $session->get("ID_Rol");
         <table>
           <tr>
             <th>Nombre</th>
-            <th>MAC</th>
+            <th>Código ESP</th>
             <th>Estado</th>
             <th>Acciones</th>
           </tr>
