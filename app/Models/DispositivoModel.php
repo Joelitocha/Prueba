@@ -11,7 +11,7 @@ class DispositivoModel extends Model
 
     protected $allowedFields = [
         'nombre',
-        'mac_address',
+        'codevin',
         'estado',
         'usuario_id',
         'Nivel',
@@ -24,32 +24,32 @@ class DispositivoModel extends Model
 
     protected $validationRules = [
         'nombre' => 'required|min_length[3]',
-        'mac_address' => 'required|regex_match[/^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$/]',
+        'codevin' => 'required|regex_match[/^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$/]',
         'estado' => 'required|in_list[activo,inactivo]'
     ];
 
     protected $validationMessages = [
-        'mac_address' => [
+        'codevin' => [
             'regex_match' => 'La dirección MAC no es válida, hermano.'
         ]
     ];
 
-    public function insertar_esp($nombre, $mac, $estado, $usuario, $nivel, $idrack, $ip){
+    public function insertar_esp($nombre, $code, $estado, $usuario, $nivel, $idrack, $ip){
         $tabla =$this->db->table('sistema_seguridad');
 
-        if($tabla->insert(['Nombre' => $nombre, 'codevin' => $mac, 'estado' =>$estado, 'usuario_id' =>$usuario,'nivel' => $nivel, 'ID_rack' => $idrack, 'direccion_ip' => $ip])){
+        if($tabla->insert(['Nombre' => $nombre, 'codevin' => $code, 'estado' =>$estado, 'usuario_id' =>$usuario,'nivel' => $nivel, 'ID_rack' => $idrack, 'direccion_ip' => $ip])){
             return true;
         }
 
         return false;
     }
 
-    public function actualizar($id, $nombre, $mac, $estado, $usuario, $nivel, $idrack){
+    public function actualizar($id, $nombre, $code, $estado, $usuario, $nivel, $idrack){
         $tabla =$this->db->table('sistema_seguridad');
 
         $tabla->where(['ID_Sistema' => $id]);
 
-        $tabla->update(['Nombre' => $nombre, 'mac_address' => $mac, 'estado' =>$estado, 'usuario_id' =>$usuario,'nivel' => $nivel, 'ID_rack' => $idrack]);
+        $tabla->update(['Nombre' => $nombre, 'codevin' => $code, 'estado' =>$estado, 'usuario_id' =>$usuario,'nivel' => $nivel, 'ID_rack' => $idrack]);
 
     }
 
