@@ -375,7 +375,7 @@ $rol = $session->get("ID_Rol");
         <input type="text" name="nombre" required>
 
         <label>Dirección MAC:</label>
-        <input type="text" name="mac" required>
+        <input type="text" name="code" required>
 
         <label>Estado:</label>
         <select name="estado">
