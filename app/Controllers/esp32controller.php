@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Controllers; // Define el espacio de nombres del controlador
+namespace App\Controllers;
 
-use App\Models\Esp32Model; // Importa el modelo Esp32Model para interactuar con la base de datos
+use App\Models\Esp32Model; 
 
 class esp32controller extends BaseController
 {
@@ -13,7 +13,7 @@ public function insertar_registro()
     $uid = $a->uid;
 
     $modelo = new Esp32Model();
-    $tarjeta = $modelo->buscar_id($uid); // Busca tarjeta por UID
+    $tarjeta = $modelo->buscar_id($uid);
 
     // Si la tarjeta no existe
     if (empty($tarjeta)) {
@@ -38,6 +38,9 @@ public function insertar_registro()
             "message" => "Acceso denegado: tarjeta inactiva"
         ]);
     }
+}
+public function vincular(){
+    
 }
 
 }

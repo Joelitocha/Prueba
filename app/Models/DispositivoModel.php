@@ -15,7 +15,9 @@ class DispositivoModel extends Model
         'estado',
         'usuario_id',
         'Nivel',
-        'ID_Rack'
+        'ID_Rack',
+        'usuario_id',
+        ''
     ];
 
     protected $useTimestamps = true;
