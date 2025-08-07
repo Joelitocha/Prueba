@@ -26,11 +26,11 @@ $routes->post('vincular_esp', 'esp32controller::vincular');
 // =======================
 
 // RUTAS PARA TODOS LOS USUARIOS AUTENTICADOS (roles 5, 6 y 7)
-
-    $routes->get('/bienvenido', 'AuthController::welcome', ['filter' => 'authfilter:5,6,7']);
+$routes->group('', ['filter' => 'authfilter:5,6,7'], function($routes) {
+    $routes->get('/bienvenido', 'AuthController::welcome');
     $routes->get('/consultar-rfid', 'ViewsControllers::VistaConsultar');
     $routes->post('/consultar-rfid', 'TarjetaController::verEstadoTarjeta');
-
+});
 
 // RUTAS PARA ADMIN Y SUPERVISOR (roles 5 y 6)
 $routes->group('', ['filter' => 'authfilter:5,6'], function($routes) {
