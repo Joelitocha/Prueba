@@ -20,7 +20,7 @@ class AuthFilter implements FilterInterface
         }
 
         // Validación de rol
-        $userRol = $session->get('rol');
+        $userRol = $session->get('ID_Rol');
         if ($arguments && ! in_array($userRol, $arguments)) {
             session()->setFlashdata('error', 'No tenés permiso para acceder a esta sección.');
             return redirect()->to('/bienvenido');
