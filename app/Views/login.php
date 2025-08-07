@@ -139,7 +139,7 @@
         <h2><i class="fas fa-lock"></i> Iniciar Sesión</h2>
 
         <?php if (session()->getFlashdata('error')): ?>
-            <div class="alert alert-danger">
+            <div class="alert alert-error">
                 <?= esc(session()->getFlashdata('error')) ?>
             </div>
         <?php endif; ?>
@@ -147,8 +147,8 @@
         <?php if (session()->getFlashdata('success')): ?>
             <div class="alert alert-success">
                 <?= esc(session()->getFlashdata('success')) ?>
-    </div>
-    <?php endif; ?>
+            </div>
+        <?php endif; ?>
 
 
         <form action="<?= base_url('login') ?>" method="POST" class="form-login">
