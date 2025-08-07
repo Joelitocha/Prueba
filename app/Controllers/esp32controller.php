@@ -39,7 +39,7 @@ public function insertar_registro()
         ]);
     }
 }
-public function vincular(){
+public function vincular_dispositivo(){
     
 }
 

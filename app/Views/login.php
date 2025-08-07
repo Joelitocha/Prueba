@@ -139,16 +139,17 @@
         <h2><i class="fas fa-lock"></i> Iniciar Sesión</h2>
 
         <?php if (session()->getFlashdata('error')): ?>
-            <div class="alert alert-error">
-                <?= session()->getFlashdata('error') ?>
+            <div class="alert alert-danger">
+                <?= esc(session()->getFlashdata('error')) ?>
             </div>
         <?php endif; ?>
 
         <?php if (session()->getFlashdata('success')): ?>
             <div class="alert alert-success">
-                <?= session()->getFlashdata('success') ?>
-            </div>
-        <?php endif; ?>
+                <?= esc(session()->getFlashdata('success')) ?>
+    </div>
+    <?php endif; ?>
+
 
         <form action="<?= base_url('login') ?>" method="POST" class="form-login">
             <div class="input-group">
