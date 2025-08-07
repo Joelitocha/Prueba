@@ -2,31 +2,35 @@
 
 namespace App\Filters;
 
-use CodeIgniter\Filters\FilterInterface;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
+use CodeIgniter\Filters\FilterInterface;
+use CodeIgniter\Services;
 
 class AuthFilter implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-        $session = \Config\Services::session();
+        $session = session();
 
-        if (!$session->get('logged_in')) {
-            return redirect()->to('/login')->with('error', 'Por favor inicia sesión para acceder a esta página');
+        // Si no hay sesión activa
+        if (! $session->get('isLoggedIn')) {
+            session()->setFlashdata('error', 'Por favor inicia sesión para acceder a esta página');
+            return redirect()->to('/login');
         }
 
-        if ($arguments) {
-            $userRole = $session->get('ID_Rol');
-            if (!in_array($userRole, explode(',', $arguments))) {
-                return redirect()->back()->with('error', 'No tienes permisos para acceder a esta sección');
-            }
+        // Validación de rol
+        $userRol = $session->get('rol');
+        if ($arguments && ! in_array($userRol, $arguments)) {
+            session()->setFlashdata('error', 'No tenés permiso para acceder a esta sección.');
+            return redirect()->to('/bienvenido');
         }
+
+        // Si pasa ambas validaciones, continua
     }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        // Nada que hacer aquí
+        // Nada aquí por ahora
     }
 }
-
