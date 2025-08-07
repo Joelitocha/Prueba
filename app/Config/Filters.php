@@ -119,6 +119,7 @@ class Filters extends BaseFilters
             'before' => [
                 'Administrador/*',
                 'Supervisor/*',
+                'Usuario/*',
             ]
         ]
     ];

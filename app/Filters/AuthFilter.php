@@ -5,32 +5,34 @@ namespace App\Filters;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Filters\FilterInterface;
-use CodeIgniter\Services;
 
 class AuthFilter implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-        $session = session();
+        $session = \Config\Services::session();
+        $uri = service('uri');
+        $role = $session->get('ID_Rol');
 
-        // Si no hay sesión activa
-        if (! $session->get('isLoggedIn')) {
-            session()->setFlashdata('error', 'Por favor inicia sesión para acceder a esta página');
-            return redirect()->to('/login');
+        if (!$session->get('logged_in') || !$role) {
+            return redirect()->to('/login')->with('error', 'Acceso denegado.');
         }
 
-        // Validación de rol
-        $userRol = $session->get('ID_Rol');
-        if ($arguments && ! in_array($userRol, $arguments)) {
-            session()->setFlashdata('error', 'No tenés permiso para acceder a esta sección.');
-            return redirect()->to('/bienvenido');
-        }
+        $segment = strtolower($uri->getSegment(1)); // e.g. "administrador"
 
-        // Si pasa ambas validaciones, continua
+        $roleMapping = [
+            'administrador' => 5,
+            'supervisor'    => 6,
+            'usuario'       => 7,
+        ];
+
+        if (isset($roleMapping[$segment]) && $role != $roleMapping[$segment]) {
+            return redirect()->to('/login')->with('error', 'No tenés permiso para entrar acá.');
+        }
     }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        // Nada aquí por ahora
+        // No se usa
     }
 }
