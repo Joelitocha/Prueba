@@ -34,7 +34,7 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
-        'authfilter' => App\Filters\AuthFilter::class,
+        'authfilter' => \App\Filters\AuthFilter::class,
         'sessioncheck' => \App\Filters\SessionCheck::class,
 
     ];
@@ -72,23 +72,16 @@ class Filters extends BaseFilters
      */
     public array $globals = [
         'before' => [
-            'sessioncheck' => ['except' => [
-                '/', 
-                'login', 
-                'logout',
-                'verify',
-                'set-password',
-                'complete-registration',
-                'register',
-                'cargar_acceso',
-                'vincular_esp'
-            ]],
+            // 'honeypot',
+            // 'csrf',
+            // 'invalidchars',
+            'sessioncheck'
         ],
         'after' => [
-            'toolbar',
+            // 'honeypot',
+            // 'secureheaders',
         ],
     ];
-    
 
     /**
      * List of filter aliases that works on a
@@ -115,5 +108,4 @@ class Filters extends BaseFilters
      * @var array<string, array<string, list<string>>>
      */
     public array $filters = [];
-    
 }
