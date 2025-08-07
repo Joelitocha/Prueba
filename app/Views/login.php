@@ -3,9 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- ========== ESTILOS ========== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Inicio de sesión</title>
     <style>
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -138,17 +137,19 @@
     <div class="login-container">
         <h2><i class="fas fa-lock"></i> Iniciar Sesión</h2>
 
-        <?php if (session()->getFlashdata('error')): ?>
-            <div class="alert alert-error">
-                <?= session()->getFlashdata('error') ?>
+        <?php if (session()->getFlashdata('success')): ?>
+            <div class="alert alert-success">
+                <?= esc(session()->getFlashdata('success')) ?>
             </div>
         <?php endif; ?>
 
-        <?php if (session()->getFlashdata('success')): ?>
-            <div class="alert alert-success">
-                <?= session()->getFlashdata('success') ?>
+        <?php if (session()->getFlashdata('error')): ?>
+            <div class="alert alert-error">
+                <?= esc(session()->getFlashdata('error')) ?>
             </div>
         <?php endif; ?>
+
+
 
         <form action="<?= base_url('login') ?>" method="POST" class="form-login">
             <div class="input-group">

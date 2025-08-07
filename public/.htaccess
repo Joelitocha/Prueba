@@ -1,29 +1,8 @@
-# Disable directory browsing
-Options -Indexes
-
 <IfModule mod_rewrite.c>
-    Options +FollowSymlinks
     RewriteEngine On
+    RewriteBase /
 
-    # Rewrite "www.example.com -> example.com" (for HTTPS ya activo)
-    RewriteCond %{HTTPS} !=on
-    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-    RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
-
-    # Redirect Trailing Slashes…
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_URI} (.+)/$
-    RewriteRule ^ %1 [L,R=301]
-
-    # If the file or directory does not exist, route it to index.php
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^([\s\S]*)$ index.php/$1 [L,NC,QSA]
-
-    # Ensure Authorization header is passed along
-    RewriteCond %{HTTP:Authorization} .
-    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+    RewriteRule ^(.*)$ index.php/$1 [L]
 </IfModule>
-
-# Disable server signature
-ServerSignature Off

@@ -1,115 +1,25 @@
-COSAS QUE HACER
+1. Arranque Inicial y Configuración Local
+Este es el proceso para que el dispositivo se prepare para trabajar por primera vez.
+Encendido del ESP32: El dispositivo arranca y verifica si tiene una configuración de Wi-Fi guardada en la memoria (en el archivo wifi_config.json).
+Modo AP: Si el archivo no existe, el ESP32 entra en modo Access Point (AP) y crea una red Wi-Fi con un nombre predeterminado, por ejemplo, "RackON_Config".
+Configuración del Usuario: Un usuario se conecta a esta red Wi-Fi desde su teléfono o computadora. Abre un navegador y accede a una página web local que ofrece el ESP32.
+Vinculación y Conexión: En la página web, el usuario ingresa:
+El SSID y la contraseña de la red Wi-Fi de su oficina.
+Un código de usuario o empresa que lo identifica en tu sistema.
+Envío al Backend: El ESP32 recibe estos datos y, de inmediato, intenta conectarse a la red Wi-Fi de la oficina. Una vez conectado, hace una petición HTTP POST a tu servidor (https://rackon.tech/vincular_esp), enviando su MAC (como device_id), el código de usuario y la configuración de Wi-Fi.
+Guardado Local y Reinicio: Si el servidor responde con éxito, el ESP32 guarda las credenciales de Wi-Fi en el archivo wifi_config.json y se reinicia. Esto asegura que la próxima vez se conecte automáticamente.
 
-1- Cargar imagenes desde la esp32cam.
-2- Hacer funcional el apartado de Contactos.
+2. Funcionamiento Normal y Gestión Remota
+Una vez que el dispositivo está configurado, sigue este ciclo.
+Conexión Automática: La ESP32 se enciende, lee las credenciales del archivo wifi_config.json y se conecta automáticamente a la red.
+Servidor de Escucha: Mientras está conectado, el ESP32 mantiene un pequeño servidor HTTP en segundo plano, escuchando en un puerto específico (por ejemplo, el puerto 80).
+Lectura de Tarjetas RFID: El dispositivo entra en un bucle principal donde monitorea constantemente el lector RFID (RC522).
+Validación de Acceso: Cuando se detecta una tarjeta, la ESP32 envía el UID de la tarjeta y su propio device_id a tu servidor (https://rackon.tech/cargar_acceso).
+Decisión del Backend: El servidor recibe esta petición, busca el UID en su base de datos para ver si está asignado a un usuario autorizado y responde a la ESP32 si el acceso es autorizado o denegado.
+Acción del ESP32: Basado en la respuesta del servidor, el ESP32 activa el relé y el LED verde (acceso autorizado) o parpadea el LED rojo (acceso denegado).
+Modificación de Wi-Fi desde el Panel Web: El administrador puede cambiar el SSID o la contraseña desde el panel web. El servidor, al recibir esta orden, envía una petición HTTP al ESP32 (a la dirección IP que tiene) al endpoint de escucha que creaste en el paso 2, con la nueva configuración. La ESP32 recibe los nuevos datos, los guarda en wifi_config.json y se reinicia para aplicar los cambios.
 
-
-ESTO ES TOTALMENTE NECESARIO DE AGREGAR Y TENER EN CUENTA:
-FLUJO PROPUESTO: Desde la compra hasta la conexión remota
-Aquí te presento un flujo realista, seguro y escalable para lo que estás construyendo:
-
-1. Compra del dispositivo
-El cliente compra el producto desde tu plataforma (ej. web).
-
-Se genera un identificador único del dispositivo (device_id) y se asocia a ese cliente.
-
-El dispositivo físico aún no tiene configurada la red WiFi del cliente.
-
-2. Configuración inicial en la empresa (por ustedes)
-Se le carga el firmware cifrado (no accesible al cliente).
-
-Se graba una clave única de seguridad (token, o certificado) por dispositivo, que solo ustedes conocen.
-
-Se puede grabar un archivo de configuración como config.json en la memoria flash del dispositivo con valores por defecto:
-
-json
-Copiar
-Editar
-{
-  "wifi_ssid": "",
-  "wifi_password": "",
-  "device_id": "ABC123",
-  "provisioned": false
-}
-Esto asegura que el dispositivo está listo para ser configurado, pero aún no puede conectarse a ninguna red WiFi.
-
-3. Envío al cliente
-El cliente recibe el dispositivo sin conexión a internet todavía.
-
-Enciende el dispositivo por primera vez.
-
-4. Modo de configuración local (Access Point / Captive Portal)
-Para permitir que el cliente configure su red sin acceso al firmware:
-
-Cuando el dispositivo no tiene red configurada:
-
-Se activa un modo "Access Point", en el que el ESP32 crea una red WiFi propia:
-RackON_ABC123 con una contraseña por defecto.
-
-El cliente se conecta desde su celular o PC a esta red.
-
-El ESP32 levanta un pequeño servidor web local (MicroPython lo permite) donde el cliente ingresa:
-
-Nombre del WiFi
-
-Contraseña
-
-Al guardar, el ESP32:
-
-Intenta conectarse al WiFi real
-
-Si tiene éxito, actualiza provisioned: true en config.json y desactiva el modo Access Point.
-
-5. Registro en tu plataforma
-Una vez conectado a internet:
-
-El dispositivo se comunica automáticamente con tu servidor central (ej. API REST).
-
-Envía:
-
-device_id
-
-token
-
-estado
-
-Tu servidor lo marca como "online y activado".
-
-6. Gestión remota desde la vista web
-Desde tu sistema web puedes:
-
-Ver todos los dispositivos del cliente.
-
-Asignarlos a sectores.
-
-Agruparlos.
-
-Enviar configuraciones de red actualizadas.
-
-7. Actualización de red WiFi remota
-Desde tu panel web puedes:
-
-Seleccionar uno o varios dispositivos.
-
-Enviarles una nueva configuración WiFi (encriptada con el token del dispositivo).
-
-El dispositivo guarda temporalmente la nueva red y prueba conectarse.
-
-Si tiene éxito, la guarda como principal.
-
-Si falla, sigue usando la anterior o vuelve al modo Access Point.
-
-Recomendaciones técnicas
-Elemento	Herramienta recomendada
-Firmware seguro	MicroPython congelado o C/C++ (Arduino IDE)
-Clave de acceso	Token único por dispositivo (guardado en config.json)
-Modo AP + servidor web	MicroPython + socket o picoweb
-Comunicaciones servidor	HTTP(S) POST con JSON
-Panel web de gestión	Ya lo tienes con CodeIgniter 4, puedes ampliarlo
-
-Seguridad
-Nunca guardes contraseñas de WiFi sin cifrar en el dispositivo.
-
-El archivo config.json debe estar protegido si es posible.
-
-Toda comunicación con el servidor debe hacerse por HTTPS y autenticada con token.
+3. Recuperación ante Fallos
+Este paso garantiza que el sistema sea resistente a problemas de conexión.
+Fallo de Conexión: Si el ESP32 intenta conectarse con la configuración guardada pero no lo logra (por un cambio de contraseña, router apagado, etc.), activa un mecanismo de respaldo.
+Vuelta al Modo AP: Tras varios intentos fallidos, el ESP32 borra el archivo wifi_config.json y vuelve a entrar en modo AP, permitiendo que un usuario lo reconfigure desde cero, tal como se describe en el paso 1.
