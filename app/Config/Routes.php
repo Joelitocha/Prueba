@@ -27,7 +27,7 @@ $routes->post('vincular_esp', 'esp32controller::vincular');
 
 // RUTAS PARA TODOS LOS USUARIOS AUTENTICADOS (roles 5, 6 y 7)
 
-    $routes->get('/bienvenido', 'AuthController::welcome'['filter' => 'authfilter:1,2']);
+    $routes->get('/bienvenido', 'AuthController::welcome', ['filter' => 'authfilter:1,2']);
     $routes->get('/consultar-rfid', 'ViewsControllers::VistaConsultar');
     $routes->post('/consultar-rfid', 'TarjetaController::verEstadoTarjeta');
 
