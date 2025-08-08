@@ -8,8 +8,8 @@ class Esp32Controller extends BaseController
 {
     public function insertar_registro()
     {
-        $a = $this->request->getJSON();
-        $uid = $a->uid;
+        $data = $this->request->getJSON();
+        $uid = $data->uid;
 
         $modelo = new Esp32Model();
         $tarjeta = $modelo->buscar_id($uid);
@@ -38,13 +38,13 @@ class Esp32Controller extends BaseController
 
     public function vincular_esp()
     {
-        $a = $this->request->getJSON();
+        $data = $this->request->getJSON();
 
-        $device_id = $a->device_id;
-        $ssid = $a->ssid;
-        $password = $a->password;
-        $nombre = $a->nombre;
-        $ecode = $a->ecode; // ✅ Lo que manda la ESP ahora
+        $device_id = $data->device_id;
+        $ssid = $data->ssid;
+        $password = $data->password;
+        $nombre = $data->nombre;
+        $ecode = $data->ecode;
 
         $modelo = new Esp32Model();
         $empresa = $modelo->obtenerEmpresaPorEcode($ecode);
@@ -52,13 +52,11 @@ class Esp32Controller extends BaseController
         if (!$empresa) {
             return $this->response->setJSON([
                 "status" => "error",
-                "message" => "Ecode no válido o empresa no encontrada"
+                "message" => "Ecode inválido: empresa no encontrada"
             ])->setStatusCode(400);
         }
 
-        $empresa_id = $empresa['id_empresa'];
-
-        $modelo->vincular_dispositivo($device_id, $ssid, $password, $nombre, $empresa_id);
+        $modelo->vincular_dispositivo($device_id, $ssid, $password, $nombre, $empresa['ID_Empresa']);
 
         return $this->response->setJSON([
             "status" => "ok",
@@ -68,6 +66,6 @@ class Esp32Controller extends BaseController
 
     public function configurar_wifi()
     {
-        // Implementar más adelante si querés enviar datos desde el server a la ESP32
+        // Función pendiente si se necesita enviar datos a la ESP32
     }
 }
