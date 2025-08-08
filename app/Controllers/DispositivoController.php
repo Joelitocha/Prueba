@@ -32,12 +32,11 @@ class DispositivoController extends BaseController
         $ip          = null;
 
         if ($model->insertar_esp($nombre, $code, $estado, $nivel, $idrack, $empresa_id, $ip)) {
-            echo "Esperando vinculación";
+            return redirect()->to('/dispositivo');
         } else {
             echo "Error al guardar el dispositivo.";
         }
 
-        // return redirect()->to('/dispositivo');
     }
 
     public function configurar($id)
