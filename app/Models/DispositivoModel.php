@@ -11,13 +11,13 @@ class DispositivoModel extends Model
 
     protected $allowedFields = [
         'nombre',
+        'Nivel',
         'codevin',
         'estado',
-        'usuario_id',
-        'Nivel',
         'ID_Rack',
-        'usuario_id',
-        ''
+        'empresa_id',
+        'nombre_ip',
+        'contraseña_ip'
     ];
 
     protected $useTimestamps = true;
@@ -25,9 +25,9 @@ class DispositivoModel extends Model
     protected $updatedField  = 'actualizado_en';
 
     protected $validationRules = [
-        'nombre' => 'required|min_length[3]',
-        'codevin' => 'required|regex_match[/^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$/]',
-        'estado' => 'required|in_list[activo,inactivo]'
+        'nombre'   => 'required|min_length[3]',
+        'codevin'  => 'required|regex_match[/^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$/]',
+        'estado'   => 'required|in_list[activo,inactivo]'
     ];
 
     protected $validationMessages = [
@@ -36,30 +36,38 @@ class DispositivoModel extends Model
         ]
     ];
 
-    public function insertar_esp($nombre, $code, $estado, $usuario, $nivel, $idrack, $ip){
-        $tabla =$this->db->table('sistema_seguridad');
+    public function insertar_esp($nombre, $code, $estado, $nivel, $idrack, $empresa_id, $ip = null)
+    {
+        $tabla = $this->db->table('sistema_seguridad');
 
-        if($tabla->insert(['Nombre' => $nombre, 'codevin' => $code, 'estado' =>$estado, 'usuario_id' =>$usuario,'nivel' => $nivel, 'ID_rack' => $idrack, 'direccion_ip' => $ip])){
-            return true;
-        }
-
-        return false;
+        return $tabla->insert([
+            'nombre'       => $nombre,
+            'codevin'      => $code,
+            'estado'       => $estado,
+            'Nivel'        => $nivel,
+            'ID_Rack'      => $idrack,
+            'empresa_id'   => $empresa_id,
+            'nombre_ip'    => $ip
+        ]);
     }
 
-    public function actualizar($id, $nombre, $code, $estado, $usuario, $nivel, $idrack){
-        $tabla =$this->db->table('sistema_seguridad');
+    public function actualizar($id, $nombre, $code, $estado, $nivel, $idrack, $empresa_id)
+    {
+        $tabla = $this->db->table('sistema_seguridad');
 
-        $tabla->where(['ID_Sistema' => $id]);
-
-        $tabla->update(['Nombre' => $nombre, 'codevin' => $code, 'estado' =>$estado, 'usuario_id' =>$usuario,'nivel' => $nivel, 'ID_rack' => $idrack]);
-
+        return $tabla->where(['ID_Sistema' => $id])->update([
+            'nombre'       => $nombre,
+            'codevin'      => $code,
+            'estado'       => $estado,
+            'Nivel'        => $nivel,
+            'ID_Rack'      => $idrack,
+            'empresa_id'   => $empresa_id
+        ]);
     }
 
-    public function eliminar($id){
-        $tabla =$this->db->table('sistema_seguridad');
-
-        $tabla->where(['ID_Sistema' => $id]);
-
-        $tabla->delete();
+    public function eliminar($id)
+    {
+        $tabla = $this->db->table('sistema_seguridad');
+        return $tabla->where(['ID_Sistema' => $id])->delete();
     }
 }

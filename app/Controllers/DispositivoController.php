@@ -21,14 +21,21 @@ class DispositivoController extends BaseController
     {
         $model = new DispositivoModel();
 
+        $nombre      = $this->request->getPost('nombre');
+        $code        = $this->request->getPost('code');
+        $estado      = $this->request->getPost('estado');
 
-        if($model->insertar_esp($this->request->getPost('nombre'), $this->request->getPost('code '), $this->request->getPost('estado'), session()->get('user_id'),1,1,null)){
-            echo "Esperando vinculacion";
-        }else{
-            echo "troll";
+        // Estos valores deberían venir del form o sesión, ajustá según tu lógica real
+        $nivel       = session()->get('user_id'); // o algo más adecuado si 'nivel' no es el ID del user
+        $idrack      = $this->request->getPost('ID_Rack') ?? 1;
+        $empresa_id  = session()->get('empresa_id'); // Asegurate de tener este valor cargado en la sesión
+        $ip          = null;
+
+        if ($model->insertar_esp($nombre, $code, $estado, $nivel, $idrack, $empresa_id, $ip)) {
+            echo "Esperando vinculación";
+        } else {
+            echo "Error al guardar el dispositivo.";
         }
-
-
 
         // return redirect()->to('/dispositivo');
     }
@@ -43,20 +50,23 @@ class DispositivoController extends BaseController
     public function actualizar($id)
     {
         $model = new DispositivoModel();
-        $model->actualizar($id, 
-             $this->request->getPost('nombre'),
-            $this->request->getPost('code'),
-            $this->request->getPost('estado'),session()->get('user_id'),1,1
-        );
+
+        $nombre      = $this->request->getPost('nombre');
+        $code        = $this->request->getPost('code');
+        $estado      = $this->request->getPost('estado');
+        $nivel       = session()->get('user_id'); // Ajustalo según cómo definas nivel
+        $idrack      = $this->request->getPost('ID_Rack') ?? 1;
+        $empresa_id  = session()->get('empresa_id');
+
+        $model->actualizar($id, $nombre, $code, $estado, $nivel, $idrack, $empresa_id);
+
         return redirect()->to('/dispositivo');
     }
 
-    public function eliminar($id){
+    public function eliminar($id)
+    {
         $model = new DispositivoModel();
-
         $model->eliminar($id);
-
         return redirect()->to('/dispositivo');
-
     }
 }
