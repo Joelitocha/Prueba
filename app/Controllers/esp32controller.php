@@ -38,6 +38,10 @@ public function insertar_registro()
             "message" => "Acceso denegado: tarjeta inactiva"
         ]);
     }
+    }
+    public function vincular_dispositivo(){
+    
+    }
         public function vincular_esp()
     {
         $a = $this->request->getJSON();
@@ -74,11 +78,6 @@ public function insertar_registro()
         // Esto va a requerir que tu backend tenga la IP de la ESP32, un detalle
         // que tendremos que resolver más adelante.
     }
-}
-public function vincular_dispositivo(){
-    
-}
-
 }
 
 ?>
