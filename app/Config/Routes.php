@@ -60,7 +60,8 @@ $routes->get('/logout', 'AuthController::logout');
 $routes->post('/logout', 'AuthController::logout');
 // Rutas para ESP32 (públicas o con autenticación alternativa si es necesario)
 $routes->post('cargar_acceso', 'esp32controller::insertar_registro');
-$routes->post('vincular_esp' , 'esp32controller::vincular');
+$routes->post('vincular_esp', 'esp32controller::vincular_esp');
+$routes->post('configurar_wifi', 'esp32controller::configurar_wifi'); 
 
 // Ruta de fallback para páginas no encontradas
 $routes->set404Override(function() {
