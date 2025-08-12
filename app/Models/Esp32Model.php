@@ -41,19 +41,31 @@ class Esp32Model extends Model
     }
 
     public function vincular_dispositivo($device_id, $ssid, $password, $nombre, $empresa_id)
-    {
-        $data = [
-            'codevin'       => $device_id,
-            'nombre'        => $nombre,
-            'estado'        => 'activo',
-            'Nivel'         => 1, // valor por defecto
-            'ID_Rack'       => 1, // valor por defecto
-            'ID_Empresa'    => $empresa_id,
-            'nombre_ip'     => $ssid,
-            'contraseña_ip' => $password
-        ];
+{
+    $table = $this->db->table('sistema_seguridad');
 
-        return $this->db->table('sistema_seguridad')->insert($data);
+    // 1. Verificar si ya existe un dispositivo con esta MAC (usando 'codevin').
+    $existing_device = $table->where('codevin', $device_id)->get()->getRow();
+
+    $data = [
+        'nombre'        => $nombre,
+        'estado'        => 'activo',
+        'Nivel'         => 1, // Asegúrate de que este valor exista en tu tabla 'Nivel'.
+        'ID_Rack'       => 1, // Asegúrate de que este valor exista en tu tabla 'Rack'.
+        'ID_Empresa'    => $empresa_id,
+        'nombre_ip'     => $ssid,
+        'contraseña_ip' => $password
+    ];
+    
+    if ($existing_device) {
+        // Si el dispositivo existe, actualiza su información.
+        // El ID_Sistema (PK con auto_increment) no se toca.
+        return $table->where('ID_Sistema', $existing_device->ID_Sistema)->update($data);
+    } else {
+        // Si es un dispositivo nuevo, inserta una nueva fila.
+        $data['codevin'] = $device_id;
+        return $table->insert($data);
     }
+}
 }
 
