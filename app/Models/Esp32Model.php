@@ -50,9 +50,9 @@ class Esp32Model extends Model
     $data = [
         'nombre'        => $nombre,
         'estado'        => 'activo',
-        'Nivel'         => 1, // Asegúrate de que este valor exista en tu tabla 'Nivel'.
-        'ID_Rack'       => 1, // Asegúrate de que este valor exista en tu tabla 'Rack'.
-        'ID_Empresa'    => $empresa_id,
+        'Nivel'         => 1,
+        'ID_Rack'       => 1, 
+        'empresa_id'    => $empresa_id,
         'nombre_ip'     => $ssid,
         'contraseña_ip' => $password
     ];
