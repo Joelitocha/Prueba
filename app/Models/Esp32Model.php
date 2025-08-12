@@ -48,7 +48,6 @@ class Esp32Model extends Model
 {
     $table = $this->db->table('sistema_seguridad');
 
-    // 1. Verificar si ya existe un dispositivo con esta MAC (usando 'codevin').
     $existing_device = $table->where('codevin', $device_id)->get()->getRow();
 
     $data = [
@@ -62,11 +61,8 @@ class Esp32Model extends Model
     ];
     
     if ($existing_device) {
-        // Si el dispositivo existe, actualiza su información.
-        // El ID_Sistema (PK con auto_increment) no se toca.
         return $table->where('ID_Sistema', $existing_device->ID_Sistema)->update($data);
     } else {
-        // Si es un dispositivo nuevo, inserta una nueva fila.
         $data['codevin'] = $device_id;
         return $table->insert($data);
     }
