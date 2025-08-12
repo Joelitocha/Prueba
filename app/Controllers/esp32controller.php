@@ -36,16 +36,24 @@ class Esp32Controller extends BaseController
         }
     }
 
-    public function vincular_esp()
-    {
-        $data = $this->request->getJSON();
+public function vincular_esp()
+{
+    $data = $this->request->getJSON();
 
-        $device_id = $data->device_id;
-        $ssid = $data->ssid;
-        $password = $data->password;
-        $nombre = $data->nombre;
-        $ecode = $data->ecode;
+    $device_id = $data->device_id ?? null;
+    $ssid = $data->ssid ?? null;
+    $password = $data->password ?? null;
+    $nombre = $data->nombre ?? null;
+    $ecode = $data->ecode ?? null;
 
+    if (!$device_id || !$ssid || !$password || !$nombre || !$ecode) {
+        return $this->response->setJSON([
+            "status" => "error",
+            "message" => "Faltan datos obligatorios"
+        ])->setStatusCode(400);
+    }
+
+    try {
         $modelo = new Esp32Model();
         $empresa = $modelo->obtenerEmpresaPorEcode($ecode);
 
@@ -56,13 +64,28 @@ class Esp32Controller extends BaseController
             ])->setStatusCode(400);
         }
 
-        $modelo->vincular_dispositivo($device_id, $ssid, $password, $nombre, $empresa['ID_Empresa']);
+        $resultado = $modelo->vincular_dispositivo($device_id, $ssid, $password, $nombre, $empresa['id_empresa']);
+
+        if (!$resultado) {
+            return $this->response->setJSON([
+                "status" => "error",
+                "message" => "Error al vincular dispositivo"
+            ])->setStatusCode(500);
+        }
 
         return $this->response->setJSON([
             "status" => "ok",
             "message" => "Dispositivo vinculado correctamente a la empresa."
         ]);
+
+    } catch (\Exception $e) {
+        return $this->response->setJSON([
+            "status" => "error",
+            "message" => "Exception: " . $e->getMessage()
+        ])->setStatusCode(500);
     }
+}
+
 
     public function configurar_wifi()
     {
