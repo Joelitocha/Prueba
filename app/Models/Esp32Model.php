@@ -42,7 +42,7 @@ class Esp32Model extends Model
                         ->getRowArray();
     }
 
-    public function vincular_dispositivo($device_id, $ssid, $password, $nombre, $empresa_id)
+public function vincular_dispositivo($device_id, $ssid, $password, $nombre, $empresa_id)
 {
     $table = $this->db->table('sistema_seguridad');
 
