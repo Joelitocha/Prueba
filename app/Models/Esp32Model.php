@@ -25,7 +25,6 @@ class Esp32Model extends Model
 
     public function buscar_id($id)
     {
-        $table = $this->db->table('tarjeta_acceso');
 
         return $this->db->table('tarjeta_acceso')
                         ->where(["UID" => $id])
@@ -35,7 +34,6 @@ class Esp32Model extends Model
 
     public function obtenerEmpresaPorEcode($ecode)
     {
-        $table = $this->db->table('empresa');
 
         return $this->db->table('empresa')
                         ->select('ID_Empresa')
