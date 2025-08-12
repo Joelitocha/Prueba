@@ -25,6 +25,8 @@ class Esp32Model extends Model
 
     public function buscar_id($id)
     {
+        $table = $this->db->table('tarjeta_acceso');
+
         return $this->db->table('tarjeta_acceso')
                         ->where(["UID" => $id])
                         ->get()
