@@ -33,6 +33,8 @@ class Esp32Model extends Model
 
     public function obtenerEmpresaPorEcode($ecode)
     {
+        $table = $this->db->table('empresa');
+
         return $this->db->table('empresa')
                         ->select('ID_Empresa')
                         ->where('Ecode', $ecode)
