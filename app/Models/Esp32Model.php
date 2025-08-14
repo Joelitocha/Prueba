@@ -36,7 +36,7 @@ class Esp32Model extends Model
     {
 
         return $this->db->table('empresa')
-                        ->select('ID_Empresa')
+                        ->select('id_empresa')
                         ->where('Ecode', $ecode)
                         ->get()
                         ->getRowArray();
