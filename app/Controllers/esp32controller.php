@@ -91,4 +91,30 @@ public function vincular_esp()
     {
         // Función pendiente si se necesita enviar datos a la ESP32
     }
+
+    public function pruebacamara(){
+        return $this->response->setJSON(['capture' => true]);
+    }
+
+    public function mandarfoto(){
+        $foto = $this->request->getBody();
+        
+        // Genera un nombre único para el archivo
+        $nombreFoto = 'foto_' . date('Ymd_His') . '.jpg';
+        $ruta = WRITEPATH . 'uploads/fotos/' . $nombreFoto;
+        
+        // Guarda la foto en el servidor
+        if (file_put_contents($ruta, $foto)) {
+            return $this->response->setJSON([
+                'status' => 'success',
+                'message' => 'Foto recibida y guardada',
+                'filename' => $nombreFoto
+            ]);
+        } else {
+            return $this->response->setJSON([
+                'status' => 'error',
+                'message' => 'Error al guardar la foto'
+            ])->setStatusCode(500);
+        }
+    }
 }
