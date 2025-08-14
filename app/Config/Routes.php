@@ -61,7 +61,8 @@ $routes->post('/logout', 'AuthController::logout');
 // Rutas para ESP32 (públicas o con autenticación alternativa si es necesario)
 $routes->post('/esp32/vincular', 'esp32Controller::vincular_esp');
 $routes->post('/esp32/registrar', 'esp32Controller::insertar_registro');
-
+$routes->get('/esp32/vincular', 'esp32Controller::vincular_esp');
+$routes->get('/esp32/registrar', 'esp32Controller::insertar_registro');
 
 // Ruta de fallback para páginas no encontradas
 $routes->set404Override(function() {
