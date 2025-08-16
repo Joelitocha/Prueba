@@ -367,7 +367,7 @@ $rol = $session->get("ID_Rol");
             <th>Código ESP</th>
             <th>Estado</th>
             <th>Fecha de creación</th>
-            <th>Última actualñización</th>
+            <th>Última actualización</th>
             <th>Wifi</th>
             <th>Contraseña-Wifi</th>
             <th>Acciones</th>
