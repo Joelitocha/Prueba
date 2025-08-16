@@ -369,7 +369,7 @@ $rol = $session->get("ID_Rol");
             <th>Fecha de creación</th>
             <th>Última actualización</th>
             <th>Wifi</th>
-            <th>Contraseña-Wifi</th>
+            <th>Contraseña</th>
             <th>Acciones</th>
           </tr>
           <?php foreach ($dispositivos as $d): ?>
