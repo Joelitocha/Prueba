@@ -366,6 +366,8 @@ $rol = $session->get("ID_Rol");
             <th>Nombre</th>
             <th>Código ESP</th>
             <th>Estado</th>
+            <th>Fecha de creación</th>
+            <th>Última actualñización</th>
             <th>Wifi</th>
             <th>Contraseña-Wifi</th>
             <th>Acciones</th>
@@ -375,6 +377,8 @@ $rol = $session->get("ID_Rol");
               <td><?= esc($d['nombre']) ?></td>
               <td><?= esc($d['codevin']) ?></td>
               <td><?= esc($d['estado']) ?></td>
+              <td><?= esc ($d['creado_en']) ?></td>
+              <td><?= esc ($d['actualizado_en']) ?></td>
               <td><?= esc ($d['nombre_ip']) ?></td>
               <th><?= esc ($d['contraseña_ip']) ?></th>
               <td>
