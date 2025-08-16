@@ -366,6 +366,8 @@ $rol = $session->get("ID_Rol");
             <th>Nombre</th>
             <th>Código ESP</th>
             <th>Estado</th>
+            <th>Wifi</th>
+            <th>Contraseña-Wifi</th>
             <th>Acciones</th>
           </tr>
           <?php foreach ($dispositivos as $d): ?>
@@ -373,6 +375,8 @@ $rol = $session->get("ID_Rol");
               <td><?= esc($d['nombre']) ?></td>
               <td><?= esc($d['codevin']) ?></td>
               <td><?= esc($d['estado']) ?></td>
+              <td><?= esc ($d['nombre_ip']) ?></td>
+              <th><?= esc ($d['contraseña_ip']) ?></th>
               <td>
                 <a class="btn-action btn-edit" href="<?= site_url('configurar-dispositivo/'.$d['ID_Sistema']) ?>">
                   <i class="fas fa-edit"></i> Editar
