@@ -35,7 +35,7 @@ class DispositivoModel extends Model
 
     protected $validationMessages = [
         'codevin' => [
-            'regex_match' => 'La dirección MAC no es válida, hermano.'
+            'regex_match' => 'La dirección MAC no es válida.'
         ]
     ];
 
