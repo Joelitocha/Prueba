@@ -17,7 +17,10 @@ class DispositivoModel extends Model
         'ID_Rack',
         'empresa_id',
         'nombre_ip',
-        'contraseña_ip'
+        'contraseña_ip',
+        'creado_en',
+        'actualizado_en'
+
     ];
 
     protected $useTimestamps = true;
