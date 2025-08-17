@@ -24,11 +24,9 @@ class DispositivoController extends BaseController
         $nombre      = $this->request->getPost('nombre');
         $code        = $this->request->getPost('code');
         $estado      = $this->request->getPost('estado');
-
-        // Estos valores deberían venir del form o sesión, ajustá según tu lógica real
-        $nivel       = session()->get('user_id'); // o algo más adecuado si 'nivel' no es el ID del user
+        $nivel       = $this->request->getpost('Nivel'); 
         $idrack      = $this->request->getPost('ID_Rack') ?? 1;
-        $empresa_id  = session()->get('id_empresa'); // Asegurate de tener este valor cargado en la sesión
+        $empresa_id  = session()->get('id_empresa');
         $ip          = null;
 
         if ($model->insertar_esp($nombre, $code, $estado, $nivel, $idrack, $empresa_id, $ip)) {
@@ -53,7 +51,7 @@ class DispositivoController extends BaseController
         $nombre      = $this->request->getPost('nombre');
         $code        = $this->request->getPost('code');
         $estado      = $this->request->getPost('estado');
-        $nivel       = session()->get('user_id'); // Ajustalo según cómo definas nivel
+        $nivel       = $this->request->getpost('Nivel');
         $idrack      = $this->request->getPost('ID_Rack') ?? 1;
         $empresa_id  = session()->get('id_empresa');
 
