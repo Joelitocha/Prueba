@@ -27,9 +27,10 @@ class DispositivoController extends BaseController
         $nivel       = $this->request->getpost('Nivel'); 
         $idrack      = $this->request->getPost('ID_Rack') ?? 1;
         $empresa_id  = session()->get('id_empresa');
-        $ip          = null;
+        $ip          = $this->request->getpost('nompre_ip'); 
+        $contra      = $this->request->getpost('contraseña_ip'); 
 
-        if ($model->insertar_esp($nombre, $code, $estado, $nivel, $idrack, $empresa_id, $ip)) {
+        if ($model->insertar_esp($nombre, $code, $estado, $nivel, $idrack, $empresa_id, $ip, $contra)) {
             return redirect()->to('/dispositivo');
         } else {
             echo "Error al guardar el dispositivo.";
@@ -54,8 +55,10 @@ class DispositivoController extends BaseController
         $nivel       = $this->request->getpost('Nivel');
         $idrack      = $this->request->getPost('ID_Rack') ?? 1;
         $empresa_id  = session()->get('id_empresa');
+        $ip          = $this->request->getpost('nompre_ip'); 
+        $contra      = $this->request->getpost('contraseña_ip'); 
 
-        $model->actualizar($id, $nombre, $code, $estado, $nivel, $idrack, $empresa_id);
+        $model->actualizar($id, $nombre, $code, $estado, $nivel, $idrack, $empresa_id, $ip, $contra);
 
         return redirect()->to('/dispositivo');
     }
