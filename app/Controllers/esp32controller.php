@@ -176,7 +176,7 @@ public function mandarfoto(){
         // Guardar solo la MAC (sin código)
             log_message('info', "Foto recibida de MAC: $mac");
 
-            $registromodel->
+            $registromodel->updateregistro($registrosinfoto[0]['ID_Acceso'],$nombreFoto);
         
             return $this->response->setJSON([
                 'status' => 'success',
