@@ -370,28 +370,6 @@ $rol = $session->get("ID_Rol");
     
     <div class="form-container">
       <h2>Agregar Nuevo Dispositivo</h2>
-      <form action="<?php echo site_url('/guardar-dispositivo'); ?>" method="post">
-        <label>Nombre del dispositivo:</label>
-        <input type="text" name="nombre" required>
-
-        <label>Dirección MAC:</label>
-        <input type="text" name="code" required>
-
-        <label>Estado:</label>
-        <select name="estado">
-          <option value="activo">Activo</option>
-          <option value="inactivo">Inactivo</option>
-        </select>
-
-        <div class="button-container">
-          <a href="<?php echo site_url('/dispositivo'); ?>" class="btn-volver">
-            <i class="fas fa-times"></i> Cancelar
-          </a>
-          <button type="submit">
-            <i class="fas fa-save"></i> Guardar Dispositivo
-          </button>
-        </div>
-      </form>
     </div>
   </div>
 
