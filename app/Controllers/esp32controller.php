@@ -118,7 +118,7 @@ public function vincular_esp()
                 return $this->response->setJSON(['success' => true]);
 
             }else{
-                return "No hay fotos para sacar"
+                return "No hay fotos para sacar";
             }
 
         }else{
