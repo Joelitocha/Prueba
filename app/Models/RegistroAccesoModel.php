@@ -43,7 +43,7 @@ class RegistroAccesoModel extends Model
 
         $table = $this->db->table('registro_acceso_rf');
 
-        $table->where('Archivo_video' => null, 'ID_Sistema' => $rack);
+        $table->where(['Archivo_video' => null, 'ID_Sistema' => $rack]);
 
         return $table->get()->getResultArray();
 
