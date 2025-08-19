@@ -4,12 +4,16 @@ namespace App\Controllers;
 
 use App\Models\Esp32Model;
 
+use App\Models\RegistroAccesoModel;
+
+
 class Esp32Controller extends BaseController
 {
     public function insertar_registro()
     {
         $data = $this->request->getJSON();
         $uid = $data->uid;
+        $mac = $data->device_id;
 
         $modelo = new Esp32Model();
         $tarjeta = $modelo->buscar_id($uid);
@@ -22,7 +26,8 @@ class Esp32Controller extends BaseController
         }
 
         $modelo->insertar_registro($uid);
-
+        // $esp_rfid = $modelo->getEspand(['codevin' => $mac]);
+        // $esp_camera = $modelo->getEspand('Nivel' => 2, 'ID_Rack' => $esp_rfid[0]['ID_Rack']);
         if ($tarjeta[0]['Estado'] == 1) {
             return $this->response->setJSON([
                 "status" => "success",
@@ -93,22 +98,88 @@ public function vincular_esp()
     }
 
     public function pruebacamara(){
-        return $this->response->setJSON(['capture' => true]);
+
+        $espmodel = new Esp32Model();
+
+        $registromodel = new RegistroAccesoModel();
+
+        $data = $this->request->getJSON();
+
+        $mac = $data->mac ?? null;
+
+        $esp_camera = $modelo->getEspand(['codevin' => $mac, 'Nivel'=>2]);
+
+        if($esp_camera){
+
+            $registros = $registromodel->getRegisterwithoutphoto($esp_camera[0]['ID_Rack']);
+
+            if($registros){
+
+                return $this->response->setJSON(['success' => true]);
+
+            }else{
+                return "No hay fotos para sacar"
+            }
+
+        }else{
+
+            return "troll";
+
+        }
+
     }
 
-    public function mandarfoto(){
-        $foto = $this->request->getBody();
-        
-        // Genera un nombre único para el archivo
-        $nombreFoto = 'foto_' . date('Ymd_His') . '.jpg';
+public function mandarfoto(){
+    
+        $espmodel = new Esp32Model();
+
+        $registromodel = new RegistroAccesoModel();
+
+    // Obtener el JSON recibido
+    $json = $this->request->getJSON();
+    
+    if (!$json || !isset($json->image)) {
+        return $this->response->setJSON([
+            'status' => 'error',
+            'message' => 'Datos JSON inválidos o falta la imagen'
+        ])->setStatusCode(400);
+    }
+    
+    // Obtener los datos (solo mac, sin code)
+    $mac = isset($json->mac) ? $json->mac : 'Desconocida';
+    $base64Image = $json->image;
+    
+    // Decodificar la imagen base64
+    $imageData = base64_decode($base64Image);
+    
+    if ($imageData === false) {
+        return $this->response->setJSON([
+            'status' => 'error',
+            'message' => 'Error al decodificar la imagen base64'
+        ])->setStatusCode(400);
+    }
+    
+    $esp=$espmodel->getEspand(['codevin' => $mac, 'Nivel'=>2]);
+
+    $registrosinfoto=$registromodel->getRegisterwithoutphoto($esp[0]['ID_Rack']);
+
+    if ($registrosinfoto) {
+        $nombreFoto = 'foto_' . $registrosinfoto[0]['ID_Acceso'] . '_' . date('Ymd_His') . '.jpg';
         $ruta = WRITEPATH . 'uploads/fotos/' . $nombreFoto;
+    
+    // Guarda la foto en el servidor
+        if (file_put_contents($ruta, $imageData)) {
+        // Guardar solo la MAC (sin código)
+            log_message('info', "Foto recibida de MAC: $mac");
+
+            $registromodel->
         
-        // Guarda la foto en el servidor
-        if (file_put_contents($ruta, $foto)) {
             return $this->response->setJSON([
                 'status' => 'success',
                 'message' => 'Foto recibida y guardada',
-                'filename' => $nombreFoto
+                'filename' => $nombreFoto,
+                'mac' => $mac,
+                'size' => strlen($imageData)
             ]);
         } else {
             return $this->response->setJSON([
@@ -117,4 +188,8 @@ public function vincular_esp()
             ])->setStatusCode(500);
         }
     }
+
+    // Genera un nombre único para el archivo
+
+}
 }
