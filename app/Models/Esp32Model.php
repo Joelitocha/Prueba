@@ -16,7 +16,7 @@ class Esp32Model extends Model
             "Accion_Tomada"   => NULL,
             "Archivo_Video"   => NULL,
             "Ubicacion_Camara"=> NULL,
-            "ID_Sistema"      => NULL,
+            "ID_Sistema"      => 1,
             "ID_Tarjeta"      => $tarjeta[0]["ID_Tarjeta"]
         ];
 
@@ -64,6 +64,12 @@ public function vincular_dispositivo($device_id, $ssid, $password, $nombre, $emp
         $data['codevin'] = $device_id;
         return $table->insert($data);
     }
+}
+
+public function getEspand($condition){
+    $tabla = $this->db->table('sistema_seguridad');
+    $tabla->where($condition);
+    return $tabla->get()->getResultArray();
 }
 }
 

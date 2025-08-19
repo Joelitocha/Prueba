@@ -61,7 +61,7 @@ $routes->post('/logout', 'AuthController::logout');
 // Rutas para ESP32 (públicas o con autenticación alternativa si es necesario)
 $routes->post('/esp32/vincular', 'esp32controller::vincular_esp');
 $routes->post('/esp32/registrar', 'esp32controller::insertar_registro');
-$routes->get('/pruebacamara/verificar', 'esp32controller::pruebacamara');
+$routes->post('/pruebacamara/verificar', 'esp32controller::pruebacamara');
 $routes->post('/pruebacamara/mandar','esp32controller::mandarfoto');
 
 // Ruta de fallback para páginas no encontradas

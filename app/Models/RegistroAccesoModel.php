@@ -38,5 +38,24 @@ class RegistroAccesoModel extends Model
             ->where('tarjeta_acceso.id_empresa', $idEmpresa)
             ->countAllResults();
     }
+
+    public function getRegisterwithoutphoto($rack){
+
+        $table = $this->db->table('registro_acceso_rf');
+
+        $table->where('Archivo_video' => null, 'ID_Sistema' => $rack);
+
+        return $table->get()->getResultArray();
+
+    }
+
+    public function updateregistro($id,$archivo){
+
+        $table=$this->db->table('registro_acceso_rf');
+        $table->where(['ID_Acceso'=>$id]);
+        $table->set(['Archivo_Video'=>$archivo]);
+        $table->update();
+
+    }
     
 }
