@@ -111,7 +111,7 @@ public function vincular_esp()
 
         $mac = $data->mac ?? null;
 
-        $esp_camera = $modelo->getEspand(['codevin' => $mac, 'Nivel'=>2]);
+        $esp_camera = $espmodel->getEspand(['codevin' => $mac, 'Nivel'=>2]);
 
         if($esp_camera){
 
