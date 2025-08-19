@@ -17,17 +17,20 @@ class Esp32Controller extends BaseController
 
         $modelo = new Esp32Model();
         $tarjeta = $modelo->buscar_id($uid);
-
+    
+        // Si la tarjeta no está registrada
         if (empty($tarjeta)) {
-            return $this->response->setJSON([
-                "status" => "error",
-                "message" => "Tarjeta no registrada"
-            ])->setStatusCode(404);
+            return $this->response
+                ->setJSON([
+                    "status" => "error",
+                    "message" => "Tarjeta no registrada"
+                ])
+                ->setStatusCode(404);
         }
-
+    
+        // Insertar registro de acceso
         $modelo->insertar_registro($uid);
-        // $esp_rfid = $modelo->getEspand(['codevin' => $mac]);
-        // $esp_camera = $modelo->getEspand('Nivel' => 2, 'ID_Rack' => $esp_rfid[0]['ID_Rack']);
+
         if ($tarjeta[0]['Estado'] == 1) {
             return $this->response->setJSON([
                 "status" => "success",
@@ -40,6 +43,7 @@ class Esp32Controller extends BaseController
             ]);
         }
     }
+    
 
 public function vincular_esp()
 {
@@ -107,7 +111,7 @@ public function vincular_esp()
 
         $mac = $data->mac ?? null;
 
-        $esp_camera = $modelo->getEspand(['codevin' => $mac, 'Nivel'=>2]);
+        $esp_camera = $espmodel->getEspand(['codevin' => $mac, 'Nivel'=>2]);
 
         if($esp_camera){
 
