@@ -102,37 +102,47 @@ public function vincular_esp()
         // Función pendiente si se necesita enviar datos a la ESP32
     }
 
-    public function pruebacamara(){
+    public function pruebacamara() {
+    $espmodel = new Esp32Model();
+    $registromodel = new RegistroAccesoModel();
 
-        $espmodel = new Esp32Model();
+    $data = $this->request->getJSON();
+    $mac = $data->mac ?? null;
 
-        $registromodel = new RegistroAccesoModel();
-
-        $data = $this->request->getJSON();
-
-        $mac = $data->mac ?? null;
-
-        $esp_camera = $espmodel->getEspand(['codevin' => $mac, 'Nivel'=>2]);
-
-        if($esp_camera){
-
-            $registros = $registromodel->getRegisterwithoutphoto($esp_camera[0]['ID_Rack']);
-
-            if($registros){
-
-                return $this->response->setJSON(['success' => true]);
-
-            }else{
-                return "No hay fotos para sacar";
-            }
-
-        }else{
-
-            return "troll";
-
-        }
-
+    if (!$mac) {
+        return $this->response->setJSON([
+            'success' => false,
+            'message' => 'MAC address required',
+            'capture' => false
+        ]);
     }
+
+    $esp_camera = $espmodel->getEspand(['codevin' => $mac, 'Nivel' => 2]);
+
+    if ($esp_camera && !empty($esp_camera)) {
+        $registros = $registromodel->getRegisterwithoutphoto($esp_camera[0]['ID_Rack']);
+
+        if ($registros && !empty($registros)) {
+            return $this->response->setJSON([
+                'success' => true,
+                'capture' => true,
+                'message' => 'Capture required'
+            ]);
+        } else {
+            return $this->response->setJSON([
+                'success' => true,
+                'capture' => false,
+                'message' => 'No photos needed'
+            ]);
+        }
+    } else {
+        return $this->response->setJSON([
+            'success' => false,
+            'capture' => false,
+            'message' => 'Device not found'
+        ]);
+    }
+}
 
 public function mandarfoto(){
     
