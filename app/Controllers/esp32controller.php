@@ -9,21 +9,26 @@ class Esp32Controller extends BaseController
     public function insertar_registro()
     {
         $data = $this->request->getJSON();
-        $uid = $data->uid;
-
+        $uid = $data->uid ?? null;
+    
         $modelo = new Esp32Model();
         $tarjeta = $modelo->buscar_id($uid);
-
+    
+        // Si la tarjeta no está registrada
         if (empty($tarjeta)) {
-            return $this->response->setJSON([
-                "status" => "error",
-                "message" => "Tarjeta no registrada"
-            ])->setStatusCode(404);
+            return $this->response
+                ->setJSON([
+                    "status" => "error",
+                    "message" => "Tarjeta no registrada"
+                ])
+                ->setStatusCode(404);
         }
-
+    
+        // Insertar registro de acceso
         $modelo->insertar_registro($uid);
-
-        if ($tarjeta[0]['Estado'] == 1) {
+    
+        // Validar estado de la tarjeta
+        if ((int)$tarjeta[0]['Estado'] === 1) {
             return $this->response->setJSON([
                 "status" => "success",
                 "message" => "Acceso autorizado"
@@ -35,6 +40,7 @@ class Esp32Controller extends BaseController
             ]);
         }
     }
+    
 
 public function vincular_esp()
 {
