@@ -144,67 +144,113 @@ public function vincular_esp()
     }
 }
 
-public function mandarfoto(){
-    
-        $espmodel = new Esp32Model();
+public function mandarfoto()
+{
+    $espmodel = new Esp32Model();
+    $registromodel = new RegistroAccesoModel();
 
-        $registromodel = new RegistroAccesoModel();
+    $contentType = $this->request->getHeaderLine('Content-Type');
 
-    // Obtener el JSON recibido
-    $json = $this->request->getJSON();
-    
-    if (!$json || !isset($json->image)) {
-        return $this->response->setJSON([
-            'status' => 'error',
-            'message' => 'Datos JSON inválidos o falta la imagen'
-        ])->setStatusCode(400);
-    }
-    
-    // Obtener los datos (solo mac, sin code)
-    $mac = isset($json->mac) ? $json->mac : 'Desconocida';
-    $base64Image = $json->image;
-    
-    // Decodificar la imagen base64
-    $imageData = base64_decode($base64Image);
-    
-    if ($imageData === false) {
-        return $this->response->setJSON([
-            'status' => 'error',
-            'message' => 'Error al decodificar la imagen base64'
-        ])->setStatusCode(400);
-    }
-    
-    $esp=$espmodel->getEspand(['codevin' => $mac, 'Nivel'=>2]);
+    $mac = 'Desconocida';
+    $imageData = null;
 
-    $registrosinfoto=$registromodel->getRegisterwithoutphoto($esp[0]['ID_Rack']);
+    // ---------- CASO 1: Imagen enviada en JSON con base64 ----------
+    if (strpos($contentType, 'application/json') !== false) {
+        $json = $this->request->getJSON();
 
-    if ($registrosinfoto) {
-        $nombreFoto = 'foto_' . $registrosinfoto[0]['ID_Acceso'] . '_' . date('Ymd_His') . '.jpg';
-        $ruta = WRITEPATH . 'uploads/fotos/' . $nombreFoto;
-    
-    // Guarda la foto en el servidor
-        if (file_put_contents($ruta, $imageData)) {
-        // Guardar solo la MAC (sin código)
-            log_message('info', "Foto recibida de MAC: $mac");
-
-            $registromodel->updateregistro($registrosinfoto[0]['ID_Acceso'],$nombreFoto);
-        
-            return $this->response->setJSON([
-                'status' => 'success',
-                'message' => 'Foto recibida y guardada',
-                'filename' => $nombreFoto,
-                'mac' => $mac,
-                'size' => strlen($imageData)
-            ]);
-        } else {
+        if (!$json || !isset($json->image)) {
             return $this->response->setJSON([
                 'status' => 'error',
-                'message' => 'Error al guardar la foto'
-            ])->setStatusCode(500);
+                'message' => 'JSON inválido o falta el campo image'
+            ])->setStatusCode(400);
+        }
+
+        $mac = isset($json->mac) ? $json->mac : 'Desconocida';
+        $imageData = base64_decode($json->image);
+
+        if ($imageData === false) {
+            return $this->response->setJSON([
+                'status' => 'error',
+                'message' => 'Error al decodificar la imagen base64'
+            ])->setStatusCode(400);
         }
     }
+    // ---------- CASO 2: Imagen enviada como binario (multipart o raw jpeg) ----------
+    elseif (strpos($contentType, 'image/jpeg') !== false || strpos($contentType, 'multipart/form-data') !== false) {
+        $imageData = file_get_contents("php://input");
 
-    // Genera un nombre único para el archivo
+        if (!$imageData) {
+            return $this->response->setJSON([
+                'status' => 'error',
+                'message' => 'No se recibió imagen binaria'
+            ])->setStatusCode(400);
+        }
 
+        // Se puede enviar MAC por cabecera HTTP personalizada
+        $mac = $this->request->getHeaderLine('X-Device-MAC') ?: 'Desconocida';
+    } else {
+        return $this->response->setJSON([
+            'status' => 'error',
+            'message' => 'Formato no soportado. Use JSON base64 o image/jpeg'
+        ])->setStatusCode(415);
+    }
+
+    // ---------- Validaciones de seguridad ----------
+    if (strlen($imageData) > 1500000) { // 1.5 MB
+        return $this->response->setJSON([
+            'status' => 'error',
+            'message' => 'La imagen excede el tamaño máximo permitido'
+        ])->setStatusCode(400);
+    }
+
+    if (@getimagesizefromstring($imageData) === false) {
+        return $this->response->setJSON([
+            'status' => 'error',
+            'message' => 'El archivo recibido no es una imagen válida'
+        ])->setStatusCode(400);
+    }
+
+    // ---------- Buscar rack correspondiente ----------
+    $esp = $espmodel->getEspand(['codevin' => $mac, 'Nivel' => 2]);
+    if (!$esp) {
+        return $this->response->setJSON([
+            'status' => 'error',
+            'message' => 'Dispositivo no registrado con MAC: ' . $mac
+        ])->setStatusCode(404);
+    }
+
+    $registrosinfoto = $registromodel->getRegisterwithoutphoto($esp[0]['ID_Rack']);
+    if (!$registrosinfoto) {
+        return $this->response->setJSON([
+            'status' => 'error',
+            'message' => 'No se encontró registro pendiente para este rack'
+        ])->setStatusCode(404);
+    }
+
+    // ---------- Guardar imagen ----------
+    $nombreFoto = 'foto_' . $registrosinfoto[0]['ID_Acceso'] . '_' . date('Ymd_His') . '.jpg';
+    $ruta = WRITEPATH . 'uploads/fotos/' . $nombreFoto;
+
+    if (file_put_contents($ruta, $imageData)) {
+        log_message('info', "📸 Foto recibida de MAC: $mac | Tamaño: " . strlen($imageData) . " bytes | Archivo: $nombreFoto");
+
+        // Actualizar registro con la foto
+        $registromodel->updateregistro($registrosinfoto[0]['ID_Acceso'], $nombreFoto);
+
+        return $this->response->setJSON([
+            'status' => 'success',
+            'message' => 'Foto recibida y guardada',
+            'filename' => $nombreFoto,
+            'mac' => $mac,
+            'size' => strlen($imageData)
+        ]);
+    } else {
+        return $this->response->setJSON([
+            'status' => 'error',
+            'message' => 'Error al guardar la foto en el servidor'
+        ])->setStatusCode(500);
+    }
 }
+
+
 }
