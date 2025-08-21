@@ -15,10 +15,10 @@ class RegistroAccesoModel extends Model
         'Accion_Tomada',
         'Archivo_Video',
         'Ubicacion_Camara',
-        'ID_Sistema',
+        'ID_Rack',
         'ID_Tarjeta'
     ];
-
+    
     public function getPaginatedRecordsByEmpresa($idEmpresa, $perPage, $offset)
     {
         return $this->db->table($this->table)
@@ -39,15 +39,14 @@ class RegistroAccesoModel extends Model
             ->countAllResults();
     }
 
-    public function getRegisterwithoutphoto($rack){
-
-        $table = $this->db->table('registro_acceso_rf');
-
-        $table->where(['Archivo_video' => null, 'ID_Sistema' => $rack]);
-
-        return $table->get()->getResultArray();
-
+    public function getRegisterwithoutphoto($rackId)
+    {
+        return $this->db->table($this->table)
+            ->where(['Archivo_Video' => null, 'ID_Rack' => $rackId])
+            ->get()
+            ->getResultArray();
     }
+    
 
     public function updateregistro($id,$archivo){
 
