@@ -16,7 +16,7 @@ class Esp32Model extends Model
             "Accion_Tomada"   => NULL,
             "Archivo_Video"   => NULL,
             "Ubicacion_Camara"=> NULL,
-            "ID_Sistema"      => 1,
+            "ID_Rack"      => 1,
             "ID_Tarjeta"      => $tarjeta[0]["ID_Tarjeta"]
         ];
 
