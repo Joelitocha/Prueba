@@ -404,6 +404,59 @@
   color: #f39c12;
   text-decoration: none;
 }
+/* Fondo oscuro */
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6); /* fondo semi-transparente */
+}
+
+/* Contenedor del cartel */
+.modal-content {
+  position: relative;
+  margin: 10% auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  width: auto;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.5);
+  animation: fadeIn 0.3s;
+}
+
+/* Imagen dentro del cartel */
+.modal-content img {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 6px;
+}
+
+/* Botón de cierre */
+.close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #e74c3c;
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from {opacity: 0; transform: scale(0.8);}
+  to {opacity: 1; transform: scale(1);}
+}
 
       }
     </style>
@@ -511,8 +564,9 @@
                       <td>
                           <?php if (!empty($registro['Archivo_Video'])): ?>
                             <img src="<?= base_url('foto/' . esc($registro['Archivo_Video'])); ?>" 
-                              alt="Foto registro" width="100" height="80"
-                              onclick="mostrarModal(this)">
+     alt="Foto registro" width="100" height="80"
+     onclick="abrirModal(this)">
+
 
                           <?php else: ?>
                               <span>Sin foto</span>
@@ -524,11 +578,14 @@
           </table>
       </div>
 
-      <!-- Modal -->
+<!-- Modal tipo cartel -->
 <div id="fotoModal" class="modal">
-  <span class="close" onclick="cerrarModal()">&times;</span>
-  <img class="modal-content" id="imagenModal">
+  <div class="modal-content">
+    <span class="close" onclick="cerrarModal()">&times;</span>
+    <img id="imagenModal" src="">
+  </div>
 </div>
+
 
             
             <?php if (isset($totalPaginas) && $totalPaginas > 1): ?>
@@ -606,27 +663,23 @@
         }
       });
 
-      // Mostrar modal con la foto en grande
-function mostrarModal(img) {
-  var modal = document.getElementById("fotoModal");
-  var modalImg = document.getElementById("imagenModal");
-
-  modal.style.display = "block";
-  modalImg.src = img.src;
+      function abrirModal(img) {
+  document.getElementById("fotoModal").style.display = "block";
+  document.getElementById("imagenModal").src = img.src;
 }
 
-// Cerrar modal
 function cerrarModal() {
   document.getElementById("fotoModal").style.display = "none";
 }
 
-// Cerrar modal al hacer click fuera de la imagen
+// Cierra al hacer clic fuera del cartel
 window.onclick = function(event) {
   var modal = document.getElementById("fotoModal");
   if (event.target == modal) {
     modal.style.display = "none";
   }
 }
+
 
     </script>
 </body>
