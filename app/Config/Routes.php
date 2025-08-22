@@ -40,6 +40,8 @@ $routes->group('', ['filter' => '\App\Filters\AuthFilter'], function($routes) {
         $routes->get('/eliminar-dispositivo/(:num)', 'DispositivoController::eliminar/$1');
         $routes->get('/racks', 'DispositivoController::rack');
 
+        $routes->get('foto/(:any)', 'FotoController::mostrar/$1');
+
     
     // Rutas para admin y supervisor (roles 5 y 6)
         $routes->get('/ver-alertas', 'ViewsControllers::VistaAlertas');

@@ -430,27 +430,37 @@
             </div>
             
             <div class="tabla-container">
-                <table class="access-table">
-                    <thead>
-                        <tr>
-                            <th>Fecha y Hora</th>
-                            <th>Resultado</th>
-                            <th>ID Tarjeta</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach($registros as $registro): ?>
-                        <tr>
-                            <td><?= esc($registro['Fecha_Hora']); ?></td>
-                            <td class="<?= $registro['Resultado'] == 1 ? 'acceso-permitido' : 'acceso-bloqueado'; ?>">
-                                <?= $registro['Resultado'] == 1 ? 'Permitido' : 'Bloqueado'; ?>
-                            </td>
-                            <td><?= esc($registro['ID_Tarjeta']); ?></td>
-                        </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-            </div>
+          <table class="access-table">
+              <thead>
+                  <tr>
+                      <th>Fecha y Hora</th>
+                      <th>Resultado</th>
+                      <th>ID Tarjeta</th>
+                      <th>Foto</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <?php foreach($registros as $registro): ?>
+                  <tr>
+                      <td><?= esc($registro['Fecha_Hora']); ?></td>
+                      <td class="<?= $registro['Resultado'] == 1 ? 'acceso-permitido' : 'acceso-bloqueado'; ?>">
+                          <?= $registro['Resultado'] == 1 ? 'Permitido' : 'Bloqueado'; ?>
+                      </td>
+                      <td><?= esc($registro['ID_Tarjeta']); ?></td>
+                      <td>
+                          <?php if (!empty($registro['Archivo_Video'])): ?>
+                              <img src="<?= base_url('foto/' . esc($registro['Archivo_Video'])); ?>" 
+                                  alt="Foto registro" width="100" height="80">
+                          <?php else: ?>
+                              <span>Sin foto</span>
+                          <?php endif; ?>
+                      </td>
+                  </tr>
+                  <?php endforeach; ?>
+              </tbody>
+          </table>
+      </div>
+
             
             <?php if (isset($totalPaginas) && $totalPaginas > 1): ?>
                 <div class="paginacion">
