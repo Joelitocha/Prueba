@@ -344,6 +344,67 @@
           padding: 8px 12px;
           font-size: 13px;
         }
+        /* Imagen en tabla */
+.access-table img {
+  cursor: pointer;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.access-table img:hover {
+  transform: scale(1.1);
+}
+
+/* Modal */
+.modal {
+  display: none; /* oculto por defecto */
+  position: fixed;
+  z-index: 2000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.85);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+.modal-content, #caption {  
+  animation-name: zoom;
+  animation-duration: 0.3s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+.close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #f39c12;
+  text-decoration: none;
+}
+
       }
     </style>
 </head>
@@ -449,8 +510,10 @@
                       <td><?= esc($registro['ID_Tarjeta']); ?></td>
                       <td>
                           <?php if (!empty($registro['Archivo_Video'])): ?>
-                              <img src="<?= base_url('foto/' . esc($registro['Archivo_Video'])); ?>" 
-                                  alt="Foto registro" width="100" height="80">
+                            <img src="<?= base_url('foto/' . esc($registro['Archivo_Video'])); ?>" 
+                              alt="Foto registro" width="100" height="80"
+                              onclick="mostrarModal(this)">
+
                           <?php else: ?>
                               <span>Sin foto</span>
                           <?php endif; ?>
@@ -460,6 +523,12 @@
               </tbody>
           </table>
       </div>
+
+      <!-- Modal -->
+<div id="fotoModal" class="modal">
+  <span class="close" onclick="cerrarModal()">&times;</span>
+  <img class="modal-content" id="imagenModal">
+</div>
 
             
             <?php if (isset($totalPaginas) && $totalPaginas > 1): ?>
@@ -536,6 +605,29 @@
           sidebar.classList.remove('active');
         }
       });
+
+      // Mostrar modal con la foto en grande
+function mostrarModal(img) {
+  var modal = document.getElementById("fotoModal");
+  var modalImg = document.getElementById("imagenModal");
+
+  modal.style.display = "block";
+  modalImg.src = img.src;
+}
+
+// Cerrar modal
+function cerrarModal() {
+  document.getElementById("fotoModal").style.display = "none";
+}
+
+// Cerrar modal al hacer click fuera de la imagen
+window.onclick = function(event) {
+  var modal = document.getElementById("fotoModal");
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
     </script>
 </body>
 </html>
