@@ -415,6 +415,36 @@
       from {opacity: 0; transform: scale(0.8);}
       to {opacity: 1; transform: scale(1);}
     }
+
+    .modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 99999 !important; /* encima de todo */
+}
+
+.modal-content {
+  position: relative;
+  margin: 5% auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+  z-index: 100000 !important;
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 500px;
+  border-radius: 6px;
+}
+
       }
     </style>
 </head>
@@ -519,28 +549,26 @@
                       </td>
                       <td><?= esc($registro['ID_Tarjeta']); ?></td>
                       <td>
-                          <?php if (!empty($registro['Archivo_Video'])): ?>
-                            <img src="<?= base_url('foto/' . esc($registro['Archivo_Video'])); ?>"alt="Foto registro" width="100" height="80"onclick="abrirModal(this)">
-                          <?php else: ?>
-                              <span>Sin foto</span>
-                          <?php endif; ?>
+                        <?php if (!empty($registro['Archivo_Video'])): ?>
+                            <img src="<?= base_url('foto/' . esc($registro['Archivo_Video'])); ?>" 
+                                 alt="Foto registro" width="100" height="80"
+                                 onclick="abrirModal(this)">
+                       <?php else: ?>
+                            <span>Sin foto</span>
+                        <?php endif; ?>
                       </td>
                   </tr>
                   <?php endforeach; ?>
               </tbody>
           </table>
       </div>
-
-  <!-- ====== MODAL ====== -->
-  <div id="fotoModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="cerrarModal()">&times;</span>
-      <img id="imagenModal" src="">
-    </div>
-  </div>
-
-
-            
+          <!-- Modal -->
+          <div id="fotoModal" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="cerrarModal()">&times;</span>
+              <img id="imagenModal" src="">
+            </div>
+          </div>
             <?php if (isset($totalPaginas) && $totalPaginas > 1): ?>
                 <div class="paginacion">
                     <?php 
