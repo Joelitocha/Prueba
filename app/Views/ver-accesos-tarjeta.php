@@ -264,6 +264,96 @@
         font-weight: bold;
       }
 
+      /* ====== TABLA ====== */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      table, th, td {
+        border: 1px solid #ddd;
+      }
+      th, td {
+        padding: 8px;
+        text-align: center;
+      }
+      td img {
+        cursor: pointer;
+        border-radius: 4px;
+        transition: transform 0.2s;
+      }
+      td img:hover {
+        transform: scale(1.05);
+      }
+
+      /* ====== MODAL MEJORADO ====== */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.9);
+        z-index: 99999 !important;
+        overflow: auto;
+      }
+
+      .modal-content {
+        position: relative;
+        margin: 40px auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        width: auto;
+        max-width: 90%;
+        text-align: center;
+        box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+        animation: fadeIn 0.3s;
+        z-index: 100000 !important;
+      }
+
+      .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .modal-title {
+        font-size: 1.5rem;
+        color: #2c3e50;
+        font-weight: bold;
+      }
+
+      .close {
+        font-size: 28px;
+        font-weight: bold;
+        color: #333;
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+      .close:hover {
+        color: #e74c3c;
+      }
+
+      .modal-image-container {
+        max-height: 70vh;
+        overflow: hidden;
+        border-radius: 6px;
+      }
+
+      .modal-image {
+        max-width: 100%;
+        max-height: 70vh;
+        object-fit: contain;
+      }
+
+      @keyframes fadeIn {
+        from {opacity: 0; transform: scale(0.9);}
+        to {opacity: 1; transform: scale(1);}
+      }
 
       /* Media Queries para responsive */
       @media (max-width: 992px) {
@@ -299,6 +389,11 @@
           padding: 10px 12px;
           font-size: 14px;
         }
+
+        .modal-content {
+          margin: 20px auto;
+          padding: 15px;
+        }
       }
 
       @media (max-width: 768px) {
@@ -312,6 +407,10 @@
         
         .admin-header h1 {
           font-size: 24px;
+        }
+
+        .modal-title {
+          font-size: 1.3rem;
         }
       }
 
@@ -344,107 +443,14 @@
           padding: 8px 12px;
           font-size: 13px;
         }
-    /* ====== TABLA DEMO ====== */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    table, th, td {
-      border: 1px solid #ddd;
-    }
-    th, td {
-      padding: 8px;
-      text-align: center;
-    }
-    td img {
-      cursor: pointer;
-      border-radius: 4px;
-      transition: transform 0.2s;
-    }
-    td img:hover {
-      transform: scale(1.05);
-    }
 
-    /* ====== MODAL ====== */
-    .modal {
-      display: none; /* oculto por defecto */
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.7);
-      z-index: 99999 !important; /* encima de todo */
-    }
+        .modal-content {
+          padding: 10px;
+        }
 
-    .modal-content {
-      position: relative;
-      margin: 5% auto;
-      background: #fff;
-      padding: 15px;
-      border-radius: 8px;
-      width: auto;
-      max-width: 600px;
-      text-align: center;
-      box-shadow: 0px 5px 20px rgba(0,0,0,0.5);
-      animation: fadeIn 0.3s;
-      z-index: 100000 !important;
-    }
-
-    .modal-content img {
-      max-width: 100%;
-      max-height: 400px;
-      border-radius: 6px;
-    }
-
-    .close {
-      position: absolute;
-      top: 5px;
-      right: 10px;
-      font-size: 28px;
-      font-weight: bold;
-      color: #333;
-      cursor: pointer;
-      z-index: 100001 !important;
-    }
-    .close:hover {
-      color: #e74c3c;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0; transform: scale(0.8);}
-      to {opacity: 1; transform: scale(1);}
-    }
-
-    .modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.8);
-  z-index: 99999 !important; /* encima de todo */
-}
-
-.modal-content {
-  position: relative;
-  margin: 5% auto;
-  background: #fff;
-  padding: 15px;
-  border-radius: 8px;
-  max-width: 600px;
-  text-align: center;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-  z-index: 100000 !important;
-}
-
-.modal-content img {
-  max-width: 100%;
-  max-height: 500px;
-  border-radius: 6px;
-}
-
+        .modal-title {
+          font-size: 1.2rem;
+        }
       }
     </style>
 </head>
@@ -530,6 +536,19 @@
                 <!-- No hay acciones de búsqueda/añadir en esta vista, por lo que no se incluye admin-actions aquí -->
             </div>
             
+            <!-- Modal para mostrar la imagen por encima de la tabla -->
+            <div id="fotoModal" class="modal">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h2 class="modal-title">Imagen de Acceso</h2>
+                  <span class="close" onclick="cerrarModal()">&times;</span>
+                </div>
+                <div class="modal-image-container">
+                  <img id="imagenModal" class="modal-image" src="">
+                </div>
+              </div>
+            </div>
+            
             <div class="tabla-container">
           <table class="access-table">
               <thead>
@@ -562,13 +581,6 @@
               </tbody>
           </table>
       </div>
-          <!-- Modal -->
-          <div id="fotoModal" class="modal">
-            <div class="modal-content">
-              <span class="close" onclick="cerrarModal()">&times;</span>
-              <img id="imagenModal" src="">
-            </div>
-          </div>
             <?php if (isset($totalPaginas) && $totalPaginas > 1): ?>
                 <div class="paginacion">
                     <?php 
@@ -644,24 +656,33 @@
         }
       });
 
-    function abrirModal(img) {
-      document.getElementById("fotoModal").style.display = "block";
-      document.getElementById("imagenModal").src = img.src;
-    }
-
-    function cerrarModal() {
-      document.getElementById("fotoModal").style.display = "none";
-    }
-
-    // Cierra si haces clic fuera del modal
-    window.onclick = function(event) {
-      var modal = document.getElementById("fotoModal");
-      if (event.target == modal) {
-        modal.style.display = "none";
+      // Funciones para el modal de imagen
+      function abrirModal(img) {
+        document.getElementById("fotoModal").style.display = "block";
+        document.getElementById("imagenModal").src = img.src;
+        
+        // Desplazar la página hacia arriba para mostrar el modal
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
-    }
 
+      function cerrarModal() {
+        document.getElementById("fotoModal").style.display = "none";
+      }
 
+      // Cierra si haces clic fuera del modal
+      window.onclick = function(event) {
+        var modal = document.getElementById("fotoModal");
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+
+      // Cierra el modal con la tecla Escape
+      document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape") {
+          cerrarModal();
+        }
+      });
     </script>
 </body>
 </html>
