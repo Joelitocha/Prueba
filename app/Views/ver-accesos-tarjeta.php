@@ -161,7 +161,6 @@
         border-radius: 10px;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         margin-bottom: 30px;
-        position: relative;
       }
 
       .admin-header {
@@ -286,7 +285,7 @@
         transform: scale(1.05);
       }
 
-      /* ====== MODAL ====== */
+      /* ====== MODAL MEJORADO ====== */
       .modal {
         display: none;
         position: fixed;
@@ -294,40 +293,66 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0,0,0,0.8);
+        background-color: rgba(0,0,0,0.9);
         z-index: 99999 !important;
+        overflow: auto;
       }
 
       .modal-content {
         position: relative;
-        margin: 5% auto;
+        margin: 40px auto;
         background: #fff;
-        padding: 15px;
+        padding: 20px;
         border-radius: 8px;
         width: auto;
-        max-width: 600px;
+        max-width: 90%;
         text-align: center;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+        animation: fadeIn 0.3s;
         z-index: 100000 !important;
       }
 
-      .modal-content img {
-        max-width: 100%;
-        max-height: 500px;
-        border-radius: 6px;
+      .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .modal-title {
+        font-size: 1.5rem;
+        color: #2c3e50;
+        font-weight: bold;
       }
 
       .close {
-        position: absolute;
-        top: 5px;
-        right: 10px;
         font-size: 28px;
         font-weight: bold;
         color: #333;
         cursor: pointer;
+        transition: color 0.3s;
       }
       .close:hover {
         color: #e74c3c;
+      }
+
+      .modal-image-container {
+        max-height: 70vh;
+        overflow: hidden;
+        border-radius: 6px;
+      }
+
+      .modal-image {
+        max-width: 100%;
+        max-height: 70vh;
+        object-fit: contain;
+      }
+
+      @keyframes fadeIn {
+        from {opacity: 0; transform: scale(0.9);}
+        to {opacity: 1; transform: scale(1);}
       }
 
       /* Media Queries para responsive */
@@ -364,6 +389,11 @@
           padding: 10px 12px;
           font-size: 14px;
         }
+
+        .modal-content {
+          margin: 20px auto;
+          padding: 15px;
+        }
       }
 
       @media (max-width: 768px) {
@@ -372,11 +402,15 @@
             overflow-x: auto;
         }
         .access-table {
-            min-width: 600px; /* Define ancho mínimo para que la tabla no se colapse demasiado */
+            min-width: 600px; /* Define un ancho mínimo para que la tabla no se colapse demasiado */
         }
         
         .admin-header h1 {
           font-size: 24px;
+        }
+
+        .modal-title {
+          font-size: 1.3rem;
         }
       }
 
@@ -409,14 +443,13 @@
           padding: 8px 12px;
           font-size: 13px;
         }
-        
+
         .modal-content {
-          margin: 10% auto;
           padding: 10px;
         }
-        
-        .modal-content img {
-          max-height: 400px;
+
+        .modal-title {
+          font-size: 1.2rem;
         }
       }
     </style>
@@ -506,8 +539,13 @@
             <!-- Modal para mostrar la imagen por encima de la tabla -->
             <div id="fotoModal" class="modal">
               <div class="modal-content">
-                <span class="close" onclick="cerrarModal()">&times;</span>
-                <img id="imagenModal" src="">
+                <div class="modal-header">
+                  <h2 class="modal-title">Imagen de Acceso</h2>
+                  <span class="close" onclick="cerrarModal()">&times;</span>
+                </div>
+                <div class="modal-image-container">
+                  <img id="imagenModal" class="modal-image" src="">
+                </div>
               </div>
             </div>
             
@@ -622,6 +660,9 @@
       function abrirModal(img) {
         document.getElementById("fotoModal").style.display = "block";
         document.getElementById("imagenModal").src = img.src;
+        
+        // Desplazar la página hacia arriba para mostrar el modal
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
 
       function cerrarModal() {
