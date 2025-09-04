@@ -334,9 +334,6 @@ $rol = $session->get("ID_Rol");
       <a href="<?php echo site_url('/dispositivo');?>" class="menu-item active">
       <i class="fas fa-network-wired"></i> Gestionar Dispositivos
       </a>
-      <a href="<?php echo site_url('/racks');?>" class="menu-item active">
-      <i class="fas fa-network-wired"></i> Gestionan de Racks
-      </a>
       <?php endif; ?>
 
       <!-- Opciones para Supervisor y Administrador -->
