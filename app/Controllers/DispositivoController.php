@@ -69,8 +69,4 @@ class DispositivoController extends BaseController
         $model->eliminar($id);
         return redirect()->to('/dispositivo');
     }
-
-    public function rack(){
-        return view('/racks');
-    }
 }
