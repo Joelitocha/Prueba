@@ -468,14 +468,18 @@ $rol = $session->get("ID_Rol");
                 <div class="rack-info">
                   <strong>Estado:</strong>
                   <?php
-                    // Soporta 'estado' en texto o 'Estado' numérico desde DB
+                    // Detectar estado
                     $estadoTexto = $rack['estado'] ?? null;
                     if ($estadoTexto === null) {
                       $estadoNum = $rack['Estado'] ?? null;
                       $estadoTexto = ($estadoNum === null) ? 'Activo' : (($estadoNum == 1) ? 'Activo' : 'Inactivo');
                     }
-                    echo esc($estadoTexto);
+                    // Asignar color
+                    $color = ($estadoTexto === 'Activo') ? 'green' : 'red';
                   ?>
+                  <span style="color: <?= $color ?>; font-weight: bold;">
+                    <?= esc($estadoTexto) ?>
+                  </span>
                 </div>
                 <div style="margin-top: 15px;">
                   <a class="btn-action btn-view" href="<?= site_url('dispositivo/'.$rack['ID_Rack']) ?>" onclick="event.stopPropagation();">
