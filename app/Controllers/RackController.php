@@ -21,11 +21,10 @@ class RackController extends BaseController
     {
         $model = new RackModel();
 
-        $nombre    = $this->request->getPost('nombre');
         $ubicacion = $this->request->getPost('ubicacion');
         $estado    = $this->request->getPost('estado');
 
-        if ($model->insertRack($nombre, $ubicacion, $estado)) {
+        if ($model->insertRack($ubicacion, $estado)) {
             return redirect()->to('/dispositivo'); // Volver a la lista de racks
         } else {
             echo "Error al guardar el rack.";

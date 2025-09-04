@@ -28,9 +28,7 @@ $rol = $session->get("ID_Rol");
     <h1>Agregar Rack Nuevo</h1>
 
     <form action="<?= site_url('guardar-rack') ?>" method="post">
-        <label for="nombre">Nombre del Rack</label>
-        <input type="text" name="nombre" id="nombre" required placeholder="Ej: Rack Puerto Madero">
-
+    
         <label for="ubicacion">Ubicación</label>
         <input type="text" name="ubicacion" id="ubicacion" required placeholder="Ej: Puerto Madero">
 
