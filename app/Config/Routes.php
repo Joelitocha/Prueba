@@ -38,7 +38,6 @@ $routes->group('', ['filter' => '\App\Filters\AuthFilter'], function($routes) {
         $routes->get('/configurar-dispositivo/(:num)', 'DispositivoController::configurar/$1');
         $routes->post('/actualizar-dispositivo/(:num)', 'DispositivoController::actualizar/$1');
         $routes->get('/eliminar-dispositivo/(:num)', 'DispositivoController::eliminar/$1');
-        $routes->get('/racks', 'DispositivoController::rack');
 
         $routes->get('foto/(:any)', 'FotoController::mostrar/$1');
 
