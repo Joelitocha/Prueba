@@ -12,10 +12,9 @@ class RackModel extends Model
 
 
         // Función para insertar un rack
-        public function insertRack($nombre, $ubicacion, $estado)
+        public function insertRack($ubicacion, $estado)
         {
             $data = [
-                'nombre'    => $nombre,
                 'ubicacion' => $ubicacion,
                 'estado'    => $estado
             ];
