@@ -271,6 +271,14 @@ $rol = $session->get("ID_Rol");
         color: #2c3e50;
       }
 
+      /* Botones en tarjetas de rack */
+      .rack-actions {
+        margin-top: 15px;
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
       /* Buscador de racks */
       .search-container {
         margin: 10px 0 20px;
@@ -315,6 +323,7 @@ $rol = $session->get("ID_Rol");
         .sidebar { width: 220px; }
         table { display: block; overflow-x: auto; }
         .btn-action { margin-bottom: 5px; }
+        .rack-actions { flex-direction: column; }
       }
     </style>
   </head>
@@ -481,9 +490,12 @@ $rol = $session->get("ID_Rol");
                     <?= esc($estadoTexto) ?>
                   </span>
                 </div>
-                <div style="margin-top: 15px;">
+                <div class="rack-actions">
                   <a class="btn-action btn-view" href="<?= site_url('dispositivo/'.$rack['ID_Rack']) ?>" onclick="event.stopPropagation();">
                     <i class="fas fa-eye"></i> Ver dispositivos
+                  </a>
+                  <a class="btn-action btn-edit" href="<?= site_url('configurar-rack/'.$rack['ID_Rack']) ?>" onclick="event.stopPropagation();">
+                    <i class="fas fa-edit"></i> Editar
                   </a>
                 </div>
               </div>
@@ -514,7 +526,7 @@ $rol = $session->get("ID_Rol");
         sidebar.classList.toggle('active');
       });
 
-      // Cerrar sidebar al hacer clic en un enlace (en móviles)
+      // Cerrar sidebar al hacer clic en enlace (en móviles)
       const menuItems = document.querySelectorAll('.sidebar a');
       menuItems.forEach(item => {
         item.addEventListener('click', () => {
@@ -538,31 +550,31 @@ $rol = $session->get("ID_Rol");
         }
       });
 
-// Filtrado en tiempo real para las tarjetas de racks
-const barraBusquedaRack = document.getElementById('searchRack');
-const racks = document.querySelectorAll('.rack-card');
+      // Filtrado en tiempo real para las tarjetas de racks
+      const barraBusquedaRack = document.getElementById('searchRack');
+      const racks = document.querySelectorAll('.rack-card');
 
-barraBusquedaRack.addEventListener('input', function() {
-  const valorBusqueda = barraBusquedaRack.value.toLowerCase();
+      barraBusquedaRack.addEventListener('input', function() {
+        const valorBusqueda = barraBusquedaRack.value.toLowerCase();
 
-  racks.forEach(rack => {
-    const nombreRack = rack.querySelector('h3').innerText.toLowerCase();
-    const ubicacionRack = rack.querySelector('.rack-info').innerText.toLowerCase();
-    const estadoRack = rack.querySelector('.rack-info span') 
-      ? rack.querySelector('.rack-info span').innerText.toLowerCase() 
-      : "";
+        racks.forEach(rack => {
+          const nombreRack = rack.querySelector('h3').innerText.toLowerCase();
+          const ubicacionRack = rack.querySelector('.rack-info').innerText.toLowerCase();
+          const estadoRack = rack.querySelector('.rack-info span') 
+            ? rack.querySelector('.rack-info span').innerText.toLowerCase() 
+            : "";
 
-    if (
-      nombreRack.includes(valorBusqueda) || 
-      ubicacionRack.includes(valorBusqueda) || 
-      estadoRack.includes(valorBusqueda)
-    ) {
-      rack.style.display = '';
-    } else {
-      rack.style.display = 'none';
-    }
-  });
-});
+          if (
+            nombreRack.includes(valorBusqueda) || 
+            ubicacionRack.includes(valorBusqueda) || 
+            estadoRack.includes(valorBusqueda)
+          ) {
+            rack.style.display = '';
+          } else {
+            rack.style.display = 'none';
+          }
+        });
+      });
     </script>
 
     <?php
