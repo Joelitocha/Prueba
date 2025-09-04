@@ -2,7 +2,7 @@
 $session = session();
 $rol = $session->get("ID_Rol");
 ?>
- 
+
 <?php if ($rol != 5): ?>
   <p>No tenés permiso para ver esta página.</p>
   <?php return; ?>
@@ -201,29 +201,16 @@ $rol = $session->get("ID_Rol");
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       }
 
-      .btn-edit {
-        background-color: #f39c12;
-      }
-
-      .btn-delete {
-        background-color: #e74c3c;
-      }
-
+      .btn-edit { background-color: #f39c12; }
+      .btn-delete { background-color: #e74c3c; }
       .btn-add {
         background-color: #2ecc71;
         padding: 10px 20px;
         margin-top: 10px;
         display: inline-flex;
       }
-
-      .btn-view {
-        background-color: #3498db;
-      }
-
-      .btn-back {
-        background-color: #95a5a6;
-        margin-bottom: 20px;
-      }
+      .btn-view { background-color: #3498db; }
+      .btn-back { background-color: #95a5a6; margin-bottom: 20px; }
 
       .btn-action:hover {
         transform: translateY(-2px);
@@ -284,69 +271,50 @@ $rol = $session->get("ID_Rol");
         color: #2c3e50;
       }
 
+      /* Buscador de racks */
+      .search-container {
+        margin: 10px 0 20px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .search-input {
+        padding: 10px 12px;
+        width: 100%;
+        max-width: 400px;
+        border: 1px solid #dfe6e9;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        font-size: 14px;
+        outline: none;
+      }
+
+      .search-input:focus {
+        border-color: #3498db;
+        box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+      }
+
       /* Media Queries para responsive */
       @media (max-width: 992px) {
-        .sidebar {
-          transform: translateX(-100%);
-        }
-        
-        .sidebar.active {
-          transform: translateX(0);
-        }
-        
-        .content {
-          margin-left: 0;
-        }
-        
-        .menu-toggle {
-          display: block;
-        }
+        .sidebar { transform: translateX(-100%); }
+        .sidebar.active { transform: translateX(0); }
+        .content { margin-left: 0; }
+        .menu-toggle { display: block; }
       }
 
       @media (max-width: 768px) {
-        .content {
-          padding: 20px;
-        }
-        
-        th, td {
-          padding: 10px;
-          font-size: 14px;
-        }
-
-        .racks-container {
-          grid-template-columns: 1fr;
-        }
-
-        .btn-action {
-          padding: 6px 10px;
-          font-size: 13px;
-          margin-right: 5px;
-        }
+        .content { padding: 20px; }
+        th, td { padding: 10px; font-size: 14px; }
+        .racks-container { grid-template-columns: 1fr; }
+        .btn-action { padding: 6px 10px; font-size: 13px; margin-right: 5px; }
       }
 
       @media (max-width: 576px) {
-        .sidebar {
-          width: 220px;
-        }
-        
-        table {
-          display: block;
-          overflow-x: auto;
-        }
-        
-        .btn-action {
-          margin-bottom: 5px;
-        }
-        .search-input {
-            padding: 10px;
-            width: 100%;
-            max-width: 400px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            font-size: 14px;
-        }
+        .sidebar { width: 220px; }
+        table { display: block; overflow-x: auto; }
+        .btn-action { margin-bottom: 5px; }
       }
     </style>
   </head>
@@ -451,10 +419,10 @@ $rol = $session->get("ID_Rol");
                 <td><?= esc($d['nombre']) ?></td>
                 <td><?= esc($d['codevin']) ?></td>
                 <td><?= esc($d['estado']) ?></td>
-                <td><?= esc ($d['creado_en']) ?></td>
-                <td><?= esc ($d['actualizado_en']) ?></td>
-                <td><?= esc ($d['nombre_ip']) ?></td>
-                <th><?= esc ($d['contraseña_ip']) ?></th>
+                <td><?= esc($d['creado_en']) ?></td>
+                <td><?= esc($d['actualizado_en']) ?></td>
+                <td><?= esc($d['nombre_ip']) ?></td>
+                <td><?= esc($d['contraseña_ip']) ?></td>
                 <td>
                   <a class="btn-action btn-edit" href="<?= site_url('configurar-dispositivo/'.$d['ID_Sistema']) ?>">
                     <i class="fas fa-edit"></i> Editar
@@ -480,19 +448,37 @@ $rol = $session->get("ID_Rol");
         <!-- Vista de listado de racks -->
         <h1>Lista de Racks</h1>
 
-        <!-- Barra de búsqueda -->
-        <input type="text" placeholder="Buscar rack por nombre o ubicación..." class="search-input" id="searchRack">
+        <!-- Barra de búsqueda de racks -->
+        <div class="search-container">
+          <input type="text" placeholder="Buscar rack por nombre o ubicación..." class="search-input" id="searchRack">
+        </div>
         
         <?php if (!empty($racks)): ?>
-          <div class="racks-container">
+          <div class="racks-container" id="racksContainer">
             <?php foreach ($racks as $rack): ?>
               <div class="rack-card" onclick="window.location.href='<?= site_url('dispositivo/'.$rack['ID_Rack']) ?>'">
-                <h3><?= esc($rack['nombre']) ?></h3>
-                <div class="rack-info"><strong>Ubicación:</strong> <?= esc($rack['Ubicacion'] ?? 'No especificada') ?></div>
-                <div class="rack-info"><strong>Dispositivos:</strong> <?= esc($rack['cantidad_dispositivos'] ?? 0) ?></div>
-                <div class="rack-info"><strong>Estado:</strong> <?= esc($rack['estado'] ?? 'Activo') ?></div>
+                <h3><?= esc($rack['nombre'] ?? ('Rack ' . $rack['ID_Rack'])) ?></h3>
+                <div class="rack-info">
+                  <strong>Ubicación:</strong>
+                  <?= esc(($rack['ubicacion'] ?? null) ?? ($rack['Ubicacion'] ?? 'No especificada')) ?>
+                </div>
+                <div class="rack-info">
+                  <strong>Dispositivos:</strong> <?= esc($rack['cantidad_dispositivos'] ?? 0) ?>
+                </div>
+                <div class="rack-info">
+                  <strong>Estado:</strong>
+                  <?php
+                    // Soporta 'estado' en texto o 'Estado' numérico desde DB
+                    $estadoTexto = $rack['estado'] ?? null;
+                    if ($estadoTexto === null) {
+                      $estadoNum = $rack['Estado'] ?? null;
+                      $estadoTexto = ($estadoNum === null) ? 'Activo' : (($estadoNum == 1) ? 'Activo' : 'Inactivo');
+                    }
+                    echo esc($estadoTexto);
+                  ?>
+                </div>
                 <div style="margin-top: 15px;">
-                  <a class="btn-action btn-view" href="<?= site_url('dispositivo/'.$rack['ID_Rack']) ?>">
+                  <a class="btn-action btn-view" href="<?= site_url('dispositivo/'.$rack['ID_Rack']) ?>" onclick="event.stopPropagation();">
                     <i class="fas fa-eye"></i> Ver dispositivos
                   </a>
                 </div>
@@ -516,25 +502,6 @@ $rol = $session->get("ID_Rol");
     </div>
 
     <script>
-        // Filtrado en tiempo real para las tarjetas de racks
-        const barraBusquedaRack = document.getElementById('searchRack');
-        const racks = document.querySelectorAll('.rack-card');
-
-        barraBusquedaRack.addEventListener('input', function() {
-            const valorBusqueda = barraBusquedaRack.value.toLowerCase();
-
-            racks.forEach(rack => {
-                const nombreRack = rack.querySelector('h3').innerText.toLowerCase();
-                const infoRack = rack.innerText.toLowerCase(); // busca en toda la tarjeta
-
-                if (nombreRack.includes(valorBusqueda) || infoRack.includes(valorBusqueda)) {
-                    rack.style.display = '';
-                } else {
-                    rack.style.display = 'none';
-                }
-            });
-        });
-
       // Mostrar/ocultar sidebar en móviles
       const menuToggle = document.getElementById('menuToggle');
       const sidebar = document.getElementById('sidebar');
@@ -566,13 +533,34 @@ $rol = $session->get("ID_Rol");
           sidebar.classList.remove('active');
         }
       });
+
+      // ========= Filtrado en tiempo real para las tarjetas de racks =========
+      (function(){
+        const barraBusqueda = document.getElementById('searchRack');
+        const contenedor = document.getElementById('racksContainer');
+        if (!barraBusqueda || !contenedor) return;
+
+        const tarjetas = Array.from(contenedor.querySelectorAll('.rack-card'));
+
+        barraBusqueda.addEventListener('input', function() {
+          const q = barraBusqueda.value.trim().toLowerCase();
+
+          tarjetas.forEach(card => {
+            const titulo = card.querySelector('h3')?.innerText.toLowerCase() ?? '';
+            const textoCard = card.innerText.toLowerCase(); // incluye ubicación y estado
+            const match = titulo.includes(q) || textoCard.includes(q);
+            card.style.display = match ? '' : 'none';
+          });
+        });
+      })();
+      // =========================================================================
     </script>
 
     <?php
       if (isset($error)) {
-        echo '<div class="mensaje error">'.$error.'</div>';
+        echo '<div class="mensaje error">'.esc($error).'</div>';
       } elseif (isset($success)) {
-        echo '<div class="mensaje success">'.$success.'</div>';
+        echo '<div class="mensaje success">'.esc($success).'</div>';
       }
     ?>
   </body>
