@@ -155,6 +155,12 @@ $rol = $session->get("ID_Rol");
         font-weight: 600;
       }
 
+      h2 {
+        color: #3498db;
+        margin: 25px 0 15px;
+        font-weight: 500;
+      }
+
       table {
         width: 100%;
         border-collapse: collapse;
@@ -210,6 +216,15 @@ $rol = $session->get("ID_Rol");
         display: inline-flex;
       }
 
+      .btn-view {
+        background-color: #3498db;
+      }
+
+      .btn-back {
+        background-color: #95a5a6;
+        margin-bottom: 20px;
+      }
+
       .btn-action:hover {
         transform: translateY(-2px);
         box-shadow: 0 4px 8px rgba(0,0,0,0.15);
@@ -222,12 +237,51 @@ $rol = $session->get("ID_Rol");
       }
 
       /* Mensajes */
-      .no-devices {
+      .no-devices, .no-racks {
         background-color: white;
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         margin-bottom: 20px;
+      }
+
+      /* Estilos para las tarjetas de racks */
+      .racks-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      .rack-card {
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+
+      .rack-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .rack-card h3 {
+        color: #2c3e50;
+        margin-bottom: 10px;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 10px;
+      }
+
+      .rack-info {
+        color: #7f8c8d;
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+
+      .rack-info strong {
+        color: #2c3e50;
       }
 
       /* Media Queries para responsive */
@@ -257,6 +311,10 @@ $rol = $session->get("ID_Rol");
         th, td {
           padding: 10px;
           font-size: 14px;
+        }
+
+        .racks-container {
+          grid-template-columns: 1fr;
         }
 
         .btn-action {
@@ -358,49 +416,90 @@ $rol = $session->get("ID_Rol");
  
     <!-- Contenido principal -->
     <div class="content">
-      <h1>Lista de Dispositivos</h1>
-
-      <?php if (!empty($dispositivos)): ?>
-        <table>
-          <tr>
-            <th>Nombre</th>
-            <th>Código ESP</th>
-            <th>Estado</th>
-            <th>Fecha de creación</th>
-            <th>Última actualización</th>
-            <th>Wifi</th>
-            <th>Contraseña</th>
-            <th>Acciones</th>
-          </tr>
-          <?php foreach ($dispositivos as $d): ?>
+      <?php if (isset($rack_seleccionado) && $rack_seleccionado): ?>
+        <!-- Vista de dispositivos de un rack específico -->
+        <a class="btn-action btn-back" href="<?= site_url('dispositivo') ?>">
+          <i class="fas fa-arrow-left"></i> Volver a lista de racks
+        </a>
+        
+        <h1>Dispositivos del Rack: <?= esc($rack_seleccionado['nombre']) ?></h1>
+        
+        <?php if (!empty($dispositivos)): ?>
+          <table>
             <tr>
-              <td><?= esc($d['nombre']) ?></td>
-              <td><?= esc($d['codevin']) ?></td>
-              <td><?= esc($d['estado']) ?></td>
-              <td><?= esc ($d['creado_en']) ?></td>
-              <td><?= esc ($d['actualizado_en']) ?></td>
-              <td><?= esc ($d['nombre_ip']) ?></td>
-              <th><?= esc ($d['contraseña_ip']) ?></th>
-              <td>
-                <a class="btn-action btn-edit" href="<?= site_url('configurar-dispositivo/'.$d['ID_Sistema']) ?>">
-                  <i class="fas fa-edit"></i> Editar
-                </a>
-                <a class="btn-action btn-delete" href="<?= site_url('eliminar-dispositivo/'.$d['ID_Sistema']) ?>">
-                  <i class="fas fa-trash"></i> Eliminar
-                </a>
-              </td>
+              <th>Nombre</th>
+              <th>Código ESP</th>
+              <th>Estado</th>
+              <th>Fecha de creación</th>
+              <th>Última actualización</th>
+              <th>Wifi</th>
+              <th>Contraseña</th>
+              <th>Acciones</th>
             </tr>
-          <?php endforeach; ?>
-        </table>
-      <?php else: ?>
-        <div class="no-devices">
-          <p>No hay dispositivos registrados todavía.</p>
-        </div>
-      <?php endif; ?>
+            <?php foreach ($dispositivos as $d): ?>
+              <tr>
+                <td><?= esc($d['nombre']) ?></td>
+                <td><?= esc($d['codevin']) ?></td>
+                <td><?= esc($d['estado']) ?></td>
+                <td><?= esc ($d['creado_en']) ?></td>
+                <td><?= esc ($d['actualizado_en']) ?></td>
+                <td><?= esc ($d['nombre_ip']) ?></td>
+                <th><?= esc ($d['contraseña_ip']) ?></th>
+                <td>
+                  <a class="btn-action btn-edit" href="<?= site_url('configurar-dispositivo/'.$d['ID_Sistema']) ?>">
+                    <i class="fas fa-edit"></i> Editar
+                  </a>
+                  <a class="btn-action btn-delete" href="<?= site_url('eliminar-dispositivo/'.$d['ID_Sistema']) ?>">
+                    <i class="fas fa-trash"></i> Eliminar
+                  </a>
+                </td>
+              </tr>
+            <?php endforeach; ?>
+          </table>
+        <?php else: ?>
+          <div class="no-devices">
+            <p>No hay dispositivos en este rack.</p>
+          </div>
+        <?php endif; ?>
 
-      <a class="btn-action btn-add" href="<?= site_url('configurar-dispositivo') ?>">
-        <i class="fas fa-plus"></i> Agregar Dispositivo
-      </a>
+        <a class="btn-action btn-add" href="<?= site_url('configurar-dispositivo') ?>">
+          <i class="fas fa-plus"></i> Agregar Dispositivo
+        </a>
+
+      <?php else: ?>
+        <!-- Vista de listado de racks -->
+        <h1>Lista de Racks</h1>
+        
+        <?php if (!empty($racks)): ?>
+          <div class="racks-container">
+            <?php foreach ($racks as $rack): ?>
+              <div class="rack-card" onclick="window.location.href='<?= site_url('dispositivo/'.$rack['ID_Rack']) ?>'">
+                <h3><?= esc($rack['nombre']) ?></h3>
+                <div class="rack-info"><strong>Ubicación:</strong> <?= esc($rack['ubicacion'] ?? 'No especificada') ?></div>
+                <div class="rack-info"><strong>Dispositivos:</strong> <?= esc($rack['cantidad_dispositivos'] ?? 0) ?></div>
+                <div class="rack-info"><strong>Estado:</strong> <?= esc($rack['estado'] ?? 'Activo') ?></div>
+                <div style="margin-top: 15px;">
+                  <a class="btn-action btn-view" href="<?= site_url('dispositivo/'.$rack['ID_Rack']) ?>">
+                    <i class="fas fa-eye"></i> Ver dispositivos
+                  </a>
+                </div>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        <?php else: ?>
+          <div class="no-racks">
+            <p>No hay racks registrados todavía.</p>
+          </div>
+        <?php endif; ?>
+
+        <a class="btn-action btn-add" href="<?= site_url('configurar-rack') ?>">
+          <i class="fas fa-plus"></i> Agregar Rack
+        </a>
+        
+        <a class="btn-action btn-add" href="<?= site_url('configurar-dispositivo') ?>" style="background-color: #3498db;">
+          <i class="fas fa-plus"></i> Agregar Dispositivo
+        </a>
+      <?php endif; ?>
     </div>
 
     <script>
