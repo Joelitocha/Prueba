@@ -538,26 +538,31 @@ $rol = $session->get("ID_Rol");
         }
       });
 
-      // ========= Filtrado en tiempo real para las tarjetas de racks =========
-      (function(){
-        const barraBusqueda = document.getElementById('searchRack');
-        const contenedor = document.getElementById('racksContainer');
-        if (!barraBusqueda || !contenedor) return;
+// Filtrado en tiempo real para las tarjetas de racks
+const barraBusquedaRack = document.getElementById('searchRack');
+const racks = document.querySelectorAll('.rack-card');
 
-        const tarjetas = Array.from(contenedor.querySelectorAll('.rack-card'));
+barraBusquedaRack.addEventListener('input', function() {
+  const valorBusqueda = barraBusquedaRack.value.toLowerCase();
 
-        barraBusqueda.addEventListener('input', function() {
-          const q = barraBusqueda.value.trim().toLowerCase();
+  racks.forEach(rack => {
+    const nombreRack = rack.querySelector('h3').innerText.toLowerCase();
+    const ubicacionRack = rack.querySelector('.rack-info').innerText.toLowerCase();
+    const estadoRack = rack.querySelector('.rack-info span') 
+      ? rack.querySelector('.rack-info span').innerText.toLowerCase() 
+      : "";
 
-          tarjetas.forEach(card => {
-            const titulo = card.querySelector('h3')?.innerText.toLowerCase() ?? '';
-            const textoCard = card.innerText.toLowerCase(); // incluye ubicación y estado
-            const match = titulo.includes(q) || textoCard.includes(q);
-            card.style.display = match ? '' : 'none';
-          });
-        });
-      })();
-      // =========================================================================
+    if (
+      nombreRack.includes(valorBusqueda) || 
+      ubicacionRack.includes(valorBusqueda) || 
+      estadoRack.includes(valorBusqueda)
+    ) {
+      rack.style.display = '';
+    } else {
+      rack.style.display = 'none';
+    }
+  });
+});
     </script>
 
     <?php
