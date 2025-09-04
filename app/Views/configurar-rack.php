@@ -158,12 +158,18 @@ $rol = $session->get("ID_Rol");
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
       }
 
+      .form-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+      }
+
       .form-header h1 {
         font-size: 32px;
         color: #2c3e50;
-        margin-bottom: 30px;
         font-weight: 600;
-        text-align: center;
       }
 
       .form-group {
@@ -221,8 +227,36 @@ $rol = $session->get("ID_Rol");
         margin-right: 8px;
       }
 
+      .btn-back {
+        background-color: #95a5a6;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+      }
+
+      .btn-back:hover {
+        background-color: #7f8c8d;
+      }
+
+      .btn-back i {
+        margin-right: 8px;
+      }
+
       .btn-container {
-        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        flex-wrap: wrap;
+        gap: 10px;
       }
 
       /* Mensajes de error/éxito */
@@ -287,6 +321,12 @@ $rol = $session->get("ID_Rol");
           margin: 15px;
         }
         
+        .form-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 15px;
+        }
+        
         .form-header h1 {
           font-size: 26px;
         }
@@ -315,8 +355,12 @@ $rol = $session->get("ID_Rol");
           font-size: 22px;
         }
 
-        .btn-submit {
+        .btn-submit, .btn-back {
           width: 100%;
+        }
+        
+        .btn-container {
+          flex-direction: column;
         }
       }
     </style>
@@ -401,9 +445,6 @@ $rol = $session->get("ID_Rol");
     <!-- Contenido principal -->
     <div class="content">
       <div class="form-container">
-        <div class="form-header">
-          <h1>Agregar Rack Nuevo</h1>
-        </div>
         
         <form action="<?= site_url('guardar-rack') ?>" method="post">
           <div class="form-group">
@@ -425,6 +466,9 @@ $rol = $session->get("ID_Rol");
           </div>
           
           <div class="btn-container">
+            <a href="<?php echo site_url('/dispositivo'); ?>" class="btn-back">
+              <i class="fas fa-arrow-left"></i> Volver
+            </a>
             <button type="submit" class="btn-submit"><i class="fas fa-plus"></i> Agregar Rack</button>
           </div>
         </form>
