@@ -456,20 +456,21 @@
             <?php if (isset($alertas) && !empty($alertas)): ?>
                 <ul class="alertas-list">
                     <?php foreach ($alertas as $alerta): ?>
-                        <li class="alerta-item">
-                            <div class="alerta-content">
-                                <div class="alerta-icon">
-                                    <i class="fas fa-exclamation-circle"></i>
-                                </div>
-                                <div class="alerta-text">
-                                    <div class="alerta-title"><?= esc($alerta['titulo']); ?></div>
-                                    <div class="alerta-details">
-                                        <span><?= esc($alerta['descripcion']); ?></span>
-                                        <span class="alerta-time"><?= date('d/m/Y H:i', strtotime($alerta['fecha'])); ?></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                      <li class="alerta-item" data-tipo="<?= esc($alerta['tipo']); ?>">
+    <div class="alerta-content">
+        <div class="alerta-icon">
+            <i class="fas fa-exclamation-circle"></i>
+        </div>
+        <div class="alerta-text">
+            <div class="alerta-title"><?= esc($alerta['titulo']); ?></div>
+            <div class="alerta-details">
+                <span><?= esc($alerta['descripcion']); ?></span>
+                <span class="alerta-time"><?= date('d/m/Y H:i', strtotime($alerta['fecha'])); ?></span>
+            </div>
+        </div>
+    </div>
+</li>
+
                     <?php endforeach; ?>
                 </ul>
             <?php else: ?>
@@ -481,6 +482,28 @@
     </div>
 
     <script>
+      const botonesFiltro = document.querySelectorAll('.filtro-btn');
+const alertasItems = document.querySelectorAll('.alerta-item');
+
+botonesFiltro.forEach(boton => {
+    boton.addEventListener('click', () => {
+        // Removemos la clase active de todos los botones
+        botonesFiltro.forEach(b => b.classList.remove('active'));
+        // Activamos el que se clickeó
+        boton.classList.add('active');
+
+        const tipoSeleccionado = boton.getAttribute('data-tipo');
+
+        alertasItems.forEach(item => {
+            if (tipoSeleccionado === 'todas' || item.getAttribute('data-tipo') === tipoSeleccionado) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+});
+
       // Mostrar/ocultar sidebar en móviles
       const menuToggle = document.getElementById('menuToggle');
       const sidebar = document.getElementById('sidebar');
