@@ -370,13 +370,6 @@ $rol = $session->get("ID_Rol");
     <button class="menu-toggle" id="menuToggle">
       <i class="fas fa-bars"></i> Menú
     </button>
-
-<<<<<<< HEAD
-    <form action="<?= site_url('guardar-rack') ?>" method="post">
-    
-        <label for="ubicacion">Ubicación</label>
-        <input type="text" name="ubicacion" id="ubicacion" required placeholder="Ej: Puerto Madero">
-=======
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
       <div class="logo">
@@ -427,7 +420,6 @@ $rol = $session->get("ID_Rol");
         <i class="fas fa-server"></i> Agregar Rack
       </a>
       <?php endif; ?>
->>>>>>> 558e9a66069e13ef72e0f008dd9014e84afb7ab7
 
       <!-- Opciones para Supervisor y Administrador -->
       <?php if ($rol == 5 || $rol == 6): ?>
