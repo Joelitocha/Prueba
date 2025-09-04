@@ -19,7 +19,7 @@ class RackModel extends Model
                 'estado'    => $estado
             ];
     
-            return $this->insert($data);
+            return $this->db->table('rack')->insert($data);
         }
     
         // Función para obtener racks con dispositivos contados (opcional)
