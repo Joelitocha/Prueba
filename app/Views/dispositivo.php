@@ -494,7 +494,7 @@ $rol = $session->get("ID_Rol");
                   <a class="btn-action btn-view" href="<?= site_url('dispositivo/'.$rack['ID_Rack']) ?>" onclick="event.stopPropagation();">
                     <i class="fas fa-eye"></i> Ver dispositivos
                   </a>
-                  <a class="btn-action btn-edit" href="<?= site_url('configurar-rack/'.$rack['ID_Rack']) ?>" onclick="event.stopPropagation();">
+                  <a class="btn-action btn-edit" href="<?= site_url('editar-rack/'.$rack['ID_Rack']) ?>" onclick="event.stopPropagation();">
                     <i class="fas fa-edit"></i> Editar
                   </a>
                 </div>
