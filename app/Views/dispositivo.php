@@ -337,6 +337,16 @@ $rol = $session->get("ID_Rol");
         .btn-action {
           margin-bottom: 5px;
         }
+        .search-input {
+            padding: 10px;
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-size: 14px;
+        }
       }
     </style>
   </head>
@@ -469,6 +479,9 @@ $rol = $session->get("ID_Rol");
       <?php else: ?>
         <!-- Vista de listado de racks -->
         <h1>Lista de Racks</h1>
+
+        <!-- Barra de búsqueda -->
+        <input type="text" placeholder="Buscar rack por nombre o ubicación..." class="search-input" id="searchRack">
         
         <?php if (!empty($racks)): ?>
           <div class="racks-container">
@@ -503,6 +516,25 @@ $rol = $session->get("ID_Rol");
     </div>
 
     <script>
+        // Filtrado en tiempo real para las tarjetas de racks
+        const barraBusquedaRack = document.getElementById('searchRack');
+        const racks = document.querySelectorAll('.rack-card');
+
+        barraBusquedaRack.addEventListener('input', function() {
+            const valorBusqueda = barraBusquedaRack.value.toLowerCase();
+
+            racks.forEach(rack => {
+                const nombreRack = rack.querySelector('h3').innerText.toLowerCase();
+                const infoRack = rack.innerText.toLowerCase(); // busca en toda la tarjeta
+
+                if (nombreRack.includes(valorBusqueda) || infoRack.includes(valorBusqueda)) {
+                    rack.style.display = '';
+                } else {
+                    rack.style.display = 'none';
+                }
+            });
+        });
+
       // Mostrar/ocultar sidebar en móviles
       const menuToggle = document.getElementById('menuToggle');
       const sidebar = document.getElementById('sidebar');
