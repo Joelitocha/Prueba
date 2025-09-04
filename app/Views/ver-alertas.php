@@ -337,7 +337,32 @@
         .admin-header h1 {
           font-size: 20px;
         }
-      }
+        .alerta-filtros {
+          margin-bottom: 20px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+
+        .filtro-btn {
+            padding: 8px 15px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .filtro-btn:hover {
+            background-color: #2980b9;
+        }
+
+        .filtro-btn.active {
+            background-color: #2ecc71;
+        }
+}
     </style>
 </head>
 <body>
@@ -418,6 +443,13 @@
     <div class="content">
         <div class="admin-container">
             <div class="admin-header">
+            <div class="alerta-filtros">
+              <button class="filtro-btn active" data-tipo="todas">Todas</button>
+              <button class="filtro-btn" data-tipo="hardware">Hardware</button>
+              <button class="filtro-btn" data-tipo="software">Software</button>
+              <button class="filtro-btn" data-tipo="acceso">Acceso</button>
+              <button class="filtro-btn" data-tipo="sistema">Sistema</button>
+            </div>
                 <h1>Alertas del Sistema</h1>
             </div>
             
