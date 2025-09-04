@@ -538,44 +538,31 @@ $rol = $session->get("ID_Rol");
         }
       });
 
-      // Filtrado en tiempo real usando data-attributes (evita confusiones con 1/0)
-      (function(){
-        const barra = document.getElementById('searchRack');
-        const contenedor = document.getElementById('racksContainer');
-        const resultsMeta = document.getElementById('resultsMeta');
-        const noResultsBox = document.getElementById('noResults');
-        if (!barra || !contenedor) return;
+// Filtrado en tiempo real para las tarjetas de racks
+const barraBusquedaRack = document.getElementById('searchRack');
+const racks = document.querySelectorAll('.rack-card');
 
-        const tarjetas = Array.from(contenedor.querySelectorAll('.rack-card'));
+barraBusquedaRack.addEventListener('input', function() {
+  const valorBusqueda = barraBusquedaRack.value.toLowerCase();
 
-        function updateMeta(count, total) {
-          if (resultsMeta) resultsMeta.innerText = `${count} de ${total} mostrado(s)`;
-        }
+  racks.forEach(rack => {
+    const nombreRack = rack.querySelector('h3').innerText.toLowerCase();
+    const ubicacionRack = rack.querySelector('.rack-info').innerText.toLowerCase();
+    const estadoRack = rack.querySelector('.rack-info span') 
+      ? rack.querySelector('.rack-info span').innerText.toLowerCase() 
+      : "";
 
-        // init meta
-        updateMeta(tarjetas.length, tarjetas.length);
-
-        barra.addEventListener('input', function() {
-          const q = barra.value.trim().toLowerCase();
-
-          let visible = 0;
-          tarjetas.forEach(card => {
-            const nombre = (card.dataset.nombre || '').toLowerCase();
-            const ubic = (card.dataset.ubicacion || '').toLowerCase();
-            const estado = (card.dataset.estado || '').toLowerCase();
-
-            const match = q === '' ? true : (nombre.includes(q) || ubic.includes(q) || estado.includes(q));
-            card.style.display = match ? '' : 'none';
-            if (match) visible++;
-          });
-
-          updateMeta(visible, tarjetas.length);
-
-          // mostrar mensaje si no hay resultados
-          if (noResultsBox) noResultsBox.style.display = (visible === 0 ? 'block' : 'none');
-        });
-      })();
-
+    if (
+      nombreRack.includes(valorBusqueda) || 
+      ubicacionRack.includes(valorBusqueda) || 
+      estadoRack.includes(valorBusqueda)
+    ) {
+      rack.style.display = '';
+    } else {
+      rack.style.display = 'none';
+    }
+  });
+});
     </script>
 
     <?php
