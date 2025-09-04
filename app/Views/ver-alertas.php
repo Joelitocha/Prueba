@@ -46,7 +46,7 @@ if ($session->get("ID_Rol") != 5 && $session->get("ID_Rol") != 6) {
   .alerta-filtros { margin-bottom: 20px; display: flex; flex-wrap: wrap; gap: 10px; }
   .filtro-btn { padding: 8px 15px; background-color: #3498db; color: #fff; border: none; border-radius: 4px; cursor: pointer; transition: all 0.3s ease; font-size: 14px; }
   .filtro-btn:hover { background-color: #2980b9; }
-  .filtro-btn.active { background-color: #27ae60; }
+  .filtro-btn.active { background-color: #000000; }
 
   /* Alertas */
   .alertas-list { list-style: none; padding: 0; margin: 0; }
