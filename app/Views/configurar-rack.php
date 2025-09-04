@@ -447,11 +447,6 @@ $rol = $session->get("ID_Rol");
         
         <form action="<?= site_url('guardar-rack') ?>" method="post">
           <div class="form-group">
-            <label for="nombre">Nombre del Rack</label>
-            <input type="text" name="nombre" id="nombre" required placeholder="Ej: Rack Puerto Madero">
-          </div>
-          
-          <div class="form-group">
             <label for="ubicacion">Ubicación</label>
             <input type="text" name="ubicacion" id="ubicacion" required placeholder="Ej: Puerto Madero">
           </div>
