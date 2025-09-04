@@ -62,13 +62,29 @@ class RackController extends BaseController
         }
     }
 
-    public function eliminar($id)
-    {
-        $model = new RackModel();
-        if ($model->delete($id)) {
-            return redirect()->to('/dispositivo')->with('success', 'Rack eliminado correctamente');
-        } else {
-            return redirect()->to('/dispositivo')->with('error', 'Error al eliminar el rack');
+public function eliminar($id)
+{
+    $model = new RackModel();
+    
+    // Verificar si el rack tiene dispositivos asociados
+    $dispositivoModel = new \App\Models\DispositivoModel();
+    $dispositivos = $dispositivoModel->where('ID_Rack', $id)->findAll();
+    
+    if (!empty($dispositivos)) {
+        // Opción 1: Eliminar también los dispositivos asociados
+        foreach ($dispositivos as $dispositivo) {
+            $dispositivoModel->delete($dispositivo['ID_Sistema']);
         }
+        
+        // Opción 2: Mostrar error y no eliminar (descomenta la siguiente línea y comenta las anteriores)
+        // return redirect()->to('/dispositivo')->with('error', 'No se puede eliminar el rack porque tiene dispositivos asociados');
+    }
+    
+    if ($model->delete($id)) {
+        return redirect()->to('/dispositivo')->with('success', 'Rack eliminado correctamente');
+    } else {
+        return redirect()->to('/dispositivo')->with('error', 'Error al eliminar el rack');
     }
 }
+}
+

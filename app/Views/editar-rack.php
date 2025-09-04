@@ -194,6 +194,7 @@ $rol = $session->get("ID_Rol");
         display: flex;
         gap: 10px;
         margin-top: 25px;
+        flex-wrap: wrap;
       }
 
       .btn {
@@ -233,6 +234,21 @@ $rol = $session->get("ID_Rol");
         background-color: #2ecc71;
       }
 
+      .btn-danger {
+        background-color: #e74c3c;
+      }
+
+      .delete-section {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+      }
+
+      .delete-section h3 {
+        color: #e74c3c;
+        margin-bottom: 15px;
+      }
+
       /* Mensajes de alerta */
       .alert {
         padding: 12px 15px;
@@ -252,6 +268,36 @@ $rol = $session->get("ID_Rol");
         border: 1px solid #c3e6cb;
       }
 
+      /* Modal de confirmación */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal-content {
+        background-color: white;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+        max-width: 500px;
+        width: 90%;
+      }
+
+      .modal-actions {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+        margin-top: 20px;
+      }
+
       /* Media Queries para responsive */
       @media (max-width: 992px) {
         .sidebar { transform: translateX(-100%); }
@@ -269,6 +315,7 @@ $rol = $session->get("ID_Rol");
         .sidebar { width: 220px; }
         .form-actions { flex-direction: column; }
         .btn { width: 100%; justify-content: center; }
+        .modal-actions { flex-direction: column; }
       }
     </style>
   </head>
@@ -394,6 +441,27 @@ $rol = $session->get("ID_Rol");
             </a>
           </div>
         </form>
+
+        <!-- Sección para eliminar el rack -->
+        <div class="delete-section">
+          <h3>Zona de peligro</h3>
+          <p>Esta acción no se puede deshacer. Se eliminará permanentemente el rack y todos los dispositivos asociados.</p>
+          <button type="button" class="btn btn-danger" onclick="confirmarEliminacion()">
+            <i class="fas fa-trash"></i> Eliminar Rack
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de confirmación para eliminar -->
+    <div id="modalConfirmacion" class="modal">
+      <div class="modal-content">
+        <h3>¿Estás seguro de que deseas eliminar este rack?</h3>
+        <p>Esta acción eliminará permanentemente el rack "<?= esc($rack['Ubicacion']) ?>" y todos los dispositivos asociados. Esta acción no se puede deshacer.</p>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" onclick="cerrarModal()">Cancelar</button>
+          <a href="<?= site_url('eliminar-rack/'.$rack['ID_Rack']) ?>" class="btn btn-danger">Sí, eliminar</a>
+        </div>
       </div>
     </div>
 
@@ -427,6 +495,23 @@ $rol = $session->get("ID_Rol");
       window.addEventListener('resize', () => {
         if (window.innerWidth > 992) {
           sidebar.classList.remove('active');
+        }
+      });
+
+      // Funciones para el modal de confirmación de eliminación
+      function confirmarEliminacion() {
+        document.getElementById('modalConfirmacion').style.display = 'flex';
+      }
+
+      function cerrarModal() {
+        document.getElementById('modalConfirmacion').style.display = 'none';
+      }
+
+      // Cerrar modal al hacer clic fuera del contenido
+      window.addEventListener('click', function(event) {
+        const modal = document.getElementById('modalConfirmacion');
+        if (event.target === modal) {
+          cerrarModal();
         }
       });
     </script>

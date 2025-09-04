@@ -44,7 +44,7 @@ $routes->group('', ['filter' => '\App\Filters\AuthFilter'], function($routes) {
         $routes->get('configurar-rack', 'RackController::configurar'); // Para crear nuevo
         $routes->get('editar-rack/(:num)', 'RackController::editar/$1'); // Para editar
         $routes->post('guardar-rack', 'RackController::guardar'); // Para guardar (crear y editar)
-        $routes->get('eliminar-rack/(:num)', 'RackController::eliminar/$1');
+        $routes->get('eliminar-rack/(:num)', 'RackController::eliminar/$1'); // Para eliminar
 
     
     // Rutas para admin y supervisor (roles 5 y 6)
