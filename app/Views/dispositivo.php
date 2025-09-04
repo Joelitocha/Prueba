@@ -475,7 +475,7 @@ $rol = $session->get("ID_Rol");
             <?php foreach ($racks as $rack): ?>
               <div class="rack-card" onclick="window.location.href='<?= site_url('dispositivo/'.$rack['ID_Rack']) ?>'">
                 <h3><?= esc($rack['nombre']) ?></h3>
-                <div class="rack-info"><strong>Ubicación:</strong> <?= esc($rack['ubicacion'] ?? 'No especificada') ?></div>
+                <div class="rack-info"><strong>Ubicación:</strong> <?= esc($rack['Ubicacion'] ?? 'No especificada') ?></div>
                 <div class="rack-info"><strong>Dispositivos:</strong> <?= esc($rack['cantidad_dispositivos'] ?? 0) ?></div>
                 <div class="rack-info"><strong>Estado:</strong> <?= esc($rack['estado'] ?? 'Activo') ?></div>
                 <div style="margin-top: 15px;">
