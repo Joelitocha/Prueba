@@ -33,6 +33,7 @@ $routes->group('', ['filter' => '\App\Filters\AuthFilter'], function($routes) {
 
         // Rutas para la gestion de dispositivos y racks (solo admin)
         $routes->get('/dispositivo', 'DispositivoController::vistadisp');
+        $routes->get('/dispositivo/(:num)', 'DispositivoController::vistadisp/$1');
         $routes->get('/configurar-dispositivo', 'DispositivoController::nuevo');
         $routes->post('/guardar-dispositivo', 'DispositivoController::guardar');
         $routes->get('/configurar-dispositivo/(:num)', 'DispositivoController::configurar/$1');
