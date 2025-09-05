@@ -72,6 +72,7 @@ $routes->post('/esp32/vincular', 'esp32controller::vincular_esp');
 $routes->post('/esp32/registrar', 'esp32controller::insertar_registro');
 $routes->post('/pruebacamara/verificar', 'esp32controller::pruebacamara');
 $routes->post('/pruebacamara/mandar','esp32controller::mandarfoto');
+$routes->post('/sensor/alertar', 'esp32controller::enviaralerta');
 
 // Ruta de fallback para páginas no encontradas
 $routes->set404Override(function() {

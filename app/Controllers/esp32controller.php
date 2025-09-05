@@ -6,6 +6,9 @@ use App\Models\Esp32Model;
 
 use App\Models\RegistroAccesoModel;
 
+use App\Models\AlertaModel;
+
+
 
 class Esp32Controller extends BaseController
 {
@@ -250,6 +253,43 @@ public function mandarfoto()
             'message' => 'Error al guardar la foto en el servidor'
         ])->setStatusCode(500);
     }
+}
+public function enviaralerta(){
+
+    $json = $this->request->getJSON();
+        
+    // Validar que se recibió JSON
+    if (!$json) {
+        return $this->fail('JSON inválido o vacío', 400);
+    }
+
+    // Validar campos requeridos
+    if (!isset($json->mac) || !isset($json->alerta)) {
+        return $this->fail('Campos faltantes: se requieren mac y alerta', 400);
+    }
+
+    $mac = $json->mac;
+
+    $alerta = $json->alerta;
+
+    $espmodel = new Esp32Model;
+
+    $placa = $espmode->getEspand(['codevin' => $mac]);
+
+    if(!$placa) {
+        return $this->response->setJSON(['status' => 'error', 'message' => 'Placa no vinculada'])->setStatusCode(500);
+    }
+
+    $alertamodel=new AlertaModel;
+
+    if($alertamodel->insertAlerta($placa[0]['ID_Rack'])){
+
+        return $this->response->setJSON(['status' => 'success', 'message' => 'Alerta registrada'])->setStatusCode(200);
+
+    }
+
+
+
 }
 
 
