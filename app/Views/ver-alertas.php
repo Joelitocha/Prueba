@@ -137,25 +137,31 @@ if ($session->get("ID_Rol") != 5 && $session->get("ID_Rol") != 6) {
       </div>
     </div>
 
-    <?php if (isset($alertas) && !empty($alertas)): ?>
-      <ul class="alertas-list">
-        <?php foreach ($alertas as $alerta): ?>
-          <li class="alerta-item" data-tipo="<?= esc($alerta['id_alerta']); ?>">
-            <div class="alerta-content">
-              <div class="alerta-icon"><i class="fas fa-exclamation-circle"></i></div>
-              <div class="alerta-text">
-                <div class="alerta-title"><?= esc($alerta['id_rack']); ?></div>
-                <div class="alerta-details">
-                  <span class="alerta-time"><?= date('d/m/Y H:i', strtotime($alerta['fecha'])); ?></span>
-                </div>
-              </div>
-            </div>
-          </li>
-        <?php endforeach; ?>
-      </ul>
-    <?php else: ?>
-      <div class="no-alertas"><p>No hay alertas registradas en el sistema</p></div>
-    <?php endif; ?>
+    <div class="alertas-table-container">
+            <?php if (isset($alertas) && !empty($alertas)): ?>
+                <table class="alertas-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Fecha</th>
+                            <th>ID Rack</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($alertas as $alerta): ?>
+                            <tr>
+                                <td class="id-column"><?= esc($alerta['id_alerta']); ?></td>
+                                <td class="date-column"><?= date('d/m/Y H:i', strtotime($alerta['fecha'])); ?></td>
+                                <td class="rack-column"><span class="rack-id"><?= esc($alerta['id_rack']); ?></span></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            <?php else: ?>
+                <div class="no-alertas"><p>No hay alertas registradas en el sistema</p></div>
+            <?php endif; ?>
+        </div>
+    </div>
   </div>
 </div>
 
