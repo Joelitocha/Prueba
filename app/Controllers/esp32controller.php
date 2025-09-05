@@ -274,7 +274,7 @@ public function enviaralerta(){
 
     $espmodel = new Esp32Model;
 
-    $placa = $espmode->getEspand(['codevin' => $mac]);
+    $placa = $espmodel->getEspand(['codevin' => $mac]);
 
     if(!$placa) {
         return $this->response->setJSON(['status' => 'error', 'message' => 'Placa no vinculada'])->setStatusCode(500);
