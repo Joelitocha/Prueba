@@ -3,6 +3,7 @@ namespace App\Controllers;
 
 use App\Models\UserModel;
 use App\Models\TarjetaModel;
+use App\Models\AlertaModel;
 
 class ViewsControllers extends BaseController
 {
@@ -33,6 +34,11 @@ class ViewsControllers extends BaseController
     }
 
     public function VistaAlertas() {
-        return view("ver-alertas");
+
+        $alertamodel = new AlertaModel;
+
+        $alertas = $alertamodel->getalertas();
+
+        return view("ver-alertas", ['alertas' => $alertas]);
     }
 }
