@@ -15,5 +15,14 @@ class AlertaModel extends Model
 
     }
 
+    public function getalertas(){
+
+        $tabla=$this->db->table('alertas');
+
+        return $tabla->get()->getResultArray();
+
+
+    }
+
 
 }
