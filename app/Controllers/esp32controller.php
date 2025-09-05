@@ -292,5 +292,33 @@ public function enviaralerta(){
 
 }
 
+public function manejarestado(){
+
+    $json = $this->request->getJSON();
+        
+    // Validar que se recibió JSON
+    if (!$json || !isset($json->mac)) {
+        return $this->fail('JSON inválido o vacío', 400);
+    }
+
+    $mac = $json->mac;
+
+    $espmodel = new Esp32Model;
+
+    $placa = $espmodel->getEspand(['codevin' => $mac]);
+
+    if(!$placa){
+
+        return $this->response->setJSON(['status' => 'error', 'message' => 'Placa no vinculada'])->setStatusCode(500);
+
+    }
+
+    return $this->response->setJSON(['status' => 'success', 'estado' => $placa[0]['estado']])->setStatusCode(200);
+
+    
+
+
+}
+
 
 }
