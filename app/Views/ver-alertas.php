@@ -146,7 +146,6 @@ if ($session->get("ID_Rol") != 5 && $session->get("ID_Rol") != 6) {
               <div class="alerta-text">
                 <div class="alerta-title"><?= esc($alerta['id_rack']); ?></div>
                 <div class="alerta-details">
-                  <span><?= esc($alerta['descripcion']); ?></span>
                   <span class="alerta-time"><?= date('d/m/Y H:i', strtotime($alerta['fecha'])); ?></span>
                 </div>
               </div>
