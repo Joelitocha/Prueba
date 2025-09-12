@@ -573,8 +573,6 @@
                       </a>
                   </div>
               <?php endif; ?>
-            
-          <?php endif; ?>
         </div>
       </div>
     </div>
