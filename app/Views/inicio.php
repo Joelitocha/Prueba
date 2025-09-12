@@ -564,15 +564,15 @@
               <p>Historial de Cambios</p>
             </a>
 
-          <?php elseif ($rol == 7): ?>
-              <!-- Iconos para Usuario -->
-              <div style="position: relative; z-index: 20;">
-                  <a href="<?php echo site_url('/consultar-rfid');?>" class="masonry-item">
-                      <i class="fas fa-search"></i>
-                      <p>Consultar Estado</p>
-                  </a>
-              </div>
-          <?php endif; ?>
+              <?php elseif ($rol == 7): ?>
+                  <!-- Iconos para Usuario -->
+                  <div style="position: relative; z-index: 20;">
+                      <a href="<?php echo site_url('/consultar-rfid');?>" class="masonry-item">
+                          <i class="fas fa-search"></i>
+                          <p>Consultar Estado</p>
+                      </a>
+                  </div>
+              <?php endif; ?>
             
           <?php endif; ?>
         </div>
