@@ -510,7 +510,7 @@
           if ($rol == 5) {
               echo "<p>Hola Administrador, desde aquí puedes acceder a: Gestión de Usuarios - Gestión de Tarjetas - Dispositivos - Alertas del Sistema - Historial Completo - Control de Accesos</p>";
           } elseif ($rol == 6) {
-              echo "<p>Hola Supervisor, desde aquí puedes acceder a: Consultar Estado - Alertas Recientes - Registro de Accesos</p>";
+              echo "<p>Hola Supervisor, desde aquí puedes acceder a: Consultar Estado - Alertas Recientes - Registro de Accesos - Historial de Cambios</p>";
           } elseif ($rol == 7) {
               echo "<p>Hola Usuario, desde aquí puedes acceder a: Consultar Estado</p>";
           }
@@ -559,7 +559,11 @@
               <i class="fas fa-door-open"></i>
               <p>Registro de Accesos</p>
             </a>
-            
+            <a href="<?php echo site_url('/historial-cambios');?>" class="masonry-item">
+              <i class="fas fa-history"></i>
+              <p>Historial de Cambios</p>
+            </a>
+
           <?php elseif ($rol == 7): ?>
             <!-- Iconos para Usuario -->
             <a href="<?php echo site_url('/consultar-rfid');?>" class="masonry-item">
