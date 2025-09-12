@@ -508,11 +508,11 @@
         <div class="welcome-message">
           <?php 
           if ($rol == 5) {
-              echo "<p>Hola Administrador, bienvenido. Aquí podrás gestionar usuarios, tarjetas y revisar reportes para asegurar que todo esté en orden. ¡Gracias por mantener el sistema funcionando de manera eficiente!</p>";
+              echo "<p>Hola Administrador, desde aquí puedes acceder a: Gestión de Usuarios - Gestión de Tarjetas - Dispositivos - Alertas del Sistema - Historial Completo - Control de Accesos</p>";
           } elseif ($rol == 6) {
-              echo "<p>Hola Supervisor, bienvenido/a. En esta sección podrás monitorear el estado de las tarjetas, revisar alertas y accesos. ¡Gracias por asegurarte de que todo esté bajo control!</p>";
+              echo "<p>Hola Supervisor, desde aquí puedes acceder a: Consultar Estado - Alertas Recientes - Registro de Accesos</p>";
           } elseif ($rol == 7) {
-              echo "<p>Hola Usuario, bienvenido/a. Aquí puedes consultar el estado de tus tarjetas y asegurarte de que todo está en orden. ¡Gracias por usar nuestro sistema!</p>";
+              echo "<p>Hola Usuario, desde aquí puedes acceder a: Consultar Estado</p>";
           }
           ?>
         </div>
@@ -520,100 +520,53 @@
         <div class="masonry-grid">
           <?php if ($rol == 5): ?>
             <!-- Iconos para Administrador -->
-            <a class="masonry-item">
+            <a href="<?php echo site_url('/modificar-usuario');?>" class="masonry-item">
               <i class="fas fa-users-cog"></i>
               <p>Gestión de Usuarios</p>
             </a>
-            <a class="masonry-item">
+            <a href="<?php echo site_url('/modificar-tarjeta');?>" class="masonry-item">
               <i class="fas fa-id-card"></i>
               <p>Gestión de Tarjetas</p>
             </a>
-            <a class="masonry-item">
+            <a href="<?php echo site_url('/dispositivo');?>" class="masonry-item">
               <i class="fas fa-server"></i>
               <p>Dispositivos</p>
             </a>
-            <a class="masonry-item">
+            <a href="<?php echo site_url('/ver-alertas');?>" class="masonry-item">
               <i class="fas fa-exclamation-triangle"></i>
               <p>Alertas del Sistema</p>
             </a>
-            <a class="masonry-item">
+            <a href="<?php echo site_url('/historial-cambios');?>" class="masonry-item">
               <i class="fas fa-history"></i>
               <p>Historial Completo</p>
             </a>
-            <a class="masonry-item">
+            <a href="<?php echo site_url('/ver-accesos-tarjeta');?>" class="masonry-item">
               <i class="fas fa-door-open"></i>
               <p>Control de Accesos</p>
-            </a>
-            <a href="#" class="masonry-item">
-              <i class="fas fa-chart-pie"></i>
-              <p>Estadísticas</p>
-            </a>
-            <a href="#" class="masonry-item">
-              <i class="fas fa-cogs"></i>
-              <p>Configuración Avanzada</p>
             </a>
             
           <?php elseif ($rol == 6): ?>
             <!-- Iconos para Supervisor -->
-            <a class="masonry-item">
+            <a href="<?php echo site_url('/consultar-rfid');?>" class="masonry-item">
               <i class="fas fa-search"></i>
               <p>Consultar Estado</p>
             </a>
-            <a class="masonry-item">
+            <a href="<?php echo site_url('/ver-alertas');?>" class="masonry-item">
               <i class="fas fa-bell"></i>
               <p>Alertas Recientes</p>
             </a>
-            <a class="masonry-item">
+            <a href="<?php echo site_url('/ver-accesos-tarjeta');?>" class="masonry-item">
               <i class="fas fa-door-open"></i>
               <p>Registro de Accesos</p>
-            </a>
-            <a class="masonry-item">
-              <i class="fas fa-chart-bar"></i>
-              <p>Reportes Diarios</p>
-            </a>
-            <a href="#" class="masonry-item">
-              <i class="fas fa-file-export"></i>
-              <p>Exportar Datos</p>
-            </a>
-            <a href="#" class="masonry-item">
-              <i class="fas fa-user-shield"></i>
-              <p>Supervisión</p>
-            </a>
-            <a href="#" class="masonry-item">
-              <i class="fas fa-clipboard-check"></i>
-              <p>Verificaciones</p>
             </a>
             
           <?php elseif ($rol == 7): ?>
             <!-- Iconos para Usuario -->
-            <a class="masonry-item">
-              <i class="fas fa-id-card"></i>
-              <p>Mis Tarjetas</p>
+            <a href="<?php echo site_url('/consultar-rfid');?>" class="masonry-item">
+              <i class="fas fa-search"></i>
+              <p>Consultar Estado</p>
             </a>
-            <a href="#" class="masonry-item">
-              <i class="fas fa-user-edit"></i>
-              <p>Mi Perfil</p>
-            </a>
-            <a href="#" class="masonry-item">
-              <i class="fas fa-question-circle"></i>
-              <p>Centro de Ayuda</p>
-            </a>
-            <a href="#" class="masonry-item">
-              <i class="fas fa-file-alt"></i>
-              <p>Documentación</p>
-            </a>
-            <a href="#" class="masonry-item">
-              <i class="fas fa-cog"></i>
-              <p>Configuración</p>
-            </a>
-            <a href="#" class="masonry-item">
-              <i class="fas fa-envelope"></i>
-              <p>Contacto</p>
-            </a>
-            <a href="#" class="masonry-item">
-              <i class="fas fa-info-circle"></i>
-              <p>Acerca del Sistema</p>
-            </a>
+            
           <?php endif; ?>
         </div>
       </div>
