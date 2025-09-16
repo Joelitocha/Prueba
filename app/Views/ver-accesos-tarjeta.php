@@ -569,7 +569,7 @@
                       <td><?= esc($registro['ID_Tarjeta']); ?></td>
                       <td>
                         <?php if (!empty($registro['Archivo_Video'])): ?>
-                            <img src="<?= base_url('../writable/uploads/fotos/' .$registro['Archivo_Video']); ?>" 
+                            <img src="<?= base_url('fotos/' .$registro['Archivo_Video']); ?>" 
                                  alt="Foto registro" width="100" height="80"
                                  onclick="abrirModal(this)">
                        <?php else: ?>
