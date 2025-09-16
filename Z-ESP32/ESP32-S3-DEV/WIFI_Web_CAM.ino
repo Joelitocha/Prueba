@@ -7,8 +7,8 @@
 #define CAMERA_MODEL_ESP_EYE
 #include "camera_pins.h"
 
-const char* ssid = "ITR3-6";
-const char* password = "archivado";
+const char* ssid = "placa";
+const char* password = "12345678";
 String mac="";
 
 // Endpoints en tu servidor PHP (AWS)
