@@ -315,8 +315,6 @@ public function manejarestado(){
 
     return $this->response->setJSON(['status' => 'success', 'estado' => $placa[0]['estado']])->setStatusCode(200);
 
-    
-
 
 }
 
