@@ -6,6 +6,29 @@ use App\Models\TarjetaModel; // Importa el modelo TarjetaModel para interactuar 
 
 class TarjetaController extends BaseController
 {
+    private function registrarCambio($mensaje)
+    {
+        $logPath = WRITEPATH . 'logs/cambios/';
+        if (!is_dir($logPath)) {
+            if (!mkdir($logPath, 0755, true)) {
+                log_message('error', 'Error al crear el directorio de cambios: ' . $logPath);
+                return;
+            }
+        }
+
+        // Nombre del archivo con la fecha actual
+        $nombreArchivo = $logPath . 'historial_cambios_' . date('Y-m-d') . '.txt';
+
+        // Formato del mensaje con la hora actual
+        $registro = "[" . date('H:i:s') . "] " . $mensaje . PHP_EOL;
+
+        // Intentar escribir en el archivo y verificar el resultado
+        if (file_put_contents($nombreArchivo, $registro, FILE_APPEND) === false) {
+            log_message('error', 'Error al escribir en el archivo de cambios: ' . $nombreArchivo);
+        } else {
+            log_message('info', 'Cambio registrado correctamente: ' . $registro);
+        }
+    }
     // Muestra la vista para modificar tarjetas
     public function VistaModificar()
     {
@@ -133,6 +156,7 @@ public function bloquearTarjeta()
          'Estado' => 0,
          'Intentos_Fallidos' => 3 // Forzar bloqueo
      ]);
+     $this->registrarCambio("🔒 Se bloqueó la tarjeta con ID {$id}");
     
      return redirect()->to('/modificar-tarjeta')->with('success', 'Tarjeta bloqueada exitosamente');
 }

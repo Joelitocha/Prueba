@@ -13,7 +13,7 @@ class UserController extends BaseController
         $logPath = WRITEPATH . 'logs/cambios/';
         if (!is_dir($logPath)) {
             if (!mkdir($logPath, 0755, true)) {
-                log_message('error', '❌ Error al crear el directorio de cambios: ' . $logPath);
+                log_message('error', 'Error al crear el directorio de cambios: ' . $logPath);
                 return;
             }
         }
@@ -156,6 +156,7 @@ class UserController extends BaseController
             // Registrar el cambio en el historial
             $mensaje = "EU: El usuario \"{$usuario['Nombre']}\" con ID \"{$id}\" ha sido eliminado.";
             $this->registrarCambio($mensaje);
+            //
             return redirect()->to('/modificar-usuario')->with('success', 'Usuario eliminado correctamente');
         } else {
             return redirect()->to('/modificar-usuario')->with('error', 'Hubo un problema al eliminar el usuario.');
