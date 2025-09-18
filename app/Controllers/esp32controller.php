@@ -232,27 +232,36 @@ public function mandarfoto()
 
     // ---------- Guardar imagen ----------
     $nombreFoto = 'foto_' . $registrosinfoto[0]['ID_Acceso'] . '_' . date('Ymd_His') . '.jpg';
-    $ruta = base_url('/foto/'). $nombreFoto;
+   $rutaFisica = FCPATH . 'foto/' . $nombreFoto;
 
-    if (file_put_contents($ruta, $imageData)) {
-        log_message('info', "📸 Foto recibida de MAC: $mac | Tamaño: " . strlen($imageData) . " bytes | Archivo: $nombreFoto");
+// Asegurarse de que el directorio existe
 
-        // Actualizar registro con la foto
-        $registromodel->updateregistro($registrosinfoto[0]['ID_Acceso'], $nombreFoto);
+if (!is_dir(FCPATH . 'foto')) {
+    mkdir(FCPATH . 'foto', 0755, true);
+}
 
-        return $this->response->setJSON([
-            'status' => 'success',
-            'message' => 'Foto recibida y guardada',
-            'filename' => $nombreFoto,
-            'mac' => $mac,
-            'size' => strlen($imageData)
-        ]);
-    } else {
-        return $this->response->setJSON([
-            'status' => 'error',
-            'message' => 'Error al guardar la foto en el servidor'
-        ])->setStatusCode(500);
-    }
+// Guardar la imagen usando la ruta física
+if (file_put_contents($rutaFisica, $imageData)) {
+    log_message('info', "📸 Foto recibida de MAC: $mac | Tamaño: " . strlen($imageData) . " bytes | Archivo: $nombreFoto");
+
+    // Actualizar registro con la foto
+    $registromodel->updateregistro($registrosinfoto[0]['ID_Acceso'], $nombreFoto);
+
+    return $this->response->setJSON([
+        'status' => 'success',
+        'message' => 'Foto recibida y guardada',
+        'filename' => $nombreFoto,
+        'mac' => $mac,
+        'size' => strlen($imageData),
+        'url' => base_url('foto/' . $nombreFoto) // URL para acceder a la imagen
+    ]);
+} else {
+    log_message('error', "❌ Error al guardar foto para MAC: $mac");
+    return $this->response->setJSON([
+        'status' => 'error',
+        'message' => 'Error al guardar la foto en el servidor'
+    ])->setStatusCode(500);
+}
 }
 public function enviaralerta(){
 
