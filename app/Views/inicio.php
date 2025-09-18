@@ -529,7 +529,7 @@
               <p>Gestión de Tarjetas</p>
             </a>
             <a href="<?php echo site_url('/consultar-rfid');?>" class="masonry-item">
-              <i class="fas fa-id-card"></i>
+              <i class="fas fa-money-check"></i>
               <p>Consultar Estado de la Tarjeta</p>
             </a>
             <a href="<?php echo site_url('/dispositivo');?>" class="masonry-item">
