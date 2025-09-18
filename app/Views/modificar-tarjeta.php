@@ -579,6 +579,7 @@
             <tr>
               <th>ID Tarjeta</th>
               <th>UID</th>
+              <th>Horario de Uso</th>
               <th>Estado</th>
               <th>Acciones</th>
             </tr>
