@@ -26,9 +26,9 @@ class UserController extends BaseController
 
         // Intentar escribir en el archivo y verificar el resultado
         if (file_put_contents($nombreArchivo, $registro, FILE_APPEND) === false) {
-            log_message('error', '❌ Error al escribir en el archivo de cambios: ' . $nombreArchivo);
+            log_message('error', 'Error al escribir en el archivo de cambios: ' . $nombreArchivo);
         } else {
-            log_message('info', '✅ Cambio registrado correctamente: ' . $registro);
+            log_message('info', 'Cambio registrado correctamente: ' . $registro);
         }
     }
 
@@ -102,11 +102,11 @@ class UserController extends BaseController
                 $this->registrarCambio($mensaje);
             }
 
-            log_message('info', '📥 Actualización de usuario realizada: ' . $mensaje);
+            log_message('info', 'Actualización de usuario realizada: ' . $mensaje);
 
             return redirect()->to(site_url('/modificar-usuario'))->with('success', 'Usuario actualizado correctamente');
         } else {
-            log_message('error', '❌ Error al actualizar el usuario.');
+            log_message('error', 'Error al actualizar el usuario.');
             return redirect()->to(site_url('/modificar-usuario'))->with('error', 'Hubo un problema al actualizar el usuario.');
         }
     }
@@ -154,7 +154,7 @@ class UserController extends BaseController
 
         if ($usuario && $userModel->delete($id)) {
             // Registrar el cambio en el historial
-            $mensaje = "EU: El usuario \"{$usuario['Nombre']}\" ha sido eliminado.";
+            $mensaje = "EU: El usuario \"{$usuario['Nombre']}\" con ID \"{$id}\" ha sido eliminado.";
             $this->registrarCambio($mensaje);
             return redirect()->to('/modificar-usuario')->with('success', 'Usuario eliminado correctamente');
         } else {
