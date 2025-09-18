@@ -588,6 +588,7 @@
               <tr>
                 <td><?= esc($tarjeta['ID_Tarjeta']); ?></td>
                 <td><?= esc($tarjeta['UID']); ?></td>
+                <td><?= esc($tarjeta['Horario_Uso']); ?></td>
                 <td class="<?= $tarjeta['Estado'] == 1 ? 'estado-activa' : 'estado-inactiva'; ?>">
                   <?= $tarjeta['Estado'] == 1 ? 'Activa' : 'Inactiva'; ?>
                 </td>
