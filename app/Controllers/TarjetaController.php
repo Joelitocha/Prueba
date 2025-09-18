@@ -69,32 +69,31 @@ class TarjetaController extends BaseController
         return view('eliminar-tarjeta', ['tarjetas' => $tarjetas]);
     }
 
-    // Elimina una tarjeta
     public function delete()
     {
-        $session = session(); // Inicia o recupera la sesión actual
-        $rol = $session->get("ID_Rol"); // Obtiene el rol del usuario de la sesión
-
-        // Verifica si el usuario tiene permiso para eliminar tarjetas (solo el rol 5 puede eliminar)
+        $session = session();
+        $rol = $session->get("ID_Rol");
+    
         if ($rol != 5) {
             return redirect()->to('/modificar-tarjeta')->with('error', 'No tienes permiso para eliminar tarjetas');
         }
-
-        // Obtiene el ID de la tarjeta desde el formulario
+    
         $id = $this->request->getPost('ID_Tarjeta');
-
-        $tarjetaModel = new TarjetaModel(); // Crea una instancia del modelo de tarjetas
-        $tarjeta = $tarjetaModel->find($id); // Busca la tarjeta con el ID especificado
-
-        // Verifica si la tarjeta existe antes de intentar eliminarla
+        $tarjetaModel = new TarjetaModel();
+        $tarjeta = $tarjetaModel->find($id);
+    
         if (!$tarjeta) {
             return redirect()->to('/modificar-tarjeta')->with('error', 'Tarjeta no encontrada');
         }
-
-        // Elimina la tarjeta de la base de datos
+    
         $tarjetaModel->delete($id);
-        return redirect()->back(); // Redirige a la misma página
+    
+        $detalle = json_encode($tarjeta, JSON_UNESCAPED_UNICODE);
+        $this->registrarCambio("Se eliminó la tarjeta con ID {$id}. Datos previos: {$detalle}");
+    
+        return redirect()->back();
     }
+    
 
 
     // Carga la vista para editar una tarjeta específica
@@ -156,7 +155,7 @@ public function bloquearTarjeta()
          'Estado' => 0,
          'Intentos_Fallidos' => 3 // Forzar bloqueo
      ]);
-     $this->registrarCambio("🔒 Se bloqueó la tarjeta con ID {$id}");
+     $this->registrarCambio("Se bloqueó la tarjeta con ID {$id}");
     
      return redirect()->to('/modificar-tarjeta')->with('success', 'Tarjeta bloqueada exitosamente');
 }
@@ -170,6 +169,7 @@ public function desbloquearTarjeta()
         'Estado' => 1,
         'Intentos_Fallidos' => 0 // Resetear intentos
     ]);
+    $this->registrarCambio("Se desbloqueó la tarjeta con ID {$id}");
     
     return redirect()->to('/modificar-tarjeta')->with('success', 'Tarjeta desbloqueada exitosamente');
 }
