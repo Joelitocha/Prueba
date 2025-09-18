@@ -232,7 +232,7 @@ public function mandarfoto()
 
     // ---------- Guardar imagen ----------
     $nombreFoto = 'foto_' . $registrosinfoto[0]['ID_Acceso'] . '_' . date('Ymd_His') . '.jpg';
-    $ruta = WRITEPATH . 'uploads/fotos/' . $nombreFoto;
+    $ruta = base_url('/foto/'). $nombreFoto;
 
     if (file_put_contents($ruta, $imageData)) {
         log_message('info', "📸 Foto recibida de MAC: $mac | Tamaño: " . strlen($imageData) . " bytes | Archivo: $nombreFoto");
