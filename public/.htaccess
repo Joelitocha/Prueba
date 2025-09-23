@@ -2,7 +2,16 @@
     RewriteEngine On
     RewriteBase /
 
+    <FilesMatch "^(\.env|\.env.*|\.git|\.git.*|composer\.(json|lock)|phpinfo\.php|test\.php|upload\.php)$">
+        Require all denied
+    </FilesMatch>
+
+    SetEnvIfNoCase User-Agent ".*(sqlmap|nikto|curl|wget|bot|spider|crawler).*" bad_bot
+    Deny from env=bad_bot
+
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)$ index.php/$1 [L]
+
+    Options -Indexes
 </IfModule>
