@@ -1503,7 +1503,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 onApprove: function(data, actions) {
                     return actions.order.capture().then(function(details) {
                         devicePaymentCompleted = true;
-                        sendPaymentConfirmation('Dispositivos RackON', data.orderID, purchaseCalculations.currentDeviceTotal);
                         showPaymentSuccess('dispositivos', details.payer.name.given_name);
                         checkPaymentsCompletion();
                     });
@@ -1600,7 +1599,6 @@ document.addEventListener('DOMContentLoaded', function() {
             onApprove: function(data, actions) {
                 return actions.order.capture().then(function(details) {
                     supportPaymentCompleted = true;
-                    sendPaymentConfirmation(description, data.orderID, amount);
                     showPaymentSuccess('soporte técnico', details.payer.name.given_name);
                     checkPaymentsCompletion();
                 });
@@ -1621,12 +1619,13 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (allPaymentsCompleted) {
             confirmBtn.classList.remove('d-none');
+            confirmBtn.innerHTML = '<i class="fas fa-envelope"></i> Confirmar Pedido y Enviar Correo';
         } else {
             confirmBtn.classList.add('d-none');
         }
     }
 
-    // 6. Confirmación final del pedido
+    // 6. Confirmación final del pedido - VERSIÓN MEJORADA
     async function handleFinalConfirmation() {
         if (isProcessing) return;
         
@@ -1645,17 +1644,17 @@ document.addEventListener('DOMContentLoaded', function() {
             // Crear nuevo feedback
             const feedback = document.createElement('div');
             feedback.className = 'alert alert-info purchase-feedback mt-3';
-            feedback.textContent = 'Confirmando tu pedido...';
+            feedback.textContent = 'Confirmando tu pedido y enviando confirmación...';
             btn.parentNode.insertBefore(feedback, btn.nextSibling);
 
-            // Preparar y enviar datos de confirmación
-            const formData = prepareConfirmationData();
-            const response = await sendConfirmationData(formData);
+            // Preparar y enviar datos de confirmación COMPLETOS
+            const formData = prepareCompleteConfirmationData();
+            const response = await sendCompleteConfirmation(formData);
 
             if (!response.ok) throw new Error('Error en el servidor');
 
             // Éxito
-            feedback.textContent = '¡Pedido confirmado con éxito! Te hemos enviado un correo con los detalles.';
+            feedback.textContent = '¡Pedido confirmado con éxito! Se ha enviado un correo de confirmación a tu email y al equipo de RackON.';
             feedback.className = 'alert alert-success purchase-feedback mt-3';
 
             // Resetear después de 3 segundos
@@ -1682,67 +1681,100 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    function prepareConfirmationData() {
+    // Nueva función para preparar todos los datos del pedido
+    function prepareCompleteConfirmationData() {
+        const companyName = document.getElementById('companyName').value;
+        const companyEmail = document.getElementById('companyContactEmail').value;
+        
         const formData = new FormData();
         
-        // Datos de empresa
-        formData.append('nombre', document.getElementById('companyName').value);
-        formData.append('email', document.getElementById('companyContactEmail').value);
-        formData.append('telefono', document.getElementById('companyContactPhone').value);
-        formData.append('cuit', document.getElementById('companyTaxId').value);
-        formData.append('contacto', document.getElementById('companyContactPerson').value);
+        // Configuración para FormSubmit
+        formData.append('_captcha', 'false');
+        formData.append('_template', 'table');
+        formData.append('_autoresponse', generateAutoResponse());
+        formData.append('_subject', `✅ Confirmación de Pedido RackON - ${companyName}`);
         
-        // Datos de envío
-        formData.append('direccion', document.getElementById('deliveryAddress').value);
-        formData.append('ciudad', document.getElementById('deliveryCity').value);
-        formData.append('provincia', document.getElementById('deliveryState').value);
-        formData.append('codigo_postal', document.getElementById('deliveryZip').value);
-        formData.append('pais', document.getElementById('deliveryCountry').value);
+        // Enviar copia al cliente y a rackonoficial@gmail.com
+        formData.append('_cc', companyEmail);
         
-        // Detalles del pedido
-        formData.append('cantidad', purchaseCalculations.quantity);
-        formData.append('total_dispositivos', purchaseCalculations.currentDeviceTotal.toFixed(2));
-        formData.append('soporte', selectedPlanData.type === 'monthly' 
-            ? `${purchaseCalculations.currentSupportMonthlyTotal.toFixed(2)} USD/mes` 
-            : `${purchaseCalculations.currentSupportAnnualTotal.toFixed(2)} USD/año`);
+        // DATOS DE LA EMPRESA
+        formData.append('🏢 EMPRESA', companyName);
+        formData.append('📧 EMAIL CONTACTO', companyEmail);
+        formData.append('📞 TELÉFONO', document.getElementById('companyContactPhone').value);
+        formData.append('🔢 CUIT/ID FISCAL', document.getElementById('companyTaxId').value);
+        formData.append('👤 PERSONA DE CONTACTO', document.getElementById('companyContactPerson').value);
         
-        // Opciones seleccionadas
+        // DATOS DE ENVÍO
+        formData.append('📍 DIRECCIÓN', document.getElementById('deliveryAddress').value);
+        formData.append('🏙️ CIUDAD', document.getElementById('deliveryCity').value);
+        formData.append('🗺️ PROVINCIA', document.getElementById('deliveryState').value);
+        formData.append('📮 CÓDIGO POSTAL', document.getElementById('deliveryZip').value);
+        formData.append('🇦🇷 PAÍS', document.getElementById('deliveryCountry').value);
+        
+        // DETALLES DEL PEDIDO
+        formData.append('📦 CANTIDAD DE DISPOSITIVOS', purchaseCalculations.quantity);
+        formData.append('💰 PRECIO POR UNIDAD', `$${calculateDevicePrice().toFixed(2)} USD`);
+        formData.append('💵 TOTAL DISPOSITIVOS', `$${purchaseCalculations.currentDeviceTotal.toFixed(2)} USD`);
+        
+        // OPCIONES SELECCIONADAS
         const options = getSelectedOptions();
-        formData.append('opciones', options.join(', '));
-        formData.append('mensaje', `Confirmación de pedido de ${document.getElementById('companyName').value}`);
-        formData.append('_subject', `Confirmación de pedido RackON - ${document.getElementById('companyName').value}`);
+        formData.append('⚙️ OPCIONES ADICIONALES', options.length > 0 ? options.join(', ') : 'Ninguna');
+        
+        // SOPORTE TÉCNICO
+        const supportPlan = selectedPlanData.type === 'monthly' 
+            ? `Mensual - $${purchaseCalculations.currentSupportMonthlyTotal.toFixed(2)} USD/mes`
+            : `Anual - $${purchaseCalculations.currentSupportAnnualTotal.toFixed(2)} USD/año`;
+        
+        formData.append('🔧 PLAN DE SOPORTE', supportPlan);
+        
+        // RESUMEN FINAL
+        const totalFinal = purchaseCalculations.currentDeviceTotal + 
+            (selectedPlanData.type === 'monthly' 
+                ? purchaseCalculations.currentSupportMonthlyTotal 
+                : purchaseCalculations.currentSupportAnnualTotal);
+        
+        formData.append('🎯 TOTAL FINAL', `$${totalFinal.toFixed(2)} USD`);
+        
+        // ESTADO DE PAGOS
+        formData.append('✅ ESTADO DE PAGOS', 'Ambos pagos completados exitosamente');
+        formData.append('📅 FECHA DE PEDIDO', new Date().toLocaleString('es-ES'));
         
         return formData;
     }
 
-    async function sendConfirmationData(formData) {
+    // Función para generar el mensaje de respuesta automática
+    function generateAutoResponse() {
+        const companyName = document.getElementById('companyName').value;
+        const quantity = purchaseCalculations.quantity;
+        const total = purchaseCalculations.currentDeviceTotal + 
+            (selectedPlanData.type === 'monthly' 
+                ? purchaseCalculations.currentSupportMonthlyTotal 
+                : purchaseCalculations.currentSupportAnnualTotal);
+        
+        return `¡Gracias por tu pedido en RackON, ${companyName}!
+
+Hemos recibido tu pedido de ${quantity} dispositivo(s) RackON por un total de $${total.toFixed(2)} USD.
+
+📦 Tu pedido está siendo procesado y te contactaremos dentro de las próximas 24-48 horas para coordinar los detalles de envío.
+
+📞 Para cualquier consulta, puedes contactarnos al correo rackonoficial@gmail.com
+
+¡Gracias por confiar en RackON!`;
+    }
+
+    // Función para enviar la confirmación completa
+    async function sendCompleteConfirmation(formData) {
         return await Promise.race([
             fetch('https://formsubmit.co/ajax/rackonoficial@gmail.com', {
                 method: 'POST',
                 body: formData,
-                headers: { 'Accept': 'application/json' }
+                headers: { 
+                    'Accept': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
             }),
-            new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 20000))
+            new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 30000))
         ]);
-    }
-
-    function resetPaymentStatus() {
-        devicePaymentCompleted = false;
-        supportPaymentCompleted = false;
-    }
-
-    // 7. Funciones auxiliares
-    function sendPaymentConfirmation(type, orderId, amount) {
-        const formData = new FormData();
-        formData.append('_subject', `Confirmación de pago - ${type}`);
-        formData.append('nombre', document.getElementById('companyName').value);
-        formData.append('email', document.getElementById('companyContactEmail').value);
-        formData.append('mensaje', `Se ha procesado el pago de ${type} (${amount} USD). ID: ${orderId}`);
-        
-        fetch('https://formsubmit.co/ajax/rackonoficial@gmail.com', {
-            method: 'POST',
-            body: formData
-        });
     }
 
     function showPaymentSuccess(type, userName) {
@@ -1876,6 +1908,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 break;
         }
         summaryItems.push(`<li class="list-group-item">Soporte Técnico: ${supportText}</li>`);
+    }
+
+    function resetPaymentStatus() {
+        devicePaymentCompleted = false;
+        supportPaymentCompleted = false;
     }
 
     // Inicialización del modal
