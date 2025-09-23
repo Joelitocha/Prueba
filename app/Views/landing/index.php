@@ -1066,133 +1066,238 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     <i class="fas fa-arrow-up"></i>
 </button>
 
-    <!-- MODAL REGISTRO DE EMPRESA -->
-    <div class="modal fade" id="companyRegistrationModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Registro de Empresa</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="companyRegistrationForm">
-                        <div class="mb-3">
-                            <label for="companyName" class="form-label">Nombre de la empresa</label>
-                            <input type="text" class="form-control" id="companyName" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="companyTaxId" class="form-label">CUIT / RUT</label>
-                            <input type="text" class="form-control" id="companyTaxId" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="companyContactPerson" class="form-label">Persona de contacto</label>
-                            <input type="text" class="form-control" id="companyContactPerson" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="companyContactEmail" class="form-label">Email de contacto</label>
-                            <input type="email" class="form-control" id="companyContactEmail" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="companyContactPhone" class="form-label">Teléfono</label>
-                            <input type="text" class="form-control" id="companyContactPhone" required>
-                        </div>
-                        <button type="submit" class="btn btn-success">Continuar</button>
-                    </form>
-                </div>
+<div class="modal fade" id="companyRegistrationModal" tabindex="-1" aria-labelledby="companyRegistrationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="companyRegistrationModalLabel">Registro de Empresa</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="companyRegistrationForm">
+                    <div class="mb-3">
+                        <label for="companyName" class="form-label">Nombre de la Empresa</label>
+                        <input type="text" class="form-control" id="companyName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="companyTaxId" class="form-label">CUIT/ID Fiscal</label>
+                        <input type="text" class="form-control" id="companyTaxId" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="companyContactPerson" class="form-label">Persona de Contacto</label>
+                        <input type="text" class="form-control" id="companyContactPerson" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="companyContactEmail" class="form-label">Email de Contacto</label>
+                        <input type="email" class="form-control" id="companyContactEmail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="companyContactPhone" class="form-label">Teléfono de Contacto</label>
+                        <input type="tel" class="form-control" id="companyContactPhone" required>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Continuar a la Compra</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- MODAL DE COMPRA -->
-    <div class="modal fade" id="purchaseModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Formulario de Compra RackON</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="purchaseForm">
-                        <!-- STEP 1: Datos de envío -->
-                        <div class="form-step">
-                            <h6>Datos de envío</h6>
-                            <div class="mb-3">
-                                <label for="deliveryAddress" class="form-label">Dirección</label>
-                                <input type="text" class="form-control" id="deliveryAddress" required>
-                            </div>
-                            <div class="mb-3">
+<div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="purchaseModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="purchaseModalLabel">Realizar Pedido RackON</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="purchaseForm">
+                    <!-- Campos ocultos para el envío del correo -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_subject" value="Nuevo pedido RackON">
+                    <input type="hidden" name="_autoresponse" value="Gracias por tu pedido en RackON. Hemos recibido tu solicitud y te contactaremos pronto con los detalles de envío.">
+                    <input type="text" name="_honey" style="display:none">
+                    
+                    <div class="form-step" id="step-personal">
+                        <h6 class="mb-3">1. Información de la Empresa <i class="fas fa-info-circle text-primary"></i></h6>
+                        <div class="mb-3">
+                            <label class="form-label">Nombre:</label>
+                            <p id="displayCompanyName" class="form-control-plaintext"></p>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">CUIT/ID Fiscal:</label>
+                            <p id="displayCompanyTaxId" class="form-control-plaintext"></p>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Contacto:</label>
+                            <p id="displayCompanyContactPerson" class="form-control-plaintext"></p>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email:</label>
+                            <p id="displayCompanyContactEmail" class="form-control-plaintext"></p>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Teléfono:</label>
+                            <p id="displayCompanyContactPhone" class="form-control-plaintext"></p>
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-primary next-step">Siguiente</button>
+                        </div>
+                    </div>
+
+                    <div class="form-step d-none" id="step-delivery">
+                        <h6 class="mb-3">2. Dirección de Entrega <i class="fas fa-truck text-primary"></i></h6>
+                        <div class="mb-3">
+                            <label for="deliveryAddress" class="form-label">Dirección</label>
+                            <input type="text" class="form-control" id="deliveryAddress" name="direccion" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
                                 <label for="deliveryCity" class="form-label">Ciudad</label>
-                                <input type="text" class="form-control" id="deliveryCity" required>
+                                <input type="text" class="form-control" id="deliveryCity" name="ciudad" required>
                             </div>
-                            <div class="mb-3">
-                                <label for="deliveryState" class="form-label">Provincia / Estado</label>
-                                <input type="text" class="form-control" id="deliveryState" required>
+                            <div class="col-md-6 mb-3">
+                                <label for="deliveryState" class="form-label">Provincia/Estado</label>
+                                <input type="text" class="form-control" id="deliveryState" name="provincia" required>
                             </div>
-                            <div class="mb-3">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
                                 <label for="deliveryZip" class="form-label">Código Postal</label>
-                                <input type="text" class="form-control" id="deliveryZip" required>
+                                <input type="text" class="form-control" id="deliveryZip" name="codigo_postal" required>
                             </div>
-                            <div class="mb-3">
+                            <div class="col-md-6 mb-3">
                                 <label for="deliveryCountry" class="form-label">País</label>
-                                <input type="text" class="form-control" id="deliveryCountry" required>
+                                <input type="text" class="form-control" id="deliveryCountry" name="pais" required>
                             </div>
-                            <button type="button" class="btn btn-secondary next-step">Siguiente</button>
                         </div>
-
-                        <!-- STEP 2: Selección de dispositivo y personalización -->
-                        <div class="form-step d-none">
-                            <h6>Dispositivos y Personalización</h6>
-                            <div class="mb-3">
-                                <label for="deviceQuantity" class="form-label">Cantidad de dispositivos</label>
-                                <input type="number" class="form-control" id="deviceQuantity" value="1" min="1">
-                            </div>
-
-                            <h6>Opciones de seguridad</h6>
-                            <div class="form-check">
-                                <input class="form-check-input customization-option" type="checkbox" id="securityLayerCamera" value="camera">
-                                <label class="form-check-label" for="securityLayerCamera">Cámara (Capa 2)</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input customization-option" type="checkbox" id="securityLayerSensor" value="sensor">
-                                <label class="form-check-label" for="securityLayerSensor">Sensor de vibración (Capa 3)</label>
-                            </div>
-
-                            <h6>Opciones estéticas</h6>
-                            <div class="form-check">
-                                <input class="form-check-input customization-option" type="checkbox" id="aestheticLaser" value="laser">
-                                <label class="form-check-label" for="aestheticLaser">Grabado láser</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input customization-option" type="checkbox" id="aestheticColors" value="colors">
-                                <label class="form-check-label" for="aestheticColors">Colores personalizados</label>
-                            </div>
-
-                            <h6>Instalación asistida</h6>
-                            <div class="form-check">
-                                <input class="form-check-input customization-option" type="checkbox" id="installGuided" value="guided">
-                                <label class="form-check-label" for="installGuided">Instalación guiada</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input customization-option" type="checkbox" id="installManual" value="manual">
-                                <label class="form-check-label" for="installManual">Instalación manual</label>
-                            </div>
-
+                        <div class="d-flex justify-content-between">
                             <button type="button" class="btn btn-secondary prev-step">Anterior</button>
-                            <button type="button" class="btn btn-secondary next-step">Siguiente</button>
+                            <button type="button" class="btn btn-primary next-step">Siguiente</button>
+                        </div>
+                    </div>
+
+                    <div class="form-step d-none" id="step-customization">
+                        <h6 class="mb-3">3. Personaliza tu Pedido <i class="fas fa-puzzle-piece text-primary"></i></h6>
+                        
+                        <div class="mb-4 p-3 border rounded bg-light">
+                            <label for="deviceQuantity" class="form-label fw-bold">Cantidad de Dispositivos</label>
+                            <input type="number" class="form-control" id="deviceQuantity" value="1" min="1" required>
+                            <small class="form-text text-muted">Descuentos por volumen: 1 unidad ($229), 2-4 ($219/u), 5+ ($199/u)</small>
                         </div>
 
-                        <!-- STEP 3: Pago -->
-                        <div class="form-step d-none">
-                            <h6>Pago</h6>
-                            <div id="paypal-buttons-container"></div>
-                            <button type="button" class="btn btn-secondary prev-step">Anterior</button>
-                            <button type="button" id="confirmPurchaseBtn" class="btn btn-success d-none">Confirmar Pedido</button>
+                        <div class="mb-4 p-3 border rounded bg-light">
+                            <label class="form-label fw-bold">Capas de Seguridad</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="rfid" id="securityLayer1" checked disabled>
+                                <label class="form-check-label" for="securityLayer1">
+                                    Capa 1: Control RFID (Incluido)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input customization-option" type="checkbox" value="camera" id="securityLayer2" data-price="30">
+                                <label class="form-check-label" for="securityLayer2">
+                                    Capa 2: Verificación por cámara (+ 30 USD)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input customization-option" type="checkbox" value="sensor" id="securityLayer3" data-price="20">
+                                <label class="form-check-label" for="securityLayer3">
+                                    Capa 3: Sensor de impacto/vibración (+ 20 USD)
+                                </label>
+                            </div>
                         </div>
-                    </form>
-                </div>
+
+                        <div class="mb-4 p-3 border rounded bg-light">
+                            <label class="form-label fw-bold">Soporte Técnico</label>
+                            <div class="form-check">
+                                <input class="form-check-input customization-option" type="radio" name="techSupport" id="supportBasic" value="basic" checked>
+                                <label class="form-check-label" for="supportBasic">
+                                    Básico (Incluido)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input customization-option" type="radio" name="techSupport" id="supportPremium" value="premium" data-price-monthly="10" data-price-annual="100">
+                                <label class="form-check-label" for="supportPremium">
+                                    Premium (+10 USD/mes o +100 USD/año)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input customization-option" type="radio" name="techSupport" id="supportUltra" value="ultra" data-price-monthly="20" data-price-annual="200">
+                                <label class="form-check-label" for="supportUltra">
+                                    Ultra (+20 USD/mes o +200 USD/año)
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="mb-4 p-3 border rounded bg-light">
+                            <label class="form-label fw-bold">Personalización Estética del Dispositivo</label>
+                            <div class="form-check">
+                                <input class="form-check-input customization-option" type="checkbox" value="laser" id="aestheticLaser" data-price="15">
+                                <label class="form-check-label" for="aestheticLaser">
+                                    Grabado láser con logo de la empresa (+ 15 USD)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input customization-option" type="checkbox" value="colors" id="aestheticColors" data-price="10">
+                                <label class="form-check-label" for="aestheticColors">
+                                    Colores personalizados (+ 10 USD)
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="mb-4 p-3 border rounded bg-light">
+                            <label class="form-label fw-bold">Instalación Asistida</label>
+                            <div class="form-check">
+                                <input class="form-check-input customization-option" type="checkbox" value="guided" id="installGuided" data-price="50">
+                                <label class="form-check-label" for="installGuided">
+                                    Envío con instalación guiada por videollamada (+ 50 USD)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input customization-option" type="checkbox" value="manual" id="installManual" data-price="10">
+                                <label class="form-check-label" for="installManual">
+                                    Manual físico personalizado (+ 10 USD)
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <button type="button" class="btn btn-secondary prev-step">Anterior</button>
+                            <button type="button" class="btn btn-primary next-step">Revisar Pedido</button>
+                        </div>
+                    </div>
+
+                    <div class="form-step d-none" id="step-summary">
+                        <h6 class="mb-3">4. Resumen del Pedido y Pago <i class="fas fa-file-invoice-dollar text-primary"></i></h6>
+                        <div class="mb-3">
+                            <p class="fw-bold">Detalle del Pedido:</p>
+                            <ul id="orderSummaryList" class="list-group mb-3">
+                                <!-- Aquí se generará el resumen -->
+                            </ul>
+                            <h5 class="mt-4">Total a Pagar (Dispositivos y Opciones): <span id="finalDevicePrice" class="text-primary"></span></h5>
+                            <h5 class="mt-2">Suscripción de Soporte (<span id="supportPlanType"></span>): <span id="finalSupportPrice" class="text-primary"></span></h5>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <button type="button" class="btn btn-secondary prev-step">Anterior</button>
+                            <button type="button" class="btn btn-success" id="confirmPurchaseBtn">Confirmar Pedido y Pagar</button>
+                        </div>
+                        <hr class="my-4">
+                        <div class="text-center">
+                            <h6>Pagar con PayPal</h6>
+                            <p class="text-muted small">Haz clic en los botones de PayPal para completar tu pago. Se realizarán dos pagos separados: uno por los dispositivos y opciones, y otro por la suscripción de soporte.</p>
+                            <div id="paypal-buttons-container">
+                                <!-- Aquí se renderizarán los botones de PayPal -->
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
 <script src="https://www.paypal.com/sdk/js?client-id=AXn6zeaT-kutunjZDVGKpbDSQ6WCCPgvHvsdaVYjrQvy4udAukapA5ISWF9QIR268HG_K-eDjk8ETcYs&currency=USD&vault=true"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -1208,11 +1313,11 @@ document.addEventListener('DOMContentLoaded', function() {
     let isProcessing = false;
     let devicePaymentCompleted = false;
     let supportPaymentCompleted = false;
-    let deviceOrderID = null; // ID de transacción de dispositivos
-    let supportOrderID = null; // ID de transacción de soporte
 
     // 2. Datos de compra
-    const selectedPlanData = { type: 'monthly' }; // monthly/annual
+    const selectedPlanData = {
+        type: 'monthly' // monthly/annual
+    };
 
     const purchaseCalculations = {
         deviceBasePrice: 229,
@@ -1237,7 +1342,11 @@ document.addEventListener('DOMContentLoaded', function() {
         aestheticColors: 10,
         installGuided: 50,
         installManual: 10,
-        quantityDiscounts: { '1': 229, '2-4': 219, '5+': 199 }
+        quantityDiscounts: {
+            '1': 229,
+            '2-4': 219,
+            '5+': 199
+        }
     };
 
     // 3. Inicialización
@@ -1246,13 +1355,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function initEventListeners() {
         // Botón "Personalizar y Comprar"
-        document.querySelector('.btn-compra')?.addEventListener('click', () => {
+        document.querySelector('.btn-compra').addEventListener('click', () => {
             companyRegistrationModal.show();
         });
 
         // Formulario de registro de empresa
         document.getElementById('companyRegistrationForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Evita que se recargue la página
+            e.preventDefault();
             transferCompanyData();
             companyRegistrationModal.hide();
             purchaseModal.show();
@@ -1261,12 +1370,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Navegación entre pasos
         document.getElementById('purchaseForm').addEventListener('click', function(e) {
-            if (e.target.classList.contains('next-step')) handleNextStep();
-            else if (e.target.classList.contains('prev-step')) handlePrevStep();
+            if (e.target.classList.contains('next-step')) {
+                handleNextStep();
+            } else if (e.target.classList.contains('prev-step')) {
+                handlePrevStep();
+            }
         });
 
         // Cantidad de dispositivos
-        document.getElementById('deviceQuantity')?.addEventListener('change', function() {
+        document.getElementById('deviceQuantity').addEventListener('change', function() {
             purchaseCalculations.quantity = parseInt(this.value);
             updatePurchaseSummary();
             renderPayPalButtons();
@@ -1282,193 +1394,498 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Botón de confirmación final
-        document.getElementById('confirmPurchaseBtn')?.addEventListener('click', handleFinalConfirmation);
+        document.getElementById('confirmPurchaseBtn').addEventListener('click', handleFinalConfirmation);
     }
 
-    // Funciones de pasos
-    function handleNextStep() { if (validateStep(currentStep) && currentStep < formSteps.length - 1) showStep(currentStep + 1); }
-    function handlePrevStep() { if (currentStep > 0) showStep(currentStep - 1); }
-    function showStep(stepIndex) {
-        formSteps.forEach((step, i) => step.classList.toggle('d-none', i !== stepIndex));
-        currentStep = stepIndex;
-    }
-    function validateStep(stepIndex) {
-        if (stepIndex === 1) {
-            let isValid = true;
-            document.querySelectorAll('#step-delivery input[required]').forEach(input => {
-                if (!input.value.trim()) { input.classList.add('is-invalid'); isValid = false; }
-                else input.classList.remove('is-invalid');
-            });
-            return isValid;
-        }
-        return true;
-    }
+    // 4. Funciones principales
     function transferCompanyData() {
         const fields = [
-            ['displayCompanyName','companyName'],
-            ['displayCompanyTaxId','companyTaxId'],
-            ['displayCompanyContactPerson','companyContactPerson'],
-            ['displayCompanyContactEmail','companyContactEmail'],
-            ['displayCompanyContactPhone','companyContactPhone']
+            ['displayCompanyName', 'companyName'],
+            ['displayCompanyTaxId', 'companyTaxId'],
+            ['displayCompanyContactPerson', 'companyContactPerson'],
+            ['displayCompanyContactEmail', 'companyContactEmail'],
+            ['displayCompanyContactPhone', 'companyContactPhone']
         ];
-        fields.forEach(([disp,input]) => document.getElementById(disp).textContent = document.getElementById(input).value);
+
+        fields.forEach(([displayId, inputId]) => {
+            document.getElementById(displayId).textContent = document.getElementById(inputId).value;
+        });
     }
 
-    function updateCustomization(id,value,isChecked){
-        if(id.startsWith('securityLayer')) purchaseCalculations.securityLayers[value]=isChecked;
-        else if(id.startsWith('support')) purchaseCalculations.techSupport=value;
-        else if(id.startsWith('aesthetic')) purchaseCalculations.aestheticCustomization[value]=isChecked;
-        else if(id.startsWith('install')) purchaseCalculations.assistedInstallation[value]=isChecked;
+    function handleNextStep() {
+        if (validateStep(currentStep)) {
+            if (currentStep < formSteps.length - 1) {
+                showStep(currentStep + 1);
+                if (currentStep === formSteps.length - 1) {
+                    updatePurchaseSummary();
+                    renderPayPalButtons();
+                }
+            }
+        } else {
+            alert('Por favor, completa todos los campos requeridos.');
+        }
     }
 
-    // PayPal Buttons
+    function handlePrevStep() {
+        if (currentStep > 0) {
+            showStep(currentStep - 1);
+        }
+    }
+
+    function showStep(stepIndex) {
+        formSteps.forEach((step, index) => {
+            step.classList.toggle('d-none', index !== stepIndex);
+        });
+        currentStep = stepIndex;
+    }
+
+    function validateStep(stepIndex) {
+        let isValid = true;
+        if (stepIndex === 1) {
+            document.querySelectorAll('#step-delivery input[required]').forEach(input => {
+                if (!input.value.trim()) {
+                    input.classList.add('is-invalid');
+                    isValid = false;
+                } else {
+                    input.classList.remove('is-invalid');
+                }
+            });
+        }
+        return isValid;
+    }
+
+    function updateCustomization(id, value, isChecked) {
+        if (id.startsWith('securityLayer')) {
+            purchaseCalculations.securityLayers[value] = isChecked;
+        } else if (id.startsWith('support')) {
+            purchaseCalculations.techSupport = value;
+        } else if (id.startsWith('aesthetic')) {
+            purchaseCalculations.aestheticCustomization[value] = isChecked;
+        } else if (id.startsWith('install')) {
+            purchaseCalculations.assistedInstallation[value] = isChecked;
+        }
+    }
+
+    // 5. Funciones de PayPal mejoradas
     function renderPayPalButtons() {
         const container = document.getElementById('paypal-buttons-container');
-        if(!container) return;
-        container.innerHTML='';
+        if (!container) return;
+        
+        container.innerHTML = '';
 
-        // Pago Dispositivos
-        const deviceContainer = document.createElement('div'); deviceContainer.className='mb-4 p-3 border rounded'; container.appendChild(deviceContainer);
-        const deviceTitle=document.createElement('h5'); deviceTitle.className='mb-3'; deviceTitle.textContent='1. Pago de Dispositivos'; deviceContainer.appendChild(deviceTitle);
-        if(purchaseCalculations.quantity>0 && purchaseCalculations.currentDeviceTotal>0){
-            const deviceButtonDiv=document.createElement('div'); deviceButtonDiv.id='paypal-device-button'; deviceContainer.appendChild(deviceButtonDiv);
+        // 1. Pago de dispositivos
+        const deviceContainer = document.createElement('div');
+        deviceContainer.className = 'mb-4 p-3 border rounded';
+        container.appendChild(deviceContainer);
+
+        const deviceTitle = document.createElement('h5');
+        deviceTitle.className = 'mb-3';
+        deviceTitle.textContent = '1. Pago de Dispositivos';
+        deviceContainer.appendChild(deviceTitle);
+
+        if (purchaseCalculations.quantity > 0 && purchaseCalculations.currentDeviceTotal > 0) {
+            const deviceButtonDiv = document.createElement('div');
+            deviceButtonDiv.id = 'paypal-device-button';
+            deviceContainer.appendChild(deviceButtonDiv);
+
             paypal.Buttons({
-                createOrder: (data,actions)=>actions.order.create({purchase_units:[{amount:{value:purchaseCalculations.currentDeviceTotal.toFixed(2),currency_code:'USD'},description:'Dispositivos RackON y personalización'}]}),
-                onApprove:(data,actions)=>actions.order.capture().then(details=>{
-                    devicePaymentCompleted=true;
-                    deviceOrderID=data.orderID; // Guardar ID
-                    showPaymentSuccess('dispositivos', details.payer.name.given_name);
-                    checkPaymentsCompletion();
-                }),
-                onError:err=>{console.error('Error en pago de dispositivos:',err); showPaymentError('dispositivos');}
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: purchaseCalculations.currentDeviceTotal.toFixed(2),
+                                currency_code: 'USD'
+                            },
+                            description: 'Dispositivos RackON y personalización'
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        devicePaymentCompleted = true;
+                        sendPaymentConfirmation('Dispositivos RackON', data.orderID, purchaseCalculations.currentDeviceTotal);
+                        showPaymentSuccess('dispositivos', details.payer.name.given_name);
+                        checkPaymentsCompletion();
+                    });
+                },
+                onError: function(err) {
+                    console.error('Error en pago de dispositivos:', err);
+                    showPaymentError('dispositivos');
+                }
             }).render('#paypal-device-button');
-        } else deviceContainer.innerHTML+='<p class="text-muted">No hay dispositivos para pagar</p>';
+        } else {
+            deviceContainer.innerHTML += '<p class="text-muted">No hay dispositivos para pagar</p>';
+        }
 
-        // Pago Soporte
-        const supportContainer=document.createElement('div'); supportContainer.className='mb-4 p-3 border rounded'; container.appendChild(supportContainer);
-        const supportTitle=document.createElement('h5'); supportTitle.className='mb-3'; supportTitle.textContent='2. Soporte Técnico'; supportContainer.appendChild(supportTitle);
-        const supportOptions=document.createElement('div'); supportOptions.className='mb-3';
-        supportOptions.innerHTML=`
+        // 2. Pago de soporte técnico
+        const supportContainer = document.createElement('div');
+        supportContainer.className = 'mb-4 p-3 border rounded';
+        container.appendChild(supportContainer);
+
+        const supportTitle = document.createElement('h5');
+        supportTitle.className = 'mb-3';
+        supportTitle.textContent = '2. Soporte Técnico';
+        supportContainer.appendChild(supportTitle);
+
+        // Selector de tipo de soporte
+        const supportOptions = document.createElement('div');
+        supportOptions.className = 'mb-3';
+        supportOptions.innerHTML = `
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="supportType" id="supportMonthly" value="monthly" ${selectedPlanData.type==='monthly'?'checked':''}>
-                <label class="form-check-label" for="supportMonthly">Pago Mensual (${purchaseCalculations.currentSupportMonthlyTotal.toFixed(2)} USD/mes)</label>
+                <input class="form-check-input" type="radio" name="supportType" id="supportMonthly" 
+                    value="monthly" ${selectedPlanData.type === 'monthly' ? 'checked' : ''}>
+                <label class="form-check-label" for="supportMonthly">
+                    Pago Mensual (${purchaseCalculations.currentSupportMonthlyTotal.toFixed(2)} USD/mes)
+                </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="supportType" id="supportAnnual" value="annual" ${selectedPlanData.type==='annual'?'checked':''}>
-                <label class="form-check-label" for="supportAnnual">Pago Anual (${purchaseCalculations.currentSupportAnnualTotal.toFixed(2)} USD/año) - Ahorra 10%</label>
+                <input class="form-check-input" type="radio" name="supportType" id="supportAnnual" 
+                    value="annual" ${selectedPlanData.type === 'annual' ? 'checked' : ''}>
+                <label class="form-check-label" for="supportAnnual">
+                    Pago Anual (${purchaseCalculations.currentSupportAnnualTotal.toFixed(2)} USD/año) - Ahorra 10%
+                </label>
             </div>
-        `; supportContainer.appendChild(supportOptions);
+        `;
+        supportContainer.appendChild(supportOptions);
 
-        const supportButtonDiv=document.createElement('div'); supportButtonDiv.id='paypal-support-button'; supportContainer.appendChild(supportButtonDiv);
+        // Botón para soporte
+        const supportButtonDiv = document.createElement('div');
+        supportButtonDiv.id = 'paypal-support-button';
+        supportContainer.appendChild(supportButtonDiv);
 
-        document.getElementById('supportMonthly')?.addEventListener('change',()=>{selectedPlanData.type='monthly'; updatePurchaseSummary(); renderPayPalSupportButton();});
-        document.getElementById('supportAnnual')?.addEventListener('change',()=>{selectedPlanData.type='annual'; updatePurchaseSummary(); renderPayPalSupportButton();});
+        // Event listeners para los radios
+        document.getElementById('supportMonthly')?.addEventListener('change', () => {
+            selectedPlanData.type = 'monthly';
+            updatePurchaseSummary();
+            renderPayPalSupportButton();
+        });
+        document.getElementById('supportAnnual')?.addEventListener('change', () => {
+            selectedPlanData.type = 'annual';
+            updatePurchaseSummary();
+            renderPayPalSupportButton();
+        });
 
         renderPayPalSupportButton();
 
-        document.getElementById('confirmPurchaseBtn')?.classList.add('d-none');
+        // Ocultar botón de confirmación inicialmente
+        document.getElementById('confirmPurchaseBtn').classList.add('d-none');
     }
 
-    function renderPayPalSupportButton(){
-        const supportButtonDiv=document.getElementById('paypal-support-button'); if(!supportButtonDiv) return;
-        supportButtonDiv.innerHTML='';
-        const amount=selectedPlanData.type==='monthly'?purchaseCalculations.currentSupportMonthlyTotal:purchaseCalculations.currentSupportAnnualTotal;
-        const description=selectedPlanData.type==='monthly'?'Soporte Técnico Mensual RackON':'Soporte Técnico Anual RackON';
+    function renderPayPalSupportButton() {
+        const supportButtonDiv = document.getElementById('paypal-support-button');
+        if (!supportButtonDiv) return;
+        
+        supportButtonDiv.innerHTML = '';
+
+        const amount = selectedPlanData.type === 'monthly'
+            ? purchaseCalculations.currentSupportMonthlyTotal
+            : purchaseCalculations.currentSupportAnnualTotal;
+        
+        const description = selectedPlanData.type === 'monthly'
+            ? 'Soporte Técnico Mensual RackON'
+            : 'Soporte Técnico Anual RackON';
+
         paypal.Buttons({
-            createOrder:(data,actions)=>actions.order.create({purchase_units:[{amount:{value:amount.toFixed(2),currency_code:'USD'},description:description}]}),
-            onApprove:(data,actions)=>actions.order.capture().then(details=>{
-                supportPaymentCompleted=true;
-                supportOrderID=data.orderID; // Guardar ID
-                showPaymentSuccess('soporte técnico', details.payer.name.given_name);
-                checkPaymentsCompletion();
-            }),
-            onError:err=>{console.error('Error en pago de soporte:',err); showPaymentError('soporte técnico');}
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: amount.toFixed(2),
+                            currency_code: 'USD'
+                        },
+                        description: description
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    supportPaymentCompleted = true;
+                    sendPaymentConfirmation(description, data.orderID, amount);
+                    showPaymentSuccess('soporte técnico', details.payer.name.given_name);
+                    checkPaymentsCompletion();
+                });
+            },
+            onError: function(err) {
+                console.error('Error en pago de soporte:', err);
+                showPaymentError('soporte técnico');
+            }
         }).render('#paypal-support-button');
     }
 
-    function checkPaymentsCompletion(){
-        const confirmBtn=document.getElementById('confirmPurchaseBtn');
-        const devicePaymentNotRequired = purchaseCalculations.quantity===0 || purchaseCalculations.currentDeviceTotal===0;
+    function checkPaymentsCompletion() {
+        const confirmBtn = document.getElementById('confirmPurchaseBtn');
+        
+        // Verificar si ambos pagos están completos o si no hay dispositivos para pagar
+        const devicePaymentNotRequired = purchaseCalculations.quantity === 0 || purchaseCalculations.currentDeviceTotal === 0;
         const allPaymentsCompleted = (devicePaymentCompleted || devicePaymentNotRequired) && supportPaymentCompleted;
-        if(allPaymentsCompleted) confirmBtn?.classList.remove('d-none'); else confirmBtn?.classList.add('d-none');
-    }
-
-    // Confirmación final
-    async function handleFinalConfirmation(){
-        if(isProcessing) return;
-        const btn=document.getElementById('confirmPurchaseBtn'); const originalText=btn.innerHTML;
-        try{
-            isProcessing=true; btn.disabled=true; btn.innerHTML='<span class="spinner-border spinner-border-sm"></span> Procesando...';
-            const oldFeedback=document.querySelector('.purchase-feedback'); if(oldFeedback) oldFeedback.remove();
-            const feedback=document.createElement('div'); feedback.className='alert alert-info purchase-feedback mt-3'; feedback.textContent='Confirmando tu pedido...';
-            btn.parentNode.insertBefore(feedback, btn.nextSibling);
-            const formData=prepareConfirmationData();
-            const response=await sendConfirmationData(formData);
-            if(!response.ok) throw new Error('Error en el servidor');
-            feedback.textContent='¡Pedido confirmado con éxito! Te hemos enviado un correo con los detalles.';
-            feedback.className='alert alert-success purchase-feedback mt-3';
-            isProcessing=false; btn.disabled=false; btn.innerHTML=originalText;
-        }catch(err){
-            console.error('Error en confirmación final:',err);
-            const feedback=document.querySelector('.purchase-feedback') || document.createElement('div');
-            feedback.className='alert alert-danger purchase-feedback mt-3';
-            feedback.textContent='Error al confirmar la compra, intenta de nuevo.';
-            if(!feedback.parentNode) document.getElementById('confirmPurchaseBtn').parentNode.insertBefore(feedback, document.getElementById('confirmPurchaseBtn').nextSibling);
-            isProcessing=false; btn.disabled=false; btn.innerHTML=originalText;
+        
+        if (allPaymentsCompleted) {
+            confirmBtn.classList.remove('d-none');
+        } else {
+            confirmBtn.classList.add('d-none');
         }
     }
 
-    function prepareConfirmationData(){
-        const companyData={
-            name: document.getElementById('companyName').value,
-            taxId: document.getElementById('companyTaxId').value,
-            contactPerson: document.getElementById('companyContactPerson').value,
-            email: document.getElementById('companyContactEmail').value,
-            phone: document.getElementById('companyContactPhone').value
-        };
-        const deliveryData={
-            street: document.getElementById('deliveryStreet')?.value||'',
-            city: document.getElementById('deliveryCity')?.value||'',
-            state: document.getElementById('deliveryState')?.value||'',
-            zip: document.getElementById('deliveryZip')?.value||''
-        };
-        const purchaseData={
-            quantity: purchaseCalculations.quantity,
-            securityLayers: purchaseCalculations.securityLayers,
-            customization: purchaseCalculations.aestheticCustomization,
-            assistedInstallation: purchaseCalculations.assistedInstallation,
-            techSupport: selectedPlanData.type,
-            deviceOrderID, supportOrderID
-        };
-        return {companyData,deliveryData,purchaseData};
+    // 6. Confirmación final del pedido
+    async function handleFinalConfirmation() {
+        if (isProcessing) return;
+        
+        const btn = document.getElementById('confirmPurchaseBtn');
+        const originalText = btn.innerHTML;
+        
+        try {
+            isProcessing = true;
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Procesando...';
+
+            // Limpiar feedback anterior
+            const oldFeedback = document.querySelector('.purchase-feedback');
+            if (oldFeedback) oldFeedback.remove();
+
+            // Crear nuevo feedback
+            const feedback = document.createElement('div');
+            feedback.className = 'alert alert-info purchase-feedback mt-3';
+            feedback.textContent = 'Confirmando tu pedido...';
+            btn.parentNode.insertBefore(feedback, btn.nextSibling);
+
+            // Preparar y enviar datos de confirmación
+            const formData = prepareConfirmationData();
+            const response = await sendConfirmationData(formData);
+
+            if (!response.ok) throw new Error('Error en el servidor');
+
+            // Éxito
+            feedback.textContent = '¡Pedido confirmado con éxito! Te hemos enviado un correo con los detalles.';
+            feedback.className = 'alert alert-success purchase-feedback mt-3';
+
+            // Resetear después de 3 segundos
+            setTimeout(() => {
+                purchaseModal.hide();
+                resetForms();
+                resetPaymentStatus();
+            }, 3000);
+
+        } catch (error) {
+            console.error('Error en la confirmación:', error);
+            const feedback = document.querySelector('.purchase-feedback');
+            if (feedback) {
+                feedback.textContent = 'Error al confirmar el pedido. Por favor, contacta a soporte.';
+                feedback.className = 'alert alert-danger purchase-feedback mt-3';
+            }
+        } finally {
+            const btn = document.getElementById('confirmPurchaseBtn');
+            if (btn) {
+                btn.disabled = false;
+                btn.innerHTML = originalText;
+            }
+            isProcessing = false;
+        }
     }
 
-    async function sendConfirmationData(data){
-        // Aquí mandarías el fetch a tu backend o servicio de correo
-        console.log('Datos finales para enviar al backend:', data);
-        return {ok:true}; // Simulación
+    function prepareConfirmationData() {
+        const formData = new FormData();
+        
+        // Datos de empresa
+        formData.append('nombre', document.getElementById('companyName').value);
+        formData.append('email', document.getElementById('companyContactEmail').value);
+        formData.append('telefono', document.getElementById('companyContactPhone').value);
+        formData.append('cuit', document.getElementById('companyTaxId').value);
+        formData.append('contacto', document.getElementById('companyContactPerson').value);
+        
+        // Datos de envío
+        formData.append('direccion', document.getElementById('deliveryAddress').value);
+        formData.append('ciudad', document.getElementById('deliveryCity').value);
+        formData.append('provincia', document.getElementById('deliveryState').value);
+        formData.append('codigo_postal', document.getElementById('deliveryZip').value);
+        formData.append('pais', document.getElementById('deliveryCountry').value);
+        
+        // Detalles del pedido
+        formData.append('cantidad', purchaseCalculations.quantity);
+        formData.append('total_dispositivos', purchaseCalculations.currentDeviceTotal.toFixed(2));
+        formData.append('soporte', selectedPlanData.type === 'monthly' 
+            ? `${purchaseCalculations.currentSupportMonthlyTotal.toFixed(2)} USD/mes` 
+            : `${purchaseCalculations.currentSupportAnnualTotal.toFixed(2)} USD/año`);
+        
+        // Opciones seleccionadas
+        const options = getSelectedOptions();
+        formData.append('opciones', options.join(', '));
+        formData.append('mensaje', `Confirmación de pedido de ${document.getElementById('companyName').value}`);
+        formData.append('_subject', `Confirmación de pedido RackON - ${document.getElementById('companyName').value}`);
+        
+        return formData;
     }
 
-    function showPaymentSuccess(type,name){ alert(`Pago de ${type} completado. Gracias, ${name}!`); }
-    function showPaymentError(type){ alert(`Hubo un error en el pago de ${type}. Intenta otra vez.`); }
-
-    // Cálculos de totales
-    function updatePurchaseSummary(){
-        let total = PRICES.quantityDiscounts['1'] * purchaseCalculations.quantity;
-        if(purchaseCalculations.securityLayers.camera) total+=PRICES.securityLayer2;
-        if(purchaseCalculations.securityLayers.sensor) total+=PRICES.securityLayer3;
-        if(purchaseCalculations.aestheticCustomization.laser) total+=PRICES.aestheticLaser;
-        if(purchaseCalculations.aestheticCustomization.colors) total+=PRICES.aestheticColors;
-        if(purchaseCalculations.assistedInstallation.guided) total+=PRICES.installGuided;
-        if(purchaseCalculations.assistedInstallation.manual) total+=PRICES.installManual;
-        purchaseCalculations.currentDeviceTotal=total;
-        purchaseCalculations.currentSupportMonthlyTotal=25;
-        purchaseCalculations.currentSupportAnnualTotal=250;
-        const summary=document.getElementById('purchaseSummary');
-        if(summary) summary.textContent=`Total dispositivos: ${purchaseCalculations.currentDeviceTotal.toFixed(2)} USD, Soporte: ${selectedPlanData.type==='monthly'?purchaseCalculations.currentSupportMonthlyTotal:purchaseCalculations.currentSupportAnnualTotal} USD`;
+    async function sendConfirmationData(formData) {
+        return await Promise.race([
+            fetch('https://formsubmit.co/ajax/rackonoficial@gmail.com', {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }),
+            new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 20000))
+        ]);
     }
+
+    function resetPaymentStatus() {
+        devicePaymentCompleted = false;
+        supportPaymentCompleted = false;
+    }
+
+    // 7. Funciones auxiliares
+    function sendPaymentConfirmation(type, orderId, amount) {
+        const formData = new FormData();
+        formData.append('_subject', `Confirmación de pago - ${type}`);
+        formData.append('nombre', document.getElementById('companyName').value);
+        formData.append('email', document.getElementById('companyContactEmail').value);
+        formData.append('mensaje', `Se ha procesado el pago de ${type} (${amount} USD). ID: ${orderId}`);
+        
+        fetch('https://formsubmit.co/ajax/rackonoficial@gmail.com', {
+            method: 'POST',
+            body: formData
+        });
+    }
+
+    function showPaymentSuccess(type, userName) {
+        alert(`¡Pago de ${type} completado con éxito! Gracias ${userName}.`);
+    }
+
+    function showPaymentError(type) {
+        alert(`Hubo un error procesando el pago de ${type}. Por favor, inténtalo de nuevo.`);
+    }
+
+    function getSelectedOptions() {
+        const options = [];
+        if (purchaseCalculations.securityLayers.camera) options.push('Cámara de verificación');
+        if (purchaseCalculations.securityLayers.sensor) options.push('Sensor de impacto');
+        if (purchaseCalculations.aestheticCustomization.laser) options.push('Grabado láser');
+        if (purchaseCalculations.aestheticCustomization.colors) options.push('Colores personalizados');
+        if (purchaseCalculations.assistedInstallation.guided) options.push('Instalación guiada');
+        if (purchaseCalculations.assistedInstallation.manual) options.push('Manual físico');
+        return options;
+    }
+
+    function resetForms() {
+        document.getElementById('companyRegistrationForm').reset();
+        document.getElementById('purchaseForm').reset();
+        document.querySelector('.purchase-feedback')?.remove();
+        document.getElementById('confirmPurchaseBtn').classList.add('d-none');
+    }
+
+    // 8. Funciones de resumen de compra
+    function updatePurchaseSummary() {
+        const summaryList = document.getElementById('orderSummaryList');
+        if (!summaryList) return;
+        
+        summaryList.innerHTML = '';
+
+        // Calcular precio por dispositivo
+        const devicePricePerUnit = calculateDevicePrice();
+        purchaseCalculations.currentDeviceTotal = devicePricePerUnit * purchaseCalculations.quantity;
+
+        // Calcular soporte
+        calculateSupportPrices();
+
+        // Construir resumen
+        const summaryItems = [
+            `<li class="list-group-item"><strong>Cantidad:</strong> ${purchaseCalculations.quantity} unidades</li>`,
+            `<li class="list-group-item"><strong>Precio por unidad:</strong> ${devicePricePerUnit} USD</li>`
+        ];
+
+        // Agregar opciones adicionales
+        addOptionalItems(summaryItems);
+
+        // Mostrar resumen
+        summaryList.innerHTML = summaryItems.join('');
+        document.getElementById('finalDevicePrice').textContent = `${purchaseCalculations.currentDeviceTotal.toFixed(2)} USD`;
+        
+        const supportText = selectedPlanData.type === 'monthly'
+            ? `${purchaseCalculations.currentSupportMonthlyTotal.toFixed(2)} USD/mes`
+            : `${purchaseCalculations.currentSupportAnnualTotal.toFixed(2)} USD/año`;
+        
+        document.getElementById('finalSupportPrice').textContent = supportText;
+        document.getElementById('supportPlanType').textContent = selectedPlanData.type === 'monthly' ? 'Mensual' : 'Anual';
+    }
+
+    function calculateDevicePrice() {
+        if (purchaseCalculations.quantity >= 5) return PRICES.quantityDiscounts['5+'];
+        if (purchaseCalculations.quantity >= 2) return PRICES.quantityDiscounts['2-4'];
+        return PRICES.quantityDiscounts['1'];
+    }
+
+    function calculateSupportPrices() {
+        let baseMonthly = 25; // Precio base mensual
+        let baseAnnual = 250; // Precio base anual
+
+        switch (purchaseCalculations.techSupport) {
+            case 'premium':
+                baseMonthly += PRICES.supportPremiumMonthly;
+                baseAnnual += PRICES.supportPremiumAnnual;
+                break;
+            case 'ultra':
+                baseMonthly += PRICES.supportUltraMonthly;
+                baseAnnual += PRICES.supportUltraAnnual;
+                break;
+        }
+
+        purchaseCalculations.currentSupportMonthlyTotal = baseMonthly;
+        purchaseCalculations.currentSupportAnnualTotal = baseAnnual;
+    }
+
+    function addOptionalItems(summaryItems) {
+        // Capas de seguridad
+        if (purchaseCalculations.securityLayers.camera) {
+            purchaseCalculations.currentDeviceTotal += PRICES.securityLayer2;
+            summaryItems.push(`<li class="list-group-item">Cámara de verificación (+${PRICES.securityLayer2} USD)</li>`);
+        }
+        if (purchaseCalculations.securityLayers.sensor) {
+            purchaseCalculations.currentDeviceTotal += PRICES.securityLayer3;
+            summaryItems.push(`<li class="list-group-item">Sensor de impacto (+${PRICES.securityLayer3} USD)</li>`);
+        }
+
+        // Personalización estética
+        if (purchaseCalculations.aestheticCustomization.laser) {
+            purchaseCalculations.currentDeviceTotal += PRICES.aestheticLaser;
+            summaryItems.push(`<li class="list-group-item">Grabado láser (+${PRICES.aestheticLaser} USD)</li>`);
+        }
+        if (purchaseCalculations.aestheticCustomization.colors) {
+            purchaseCalculations.currentDeviceTotal += PRICES.aestheticColors;
+            summaryItems.push(`<li class="list-group-item">Colores personalizados (+${PRICES.aestheticColors} USD)</li>`);
+        }
+
+        // Instalación
+        if (purchaseCalculations.assistedInstallation.guided) {
+            purchaseCalculations.currentDeviceTotal += PRICES.installGuided;
+            summaryItems.push(`<li class="list-group-item">Instalación guiada (+${PRICES.installGuided} USD)</li>`);
+        }
+        if (purchaseCalculations.assistedInstallation.manual) {
+            purchaseCalculations.currentDeviceTotal += PRICES.installManual;
+            summaryItems.push(`<li class="list-group-item">Manual físico (+${PRICES.installManual} USD)</li>`);
+        }
+
+        // Soporte técnico
+        let supportText = '';
+        switch (purchaseCalculations.techSupport) {
+            case 'basic':
+                supportText = 'Básico (incluido)';
+                break;
+            case 'premium':
+                supportText = 'Premium';
+                break;
+            case 'ultra':
+                supportText = 'Ultra';
+                break;
+        }
+        summaryItems.push(`<li class="list-group-item">Soporte Técnico: ${supportText}</li>`);
+    }
+
+    // Inicialización del modal
+    $('#purchaseModal').on('show.bs.modal', function() {
+        updatePurchaseSummary();
+        resetPaymentStatus();
+        const confirmBtn = document.getElementById('confirmPurchaseBtn');
+        if (confirmBtn) confirmBtn.classList.add('d-none');
+    });
 });
 </script>
-
 </body>
 </html>
