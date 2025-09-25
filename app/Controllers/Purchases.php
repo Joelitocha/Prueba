@@ -9,7 +9,7 @@ use CodeIgniter\Controller;
 
 class PurchaseController extends Controller
 {
-    public function create()
+    public function save()
     {
         helper(['form']);
 
