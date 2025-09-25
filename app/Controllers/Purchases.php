@@ -4,71 +4,30 @@ namespace App\Controllers;
 
 use App\Models\PurchaseModel;
 use App\Models\EmpresaModel;
-use CodeIgniter\RESTful\ResourceController;
-
-class Purchases extends ResourceController
-{
-    protected $format = 'json';
-
-<?php
-
-namespace App\Controllers;
-
-use CodeIgniter\RESTful\ResourceController;
-use App\Models\PurchaseModel;
-use App\Models\EmpresaModel;
 use App\Models\UserModel;
+use CodeIgniter\Email\Email;
 
-class Purchases extends ResourceController
+class Purchases extends BaseController
 {
-    protected $format = 'json';
+    protected $validation;
 
+    public function __construct()
+    {
+        helper(['form', 'url']);
+        $this->validation = \Config\Services::validation();
+    }
+
+    /**
+     * Genera un Ecode aleatorio
+     */
     private function generateEcode(): string
     {
         return strtoupper(substr(bin2hex(random_bytes(6)), 0, 12));
     }
 
-    private function generatePassword(int $length = 8): string
-    {
-        return substr(str_shuffle('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'), 0, $length);
-    }
-
-    private function createUserForCompany(array $data)
-    {
-        $userModel = new UserModel();
-
-        $password = $this->generatePassword();
-        $userData = [
-            'email'    => $data['email'],
-            'name'     => $data['company_name'], // o el contacto si querés
-            'password' => password_hash($password, PASSWORD_DEFAULT),
-            'empresa_id' => $data['empresa_id'], // si tu tabla usuarios tiene empresa_id
-            'role_id'  => 2 // supongamos que 2 = Usuario normal
-        ];
-
-        $userId = $userModel->insert($userData, true);
-
-        if ($userId) {
-            // Mandar mail con credenciales
-            $this->sendCredentialsMail($data['email'], $password);
-        }
-
-        return $userId;
-    }
-
-    private function sendCredentialsMail(string $email, string $password)
-    {
-        $emailService = \Config\Services::email();
-
-        $emailService->setTo($email);
-        $emailService->setSubject('Tus credenciales de RackON');
-        $emailService->setMessage("Hola, tu cuenta fue creada.\n\nEmail: $email\nPassword: $password");
-
-        if (!$emailService->send()) {
-            log_message('error', 'Error al enviar mail a ' . $email);
-        }
-    }
-
+    /**
+     * Función principal para guardar la compra
+     */
     public function save()
     {
         if (!$this->request->isAJAX()) {
@@ -101,14 +60,11 @@ class Purchases extends ResourceController
                 'Ecode'  => $ecode
             ], true);
 
-            // 3. Relacionar compra con empresa
-            $purchaseModel->update($insertId, ['empresa_id' => $idEmpresa]);
-
-            // 4. Crear usuario vinculado a empresa y mandar mail
-            $userId = $this->createUserForCompany([
-                'email' => $json['email'],
-                'company_name' => $json['company_name'],
-                'empresa_id' => $idEmpresa
+            // 3. Crear usuario para la empresa y enviar mail
+            $this->createUserForCompany([
+                'email'      => $json['email'],
+                'company_id' => $idEmpresa,
+                'ecode'      => $ecode
             ]);
 
             $db->transComplete();
@@ -119,10 +75,9 @@ class Purchases extends ResourceController
 
             return $this->respondCreated([
                 'status'       => 'success',
-                'message'      => 'Compra, empresa y usuario registrados exitosamente',
+                'message'      => 'Compra, empresa y usuario registradas exitosamente',
                 'purchase_id'  => $insertId,
                 'empresa_id'   => $idEmpresa,
-                'user_id'      => $userId,
                 'ecode'        => $ecode
             ]);
 
@@ -131,6 +86,33 @@ class Purchases extends ResourceController
             return $this->failServerError('Error interno del servidor');
         }
     }
-}
 
+    /**
+     * Crea un usuario asociado a la empresa y envía mail con credenciales
+     */
+    private function createUserForCompany(array $data)
+    {
+        $userModel = new UserModel();
+
+        // Generar contraseña aleatoria
+        $password = substr(bin2hex(random_bytes(4)), 0, 8);
+
+        $userData = [
+            'email'     => $data['email'],
+            'id_empresa'=> $data['company_id'],
+            'password'  => password_hash($password, PASSWORD_DEFAULT),
+            'role_id'   => 2 // Supongamos que 2 = Usuario estándar
+        ];
+
+        $userModel->insert($userData);
+
+        // Enviar email
+        $email = \Config\Services::email();
+
+        $email->setTo($data['email']);
+        $email->setSubject('Tus credenciales de RackON');
+        $email->setMessage("Hola,\n\nTu usuario ha sido creado para la empresa. \nEcode: {$data['ecode']}\nEmail: {$data['email']}\nContraseña: {$password}\n\nSaludos,\nRackON");
+
+        $email->send();
+    }
 }
