@@ -33,6 +33,9 @@ class Purchases extends ResourceController
             return $this->fail('Datos incompletos', 400);
         }
 
+        // Remover campos de timestamp para evitar conflictos con useTimestamps
+        unset($json['created_at']);
+
         try {
             $db = \Config\Database::connect();
             $db->transStart();
@@ -44,30 +47,51 @@ class Purchases extends ResourceController
             // 1️⃣ Guardar la compra
             $purchaseId = $purchaseModel->insert($json, true);
             if (!$purchaseId) {
+                $db->transRollback();
                 return $this->failValidationErrors($purchaseModel->errors());
             }
 
             // 2️⃣ Crear empresa con Ecode
             $ecode = $this->generateEcode();
-            $empresaId = $empresaModel->insert([
+            $empresaData = [
                 'nombre' => $json['company_name'],
                 'Ecode'  => $ecode
-            ], true);
+            ];
+            $empresaId = $empresaModel->insert($empresaData, true);
+            if (!$empresaId) {
+                $db->transRollback();
+                return $this->failValidationErrors($empresaModel->errors());
+            }
 
             // Actualizar la compra con el empresa_id
-            $purchaseModel->update($purchaseId, ['empresa_id' => $empresaId]);
+            $updateResult = $purchaseModel->update($purchaseId, ['empresa_id' => $empresaId]);
+            if (!$updateResult) {
+                $db->transRollback();
+                return $this->failServerError('Error al actualizar la compra con empresa_id');
+            }
 
             // 3️⃣ Crear usuario asociado a la empresa
             $passwordPlain = $this->generatePassword();
-            $userId = $userModel->insert([
+            $userData = [
                 'Email'       => $json['email'],
                 'Contraseña'  => password_hash($passwordPlain, PASSWORD_DEFAULT),
                 'ID_Rol'      => 2, // Suponiendo que 2 = Usuario
                 'id_empresa'  => $empresaId,
                 'Nombre'      => $json['contact_person'] ?? 'Cliente',
-            ], true);
+            ];
+            $userId = $userModel->insert($userData, true);
+            if (!$userId) {
+                $db->transRollback();
+                return $this->failValidationErrors($userModel->errors());
+            }
 
-            // 4️⃣ Enviar correo con los datos de confirmación
+            $db->transComplete();
+
+            if ($db->transStatus() === false) {
+                return $this->failServerError('Error al procesar la transacción');
+            }
+
+            // 4️⃣ Enviar correo con los datos de confirmación (solo si transacción exitosa)
             $emailService = \Config\Services::email();
             $emailService->setTo($json['email']);
             $emailService->setSubject("✅ Pedido RackON - {$json['company_name']}");
@@ -83,12 +107,6 @@ class Purchases extends ResourceController
             ");
             if (!$emailService->send()) {
                 log_message('error', 'Error al enviar email: ' . $emailService->printDebugger());
-            }
-
-            $db->transComplete();
-
-            if ($db->transStatus() === false) {
-                return $this->failServerError('Error al procesar la transacción');
             }
 
             return $this->respondCreated([
