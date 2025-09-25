@@ -26,8 +26,10 @@ class UserModel extends Model
 
     public function insertUser($data)
     {
-        return $this->db->table($this->table)->insert($data);
+        $this->db->table($this->table)->insert($data);
+        return $this->db->insertID(); // Devuelve el ID del nuevo usuario
     }
+    
 
     public function userExists($email, $nombre)
     {
