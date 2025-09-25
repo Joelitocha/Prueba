@@ -87,37 +87,6 @@ class Purchases extends ResourceController
 
             $db->transComplete();
 
-            if ($db->transStatus() === false) {
-                return $this->failServerError('Error al procesar la transacción');
-            }
-
-            // 4️⃣ Enviar correo con los datos de confirmación (solo si transacción exitosa)
-            $emailService = \Config\Services::email();
-            $emailService->setTo($json['email']);
-            $emailService->setSubject("✅ Pedido RackON - {$json['company_name']}");
-            $emailService->setMessage("
-                <p>¡Gracias por tu pedido, {$json['company_name']}!</p>
-                <p><strong>Datos de acceso:</strong></p>
-                <ul>
-                    <li>Email: {$json['email']}</li>
-                    <li>Contraseña: {$passwordPlain}</li>
-                    <li>Ecode empresa: {$ecode}</li>
-                </ul>
-                <p>Pedido registrado correctamente con ID: {$purchaseId}</p>
-            ");
-            if (!$emailService->send()) {
-                log_message('error', 'Error al enviar email: ' . $emailService->printDebugger());
-            }
-
-            return $this->respondCreated([
-                'status'      => 'success',
-                'message'     => 'Compra, empresa y usuario creados correctamente',
-                'purchase_id' => $purchaseId,
-                'empresa_id'  => $empresaId,
-                'user_id'     => $userId,
-                'ecode'       => $ecode
-            ]);
-
         } catch (\Exception $e) {
             log_message('error', 'Purchases::save error: ' . $e->getMessage());
             return $this->failServerError('Error interno del servidor');
