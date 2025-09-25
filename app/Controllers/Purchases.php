@@ -60,11 +60,11 @@ class Purchases extends ResourceController
             // 3️⃣ Crear usuario asociado a la empresa
             $passwordPlain = $this->generatePassword();
             $userId = $userModel->insert([
-                'email'       => $json['email'],
-                'password'    => password_hash($passwordPlain, PASSWORD_DEFAULT),
-                'role_id'     => 2, // Suponiendo que 2 = Usuario
-                'empresa_id'  => $empresaId,
-                'nombre'      => $json['contact_person'] ?? 'Cliente',
+                'Email'       => $json['email'],
+                'Contraseña'  => password_hash($passwordPlain, PASSWORD_DEFAULT),
+                'ID_Rol'      => 2, // Suponiendo que 2 = Usuario
+                'id_empresa'  => $empresaId,
+                'Nombre'      => $json['contact_person'] ?? 'Cliente',
             ], true);
 
             // 4️⃣ Enviar correo con los datos de confirmación
