@@ -1066,238 +1066,248 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     <i class="fas fa-arrow-up"></i>
 </button>
 
-<div class="modal fade" id="companyRegistrationModal" tabindex="-1" aria-labelledby="companyRegistrationModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="companyRegistrationModalLabel">Registro de Empresa</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form id="companyRegistrationForm">
-                    <div class="mb-3">
-                        <label for="companyName" class="form-label">Nombre de la Empresa</label>
-                        <input type="text" class="form-control" id="companyName" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="companyTaxId" class="form-label">CUIT/ID Fiscal</label>
-                        <input type="text" class="form-control" id="companyTaxId" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="companyContactPerson" class="form-label">Persona de Contacto</label>
-                        <input type="text" class="form-control" id="companyContactPerson" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="companyContactEmail" class="form-label">Email de Contacto</label>
-                        <input type="email" class="form-control" id="companyContactEmail" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="companyContactPhone" class="form-label">Teléfono de Contacto</label>
-                        <input type="tel" class="form-control" id="companyContactPhone" required>
-                    </div>
-                    <div class="d-grid">
-                        <button type="submit" class="btn btn-primary">Continuar a la Compra</button>
-                    </div>
-                </form>
+    <!-- Modales -->
+    <div class="modal fade" id="companyRegistrationModal" tabindex="-1" aria-labelledby="companyRegistrationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="companyRegistrationModalLabel">Registro de Empresa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="companyRegistrationForm">
+                        <div class="mb-3">
+                            <label for="companyName" class="form-label">Nombre de la Empresa</label>
+                            <input type="text" class="form-control" id="companyName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="companyTaxId" class="form-label">CUIT/ID Fiscal</label>
+                            <input type="text" class="form-control" id="companyTaxId" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="companyContactPerson" class="form-label">Persona de Contacto</label>
+                            <input type="text" class="form-control" id="companyContactPerson" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="companyContactEmail" class="form-label">Email de Contacto</label>
+                            <input type="email" class="form-control" id="companyContactEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="companyContactPhone" class="form-label">Teléfono de Contacto</label>
+                            <input type="tel" class="form-control" id="companyContactPhone" required>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Continuar a la Compra</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="purchaseModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="purchaseModalLabel">Realizar Pedido RackON</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form id="purchaseForm">
-                    <!-- Campos ocultos para el envío del correo -->
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_subject" value="Nuevo pedido RackON">
-                    <input type="hidden" name="_autoresponse" value="Gracias por tu pedido en RackON. Hemos recibido tu solicitud y te contactaremos pronto con los detalles de envío.">
-                    <input type="text" name="_honey" style="display:none">
-                    
-                    <div class="form-step" id="step-personal">
-                        <h6 class="mb-3">1. Información de la Empresa <i class="fas fa-info-circle text-primary"></i></h6>
-                        <div class="mb-3">
-                            <label class="form-label">Nombre:</label>
-                            <p id="displayCompanyName" class="form-control-plaintext"></p>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">CUIT/ID Fiscal:</label>
-                            <p id="displayCompanyTaxId" class="form-control-plaintext"></p>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Contacto:</label>
-                            <p id="displayCompanyContactPerson" class="form-control-plaintext"></p>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Email:</label>
-                            <p id="displayCompanyContactEmail" class="form-control-plaintext"></p>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Teléfono:</label>
-                            <p id="displayCompanyContactPhone" class="form-control-plaintext"></p>
-                        </div>
-                        <div class="d-flex justify-content-end">
-                            <button type="button" class="btn btn-primary next-step">Siguiente</button>
-                        </div>
-                    </div>
-
-                    <div class="form-step d-none" id="step-delivery">
-                        <h6 class="mb-3">2. Dirección de Entrega <i class="fas fa-truck text-primary"></i></h6>
-                        <div class="mb-3">
-                            <label for="deliveryAddress" class="form-label">Dirección</label>
-                            <input type="text" class="form-control" id="deliveryAddress" name="direccion" required>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="deliveryCity" class="form-label">Ciudad</label>
-                                <input type="text" class="form-control" id="deliveryCity" name="ciudad" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="deliveryState" class="form-label">Provincia/Estado</label>
-                                <input type="text" class="form-control" id="deliveryState" name="provincia" required>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="deliveryZip" class="form-label">Código Postal</label>
-                                <input type="text" class="form-control" id="deliveryZip" name="codigo_postal" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="deliveryCountry" class="form-label">País</label>
-                                <input type="text" class="form-control" id="deliveryCountry" name="pais" required>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <button type="button" class="btn btn-secondary prev-step">Anterior</button>
-                            <button type="button" class="btn btn-primary next-step">Siguiente</button>
-                        </div>
-                    </div>
-
-                    <div class="form-step d-none" id="step-customization">
-                        <h6 class="mb-3">3. Personaliza tu Pedido <i class="fas fa-puzzle-piece text-primary"></i></h6>
+    <div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="purchaseModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="purchaseModalLabel">Realizar Pedido RackON</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="purchaseForm">
+                        <!-- Campos ocultos para el envío del correo -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="text" name="_honey" style="display:none">
                         
-                        <div class="mb-4 p-3 border rounded bg-light">
-                            <label for="deviceQuantity" class="form-label fw-bold">Cantidad de Dispositivos</label>
-                            <input type="number" class="form-control" id="deviceQuantity" value="1" min="1" required>
-                            <small class="form-text text-muted">Descuentos por volumen: 1 unidad ($229), 2-4 ($219/u), 5+ ($199/u)</small>
-                        </div>
-
-                        <div class="mb-4 p-3 border rounded bg-light">
-                            <label class="form-label fw-bold">Capas de Seguridad</label>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="rfid" id="securityLayer1" checked disabled>
-                                <label class="form-check-label" for="securityLayer1">
-                                    Capa 1: Control RFID (Incluido)
-                                </label>
+                        <div class="form-step" id="step-personal">
+                            <h6 class="mb-3">1. Información de la Empresa <i class="fas fa-info-circle text-primary"></i></h6>
+                            <div class="mb-3">
+                                <label class="form-label">Nombre:</label>
+                                <p id="displayCompanyName" class="form-control-plaintext"></p>
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input customization-option" type="checkbox" value="camera" id="securityLayer2" data-price="30">
-                                <label class="form-check-label" for="securityLayer2">
-                                    Capa 2: Verificación por cámara (+ 30 USD)
-                                </label>
+                            <div class="mb-3">
+                                <label class="form-label">CUIT/ID Fiscal:</label>
+                                <p id="displayCompanyTaxId" class="form-control-plaintext"></p>
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input customization-option" type="checkbox" value="sensor" id="securityLayer3" data-price="20">
-                                <label class="form-check-label" for="securityLayer3">
-                                    Capa 3: Sensor de impacto/vibración (+ 20 USD)
-                                </label>
+                            <div class="mb-3">
+                                <label class="form-label">Contacto:</label>
+                                <p id="displayCompanyContactPerson" class="form-control-plaintext"></p>
                             </div>
-                        </div>
-
-                        <div class="mb-4 p-3 border rounded bg-light">
-                            <label class="form-label fw-bold">Soporte Técnico</label>
-                            <div class="form-check">
-                                <input class="form-check-input customization-option" type="radio" name="techSupport" id="supportBasic" value="basic" checked>
-                                <label class="form-check-label" for="supportBasic">
-                                    Básico (Incluido)
-                                </label>
+                            <div class="mb-3">
+                                <label class="form-label">Email:</label>
+                                <p id="displayCompanyContactEmail" class="form-control-plaintext"></p>
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input customization-option" type="radio" name="techSupport" id="supportPremium" value="premium" data-price-monthly="10" data-price-annual="100">
-                                <label class="form-check-label" for="supportPremium">
-                                    Premium (+10 USD/mes o +100 USD/año)
-                                </label>
+                            <div class="mb-3">
+                                <label class="form-label">Teléfono:</label>
+                                <p id="displayCompanyContactPhone" class="form-control-plaintext"></p>
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input customization-option" type="radio" name="techSupport" id="supportUltra" value="ultra" data-price-monthly="20" data-price-annual="200">
-                                <label class="form-check-label" for="supportUltra">
-                                    Ultra (+20 USD/mes o +200 USD/año)
-                                </label>
+                            <div class="d-flex justify-content-end">
+                                <button type="button" class="btn btn-primary next-step">Siguiente</button>
                             </div>
                         </div>
 
-                        <div class="mb-4 p-3 border rounded bg-light">
-                            <label class="form-label fw-bold">Personalización Estética del Dispositivo</label>
-                            <div class="form-check">
-                                <input class="form-check-input customization-option" type="checkbox" value="laser" id="aestheticLaser" data-price="15">
-                                <label class="form-check-label" for="aestheticLaser">
-                                    Grabado láser con logo de la empresa (+ 15 USD)
-                                </label>
+                        <div class="form-step d-none" id="step-delivery">
+                            <h6 class="mb-3">2. Dirección de Entrega <i class="fas fa-truck text-primary"></i></h6>
+                            <div class="mb-3">
+                                <label for="deliveryAddress" class="form-label">Dirección</label>
+                                <input type="text" class="form-control" id="deliveryAddress" name="direccion" required>
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input customization-option" type="checkbox" value="colors" id="aestheticColors" data-price="10">
-                                <label class="form-check-label" for="aestheticColors">
-                                    Colores personalizados (+ 10 USD)
-                                </label>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="deliveryCity" class="form-label">Ciudad</label>
+                                    <input type="text" class="form-control" id="deliveryCity" name="ciudad" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="deliveryState" class="form-label">Provincia/Estado</label>
+                                    <input type="text" class="form-control" id="deliveryState" name="provincia" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="deliveryZip" class="form-label">Código Postal</label>
+                                    <input type="text" class="form-control" id="deliveryZip" name="codigo_postal" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="deliveryCountry" class="form-label">País</label>
+                                    <input type="text" class="form-control" id="deliveryCountry" name="pais" required>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <button type="button" class="btn btn-secondary prev-step">Anterior</button>
+                                <button type="button" class="btn btn-primary next-step">Siguiente</button>
                             </div>
                         </div>
 
-                        <div class="mb-4 p-3 border rounded bg-light">
-                            <label class="form-label fw-bold">Instalación Asistida</label>
-                            <div class="form-check">
-                                <input class="form-check-input customization-option" type="checkbox" value="guided" id="installGuided" data-price="50">
-                                <label class="form-check-label" for="installGuided">
-                                    Envío con instalación guiada por videollamada (+ 50 USD)
-                                </label>
+                        <div class="form-step d-none" id="step-customization">
+                            <h6 class="mb-3">3. Personaliza tu Pedido <i class="fas fa-puzzle-piece text-primary"></i></h6>
+                            
+                            <div class="mb-4 p-3 border rounded bg-light">
+                                <label for="deviceQuantity" class="form-label fw-bold">Cantidad de Dispositivos</label>
+                                <input type="number" class="form-control" id="deviceQuantity" value="1" min="1" required>
+                                <small class="form-text text-muted">Descuentos por volumen: 1 unidad ($229), 2-4 ($219/u), 5+ ($199/u)</small>
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input customization-option" type="checkbox" value="manual" id="installManual" data-price="10">
-                                <label class="form-check-label" for="installManual">
-                                    Manual físico personalizado (+ 10 USD)
-                                </label>
+
+                            <div class="mb-4 p-3 border rounded bg-light">
+                                <label class="form-label fw-bold">Capas de Seguridad</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="rfid" id="securityLayer1" checked disabled>
+                                    <label class="form-check-label" for="securityLayer1">
+                                        Capa 1: Control RFID (Incluido)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input customization-option" type="checkbox" value="camera" id="securityLayer2" data-price="30">
+                                    <label class="form-check-label" for="securityLayer2">
+                                        Capa 2: Verificación por cámara (+ 30 USD)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input customization-option" type="checkbox" value="sensor" id="securityLayer3" data-price="20">
+                                    <label class="form-check-label" for="securityLayer3">
+                                        Capa 3: Sensor de impacto/vibración (+ 20 USD)
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="mb-4 p-3 border rounded bg-light">
+                                <label class="form-label fw-bold">Soporte Técnico</label>
+                                <div class="form-check">
+                                    <input class="form-check-input customization-option" type="radio" name="techSupport" id="supportBasic" value="basic" checked>
+                                    <label class="form-check-label" for="supportBasic">
+                                        Básico (Incluido)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input customization-option" type="radio" name="techSupport" id="supportPremium" value="premium" data-price-monthly="10" data-price-annual="100">
+                                    <label class="form-check-label" for="supportPremium">
+                                        Premium (+10 USD/mes o +100 USD/año)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input customization-option" type="radio" name="techSupport" id="supportUltra" value="ultra" data-price-monthly="20" data-price-annual="200">
+                                    <label class="form-check-label" for="supportUltra">
+                                        Ultra (+20 USD/mes o +200 USD/año)
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="mb-4 p-3 border rounded bg-light">
+                                <label class="form-label fw-bold">Personalización Estética del Dispositivo</label>
+                                <div class="form-check">
+                                    <input class="form-check-input customization-option" type="checkbox" value="laser" id="aestheticLaser" data-price="15">
+                                    <label class="form-check-label" for="aestheticLaser">
+                                        Grabado láser con logo de la empresa (+ 15 USD)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input customization-option" type="checkbox" value="colors" id="aestheticColors" data-price="10">
+                                    <label class="form-check-label" for="aestheticColors">
+                                        Colores personalizados (+ 10 USD)
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="mb-4 p-3 border rounded bg-light">
+                                <label class="form-label fw-bold">Instalación Asistida</label>
+                                <div class="form-check">
+                                    <input class="form-check-input customization-option" type="checkbox" value="guided" id="installGuided" data-price="50">
+                                    <label class="form-check-label" for="installGuided">
+                                        Envío con instalación guiada por videollamada (+ 50 USD)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input customization-option" type="checkbox" value="manual" id="installManual" data-price="10">
+                                    <label class="form-check-label" for="installManual">
+                                        Manual físico personalizado (+ 10 USD)
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between">
+                                <button type="button" class="btn btn-secondary prev-step">Anterior</button>
+                                <button type="button" class="btn btn-primary next-step">Revisar Pedido</button>
                             </div>
                         </div>
 
-                        <div class="d-flex justify-content-between">
-                            <button type="button" class="btn btn-secondary prev-step">Anterior</button>
-                            <button type="button" class="btn btn-primary next-step">Revisar Pedido</button>
-                        </div>
-                    </div>
-
-                    <div class="form-step d-none" id="step-summary">
-                        <h6 class="mb-3">4. Resumen del Pedido y Pago <i class="fas fa-file-invoice-dollar text-primary"></i></h6>
-                        <div class="mb-3">
-                            <p class="fw-bold">Detalle del Pedido:</p>
-                            <ul id="orderSummaryList" class="list-group mb-3">
-                                <!-- Aquí se generará el resumen -->
-                            </ul>
-                            <h5 class="mt-4">Total a Pagar (Dispositivos y Opciones): <span id="finalDevicePrice" class="text-primary"></span></h5>
-                            <h5 class="mt-2">Suscripción de Soporte (<span id="supportPlanType"></span>): <span id="finalSupportPrice" class="text-primary"></span></h5>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <button type="button" class="btn btn-secondary prev-step">Anterior</button>
-                            <button type="button" class="btn btn-success" id="confirmPurchaseBtn">Confirmar Pedido y Pagar</button>
-                        </div>
-                        <hr class="my-4">
-                        <div class="text-center">
-                            <h6>Pagar con PayPal</h6>
-                            <p class="text-muted small">Haz clic en los botones de PayPal para completar tu pago. Se realizarán dos pagos separados: uno por los dispositivos y opciones, y otro por la suscripción de soporte.</p>
-                            <div id="paypal-buttons-container">
-                                <!-- Aquí se renderizarán los botones de PayPal -->
+                        <div class="form-step d-none" id="step-summary">
+                            <h6 class="mb-3">4. Resumen del Pedido y Pago <i class="fas fa-file-invoice-dollar text-primary"></i></h6>
+                            <div class="mb-3">
+                                <p class="fw-bold">Detalle del Pedido:</p>
+                                <ul id="orderSummaryList" class="list-group mb-3">
+                                    <!-- Aquí se generará el resumen -->
+                                </ul>
+                                <h5 class="mt-4">Total a Pagar (Dispositivos y Opciones): <span id="finalDevicePrice" class="text-primary"></span></h5>
+                                <h5 class="mt-2">Suscripción de Soporte (<span id="supportPlanType"></span>): <span id="finalSupportPrice" class="text-primary"></span></h5>
+                            </div>
+                            
+                            <div class="alert alert-info mt-3">
+                                <small>
+                                    <i class="fas fa-info-circle"></i> 
+                                    <strong>Importante:</strong> Una vez completados ambos pagos, se habilitará el botón para confirmar el pedido. 
+                                    Se enviará un solo correo con todos los detalles tanto a tu email como al equipo de RackON.
+                                </small>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between">
+                                <button type="button" class="btn btn-secondary prev-step">Anterior</button>
+                                <button type="button" class="btn btn-success" id="confirmPurchaseBtn" style="display: none;">
+                                    <i class="fas fa-envelope"></i> Confirmar Pedido y Enviar Correo
+                                </button>
+                            </div>
+                            <hr class="my-4">
+                            <div class="text-center">
+                                <h6>Pagar con PayPal</h6>
+                                <p class="text-muted small">Haz clic en los botones de PayPal para completar tu pago. Se realizarán dos pagos separados: uno por los dispositivos y opciones, y otro por la suscripción de soporte.</p>
+                                <div id="paypal-buttons-container">
+                                    <!-- Aquí se renderizarán los botones de PayPal -->
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 <script src="https://www.paypal.com/sdk/js?client-id=AXn6zeaT-kutunjZDVGKpbDSQ6WCCPgvHvsdaVYjrQvy4udAukapA5ISWF9QIR268HG_K-eDjk8ETcYs&currency=USD&vault=true"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
