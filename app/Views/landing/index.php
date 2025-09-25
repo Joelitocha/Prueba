@@ -1316,454 +1316,488 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // 1. Configuración inicial
-        const companyRegistrationModal = new bootstrap.Modal(document.getElementById('companyRegistrationModal'));
-        const purchaseModal = new bootstrap.Modal(document.getElementById('purchaseModal'));
-        const formSteps = document.querySelectorAll('.form-step');
-        let currentStep = 0;
-        let isProcessing = false;
-        let devicePaymentCompleted = false;
-        let supportPaymentCompleted = false;
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Configuración inicial
+    const companyRegistrationModal = new bootstrap.Modal(document.getElementById('companyRegistrationModal'));
+    const purchaseModal = new bootstrap.Modal(document.getElementById('purchaseModal'));
+    const formSteps = document.querySelectorAll('.form-step');
+    let currentStep = 0;
+    let isProcessing = false;
+    let devicePaymentCompleted = false;
+    let supportPaymentCompleted = false;
 
-        // 2. Datos de compra
-        const selectedPlanData = {
-            type: 'monthly' // monthly/annual
-        };
+    // 2. Datos de compra
+    const selectedPlanData = {
+        type: 'monthly' // monthly/annual
+    };
 
-        const purchaseCalculations = {
-            deviceBasePrice: 229,
-            quantity: 1,
-            securityLayers: { rfid: true, camera: false, sensor: false },
-            techSupport: 'basic',
-            aestheticCustomization: { laser: false, colors: false },
-            assistedInstallation: { guided: false, manual: false },
-            currentDeviceTotal: 0,
-            currentSupportMonthlyTotal: 25,
-            currentSupportAnnualTotal: 250
-        };
+    const purchaseCalculations = {
+        deviceBasePrice: 229,
+        quantity: 1,
+        securityLayers: { rfid: true, camera: false, sensor: false },
+        techSupport: 'basic',
+        aestheticCustomization: { laser: false, colors: false },
+        assistedInstallation: { guided: false, manual: false },
+        currentDeviceTotal: 0,
+        currentSupportMonthlyTotal: 25,
+        currentSupportAnnualTotal: 250
+    };
 
-        const PRICES = {
-            securityLayer2: 30,
-            securityLayer3: 20,
-            supportPremiumMonthly: 10,
-            supportPremiumAnnual: 100,
-            supportUltraMonthly: 20,
-            supportUltraAnnual: 200,
-            aestheticLaser: 15,
-            aestheticColors: 10,
-            installGuided: 50,
-            installManual: 10,
-            quantityDiscounts: {
-                '1': 229,
-                '2-4': 219,
-                '5+': 199
+    const PRICES = {
+        securityLayer2: 30,
+        securityLayer3: 20,
+        supportPremiumMonthly: 10,
+        supportPremiumAnnual: 100,
+        supportUltraMonthly: 20,
+        supportUltraAnnual: 200,
+        aestheticLaser: 15,
+        aestheticColors: 10,
+        installGuided: 50,
+        installManual: 10,
+        quantityDiscounts: {
+            '1': 229,
+            '2-4': 219,
+            '5+': 199
+        }
+    };
+
+    // 3. Inicialización
+    initEventListeners();
+    updatePurchaseSummary();
+
+    function initEventListeners() {
+        // Botón "Personalizar y Comprar"
+        document.querySelector('.btn-compra').addEventListener('click', () => {
+            companyRegistrationModal.show();
+        });
+
+        // Formulario de registro de empresa
+        document.getElementById('companyRegistrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            transferCompanyData();
+            companyRegistrationModal.hide();
+            purchaseModal.show();
+            showStep(0);
+        });
+
+        // Navegación entre pasos
+        document.getElementById('purchaseForm').addEventListener('click', function(e) {
+            if (e.target.classList.contains('next-step')) {
+                handleNextStep();
+            } else if (e.target.classList.contains('prev-step')) {
+                handlePrevStep();
             }
-        };
+        });
 
-        // 3. Inicialización
-        initEventListeners();
-        updatePurchaseSummary();
+        // Cantidad de dispositivos
+        document.getElementById('deviceQuantity').addEventListener('change', function() {
+            purchaseCalculations.quantity = parseInt(this.value);
+            updatePurchaseSummary();
+            renderPayPalButtons();
+        });
 
-        function initEventListeners() {
-            // Botón "Personalizar y Comprar"
-            document.querySelector('.btn-compra').addEventListener('click', () => {
-                companyRegistrationModal.show();
-            });
-
-            // Formulario de registro de empresa
-            document.getElementById('companyRegistrationForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                transferCompanyData();
-                companyRegistrationModal.hide();
-                purchaseModal.show();
-                showStep(0);
-            });
-
-            // Navegación entre pasos
-            document.getElementById('purchaseForm').addEventListener('click', function(e) {
-                if (e.target.classList.contains('next-step')) {
-                    handleNextStep();
-                } else if (e.target.classList.contains('prev-step')) {
-                    handlePrevStep();
-                }
-            });
-
-            // Cantidad de dispositivos
-            document.getElementById('deviceQuantity').addEventListener('change', function() {
-                purchaseCalculations.quantity = parseInt(this.value);
+        // Opciones de personalización
+        document.querySelectorAll('.customization-option').forEach(input => {
+            input.addEventListener('change', function() {
+                updateCustomization(this.id, this.value, this.checked);
                 updatePurchaseSummary();
                 renderPayPalButtons();
             });
+        });
 
-            // Opciones de personalización
-            document.querySelectorAll('.customization-option').forEach(input => {
-                input.addEventListener('change', function() {
-                    updateCustomization(this.id, this.value, this.checked);
+        // Botón de confirmación final
+        document.getElementById('confirmPurchaseBtn').addEventListener('click', handleFinalConfirmation);
+    }
+
+    // 4. Funciones principales
+    function transferCompanyData() {
+        const fields = [
+            ['displayCompanyName', 'companyName'],
+            ['displayCompanyTaxId', 'companyTaxId'],
+            ['displayCompanyContactPerson', 'companyContactPerson'],
+            ['displayCompanyContactEmail', 'companyContactEmail'],
+            ['displayCompanyContactPhone', 'companyContactPhone']
+        ];
+
+        fields.forEach(([displayId, inputId]) => {
+            document.getElementById(displayId).textContent = document.getElementById(inputId).value;
+        });
+    }
+
+    function handleNextStep() {
+        if (validateStep(currentStep)) {
+            if (currentStep < formSteps.length - 1) {
+                showStep(currentStep + 1);
+                if (currentStep === formSteps.length - 1) {
                     updatePurchaseSummary();
                     renderPayPalButtons();
-                });
-            });
-
-            // Botón de confirmación final
-            document.getElementById('confirmPurchaseBtn').addEventListener('click', handleFinalConfirmation);
-        }
-
-        // 4. Funciones principales
-        function transferCompanyData() {
-            const fields = [
-                ['displayCompanyName', 'companyName'],
-                ['displayCompanyTaxId', 'companyTaxId'],
-                ['displayCompanyContactPerson', 'companyContactPerson'],
-                ['displayCompanyContactEmail', 'companyContactEmail'],
-                ['displayCompanyContactPhone', 'companyContactPhone']
-            ];
-
-            fields.forEach(([displayId, inputId]) => {
-                document.getElementById(displayId).textContent = document.getElementById(inputId).value;
-            });
-        }
-
-        function handleNextStep() {
-            if (validateStep(currentStep)) {
-                if (currentStep < formSteps.length - 1) {
-                    showStep(currentStep + 1);
-                    if (currentStep === formSteps.length - 1) {
-                        updatePurchaseSummary();
-                        renderPayPalButtons();
-                    }
                 }
-            } else {
-                alert('Por favor, completa todos los campos requeridos.');
             }
+        } else {
+            alert('Por favor, completa todos los campos requeridos.');
         }
+    }
 
-        function handlePrevStep() {
-            if (currentStep > 0) {
-                showStep(currentStep - 1);
-            }
+    function handlePrevStep() {
+        if (currentStep > 0) {
+            showStep(currentStep - 1);
         }
+    }
 
-        function showStep(stepIndex) {
-            formSteps.forEach((step, index) => {
-                step.classList.toggle('d-none', index !== stepIndex);
+    function showStep(stepIndex) {
+        formSteps.forEach((step, index) => {
+            step.classList.toggle('d-none', index !== stepIndex);
+        });
+        currentStep = stepIndex;
+    }
+
+    function validateStep(stepIndex) {
+        let isValid = true;
+        if (stepIndex === 1) {
+            document.querySelectorAll('#step-delivery input[required]').forEach(input => {
+                if (!input.value.trim()) {
+                    input.classList.add('is-invalid');
+                    isValid = false;
+                } else {
+                    input.classList.remove('is-invalid');
+                }
             });
-            currentStep = stepIndex;
         }
+        return isValid;
+    }
 
-        function validateStep(stepIndex) {
-            let isValid = true;
-            if (stepIndex === 1) {
-                document.querySelectorAll('#step-delivery input[required]').forEach(input => {
-                    if (!input.value.trim()) {
-                        input.classList.add('is-invalid');
-                        isValid = false;
-                    } else {
-                        input.classList.remove('is-invalid');
-                    }
-                });
-            }
-            return isValid;
+    function updateCustomization(id, value, isChecked) {
+        if (id.startsWith('securityLayer')) {
+            purchaseCalculations.securityLayers[value] = isChecked;
+        } else if (id.startsWith('support')) {
+            purchaseCalculations.techSupport = value;
+        } else if (id.startsWith('aesthetic')) {
+            purchaseCalculations.aestheticCustomization[value] = isChecked;
+        } else if (id.startsWith('install')) {
+            purchaseCalculations.assistedInstallation[value] = isChecked;
         }
+    }
 
-        function updateCustomization(id, value, isChecked) {
-            if (id.startsWith('securityLayer')) {
-                purchaseCalculations.securityLayers[value] = isChecked;
-            } else if (id.startsWith('support')) {
-                purchaseCalculations.techSupport = value;
-            } else if (id.startsWith('aesthetic')) {
-                purchaseCalculations.aestheticCustomization[value] = isChecked;
-            } else if (id.startsWith('install')) {
-                purchaseCalculations.assistedInstallation[value] = isChecked;
-            }
-        }
+    // 5. Funciones de PayPal mejoradas y corregidas
+    function renderPayPalButtons() {
+        const container = document.getElementById('paypal-buttons-container');
+        if (!container) return;
+        
+        container.innerHTML = '';
 
-        // 5. Funciones de PayPal mejoradas
-        function renderPayPalButtons() {
-            const container = document.getElementById('paypal-buttons-container');
-            if (!container) return;
-            
-            container.innerHTML = '';
+        // 1. Pago de dispositivos
+        const deviceContainer = document.createElement('div');
+        deviceContainer.className = 'mb-4 p-3 border rounded';
+        container.appendChild(deviceContainer);
 
-            // 1. Pago de dispositivos
-            const deviceContainer = document.createElement('div');
-            deviceContainer.className = 'mb-4 p-3 border rounded';
-            container.appendChild(deviceContainer);
+        const deviceTitle = document.createElement('h5');
+        deviceTitle.className = 'mb-3';
+        deviceTitle.textContent = '1. Pago de Dispositivos';
+        deviceContainer.appendChild(deviceTitle);
 
-            const deviceTitle = document.createElement('h5');
-            deviceTitle.className = 'mb-3';
-            deviceTitle.textContent = '1. Pago de Dispositivos';
-            deviceContainer.appendChild(deviceTitle);
-
-            if (purchaseCalculations.quantity > 0 && purchaseCalculations.currentDeviceTotal > 0) {
-                const deviceButtonDiv = document.createElement('div');
-                deviceButtonDiv.id = 'paypal-device-button';
-                deviceContainer.appendChild(deviceButtonDiv);
-
-                paypal.Buttons({
-                    createOrder: function(data, actions) {
-                        return actions.order.create({
-                            purchase_units: [{
-                                amount: {
-                                    value: purchaseCalculations.currentDeviceTotal.toFixed(2),
-                                    currency_code: 'USD'
-                                },
-                                description: 'Dispositivos RackON y personalización'
-                            }]
-                        });
-                    },
-                    onApprove: function(data, actions) {
-                        return actions.order.capture().then(function(details) {
-                            devicePaymentCompleted = true;
-                            showPaymentSuccess('dispositivos', details.payer.name.given_name);
-                            checkPaymentsCompletion();
-                        });
-                    },
-                    onError: function(err) {
-                        console.error('Error en pago de dispositivos:', err);
-                        showPaymentError('dispositivos');
-                    }
-                }).render('#paypal-device-button');
-            } else {
-                deviceContainer.innerHTML += '<p class="text-muted">No hay dispositivos para pagar</p>';
-            }
-
-            // 2. Pago de soporte técnico
-            const supportContainer = document.createElement('div');
-            supportContainer.className = 'mb-4 p-3 border rounded';
-            container.appendChild(supportContainer);
-
-            const supportTitle = document.createElement('h5');
-            supportTitle.className = 'mb-3';
-            supportTitle.textContent = '2. Soporte Técnico';
-            supportContainer.appendChild(supportTitle);
-
-            // Selector de tipo de soporte
-            const supportOptions = document.createElement('div');
-            supportOptions.className = 'mb-3';
-            supportOptions.innerHTML = `
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="supportType" id="supportMonthly" 
-                        value="monthly" ${selectedPlanData.type === 'monthly' ? 'checked' : ''}>
-                    <label class="form-check-label" for="supportMonthly">
-                        Pago Mensual (${purchaseCalculations.currentSupportMonthlyTotal.toFixed(2)} USD/mes)
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="supportType" id="supportAnnual" 
-                        value="annual" ${selectedPlanData.type === 'annual' ? 'checked' : ''}>
-                    <label class="form-check-label" for="supportAnnual">
-                        Pago Anual (${purchaseCalculations.currentSupportAnnualTotal.toFixed(2)} USD/año) - Ahorra 10%
-                    </label>
-                </div>
-            `;
-            supportContainer.appendChild(supportOptions);
-
-            // Botón para soporte
-            const supportButtonDiv = document.createElement('div');
-            supportButtonDiv.id = 'paypal-support-button';
-            supportContainer.appendChild(supportButtonDiv);
-
-            // Event listeners para los radios
-            document.getElementById('supportMonthly')?.addEventListener('change', () => {
-                selectedPlanData.type = 'monthly';
-                updatePurchaseSummary();
-                renderPayPalSupportButton();
-            });
-            document.getElementById('supportAnnual')?.addEventListener('change', () => {
-                selectedPlanData.type = 'annual';
-                updatePurchaseSummary();
-                renderPayPalSupportButton();
-            });
-
-            renderPayPalSupportButton();
-
-            // Ocultar botón de confirmación inicialmente
-            document.getElementById('confirmPurchaseBtn').classList.add('d-none');
-        }
-
-        function renderPayPalSupportButton() {
-            const supportButtonDiv = document.getElementById('paypal-support-button');
-            if (!supportButtonDiv) return;
-            
-            supportButtonDiv.innerHTML = '';
-
-            const amount = selectedPlanData.type === 'monthly'
-                ? purchaseCalculations.currentSupportMonthlyTotal
-                : purchaseCalculations.currentSupportAnnualTotal;
-            
-            const description = selectedPlanData.type === 'monthly'
-                ? 'Soporte Técnico Mensual RackON'
-                : 'Soporte Técnico Anual RackON';
+        if (purchaseCalculations.quantity > 0 && purchaseCalculations.currentDeviceTotal > 0) {
+            const deviceButtonDiv = document.createElement('div');
+            deviceButtonDiv.id = 'paypal-device-button';
+            deviceContainer.appendChild(deviceButtonDiv);
 
             paypal.Buttons({
                 createOrder: function(data, actions) {
                     return actions.order.create({
                         purchase_units: [{
                             amount: {
-                                value: amount.toFixed(2),
+                                value: purchaseCalculations.currentDeviceTotal.toFixed(2),
                                 currency_code: 'USD'
                             },
-                            description: description
+                            description: 'Dispositivos RackON y personalización'
                         }]
                     });
                 },
                 onApprove: function(data, actions) {
                     return actions.order.capture().then(function(details) {
-                        supportPaymentCompleted = true;
-                        showPaymentSuccess('soporte técnico', details.payer.name.given_name);
+                        console.log('✅ Pago de dispositivos completado');
+                        devicePaymentCompleted = true;
+                        showPaymentSuccess('dispositivos', details.payer.name.given_name);
                         checkPaymentsCompletion();
                     });
                 },
                 onError: function(err) {
-                    console.error('Error en pago de soporte:', err);
-                    showPaymentError('soporte técnico');
+                    console.error('Error en pago de dispositivos:', err);
+                    showPaymentError('dispositivos');
                 }
-            }).render('#paypal-support-button');
+            }).render('#paypal-device-button');
+        } else {
+            deviceContainer.innerHTML += '<p class="text-muted">No hay dispositivos para pagar</p>';
+            // Si no hay dispositivos para pagar, marcamos como completado
+            devicePaymentCompleted = true;
+            checkPaymentsCompletion();
         }
 
-        function checkPaymentsCompletion() {
-            const confirmBtn = document.getElementById('confirmPurchaseBtn');
-            
-            // Verificar si ambos pagos están completos o si no hay dispositivos para pagar
-            const devicePaymentNotRequired = purchaseCalculations.quantity === 0 || purchaseCalculations.currentDeviceTotal === 0;
-            const allPaymentsCompleted = (devicePaymentCompleted || devicePaymentNotRequired) && supportPaymentCompleted;
-            
-            if (allPaymentsCompleted) {
-                confirmBtn.classList.remove('d-none');
-                confirmBtn.innerHTML = '<i class="fas fa-envelope"></i> Confirmar Pedido y Enviar Correo';
-            } else {
-                confirmBtn.classList.add('d-none');
+        // 2. Pago de soporte técnico
+        const supportContainer = document.createElement('div');
+        supportContainer.className = 'mb-4 p-3 border rounded';
+        container.appendChild(supportContainer);
+
+        const supportTitle = document.createElement('h5');
+        supportTitle.className = 'mb-3';
+        supportTitle.textContent = '2. Soporte Técnico';
+        supportContainer.appendChild(supportTitle);
+
+        // Selector de tipo de soporte
+        const supportOptions = document.createElement('div');
+        supportOptions.className = 'mb-3';
+        supportOptions.innerHTML = `
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="supportType" id="supportMonthly" 
+                    value="monthly" ${selectedPlanData.type === 'monthly' ? 'checked' : ''}>
+                <label class="form-check-label" for="supportMonthly">
+                    Pago Mensual (${purchaseCalculations.currentSupportMonthlyTotal.toFixed(2)} USD/mes)
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="supportType" id="supportAnnual" 
+                    value="annual" ${selectedPlanData.type === 'annual' ? 'checked' : ''}>
+                <label class="form-check-label" for="supportAnnual">
+                    Pago Anual (${purchaseCalculations.currentSupportAnnualTotal.toFixed(2)} USD/año) - Ahorra 10%
+                </label>
+            </div>
+        `;
+        supportContainer.appendChild(supportOptions);
+
+        // Botón para soporte
+        const supportButtonDiv = document.createElement('div');
+        supportButtonDiv.id = 'paypal-support-button';
+        supportContainer.appendChild(supportButtonDiv);
+
+        // Event listeners para los radios
+        const monthlyRadio = document.getElementById('supportMonthly');
+        const annualRadio = document.getElementById('supportAnnual');
+        
+        if (monthlyRadio) {
+            monthlyRadio.addEventListener('change', function() {
+                if (this.checked) {
+                    selectedPlanData.type = 'monthly';
+                    updatePurchaseSummary();
+                    renderPayPalSupportButton();
+                }
+            });
+        }
+        
+        if (annualRadio) {
+            annualRadio.addEventListener('change', function() {
+                if (this.checked) {
+                    selectedPlanData.type = 'annual';
+                    updatePurchaseSummary();
+                    renderPayPalSupportButton();
+                }
+            });
+        }
+
+        renderPayPalSupportButton();
+
+        // Ocultar botón de confirmación inicialmente
+        document.getElementById('confirmPurchaseBtn').classList.add('d-none');
+    }
+
+    function renderPayPalSupportButton() {
+        const supportButtonDiv = document.getElementById('paypal-support-button');
+        if (!supportButtonDiv) return;
+        
+        supportButtonDiv.innerHTML = '';
+
+        const amount = selectedPlanData.type === 'monthly'
+            ? purchaseCalculations.currentSupportMonthlyTotal
+            : purchaseCalculations.currentSupportAnnualTotal;
+        
+        const description = selectedPlanData.type === 'monthly'
+            ? 'Soporte Técnico Mensual RackON'
+            : 'Soporte Técnico Anual RackON';
+
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: amount.toFixed(2),
+                            currency_code: 'USD'
+                        },
+                        description: description
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    console.log('✅ Pago de soporte completado');
+                    supportPaymentCompleted = true;
+                    showPaymentSuccess('soporte técnico', details.payer.name.given_name);
+                    checkPaymentsCompletion();
+                });
+            },
+            onError: function(err) {
+                console.error('Error en pago de soporte:', err);
+                showPaymentError('soporte técnico');
             }
-        }
+        }).render('#paypal-support-button');
+    }
 
-        // 6. Confirmación final del pedido - VERSIÓN MEJORADA
-        async function handleFinalConfirmation() {
-            if (isProcessing) return;
-            
+    // 6. Función corregida para verificar completitud de pagos
+    function checkPaymentsCompletion() {
+        const confirmBtn = document.getElementById('confirmPurchaseBtn');
+        
+        console.log('Verificando estado de pagos:', {
+            devicePaymentCompleted,
+            supportPaymentCompleted,
+            quantity: purchaseCalculations.quantity,
+            deviceTotal: purchaseCalculations.currentDeviceTotal
+        });
+        
+        // Verificar si ambos pagos están completos
+        const devicePaymentNotRequired = purchaseCalculations.quantity === 0 || purchaseCalculations.currentDeviceTotal === 0;
+        const devicePaymentValid = devicePaymentCompleted || devicePaymentNotRequired;
+        const allPaymentsCompleted = devicePaymentValid && supportPaymentCompleted;
+        
+        console.log('Resultado de verificación:', {
+            devicePaymentNotRequired,
+            devicePaymentValid,
+            allPaymentsCompleted
+        });
+        
+        if (allPaymentsCompleted) {
+            confirmBtn.classList.remove('d-none');
+            confirmBtn.innerHTML = '<i class="fas fa-envelope"></i> Confirmar Pedido y Enviar Correo';
+            console.log('✅ Botón de confirmación HABILITADO');
+        } else {
+            confirmBtn.classList.add('d-none');
+            console.log('❌ Botón de confirmación oculto - Pagos pendientes');
+        }
+    }
+
+    // 7. Confirmación final del pedido
+    async function handleFinalConfirmation() {
+        if (isProcessing) return;
+        
+        const btn = document.getElementById('confirmPurchaseBtn');
+        const originalText = btn.innerHTML;
+        
+        try {
+            isProcessing = true;
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Procesando...';
+
+            // Limpiar feedback anterior
+            const oldFeedback = document.querySelector('.purchase-feedback');
+            if (oldFeedback) oldFeedback.remove();
+
+            // Crear nuevo feedback
+            const feedback = document.createElement('div');
+            feedback.className = 'alert alert-info purchase-feedback mt-3';
+            feedback.textContent = 'Confirmando tu pedido y enviando confirmación...';
+            btn.parentNode.insertBefore(feedback, btn.nextSibling);
+
+            // Preparar y enviar datos de confirmación COMPLETOS
+            const formData = prepareCompleteConfirmationData();
+            const response = await sendCompleteConfirmation(formData);
+
+            if (!response.ok) throw new Error('Error en el servidor');
+
+            // Éxito
+            feedback.textContent = '¡Pedido confirmado con éxito! Se ha enviado un correo de confirmación a tu email y al equipo de RackON.';
+            feedback.className = 'alert alert-success purchase-feedback mt-3';
+
+            // Resetear después de 3 segundos
+            setTimeout(() => {
+                purchaseModal.hide();
+                resetForms();
+                resetPaymentStatus();
+            }, 3000);
+
+        } catch (error) {
+            console.error('Error en la confirmación:', error);
+            const feedback = document.querySelector('.purchase-feedback');
+            if (feedback) {
+                feedback.textContent = 'Error al confirmar el pedido. Por favor, contacta a soporte.';
+                feedback.className = 'alert alert-danger purchase-feedback mt-3';
+            }
+        } finally {
             const btn = document.getElementById('confirmPurchaseBtn');
-            const originalText = btn.innerHTML;
-            
-            try {
-                isProcessing = true;
-                btn.disabled = true;
-                btn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Procesando...';
-
-                // Limpiar feedback anterior
-                const oldFeedback = document.querySelector('.purchase-feedback');
-                if (oldFeedback) oldFeedback.remove();
-
-                // Crear nuevo feedback
-                const feedback = document.createElement('div');
-                feedback.className = 'alert alert-info purchase-feedback mt-3';
-                feedback.textContent = 'Confirmando tu pedido y enviando confirmación...';
-                btn.parentNode.insertBefore(feedback, btn.nextSibling);
-
-                // Preparar y enviar datos de confirmación COMPLETOS
-                const formData = prepareCompleteConfirmationData();
-                const response = await sendCompleteConfirmation(formData);
-
-                if (!response.ok) throw new Error('Error en el servidor');
-
-                // Éxito
-                feedback.textContent = '¡Pedido confirmado con éxito! Se ha enviado un correo de confirmación a tu email y al equipo de RackON.';
-                feedback.className = 'alert alert-success purchase-feedback mt-3';
-
-                // Resetear después de 3 segundos
-                setTimeout(() => {
-                    purchaseModal.hide();
-                    resetForms();
-                    resetPaymentStatus();
-                }, 3000);
-
-            } catch (error) {
-                console.error('Error en la confirmación:', error);
-                const feedback = document.querySelector('.purchase-feedback');
-                if (feedback) {
-                    feedback.textContent = 'Error al confirmar el pedido. Por favor, contacta a soporte.';
-                    feedback.className = 'alert alert-danger purchase-feedback mt-3';
-                }
-            } finally {
-                const btn = document.getElementById('confirmPurchaseBtn');
-                if (btn) {
-                    btn.disabled = false;
-                    btn.innerHTML = originalText;
-                }
-                isProcessing = false;
+            if (btn) {
+                btn.disabled = false;
+                btn.innerHTML = originalText;
             }
+            isProcessing = false;
         }
+    }
 
-        // Nueva función para preparar todos los datos del pedido
-        function prepareCompleteConfirmationData() {
-            const companyName = document.getElementById('companyName').value;
-            const companyEmail = document.getElementById('companyContactEmail').value;
-            
-            const formData = new FormData();
-            
-            // Configuración para FormSubmit
-            formData.append('_captcha', 'false');
-            formData.append('_template', 'table');
-            formData.append('_autoresponse', generateAutoResponse());
-            formData.append('_subject', `✅ Confirmación de Pedido RackON - ${companyName}`);
-            
-            // Enviar copia al cliente y a rackonoficial@gmail.com
-            formData.append('_cc', companyEmail);
-            
-            // DATOS DE LA EMPRESA
-            formData.append('🏢 EMPRESA', companyName);
-            formData.append('📧 EMAIL CONTACTO', companyEmail);
-            formData.append('📞 TELÉFONO', document.getElementById('companyContactPhone').value);
-            formData.append('🔢 CUIT/ID FISCAL', document.getElementById('companyTaxId').value);
-            formData.append('👤 PERSONA DE CONTACTO', document.getElementById('companyContactPerson').value);
-            
-            // DATOS DE ENVÍO
-            formData.append('📍 DIRECCIÓN', document.getElementById('deliveryAddress').value);
-            formData.append('🏙️ CIUDAD', document.getElementById('deliveryCity').value);
-            formData.append('🗺️ PROVINCIA', document.getElementById('deliveryState').value);
-            formData.append('📮 CÓDIGO POSTAL', document.getElementById('deliveryZip').value);
-            formData.append('🇦🇷 PAÍS', document.getElementById('deliveryCountry').value);
-            
-            // DETALLES DEL PEDIDO
-            formData.append('📦 CANTIDAD DE DISPOSITIVOS', purchaseCalculations.quantity);
-            formData.append('💰 PRECIO POR UNIDAD', `$${calculateDevicePrice().toFixed(2)} USD`);
-            formData.append('💵 TOTAL DISPOSITIVOS', `$${purchaseCalculations.currentDeviceTotal.toFixed(2)} USD`);
-            
-            // OPCIONES SELECCIONADAS
-            const options = getSelectedOptions();
-            formData.append('⚙️ OPCIONES ADICIONALES', options.length > 0 ? options.join(', ') : 'Ninguna');
-            
-            // SOPORTE TÉCNICO
-            const supportPlan = selectedPlanData.type === 'monthly' 
-                ? `Mensual - $${purchaseCalculations.currentSupportMonthlyTotal.toFixed(2)} USD/mes`
-                : `Anual - $${purchaseCalculations.currentSupportAnnualTotal.toFixed(2)} USD/año`;
-            
-            formData.append('🔧 PLAN DE SOPORTE', supportPlan);
-            
-            // RESUMEN FINAL
-            const totalFinal = purchaseCalculations.currentDeviceTotal + 
-                (selectedPlanData.type === 'monthly' 
-                    ? purchaseCalculations.currentSupportMonthlyTotal 
-                    : purchaseCalculations.currentSupportAnnualTotal);
-            
-            formData.append('🎯 TOTAL FINAL', `$${totalFinal.toFixed(2)} USD`);
-            
-            // ESTADO DE PAGOS
-            formData.append('✅ ESTADO DE PAGOS', 'Ambos pagos completados exitosamente');
-            formData.append('📅 FECHA DE PEDIDO', new Date().toLocaleString('es-ES'));
-            
-            return formData;
-        }
+    // Función para preparar todos los datos del pedido
+    function prepareCompleteConfirmationData() {
+        const companyName = document.getElementById('companyName').value;
+        const companyEmail = document.getElementById('companyContactEmail').value;
+        
+        const formData = new FormData();
+        
+        // Configuración para FormSubmit
+        formData.append('_captcha', 'false');
+        formData.append('_template', 'table');
+        formData.append('_autoresponse', generateAutoResponse());
+        formData.append('_subject', `✅ Confirmación de Pedido RackON - ${companyName}`);
+        
+        // Enviar copia al cliente y a rackonoficial@gmail.com
+        formData.append('_cc', companyEmail);
+        
+        // DATOS DE LA EMPRESA
+        formData.append('🏢 EMPRESA', companyName);
+        formData.append('📧 EMAIL CONTACTO', companyEmail);
+        formData.append('📞 TELÉFONO', document.getElementById('companyContactPhone').value);
+        formData.append('🔢 CUIT/ID FISCAL', document.getElementById('companyTaxId').value);
+        formData.append('👤 PERSONA DE CONTACTO', document.getElementById('companyContactPerson').value);
+        
+        // DATOS DE ENVÍO
+        formData.append('📍 DIRECCIÓN', document.getElementById('deliveryAddress').value);
+        formData.append('🏙️ CIUDAD', document.getElementById('deliveryCity').value);
+        formData.append('🗺️ PROVINCIA', document.getElementById('deliveryState').value);
+        formData.append('📮 CÓDIGO POSTAL', document.getElementById('deliveryZip').value);
+        formData.append('🇦🇷 PAÍS', document.getElementById('deliveryCountry').value);
+        
+        // DETALLES DEL PEDIDO
+        formData.append('📦 CANTIDAD DE DISPOSITIVOS', purchaseCalculations.quantity);
+        formData.append('💰 PRECIO POR UNIDAD', `$${calculateDevicePrice().toFixed(2)} USD`);
+        formData.append('💵 TOTAL DISPOSITIVOS', `$${purchaseCalculations.currentDeviceTotal.toFixed(2)} USD`);
+        
+        // OPCIONES SELECCIONADAS
+        const options = getSelectedOptions();
+        formData.append('⚙️ OPCIONES ADICIONALES', options.length > 0 ? options.join(', ') : 'Ninguna');
+        
+        // SOPORTE TÉCNICO
+        const supportPlan = selectedPlanData.type === 'monthly' 
+            ? `Mensual - $${purchaseCalculations.currentSupportMonthlyTotal.toFixed(2)} USD/mes`
+            : `Anual - $${purchaseCalculations.currentSupportAnnualTotal.toFixed(2)} USD/año`;
+        
+        formData.append('🔧 PLAN DE SOPORTE', supportPlan);
+        
+        // RESUMEN FINAL
+        const totalFinal = purchaseCalculations.currentDeviceTotal + 
+            (selectedPlanData.type === 'monthly' 
+                ? purchaseCalculations.currentSupportMonthlyTotal 
+                : purchaseCalculations.currentSupportAnnualTotal);
+        
+        formData.append('🎯 TOTAL FINAL', `$${totalFinal.toFixed(2)} USD`);
+        
+        // ESTADO DE PAGOS
+        formData.append('✅ ESTADO DE PAGOS', 'Ambos pagos completados exitosamente');
+        formData.append('📅 FECHA DE PEDIDO', new Date().toLocaleString('es-ES'));
+        
+        return formData;
+    }
 
-        // Función para generar el mensaje de respuesta automática
-        function generateAutoResponse() {
-            const companyName = document.getElementById('companyName').value;
-            const quantity = purchaseCalculations.quantity;
-            const total = purchaseCalculations.currentDeviceTotal + 
-                (selectedPlanData.type === 'monthly' 
-                    ? purchaseCalculations.currentSupportMonthlyTotal 
-                    : purchaseCalculations.currentSupportAnnualTotal);
-            
-            return `¡Gracias por tu pedido en RackON, ${companyName}!
+    // Función para generar el mensaje de respuesta automática
+    function generateAutoResponse() {
+        const companyName = document.getElementById('companyName').value;
+        const quantity = purchaseCalculations.quantity;
+        const total = purchaseCalculations.currentDeviceTotal + 
+            (selectedPlanData.type === 'monthly' 
+                ? purchaseCalculations.currentSupportMonthlyTotal 
+                : purchaseCalculations.currentSupportAnnualTotal);
+        
+        return `¡Gracias por tu pedido en RackON, ${companyName}!
 
 Hemos recibido tu pedido de ${quantity} dispositivo(s) RackON por un total de $${total.toFixed(2)} USD.
 
@@ -1772,169 +1806,175 @@ Hemos recibido tu pedido de ${quantity} dispositivo(s) RackON por un total de $$
 📞 Para cualquier consulta, puedes contactarnos al correo rackonoficial@gmail.com
 
 ¡Gracias por confiar en RackON!`;
+    }
+
+    // Función para enviar la confirmación completa
+    async function sendCompleteConfirmation(formData) {
+        return await Promise.race([
+            fetch('https://formsubmit.co/ajax/rackonoficial@gmail.com', {
+                method: 'POST',
+                body: formData,
+                headers: { 
+                    'Accept': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            }),
+            new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 30000))
+        ]);
+    }
+
+    function showPaymentSuccess(type, userName) {
+        alert(`¡Pago de ${type} completado con éxito! Gracias ${userName}.`);
+    }
+
+    function showPaymentError(type) {
+        alert(`Hubo un error procesando el pago de ${type}. Por favor, inténtalo de nuevo.`);
+    }
+
+    function getSelectedOptions() {
+        const options = [];
+        if (purchaseCalculations.securityLayers.camera) options.push('Cámara de verificación');
+        if (purchaseCalculations.securityLayers.sensor) options.push('Sensor de impacto');
+        if (purchaseCalculations.aestheticCustomization.laser) options.push('Grabado láser');
+        if (purchaseCalculations.aestheticCustomization.colors) options.push('Colores personalizados');
+        if (purchaseCalculations.assistedInstallation.guided) options.push('Instalación guiada');
+        if (purchaseCalculations.assistedInstallation.manual) options.push('Manual físico');
+        return options;
+    }
+
+    function resetForms() {
+        document.getElementById('companyRegistrationForm').reset();
+        document.getElementById('purchaseForm').reset();
+        document.querySelector('.purchase-feedback')?.remove();
+        document.getElementById('confirmPurchaseBtn').classList.add('d-none');
+    }
+
+    // 8. Funciones de resumen de compra
+    function updatePurchaseSummary() {
+        const summaryList = document.getElementById('orderSummaryList');
+        if (!summaryList) return;
+        
+        summaryList.innerHTML = '';
+
+        // Calcular precio por dispositivo
+        const devicePricePerUnit = calculateDevicePrice();
+        purchaseCalculations.currentDeviceTotal = devicePricePerUnit * purchaseCalculations.quantity;
+
+        // Calcular soporte
+        calculateSupportPrices();
+
+        // Construir resumen
+        const summaryItems = [
+            `<li class="list-group-item"><strong>Cantidad:</strong> ${purchaseCalculations.quantity} unidades</li>`,
+            `<li class="list-group-item"><strong>Precio por unidad:</strong> ${devicePricePerUnit} USD</li>`
+        ];
+
+        // Agregar opciones adicionales
+        addOptionalItems(summaryItems);
+
+        // Mostrar resumen
+        summaryList.innerHTML = summaryItems.join('');
+        document.getElementById('finalDevicePrice').textContent = `${purchaseCalculations.currentDeviceTotal.toFixed(2)} USD`;
+        
+        const supportText = selectedPlanData.type === 'monthly'
+            ? `${purchaseCalculations.currentSupportMonthlyTotal.toFixed(2)} USD/mes`
+            : `${purchaseCalculations.currentSupportAnnualTotal.toFixed(2)} USD/año`;
+        
+        document.getElementById('finalSupportPrice').textContent = supportText;
+        document.getElementById('supportPlanType').textContent = selectedPlanData.type === 'monthly' ? 'Mensual' : 'Anual';
+        
+        // Re-renderizar botones de PayPal si estamos en el paso de resumen
+        if (currentStep === 3) {
+            renderPayPalButtons();
+        }
+    }
+
+    function calculateDevicePrice() {
+        if (purchaseCalculations.quantity >= 5) return PRICES.quantityDiscounts['5+'];
+        if (purchaseCalculations.quantity >= 2) return PRICES.quantityDiscounts['2-4'];
+        return PRICES.quantityDiscounts['1'];
+    }
+
+    function calculateSupportPrices() {
+        let baseMonthly = 25; // Precio base mensual
+        let baseAnnual = 250; // Precio base anual
+
+        switch (purchaseCalculations.techSupport) {
+            case 'premium':
+                baseMonthly += PRICES.supportPremiumMonthly;
+                baseAnnual += PRICES.supportPremiumAnnual;
+                break;
+            case 'ultra':
+                baseMonthly += PRICES.supportUltraMonthly;
+                baseAnnual += PRICES.supportUltraAnnual;
+                break;
         }
 
-        // Función para enviar la confirmación completa
-        async function sendCompleteConfirmation(formData) {
-            return await Promise.race([
-                fetch('https://formsubmit.co/ajax/rackonoficial@gmail.com', {
-                    method: 'POST',
-                    body: formData,
-                    headers: { 
-                        'Accept': 'application/json',
-                        'X-Requested-With': 'XMLHttpRequest'
-                    }
-                }),
-                new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 30000))
-            ]);
+        purchaseCalculations.currentSupportMonthlyTotal = baseMonthly;
+        purchaseCalculations.currentSupportAnnualTotal = baseAnnual;
+    }
+
+    function addOptionalItems(summaryItems) {
+        // Capas de seguridad
+        if (purchaseCalculations.securityLayers.camera) {
+            purchaseCalculations.currentDeviceTotal += PRICES.securityLayer2;
+            summaryItems.push(`<li class="list-group-item">Cámara de verificación (+${PRICES.securityLayer2} USD)</li>`);
+        }
+        if (purchaseCalculations.securityLayers.sensor) {
+            purchaseCalculations.currentDeviceTotal += PRICES.securityLayer3;
+            summaryItems.push(`<li class="list-group-item">Sensor de impacto (+${PRICES.securityLayer3} USD)</li>`);
         }
 
-        function showPaymentSuccess(type, userName) {
-            alert(`¡Pago de ${type} completado con éxito! Gracias ${userName}.`);
+        // Personalización estética
+        if (purchaseCalculations.aestheticCustomization.laser) {
+            purchaseCalculations.currentDeviceTotal += PRICES.aestheticLaser;
+            summaryItems.push(`<li class="list-group-item">Grabado láser (+${PRICES.aestheticLaser} USD)</li>`);
+        }
+        if (purchaseCalculations.aestheticCustomization.colors) {
+            purchaseCalculations.currentDeviceTotal += PRICES.aestheticColors;
+            summaryItems.push(`<li class="list-group-item">Colores personalizados (+${PRICES.aestheticColors} USD)</li>`);
         }
 
-        function showPaymentError(type) {
-            alert(`Hubo un error procesando el pago de ${type}. Por favor, inténtalo de nuevo.`);
+        // Instalación
+        if (purchaseCalculations.assistedInstallation.guided) {
+            purchaseCalculations.currentDeviceTotal += PRICES.installGuided;
+            summaryItems.push(`<li class="list-group-item">Instalación guiada (+${PRICES.installGuided} USD)</li>`);
+        }
+        if (purchaseCalculations.assistedInstallation.manual) {
+            purchaseCalculations.currentDeviceTotal += PRICES.installManual;
+            summaryItems.push(`<li class="list-group-item">Manual físico (+${PRICES.installManual} USD)</li>`);
         }
 
-        function getSelectedOptions() {
-            const options = [];
-            if (purchaseCalculations.securityLayers.camera) options.push('Cámara de verificación');
-            if (purchaseCalculations.securityLayers.sensor) options.push('Sensor de impacto');
-            if (purchaseCalculations.aestheticCustomization.laser) options.push('Grabado láser');
-            if (purchaseCalculations.aestheticCustomization.colors) options.push('Colores personalizados');
-            if (purchaseCalculations.assistedInstallation.guided) options.push('Instalación guiada');
-            if (purchaseCalculations.assistedInstallation.manual) options.push('Manual físico');
-            return options;
+        // Soporte técnico
+        let supportText = '';
+        switch (purchaseCalculations.techSupport) {
+            case 'basic':
+                supportText = 'Básico (incluido)';
+                break;
+            case 'premium':
+                supportText = 'Premium';
+                break;
+            case 'ultra':
+                supportText = 'Ultra';
+                break;
         }
+        summaryItems.push(`<li class="list-group-item">Soporte Técnico: ${supportText}</li>`);
+    }
 
-        function resetForms() {
-            document.getElementById('companyRegistrationForm').reset();
-            document.getElementById('purchaseForm').reset();
-            document.querySelector('.purchase-feedback')?.remove();
-            document.getElementById('confirmPurchaseBtn').classList.add('d-none');
-        }
+    function resetPaymentStatus() {
+        devicePaymentCompleted = false;
+        supportPaymentCompleted = false;
+        console.log('🔄 Estado de pagos reiniciado');
+    }
 
-        // 8. Funciones de resumen de compra
-        function updatePurchaseSummary() {
-            const summaryList = document.getElementById('orderSummaryList');
-            if (!summaryList) return;
-            
-            summaryList.innerHTML = '';
-
-            // Calcular precio por dispositivo
-            const devicePricePerUnit = calculateDevicePrice();
-            purchaseCalculations.currentDeviceTotal = devicePricePerUnit * purchaseCalculations.quantity;
-
-            // Calcular soporte
-            calculateSupportPrices();
-
-            // Construir resumen
-            const summaryItems = [
-                `<li class="list-group-item"><strong>Cantidad:</strong> ${purchaseCalculations.quantity} unidades</li>`,
-                `<li class="list-group-item"><strong>Precio por unidad:</strong> ${devicePricePerUnit} USD</li>`
-            ];
-
-            // Agregar opciones adicionales
-            addOptionalItems(summaryItems);
-
-            // Mostrar resumen
-            summaryList.innerHTML = summaryItems.join('');
-            document.getElementById('finalDevicePrice').textContent = `${purchaseCalculations.currentDeviceTotal.toFixed(2)} USD`;
-            
-            const supportText = selectedPlanData.type === 'monthly'
-                ? `${purchaseCalculations.currentSupportMonthlyTotal.toFixed(2)} USD/mes`
-                : `${purchaseCalculations.currentSupportAnnualTotal.toFixed(2)} USD/año`;
-            
-            document.getElementById('finalSupportPrice').textContent = supportText;
-            document.getElementById('supportPlanType').textContent = selectedPlanData.type === 'monthly' ? 'Mensual' : 'Anual';
-        }
-
-        function calculateDevicePrice() {
-            if (purchaseCalculations.quantity >= 5) return PRICES.quantityDiscounts['5+'];
-            if (purchaseCalculations.quantity >= 2) return PRICES.quantityDiscounts['2-4'];
-            return PRICES.quantityDiscounts['1'];
-        }
-
-        function calculateSupportPrices() {
-            let baseMonthly = 25; // Precio base mensual
-            let baseAnnual = 250; // Precio base anual
-
-            switch (purchaseCalculations.techSupport) {
-                case 'premium':
-                    baseMonthly += PRICES.supportPremiumMonthly;
-                    baseAnnual += PRICES.supportPremiumAnnual;
-                    break;
-                case 'ultra':
-                    baseMonthly += PRICES.supportUltraMonthly;
-                    baseAnnual += PRICES.supportUltraAnnual;
-                    break;
-            }
-
-            purchaseCalculations.currentSupportMonthlyTotal = baseMonthly;
-            purchaseCalculations.currentSupportAnnualTotal = baseAnnual;
-        }
-
-        function addOptionalItems(summaryItems) {
-            // Capas de seguridad
-            if (purchaseCalculations.securityLayers.camera) {
-                purchaseCalculations.currentDeviceTotal += PRICES.securityLayer2;
-                summaryItems.push(`<li class="list-group-item">Cámara de verificación (+${PRICES.securityLayer2} USD)</li>`);
-            }
-            if (purchaseCalculations.securityLayers.sensor) {
-                purchaseCalculations.currentDeviceTotal += PRICES.securityLayer3;
-                summaryItems.push(`<li class="list-group-item">Sensor de impacto (+${PRICES.securityLayer3} USD)</li>`);
-            }
-
-            // Personalización estética
-            if (purchaseCalculations.aestheticCustomization.laser) {
-                purchaseCalculations.currentDeviceTotal += PRICES.aestheticLaser;
-                summaryItems.push(`<li class="list-group-item">Grabado láser (+${PRICES.aestheticLaser} USD)</li>`);
-            }
-            if (purchaseCalculations.aestheticCustomization.colors) {
-                purchaseCalculations.currentDeviceTotal += PRICES.aestheticColors;
-                summaryItems.push(`<li class="list-group-item">Colores personalizados (+${PRICES.aestheticColors} USD)</li>`);
-            }
-
-            // Instalación
-            if (purchaseCalculations.assistedInstallation.guided) {
-                purchaseCalculations.currentDeviceTotal += PRICES.installGuided;
-                summaryItems.push(`<li class="list-group-item">Instalación guiada (+${PRICES.installGuided} USD)</li>`);
-            }
-            if (purchaseCalculations.assistedInstallation.manual) {
-                purchaseCalculations.currentDeviceTotal += PRICES.installManual;
-                summaryItems.push(`<li class="list-group-item">Manual físico (+${PRICES.installManual} USD)</li>`);
-            }
-
-            // Soporte técnico
-            let supportText = '';
-            switch (purchaseCalculations.techSupport) {
-                case 'basic':
-                    supportText = 'Básico (incluido)';
-                    break;
-                case 'premium':
-                    supportText = 'Premium';
-                    break;
-                case 'ultra':
-                    supportText = 'Ultra';
-                    break;
-            }
-            summaryItems.push(`<li class="list-group-item">Soporte Técnico: ${supportText}</li>`);
-        }
-
-        function resetPaymentStatus() {
-            devicePaymentCompleted = false;
-            supportPaymentCompleted = false;
-        }
-
-        // Inicialización del modal
-        $('#purchaseModal').on('show.bs.modal', function() {
-            updatePurchaseSummary();
-            resetPaymentStatus();
-            const confirmBtn = document.getElementById('confirmPurchaseBtn');
-            if (confirmBtn) confirmBtn.classList.add('d-none');
-        });
+    // Inicialización del modal
+    $('#purchaseModal').on('show.bs.modal', function() {
+        updatePurchaseSummary();
+        resetPaymentStatus();
+        const confirmBtn = document.getElementById('confirmPurchaseBtn');
+        if (confirmBtn) confirmBtn.classList.add('d-none');
     });
-    </script>
+});
+</script>
 </body>
 </html>
