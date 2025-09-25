@@ -1480,7 +1480,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // 5. Funciones de PayPal - VERSIÓN SIMPLIFICADA Y CORREGIDA
+    // 5. Funciones de PayPal
     function renderPayPalButtons() {
         const container = document.getElementById('paypal-buttons-container');
         if (!container) return;
@@ -1582,7 +1582,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (this.checked) {
                     selectedPlanData.type = this.value;
                     updatePurchaseSummary();
-                    // Re-renderizar solo el botón de soporte
                     renderPayPalSupportButton();
                 }
             });
@@ -1632,7 +1631,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }).render('#paypal-support-button');
     }
 
-    // 6. FUNCIÓN CRÍTICA CORREGIDA - Verificación de pagos
+    // 6. Función para verificar pagos completados
     function checkPaymentsCompletion() {
         const confirmBtn = document.getElementById('confirmPurchaseBtn');
         
@@ -1642,7 +1641,6 @@ document.addEventListener('DOMContentLoaded', function() {
             deviceRequired: purchaseCalculations.quantity > 0 && purchaseCalculations.currentDeviceTotal > 0
         });
 
-        // Lógica simplificada y corregida
         const devicePaymentRequired = purchaseCalculations.quantity > 0 && purchaseCalculations.currentDeviceTotal > 0;
         const devicePaymentOk = !devicePaymentRequired || window.devicePaymentCompleted;
         const supportPaymentOk = window.supportPaymentCompleted;
@@ -1660,9 +1658,8 @@ document.addEventListener('DOMContentLoaded', function() {
             confirmBtn.classList.remove('d-none');
             confirmBtn.style.display = 'block';
             confirmBtn.innerHTML = '<i class="fas fa-envelope"></i> Confirmar Pedido y Enviar Correo';
-            console.log('🎉 ¡BOTÓN DE CONFIRMACÓN HABILITADO!');
+            console.log('🎉 ¡BOTÓN DE CONFIRMACIÓN HABILITADO!');
             
-            // Scroll al botón para que sea visible
             confirmBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
         } else {
             confirmBtn.classList.add('d-none');
@@ -1671,7 +1668,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // 7. Confirmación final del pedido
+    // 7. FUNCIÓN PRINCIPAL - Envío de correo Y datos a CodeIgniter 4
     async function handleFinalConfirmation() {
         if (isProcessing) return;
         
@@ -1690,17 +1687,22 @@ document.addEventListener('DOMContentLoaded', function() {
             // Crear nuevo feedback
             const feedback = document.createElement('div');
             feedback.className = 'alert alert-info purchase-feedback mt-3';
-            feedback.textContent = 'Confirmando tu pedido y enviando confirmación...';
+            feedback.textContent = 'Confirmando tu pedido, enviando correo y registrando datos...';
             btn.parentNode.insertBefore(feedback, btn.nextSibling);
 
-            // Preparar y enviar datos de confirmación
-            const formData = prepareCompleteConfirmationData();
-            const response = await sendCompleteConfirmation(formData);
+            // 1. Preparar y enviar el correo electrónico
+            const emailFormData = prepareCompleteConfirmationData();
+            const emailResponse = await sendEmailConfirmation(emailFormData);
 
-            if (!response.ok) throw new Error('Error en el servidor');
+            if (!emailResponse.ok) throw new Error('Error al enviar el correo');
 
-            // Éxito
-            feedback.textContent = '¡Pedido confirmado con éxito! Se ha enviado un correo de confirmación.';
+            // 2. Enviar los datos al controlador de CodeIgniter 4
+            const controllerResponse = await sendDataToCodeIgniterController();
+
+            if (!controllerResponse.ok) throw new Error('Error al enviar datos al controlador');
+
+            // Éxito completo
+            feedback.textContent = '¡Pedido confirmado con éxito! Se ha enviado el correo y registrado los datos.';
             feedback.className = 'alert alert-success purchase-feedback mt-3';
 
             // Resetear después de 3 segundos
@@ -1714,7 +1716,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error en la confirmación:', error);
             const feedback = document.querySelector('.purchase-feedback');
             if (feedback) {
-                feedback.textContent = 'Error al confirmar el pedido. Por favor, contacta a soporte.';
+                feedback.textContent = 'Error al procesar el pedido. Por favor, contacta a soporte.';
                 feedback.className = 'alert alert-danger purchase-feedback mt-3';
             }
         } finally {
@@ -1724,6 +1726,74 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Función para enviar datos al controlador de CodeIgniter 4
+    async function sendDataToCodeIgniterController() {
+        const clientEmail = document.getElementById('companyContactEmail').value;
+        const companyName = document.getElementById('companyName').value;
+        
+        // Datos estructurados para CodeIgniter
+        const purchaseData = {
+            email: clientEmail,
+            company_name: companyName,
+            contact_person: document.getElementById('companyContactPerson').value,
+            phone: document.getElementById('companyContactPhone').value,
+            tax_id: document.getElementById('companyTaxId').value,
+            quantity: purchaseCalculations.quantity,
+            device_total: purchaseCalculations.currentDeviceTotal,
+            support_plan: selectedPlanData.type,
+            support_amount: selectedPlanData.type === 'monthly' 
+                ? purchaseCalculations.currentSupportMonthlyTotal 
+                : purchaseCalculations.currentSupportAnnualTotal,
+            total_amount: purchaseCalculations.currentDeviceTotal + 
+                (selectedPlanData.type === 'monthly' 
+                    ? purchaseCalculations.currentSupportMonthlyTotal 
+                    : purchaseCalculations.currentSupportAnnualTotal),
+            delivery_address: document.getElementById('deliveryAddress').value,
+            delivery_city: document.getElementById('deliveryCity').value,
+            delivery_state: document.getElementById('deliveryState').value,
+            delivery_zip: document.getElementById('deliveryZip').value,
+            delivery_country: document.getElementById('deliveryCountry').value,
+            payment_status: 'completed',
+            created_at: new Date().toISOString()
+        };
+
+        console.log('📤 Enviando datos a CodeIgniter 4:', purchaseData);
+
+        // AJAX call al controlador de CodeIgniter 4
+        // ELIGE UNA DE ESTAS OPCIONES SEGÚN TU CONFIGURACIÓN:
+
+        // OPCIÓN 1: Usando routes (RECOMENDADO)
+        return await fetch('<?= site_url("purchases/save") ?>', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest'
+            },
+            body: JSON.stringify(purchaseData)
+        });
+
+        // OPCIÓN 2: Usando URL directa al controlador
+        // return await fetch('<?= base_url("PurchaseController/savePurchase") ?>', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //         'X-Requested-With': 'XMLHttpRequest'
+        //     },
+        //     body: JSON.stringify(purchaseData)
+        // });
+
+        // OPCIÓN 3: URL absoluta (si tienes problemas con las anteriores)
+        // return await fetch('/purchases/save', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //         'X-Requested-With': 'XMLHttpRequest'
+        //     },
+        //     body: JSON.stringify(purchaseData)
+        // });
+    }
+
+    // Función para preparar datos del correo
     function prepareCompleteConfirmationData() {
         const companyName = document.getElementById('companyName').value;
         const companyEmail = document.getElementById('companyContactEmail').value;
@@ -1793,7 +1863,7 @@ Te contactaremos dentro de 24-48 horas para coordinar el envío.
 ¡Gracias por confiar en RackON!`;
     }
 
-    async function sendCompleteConfirmation(formData) {
+    async function sendEmailConfirmation(formData) {
         return await fetch('https://formsubmit.co/ajax/rackonoficial@gmail.com', {
             method: 'POST',
             body: formData,
@@ -1829,7 +1899,6 @@ Te contactaremos dentro de 24-48 horas para coordinar el envío.
         document.querySelector('.purchase-feedback')?.remove();
         document.getElementById('confirmPurchaseBtn').classList.add('d-none');
         
-        // Resetear estados de pago
         window.devicePaymentCompleted = false;
         window.supportPaymentCompleted = false;
     }
