@@ -2209,3 +2209,28 @@ Stack trace:
 #12 /var/www/html/Prueba/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 #13 /var/www/html/Prueba/public/index.php(56): CodeIgniter\Boot::bootWeb()
 #14 {main}
+INFO - 2025-09-25 17:25:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-09-25 17:25:12 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-25 17:26:01 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`codeigniter4_bd`.`usuario`, CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`ID_Rol`) REFERENCES `rol` (`ID_Rol`)) in /var/www/html/Prueba/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /var/www/html/Prueba/system/Database/MySQLi/Connection.php(312): mysqli->query()
+#1 /var/www/html/Prueba/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/Prueba/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/Prueba/system/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/Prueba/system/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 /var/www/html/Prueba/system/BaseModel.php(840): CodeIgniter\Model->doInsert()
+#6 /var/www/html/Prueba/system/Model.php(802): CodeIgniter\BaseModel->insert()
+#7 /var/www/html/Prueba/app/Controllers/Purchases.php(82): CodeIgniter\Model->insert()
+#8 /var/www/html/Prueba/system/CodeIgniter.php(933): App\Controllers\Purchases->save()
+#9 /var/www/html/Prueba/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#10 /var/www/html/Prueba/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#11 /var/www/html/Prueba/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /var/www/html/Prueba/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#13 /var/www/html/Prueba/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#14 {main}
