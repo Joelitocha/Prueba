@@ -33,9 +33,6 @@ class Purchases extends ResourceController
             return $this->fail('Datos incompletos', 400);
         }
 
-        // Remover campos de timestamp para evitar conflictos con useTimestamps
-        unset($json['created_at']);
-
         try {
             $db = \Config\Database::connect();
             $db->transStart();
@@ -47,45 +44,58 @@ class Purchases extends ResourceController
             // 1️⃣ Guardar la compra
             $purchaseId = $purchaseModel->insert($json, true);
             if (!$purchaseId) {
-                $db->transRollback();
                 return $this->failValidationErrors($purchaseModel->errors());
             }
 
             // 2️⃣ Crear empresa con Ecode
             $ecode = $this->generateEcode();
-            $empresaData = [
+            $empresaId = $empresaModel->insert([
                 'nombre' => $json['company_name'],
                 'Ecode'  => $ecode
-            ];
-            $empresaId = $empresaModel->insert($empresaData, true);
-            if (!$empresaId) {
-                $db->transRollback();
-                return $this->failValidationErrors($empresaModel->errors());
-            }
-
-            // Actualizar la compra con el empresa_id
-            $updateResult = $purchaseModel->update($purchaseId, ['empresa_id' => $empresaId]);
-            if (!$updateResult) {
-                $db->transRollback();
-                return $this->failServerError('Error al actualizar la compra con empresa_id');
-            }
+            ], true);
 
             // 3️⃣ Crear usuario asociado a la empresa
             $passwordPlain = $this->generatePassword();
-            $userData = [
-                'Email'       => $json['email'],
-                'Contraseña'  => password_hash($passwordPlain, PASSWORD_DEFAULT),
-                'ID_Rol'      => 2, // Suponiendo que 2 = Usuario
-                'id_empresa'  => $empresaId,
-                'Nombre'      => $json['contact_person'] ?? 'Cliente',
-            ];
-            $userId = $userModel->insert($userData, true);
-            if (!$userId) {
-                $db->transRollback();
-                return $this->failValidationErrors($userModel->errors());
+            $userId = $userModel->insert([
+                'email'       => $json['email'],
+                'password'    => password_hash($passwordPlain, PASSWORD_DEFAULT),
+                'role_id'     => 2, // Suponiendo que 2 = Usuario
+                'empresa_id'  => $empresaId,
+                'nombre'      => $json['contact_person'] ?? 'Cliente',
+            ], true);
+
+            // 4️⃣ Enviar correo con los datos de confirmación
+            $emailService = \Config\Services::email();
+            $emailService->setTo($json['email']);
+            $emailService->setSubject("✅ Pedido RackON - {$json['company_name']}");
+            $emailService->setMessage("
+                <p>¡Gracias por tu pedido, {$json['company_name']}!</p>
+                <p><strong>Datos de acceso:</strong></p>
+                <ul>
+                    <li>Email: {$json['email']}</li>
+                    <li>Contraseña: {$passwordPlain}</li>
+                    <li>Ecode empresa: {$ecode}</li>
+                </ul>
+                <p>Pedido registrado correctamente con ID: {$purchaseId}</p>
+            ");
+            if (!$emailService->send()) {
+                log_message('error', 'Error al enviar email: ' . $emailService->printDebugger());
             }
 
             $db->transComplete();
+
+            if ($db->transStatus() === false) {
+                return $this->failServerError('Error al procesar la transacción');
+            }
+
+            return $this->respondCreated([
+                'status'      => 'success',
+                'message'     => 'Compra, empresa y usuario creados correctamente',
+                'purchase_id' => $purchaseId,
+                'empresa_id'  => $empresaId,
+                'user_id'     => $userId,
+                'ecode'       => $ecode
+            ]);
 
         } catch (\Exception $e) {
             log_message('error', 'Purchases::save error: ' . $e->getMessage());
