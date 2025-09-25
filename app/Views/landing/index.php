@@ -1056,7 +1056,9 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         <hr class="mt-4 mb-3">
         <div class="row">
             <div class="col-12 text-center text-md-start">
+                <center>
                 <p class="mb-0 text-muted">&copy; 2025 RackON. Todos los derechos reservados.</p>
+                </center>
             </div>
         </div>
     </div>
