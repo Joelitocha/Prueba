@@ -27,7 +27,8 @@ class PurchaseModel extends Model
         'delivery_state',
         'delivery_zip',
         'delivery_country',
-        'payment_status'
+        'payment_status',
+        'empresa_id'
     ];
 
     // Manejo automático de timestamps
