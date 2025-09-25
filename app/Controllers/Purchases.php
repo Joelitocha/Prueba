@@ -5,29 +5,22 @@ namespace App\Controllers;
 use App\Models\PurchaseModel;
 use App\Models\EmpresaModel;
 use App\Models\UserModel;
-use CodeIgniter\Email\Email;
+use CodeIgniter\RESTful\ResourceController;
 
-class Purchases extends BaseController
+class Purchases extends ResourceController
 {
-    protected $validation;
+    protected $format = 'json';
 
-    public function __construct()
-    {
-        helper(['form', 'url']);
-        $this->validation = \Config\Services::validation();
-    }
-
-    /**
-     * Genera un Ecode aleatorio
-     */
     private function generateEcode(): string
     {
         return strtoupper(substr(bin2hex(random_bytes(6)), 0, 12));
     }
 
-    /**
-     * Función principal para guardar la compra
-     */
+    private function generatePassword(): string
+    {
+        return bin2hex(random_bytes(4)); // 8 caracteres
+    }
+
     public function save()
     {
         if (!$this->request->isAJAX()) {
@@ -46,73 +39,67 @@ class Purchases extends BaseController
 
             $purchaseModel = new PurchaseModel();
             $empresaModel  = new EmpresaModel();
+            $userModel     = new UserModel();
 
-            // 1. Insertar compra
-            $insertId = $purchaseModel->insert($json, true);
-            if (!$insertId) {
+            // 1️⃣ Guardar la compra
+            $purchaseId = $purchaseModel->insert($json, true);
+            if (!$purchaseId) {
                 return $this->failValidationErrors($purchaseModel->errors());
             }
 
-            // 2. Insertar empresa con nombre + Ecode
+            // 2️⃣ Crear empresa con Ecode
             $ecode = $this->generateEcode();
-            $idEmpresa = $empresaModel->insert([
+            $empresaId = $empresaModel->insert([
                 'nombre' => $json['company_name'],
                 'Ecode'  => $ecode
             ], true);
 
-            // 3. Crear usuario para la empresa y enviar mail
-            $this->createUserForCompany([
-                'email'      => $json['email'],
-                'company_id' => $idEmpresa,
-                'ecode'      => $ecode
-            ]);
+            // 3️⃣ Crear usuario asociado a la empresa
+            $passwordPlain = $this->generatePassword();
+            $userId = $userModel->insert([
+                'email'       => $json['email'],
+                'password'    => password_hash($passwordPlain, PASSWORD_DEFAULT),
+                'role_id'     => 2, // Suponiendo que 2 = Usuario
+                'empresa_id'  => $empresaId,
+                'nombre'      => $json['contact_person'] ?? 'Cliente',
+            ], true);
+
+            // 4️⃣ Enviar correo con los datos de confirmación
+            $emailService = \Config\Services::email();
+            $emailService->setTo($json['email']);
+            $emailService->setSubject("✅ Pedido RackON - {$json['company_name']}");
+            $emailService->setMessage("
+                <p>¡Gracias por tu pedido, {$json['company_name']}!</p>
+                <p><strong>Datos de acceso:</strong></p>
+                <ul>
+                    <li>Email: {$json['email']}</li>
+                    <li>Contraseña: {$passwordPlain}</li>
+                    <li>Ecode empresa: {$ecode}</li>
+                </ul>
+                <p>Pedido registrado correctamente con ID: {$purchaseId}</p>
+            ");
+            if (!$emailService->send()) {
+                log_message('error', 'Error al enviar email: ' . $emailService->printDebugger());
+            }
 
             $db->transComplete();
 
             if ($db->transStatus() === false) {
-                return $this->failServerError('Error al guardar datos relacionados');
+                return $this->failServerError('Error al procesar la transacción');
             }
 
             return $this->respondCreated([
-                'status'       => 'success',
-                'message'      => 'Compra, empresa y usuario registradas exitosamente',
-                'purchase_id'  => $insertId,
-                'empresa_id'   => $idEmpresa,
-                'ecode'        => $ecode
+                'status'      => 'success',
+                'message'     => 'Compra, empresa y usuario creados correctamente',
+                'purchase_id' => $purchaseId,
+                'empresa_id'  => $empresaId,
+                'user_id'     => $userId,
+                'ecode'       => $ecode
             ]);
 
         } catch (\Exception $e) {
-            log_message('error', 'Error en Purchases::save - ' . $e->getMessage());
+            log_message('error', 'Purchases::save error: ' . $e->getMessage());
             return $this->failServerError('Error interno del servidor');
         }
-    }
-
-    /**
-     * Crea un usuario asociado a la empresa y envía mail con credenciales
-     */
-    private function createUserForCompany(array $data)
-    {
-        $userModel = new UserModel();
-
-        // Generar contraseña aleatoria
-        $password = substr(bin2hex(random_bytes(4)), 0, 8);
-
-        $userData = [
-            'email'     => $data['email'],
-            'id_empresa'=> $data['company_id'],
-            'password'  => password_hash($password, PASSWORD_DEFAULT),
-            'role_id'   => 2 // Supongamos que 2 = Usuario estándar
-        ];
-
-        $userModel->insert($userData);
-
-        // Enviar email
-        $email = \Config\Services::email();
-
-        $email->setTo($data['email']);
-        $email->setSubject('Tus credenciales de RackON');
-        $email->setMessage("Hola,\n\nTu usuario ha sido creado para la empresa. \nEcode: {$data['ecode']}\nEmail: {$data['email']}\nContraseña: {$password}\n\nSaludos,\nRackON");
-
-        $email->send();
     }
 }
