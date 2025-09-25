@@ -54,6 +54,9 @@ class Purchases extends ResourceController
                 'Ecode'  => $ecode
             ], true);
 
+            // Actualizar la compra con el empresa_id
+            $purchaseModel->update($purchaseId, ['empresa_id' => $empresaId]);
+
             // 3️⃣ Crear usuario asociado a la empresa
             $passwordPlain = $this->generatePassword();
             $userId = $userModel->insert([
