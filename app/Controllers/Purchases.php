@@ -21,6 +21,37 @@ class Purchases extends ResourceController
         return bin2hex(random_bytes(4)); // Ej: "A1B2C3D4"
     }
 
+    private function sendUserCredentials($toEmail, $tempPass, $ecode)
+    {
+        $email = \Config\Services::email();
+
+        $email->setFrom('tu_correo@gmail.com', 'RackON Soporte');
+        $email->setTo($toEmail);
+        $email->setSubject('Bienvenido a RackON - Tus credenciales de acceso');
+
+        $message = "
+            <h2>Bienvenido a RackON</h2>
+            <p>Se ha creado tu usuario con éxito. Aquí están tus credenciales:</p>
+            <ul>
+                <li><b>Email:</b> {$toEmail}</li>
+                <li><b>Contraseña temporal:</b> {$tempPass}</li>
+                <li><b>Ecode Empresa:</b> {$ecode}</li>
+            </ul>
+            <p>Por motivos de seguridad, te recomendamos cambiar tu contraseña al primer inicio de sesión.</p>
+            <br>
+            <p>Saludos,<br>Equipo RackON</p>
+        ";
+
+        $email->setMessage($message);
+
+        if (!$email->send()) {
+            log_message('error', 'Error al enviar email: ' . print_r($email->printDebugger(['headers']), true));
+            return false;
+        }
+
+        return true;
+    }
+
     public function save()
     {
         if (!$this->request->isAJAX()) {
@@ -74,6 +105,9 @@ class Purchases extends ResourceController
                 return $this->failServerError('Error al guardar datos relacionados');
             }
 
+            // 4. Enviar correo con credenciales
+            $this->sendUserCredentials($json['email'], $rawPass, $ecode);
+
             return $this->respondCreated([
                 'status'       => 'success',
                 'message'      => 'Compra, empresa y usuario registrados exitosamente',
@@ -81,7 +115,7 @@ class Purchases extends ResourceController
                 'empresa_id'   => $empresaId,
                 'usuario_id'   => $userId,
                 'ecode'        => $ecode,
-                'temp_pass'    => $rawPass // podés enviarla por email al usuario
+                'temp_pass'    => $rawPass // opcional: debug
             ]);
 
         } catch (\Exception $e) {
@@ -90,3 +124,4 @@ class Purchases extends ResourceController
         }
     }
 }
+
