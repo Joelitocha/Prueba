@@ -41,8 +41,7 @@ class Purchases extends ResourceController
                 'delivery_state' => $json->delivery_state ?? '',
                 'delivery_zip' => $json->delivery_zip ?? '',
                 'delivery_country' => $json->delivery_country ?? '',
-                'payment_status' => $json->payment_status ?? 'completed',
-                'created_at' => date('Y-m-d H:i:s')
+                'payment_status' => $json->payment_status ?? 'pending'
             ];
 
             // Insertar en la base de datos
