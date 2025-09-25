@@ -27,7 +27,7 @@ class Purchases extends ResourceController
             return $this->fail('Método no permitido', 405);
         }
 
-        $json = json_decode($this->request->getBody(), true);
+        $json = $this->request->getJSON(true);
 
         if (!$json || empty($json['email']) || empty($json['company_name'])) {
             return $this->fail('Datos incompletos', 400);

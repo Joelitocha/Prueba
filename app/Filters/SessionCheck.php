@@ -14,7 +14,7 @@ class SessionCheck implements FilterInterface
         $currentPath = trim($request->uri->getPath(), '/');
 
         // Rutas públicas donde no se requiere sesión
-        $publicRoutes = ['login', 'register', '', 'verify'];
+        $publicRoutes = ['login', 'register', '', 'verify', 'purchases/save'];
 
         // Si NO es ruta pública, aplicamos chequeo de sesión
         if (!in_array($currentPath, $publicRoutes)) {
