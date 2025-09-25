@@ -56,4 +56,36 @@ class PurchaseModel extends Model
     ];
 
     protected $skipValidation = false;
+
+    //Obtener todas las compras, ordenadas por fecha descendente.
+    public function getAllPurchases()
+    {
+        return $this->orderBy('created_at', 'DESC')->findAll();
+    }
+
+    //Obtener compras paginadas (ej: para tablas grandes).
+    public function getPaginatedPurchases(int $perPage = 10)
+    {
+        return $this->orderBy('created_at', 'DESC')->paginate($perPage);
+    }
+
+    //Buscar compras por email.
+    public function getByEmail(string $email)
+    {
+        return $this->where('email', $email)
+                    ->orderBy('created_at', 'DESC')
+                    ->findAll();
+    }
+
+    //Actualizar estado de pago de una compra.
+    public function updatePaymentStatus(int $id, string $status)
+    {
+        return $this->update($id, ['payment_status' => $status]);
+    }
+
+    //Eliminar una compra por ID.
+    public function deletePurchase(int $id)
+    {
+        return $this->delete($id);
+    }
 }
