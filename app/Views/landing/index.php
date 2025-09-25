@@ -1048,7 +1048,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
                 <h5 style="color: white;">Contacto</h5>
                 <ul class="list-unstyled">
                     <li><i class="fas fa-map-marker-alt me-2"></i>Río Tercero, Córdoba, Argentina</li>
-                    <li><i class="fas fa-envelope me-2"></i>info@rackon.tech</li>
+                    <li><i class="fas fa-envelope me-2"></i>rackonoficial@gmail.com</li>
                     <li><i class="fas fa-phone me-2"></i>+54 9 3571 XXXXXX</li>
                 </ul>
             </div>
