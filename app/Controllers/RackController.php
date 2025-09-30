@@ -11,11 +11,11 @@ class RackController extends BaseController
 
         // Traer el id_empresa de la sesión
         $idEmpresa = session()->get('id_empresa');
-
+var_dump($idEmpresa);
         // Buscar racks SOLO de esa empresa
-        $data['racks'] = $model->getRacksByEmpresa($idEmpresa);
+        // $data['racks'] = $model->getRacksByEmpresa($idEmpresa);
 
-        return view('dispositivo', $data); // Muestra la lista de racks filtrados
+        // return view('dispositivo', $data); // Muestra la lista de racks filtrados
     }
 
     public function configurar()
