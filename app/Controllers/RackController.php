@@ -1,108 +1,90 @@
 <?php
 
 namespace App\Controllers;
-
 use App\Models\RackModel;
-use App\Models\DispositivoModel;
 
 class RackController extends BaseController
 {
     public function index()
     {
-        $rackModel = new RackModel();
-        $idEmpresa = session()->get('id_empresa');
-
-        $racks = $rackModel->getRacksPorEmpresa($idEmpresa);
-
-        return view('dispositivo', ['racks' => $racks]);
-    }
-
-    public function ver($id)
-    {
-        $rackModel = new RackModel();
-        $dispositivoModel = new DispositivoModel();
-        $idEmpresa = session()->get('id_empresa');
-
-        // Validar que el rack pertenezca a la empresa del usuario
-        $rack = $rackModel->getRackByIdAndEmpresa($id, $idEmpresa);
-
-        if (!$rack) {
-            return redirect()->to('/dispositivo')->with('error', 'No tenés permiso para ver este rack');
-        }
-
-        $dispositivos = $dispositivoModel->where('ID_Rack', $id)->findAll();
-
-        return view('dispositivo', [
-            'rack_seleccionado' => $rack,
-            'dispositivos' => $dispositivos
-        ]);
-    }
-
-    public function guardar()
-    {
-        $rackModel = new RackModel();
-        $id = $this->request->getPost('id_rack');
-        $ubicacion = $this->request->getPost('ubicacion');
-        $estado = $this->request->getPost('estado');
-        $idEmpresa = session()->get('id_empresa');
-
-        $data = [
-            'Ubicacion'  => $ubicacion,
-            'Estado'     => $estado,
-            'id_empresa' => $idEmpresa
-        ];
-
-        if ($id) {
-            $rackModel->update($id, $data);
-            return redirect()->to('/dispositivo')->with('success', 'Rack actualizado correctamente');
-        } else {
-            $rackModel->insert($data);
-            return redirect()->to('/dispositivo')->with('success', 'Rack creado correctamente');
-        }
-    }
-
-    public function eliminar($id)
-    {
-        $rackModel = new RackModel();
-        $dispositivoModel = new DispositivoModel();
-        $idEmpresa = session()->get('id_empresa');
-
-        // Validar que el rack pertenezca a la empresa antes de eliminar
-        $rack = $rackModel->getRackByIdAndEmpresa($id, $idEmpresa);
-
-        if (!$rack) {
-            return redirect()->to('/dispositivo')->with('error', 'No tenés permiso para eliminar este rack');
-        }
-
-        $dispositivos = $dispositivoModel->where('ID_Rack', $id)->findAll();
-
-        if (!empty($dispositivos)) {
-            foreach ($dispositivos as $dispositivo) {
-                $dispositivoModel->delete($dispositivo['ID_Sistema']);
-            }
-        }
-
-        $rackModel->delete($id);
-
-        return redirect()->to('/dispositivo')->with('success', 'Rack eliminado correctamente');
+        $model = new RackModel();
+        $data['racks'] = $model->findAll();
+        return view('dispositivo', $data); // Muestra la lista de racks
     }
 
     public function configurar()
     {
-        return view('configurar-rack');
+        return view('configurar-rack'); // Muestra el formulario de agregar rack
     }
 
-    public function editar($id)
+    public function editar($id = null)
     {
-        $rackModel = new RackModel();
-        $idEmpresa = session()->get('id_empresa');
-
-        $rack = $rackModel->getRackByIdAndEmpresa($id, $idEmpresa);
-
-        if (!$rack) {
-            return redirect()->to('/dispositivo')->with('error', 'No tenés permiso para editar este rack');
+        $model = new RackModel();
+        
+        if ($id) {
+            $data['rack'] = $model->find($id);
+            if (!$data['rack']) {
+                return redirect()->to('/dispositivo')->with('error', 'Rack no encontrado');
+            }
+            return view('editar-rack', $data); // Muestra el formulario de editar rack
+        } else {
+            return redirect()->to('/dispositivo')->with('error', 'ID de rack no especificado');
         }
+    }
 
-        return view('editar-rack', ['rack' => $rack]);
+    public function guardar()
+    {
+        $model = new RackModel();
+
+        $id = $this->request->getPost('id_rack');
+        $ubicacion = $this->request->getPost('ubicacion');
+        $estado    = $this->request->getPost('estado');
+
+        $data = [
+            'Ubicacion' => $ubicacion,
+            'Estado'    => $estado
+        ];
+
+        if ($id) {
+            // Actualizar rack existente
+            if ($model->update($id, $data)) {
+                return redirect()->to('/dispositivo')->with('success', 'Rack actualizado correctamente');
+            } else {
+                return redirect()->back()->withInput()->with('error', 'Error al actualizar el rack');
+            }
+        } else {
+            // Insertar nuevo rack
+            if ($model->insert($data)) {
+                return redirect()->to('/dispositivo')->with('success', 'Rack creado correctamente');
+            } else {
+                return redirect()->back()->withInput()->with('error', 'Error al crear el rack');
+            }
+        }
+    }
+
+public function eliminar($id)
+{
+    $model = new RackModel();
+    
+    // Verificar si el rack tiene dispositivos asociados
+    $dispositivoModel = new \App\Models\DispositivoModel();
+    $dispositivos = $dispositivoModel->where('ID_Rack', $id)->findAll();
+    
+    if (!empty($dispositivos)) {
+        // Opción 1: Eliminar también los dispositivos asociados
+        foreach ($dispositivos as $dispositivo) {
+            $dispositivoModel->delete($dispositivo['ID_Sistema']);
+        }
+        
+        // Opción 2: Mostrar error y no eliminar (descomenta la siguiente línea y comenta las anteriores)
+        // return redirect()->to('/dispositivo')->with('error', 'No se puede eliminar el rack porque tiene dispositivos asociados');
+    }
+    
+    if ($model->delete($id)) {
+        return redirect()->to('/dispositivo')->with('success', 'Rack eliminado correctamente');
+    } else {
+        return redirect()->to('/dispositivo')->with('error', 'Error al eliminar el rack');
     }
 }
+}
+
