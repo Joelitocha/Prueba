@@ -11,12 +11,38 @@ class RackController extends BaseController
 
         // Traer el id_empresa de la sesión
         $idEmpresa = session()->get('id_empresa');
-var_dump($idEmpresa);
-        // Buscar racks SOLO de esa empresa
-        // $data['racks'] = $model->getRacksByEmpresa($idEmpresa);
 
-        // return view('dispositivo', $data); // Muestra la lista de racks filtrados
+        // Buscar racks SOLO de esa empresa
+        $data['racks'] = $model->getRacksByEmpresa($idEmpresa);
+
+        return view('dispositivo', $data); // Muestra la lista de racks filtrados
     }
+    public function ver($id)
+{
+    $model = new RackModel();
+    $idEmpresa = session()->get('id_empresa');
+
+    // Buscar el rack filtrado por empresa
+    $rack = $model->where('ID_Rack', $id)
+                  ->where('id_empresa', $idEmpresa)
+                  ->first();
+
+    if (!$rack) {
+        return redirect()->to('/dispositivo')->with('error', 'No tenés permiso para ver este rack');
+    }
+
+    // Cargar dispositivos asociados al rack
+    $dispositivoModel = new \App\Models\DispositivoModel();
+    $dispositivos = $dispositivoModel->where('ID_Rack', $id)->findAll();
+
+    $data = [
+        'rack_seleccionado' => $rack,
+        'dispositivos'      => $dispositivos
+    ];
+
+    return view('dispositivo', $data);
+}
+
 
     public function configurar()
     {
