@@ -446,6 +446,7 @@ $rol = $session->get("ID_Rol");
         <div class="delete-section">
           <h3>Zona de peligro</h3>
           <p>Esta acción no se puede deshacer. Se eliminará permanentemente el rack y todos los dispositivos asociados.</p>
+          <br>
           <button type="button" class="btn btn-danger" onclick="confirmarEliminacion()">
             <i class="fas fa-trash"></i> Eliminar Rack
           </button>
