@@ -8,32 +8,32 @@ class RackModel extends Model
 {
     protected $table = 'rack';
     protected $primaryKey = 'ID_Rack';
-    protected $allowedFields = ['Ubicacion', 'Estado', 'id_empresa'];
+    protected $useAutoIncrement = true;
+    protected $allowedFields = [
+        'ID_Rack',
+        'Ubicacion',
+        'Estado',
+        'id_empresa'
+    ];
 
-    // Obtener racks filtrados por empresa
-    public function getRacksByEmpresa($idEmpresa)
+    // Obtener todos los racks de una empresa
+    public function getRacksPorEmpresa($idEmpresa)
     {
-        return $this->where('id_empresa', $idEmpresa)->findAll();
+        return $this->db->table($this->table)
+                        ->select('*')
+                        ->where('id_empresa', $idEmpresa)
+                        ->get()
+                        ->getResultArray();
     }
 
-    // Insertar un rack con empresa
-    public function insertRack($ubicacion, $estado, $id_empresa)
+    // Obtener un rack específico pero validando que sea de la empresa
+    public function getRackByIdAndEmpresa($id, $idEmpresa)
     {
-        $data = [
-            'Ubicacion'  => $ubicacion,
-            'Estado'     => $estado,
-            'id_empresa' => $id_empresa
-        ];
-        return $this->db->table('rack')->insert($data);
-    }
-
-    // Racks con dispositivos contados, filtrados por empresa
-    public function getRacksConDispositivos($idEmpresa)
-    {
-        return $this->select('rack.*, COUNT(dispositivo.ID_Sistema) as cantidad_dispositivos')
-                    ->join('dispositivo', 'dispositivo.ID_Rack = rack.ID_Rack', 'left')
-                    ->where('rack.id_empresa', $idEmpresa)
-                    ->groupBy('rack.ID_Rack')
-                    ->findAll();
+        return $this->db->table($this->table)
+                        ->select('*')
+                        ->where('ID_Rack', $id)
+                        ->where('id_empresa', $idEmpresa)
+                        ->get()
+                        ->getRowArray();
     }
 }
