@@ -40,13 +40,13 @@ $routes->group('', ['filter' => '\App\Filters\AuthFilter'], function($routes) {
         $routes->post('/actualizar-dispositivo/(:num)', 'DispositivoController::actualizar/$1');
         $routes->get('/eliminar-dispositivo/(:num)', 'DispositivoController::eliminar/$1');
         // Rutas para racks
-        $routes->get('dispositivo', 'RackController::index');
-        $routes->get('dispositivo/(:num)', 'RackController::ver/$1'); 
+        $routes->get('dispositivo', 'RackController::index');         
         $routes->get('configurar-rack', 'RackController::configurar');
+        $routes->get('editar-rack/(:num)', 'RackController::editar/$1'); 
         $routes->post('guardar-rack', 'RackController::guardar');
-        $routes->get('editar-rack/(:num)', 'RackController::editar/$1');
-        $routes->get('eliminar-rack/(:num)', 'RackController::eliminar/$1');
-        
+        $routes->get('eliminar-rack/(:num)', 'RackController::eliminar/$1'); 
+        $routes->get('dispositivo/(:num)', 'RackController::ver/$1');
+
 
     
     // Rutas para admin y supervisor (roles 5 y 6)
