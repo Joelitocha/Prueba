@@ -1760,9 +1760,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('📤 Enviando datos a CodeIgniter 4:', purchaseData);
 
         // AJAX call al controlador de CodeIgniter 4
-        // ELIGE UNA DE ESTAS OPCIONES SEGÚN TU CONFIGURACIÓN:
-
-        // OPCIÓN 1: Usando routes (RECOMENDADO)
         return await fetch('<?= site_url("purchases/save") ?>', {
             method: 'POST',
             headers: {
@@ -1771,26 +1768,6 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             body: JSON.stringify(purchaseData)
         });
-
-        // OPCIÓN 2: Usando URL directa al controlador
-        // return await fetch('<?= base_url("PurchaseController/savePurchase") ?>', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //         'X-Requested-With': 'XMLHttpRequest'
-        //     },
-        //     body: JSON.stringify(purchaseData)
-        // });
-
-        // OPCIÓN 3: URL absoluta (si tienes problemas con las anteriores)
-        // return await fetch('/purchases/save', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //         'X-Requested-With': 'XMLHttpRequest'
-        //     },
-        //     body: JSON.stringify(purchaseData)
-        // });
     }
 
     // Función para preparar datos del correo
