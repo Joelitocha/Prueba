@@ -578,6 +578,8 @@
               <?php endif; ?>
         </div>
       </div>
+        <h1><?php echo session()->get('enombre');?> </h1>
+        <h1><?php echo session()->get('ecode');?> </h1>
     </div>
 
     <script>
