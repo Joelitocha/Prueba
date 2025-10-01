@@ -504,10 +504,6 @@ $rol = $session->get("ID_Rol");
     <a class="btn-action btn-add" href="<?= site_url('configurar-rack') ?>">
       <i class="fas fa-plus"></i> Agregar Rack
     </a>
-    
-    <a class="btn-action btn-add" href="<?= site_url('configurar-dispositivo') ?>" style="background-color: #3498db;">
-      <i class="fas fa-plus"></i> Agregar Dispositivo
-    </a>
   <?php endif; ?>
 </div>
 
