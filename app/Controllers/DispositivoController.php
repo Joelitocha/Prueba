@@ -12,34 +12,43 @@ class DispositivoController extends BaseController
     {
         $rackModel = new RackModel();
         $dispositivoModel = new DispositivoModel();
+        $idEmpresa = session()->get('id_empresa'); // 🔹 empresa de la sesión
 
         if ($idRack) {
-            // 🔹 Mostrar dispositivos de un rack específico
-            $rack = $rackModel->find($idRack);
+            // 🔹 Mostrar dispositivos de un rack específico pero validando empresa
+            $rack = $rackModel->where('ID_Rack', $idRack)
+                              ->where('id_empresa', $idEmpresa)
+                              ->first();
 
             if (!$rack) {
-                return redirect()->to('/dispositivo')->with('error', 'Rack no encontrado');
+                return redirect()->to('/dispositivo')->with('error', 'No tenés permiso para ver este rack');
             }
 
             $data['rack_seleccionado'] = [
                 'ID_Rack' => $rack['ID_Rack'],
-                'nombre'  => "Rack " . $rack['ID_Rack'], // ⚡ podés usar otro campo si tenés
+                'nombre'  => $rack['Ubicacion'], // 🔹 usamos la ubicación como nombre
+                'Ubicacion' => $rack['Ubicacion'],
+                'Estado'    => $rack['Estado']
             ];
 
-            $data['dispositivos'] = $dispositivoModel->where('ID_Rack', $idRack)->findAll();
+            $data['dispositivos'] = $dispositivoModel
+                                    ->where('ID_Rack', $idRack)
+                                    ->where('id_empresa', $idEmpresa) // 🔹 solo dispositivos de esa empresa
+                                    ->findAll();
 
             return view('dispositivo', $data);
         }
 
-        // 🔹 Listado de racks
-        $racks = $rackModel->findAll();
+        // 🔹 Listado de racks SOLO de la empresa
+        $racks = $rackModel->where('id_empresa', $idEmpresa)->findAll();
 
-        // opcional: contar dispositivos de cada rack
-        $racksConDispositivos = array_map(function ($rack) use ($dispositivoModel) {
-            $rack['nombre'] = "Rack " . $rack['ID_Rack']; // ⚡ si no tenés un campo "nombre"
+        // Opcional: contar dispositivos de cada rack
+        $racksConDispositivos = array_map(function ($rack) use ($dispositivoModel, $idEmpresa) {
+            $rack['nombre'] = $rack['Ubicacion'];
             $rack['cantidad_dispositivos'] = $dispositivoModel
-                ->where('ID_Rack', $rack['ID_Rack'])
-                ->countAllResults();
+                                             ->where('ID_Rack', $rack['ID_Rack'])
+                                             ->where('id_empresa', $idEmpresa)
+                                             ->countAllResults();
             $rack['estado'] = $rack['Estado'] == 1 ? 'Activo' : 'Inactivo';
             return $rack;
         }, $racks);
