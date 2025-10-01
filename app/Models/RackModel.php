@@ -8,7 +8,7 @@ class RackModel extends Model
 {
     protected $table = 'rack';
     protected $primaryKey = 'ID_Rack';
-    protected $allowedFields = ['Ubicacion', 'Estado', 'id_empresa'];
+    protected $allowedFields = ['Ubicacion', 'Estado'];
 
 
         // Función para insertar un rack
