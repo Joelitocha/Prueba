@@ -578,10 +578,18 @@
               <?php endif; ?>
         </div>
       </div>
-  <center>
-    <h2><?php echo session()->get('enombre');?></h2>
-    <p><b><?php echo session()->get('ecode');?></b></p>
-  </center>
+      <div style="background-color: black; color: white; padding: 15px; border-radius: 10px; width: 350px; margin: 20px auto; text-align: center;">
+        <h2 style="margin: 0; font-size: 20px;">Nombre de la empresa:</h2>
+        <p style="margin: 5px 0; font-weight: bold; font-size: 18px;">
+          <?php echo session()->get('enombre'); ?>
+        </p>
+
+        <h2 style="margin: 15px 0 0 0; font-size: 20px;">Código de la empresa:</h2>
+        <p style="margin: 5px 0; font-weight: bold; font-size: 18px;">
+          <?php echo session()->get('ecode'); ?>
+        </p>
+      </div>
+
     </div>
 
     <script>
