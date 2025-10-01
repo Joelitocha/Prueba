@@ -124,11 +124,8 @@ class RackController extends BaseController
             return redirect()->to('/dispositivo')->with('error', 'No tenés permiso para eliminar este rack');
         }
 
-        // 🔹 Eliminar dispositivos asociados
-        $dispositivos = $dispositivoModel
-                        ->where('ID_Rack', $id)
-                        ->where('id_empresa', $idEmpresa)
-                        ->findAll();
+        // 🔹 Eliminar dispositivos asociados (no hace falta filtrar por empresa acá)
+        $dispositivos = $dispositivoModel->where('ID_Rack', $id)->findAll();
 
         if (!empty($dispositivos)) {
             foreach ($dispositivos as $dispositivo) {
@@ -136,10 +133,12 @@ class RackController extends BaseController
             }
         }
 
+        // 🔹 Eliminar el rack
         $rackModel->delete($id);
 
         return redirect()->to('/dispositivo')->with('success', 'Rack eliminado correctamente');
     }
+
 }
 
 
