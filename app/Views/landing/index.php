@@ -1668,7 +1668,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // 7. FUNCIÓN PRINCIPAL - Envío de correo Y datos a CodeIgniter 4
+    // 7. FUNCIÓN PRINCIPAL - Envío de correo Y datos
     async function handleFinalConfirmation() {
         if (isProcessing) return;
         
