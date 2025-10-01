@@ -583,10 +583,7 @@
         </div>
       </div>
     </div>
-    <center>
-    <h2><?php echo session()->get('enombre');?></h2>
-    <p><b><?php echo session()->get('ecode');?></b></p>
-    </center>
+
     <script>
       // Mostrar/ocultar sidebar en móviles
       const menuToggle = document.getElementById('menuToggle');
