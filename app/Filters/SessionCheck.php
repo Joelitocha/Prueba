@@ -21,7 +21,7 @@ class SessionCheck implements FilterInterface
 
             // Si no hay sesión activa, redirigir
             if (!$session->get('logged_in')) {
-                return redirect()->to('/login')->with('error', 'Por favor inicia sesión para acceder a esta página');
+                return redirect()->to('/login');
             }
 
             // Verificación de integridad
