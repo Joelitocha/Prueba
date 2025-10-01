@@ -10,7 +10,7 @@ class Purchases extends ResourceController
 {
     protected $format = 'json';
 
-    private function generateEcode(): string
+    public function generateEcode(): string
     {
         return strtoupper(substr(bin2hex(random_bytes(6)), 0, 12));
     }
@@ -26,7 +26,6 @@ class Purchases extends ResourceController
         if (!$json || empty($json['email']) || empty($json['company_name'])) {
             return $this->fail('Datos incompletos', 400);
         }
-
         try {
             $db = \Config\Database::connect();
             $db->transStart();

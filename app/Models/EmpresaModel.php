@@ -17,11 +17,6 @@ class EmpresaModel extends Model
     protected $validationRules = [
         'nombre' => 'required|max_length[100]'
     ];
-    private function generateEcode(): string
-{
-    return strtoupper(substr(bin2hex(random_bytes(6)), 0, 12)); 
-    // ejemplo: "A1B2C3D4E5F6" 12 caracteres.
-}
 
     public function getEmpresaDataById($id_empresa)
     {
