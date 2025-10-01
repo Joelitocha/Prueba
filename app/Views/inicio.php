@@ -499,36 +499,26 @@
       </a>
     </div>
 
-<!-- Contenido principal -->
-<div class="content">
-  <div class="welcome-container">
-    <div class="welcome-header">
-      <h1>Bienvenido/a al Sistema</h1>
-    </div>
-    <div class="welcome-message">
-      <?php 
-      if ($rol == 5) {
-          echo "<p>Hola Administrador, desde aquí puedes acceder a: Gestión de Usuarios - Gestión de Tarjetas - Dispositivos - Alertas del Sistema - Historial Completo - Control de Accesos</p>";
-      } elseif ($rol == 6) {
-          echo "<p>Hola Supervisor, desde aquí puedes acceder a: Consultar Estado - Alertas Recientes - Registro de Accesos - Historial de Cambios</p>";
-      } elseif ($rol == 7) {
-          echo "<p>Hola Usuario, desde aquí puedes acceder a: Consultar Estado</p>";
-      }
-      ?>
-    </div>
+    <!-- Contenido principal -->
+    <div class="content">
+      <div class="welcome-container">
+        <div class="welcome-header">
+          <h1>Bienvenido/a al Sistema</h1>
+        </div>
+        <div class="welcome-message">
+          <?php 
+          if ($rol == 5) {
+              echo "<p>Hola Administrador, desde aquí puedes acceder a: Gestión de Usuarios - Gestión de Tarjetas - Dispositivos - Alertas del Sistema - Historial Completo - Control de Accesos</p>";
+          } elseif ($rol == 6) {
+              echo "<p>Hola Supervisor, desde aquí puedes acceder a: Consultar Estado - Alertas Recientes - Registro de Accesos - Historial de Cambios</p>";
+          } elseif ($rol == 7) {
+              echo "<p>Hola Usuario, desde aquí puedes acceder a: Consultar Estado</p>";
+          }
+          ?>
+        </div>
 
-    <div class="masonry-grid">
-      <!-- acá tus íconos -->
-    </div>
-  </div>
-
-  <!-- FUERA DE LA CAJA BLANCA -->
-  <center>
-    <h2><?php echo session()->get('enombre');?></h2>
-    <p><b><?php echo session()->get('ecode');?></b></p>
-  </center>
-</div>
-
+        <h1><?php echo session()->get('enombre');?> </h1>
+        <h1><?php echo session()->get('ecode');?> </h1>
         
         
         <div class="masonry-grid">
