@@ -23,4 +23,11 @@ class EmpresaModel extends Model
     // ejemplo: "A1B2C3D4E5F6" 12 caracteres.
 }
 
+    public function getEmpresaDataById($id_empresa)
+    {
+        return $this->select('nombre, Ecode')
+                    ->where('id_empresa', $id_empresa)
+                    ->first(); 
+    }
+
 }
