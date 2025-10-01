@@ -3,6 +3,7 @@
 namespace App\Controllers; 
 
 use App\Models\UserModel; 
+use App\Models\EmpresaModel; 
 use Config\Services;
 
 class AuthController extends BaseController
@@ -36,6 +37,7 @@ public function loginUser()
     session()->regenerate(true);
 
     $model = new UserModel();
+    $emodel = new EmpresaModel();
     $email = $this->request->getPost('Email');
     $password = $this->request->getPost('Contraseña');
 
@@ -49,6 +51,8 @@ public function loginUser()
         // Actualizar último acceso
         $model->update($user['ID_Usuario'], ['Ultimo_Acceso' => date('Y-m-d H:i:s')]);
 
+        $empresadata= $emodel->getEmpresaDataById($user["id_empresa"]);
+
         // Configurar datos de sesión persistentes
         $sessionData = [
             "user_id"    => $user["ID_Usuario"],
@@ -57,6 +61,8 @@ public function loginUser()
             "ID_Rol"     => $user["ID_Rol"],
             "ID_tarjeta" => $user["ID_Tarjeta"],
             "id_empresa" => $user["id_empresa"],
+            "enombre" => $empresadata["nombre"],
+            "ecode" => $empresadata["Ecode"],
             "last_activity" => time()
         ];
         
