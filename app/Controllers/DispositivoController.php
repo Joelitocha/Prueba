@@ -8,55 +8,48 @@ use App\Models\RackModel;
 class DispositivoController extends BaseController
 {
     // Lista de racks o dispositivos de un rack
-    public function vistadisp($idRack = null)
-    {
-        $rackModel = new RackModel();
-        $dispositivoModel = new DispositivoModel();
-        $idEmpresa = session()->get('id_empresa'); // 🔹 empresa de la sesión
+public function vistadisp($idRack = null)
+{
+    $rackModel = new RackModel();
+    $dispositivoModel = new DispositivoModel();
+    $idEmpresa = session()->get('id_empresa'); // empresa en sesión
 
-        if ($idRack) {
-            // 🔹 Mostrar dispositivos de un rack específico pero validando empresa
-            $rack = $rackModel->where('ID_Rack', $idRack)
-                              ->where('id_empresa', $idEmpresa)
-                              ->first();
+    if ($idRack) {
+        // 🔹 Mostrar dispositivos de un rack específico
+        $rack = $rackModel->where('ID_Rack', $idRack)
+                          ->where('id_empresa', $idEmpresa) // 🔹 validamos que el rack sea de la empresa
+                          ->first();
 
-            if (!$rack) {
-                return redirect()->to('/dispositivo')->with('error', 'No tenés permiso para ver este rack');
-            }
-
-            $data['rack_seleccionado'] = [
-                'ID_Rack' => $rack['ID_Rack'],
-                'nombre'  => $rack['Ubicacion'], // 🔹 usamos la ubicación como nombre
-                'Ubicacion' => $rack['Ubicacion'],
-                'Estado'    => $rack['Estado']
-            ];
-
-            $data['dispositivos'] = $dispositivoModel
-                                    ->where('ID_Rack', $idRack)
-                                    ->where('id_empresa', $idEmpresa) // 🔹 solo dispositivos de esa empresa
-                                    ->findAll();
-
-            return view('dispositivo', $data);
+        if (!$rack) {
+            return redirect()->to('/dispositivo')->with('error', 'No tenés permiso para ver este rack');
         }
 
-        // 🔹 Listado de racks SOLO de la empresa
-        $racks = $rackModel->where('id_empresa', $idEmpresa)->findAll();
+        $data['rack_seleccionado'] = $rack;
 
-        // Opcional: contar dispositivos de cada rack
-        $racksConDispositivos = array_map(function ($rack) use ($dispositivoModel, $idEmpresa) {
-            $rack['nombre'] = $rack['Ubicacion'];
-            $rack['cantidad_dispositivos'] = $dispositivoModel
-                                             ->where('ID_Rack', $rack['ID_Rack'])
-                                             ->where('id_empresa', $idEmpresa)
-                                             ->countAllResults();
-            $rack['estado'] = $rack['Estado'] == 1 ? 'Activo' : 'Inactivo';
-            return $rack;
-        }, $racks);
-
-        $data['racks'] = $racksConDispositivos;
+        // 🔹 Listar dispositivos de ese rack (ya validamos la empresa en el rack)
+        $data['dispositivos'] = $dispositivoModel
+                                ->where('ID_Rack', $idRack)
+                                ->findAll();
 
         return view('dispositivo', $data);
     }
+
+    // 🔹 Listado de racks SOLO de la empresa
+    $racks = $rackModel->where('id_empresa', $idEmpresa)->findAll();
+
+    // Opcional: contar dispositivos de cada rack
+    $racksConDispositivos = array_map(function ($rack) use ($dispositivoModel) {
+        $rack['cantidad_dispositivos'] = $dispositivoModel
+                                         ->where('ID_Rack', $rack['ID_Rack'])
+                                         ->countAllResults();
+        return $rack;
+    }, $racks);
+
+    $data['racks'] = $racksConDispositivos;
+
+    return view('dispositivo', $data);
+}
+
 
     public function nuevo()
     {
