@@ -578,17 +578,18 @@
               <?php endif; ?>
         </div>
       </div>
-      <div style="background-color: black; color: white; padding: 15px; border-radius: 10px; width: 350px; margin: 20px auto; text-align: center;">
-        <h2 style="margin: 0; font-size: 20px;">Nombre de la empresa:</h2>
-        <p style="margin: 5px 0; font-weight: bold; font-size: 18px;">
-          <?php echo session()->get('enombre'); ?>
-        </p>
+        <div style="background-color: #fff; border: 1px solid #ddd; border-radius: 10px; padding: 20px; width: 350px; margin: 20px auto; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+          <h2 style="margin: 0; font-size: 20px; color: #333;">Nombre de la empresa:</h2>
+          <p style="margin: 8px 0; font-weight: bold; font-size: 18px; color: #555;">
+            <?php echo session()->get('enombre'); ?>
+          </p>
 
-        <h2 style="margin: 15px 0 0 0; font-size: 20px;">Código de la empresa:</h2>
-        <p style="margin: 5px 0; font-weight: bold; font-size: 18px;">
-          <?php echo session()->get('ecode'); ?>
-        </p>
-      </div>
+          <h2 style="margin: 15px 0 0 0; font-size: 20px; color: #333;">Código de la empresa:</h2>
+          <p style="margin: 8px 0; font-weight: bold; font-size: 18px; color: #555;">
+            <?php echo session()->get('ecode'); ?>
+          </p>
+        </div>
+
 
     </div>
 
