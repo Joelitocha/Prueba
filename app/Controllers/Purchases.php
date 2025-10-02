@@ -58,8 +58,7 @@ class Purchases extends ResourceController
             $randomPass = $this->generateRandomPassword();
             $hashedPass = password_hash($randomPass, PASSWORD_BCRYPT);
 
-            // 👇 Busca el rol administrador (ej: ID 1). Cámbialo según tu tabla "rol"
-            $idRolAdmin = 1;
+            $idRolAdmin = 5;
 
             $idUser = $userModel->insertUser([
                 'Nombre'        => $json['company_name'] . '_admin',
