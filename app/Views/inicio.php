@@ -559,7 +559,519 @@
           padding: 5px 10px;
         }
       }
+/* Efectos de carga y transiciones */
+.carousel-slide {
+    animation: fadeIn 0.5s ease-in-out;
+}
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Efectos hover mejorados para masonry items */
+.masonry-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.masonry-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.masonry-item:hover::before {
+    left: 100%;
+}
+
+/* Mejoras en los botones del sidebar */
+.sidebar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: #3498db;
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.sidebar a:hover::after,
+.sidebar a.active::after {
+    transform: scaleY(1);
+}
+
+/* Efectos para los indicadores del carrusel */
+.carousel-indicator {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-indicator::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #3498db;
+    border-radius: 50%;
+    transition: left 0.3s ease;
+}
+
+.carousel-indicator.active::before {
+    left: 0;
+}
+
+/* Mejoras en los botones de navegación del carrusel */
+.carousel-nav {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.carousel-nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-nav:hover::before {
+    opacity: 1;
+}
+
+/* Efectos de sombra mejorados */
+.carousel-container {
+    position: relative;
+}
+
+.carousel-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(52, 152, 219, 0.3), transparent);
+}
+
+/* Mejoras en la tipografía */
+.welcome-header h1 {
+    position: relative;
+    display: inline-block;
+}
+
+.welcome-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: #3498db;
+    border-radius: 2px;
+}
+
+/* Efectos de profundidad para company details */
+.company-detail-item {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.company-detail-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.company-detail-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.company-detail-item:hover::before {
+    opacity: 1;
+}
+
+/* Animaciones para el icono de la empresa */
+.company-icon {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.company-icon:hover {
+    transform: scale(1.05) rotate(5deg);
+}
+
+.company-icon::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.company-icon:hover::before {
+    opacity: 0.1;
+}
+
+/* Mejoras en la responsividad para tablets */
+@media (max-width: 1024px) {
+    .carousel-container {
+        max-width: 900px;
+    }
+    
+    .masonry-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+    
+    .company-details {
+        max-width: 350px;
+    }
+}
+
+/* Mejoras para móviles en landscape */
+@media (max-width: 896px) and (orientation: landscape) {
+    .carousel-container {
+        min-height: 300px;
+    }
+    
+    .carousel-slide {
+        min-height: 300px;
+        padding: 20px;
+    }
+    
+    .masonry-grid {
+        grid-auto-rows: 80px;
+    }
+    
+    .masonry-item {
+        padding: 10px;
+    }
+}
+
+/* Soporte para dispositivos con pantalla muy pequeña */
+@media (max-width: 360px) {
+    .carousel-container {
+        margin: 10px;
+        min-height: 300px;
+    }
+    
+    .carousel-slide {
+        padding: 15px;
+        min-height: 300px;
+    }
+    
+    .welcome-header h1 {
+        font-size: 20px;
+    }
+    
+    .company-title {
+        font-size: 18px;
+    }
+    
+    .company-detail-item {
+        padding: 12px;
+    }
+    
+    .masonry-grid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        grid-auto-rows: 80px;
+    }
+    
+    .masonry-item i {
+        font-size: 20px;
+    }
+    
+    .masonry-item p {
+        font-size: 11px;
+    }
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    .carousel-slide,
+    .masonry-item,
+    .company-detail-item,
+    .carousel-nav,
+    .sidebar a {
+        transition: none;
+    }
+    
+    .masonry-item:hover,
+    .company-detail-item:hover {
+        transform: none;
+    }
+}
+
+/* Modo oscuro del sistema */
+@media (prefers-color-scheme: dark) {
+    .carousel-container {
+        background-color: #2c3e50;
+        color: #ecf0f1;
+    }
+    
+    .welcome-header h1,
+    .company-title {
+        color: #ecf0f1;
+    }
+    
+    .welcome-message p {
+        color: #bdc3c7;
+    }
+    
+    .masonry-item {
+        background-color: #34495e;
+    }
+    
+    .masonry-item p {
+        color: #ecf0f1;
+    }
+    
+    .company-detail-item {
+        background-color: #34495e;
+    }
+    
+    .company-detail-value {
+        color: #ecf0f1;
+    }
+}
+
+/* Estilos para estados de foco (accesibilidad) */
+.carousel-nav:focus,
+.masonry-item:focus,
+.sidebar a:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+/* Mejoras en las transiciones del carrusel */
+.carousel-slide {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.carousel-slide:not(.active) {
+    transform: translateX(100%);
+}
+
+.carousel-slide.active {
+    transform: translateX(0);
+}
+
+.carousel-slide.prev {
+    transform: translateX(-100%);
+}
+
+/* Efectos de overlay para imágenes (si se agregaran en el futuro) */
+.masonry-item.with-image {
+    position: relative;
+}
+
+.masonry-item.with-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.8), rgba(44, 62, 80, 0.8));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.masonry-item.with-image:hover::after {
+    opacity: 1;
+}
+
+/* Estados de carga */
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Scrollbar personalizado para navegadores webkit */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3498db;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2980b9;
+}
+
+/* Mejoras para el contenedor principal en pantallas muy grandes */
+@media (min-width: 1600px) {
+    .carousel-container {
+        max-width: 1200px;
+    }
+    
+    .masonry-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-auto-rows: 140px;
+    }
+    
+    .masonry-item:nth-child(3n+1) {
+        height: 300px;
+    }
+    
+    .masonry-item:nth-child(7n+3) {
+        height: 460px;
+    }
+}
+
+/* Estilos para impresión */
+@media print {
+    .sidebar,
+    .menu-toggle,
+    .carousel-nav,
+    .carousel-indicators {
+        display: none !important;
+    }
+    
+    .content {
+        margin-left: 0 !important;
+    }
+    
+    .carousel-container {
+        box-shadow: none !important;
+        border: 1px solid #000 !important;
+    }
+    
+    .masonry-item {
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid #000 !important;
+    }
+}
+
+/* Soporte para navegadores antiguos */
+@supports not (display: grid) {
+    .masonry-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .masonry-item {
+        width: 180px;
+        margin: 10px;
+        height: 120px;
+    }
+    
+    /* Alturas específicas para mantener el efecto visual */
+    .masonry-item:nth-child(3n+1) {
+        height: 260px;
+    }
+    
+    .masonry-item:nth-child(7n+3) {
+        height: 400px;
+    }
+}
+
+/* Mejoras en la visualización de textos largos */
+.company-detail-value,
+.welcome-message p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Efectos de parallax sutiles */
+.carousel-container {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.carousel-slide {
+    transform-style: preserve-3d;
+}
+
+/* Estados de error y éxito mejorados */
+.mensaje {
+    position: relative;
+    padding-left: 50px;
+}
+
+.mensaje::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.mensaje.error::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e74c3c'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z'/%3E%3C/svg%3E");
+}
+
+.mensaje.success::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2327ae60'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E");
+}
     </style>
   </head>
   <body>
