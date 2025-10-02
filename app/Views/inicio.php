@@ -904,8 +904,7 @@
           <?php endif; ?>
         </div>
       </div>
-    </div>
-        <!-- Botón minimalista para mostrar información de la empresa -->
+              <!-- Botón minimalista para mostrar información de la empresa -->
         <div class="company-toggle-container">
           <button class="company-toggle-btn" id="companyToggle">
             <i class="fas fa-building"></i>
@@ -926,6 +925,7 @@
             </div>
           </div>
         </div>
+    </div>
     <script>
       // Mostrar/ocultar sidebar en móviles
       const menuToggle = document.getElementById('menuToggle');
