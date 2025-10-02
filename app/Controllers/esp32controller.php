@@ -230,17 +230,16 @@ public function mandarfoto()
         ])->setStatusCode(404);
     }
 
-    // ---------- Guardar imagen ----------
-    $nombreFoto = 'foto_' . $registrosinfoto[0]['ID_Acceso'] . '_' . date('Ymd_His') . '.jpg';
-   $rutaFisica = FCPATH . 'foto/' . $nombreFoto;
+// ---------- Guardar imagen ----------
+$nombreFoto = 'foto_' . $registrosinfoto[0]['ID_Acceso'] . '_' . date('Ymd_His') . '.jpg';
+$rutaFisica = WRITEPATH . 'fotos/' . $nombreFoto;
 
 // Asegurarse de que el directorio existe
-
-if (!is_dir(FCPATH . 'foto')) {
-    mkdir(FCPATH . 'foto', 0755, true);
+if (!is_dir(WRITEPATH . 'fotos')) {
+    mkdir(WRITEPATH . 'fotos', 0755, true);
 }
 
-// Guardar la imagen usando la ruta física
+// Guardar la imagen usando la ruta privada
 if (file_put_contents($rutaFisica, $imageData)) {
     log_message('info', "📸 Foto recibida de MAC: $mac | Tamaño: " . strlen($imageData) . " bytes | Archivo: $nombreFoto");
 
@@ -253,7 +252,8 @@ if (file_put_contents($rutaFisica, $imageData)) {
         'filename' => $nombreFoto,
         'mac' => $mac,
         'size' => strlen($imageData),
-        'url' => base_url('foto/' . $nombreFoto) // URL para acceder a la imagen
+        'url' => base_url('fotos/ver/' . $registrosinfoto[0]['ID_Acceso']) 
+        // 👆 ruta al controlador que entrega la imagen
     ]);
 } else {
     log_message('error', "❌ Error al guardar foto para MAC: $mac");
