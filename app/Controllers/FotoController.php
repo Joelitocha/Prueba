@@ -6,19 +6,32 @@ use CodeIgniter\Controller;
 
 class FotoController extends Controller
 {
-    public function mostrar($nombreArchivo)
+    public function mostrar($filename)
     {
-        $ruta = WRITEPATH . 'uploads/fotos/' . $nombreArchivo;
+        $session = session();
 
-        if (!file_exists($ruta)) {
-            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound("Archivo no encontrado");
+        // Validar login
+        if (!$session->get('isLoggedIn')) {
+            return redirect()->to('/login');
         }
 
-        // Detectar mime automáticamente
-        $mime = mime_content_type($ruta);
+        // Validar rol (5 = Admin, 6 = Supervisor)
+        $rol = $session->get('ID_Rol');
+        if (!in_array($rol, [5, 6])) {
+            return $this->response->setStatusCode(403, 'Acceso denegado');
+        }
 
+        // Buscar archivo en writable/fotos
+        $path = WRITEPATH . 'fotos/' . $filename;
+
+        if (!file_exists($path)) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
+
+        // Devolver imagen
         return $this->response
-            ->setHeader('Content-Type', $mime)
-            ->setBody(file_get_contents($ruta));
+                    ->setHeader('Content-Type', mime_content_type($path))
+                    ->setBody(file_get_contents($path));
     }
 }
+
