@@ -982,110 +982,23 @@
       window.addEventListener('load', resizeAllMasonryItems);
       window.addEventListener('resize', resizeAllMasonryItems);
 
-      // Mostrar/ocultar sidebar en móviles
-      const menuToggle = document.getElementById('menuToggle');
-      const sidebar = document.getElementById('sidebar');
-      
-      menuToggle.addEventListener('click', () => {
-        sidebar.classList.toggle('active');
-      });
+      // Toggle para el panel de información de la empresa
+const companyToggle = document.getElementById('companyToggle');
+const companyPanel = document.getElementById('companyPanel');
+const companyContainer = document.querySelector('.company-toggle-container');
 
-      // Cerrar sidebar al hacer clic en un enlace (en móviles)
-      const menuItems = document.querySelectorAll('.sidebar a');
-      menuItems.forEach(item => {
-        item.addEventListener('click', () => {
-          if (window.innerWidth <= 992) {
-            sidebar.classList.remove('active');
-          }
-        });
-      });
+companyToggle.addEventListener('click', () => {
+  companyPanel.classList.toggle('active');
+  companyContainer.classList.toggle('active');
+});
 
-      // Cerrar sesión
-      function cerrarsesion(url){
-        if(confirm('¿Estás seguro de que deseas cerrar sesión?')){
-          window.location.href=url;
-        }
-      }
-
-      // Redimensionar la ventana
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 992) {
-          sidebar.classList.remove('active');
-        }
-      });
-
-      // Funcionalidad del carrusel
-      let currentSlide = 0;
-      const slides = document.querySelectorAll('.carousel-slide');
-      const indicators = document.querySelectorAll('.carousel-indicator');
-
-      function showSlide(index) {
-        // Ocultar todos los slides
-        slides.forEach(slide => {
-          slide.classList.remove('active');
-        });
-        
-        // Remover active de todos los indicadores
-        indicators.forEach(indicator => {
-          indicator.classList.remove('active');
-        });
-        
-        // Mostrar slide actual y activar indicador
-        slides[index].classList.add('active');
-        indicators[index].classList.add('active');
-        
-        currentSlide = index;
-      }
-
-      function nextSlide() {
-        let next = currentSlide + 1;
-        if (next >= slides.length) {
-          next = 0;
-        }
-        showSlide(next);
-      }
-
-      function prevSlide() {
-        let prev = currentSlide - 1;
-        if (prev < 0) {
-          prev = slides.length - 1;
-        }
-        showSlide(prev);
-      }
-
-      function goToSlide(index) {
-        showSlide(index);
-      }
-
-      // Navegación con teclado
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') {
-          prevSlide();
-        } else if (e.key === 'ArrowRight') {
-          nextSlide();
-        }
-      });
-
-      // Ajustar automáticamente el grid masonry
-      function resizeMasonryItem(item){
-        const grid = document.querySelector('.masonry-grid');
-        const rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
-        const rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
-        const contentHeight = item.querySelector('.masonry-content').getBoundingClientRect().height;
-        const rowSpan = Math.ceil((contentHeight + rowGap) / (rowHeight + rowGap));
-        item.style.gridRowEnd = 'span '+rowSpan;
-      }
-
-      function resizeAllMasonryItems(){
-        const allItems = document.querySelectorAll('.masonry-item');
-        allItems.forEach(item => {
-          resizeMasonryItem(item);
-        });
-      }
-
-      // Ejecutar al cargar y al redimensionar
-      window.addEventListener('load', resizeAllMasonryItems);
-      window.addEventListener('resize', resizeAllMasonryItems);
+// Cerrar el panel si se hace clic fuera de él
+document.addEventListener('click', (e) => {
+  if (!companyContainer.contains(e.target)) {
+    companyPanel.classList.remove('active');
+    companyContainer.classList.remove('active');
+  }
+});
     </script>
 
     <?php
