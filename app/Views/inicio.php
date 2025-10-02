@@ -143,22 +143,39 @@
         min-height: 100vh;
       }
 
-      /* Tarjeta de bienvenida */
-      .welcome-container {
+      /* Carrusel principal */
+      .carousel-container {
         background-color: #fff;
-        padding: 40px;
         border-radius: 10px;
         max-width: 1000px;
         margin: 30px auto;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-        text-align: center;
+        position: relative;
+        overflow: hidden;
+        min-height: 500px;
       }
 
+      /* Slides del carrusel */
+      .carousel-slide {
+        padding: 40px;
+        display: none;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        min-height: 500px;
+      }
+
+      .carousel-slide.active {
+        display: block;
+        opacity: 1;
+      }
+
+      /* Slide de bienvenida */
       .welcome-header h1 {
         font-size: 32px;
         color: #2c3e50;
         margin-bottom: 20px;
         font-weight: 600;
+        text-align: center;
       }
 
       .welcome-message p {
@@ -166,203 +183,127 @@
         color: #555;
         line-height: 1.7;
         margin-bottom: 30px;
+        text-align: center;
       }
-/* Contenedor del toggle de empresa */
-.company-toggle-container {
-  max-width: 500px;
-  margin: 25px auto;
-  position: relative;
-}
 
-/* Botón minimalista */
-.company-toggle-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  width: 100%;
-  padding: 14px 20px;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  border: 1px solid #dee2e6;
-  border-radius: 10px;
-  color: #495057;
-  font-size: 15px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
+      /* Slide de información de empresa */
+      .company-info-slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
 
-.company-toggle-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-  transition: left 0.5s ease;
-}
+      .company-icon {
+        font-size: 48px;
+        color: #3498db;
+        margin-bottom: 30px;
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-.company-toggle-btn:hover::before {
-  left: 100%;
-}
+      .company-title {
+        font-size: 28px;
+        color: #2c3e50;
+        margin-bottom: 40px;
+        font-weight: 600;
+      }
 
-.company-toggle-btn:hover {
-  background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
-  border-color: #3498db;
-  color: #2c3e50;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.15);
-}
+      .company-details {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        max-width: 400px;
+        width: 100%;
+      }
 
-.company-toggle-btn i:first-child {
-  color: #3498db;
-  font-size: 16px;
-  transition: transform 0.3s ease;
-}
+      .company-detail-item {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 4px solid #3498db;
+      }
 
-.company-toggle-btn span {
-  flex: 1;
-  text-align: center;
-}
+      .company-detail-label {
+        font-size: 14px;
+        color: #6c757d;
+        margin-bottom: 8px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
 
-.toggle-arrow {
-  font-size: 12px;
-  color: #6c757d;
-  transition: all 0.3s ease;
-}
+      .company-detail-value {
+        font-size: 18px;
+        color: #2c3e50;
+        font-weight: 600;
+      }
 
-/* Panel deslizante */
-.company-slide-panel {
-  max-height: 0;
-  overflow: hidden;
-  background: #fff;
-  border: 1px solid transparent;
-  border-radius: 0 0 10px 10px;
-  margin-top: -1px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 0;
-  transform: translateY(-10px);
-}
+      /* Botones de navegación del carrusel */
+      .carousel-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(52, 152, 219, 0.9);
+        border: none;
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        transition: all 0.3s ease;
+        z-index: 100;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
 
-.company-slide-panel.active {
-  max-height: 200px;
-  border-color: #dee2e6;
-  opacity: 1;
-  transform: translateY(0);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
+      .carousel-nav:hover {
+        background: #2980b9;
+        transform: translateY(-50%) scale(1.1);
+      }
 
-.company-content {
-  padding: 20px;
-}
+      .carousel-nav.prev {
+        left: 20px;
+      }
 
-.company-info-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 0;
-  border-bottom: 1px solid #f8f9fa;
-}
+      .carousel-nav.next {
+        right: 20px;
+      }
 
-.company-info-item:last-child {
-  border-bottom: none;
-}
+      /* Indicadores del carrusel */
+      .carousel-indicators {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+      }
 
-.company-label {
-  font-size: 14px;
-  color: #6c757d;
-  font-weight: 500;
-  flex: 1;
-}
+      .carousel-indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #bdc3c7;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
 
-.company-value {
-  font-size: 15px;
-  color: #2c3e50;
-  font-weight: 600;
-  text-align: right;
-  flex: 1;
-  padding: 6px 12px;
-  background: #f8f9fa;
-  border-radius: 6px;
-  border-left: 3px solid #3498db;
-}
+      .carousel-indicator.active {
+        background: #3498db;
+        transform: scale(1.2);
+      }
 
-/* Estados activos */
-.company-toggle-container.active .toggle-arrow {
-  transform: rotate(180deg);
-  color: #3498db;
-}
-
-.company-toggle-container.active .company-toggle-btn {
-  border-radius: 10px 10px 0 0;
-  border-bottom-color: transparent;
-  background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
-  color: white;
-}
-
-.company-toggle-container.active .company-toggle-btn i:first-child {
-  color: white;
-  transform: scale(1.1);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .company-toggle-container {
-    margin: 20px 15px;
-    max-width: none;
-  }
-  
-  .company-toggle-btn {
-    padding: 12px 16px;
-    font-size: 14px;
-  }
-  
-  .company-content {
-    padding: 15px;
-  }
-  
-  .company-info-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    text-align: left;
-  }
-  
-  .company-value {
-    text-align: left;
-    width: 100%;
-    border-left: none;
-    border-top: 3px solid #3498db;
-  }
-}
-
-@media (max-width: 576px) {
-  .company-toggle-btn {
-    padding: 10px 14px;
-    font-size: 13px;
-    gap: 8px;
-  }
-  
-  .company-toggle-btn i:first-child {
-    font-size: 14px;
-  }
-  
-  .company-content {
-    padding: 12px;
-  }
-  
-  .company-label {
-    font-size: 13px;
-  }
-  
-  .company-value {
-    font-size: 14px;
-    padding: 5px 10px;
-  }
-}
       /* Grid de iconos estilo masonry/ladrillos */
       .masonry-grid {
         display: grid;
@@ -502,17 +443,36 @@
       }
 
       @media (max-width: 768px) {
-        .welcome-container {
-          padding: 30px;
+        .carousel-container {
           margin: 20px auto;
+          min-height: 400px;
         }
-        
+
+        .carousel-slide {
+          padding: 30px;
+          min-height: 400px;
+        }
+
         .welcome-header h1 {
           font-size: 26px;
         }
         
         .welcome-message p {
           font-size: 15px;
+        }
+
+        .company-title {
+          font-size: 24px;
+        }
+
+        .company-detail-value {
+          font-size: 16px;
+        }
+
+        .carousel-nav {
+          width: 40px;
+          height: 40px;
+          font-size: 16px;
         }
 
         .masonry-item:nth-child(n) {
@@ -535,9 +495,14 @@
           font-size: 20px;
         }
         
-        .welcome-container {
-          padding: 20px;
+        .carousel-container {
           margin: 15px;
+          min-height: 350px;
+        }
+
+        .carousel-slide {
+          padding: 20px;
+          min-height: 350px;
         }
         
         .welcome-header h1 {
@@ -560,6 +525,28 @@
 
         .masonry-item p {
           font-size: 13px;
+        }
+
+        .company-title {
+          font-size: 20px;
+        }
+
+        .company-detail-item {
+          padding: 15px;
+        }
+
+        .carousel-nav {
+          width: 35px;
+          height: 35px;
+          font-size: 14px;
+        }
+
+        .carousel-nav.prev {
+          left: 10px;
+        }
+
+        .carousel-nav.next {
+          right: 10px;
         }
       }
       /* Responsive para celulares */
@@ -828,102 +815,116 @@
 
     <!-- Contenido principal -->
     <div class="content">
-      <div class="welcome-container">
-        <div class="welcome-header">
-          <h1>Bienvenido/a al Sistema</h1>
-        </div>
-        <div class="welcome-message">
-          <?php 
-          if ($rol == 5) {
-              echo "<p>Hola Administrador, desde aquí puedes acceder a: Gestión de Usuarios - Gestión de Tarjetas - Dispositivos - Alertas del Sistema - Historial Completo - Control de Accesos</p>";
-          } elseif ($rol == 6) {
-              echo "<p>Hola Supervisor, desde aquí puedes acceder a: Consultar Estado - Alertas Recientes - Registro de Accesos - Historial de Cambios</p>";
-          } elseif ($rol == 7) {
-              echo "<p>Hola Usuario, desde aquí puedes acceder a: Consultar Estado</p>";
-          }
-          ?>
-        </div>
-        
-        <!-- Botón minimalista para mostrar información de la empresa -->
-        <div class="company-toggle-container">
-          <button class="company-toggle-btn" id="companyToggle">
-            <i class="fas fa-building"></i>
-            <span>Información de la Empresa</span>
-            <i class="fas fa-chevron-down toggle-arrow"></i>
-          </button>
+      <!-- Carrusel principal -->
+      <div class="carousel-container">
+        <!-- Slide de Bienvenida -->
+        <div class="carousel-slide active" id="slide-welcome">
+          <div class="welcome-header">
+            <h1>Bienvenido/a al Sistema</h1>
+          </div>
+          <div class="welcome-message">
+            <?php 
+            if ($rol == 5) {
+                echo "<p>Hola Administrador, desde aquí puedes acceder a: Gestión de Usuarios - Gestión de Tarjetas - Dispositivos - Alertas del Sistema - Historial Completo - Control de Accesos</p>";
+            } elseif ($rol == 6) {
+                echo "<p>Hola Supervisor, desde aquí puedes acceder a: Consultar Estado - Alertas Recientes - Registro de Accesos - Historial de Cambios</p>";
+            } elseif ($rol == 7) {
+                echo "<p>Hola Usuario, desde aquí puedes acceder a: Consultar Estado</p>";
+            }
+            ?>
+          </div>
           
-          <div class="company-slide-panel" id="companyPanel">
-            <div class="company-content">
-              <div class="company-info-item">
-                <div class="company-label">Nombre de la empresa</div>
-                <div class="company-value"><?php echo session()->get('enombre'); ?></div>
-              </div>
-              <div class="company-info-item">
-                <div class="company-label">Código de la empresa</div>
-                <div class="company-value"><?php echo session()->get('ecode'); ?></div>
-              </div>
+          <div class="masonry-grid">
+            <?php if ($rol == 5): ?>
+              <!-- Iconos para Administrador -->
+              <a href="<?php echo site_url('/modificar-usuario');?>" class="masonry-item">
+                <i class="fas fa-users-cog"></i>
+                <p>Gestión de Usuarios</p>
+              </a>
+              <a href="<?php echo site_url('/modificar-tarjeta');?>" class="masonry-item">
+                <i class="fas fa-id-card"></i>
+                <p>Gestión de Tarjetas</p>
+              </a>
+              <a href="<?php echo site_url('/consultar-rfid');?>" class="masonry-item">
+                <i class="fas fa-money-check"></i>
+                <p>Consultar Estado de la Tarjeta</p>
+              </a>
+              <a href="<?php echo site_url('/dispositivo');?>" class="masonry-item">
+                <i class="fas fa-server"></i>
+                <p>Dispositivos</p>
+              </a>
+              <a href="<?php echo site_url('/ver-alertas');?>" class="masonry-item">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>Alertas del Sistema</p>
+              </a>
+              <a href="<?php echo site_url('/historial-cambios');?>" class="masonry-item">
+                <i class="fas fa-history"></i>
+                <p>Historial Completo</p>
+              </a>
+              <a href="<?php echo site_url('/ver-accesos-tarjeta');?>" class="masonry-item">
+                <i class="fas fa-door-open"></i>
+                <p>Control de Accesos</p>
+              </a>
+              
+            <?php elseif ($rol == 6): ?>
+              <!-- Iconos para Supervisor -->
+              <a href="<?php echo site_url('/consultar-rfid');?>" class="masonry-item">
+                <i class="fas fa-search"></i>
+                <p>Consultar Estado</p>
+              </a>
+              <a href="<?php echo site_url('/ver-alertas');?>" class="masonry-item">
+                <i class="fas fa-bell"></i>
+                <p>Alertas Recientes</p>
+              </a>
+              <a href="<?php echo site_url('/ver-accesos-tarjeta');?>" class="masonry-item">
+                <i class="fas fa-door-open"></i>
+                <p>Registro de Accesos</p>
+              </a>
+              <a href="<?php echo site_url('/historial-cambios');?>" class="masonry-item">
+                <i class="fas fa-history"></i>
+                <p>Historial de Cambios</p>
+              </a>
+
+            <?php elseif ($rol == 7): ?>
+              <!-- Iconos para Usuario -->
+              <a href="<?php echo site_url('/consultar-rfid');?>" class="masonry-item">
+                <i class="fas fa-search"></i>
+                <p>Consultar Estado</p>
+              </a>
+            <?php endif; ?>
+          </div>
+        </div>
+
+        <!-- Slide de Información de la Empresa -->
+        <div class="carousel-slide company-info-slide" id="slide-company">
+          <div class="company-icon">
+            <i class="fas fa-building"></i>
+          </div>
+          <h2 class="company-title">Información de la Empresa</h2>
+          <div class="company-details">
+            <div class="company-detail-item">
+              <div class="company-detail-label">Nombre de la empresa</div>
+              <div class="company-detail-value"><?php echo session()->get('enombre'); ?></div>
+            </div>
+            <div class="company-detail-item">
+              <div class="company-detail-label">Código de la empresa</div>
+              <div class="company-detail-value"><?php echo session()->get('ecode'); ?></div>
             </div>
           </div>
         </div>
-        
-        <div class="masonry-grid">
-          <?php if ($rol == 5): ?>
-            <!-- Iconos para Administrador -->
-            <a href="<?php echo site_url('/modificar-usuario');?>" class="masonry-item">
-              <i class="fas fa-users-cog"></i>
-              <p>Gestión de Usuarios</p>
-            </a>
-            <a href="<?php echo site_url('/modificar-tarjeta');?>" class="masonry-item">
-              <i class="fas fa-id-card"></i>
-              <p>Gestión de Tarjetas</p>
-            </a>
-            <a href="<?php echo site_url('/consultar-rfid');?>" class="masonry-item">
-              <i class="fas fa-money-check"></i>
-              <p>Consultar Estado de la Tarjeta</p>
-            </a>
-            <a href="<?php echo site_url('/dispositivo');?>" class="masonry-item">
-              <i class="fas fa-server"></i>
-              <p>Dispositivos</p>
-            </a>
-            <a href="<?php echo site_url('/ver-alertas');?>" class="masonry-item">
-              <i class="fas fa-exclamation-triangle"></i>
-              <p>Alertas del Sistema</p>
-            </a>
-            <a href="<?php echo site_url('/historial-cambios');?>" class="masonry-item">
-              <i class="fas fa-history"></i>
-              <p>Historial Completo</p>
-            </a>
-            <a href="<?php echo site_url('/ver-accesos-tarjeta');?>" class="masonry-item">
-              <i class="fas fa-door-open"></i>
-              <p>Control de Accesos</p>
-            </a>
-            
-          <?php elseif ($rol == 6): ?>
-            <!-- Iconos para Supervisor -->
-            <a href="<?php echo site_url('/consultar-rfid');?>" class="masonry-item">
-              <i class="fas fa-search"></i>
-              <p>Consultar Estado</p>
-            </a>
-            <a href="<?php echo site_url('/ver-alertas');?>" class="masonry-item">
-              <i class="fas fa-bell"></i>
-              <p>Alertas Recientes</p>
-            </a>
-            <a href="<?php echo site_url('/ver-accesos-tarjeta');?>" class="masonry-item">
-              <i class="fas fa-door-open"></i>
-              <p>Registro de Accesos</p>
-            </a>
-            <a href="<?php echo site_url('/historial-cambios');?>" class="masonry-item">
-              <i class="fas fa-history"></i>
-              <p>Historial de Cambios</p>
-            </a>
 
-          <?php elseif ($rol == 7): ?>
-            <!-- Iconos para Usuario -->
-            <a href="<?php echo site_url('/consultar-rfid');?>" class="masonry-item">
-              <i class="fas fa-search"></i>
-              <p>Consultar Estado</p>
-            </a>
-          <?php endif; ?>
+        <!-- Botones de navegación -->
+        <button class="carousel-nav prev" onclick="prevSlide()">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel-nav next" onclick="nextSlide()">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+          <div class="carousel-indicator active" onclick="goToSlide(0)"></div>
+          <div class="carousel-indicator" onclick="goToSlide(1)"></div>
         </div>
       </div>
     </div>
@@ -982,23 +983,110 @@
       window.addEventListener('load', resizeAllMasonryItems);
       window.addEventListener('resize', resizeAllMasonryItems);
 
-      // Toggle para el panel de información de la empresa
-const companyToggle = document.getElementById('companyToggle');
-const companyPanel = document.getElementById('companyPanel');
-const companyContainer = document.querySelector('.company-toggle-container');
+      // Mostrar/ocultar sidebar en móviles
+      const menuToggle = document.getElementById('menuToggle');
+      const sidebar = document.getElementById('sidebar');
+      
+      menuToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+      });
 
-companyToggle.addEventListener('click', () => {
-  companyPanel.classList.toggle('active');
-  companyContainer.classList.toggle('active');
-});
+      // Cerrar sidebar al hacer clic en un enlace (en móviles)
+      const menuItems = document.querySelectorAll('.sidebar a');
+      menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+          if (window.innerWidth <= 992) {
+            sidebar.classList.remove('active');
+          }
+        });
+      });
 
-// Cerrar el panel si se hace clic fuera de él
-document.addEventListener('click', (e) => {
-  if (!companyContainer.contains(e.target)) {
-    companyPanel.classList.remove('active');
-    companyContainer.classList.remove('active');
-  }
-});
+      // Cerrar sesión
+      function cerrarsesion(url){
+        if(confirm('¿Estás seguro de que deseas cerrar sesión?')){
+          window.location.href=url;
+        }
+      }
+
+      // Redimensionar la ventana
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 992) {
+          sidebar.classList.remove('active');
+        }
+      });
+
+      // Funcionalidad del carrusel
+      let currentSlide = 0;
+      const slides = document.querySelectorAll('.carousel-slide');
+      const indicators = document.querySelectorAll('.carousel-indicator');
+
+      function showSlide(index) {
+        // Ocultar todos los slides
+        slides.forEach(slide => {
+          slide.classList.remove('active');
+        });
+        
+        // Remover active de todos los indicadores
+        indicators.forEach(indicator => {
+          indicator.classList.remove('active');
+        });
+        
+        // Mostrar slide actual y activar indicador
+        slides[index].classList.add('active');
+        indicators[index].classList.add('active');
+        
+        currentSlide = index;
+      }
+
+      function nextSlide() {
+        let next = currentSlide + 1;
+        if (next >= slides.length) {
+          next = 0;
+        }
+        showSlide(next);
+      }
+
+      function prevSlide() {
+        let prev = currentSlide - 1;
+        if (prev < 0) {
+          prev = slides.length - 1;
+        }
+        showSlide(prev);
+      }
+
+      function goToSlide(index) {
+        showSlide(index);
+      }
+
+      // Navegación con teclado
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          prevSlide();
+        } else if (e.key === 'ArrowRight') {
+          nextSlide();
+        }
+      });
+
+      // Ajustar automáticamente el grid masonry
+      function resizeMasonryItem(item){
+        const grid = document.querySelector('.masonry-grid');
+        const rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
+        const rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+        const contentHeight = item.querySelector('.masonry-content').getBoundingClientRect().height;
+        const rowSpan = Math.ceil((contentHeight + rowGap) / (rowHeight + rowGap));
+        item.style.gridRowEnd = 'span '+rowSpan;
+      }
+
+      function resizeAllMasonryItems(){
+        const allItems = document.querySelectorAll('.masonry-item');
+        allItems.forEach(item => {
+          resizeMasonryItem(item);
+        });
+      }
+
+      // Ejecutar al cargar y al redimensionar
+      window.addEventListener('load', resizeAllMasonryItems);
+      window.addEventListener('resize', resizeAllMasonryItems);
     </script>
 
     <?php
