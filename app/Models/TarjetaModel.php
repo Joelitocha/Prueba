@@ -19,15 +19,11 @@ class TarjetaModel extends Model
         'Horario_Uso',
         'id_empresa'
     ];
+
     public function getTarjetasPorEmpresa($idEmpresa)
     {
-        return $this->db->table($this->table)
-                        ->select('*')
-                        ->where('id_empresa', $idEmpresa)
-                        ->get()
-                        ->getResultArray();
+        return $this->where('id_empresa', $idEmpresa)->findAll();
     }
-    
 
     public function getTarjetaById($id)
     {
@@ -41,11 +37,7 @@ class TarjetaModel extends Model
 
     public function updateTarjeta($id, $data)
     {
-        $update=$this->db->table($this->table);
-
-        if($update->update($data, [$this->primaryKey => $id])){
-            return true;
-        }
+        return $this->update($id, $data);
     }
 
     public function deleteTarjeta($id)
@@ -55,8 +47,7 @@ class TarjetaModel extends Model
 
     public function obtenerEstado($idTarjeta)
     {
-        $tabla = $this->db->table("tarjeta_acceso");
-        $tabla->where('ID_Tarjeta', $idTarjeta);
-        return $tabla->get()->getResultArray();
+        return $this->find($idTarjeta); // devuelve directamente UNA tarjeta
     }
 }
+

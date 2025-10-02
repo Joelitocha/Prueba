@@ -301,6 +301,79 @@ $rol = $session->get("ID_Rol");
           margin-top: 5px;
         }
       }
+      /*Estilo para el modal */
+      /* --- Modal --- */
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  z-index: 9999;
+  padding-top: 100px;
+  left: 0; 
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  background-color: rgba(0,0,0,0.6); /* Fondo oscuro */
+}
+
+.modal-content {
+  background: #fff;
+  margin: auto;
+  padding: 25px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  animation: modalFade 0.3s ease-in-out;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.modal-content p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  color: #888;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.close:hover {
+  color: #333;
+}
+
+/* --- Botón "Solicitar Tarjeta" --- */
+.btn-assign {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 15px;
+  transition: background 0.2s ease-in-out;
+  cursor: pointer;
+  border: none;
+}
+.btn-assign:hover {
+  background-color: #0056b3;
+}
+
+/* Animación */
+@keyframes modalFade {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
     </style>
   </head>
   <body>
@@ -377,44 +450,64 @@ $rol = $session->get("ID_Rol");
       </a>
     </div>
 
-    <!-- Contenido principal -->
-    <div class="content">
-      <div class="card-container">
-        <h1>Información de Tarjeta RFID</h1>
-        <?php if (isset($tarjeta)): ?>
-            <div class="card-details">
-                <div class="detail-row">
-                    <span class="detail-label">ID:</span>
-                    <span class="detail-value"><?= esc($tarjeta['id']) ?></span>
-                </div>
-                <div class="detail-row <?= $tarjeta['estado'] == 'Activa' ? 'status-active' : 'status-inactive' ?>">
-                    <span class="detail-label">Estado:</span>
-                    <span class="detail-value"><?= $tarjeta['estado'] ?></span>
-                </div>
-                <div class="detail-row">
-                    <span class="detail-label">Fecha Emisión:</span>
-                    <span class="detail-value"><?= $tarjeta['fecha_emision'] ?></span>
-                </div>
-                <div class="detail-row">
-                    <span class="detail-label">Fecha Expiración:</span>
-                    <span class="detail-value"><?= $tarjeta['fecha_expiracion'] ?></span>
-                </div>
-                <div class="detail-row">
-                    <span class="detail-label">Intentos Fallidos:</span>
-                    <span class="detail-value"><?= $tarjeta['intentos_fallidos'] ?></span>
-                </div>
-                <div class="detail-row">
-                    <span class="detail-label">Horario Uso:</span>
-                    <span class="detail-value"><?= $tarjeta['horario_uso'] ?></span>
-                </div>
-            </div>
-        <?php elseif (isset($error)): ?>
-            <div class="status-error">
-                <?= $error ?>
-            </div>
-        <?php endif; ?>
+<!-- Contenido principal -->
+<div class="content">
+<div class="card-container">
+  <h1>Información de Tarjeta RFID</h1>
+  <?php if (isset($tarjeta)): ?>
+      <div class="card-details">
+          <div class="detail-row">
+              <span class="detail-label">ID:</span>
+              <span class="detail-value"><?= esc($tarjeta['id'] ?? 'N/A') ?></span>
+          </div>
+          <div class="detail-row <?= ($tarjeta['estado'] ?? '') === 'Activa' ? 'status-active' : 'status-inactive' ?>">
+              <span class="detail-label">Estado:</span>
+              <span class="detail-value"><?= esc($tarjeta['estado'] ?? 'Desconocido') ?></span>
+          </div>
+          <div class="detail-row">
+              <span class="detail-label">Fecha Emisión:</span>
+              <span class="detail-value"><?= esc($tarjeta['fecha_emision'] ?? 'N/A') ?></span>
+          </div>
+          <div class="detail-row">
+              <span class="detail-label">Fecha Expiración:</span>
+              <span class="detail-value"><?= esc($tarjeta['fecha_expiracion'] ?? 'No expira') ?></span>
+          </div>
+          <div class="detail-row">
+              <span class="detail-label">Intentos Fallidos:</span>
+              <span class="detail-value"><?= esc($tarjeta['intentos_fallidos'] ?? 0) ?></span>
+          </div>
+          <div class="detail-row">
+              <span class="detail-label">Horario Uso:</span>
+              <span class="detail-value"><?= esc($tarjeta['horario_uso'] ?? 'Sin límite') ?></span>
+          </div>
       </div>
-    </div>
+  <?php elseif (isset($error)): ?>
+      <div class="status-error">
+          <?= esc($error) ?>
+          <br><br>
+          <?php if (session()->get('ID_Rol') == 5): ?>
+              <a href="<?= base_url('crear-tarjeta') ?>" class="btn-assign">Solicitar Tarjeta</a>
+          <?php else: ?>
+              <button type="button" class="btn-assign" onclick="mostrarModal()">Solicitar Tarjeta</button>
+          <?php endif; ?>
+      </div>
+  <?php endif; ?>
+</div>
+</div>
+
+    <!-- Modal oculto -->
+<div id="modalSolicitud" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="cerrarModal()">&times;</span>
+    <h2>Solicitud de tarjeta</h2>
+    <p>
+      Tu rol actual no permite crear tarjetas directamente.  
+      Debes solicitar la tarjeta a un Administrador y esperar su aprobación.  
+      Sé paciente, pronto te habilitarán el acceso 😎.
+    </p>
+  </div>
+</div>
+
 
     <script>
       // Mostrar/ocultar sidebar en móviles
@@ -448,6 +541,24 @@ $rol = $session->get("ID_Rol");
           sidebar.classList.remove('active');
         }
       });
+    </script>
+    <script>
+    function mostrarModal() {
+  document.getElementById('modalSolicitud').style.display = 'block';
+}
+
+function cerrarModal() {
+  document.getElementById('modalSolicitud').style.display = 'none';
+}
+
+// Cerrar modal si el usuario hace clic fuera del contenido
+window.onclick = function(event) {
+  let modal = document.getElementById('modalSolicitud');
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+};
+
     </script>
 
     <?php
