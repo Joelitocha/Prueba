@@ -3347,3 +3347,835 @@ in APPPATH/Controllers/FotoController.php on line 19.
  4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
  6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 08:42:15 --> [DEPRECATED] Creation of dynamic property App\Controllers\RegistrosAccesoController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-02 08:42:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:15 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/523]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:15 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/522]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:15 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/521]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:15 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/520]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:15 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/519]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:15 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/518]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 08:42:17 --> [DEPRECATED] Creation of dynamic property App\Controllers\RegistrosAccesoController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-02 08:42:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:17 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/726]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:17 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/725]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:18 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/723]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:18 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/721]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:18 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/720]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:18 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/719]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:18 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/718]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:18 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/724]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:18 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/717]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:18 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/716]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 08:42:19 --> [DEPRECATED] Creation of dynamic property App\Controllers\RegistrosAccesoController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-02 08:42:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:19 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/715]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:20 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/714]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:20 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/670]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:20 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/669]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:20 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/711]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:20 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/673]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:20 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/672]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:20 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/668]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:20 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/671]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:20 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/624]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 08:42:21 --> [DEPRECATED] Creation of dynamic property App\Controllers\RegistrosAccesoController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-02 08:42:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:21 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/623]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:21 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/622]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:21 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/616]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:21 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/615]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:21 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/621]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:21 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/620]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:21 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/619]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:21 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/618]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:21 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/614]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:22 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/613]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 08:42:23 --> [DEPRECATED] Creation of dynamic property App\Controllers\RegistrosAccesoController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-02 08:42:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:23 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/601]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:23 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/600]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:23 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/593]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:23 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/592]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:23 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/599]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:23 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/598]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:23 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/588]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:23 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/597]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:23 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/594]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:23 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/587]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-02 08:42:25 --> [DEPRECATED] Creation of dynamic property App\Controllers\RegistrosAccesoController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-02 08:42:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:25 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/726]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:25 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/725]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:25 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/724]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:25 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/721]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:25 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/723]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:25 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/720]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:25 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/719]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:25 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/717]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:25 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/718]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-02 08:42:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-02 08:42:25 --> ErrorException: Undefined variable $message
+[Method: GET, Route: fotos/mostrar/716]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(87): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
