@@ -9,29 +9,29 @@ class FotoController extends Controller
     public function mostrar($filename)
     {
         $session = session();
-
-        // Validar login
-        if (!$session->get('isLoggedIn')) {
-            return redirect()->to('/login');
-        }
-
-        // Validar rol (5 = Admin, 6 = Supervisor)
         $rol = $session->get('ID_Rol');
-        if (!in_array($rol, [5, 6])) {
-            return $this->response->setStatusCode(403, 'Acceso denegado');
+    
+        // Solo roles válidos
+        if (!in_array($rol, [5, 6, 7])) {
+            return redirect()->to('/no-autorizado');
         }
-
-        // Buscar archivo en writable/fotos
-        $path = WRITEPATH . 'fotos/' . $filename;
-
-        if (!file_exists($path)) {
+    
+        $registroModel = new RegistroAccesoModel();
+        $registro = $registroModel->find($idAcceso);
+    
+        if (!$registro || empty($registro['Foto'])) {
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
         }
-
-        // Devolver imagen
+    
+        $ruta = WRITEPATH . 'fotos/' . $registro['Foto'];
+    
+        if (!is_file($ruta)) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
+    
         return $this->response
-                    ->setHeader('Content-Type', mime_content_type($path))
-                    ->setBody(file_get_contents($path));
+            ->setHeader('Content-Type', 'image/jpeg')
+            ->setBody(file_get_contents($ruta));
     }
 }
 
