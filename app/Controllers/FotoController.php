@@ -11,7 +11,6 @@ class FotoController extends Controller
         $session = session();
         $rol = $session->get('ID_Rol');
     
-        // Solo roles válidos
         if (!in_array($rol, [5, 6, 7])) {
             return redirect()->to('/no-autorizado');
         }
@@ -19,19 +18,29 @@ class FotoController extends Controller
         $registroModel = new \App\Models\RegistroAccesoModel();
         $registro = $registroModel->find($idAcceso);
     
-        if (!$registro || empty($registro['Archivo_Video'])) {
-            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        try {
+            if (!$registro || empty($registro['Archivo_Video'])) {
+                throw new \Exception("Registro o archivo inexistente");
+            }
+    
+            $ruta = WRITEPATH . 'uploads/fotos/' . $registro['Archivo_Video'];
+    
+            if (!is_file($ruta)) {
+                throw new \Exception("Archivo físico no encontrado: $ruta");
+            }
+    
+            $data = file_get_contents($ruta);
+            if ($data === false) throw new \Exception("Error al leer el archivo");
+    
+            return $this->response
+                ->setHeader('Content-Type', 'image/jpeg')
+                ->setBody($data);
+    
+        } catch (\Exception $e) {
+            log_message('error', "[FotoController::mostrar] " . $e->getMessage());
+            throw new \CodeIgniter\Exceptions\PageNotFoundException("Foto no disponible");
         }
-    
-        $ruta = WRITEPATH . 'fotos/' . $registro['Archivo_Video'];
-    
-        if (!is_file($ruta)) {
-            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
-        }
-    
-        return $this->response
-            ->setHeader('Content-Type', 'image/jpeg')
-            ->setBody(file_get_contents($ruta));
     }
+    
 }
 
