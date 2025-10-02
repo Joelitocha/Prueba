@@ -584,40 +584,42 @@
               <th>Acciones</th>
             </tr>
           </thead>
-          <tbody>
-            <?php foreach ($tarjetas as $tarjeta): ?>
-              <tr>
-                <td><?= esc($tarjeta['ID_Tarjeta']); ?></td>
-                <td><?= esc($tarjeta['UID']); ?></td>
-                <td><?= esc($tarjeta['Horario_Uso']); ?></td>
-                <td class="<?= $tarjeta['Estado'] == 1 ? 'estado-activa' : 'estado-inactiva'; ?>">
-                  <?= $tarjeta['Estado'] == 1 ? 'Activa' : 'Inactiva'; ?>
-                </td>
-                <td>
-                  <div class="btn-group">
-                    <form action="<?= site_url('modificar-tarjeta2') ?>" method="post" style="display: inline-block;">
-                      <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
-                      <button type="submit" class="action-btn edit-btn">Modificar</button>
-                    </form>
-                    <?php if ($tarjeta['Estado'] == 0): ?>
-                      <form action="<?= site_url('desbloquear-tarjeta') ?>" method="post" style="display: inline-block;">
-                        <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
-                        <button type="submit" class="action-btn activate-btn">Activar</button>
-                      </form>
-                    <?php else: ?>
-                      <form action="<?= site_url('bloquear-tarjeta') ?>" method="post" style="display: inline-block;">
-                        <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
-                        <button type="submit" class="action-btn deactivate-btn">Desactivar</button>
-                      </form>
-                    <?php endif; ?>
-                    <button type="button" class="action-btn delete-btn" onclick="mostrarModal('<?= esc($tarjeta['ID_Tarjeta']); ?>')">
-                      Eliminar
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            <?php endforeach; ?>
-          </tbody>
+<tbody>
+  <?php foreach ($tarjetas as $tarjeta): ?>
+    <tr>
+      <td><?= esc($tarjeta['ID_Tarjeta']); ?></td>
+      <td><?= esc($tarjeta['UID']); ?></td>
+      <td>
+        <?= !empty($tarjeta['Horario_Uso']) ? esc($tarjeta['Horario_Uso']) : 'Sin límite'; ?>
+      </td>
+      <td class="<?= $tarjeta['Estado'] == 1 ? 'estado-activa' : 'estado-inactiva'; ?>">
+        <?= $tarjeta['Estado'] == 1 ? 'Activa' : 'Inactiva'; ?>
+      </td>
+      <td>
+        <div class="btn-group">
+          <form action="<?= site_url('modificar-tarjeta2') ?>" method="post" style="display: inline-block;">
+            <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
+            <button type="submit" class="action-btn edit-btn">Modificar</button>
+          </form>
+          <?php if ($tarjeta['Estado'] == 0): ?>
+            <form action="<?= site_url('desbloquear-tarjeta') ?>" method="post" style="display: inline-block;">
+              <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
+              <button type="submit" class="action-btn activate-btn">Activar</button>
+            </form>
+          <?php else: ?>
+            <form action="<?= site_url('bloquear-tarjeta') ?>" method="post" style="display: inline-block;">
+              <input type="hidden" name="ID_Tarjeta" value="<?= esc($tarjeta['ID_Tarjeta']); ?>">
+              <button type="submit" class="action-btn deactivate-btn">Desactivar</button>
+            </form>
+          <?php endif; ?>
+          <button type="button" class="action-btn delete-btn" onclick="mostrarModal('<?= esc($tarjeta['ID_Tarjeta']); ?>')">
+            Eliminar
+          </button>
+        </div>
+      </td>
+    </tr>
+  <?php endforeach; ?>
+</tbody>
         </table>
       </div>
     </div>
@@ -668,10 +670,6 @@
         filasTarjeta.forEach(fila => {
           const idTarjeta = fila.querySelector('td:nth-child(1)').innerText.toLowerCase();
           const uidTarjeta = fila.querySelector('td:nth-child(2)').innerText.toLowerCase();
-          // La columna 3 es "Asignada a Usuario", que actualmente dice "No Asignada".
-          // Si tuvieras el ID_Usuario en el array $tarjeta, podrías incluirlo aquí para la búsqueda.
-          // Por ejemplo: const idUsuario = fila.querySelector('td:nth-child(3)').innerText.toLowerCase();
-          // Actualmente, solo busca por ID_Tarjeta y UID.
           
           if (idTarjeta.includes(valorBusqueda) || uidTarjeta.includes(valorBusqueda)) {
             fila.style.display = '';
