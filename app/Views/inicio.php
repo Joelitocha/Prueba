@@ -422,6 +422,138 @@
     font-size: 13px;
   }
 }
+/* Tarjeta de información de la empresa */
+.company-card {
+  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 25px;
+  max-width: 450px;
+  margin: 30px auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.company-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #2c3e50);
+}
+
+.company-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.company-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.company-header i {
+  font-size: 24px;
+  color: #3498db;
+  margin-right: 12px;
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.company-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.company-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0;
+}
+
+.info-label {
+  font-size: 14px;
+  color: #6c757d;
+  font-weight: 500;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-value {
+  font-size: 18px;
+  color: #2c3e50;
+  font-weight: 600;
+  padding: 8px 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #3498db;
+}
+
+/* Responsive para la tarjeta de empresa */
+@media (max-width: 768px) {
+  .company-card {
+    margin: 20px 15px;
+    padding: 20px;
+    max-width: none;
+  }
+  
+  .company-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .company-header i {
+    margin-right: 0;
+  }
+  
+  .info-item {
+    text-align: center;
+  }
+  
+  .info-value {
+    border-left: none;
+    border-top: 3px solid #3498db;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .company-card {
+    padding: 15px;
+    margin: 15px 10px;
+  }
+  
+  .company-header h2 {
+    font-size: 18px;
+  }
+  
+  .info-label {
+    font-size: 13px;
+  }
+  
+  .info-value {
+    font-size: 16px;
+    padding: 8px;
+  }
+}
 
     </style>
   </head>
@@ -577,20 +709,23 @@
               </div>
               <?php endif; ?>
         </div>
-      </div>
-        <div style="background-color: #fff; border: 1px solid #ddd; border-radius: 10px; padding: 20px; width: 350px; margin: 20px auto; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-          <h2 style="margin: 0; font-size: 20px; color: #333;">Nombre de la empresa:</h2>
-          <p style="margin: 8px 0; font-weight: bold; font-size: 18px; color: #555;">
-            <?php echo session()->get('enombre'); ?>
-          </p>
-
-          <h2 style="margin: 15px 0 0 0; font-size: 20px; color: #333;">Código de la empresa:</h2>
-          <p style="margin: 8px 0; font-weight: bold; font-size: 18px; color: #555;">
-            <?php echo session()->get('ecode'); ?>
-          </p>
-        </div>
-
-
+            <!-- Contenido Principal-->
+          <div class="company-card">
+            <div class="company-header">
+              <i class="fas fa-building"></i>
+              <h2>Información de la Empresa</h2>
+            </div>
+            <div class="company-info">
+              <div class="info-item">
+                <span class="info-label">Nombre de la empresa:</span>
+                <span class="info-value"><?php echo session()->get('enombre'); ?></span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Código de la empresa:</span>
+                <span class="info-value"><?php echo session()->get('ecode'); ?></span>
+              </div>
+            </div>
+          </div>
     </div>
 
     <script>
