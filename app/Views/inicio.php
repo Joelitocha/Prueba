@@ -549,584 +549,194 @@
           right: 10px;
         }
       }
-      /* Estilos generales */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    background-color: #f8f9fa;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    min-height: 100vh;
-}
-
-/* Botón para mostrar/ocultar menú en móviles */
-.menu-toggle {
-    display: none;
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    background-color: #2c3e50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 15px;
-    z-index: 1100;
-    cursor: pointer;
-    font-size: 18px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-/* Sidebar */
-.sidebar {
-    height: 100vh;
-    width: 250px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #2c3e50;
-    padding-top: 20px;
-    color: #fff;
-    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
-    scrollbar-width: none;
-    z-index: 1000;
-    transition: transform 0.3s ease;
-}
-
-.sidebar::-webkit-scrollbar {
-    display: none;
-}
-
-.sidebar a {
-    padding: 12px 20px;
-    text-decoration: none;
-    font-size: 15px;
-    color: #ecf0f1;
-    display: flex;
-    align-items: center;
-    margin: 5px 10px;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.sidebar a:hover {
-    background-color: #34495e;
-    transform: translateX(5px);
-}
-
-.sidebar a i {
-    margin-right: 12px;
-    font-size: 16px;
-    color: #3498db;
-    transition: all 0.3s ease;
-    width: 20px;
-    text-align: center;
-}
-
-.sidebar a:hover i {
-    color: #ecf0f1;
-}
-
-.sidebar a.active {
-    background-color: #3498db;
-    color: white;
-}
-
-.sidebar a.active i {
-    color: white;
-}
-
-.sidebar .logo {
-    text-align: center;
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 30px;
-    color: #ecf0f1;
-    padding: 0 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.sidebar .logo .role {
-    font-size: 14px;
-    margin-top: 5px;
-    color: #bdc3c7;
-    font-weight: normal;
-}
-
-.sidebar .menu-heading {
-    padding: 10px 20px;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-top: 20px;
-    font-size: 12px;
-    color: #bdc3c7;
-    letter-spacing: 1px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-/* Contenido principal */
-.content {
-    margin-left: 250px;
-    padding: 30px;
-    transition: margin-left 0.3s ease;
-    min-height: 100vh;
-}
-
-/* Carrusel principal */
-.carousel-container {
-    background-color: #fff;
-    border-radius: 10px;
-    max-width: 1000px;
-    margin: 30px auto;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    position: relative;
-    overflow: hidden;
-    min-height: 500px;
-}
-
-/* Slides del carrusel */
-.carousel-slide {
-    padding: 40px;
-    display: none;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    min-height: 500px;
-}
-
-.carousel-slide.active {
-    display: block;
-    opacity: 1;
-}
-
-/* Slide de bienvenida */
-.welcome-header h1 {
-    font-size: 32px;
-    color: #2c3e50;
-    margin-bottom: 20px;
-    font-weight: 600;
-    text-align: center;
-}
-
-.welcome-message p {
-    font-size: 16px;
-    color: #555;
-    line-height: 1.7;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-/* Slide de información de empresa */
-.company-info-slide {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.company-icon {
-    font-size: 48px;
-    color: #3498db;
-    margin-bottom: 30px;
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.company-title {
-    font-size: 28px;
-    color: #2c3e50;
-    margin-bottom: 40px;
-    font-weight: 600;
-}
-
-.company-details {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 25px;
-    max-width: 400px;
-    width: 100%;
-}
-
-.company-detail-item {
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 10px;
-    border-left: 4px solid #3498db;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.company-detail-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.company-detail-label {
-    font-size: 14px;
-    color: #6c757d;
-    margin-bottom: 8px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.company-detail-value {
-    font-size: 18px;
-    color: #2c3e50;
-    font-weight: 600;
-}
-
-/* Botones de navegación del carrusel */
-.carousel-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(52, 152, 219, 0.9);
-    border: none;
-    color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    transition: all 0.3s ease;
-    z-index: 100;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.carousel-nav:hover {
-    background: #2980b9;
-    transform: translateY(-50%) scale(1.1);
-}
-
-.carousel-nav.prev {
-    left: 20px;
-}
-
-.carousel-nav.next {
-    right: 20px;
-}
-
-/* Indicadores del carrusel */
-.carousel-indicators {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-}
-
-.carousel-indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #bdc3c7;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.carousel-indicator.active {
-    background: #3498db;
-    transform: scale(1.2);
-}
-
-/* Grid de iconos estilo masonry */
-.masonry-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    grid-auto-rows: 120px;
-    grid-gap: 20px;
-    margin-top: 30px;
-}
-
-.masonry-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    padding: 20px;
-    transition: all 0.3s ease;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-    cursor: pointer;
-    text-decoration: none;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Variación de alturas para efecto masonry */
-.masonry-item:nth-child(3n+1) {
-    grid-row: span 2;
-}
-
-.masonry-item:nth-child(5n+2) {
-    grid-row: span 1;
-}
-
-.masonry-item:nth-child(7n+3) {
-    grid-row: span 3;
-}
-
-.masonry-item i {
-    font-size: 32px;
-    margin-bottom: 15px;
-    color: #3498db;
-    transition: all 0.3s ease;
-}
-
-.masonry-item p {
-    font-size: 15px;
-    color: #555;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-.masonry-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    background-color: #3498db;
-}
-
-.masonry-item:hover i,
-.masonry-item:hover p {
-    color: white;
-}
-
-/* Mensajes de error/éxito */
-.mensaje {
-    padding: 12px 15px;
-    margin: 15px 20px 15px 270px;
-    border-radius: 4px;
-    text-align: center;
-    font-size: 15px;
-    transition: margin-left 0.3s ease;
-}
-
-.error {
-    color: #e74c3c;
-    background-color: #fdecea;
-    border: 1px solid #f5c6cb;
-}
-
-.success {
-    color: #27ae60;
-    background-color: #e8f5e9;
-    border: 1px solid #c3e6cb;
-}
-
-/* Media Queries */
-@media (max-width: 1200px) {
-    .masonry-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-}
-
-@media (max-width: 992px) {
-    .sidebar {
-        transform: translateX(-100%);
-    }
-    
-    .sidebar.active {
-        transform: translateX(0);
-    }
-    
-    .content {
-        margin-left: 0;
-    }
-    
-    .menu-toggle {
-        display: block;
-    }
-
-    .mensaje {
-        margin: 15px 20px;
-    }
-
-    .masonry-grid {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    }
-}
-
+      /* Responsive para celulares */
 @media (max-width: 768px) {
-    .carousel-container {
-        margin: 20px auto;
-        min-height: 400px;
-    }
+  .sidebar {
+    transform: translateX(-100%);
+    position: fixed;
+    z-index: 1000;
+  }
 
-    .carousel-slide {
-        padding: 30px;
-        min-height: 400px;
-    }
+  .sidebar.active {
+    transform: translateX(0);
+  }
 
-    .welcome-header h1 {
-        font-size: 26px;
-    }
-    
-    .welcome-message p {
-        font-size: 15px;
-    }
+  .menu-toggle {
+    display: block;
+  }
 
-    .company-title {
-        font-size: 24px;
-    }
+  .content {
+    margin-left: 0;
+    padding: 20px;
+  }
 
-    .company-detail-value {
-        font-size: 16px;
-    }
+  .mensaje {
+    margin-left: 0;
+  }
 
-    .carousel-nav {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
-    }
+  .welcome-container {
+    margin: 15px 10px;
+    padding: 20px;
+  }
 
-    .masonry-item:nth-child(n) {
-        grid-row: span 1;
-    }
+  .welcome-header h1 {
+    font-size: 22px;
+  }
+
+  .welcome-message p {
+    font-size: 15px;
+  }
+
+  .masonry-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-auto-rows: 100px;
+  }
+
+  .masonry-item {
+    padding: 10px;
+  }
+
+  .masonry-item i {
+    font-size: 22px;
+  }
+
+  .masonry-item p {
+    font-size: 13px;
+  }
+}
+/* Tarjeta de información de la empresa */
+.company-card {
+  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 25px;
+  max-width: 450px;
+  margin: 30px auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.company-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #2c3e50);
+}
+
+.company-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.company-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.company-header i {
+  font-size: 24px;
+  color: #3498db;
+  margin-right: 12px;
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.company-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.company-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0;
+}
+
+.info-label {
+  font-size: 14px;
+  color: #6c757d;
+  font-weight: 500;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-value {
+  font-size: 18px;
+  color: #2c3e50;
+  font-weight: 600;
+  padding: 8px 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #3498db;
+}
+
+/* Responsive para la tarjeta de empresa */
+@media (max-width: 768px) {
+  .company-card {
+    margin: 20px 15px;
+    padding: 20px;
+    max-width: none;
+  }
+  
+  .company-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .company-header i {
+    margin-right: 0;
+  }
+  
+  .info-item {
+    text-align: center;
+  }
+  
+  .info-value {
+    border-left: none;
+    border-top: 3px solid #3498db;
+    padding: 10px;
+  }
 }
 
 @media (max-width: 576px) {
-    .sidebar {
-        width: 220px;
-    }
-    
-    .sidebar a {
-        padding: 10px 15px;
-        font-size: 14px;
-    }
-    
-    .sidebar .logo {
-        font-size: 20px;
-    }
-    
-    .carousel-container {
-        margin: 15px;
-        min-height: 350px;
-    }
-
-    .carousel-slide {
-        padding: 20px;
-        min-height: 350px;
-    }
-    
-    .welcome-header h1 {
-        font-size: 22px;
-    }
-
-    .masonry-grid {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        grid-auto-rows: 100px;
-    }
-
-    .masonry-item {
-        padding: 15px;
-    }
-
-    .masonry-item i {
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
-
-    .masonry-item p {
-        font-size: 13px;
-    }
-
-    .company-title {
-        font-size: 20px;
-    }
-
-    .company-detail-item {
-        padding: 15px;
-    }
-
-    .carousel-nav {
-        width: 35px;
-        height: 35px;
-        font-size: 14px;
-    }
-
-    .carousel-nav.prev {
-        left: 10px;
-    }
-
-    .carousel-nav.next {
-        right: 10px;
-    }
+  .company-card {
+    padding: 15px;
+    margin: 15px 10px;
+  }
+  
+  .company-header h2 {
+    font-size: 18px;
+  }
+  
+  .info-label {
+    font-size: 13px;
+  }
+  
+  .info-value {
+    font-size: 16px;
+    padding: 8px;
+  }
 }
 
-/* Animaciones mejoradas */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.carousel-slide.active {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Efectos hover mejorados */
-.masonry-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: left 0.5s ease;
-}
-
-.masonry-item:hover::before {
-    left: 100%;
-}
-
-/* Mejoras de accesibilidad */
-.carousel-nav:focus,
-.masonry-item:focus {
-    outline: 2px solid #3498db;
-    outline-offset: 2px;
-}
-
-/* Scrollbar personalizado */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #3498db;
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #2980b9;
-}
     </style>
   </head>
   <body>
