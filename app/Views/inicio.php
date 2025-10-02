@@ -143,39 +143,22 @@
         min-height: 100vh;
       }
 
-      /* Carrusel principal */
-      .carousel-container {
+      /* Tarjeta de bienvenida */
+      .welcome-container {
         background-color: #fff;
+        padding: 40px;
         border-radius: 10px;
         max-width: 1000px;
         margin: 30px auto;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-        position: relative;
-        overflow: hidden;
-        min-height: 500px;
+        text-align: center;
       }
 
-      /* Slides del carrusel */
-      .carousel-slide {
-        padding: 40px;
-        display: none;
-        opacity: 0;
-        transition: opacity 0.5s ease;
-        min-height: 500px;
-      }
-
-      .carousel-slide.active {
-        display: block;
-        opacity: 1;
-      }
-
-      /* Slide de bienvenida */
       .welcome-header h1 {
         font-size: 32px;
         color: #2c3e50;
         margin-bottom: 20px;
         font-weight: 600;
-        text-align: center;
       }
 
       .welcome-message p {
@@ -183,127 +166,203 @@
         color: #555;
         line-height: 1.7;
         margin-bottom: 30px;
-        text-align: center;
       }
+/* Contenedor del toggle de empresa */
+.company-toggle-container {
+  max-width: 500px;
+  margin: 25px auto;
+  position: relative;
+}
 
-      /* Slide de información de empresa */
-      .company-info-slide {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-      }
+/* Botón minimalista */
+.company-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  color: #495057;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
 
-      .company-icon {
-        font-size: 48px;
-        color: #3498db;
-        margin-bottom: 30px;
-        background: #f8f9fa;
-        padding: 20px;
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+.company-toggle-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: left 0.5s ease;
+}
 
-      .company-title {
-        font-size: 28px;
-        color: #2c3e50;
-        margin-bottom: 40px;
-        font-weight: 600;
-      }
+.company-toggle-btn:hover::before {
+  left: 100%;
+}
 
-      .company-details {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 25px;
-        max-width: 400px;
-        width: 100%;
-      }
+.company-toggle-btn:hover {
+  background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+  border-color: #3498db;
+  color: #2c3e50;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.15);
+}
 
-      .company-detail-item {
-        background: #f8f9fa;
-        padding: 20px;
-        border-radius: 10px;
-        border-left: 4px solid #3498db;
-      }
+.company-toggle-btn i:first-child {
+  color: #3498db;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
 
-      .company-detail-label {
-        font-size: 14px;
-        color: #6c757d;
-        margin-bottom: 8px;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
+.company-toggle-btn span {
+  flex: 1;
+  text-align: center;
+}
 
-      .company-detail-value {
-        font-size: 18px;
-        color: #2c3e50;
-        font-weight: 600;
-      }
+.toggle-arrow {
+  font-size: 12px;
+  color: #6c757d;
+  transition: all 0.3s ease;
+}
 
-      /* Botones de navegación del carrusel */
-      .carousel-nav {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(52, 152, 219, 0.9);
-        border: none;
-        color: white;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 18px;
-        transition: all 0.3s ease;
-        z-index: 100;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      }
+/* Panel deslizante */
+.company-slide-panel {
+  max-height: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid transparent;
+  border-radius: 0 0 10px 10px;
+  margin-top: -1px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(-10px);
+}
 
-      .carousel-nav:hover {
-        background: #2980b9;
-        transform: translateY(-50%) scale(1.1);
-      }
+.company-slide-panel.active {
+  max-height: 200px;
+  border-color: #dee2e6;
+  opacity: 1;
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
 
-      .carousel-nav.prev {
-        left: 20px;
-      }
+.company-content {
+  padding: 20px;
+}
 
-      .carousel-nav.next {
-        right: 20px;
-      }
+.company-info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f8f9fa;
+}
 
-      /* Indicadores del carrusel */
-      .carousel-indicators {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 10px;
-      }
+.company-info-item:last-child {
+  border-bottom: none;
+}
 
-      .carousel-indicator {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: #bdc3c7;
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
+.company-label {
+  font-size: 14px;
+  color: #6c757d;
+  font-weight: 500;
+  flex: 1;
+}
 
-      .carousel-indicator.active {
-        background: #3498db;
-        transform: scale(1.2);
-      }
+.company-value {
+  font-size: 15px;
+  color: #2c3e50;
+  font-weight: 600;
+  text-align: right;
+  flex: 1;
+  padding: 6px 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #3498db;
+}
 
+/* Estados activos */
+.company-toggle-container.active .toggle-arrow {
+  transform: rotate(180deg);
+  color: #3498db;
+}
+
+.company-toggle-container.active .company-toggle-btn {
+  border-radius: 10px 10px 0 0;
+  border-bottom-color: transparent;
+  background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+  color: white;
+}
+
+.company-toggle-container.active .company-toggle-btn i:first-child {
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .company-toggle-container {
+    margin: 20px 15px;
+    max-width: none;
+  }
+  
+  .company-toggle-btn {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+  
+  .company-content {
+    padding: 15px;
+  }
+  
+  .company-info-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    text-align: left;
+  }
+  
+  .company-value {
+    text-align: left;
+    width: 100%;
+    border-left: none;
+    border-top: 3px solid #3498db;
+  }
+}
+
+@media (max-width: 576px) {
+  .company-toggle-btn {
+    padding: 10px 14px;
+    font-size: 13px;
+    gap: 8px;
+  }
+  
+  .company-toggle-btn i:first-child {
+    font-size: 14px;
+  }
+  
+  .company-content {
+    padding: 12px;
+  }
+  
+  .company-label {
+    font-size: 13px;
+  }
+  
+  .company-value {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+}
       /* Grid de iconos estilo masonry/ladrillos */
       .masonry-grid {
         display: grid;
@@ -443,36 +502,17 @@
       }
 
       @media (max-width: 768px) {
-        .carousel-container {
-          margin: 20px auto;
-          min-height: 400px;
-        }
-
-        .carousel-slide {
+        .welcome-container {
           padding: 30px;
-          min-height: 400px;
+          margin: 20px auto;
         }
-
+        
         .welcome-header h1 {
           font-size: 26px;
         }
         
         .welcome-message p {
           font-size: 15px;
-        }
-
-        .company-title {
-          font-size: 24px;
-        }
-
-        .company-detail-value {
-          font-size: 16px;
-        }
-
-        .carousel-nav {
-          width: 40px;
-          height: 40px;
-          font-size: 16px;
         }
 
         .masonry-item:nth-child(n) {
@@ -495,14 +535,9 @@
           font-size: 20px;
         }
         
-        .carousel-container {
-          margin: 15px;
-          min-height: 350px;
-        }
-
-        .carousel-slide {
+        .welcome-container {
           padding: 20px;
-          min-height: 350px;
+          margin: 15px;
         }
         
         .welcome-header h1 {
@@ -525,28 +560,6 @@
 
         .masonry-item p {
           font-size: 13px;
-        }
-
-        .company-title {
-          font-size: 20px;
-        }
-
-        .company-detail-item {
-          padding: 15px;
-        }
-
-        .carousel-nav {
-          width: 35px;
-          height: 35px;
-          font-size: 14px;
-        }
-
-        .carousel-nav.prev {
-          left: 10px;
-        }
-
-        .carousel-nav.next {
-          right: 10px;
         }
       }
       /* Responsive para celulares */
