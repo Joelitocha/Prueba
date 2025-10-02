@@ -450,52 +450,51 @@ $rol = $session->get("ID_Rol");
       </a>
     </div>
 
-    <!-- Contenido principal -->
-    <div class="content">
+<!-- Contenido principal -->
+<div class="content">
 <div class="card-container">
   <h1>Información de Tarjeta RFID</h1>
   <?php if (isset($tarjeta)): ?>
       <div class="card-details">
           <div class="detail-row">
               <span class="detail-label">ID:</span>
-              <span class="detail-value"><?= esc($tarjeta['ID_Tarjeta']) ?></span>
+              <span class="detail-value"><?= esc($tarjeta['id'] ?? 'N/A') ?></span>
           </div>
-          <div class="detail-row <?= $tarjeta['Estado'] === 'Activa' ? 'status-active' : 'status-inactive' ?>">
+          <div class="detail-row <?= ($tarjeta['estado'] ?? '') === 'Activa' ? 'status-active' : 'status-inactive' ?>">
               <span class="detail-label">Estado:</span>
-              <span class="detail-value"><?= esc($tarjeta['Estado']) ?></span>
+              <span class="detail-value"><?= esc($tarjeta['estado'] ?? 'Desconocido') ?></span>
           </div>
           <div class="detail-row">
               <span class="detail-label">Fecha Emisión:</span>
-              <span class="detail-value"><?= esc($tarjeta['Fecha_emision']) ?></span>
+              <span class="detail-value"><?= esc($tarjeta['fecha_emision'] ?? 'N/A') ?></span>
           </div>
           <div class="detail-row">
               <span class="detail-label">Fecha Expiración:</span>
-              <span class="detail-value"><?= esc($tarjeta['Fecha_Expiracion']) ?></span>
+              <span class="detail-value"><?= esc($tarjeta['fecha_expiracion'] ?? 'No expira') ?></span>
           </div>
           <div class="detail-row">
               <span class="detail-label">Intentos Fallidos:</span>
-              <span class="detail-value"><?= esc($tarjeta['Intentos_Fallidos']) ?></span>
+              <span class="detail-value"><?= esc($tarjeta['intentos_fallidos'] ?? 0) ?></span>
           </div>
           <div class="detail-row">
               <span class="detail-label">Horario Uso:</span>
-              <span class="detail-value"><?= esc($tarjeta['Horario_Uso']) ?></span>
+              <span class="detail-value"><?= esc($tarjeta['horario_uso'] ?? 'Sin límite') ?></span>
           </div>
       </div>
   <?php elseif (isset($error)): ?>
-<div class="status-error">
-    <?= esc($error) ?>
-    <br><br>
-    <?php if (session()->get('ID_Rol') == 5): ?>
-        <!-- Solo el Admin (rol 5) puede ir a crear tarjeta -->
-        <a href="<?= base_url('crear-tarjeta') ?>" class="btn-assign">Solicitar Tarjeta</a>
-    <?php else: ?>
-        <!-- Supervisor (6) o Usuario normal (7) ven modal explicativo -->
-        <button type="button" class="btn-assign" onclick="mostrarModal()">Solicitar Tarjeta</button>
-    <?php endif; ?>
-</div>
+      <div class="status-error">
+          <?= esc($error) ?>
+          <br><br>
+          <?php if (session()->get('ID_Rol') == 5): ?>
+              <a href="<?= base_url('crear-tarjeta') ?>" class="btn-assign">Solicitar Tarjeta</a>
+          <?php else: ?>
+              <button type="button" class="btn-assign" onclick="mostrarModal()">Solicitar Tarjeta</button>
+          <?php endif; ?>
+      </div>
   <?php endif; ?>
 </div>
-    </div>
+</div>
+
     <!-- Modal oculto -->
 <div id="modalSolicitud" class="modal">
   <div class="modal-content">
