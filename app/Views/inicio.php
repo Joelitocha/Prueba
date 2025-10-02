@@ -709,6 +709,7 @@
               </div>
               <?php endif; ?>
         </div>
+      </div>
             <!-- Contenido Principal-->
           <div class="company-card">
             <div class="company-header">
@@ -726,7 +727,6 @@
               </div>
             </div>
           </div>
-    </div>
 
     <script>
       // Mostrar/ocultar sidebar en móviles
