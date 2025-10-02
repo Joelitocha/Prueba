@@ -569,9 +569,9 @@
                         <td><?= esc($registro['ID_Tarjeta']); ?></td>
                         <td>
                             <?php if (!empty($registro['Archivo_Video'])): ?>
-                                <img src="<?= base_url('foto/' . esc($registro['Archivo_Video'])); ?>" 
-                                     alt="Foto registro" width="100" height="80"
-                                     onclick="abrirModal(this)">
+                              <img src="<?= base_url('fotos/mostrar/' . $registro['ID_Acceso']); ?>" 
+                             alt="Foto registro" width="100" height="80"
+                             onclick="abrirModal(this)">
                             <?php else: ?>
                                 <span>Sin foto</span>
                             <?php endif; ?>

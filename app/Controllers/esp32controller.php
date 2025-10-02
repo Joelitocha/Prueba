@@ -146,7 +146,6 @@ public function vincular_esp()
         ]);
     }
 }
-
 public function mandarfoto()
 {
     $espmodel = new Esp32Model();
@@ -230,39 +229,39 @@ public function mandarfoto()
         ])->setStatusCode(404);
     }
 
-// ---------- Guardar imagen ----------
-$nombreFoto = 'foto_' . $registrosinfoto[0]['ID_Acceso'] . '_' . date('Ymd_His') . '.jpg';
-$rutaFisica = WRITEPATH . 'fotos/' . $nombreFoto;
+    // ---------- Guardar imagen en writable/uploads/fotos ----------
+    $nombreFoto = 'foto_' . $registrosinfoto[0]['ID_Acceso'] . '_' . date('Ymd_His') . '.jpg';
+    $directorio = WRITEPATH . 'uploads/fotos/';
 
-// Asegurarse de que el directorio existe
-if (!is_dir(WRITEPATH . 'fotos')) {
-    mkdir(WRITEPATH . 'fotos', 0755, true);
+    if (!is_dir($directorio)) {
+        mkdir($directorio, 0755, true);
+    }
+
+    $rutaFisica = $directorio . $nombreFoto;
+
+    if (file_put_contents($rutaFisica, $imageData)) {
+        log_message('info', "📸 Foto recibida de MAC: $mac | Tamaño: " . strlen($imageData) . " bytes | Archivo: $nombreFoto");
+
+        // Actualizar registro con la foto
+        $registromodel->updateregistro($registrosinfoto[0]['ID_Acceso'], $nombreFoto);
+
+        return $this->response->setJSON([
+            'status' => 'success',
+            'message' => 'Foto recibida y guardada',
+            'filename' => $nombreFoto,
+            'mac' => $mac,
+            'size' => strlen($imageData),
+            'url' => base_url('fotos/mostrar/' . $registrosinfoto[0]['ID_Acceso'])
+        ]);
+    } else {
+        log_message('error', "❌ Error al guardar foto para MAC: $mac");
+        return $this->response->setJSON([
+            'status' => 'error',
+            'message' => 'Error al guardar la foto en el servidor'
+        ])->setStatusCode(500);
+    }
 }
 
-// Guardar la imagen usando la ruta privada
-if (file_put_contents($rutaFisica, $imageData)) {
-    log_message('info', "📸 Foto recibida de MAC: $mac | Tamaño: " . strlen($imageData) . " bytes | Archivo: $nombreFoto");
-
-    // Actualizar registro con la foto
-    $registromodel->updateregistro($registrosinfoto[0]['ID_Acceso'], $nombreFoto);
-
-    return $this->response->setJSON([
-        'status' => 'success',
-        'message' => 'Foto recibida y guardada',
-        'filename' => $nombreFoto,
-        'mac' => $mac,
-        'size' => strlen($imageData),
-        'url' => base_url('fotos/ver/' . $registrosinfoto[0]['ID_Acceso']) 
-        // 👆 ruta al controlador que entrega la imagen
-    ]);
-} else {
-    log_message('error', "❌ Error al guardar foto para MAC: $mac");
-    return $this->response->setJSON([
-        'status' => 'error',
-        'message' => 'Error al guardar la foto en el servidor'
-    ])->setStatusCode(500);
-}
-}
 public function enviaralerta(){
 
     $json = $this->request->getJSON();
