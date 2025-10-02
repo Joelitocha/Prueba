@@ -135,7 +135,433 @@
         border-bottom: 1px solid rgba(255,255,255,0.1);
       }
 
+      /* Contenido principal */
+      .content {
+        margin-left: 250px;
+        padding: 30px;
+        transition: margin-left 0.3s ease;
+        min-height: 100vh;
+      }
 
+      /* Tarjeta de bienvenida */
+      .welcome-container {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 10px;
+        max-width: 1000px;
+        margin: 30px auto;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        text-align: center;
+      }
+
+      .welcome-header h1 {
+        font-size: 32px;
+        color: #2c3e50;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+
+      .welcome-message p {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 30px;
+      }
+/* Contenedor del toggle de empresa */
+.company-toggle-container {
+  max-width: 500px;
+  margin: 25px auto;
+  position: relative;
+}
+
+/* Botón minimalista */
+.company-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  color: #495057;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.company-toggle-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+.company-toggle-btn:hover::before {
+  left: 100%;
+}
+
+.company-toggle-btn:hover {
+  background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+  border-color: #3498db;
+  color: #2c3e50;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.15);
+}
+
+.company-toggle-btn i:first-child {
+  color: #3498db;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.company-toggle-btn span {
+  flex: 1;
+  text-align: center;
+}
+
+.toggle-arrow {
+  font-size: 12px;
+  color: #6c757d;
+  transition: all 0.3s ease;
+}
+
+/* Panel deslizante */
+.company-slide-panel {
+  max-height: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid transparent;
+  border-radius: 0 0 10px 10px;
+  margin-top: -1px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.company-slide-panel.active {
+  max-height: 200px;
+  border-color: #dee2e6;
+  opacity: 1;
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.company-content {
+  padding: 20px;
+}
+
+.company-info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f8f9fa;
+}
+
+.company-info-item:last-child {
+  border-bottom: none;
+}
+
+.company-label {
+  font-size: 14px;
+  color: #6c757d;
+  font-weight: 500;
+  flex: 1;
+}
+
+.company-value {
+  font-size: 15px;
+  color: #2c3e50;
+  font-weight: 600;
+  text-align: right;
+  flex: 1;
+  padding: 6px 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #3498db;
+}
+
+/* Estados activos */
+.company-toggle-container.active .toggle-arrow {
+  transform: rotate(180deg);
+  color: #3498db;
+}
+
+.company-toggle-container.active .company-toggle-btn {
+  border-radius: 10px 10px 0 0;
+  border-bottom-color: transparent;
+  background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+  color: white;
+}
+
+.company-toggle-container.active .company-toggle-btn i:first-child {
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .company-toggle-container {
+    margin: 20px 15px;
+    max-width: none;
+  }
+  
+  .company-toggle-btn {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+  
+  .company-content {
+    padding: 15px;
+  }
+  
+  .company-info-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    text-align: left;
+  }
+  
+  .company-value {
+    text-align: left;
+    width: 100%;
+    border-left: none;
+    border-top: 3px solid #3498db;
+  }
+}
+
+@media (max-width: 576px) {
+  .company-toggle-btn {
+    padding: 10px 14px;
+    font-size: 13px;
+    gap: 8px;
+  }
+  
+  .company-toggle-btn i:first-child {
+    font-size: 14px;
+  }
+  
+  .company-content {
+    padding: 12px;
+  }
+  
+  .company-label {
+    font-size: 13px;
+  }
+  
+  .company-value {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+}
+      /* Grid de iconos estilo masonry/ladrillos */
+      .masonry-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        grid-auto-rows: 120px;
+        grid-gap: 20px;
+        margin-top: 30px;
+      }
+
+      .masonry-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        padding: 20px;
+        transition: all 0.3s ease;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        cursor: pointer;
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Variación de alturas para efecto masonry */
+      .masonry-item:nth-child(3n+1) {
+        grid-row: span 2;
+        height: 260px;
+      }
+
+      .masonry-item:nth-child(5n+2) {
+        grid-row: span 1;
+        height: 120px;
+      }
+
+      .masonry-item:nth-child(7n+3) {
+        grid-row: span 3;
+        height: 400px;
+      }
+
+      .masonry-item i {
+        font-size: 32px;
+        margin-bottom: 15px;
+        color: #3498db;
+        transition: all 0.3s ease;
+      }
+
+      .masonry-item p {
+        font-size: 15px;
+        color: #555;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .masonry-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        background-color: #3498db;
+      }
+
+      .masonry-item:hover i,
+      .masonry-item:hover p {
+        color: white;
+      }
+
+      /* Efecto de borde inferior al hover */
+      .masonry-item::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: #3498db;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      .masonry-item:hover::after {
+        transform: scaleX(1);
+      }
+
+      /* Mensajes de error/éxito */
+      .mensaje {
+        padding: 12px 15px;
+        margin: 15px 20px 15px 270px;
+        border-radius: 4px;
+        text-align: center;
+        font-size: 15px;
+        transition: margin-left 0.3s ease;
+      }
+
+      .error {
+        color: #e74c3c;
+        background-color: #fdecea;
+        border: 1px solid #f5c6cb;
+      }
+
+      .success {
+        color: #27ae60;
+        background-color: #e8f5e9;
+        border: 1px solid #c3e6cb;
+      }
+
+      /* Media Queries para responsive */
+      @media (max-width: 1200px) {
+        .masonry-grid {
+          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+      }
+
+      @media (max-width: 992px) {
+        .sidebar {
+          transform: translateX(-100%);
+        }
+        
+        .sidebar.active {
+          transform: translateX(0);
+        }
+        
+        .content {
+          margin-left: 0;
+        }
+        
+        .menu-toggle {
+          display: block;
+        }
+
+        .mensaje {
+          margin: 15px 20px;
+        }
+
+        .masonry-grid {
+          grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        }
+      }
+
+      @media (max-width: 768px) {
+        .welcome-container {
+          padding: 30px;
+          margin: 20px auto;
+        }
+        
+        .welcome-header h1 {
+          font-size: 26px;
+        }
+        
+        .welcome-message p {
+          font-size: 15px;
+        }
+
+        .masonry-item:nth-child(n) {
+          grid-row: span 1;
+          height: 120px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .sidebar {
+          width: 220px;
+        }
+        
+        .sidebar a {
+          padding: 10px 15px;
+          font-size: 14px;
+        }
+        
+        .sidebar .logo {
+          font-size: 20px;
+        }
+        
+        .welcome-container {
+          padding: 20px;
+          margin: 15px;
+        }
+        
+        .welcome-header h1 {
+          font-size: 22px;
+        }
+
+        .masonry-grid {
+          grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+          grid-auto-rows: 100px;
+        }
+
+        .masonry-item {
+          padding: 15px;
+        }
+
+        .masonry-item i {
+          font-size: 24px;
+          margin-bottom: 10px;
+        }
+
+        .masonry-item p {
+          font-size: 13px;
+        }
+      }
       /* Responsive para celulares */
 @media (max-width: 768px) {
   .sidebar {
