@@ -828,116 +828,102 @@
 
     <!-- Contenido principal -->
     <div class="content">
-      <!-- Carrusel principal -->
-      <div class="carousel-container">
-        <!-- Slide de Bienvenida -->
-        <div class="carousel-slide active" id="slide-welcome">
-          <div class="welcome-header">
-            <h1>Bienvenido/a al Sistema</h1>
-          </div>
-          <div class="welcome-message">
-            <?php 
-            if ($rol == 5) {
-                echo "<p>Hola Administrador, desde aquí puedes acceder a: Gestión de Usuarios - Gestión de Tarjetas - Dispositivos - Alertas del Sistema - Historial Completo - Control de Accesos</p>";
-            } elseif ($rol == 6) {
-                echo "<p>Hola Supervisor, desde aquí puedes acceder a: Consultar Estado - Alertas Recientes - Registro de Accesos - Historial de Cambios</p>";
-            } elseif ($rol == 7) {
-                echo "<p>Hola Usuario, desde aquí puedes acceder a: Consultar Estado</p>";
-            }
-            ?>
-          </div>
-          
-          <div class="masonry-grid">
-            <?php if ($rol == 5): ?>
-              <!-- Iconos para Administrador -->
-              <a href="<?php echo site_url('/modificar-usuario');?>" class="masonry-item">
-                <i class="fas fa-users-cog"></i>
-                <p>Gestión de Usuarios</p>
-              </a>
-              <a href="<?php echo site_url('/modificar-tarjeta');?>" class="masonry-item">
-                <i class="fas fa-id-card"></i>
-                <p>Gestión de Tarjetas</p>
-              </a>
-              <a href="<?php echo site_url('/consultar-rfid');?>" class="masonry-item">
-                <i class="fas fa-money-check"></i>
-                <p>Consultar Estado de la Tarjeta</p>
-              </a>
-              <a href="<?php echo site_url('/dispositivo');?>" class="masonry-item">
-                <i class="fas fa-server"></i>
-                <p>Dispositivos</p>
-              </a>
-              <a href="<?php echo site_url('/ver-alertas');?>" class="masonry-item">
-                <i class="fas fa-exclamation-triangle"></i>
-                <p>Alertas del Sistema</p>
-              </a>
-              <a href="<?php echo site_url('/historial-cambios');?>" class="masonry-item">
-                <i class="fas fa-history"></i>
-                <p>Historial Completo</p>
-              </a>
-              <a href="<?php echo site_url('/ver-accesos-tarjeta');?>" class="masonry-item">
-                <i class="fas fa-door-open"></i>
-                <p>Control de Accesos</p>
-              </a>
-              
-            <?php elseif ($rol == 6): ?>
-              <!-- Iconos para Supervisor -->
-              <a href="<?php echo site_url('/consultar-rfid');?>" class="masonry-item">
-                <i class="fas fa-search"></i>
-                <p>Consultar Estado</p>
-              </a>
-              <a href="<?php echo site_url('/ver-alertas');?>" class="masonry-item">
-                <i class="fas fa-bell"></i>
-                <p>Alertas Recientes</p>
-              </a>
-              <a href="<?php echo site_url('/ver-accesos-tarjeta');?>" class="masonry-item">
-                <i class="fas fa-door-open"></i>
-                <p>Registro de Accesos</p>
-              </a>
-              <a href="<?php echo site_url('/historial-cambios');?>" class="masonry-item">
-                <i class="fas fa-history"></i>
-                <p>Historial de Cambios</p>
-              </a>
-
-            <?php elseif ($rol == 7): ?>
-              <!-- Iconos para Usuario -->
-              <a href="<?php echo site_url('/consultar-rfid');?>" class="masonry-item">
-                <i class="fas fa-search"></i>
-                <p>Consultar Estado</p>
-              </a>
-            <?php endif; ?>
-          </div>
+      <div class="welcome-container">
+        <div class="welcome-header">
+          <h1>Bienvenido/a al Sistema</h1>
         </div>
-
-        <!-- Slide de Información de la Empresa -->
-        <div class="carousel-slide company-info-slide" id="slide-company">
-          <div class="company-icon">
+        <div class="welcome-message">
+          <?php 
+          if ($rol == 5) {
+              echo "<p>Hola Administrador, desde aquí puedes acceder a: Gestión de Usuarios - Gestión de Tarjetas - Dispositivos - Alertas del Sistema - Historial Completo - Control de Accesos</p>";
+          } elseif ($rol == 6) {
+              echo "<p>Hola Supervisor, desde aquí puedes acceder a: Consultar Estado - Alertas Recientes - Registro de Accesos - Historial de Cambios</p>";
+          } elseif ($rol == 7) {
+              echo "<p>Hola Usuario, desde aquí puedes acceder a: Consultar Estado</p>";
+          }
+          ?>
+        </div>
+        
+        <!-- Botón minimalista para mostrar información de la empresa -->
+        <div class="company-toggle-container">
+          <button class="company-toggle-btn" id="companyToggle">
             <i class="fas fa-building"></i>
-          </div>
-          <h2 class="company-title">Información de la Empresa</h2>
-          <div class="company-details">
-            <div class="company-detail-item">
-              <div class="company-detail-label">Nombre de la empresa</div>
-              <div class="company-detail-value"><?php echo session()->get('enombre'); ?></div>
-            </div>
-            <div class="company-detail-item">
-              <div class="company-detail-label">Código de la empresa</div>
-              <div class="company-detail-value"><?php echo session()->get('ecode'); ?></div>
+            <span>Información de la Empresa</span>
+            <i class="fas fa-chevron-down toggle-arrow"></i>
+          </button>
+          
+          <div class="company-slide-panel" id="companyPanel">
+            <div class="company-content">
+              <div class="company-info-item">
+                <div class="company-label">Nombre de la empresa</div>
+                <div class="company-value"><?php echo session()->get('enombre'); ?></div>
+              </div>
+              <div class="company-info-item">
+                <div class="company-label">Código de la empresa</div>
+                <div class="company-value"><?php echo session()->get('ecode'); ?></div>
+              </div>
             </div>
           </div>
         </div>
+        
+        <div class="masonry-grid">
+          <?php if ($rol == 5): ?>
+            <!-- Iconos para Administrador -->
+            <a href="<?php echo site_url('/modificar-usuario');?>" class="masonry-item">
+              <i class="fas fa-users-cog"></i>
+              <p>Gestión de Usuarios</p>
+            </a>
+            <a href="<?php echo site_url('/modificar-tarjeta');?>" class="masonry-item">
+              <i class="fas fa-id-card"></i>
+              <p>Gestión de Tarjetas</p>
+            </a>
+            <a href="<?php echo site_url('/consultar-rfid');?>" class="masonry-item">
+              <i class="fas fa-money-check"></i>
+              <p>Consultar Estado de la Tarjeta</p>
+            </a>
+            <a href="<?php echo site_url('/dispositivo');?>" class="masonry-item">
+              <i class="fas fa-server"></i>
+              <p>Dispositivos</p>
+            </a>
+            <a href="<?php echo site_url('/ver-alertas');?>" class="masonry-item">
+              <i class="fas fa-exclamation-triangle"></i>
+              <p>Alertas del Sistema</p>
+            </a>
+            <a href="<?php echo site_url('/historial-cambios');?>" class="masonry-item">
+              <i class="fas fa-history"></i>
+              <p>Historial Completo</p>
+            </a>
+            <a href="<?php echo site_url('/ver-accesos-tarjeta');?>" class="masonry-item">
+              <i class="fas fa-door-open"></i>
+              <p>Control de Accesos</p>
+            </a>
+            
+          <?php elseif ($rol == 6): ?>
+            <!-- Iconos para Supervisor -->
+            <a href="<?php echo site_url('/consultar-rfid');?>" class="masonry-item">
+              <i class="fas fa-search"></i>
+              <p>Consultar Estado</p>
+            </a>
+            <a href="<?php echo site_url('/ver-alertas');?>" class="masonry-item">
+              <i class="fas fa-bell"></i>
+              <p>Alertas Recientes</p>
+            </a>
+            <a href="<?php echo site_url('/ver-accesos-tarjeta');?>" class="masonry-item">
+              <i class="fas fa-door-open"></i>
+              <p>Registro de Accesos</p>
+            </a>
+            <a href="<?php echo site_url('/historial-cambios');?>" class="masonry-item">
+              <i class="fas fa-history"></i>
+              <p>Historial de Cambios</p>
+            </a>
 
-        <!-- Botones de navegación -->
-        <button class="carousel-nav prev" onclick="prevSlide()">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <button class="carousel-nav next" onclick="nextSlide()">
-          <i class="fas fa-chevron-right"></i>
-        </button>
-
-        <!-- Indicadores -->
-        <div class="carousel-indicators">
-          <div class="carousel-indicator active" onclick="goToSlide(0)"></div>
-          <div class="carousel-indicator" onclick="goToSlide(1)"></div>
+          <?php elseif ($rol == 7): ?>
+            <!-- Iconos para Usuario -->
+            <a href="<?php echo site_url('/consultar-rfid');?>" class="masonry-item">
+              <i class="fas fa-search"></i>
+              <p>Consultar Estado</p>
+            </a>
+          <?php endif; ?>
         </div>
       </div>
     </div>
