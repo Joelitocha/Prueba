@@ -379,41 +379,43 @@ $rol = $session->get("ID_Rol");
 
     <!-- Contenido principal -->
     <div class="content">
-      <div class="card-container">
-        <h1>Información de Tarjeta RFID</h1>
-        <?php if (isset($tarjeta)): ?>
-            <div class="card-details">
-                <div class="detail-row">
-                    <span class="detail-label">ID:</span>
-                    <span class="detail-value"><?= esc($tarjeta['id']) ?></span>
-                </div>
-                <div class="detail-row <?= $tarjeta['estado'] == 'Activa' ? 'status-active' : 'status-inactive' ?>">
-                    <span class="detail-label">Estado:</span>
-                    <span class="detail-value"><?= $tarjeta['estado'] ?></span>
-                </div>
-                <div class="detail-row">
-                    <span class="detail-label">Fecha Emisión:</span>
-                    <span class="detail-value"><?= $tarjeta['fecha_emision'] ?></span>
-                </div>
-                <div class="detail-row">
-                    <span class="detail-label">Fecha Expiración:</span>
-                    <span class="detail-value"><?= $tarjeta['fecha_expiracion'] ?></span>
-                </div>
-                <div class="detail-row">
-                    <span class="detail-label">Intentos Fallidos:</span>
-                    <span class="detail-value"><?= $tarjeta['intentos_fallidos'] ?></span>
-                </div>
-                <div class="detail-row">
-                    <span class="detail-label">Horario Uso:</span>
-                    <span class="detail-value"><?= $tarjeta['horario_uso'] ?></span>
-                </div>
-            </div>
-        <?php elseif (isset($error)): ?>
-            <div class="status-error">
-                <?= $error ?>
-            </div>
-        <?php endif; ?>
+<div class="card-container">
+  <h1>Información de Tarjeta RFID</h1>
+  <?php if (isset($tarjeta)): ?>
+      <div class="card-details">
+          <div class="detail-row">
+              <span class="detail-label">ID:</span>
+              <span class="detail-value"><?= esc($tarjeta['ID_Tarjeta']) ?></span>
+          </div>
+          <div class="detail-row <?= $tarjeta['Estado'] === 'Activa' ? 'status-active' : 'status-inactive' ?>">
+              <span class="detail-label">Estado:</span>
+              <span class="detail-value"><?= esc($tarjeta['Estado']) ?></span>
+          </div>
+          <div class="detail-row">
+              <span class="detail-label">Fecha Emisión:</span>
+              <span class="detail-value"><?= esc($tarjeta['Fecha_emision']) ?></span>
+          </div>
+          <div class="detail-row">
+              <span class="detail-label">Fecha Expiración:</span>
+              <span class="detail-value"><?= esc($tarjeta['Fecha_Expiracion']) ?></span>
+          </div>
+          <div class="detail-row">
+              <span class="detail-label">Intentos Fallidos:</span>
+              <span class="detail-value"><?= esc($tarjeta['Intentos_Fallidos']) ?></span>
+          </div>
+          <div class="detail-row">
+              <span class="detail-label">Horario Uso:</span>
+              <span class="detail-value"><?= esc($tarjeta['Horario_Uso']) ?></span>
+          </div>
       </div>
+  <?php elseif (isset($error)): ?>
+      <div class="status-error">
+          <?= esc($error) ?>
+          <br><br>
+          <a href="<?= base_url('asignar-tarjeta') ?>" class="btn-assign">Solicitar Tarjeta</a>
+      </div>
+  <?php endif; ?>
+</div>
     </div>
 
     <script>

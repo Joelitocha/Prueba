@@ -15,23 +15,35 @@ class ViewsControllers extends BaseController
         return view("gestionar-tarjeta");
     }
 
-    public function VistaConsultar() {
-        $tarjetamodel = new TarjetaModel;
-        $id = session()->get('ID_tarjeta');
-        $data = $tarjetamodel->obtenerEstado($id);
-        
-        // Procesar los datos para la vista
-        $tarjetaData = [
-            'id' => $data[0]['ID_Tarjeta'],
-            'estado' => $data[0]['Estado'] == 1 ? 'Activa' : 'Inactiva',
-            'fecha_emision' => $data[0]['Fecha_emision'],
-            'fecha_expiracion' => $data[0]['Fecha_Expiracion'] ?? 'No expira',
-            'intentos_fallidos' => $data[0]['Intentos_Fallidos'],
-            'horario_uso' => $data[0]['Horario_Uso'] ?? 'Sin restricción'
-        ];
-        
-        return view("consultar-rfid", ["tarjeta" => $tarjetaData]);
+public function VistaConsultar() {
+    $tarjetamodel = new \App\Models\TarjetaModel;
+    $id = session()->get('ID_tarjeta');
+
+    if (empty($id)) {
+        return view("consultar-rfid", [
+            "error" => "No tienes ninguna tarjeta asociada a tu cuenta."
+        ]);
     }
+
+    $tarjeta = $tarjetamodel->obtenerEstado($id);
+
+    if (empty($tarjeta)) {
+        return view("consultar-rfid", [
+            "error" => "No se encontró información de la tarjeta asociada."
+        ]);
+    }
+
+    $tarjetaData = [
+        'id'               => $tarjeta['ID_Tarjeta'],
+        'estado'           => $tarjeta['Estado'] == 1 ? 'Activa' : 'Inactiva',
+        'fecha_emision'    => $tarjeta['Fecha_emision'],
+        'fecha_expiracion' => $tarjeta['Fecha_Expiracion'] ?? 'No expira',
+        'intentos_fallidos'=> $tarjeta['Intentos_Fallidos'],
+        'horario_uso'      => $tarjeta['Horario_Uso'] ?? 'Sin restricción'
+    ];
+
+    return view("consultar-rfid", ["tarjeta" => $tarjetaData]);
+}
 
     public function VistaAlertas() {
 
