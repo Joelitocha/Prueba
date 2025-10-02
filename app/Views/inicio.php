@@ -844,6 +844,28 @@
           ?>
         </div>
         
+        <!-- Botón minimalista para mostrar información de la empresa -->
+        <div class="company-toggle-container">
+          <button class="company-toggle-btn" id="companyToggle">
+            <i class="fas fa-building"></i>
+            <span>Información de la Empresa</span>
+            <i class="fas fa-chevron-down toggle-arrow"></i>
+          </button>
+          
+          <div class="company-slide-panel" id="companyPanel">
+            <div class="company-content">
+              <div class="company-info-item">
+                <div class="company-label">Nombre de la empresa</div>
+                <div class="company-value"><?php echo session()->get('enombre'); ?></div>
+              </div>
+              <div class="company-info-item">
+                <div class="company-label">Código de la empresa</div>
+                <div class="company-value"><?php echo session()->get('ecode'); ?></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
         <div class="masonry-grid">
           <?php if ($rol == 5): ?>
             <!-- Iconos para Administrador -->
@@ -895,16 +917,16 @@
               <p>Historial de Cambios</p>
             </a>
 
-            <?php elseif ($rol == 7): ?>
-              <!-- Iconos para Usuario -->
-              <a href="<?php echo site_url('/consultar-rfid');?>" class="masonry-item">
-                <i class="fas fa-search"></i>
-                <p>Consultar Estado</p>
-              </a>
-              </div>
-              <?php endif; ?>
+          <?php elseif ($rol == 7): ?>
+            <!-- Iconos para Usuario -->
+            <a href="<?php echo site_url('/consultar-rfid');?>" class="masonry-item">
+              <i class="fas fa-search"></i>
+              <p>Consultar Estado</p>
+            </a>
+          <?php endif; ?>
         </div>
       </div>
+    </div>
 
     <script>
       // Mostrar/ocultar sidebar en móviles
