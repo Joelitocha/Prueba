@@ -6,19 +6,41 @@ use CodeIgniter\Controller;
 
 class FotoController extends Controller
 {
-    public function mostrar($nombreArchivo)
+    public function mostrar($idAcceso)
     {
-        $ruta = WRITEPATH . 'uploads/fotos/' . $nombreArchivo;
-
-        if (!file_exists($ruta)) {
-            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound("Archivo no encontrado");
+        $session = session();
+        $rol = $session->get('ID_Rol');
+    
+        if (!in_array($rol, [5, 6, 7])) {
+            return redirect()->to('/no-autorizado');
         }
-
-        // Detectar mime automáticamente
-        $mime = mime_content_type($ruta);
-
-        return $this->response
-            ->setHeader('Content-Type', $mime)
-            ->setBody(file_get_contents($ruta));
+    
+        $registroModel = new \App\Models\RegistroAccesoModel();
+        $registro = $registroModel->find($idAcceso);
+    
+        try {
+            if (!$registro || empty($registro['Archivo_Video'])) {
+                throw new \Exception("Registro o archivo inexistente");
+            }
+    
+            $ruta = WRITEPATH . 'uploads/fotos/' . $registro['Archivo_Video'];
+    
+            if (!is_file($ruta)) {
+                throw new \Exception("Archivo físico no encontrado: $ruta");
+            }
+    
+            $data = file_get_contents($ruta);
+            if ($data === false) throw new \Exception("Error al leer el archivo");
+    
+            return $this->response
+                ->setHeader('Content-Type', 'image/jpeg')
+                ->setBody($data);
+    
+        } catch (\Exception $e) {
+            log_message('error', "[FotoController::mostrar] " . $e->getMessage());
+            throw new \CodeIgniter\Exceptions\PageNotFoundException("Foto no disponible");
+        }
     }
+    
 }
+

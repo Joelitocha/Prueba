@@ -58,6 +58,8 @@ $routes->group('', ['filter' => '\App\Filters\AuthFilter'], function($routes) {
     // Rutas para todos los usuarios autenticados (roles 5, 6 y 7)
     $routes->get('/consultar-rfid', 'ViewsControllers::VistaConsultar');
     $routes->post('/consultar-rfid', 'TarjetaController::verEstadoTarjeta');
+    $routes->get('fotos/mostrar/(:num)', 'FotoController::mostrar/$1');
+
 });
 
 // Rutas públicas (sin autenticación)

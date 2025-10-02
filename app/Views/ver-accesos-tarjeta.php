@@ -528,101 +528,106 @@
       </a>
     </div>
 
-    <!-- Contenido principal -->
-    <div class="content">
-        <div class="admin-container">
-            <div class="admin-header">
-                <h1>Registros de Accesos</h1>
-                <!-- No hay acciones de búsqueda/añadir en esta vista, por lo que no se incluye admin-actions aquí -->
-            </div>
-            
-            <!-- Modal para mostrar la imagen por encima de la tabla -->
-            <div id="fotoModal" class="modal">
-              <div class="modal-content">
+<!-- Contenido principal -->
+<div class="content">
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>Registros de Accesos</h1>
+            <!-- No hay acciones de búsqueda/añadir en esta vista -->
+        </div>
+        
+        <!-- Modal para mostrar la imagen por encima de la tabla -->
+        <div id="fotoModal" class="modal">
+            <div class="modal-content">
                 <div class="modal-header">
-                  <h2 class="modal-title">Imagen de Acceso</h2>
-                  <span class="close" onclick="cerrarModal()">&times;</span>
+                    <h2 class="modal-title">Imagen de Acceso</h2>
+                    <span class="close" onclick="cerrarModal()">&times;</span>
                 </div>
                 <div class="modal-image-container">
-                  <img id="imagenModal" class="modal-image" src="">
+                    <img id="imagenModal" class="modal-image" src="">
                 </div>
-              </div>
             </div>
-            
-            <div class="tabla-container">
-          <table class="access-table">
-              <thead>
-                  <tr>
-                      <th>Fecha y Hora</th>
-                      <th>Resultado</th>
-                      <th>ID Tarjeta</th>
-                      <th>Foto</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <?php foreach($registros as $registro): ?>
-                  <tr>
-                      <td><?= esc($registro['Fecha_Hora']); ?></td>
-                      <td class="<?= $registro['Resultado'] == 1 ? 'acceso-permitido' : 'acceso-bloqueado'; ?>">
-                          <?= $registro['Resultado'] == 1 ? 'Permitido' : 'Bloqueado'; ?>
-                      </td>
-                      <td><?= esc($registro['ID_Tarjeta']); ?></td>
-                      <td>
-                        <?php if (!empty($registro['Archivo_Video'])): ?>
-                            <img src="<?= base_url('foto/' . esc($registro['Archivo_Video'])); ?>" 
-                                 alt="Foto registro" width="100" height="80"
-                                 onclick="abrirModal(this)">
-                       <?php else: ?>
-                            <span>Sin foto</span>
-                        <?php endif; ?>
-                      </td>
-                  </tr>
-                  <?php endforeach; ?>
-              </tbody>
-          </table>
-      </div>
-            <?php if (isset($totalPaginas) && $totalPaginas > 1): ?>
-                <div class="paginacion">
-                    <?php 
-                    // Mostrar botón para página anterior
-                    if ($paginaActual > 1): ?>
-                        <a href="?pagina=<?= $paginaActual - 1; ?>">‹ Anterior</a>
-                    <?php endif; ?>
-                    
-                    <?php 
-                    // Lógica para mostrar las páginas, manteniendo un rango visible
-                    $startPage = max(1, $paginaActual - 2);
-                    $endPage = min($totalPaginas, $paginaActual + 2);
-
-                    if ($startPage > 1) {
-                        echo '<a href="?pagina=1">1</a>';
-                        if ($startPage > 2) {
-                            echo '<span>...</span>';
-                        }
-                    }
-
-                    for ($i = $startPage; $i <= $endPage; $i++): ?>
-                        <a href="?pagina=<?= $i; ?>" class="<?= $i == $paginaActual ? 'activa' : ''; ?>"><?= $i; ?></a>
-                    <?php endfor; 
-                    
-                    if ($endPage < $totalPaginas) {
-                        if ($endPage < $totalPaginas - 1) {
-                            echo '<span>...</span>';
-                        }
-                        echo '<a href="?pagina=' . $totalPaginas . '">' . $totalPaginas . '</a>';
-                    }
-                    ?>
-                    
-                    <?php 
-                    // Mostrar botón para página siguiente
-                    if ($paginaActual < $totalPaginas): ?>
-                        <a href="?pagina=<?= $paginaActual + 1; ?>">Siguiente ›</a>
-                    <?php endif; ?>
-                </div>
-            <?php endif; ?>
         </div>
-    </div>
+        
+        <div class="tabla-container">
+            <table class="access-table">
+                <thead>
+                    <tr>
+                        <th>Fecha y Hora</th>
+                        <th>Resultado</th>
+                        <th>ID Tarjeta</th>
+                        <th>Foto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($registros as $registro): ?>
+                    <tr>
+                        <td><?= esc($registro['Fecha_Hora']); ?></td>
+                        <td class="<?= $registro['Resultado'] == 1 ? 'acceso-permitido' : 'acceso-bloqueado'; ?>">
+                            <?= $registro['Resultado'] == 1 ? 'Permitido' : 'Bloqueado'; ?>
+                        </td>
+                        <td><?= esc($registro['ID_Tarjeta']); ?></td>
+                        <td>
+                            <?php if (!empty($registro['Archivo_Video'])): ?>
+                              <img src="<?= base_url('fotos/mostrar/' . $registro['ID_Acceso']); ?>" 
+                             alt="Foto registro" width="100" height="80"
+                             onclick="abrirModal(this)">
+                            <?php else: ?>
+                                <span>Sin foto</span>
+                            <?php endif; ?>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
 
+        <?php if (isset($totalPaginas) && $totalPaginas > 1): ?>
+            <div class="paginacion">
+                <?php if ($paginaActual > 1): ?>
+                    <a href="?pagina=<?= $paginaActual - 1; ?>">‹ Anterior</a>
+                <?php endif; ?>
+                
+                <?php 
+                $startPage = max(1, $paginaActual - 2);
+                $endPage = min($totalPaginas, $paginaActual + 2);
+
+                if ($startPage > 1) {
+                    echo '<a href="?pagina=1">1</a>';
+                    if ($startPage > 2) {
+                        echo '<span>...</span>';
+                    }
+                }
+
+                for ($i = $startPage; $i <= $endPage; $i++): ?>
+                    <a href="?pagina=<?= $i; ?>" class="<?= $i == $paginaActual ? 'activa' : ''; ?>"><?= $i; ?></a>
+                <?php endfor; 
+                
+                if ($endPage < $totalPaginas) {
+                    if ($endPage < $totalPaginas - 1) {
+                        echo '<span>...</span>';
+                    }
+                    echo '<a href="?pagina=' . $totalPaginas . '">' . $totalPaginas . '</a>';
+                }
+                ?>
+                
+                <?php if ($paginaActual < $totalPaginas): ?>
+                    <a href="?pagina=<?= $paginaActual + 1; ?>">Siguiente ›</a>
+                <?php endif; ?>
+            </div>
+        <?php endif; ?>
+    </div>
+</div>
+<script>
+function abrirModal(img) {
+    document.getElementById("fotoModal").style.display = "block";
+    document.getElementById("imagenModal").src = img.src;
+}
+
+function cerrarModal() {
+    document.getElementById("fotoModal").style.display = "none";
+}
+</script>
     <script>
       // Mostrar/ocultar sidebar en móviles
       const menuToggle = document.getElementById('menuToggle');
