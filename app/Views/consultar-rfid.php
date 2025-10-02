@@ -301,6 +301,79 @@ $rol = $session->get("ID_Rol");
           margin-top: 5px;
         }
       }
+      /*Estilo para el modal */
+      /* --- Modal --- */
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  z-index: 9999;
+  padding-top: 100px;
+  left: 0; 
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  background-color: rgba(0,0,0,0.6); /* Fondo oscuro */
+}
+
+.modal-content {
+  background: #fff;
+  margin: auto;
+  padding: 25px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  animation: modalFade 0.3s ease-in-out;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.modal-content p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  color: #888;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.close:hover {
+  color: #333;
+}
+
+/* --- Botón "Solicitar Tarjeta" --- */
+.btn-assign {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 15px;
+  transition: background 0.2s ease-in-out;
+  cursor: pointer;
+  border: none;
+}
+.btn-assign:hover {
+  background-color: #0056b3;
+}
+
+/* Animación */
+@keyframes modalFade {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
     </style>
   </head>
   <body>
@@ -409,14 +482,33 @@ $rol = $session->get("ID_Rol");
           </div>
       </div>
   <?php elseif (isset($error)): ?>
-      <div class="status-error">
-          <?= esc($error) ?>
-          <br><br>
-          <a href="<?= base_url('asignar-tarjeta') ?>" class="btn-assign">Solicitar Tarjeta</a>
-      </div>
+<div class="status-error">
+    <?= esc($error) ?>
+    <br><br>
+    <?php if (session()->get('ID_Rol') == 5): ?>
+        <!-- Solo el Admin (rol 5) puede ir a crear tarjeta -->
+        <a href="<?= base_url('crear-tarjeta') ?>" class="btn-assign">Solicitar Tarjeta</a>
+    <?php else: ?>
+        <!-- Supervisor (6) o Usuario normal (7) ven modal explicativo -->
+        <button type="button" class="btn-assign" onclick="mostrarModal()">Solicitar Tarjeta</button>
+    <?php endif; ?>
+</div>
   <?php endif; ?>
 </div>
     </div>
+    <!-- Modal oculto -->
+<div id="modalSolicitud" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="cerrarModal()">&times;</span>
+    <h2>Solicitud de tarjeta</h2>
+    <p>
+      Tu rol actual no permite crear tarjetas directamente.  
+      Debes solicitar la tarjeta a un Administrador y esperar su aprobación.  
+      Sé paciente, pronto te habilitarán el acceso 😎.
+    </p>
+  </div>
+</div>
+
 
     <script>
       // Mostrar/ocultar sidebar en móviles
@@ -450,6 +542,24 @@ $rol = $session->get("ID_Rol");
           sidebar.classList.remove('active');
         }
       });
+    </script>
+    <script>
+    function mostrarModal() {
+  document.getElementById('modalSolicitud').style.display = 'block';
+}
+
+function cerrarModal() {
+  document.getElementById('modalSolicitud').style.display = 'none';
+}
+
+// Cerrar modal si el usuario hace clic fuera del contenido
+window.onclick = function(event) {
+  let modal = document.getElementById('modalSolicitud');
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+};
+
     </script>
 
     <?php
