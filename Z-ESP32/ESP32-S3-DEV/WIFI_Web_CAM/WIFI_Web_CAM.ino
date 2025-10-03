@@ -7,10 +7,8 @@
 #define CAMERA_MODEL_ESP_EYE
 #include "camera_pins.h"
 
-
 const char* ssid = "placa";
 const char* password = "12345678";
-
 String mac="";
 
 // Endpoints en tu servidor PHP (AWS)
@@ -269,4 +267,3 @@ void captureAndUploadPhoto() {
   esp_camera_fb_return(fb);
   http.end();
 }
-
