@@ -1006,10 +1006,6 @@
     <div class="user-slide-panel" id="userPanel">
         <div class="user-content">
             <div class="user-info-item">
-                <div class="user-label">ID Usuario</div>
-                <div class="user-value"><?php echo session()->get('ID_Usuario'); ?></div>
-            </div>
-            <div class="user-info-item">
                 <div class="user-label">Nombre</div>
                 <div class="user-value"><?php echo session()->get('Nombre'); ?></div>
             </div>
@@ -1017,10 +1013,7 @@
                 <div class="user-label">Email</div>
                 <div class="user-value"><?php echo session()->get('Email'); ?></div>
             </div>
-            <div class="user-info-item">
-                <div class="user-label">Último Acceso</div>
-                <div class="user-value"><?php echo session()->get('Ultimo_Acceso'); ?></div>
-            </div>
+
             <div class="user-info-item">
                 <div class="user-label">Verificado</div>
                 <div class="user-value"><?php echo session()->get('Verificado') ? 'Sí' : 'No'; ?></div>
