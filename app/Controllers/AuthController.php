@@ -73,7 +73,6 @@ public function loginUser()
             return redirect()->to('/login')->with('error', 'Error técnico al iniciar sesión');
         }
 
-
         return redirect()->to('/bienvenido');
     }
 
