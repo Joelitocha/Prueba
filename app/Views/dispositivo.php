@@ -449,10 +449,6 @@ $rol = $session->get("ID_Rol");
       </div>
     <?php endif; ?>
 
-    <a class="btn-action btn-add" href="<?= site_url('configurar-dispositivo') ?>">
-      <i class="fas fa-plus"></i> Agregar Dispositivo
-    </a>
-
   <?php else: ?>
     <!-- Vista de listado de racks -->
     <h1>Lista de Racks</h1>
