@@ -59,7 +59,7 @@ $routes->group('', ['filter' => '\App\Filters\AuthFilter'], function($routes) {
     $routes->get('/consultar-rfid', 'ViewsControllers::VistaConsultar');
     $routes->post('/consultar-rfid', 'TarjetaController::verEstadoTarjeta');
     $routes->get('fotos/mostrar/(:num)', 'FotoController::mostrar/$1');
-    $routes->get('/mi-usuario', 'Usercontroller::miusuario')
+    $routes->get('/mi-usuario', 'Usercontroller::miusuario');
 
 });
 
