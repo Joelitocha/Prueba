@@ -2,7 +2,6 @@
     $session = session();
     $rol = $session->get("ID_Rol");
 ?>
-
 <!doctype html>
 <html lang="es">
   <head>
