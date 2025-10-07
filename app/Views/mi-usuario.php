@@ -804,6 +804,78 @@
         <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
       </a>
     </div>
+    
+<!--Contenido Principal -->
+<div class="user-info-container">
+    <button class="user-toggle-btn" id="userToggle">
+        <i class="fas fa-user-circle"></i>
+        <span>Información del Usuario</span>
+        <i class="fas fa-chevron-down toggle-arrow"></i>
+    </button>
+    
+    <div class="user-slide-panel" id="userPanel">
+        <div class="user-content">
+            <div class="user-info-item">
+                <div class="user-label">ID Usuario</div>
+                <div class="user-value"><?php echo session()->get('ID_Usuario'); ?></div>
+            </div>
+            <div class="user-info-item">
+                <div class="user-label">Nombre</div>
+                <div class="user-value"><?php echo session()->get('Nombre'); ?></div>
+            </div>
+            <div class="user-info-item">
+                <div class="user-label">Email</div>
+                <div class="user-value"><?php echo session()->get('Email'); ?></div>
+            </div>
+            <div class="user-info-item">
+                <div class="user-label">Último Acceso</div>
+                <div class="user-value"><?php echo session()->get('Ultimo_Acceso'); ?></div>
+            </div>
+            <div class="user-info-item">
+                <div class="user-label">ID Rol</div>
+                <div class="user-value"><?php echo session()->get('ID_Rol'); ?></div>
+            </div>
+            <div class="user-info-item">
+                <div class="user-label">ID Tarjeta</div>
+                <div class="user-value"><?php echo session()->get('ID_Tarjeta') ?? 'No asignada'; ?></div>
+            </div>
+            <div class="user-info-item">
+                <div class="user-label">Token</div>
+                <div class="user-value"><?php echo session()->get('Token') ?? 'No asignado'; ?></div>
+            </div>
+            <div class="user-info-item">
+                <div class="user-label">Verificado</div>
+                <div class="user-value"><?php echo session()->get('Verificado') ? 'Sí' : 'No'; ?></div>
+            </div>
+            <div class="user-info-item">
+                <div class="user-label">ID Empresa</div>
+                <div class="user-value"><?php echo session()->get('id_empresa'); ?></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Apartado de Información de la Empresa (EXISTENTE - NO MODIFICAR) -->
+<div class="company-toggle-container">
+    <button class="company-toggle-btn" id="companyToggle">
+        <i class="fas fa-building"></i>
+        <span>Información de la Empresa</span>
+        <i class="fas fa-chevron-down toggle-arrow"></i>
+    </button>
+    
+    <div class="company-slide-panel" id="companyPanel">
+        <div class="company-content">
+            <div class="company-info-item">
+                <div class="company-label">Nombre de la empresa</div>
+                <div class="company-value"><?php echo session()->get('enombre'); ?></div>
+            </div>
+            <div class="company-info-item">
+                <div class="company-label">Código de la empresa</div>
+                <div class="company-value"><?php echo session()->get('ecode'); ?></div>
+            </div>
+        </div>
+    </div>
+</div>
               <!-- Botón minimalista para mostrar información de la empresa -->
         <div class="company-toggle-container">
           <button class="company-toggle-btn" id="companyToggle">
