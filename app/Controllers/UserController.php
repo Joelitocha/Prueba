@@ -162,7 +162,7 @@ class UserController extends BaseController
             return redirect()->to('/modificar-usuario')->with('error', 'Hubo un problema al eliminar el usuario.');
         }
     }
-    public function miusuario(){
+    public function miusuario() {
         return view("mi-usuario");
     }
 }
