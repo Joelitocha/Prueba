@@ -349,14 +349,19 @@
         ?>
       </div>
 
-      <a href="<?php echo site_url('/bienvenido');?>" class="menu-item">
+      <a href="<?php echo site_url('/bienvenido');?>" class="menu-item active">
         <i class="fas fa-home"></i> Inicio
+      </a>
+      <!-- Opciones para el Perfil -->
+      <div class="menu-heading">Perfil</div>
+      <a href="<?php echo site_url('/mi-usuario');?>" class="menu-item">
+        <i class="fas fa-users-cog"></i> Mis Datos
       </a>
       
       <!-- Opciones para Administrador -->
       <?php if ($rol == 5): ?>
       <div class="menu-heading">Administración</div>
-      <a href="<?php echo site_url('/modificar-usuario');?>" class="menu-item active">
+      <a href="<?php echo site_url('/modificar-usuario');?>" class="menu-item">
         <i class="fas fa-users-cog"></i> Gestión de Usuarios
       </a>
       <?php endif; ?>

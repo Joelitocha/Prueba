@@ -510,8 +510,13 @@
         ?>
       </div>
 
-      <a href="<?php echo site_url('/bienvenido');?>" class="menu-item">
+      <a href="<?php echo site_url('/bienvenido');?>" class="menu-item active">
         <i class="fas fa-home"></i> Inicio
+      </a>
+      <!-- Opciones para el Perfil -->
+      <div class="menu-heading">Perfil</div>
+      <a href="<?php echo site_url('/mi-usuario');?>" class="menu-item">
+        <i class="fas fa-users-cog"></i> Mis Datos
       </a>
       
       <!-- Opciones para Administrador -->
@@ -525,7 +530,7 @@
       <!-- Opciones para Tarjetas -->
       <div class="menu-heading">Tarjetas RFID</div>
       <?php if ($rol == 5): ?>
-      <a href="<?php echo site_url('/modificar-tarjeta');?>" class="menu-item active">
+      <a href="<?php echo site_url('/modificar-tarjeta');?>" class="menu-item">
         <i class="fas fa-credit-card"></i> Gestión de Tarjetas
       </a>
       <?php endif; ?>

@@ -470,7 +470,7 @@ $archivosPagina = array_slice($archivos, $startIndex, $itemsPerPage);
       <i class="fas fa-bars"></i> Menú
     </button>
 
-    <!-- Sidebar -->
+     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
       <div class="logo">
         <?php 
@@ -487,8 +487,13 @@ $archivosPagina = array_slice($archivos, $startIndex, $itemsPerPage);
         ?>
       </div>
 
-      <a href="<?php echo site_url('/bienvenido');?>" class="menu-item">
+      <a href="<?php echo site_url('/bienvenido');?>" class="menu-item active">
         <i class="fas fa-home"></i> Inicio
+      </a>
+      <!-- Opciones para el Perfil -->
+      <div class="menu-heading">Perfil</div>
+      <a href="<?php echo site_url('/mi-usuario');?>" class="menu-item">
+        <i class="fas fa-users-cog"></i> Mis Datos
       </a>
       
       <!-- Opciones para Administrador -->
@@ -527,7 +532,7 @@ $archivosPagina = array_slice($archivos, $startIndex, $itemsPerPage);
       <a href="<?php echo site_url('/ver-accesos-tarjeta');?>" class="menu-item">
         <i class="fas fa-door-open"></i> Accesos
       </a>
-      <a href="<?php echo site_url('/historial-cambios');?>" class="menu-item active">
+      <a href="<?php echo site_url('/historial-cambios');?>" class="menu-item">
         <i class="fas fa-history"></i> Historial
       </a>
       <?php endif; ?>
