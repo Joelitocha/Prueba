@@ -1006,10 +1006,6 @@
     <div class="user-slide-panel" id="userPanel">
         <div class="user-content">
             <div class="user-info-item">
-                <div class="user-label">ID Usuario</div>
-                <div class="user-value"><?php echo session()->get('ID_Usuario'); ?></div>
-            </div>
-            <div class="user-info-item">
                 <div class="user-label">Nombre</div>
                 <div class="user-value"><?php echo session()->get('Nombre'); ?></div>
             </div>
@@ -1017,10 +1013,7 @@
                 <div class="user-label">Email</div>
                 <div class="user-value"><?php echo session()->get('Email'); ?></div>
             </div>
-            <div class="user-info-item">
-                <div class="user-label">Último Acceso</div>
-                <div class="user-value"><?php echo session()->get('Ultimo_Acceso'); ?></div>
-            </div>
+
             <div class="user-info-item">
                 <div class="user-label">Verificado</div>
                 <div class="user-value"><?php echo session()->get('Verificado') ? 'Sí' : 'No'; ?></div>
@@ -1050,28 +1043,6 @@
         </div>
     </div>
 </div>
-              <!-- Botón minimalista para mostrar información de la empresa -->
-        <div class="company-toggle-container">
-          <button class="company-toggle-btn" id="companyToggle">
-            <i class="fas fa-building"></i>
-            <span>Información de la Empresa</span>
-            <i class="fas fa-chevron-down toggle-arrow"></i>
-          </button>
-          
-          <div class="company-slide-panel" id="companyPanel">
-            <div class="company-content">
-              <div class="company-info-item">
-                <div class="company-label">Nombre de la empresa</div>
-                <div class="company-value"><?php echo session()->get('enombre'); ?></div>
-              </div>
-              <div class="company-info-item">
-                <div class="company-label">Código de la empresa</div>
-                <div class="company-value"><?php echo session()->get('ecode'); ?></div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
     <script>
         // Toggle para el panel de información del usuario
 const userToggle = document.getElementById('userToggle');
