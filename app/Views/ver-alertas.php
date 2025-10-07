@@ -258,37 +258,78 @@ if ($session->get("ID_Rol") != 5 && $session->get("ID_Rol") != 6) {
 
 <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i> Menú</button>
 
-<div class="sidebar" id="sidebar">
-  <div class="logo">
-    <?php 
-      if ($rol == 5) { echo "Panel de Control"; echo '<span class="role">Administrador</span>'; } 
-      elseif ($rol == 6) { echo "Panel Supervisor"; echo '<span class="role">Supervisor</span>'; } 
-      elseif ($rol == 7) { echo "Bienvenido"; echo '<span class="role">Usuario</span>'; }
-    ?>
-  </div>
-  <a href="<?php echo site_url('/bienvenido');?>" class="menu-item"><i class="fas fa-home"></i> Inicio</a>
-  <?php if ($rol == 5): ?>
-    <div class="menu-heading">Administración</div>
-    <a href="<?php echo site_url('/modificar-usuario');?>" class="menu-item"><i class="fas fa-users-cog"></i> Gestión de Usuarios</a>
-  <?php endif; ?>
-  <div class="menu-heading">Tarjetas RFID</div>
-  <?php if ($rol == 5): ?>
-    <a href="<?php echo site_url('/modificar-tarjeta');?>" class="menu-item"><i class="fas fa-credit-card"></i> Gestión de Tarjetas</a>
-  <?php endif; ?>
-  <a href="<?php echo site_url('/consultar-rfid');?>" class="menu-item"><i class="fas fa-search"></i> Consultar Estado</a>
-  <?php if ($rol == 5): ?>
-    <div class="menu-heading">Dispositivos</div>
-    <a href="<?php echo site_url('/dispositivo');?>" class="menu-item"><i class="fas fa-network-wired"></i> Gestionar Dispositivos</a>
-  <?php endif; ?>
-  <?php if ($rol == 5 || $rol == 6): ?>
-    <div class="menu-heading">Reportes</div>
-    <a href="<?php echo site_url('/ver-alertas');?>" class="menu-item active"><i class="fas fa-bell"></i> Alertas</a>
-    <a href="<?php echo site_url('/ver-accesos-tarjeta');?>" class="menu-item"><i class="fas fa-door-open"></i> Accesos</a>
-    <a href="<?php echo site_url('/historial-cambios');?>" class="menu-item"><i class="fas fa-history"></i> Historial</a>
-  <?php endif; ?>
-  <div class="menu-heading">Cuenta</div>
-  <a onclick="cerrarsesion('<?php echo site_url('/logout');?>')" class="menu-item"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
-</div>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <div class="logo">
+        <?php 
+          if ($rol == 5) {
+              echo "Panel de Control";
+              echo '<span class="role">Administrador</span>';
+          } elseif ($rol == 6) {
+              echo "Panel Supervisor";
+              echo '<span class="role">Supervisor</span>';
+          } elseif ($rol == 7) {
+              echo "Bienvenido";
+              echo '<span class="role">Usuario</span>';
+          }
+        ?>
+      </div>
+
+      <a href="<?php echo site_url('/bienvenido');?>" class="menu-item active">
+        <i class="fas fa-home"></i> Inicio
+      </a>
+      <!-- Opciones para el Perfil -->
+      <div class="menu-heading">Perfil</div>
+      <a href="<?php echo site_url('/mi-usuario');?>" class="menu-item">
+        <i class="fas fa-users-cog"></i> Mis Datos
+      </a>
+      
+      <!-- Opciones para Administrador -->
+      <?php if ($rol == 5): ?>
+      <div class="menu-heading">Administración</div>
+      <a href="<?php echo site_url('/modificar-usuario');?>" class="menu-item">
+        <i class="fas fa-users-cog"></i> Gestión de Usuarios
+      </a>
+      <?php endif; ?>
+      
+      <!-- Opciones para Tarjetas -->
+      <div class="menu-heading">Tarjetas RFID</div>
+      <?php if ($rol == 5): ?>
+      <a href="<?php echo site_url('/modificar-tarjeta');?>" class="menu-item">
+        <i class="fas fa-credit-card"></i> Gestión de Tarjetas
+      </a>
+      <?php endif; ?>
+      <a href="<?php echo site_url('/consultar-rfid');?>" class="menu-item">
+        <i class="fas fa-search"></i> Consultar Estado
+      </a>
+      
+      <!-- Opciones para Dispositivos -->
+      <?php if ($rol == 5): ?>
+      <div class="menu-heading">Dispositivos</div>
+      <a href="<?php echo site_url('/dispositivo');?>" class="menu-item">
+      <i class="fas fa-network-wired"></i> Gestionar Dispositivos
+      </a>
+      <?php endif; ?>
+
+      <!-- Opciones para Supervisor y Administrador -->
+      <?php if ($rol == 5 || $rol == 6): ?>
+      <div class="menu-heading">Reportes</div>
+      <a href="<?php echo site_url('/ver-alertas');?>" class="menu-item">
+        <i class="fas fa-bell"></i> Alertas
+      </a>
+      <a href="<?php echo site_url('/ver-accesos-tarjeta');?>" class="menu-item">
+        <i class="fas fa-door-open"></i> Accesos
+      </a>
+      <a href="<?php echo site_url('/historial-cambios');?>" class="menu-item">
+        <i class="fas fa-history"></i> Historial
+      </a>
+      <?php endif; ?>
+      
+      <div class="menu-heading">Cuenta</div>
+      <a onclick="cerrarsesion('<?php echo site_url('/logout');?>')" class="menu-item">
+        <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+      </a>
+    </div>
 
 <div class="content">
   <div class="admin-container">
