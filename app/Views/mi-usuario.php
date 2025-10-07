@@ -723,7 +723,197 @@
     padding: 8px;
   }
 }
+/* Contenedor del toggle de usuario */
+.user-info-container {
+    max-width: 500px;
+    margin: 25px auto;
+    position: relative;
+}
 
+/* Botón minimalista para usuario */
+.user-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    color: #495057;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.user-toggle-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.user-toggle-btn:hover::before {
+    left: 100%;
+}
+
+.user-toggle-btn:hover {
+    background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+    border-color: #e74c3c;
+    color: #2c3e50;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.15);
+}
+
+.user-toggle-btn i:first-child {
+    color: #e74c3c;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.user-toggle-btn span {
+    flex: 1;
+    text-align: center;
+}
+
+/* Panel deslizante del usuario */
+.user-slide-panel {
+    max-height: 0;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid transparent;
+    border-radius: 0 0 10px 10px;
+    margin-top: -1px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.user-slide-panel.active {
+    max-height: 400px;
+    border-color: #dee2e6;
+    opacity: 1;
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow-y: auto;
+}
+
+.user-content {
+    padding: 20px;
+}
+
+.user-info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.user-info-item:last-child {
+    border-bottom: none;
+}
+
+.user-label {
+    font-size: 14px;
+    color: #6c757d;
+    font-weight: 500;
+    flex: 1;
+}
+
+.user-value {
+    font-size: 15px;
+    color: #2c3e50;
+    font-weight: 600;
+    text-align: right;
+    flex: 1;
+    padding: 6px 12px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border-left: 3px solid #e74c3c;
+}
+
+/* Estados activos para usuario */
+.user-info-container.active .toggle-arrow {
+    transform: rotate(180deg);
+    color: #e74c3c;
+}
+
+.user-info-container.active .user-toggle-btn {
+    border-radius: 10px 10px 0 0;
+    border-bottom-color: transparent;
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+}
+
+.user-info-container.active .user-toggle-btn i:first-child {
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Responsive para usuario */
+@media (max-width: 768px) {
+    .user-info-container {
+        margin: 20px 15px;
+        max-width: none;
+    }
+    
+    .user-toggle-btn {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+    
+    .user-content {
+        padding: 15px;
+    }
+    
+    .user-info-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        text-align: left;
+    }
+    
+    .user-value {
+        text-align: left;
+        width: 100%;
+        border-left: none;
+        border-top: 3px solid #e74c3c;
+    }
+}
+
+@media (max-width: 576px) {
+    .user-toggle-btn {
+        padding: 10px 14px;
+        font-size: 13px;
+        gap: 8px;
+    }
+    
+    .user-toggle-btn i:first-child {
+        font-size: 14px;
+    }
+    
+    .user-content {
+        padding: 12px;
+    }
+    
+    .user-label {
+        font-size: 13px;
+    }
+    
+    .user-value {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+}
     </style>
   </head>
   <body>
@@ -804,6 +994,62 @@
         <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
       </a>
     </div>
+
+<!--Contenido Principal -->
+<div class="user-info-container">
+    <button class="user-toggle-btn" id="userToggle">
+        <i class="fas fa-user-circle"></i>
+        <span>Información del Usuario</span>
+        <i class="fas fa-chevron-down toggle-arrow"></i>
+    </button>
+    
+    <div class="user-slide-panel" id="userPanel">
+        <div class="user-content">
+            <div class="user-info-item">
+                <div class="user-label">ID Usuario</div>
+                <div class="user-value"><?php echo session()->get('ID_Usuario'); ?></div>
+            </div>
+            <div class="user-info-item">
+                <div class="user-label">Nombre</div>
+                <div class="user-value"><?php echo session()->get('Nombre'); ?></div>
+            </div>
+            <div class="user-info-item">
+                <div class="user-label">Email</div>
+                <div class="user-value"><?php echo session()->get('Email'); ?></div>
+            </div>
+            <div class="user-info-item">
+                <div class="user-label">Último Acceso</div>
+                <div class="user-value"><?php echo session()->get('Ultimo_Acceso'); ?></div>
+            </div>
+            <div class="user-info-item">
+                <div class="user-label">Verificado</div>
+                <div class="user-value"><?php echo session()->get('Verificado') ? 'Sí' : 'No'; ?></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Apartado de Información de la Empresa (EXISTENTE - NO MODIFICAR) -->
+<div class="company-toggle-container">
+    <button class="company-toggle-btn" id="companyToggle">
+        <i class="fas fa-building"></i>
+        <span>Información de la Empresa</span>
+        <i class="fas fa-chevron-down toggle-arrow"></i>
+    </button>
+    
+    <div class="company-slide-panel" id="companyPanel">
+        <div class="company-content">
+            <div class="company-info-item">
+                <div class="company-label">Nombre de la empresa</div>
+                <div class="company-value"><?php echo session()->get('enombre'); ?></div>
+            </div>
+            <div class="company-info-item">
+                <div class="company-label">Código de la empresa</div>
+                <div class="company-value"><?php echo session()->get('ecode'); ?></div>
+            </div>
+        </div>
+    </div>
+</div>
               <!-- Botón minimalista para mostrar información de la empresa -->
         <div class="company-toggle-container">
           <button class="company-toggle-btn" id="companyToggle">
@@ -826,6 +1072,32 @@
           </div>
         </div>
     </div>
+    <script>
+        // Toggle para el panel de información del usuario
+const userToggle = document.getElementById('userToggle');
+const userPanel = document.getElementById('userPanel');
+const userContainer = document.querySelector('.user-info-container');
+
+userToggle.addEventListener('click', () => {
+    userPanel.classList.toggle('active');
+    userContainer.classList.toggle('active');
+});
+
+// Cerrar los paneles si se hace clic fuera de ellos
+document.addEventListener('click', (e) => {
+    // Para usuario
+    if (!userContainer.contains(e.target)) {
+        userPanel.classList.remove('active');
+        userContainer.classList.remove('active');
+    }
+    
+    // Para empresa (manteniendo el existente)
+    if (!companyContainer.contains(e.target)) {
+        companyPanel.classList.remove('active');
+        companyContainer.classList.remove('active');
+    }
+});
+    </script>
     <script>
       // Mostrar/ocultar sidebar en móviles
       const menuToggle = document.getElementById('menuToggle');
