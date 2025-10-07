@@ -399,8 +399,13 @@ $rol = $session->get("ID_Rol");
         ?>
       </div>
 
-      <a href="<?php echo site_url('/bienvenido');?>" class="menu-item">
+      <a href="<?php echo site_url('/bienvenido');?>" class="menu-item active">
         <i class="fas fa-home"></i> Inicio
+      </a>
+      <!-- Opciones para el Perfil -->
+      <div class="menu-heading">Perfil</div>
+      <a href="<?php echo site_url('/mi-usuario');?>" class="menu-item">
+        <i class="fas fa-users-cog"></i> Mis Datos
       </a>
       
       <!-- Opciones para Administrador -->
@@ -418,7 +423,7 @@ $rol = $session->get("ID_Rol");
         <i class="fas fa-credit-card"></i> Gestión de Tarjetas
       </a>
       <?php endif; ?>
-      <a href="<?php echo site_url('/consultar-rfid');?>" class="menu-item active">
+      <a href="<?php echo site_url('/consultar-rfid');?>" class="menu-item">
         <i class="fas fa-search"></i> Consultar Estado
       </a>
       
