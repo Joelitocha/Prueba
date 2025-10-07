@@ -723,91 +723,70 @@
     padding: 8px;
   }
 }
-/* Contenedor del toggle de usuario */
-.user-info-container {
+    </style>
+    <style>
+        /* Tarjeta de información del usuario */
+.user-info-card {
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 0;
     max-width: 500px;
-    margin: 25px auto;
-    position: relative;
-}
-
-/* Botón minimalista para usuario */
-.user-toggle-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    width: 100%;
-    padding: 14px 20px;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border: 1px solid #dee2e6;
-    border-radius: 10px;
-    color: #495057;
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
+    margin: 30px auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
 }
 
-.user-toggle-btn::before {
+.user-info-card::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -100%;
+    left: 0;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-    transition: left 0.5s ease;
+    height: 4px;
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
 }
 
-.user-toggle-btn:hover::before {
-    left: 100%;
+.user-info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
-.user-toggle-btn:hover {
-    background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
-    border-color: #e74c3c;
-    color: #2c3e50;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.15);
+.user-card-header {
+    display: flex;
+    align-items: center;
+    padding: 20px 25px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-bottom: 1px solid #dee2e6;
 }
 
-.user-toggle-btn i:first-child {
+.user-card-header i {
+    font-size: 24px;
     color: #e74c3c;
-    font-size: 16px;
-    transition: transform 0.3s ease;
+    margin-right: 12px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.user-toggle-btn span {
-    flex: 1;
-    text-align: center;
+.user-card-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #2c3e50;
+    font-weight: 600;
 }
 
-/* Panel deslizante del usuario */
-.user-slide-panel {
-    max-height: 0;
-    overflow: hidden;
-    background: #fff;
-    border: 1px solid transparent;
-    border-radius: 0 0 10px 10px;
-    margin-top: -1px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 0;
-    transform: translateY(-10px);
+.user-card-body {
+    padding: 25px;
 }
 
-.user-slide-panel.active {
-    max-height: 400px;
-    border-color: #dee2e6;
-    opacity: 1;
-    transform: translateY(0);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    overflow-y: auto;
-}
-
-.user-content {
-    padding: 20px;
+.user-info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
 }
 
 .user-info-item {
@@ -835,44 +814,54 @@
     font-weight: 600;
     text-align: right;
     flex: 1;
-    padding: 6px 12px;
+    padding: 8px 12px;
     background: #f8f9fa;
     border-radius: 6px;
     border-left: 3px solid #e74c3c;
 }
 
-/* Estados activos para usuario */
-.user-info-container.active .toggle-arrow {
-    transform: rotate(180deg);
-    color: #e74c3c;
+/* Badge de estado */
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.user-info-container.active .user-toggle-btn {
-    border-radius: 10px 10px 0 0;
-    border-bottom-color: transparent;
-    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-    color: white;
+.status-badge.verified {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
 }
 
-.user-info-container.active .user-toggle-btn i:first-child {
-    color: white;
-    transform: scale(1.1);
+.status-badge.not-verified {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
 }
 
-/* Responsive para usuario */
+/* Responsive para la tarjeta de usuario */
 @media (max-width: 768px) {
-    .user-info-container {
+    .user-info-card {
         margin: 20px 15px;
         max-width: none;
     }
     
-    .user-toggle-btn {
-        padding: 12px 16px;
-        font-size: 14px;
+    .user-card-header {
+        padding: 15px 20px;
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
     }
     
-    .user-content {
-        padding: 15px;
+    .user-card-header i {
+        margin-right: 0;
+    }
+    
+    .user-card-body {
+        padding: 20px;
     }
     
     .user-info-item {
@@ -891,18 +880,20 @@
 }
 
 @media (max-width: 576px) {
-    .user-toggle-btn {
-        padding: 10px 14px;
-        font-size: 13px;
-        gap: 8px;
+    .user-info-card {
+        margin: 15px 10px;
     }
     
-    .user-toggle-btn i:first-child {
-        font-size: 14px;
+    .user-card-header {
+        padding: 15px;
     }
     
-    .user-content {
-        padding: 12px;
+    .user-card-header h3 {
+        font-size: 16px;
+    }
+    
+    .user-card-body {
+        padding: 15px;
     }
     
     .user-label {
@@ -911,7 +902,12 @@
     
     .user-value {
         font-size: 14px;
-        padding: 5px 10px;
+        padding: 6px 10px;
+    }
+    
+    .status-badge {
+        font-size: 11px;
+        padding: 4px 10px;
     }
 }
     </style>
@@ -995,16 +991,19 @@
       </a>
     </div>
 
-<!--Contenido Principal -->
-<div class="user-info-container">
-    <button class="user-toggle-btn" id="userToggle">
+<!-- Apartado de Información del Usuario -->
+<div class="user-info-card">
+    <div class="user-card-header">
         <i class="fas fa-user-circle"></i>
-        <span>Información del Usuario</span>
-        <i class="fas fa-chevron-down toggle-arrow"></i>
-    </button>
+        <h3>Información del Usuario</h3>
+    </div>
     
-    <div class="user-slide-panel" id="userPanel">
-        <div class="user-content">
+    <div class="user-card-body">
+        <div class="user-info-grid">
+            <div class="user-info-item">
+                <div class="user-label">ID Usuario</div>
+                <div class="user-value"><?php echo session()->get('ID_Usuario'); ?></div>
+            </div>
             <div class="user-info-item">
                 <div class="user-label">Nombre</div>
                 <div class="user-value"><?php echo session()->get('Nombre'); ?></div>
@@ -1013,10 +1012,33 @@
                 <div class="user-label">Email</div>
                 <div class="user-value"><?php echo session()->get('Email'); ?></div>
             </div>
-
+            <div class="user-info-item">
+                <div class="user-label">Último Acceso</div>
+                <div class="user-value"><?php echo session()->get('Ultimo_Acceso'); ?></div>
+            </div>
+            <div class="user-info-item">
+                <div class="user-label">ID Rol</div>
+                <div class="user-value"><?php echo session()->get('ID_Rol'); ?></div>
+            </div>
+            <div class="user-info-item">
+                <div class="user-label">ID Tarjeta</div>
+                <div class="user-value"><?php echo session()->get('ID_Tarjeta') ?? 'No asignada'; ?></div>
+            </div>
+            <div class="user-info-item">
+                <div class="user-label">Token</div>
+                <div class="user-value"><?php echo session()->get('Token') ?? 'No asignado'; ?></div>
+            </div>
             <div class="user-info-item">
                 <div class="user-label">Verificado</div>
-                <div class="user-value"><?php echo session()->get('Verificado') ? 'Sí' : 'No'; ?></div>
+                <div class="user-value">
+                    <span class="status-badge <?php echo session()->get('Verificado') ? 'verified' : 'not-verified'; ?>">
+                        <?php echo session()->get('Verificado') ? '✓ Verificado' : '✗ No verificado'; ?>
+                    </span>
+                </div>
+            </div>
+            <div class="user-info-item">
+                <div class="user-label">ID Empresa</div>
+                <div class="user-value"><?php echo session()->get('id_empresa'); ?></div>
             </div>
         </div>
     </div>
@@ -1043,32 +1065,12 @@
         </div>
     </div>
 </div>
+
+<!--Script para la tabla del user -->
     <script>
-        // Toggle para el panel de información del usuario
-const userToggle = document.getElementById('userToggle');
-const userPanel = document.getElementById('userPanel');
-const userContainer = document.querySelector('.user-info-container');
 
-userToggle.addEventListener('click', () => {
-    userPanel.classList.toggle('active');
-    userContainer.classList.toggle('active');
-});
-
-// Cerrar los paneles si se hace clic fuera de ellos
-document.addEventListener('click', (e) => {
-    // Para usuario
-    if (!userContainer.contains(e.target)) {
-        userPanel.classList.remove('active');
-        userContainer.classList.remove('active');
-    }
-    
-    // Para empresa (manteniendo el existente)
-    if (!companyContainer.contains(e.target)) {
-        companyPanel.classList.remove('active');
-        companyContainer.classList.remove('active');
-    }
-});
     </script>
+    <!--Scritp cualquiera -->
     <script>
       // Mostrar/ocultar sidebar en móviles
       const menuToggle = document.getElementById('menuToggle');
