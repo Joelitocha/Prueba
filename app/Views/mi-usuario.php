@@ -1001,10 +1001,6 @@
     <div class="user-card-body">
         <div class="user-info-grid">
             <div class="user-info-item">
-                <div class="user-label">ID Usuario</div>
-                <div class="user-value"><?php echo session()->get('ID_Usuario'); ?></div>
-            </div>
-            <div class="user-info-item">
                 <div class="user-label">Nombre</div>
                 <div class="user-value"><?php echo session()->get('Nombre'); ?></div>
             </div>
