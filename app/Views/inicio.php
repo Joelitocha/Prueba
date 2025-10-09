@@ -909,28 +909,6 @@
           <?php endif; ?>
         </div>
       </div>
-              <!-- Botón minimalista para mostrar información de la empresa -->
-        <div class="company-toggle-container">
-          <button class="company-toggle-btn" id="companyToggle">
-            <i class="fas fa-building"></i>
-            <span>Información de la Empresa</span>
-            <i class="fas fa-chevron-down toggle-arrow"></i>
-          </button>
-          
-          <div class="company-slide-panel" id="companyPanel">
-            <div class="company-content">
-              <div class="company-info-item">
-                <div class="company-label">Nombre de la empresa</div>
-                <div class="company-value"><?php echo session()->get('enombre'); ?></div>
-              </div>
-              <div class="company-info-item">
-                <div class="company-label">Código de la empresa</div>
-                <div class="company-value"><?php echo session()->get('ecode'); ?></div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
     <script>
       // Mostrar/ocultar sidebar en móviles
       const menuToggle = document.getElementById('menuToggle');
