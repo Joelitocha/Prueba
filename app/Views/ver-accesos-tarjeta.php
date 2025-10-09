@@ -571,7 +571,7 @@
                         <td class="<?= $registro['Resultado'] == 1 ? 'acceso-permitido' : 'acceso-bloqueado'; ?>">
                             <?= $registro['Resultado'] == 1 ? 'Permitido' : 'Bloqueado'; ?>
                         </td>
-                        <td><?= esc($registro['usuario']); ?></td>
+                        <td><?= esc($registro['usuario.Nombre']); ?></td>
                         <td>
                             <?php if (!empty($registro['Archivo_Video'])): ?>
                               <img src="<?= base_url('fotos/mostrar/' . $registro['ID_Acceso']); ?>" 
