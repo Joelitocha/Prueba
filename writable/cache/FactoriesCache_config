@@ -29,11 +29,12 @@
     'Config\\Security' => 'Config\\Security',
     'Session' => 'Config\\Session',
     'Config\\Format' => 'Config\\Format',
+    'Config\\Pager' => 'Config\\Pager',
   ),
   'instances' => 
   array (
     'Config\\Exceptions' => 
-    Config\Exceptions::__set_state(array(
+    \Config\Exceptions::__set_state(array(
        'log' => true,
        'ignoreCodes' => 
       array (
@@ -47,7 +48,7 @@
        'deprecationLogLevel' => 'warning',
     )),
     'Config\\ContentSecurityPolicy' => 
-    Config\ContentSecurityPolicy::__set_state(array(
+    \Config\ContentSecurityPolicy::__set_state(array(
        'reportOnly' => false,
        'reportURI' => NULL,
        'upgradeInsecureRequests' => false,
@@ -72,7 +73,7 @@
        'autoNonce' => true,
     )),
     'Config\\App' => 
-    Config\App::__set_state(array(
+    \Config\App::__set_state(array(
        'baseURL' => 'https://RackOn.tech/',
        'allowedHostnames' => 
       array (
@@ -96,7 +97,7 @@
        'CSPEnabled' => false,
     )),
     'Config\\Cache' => 
-    Config\Cache::__set_state(array(
+    \Config\Cache::__set_state(array(
        'handler' => 'file',
        'backupHandler' => 'dummy',
        'storePath' => '/var/www/html/Prueba/writable/cache/',
@@ -135,7 +136,7 @@
        'cacheQueryString' => false,
     )),
     'Config\\UserAgents' => 
-    Config\UserAgents::__set_state(array(
+    \Config\UserAgents::__set_state(array(
        'platforms' => 
       array (
         'windows nt 10.0' => 'Windows 10',
@@ -316,7 +317,7 @@
       ),
     )),
     'Config\\Cookie' => 
-    Config\Cookie::__set_state(array(
+    \Config\Cookie::__set_state(array(
        'prefix' => '',
        'expires' => 0,
        'path' => '/',
@@ -327,7 +328,7 @@
        'raw' => false,
     )),
     'Config\\Modules' => 
-    Config\Modules::__set_state(array(
+    \Config\Modules::__set_state(array(
        'enabled' => true,
        'discoverInComposer' => true,
        'aliases' => 
@@ -343,7 +344,7 @@
       ),
     )),
     'Config\\Toolbar' => 
-    Config\Toolbar::__set_state(array(
+    \Config\Toolbar::__set_state(array(
        'collectors' => 
       array (
         0 => 'CodeIgniter\\Debug\\Toolbar\\Collectors\\Timers',
@@ -374,7 +375,7 @@
       ),
     )),
     'Config\\Routing' => 
-    Config\Routing::__set_state(array(
+    \Config\Routing::__set_state(array(
        'routeFiles' => 
       array (
         0 => '/var/www/html/Prueba/app/Config/Routes.php',
@@ -393,7 +394,7 @@
        'translateUriToCamelCase' => false,
     )),
     'Config\\Filters' => 
-    Config\Filters::__set_state(array(
+    \Config\Filters::__set_state(array(
        'aliases' => 
       array (
         'csrf' => 'CodeIgniter\\Filters\\CSRF',
@@ -405,6 +406,7 @@
         'forcehttps' => 'CodeIgniter\\Filters\\ForceHTTPS',
         'pagecache' => 'CodeIgniter\\Filters\\PageCache',
         'performance' => 'CodeIgniter\\Filters\\PerformanceMetrics',
+        '\\App\\Filters\\AuthFilter' => '\\App\\Filters\\AuthFilter',
       ),
        'required' => 
       array (
@@ -437,13 +439,13 @@
       ),
     )),
     'Config\\Feature' => 
-    Config\Feature::__set_state(array(
+    \Config\Feature::__set_state(array(
        'autoRoutesImproved' => false,
        'oldFilterOrder' => false,
        'limitZeroAsAll' => true,
     )),
     'Config\\Logger' => 
-    Config\Logger::__set_state(array(
+    \Config\Logger::__set_state(array(
        'threshold' => 9,
        'dateFormat' => 'Y-m-d H:i:s',
        'handlers' => 
@@ -468,7 +470,7 @@
       ),
     )),
     'Config\\View' => 
-    Config\View::__set_state(array(
+    \Config\View::__set_state(array(
        'saveData' => true,
        'filters' => 
       array (
@@ -549,7 +551,7 @@
       ),
     )),
     'Config\\Session' => 
-    Config\Session::__set_state(array(
+    \Config\Session::__set_state(array(
        'driver' => 'CodeIgniter\\Session\\Handlers\\FileHandler',
        'cookieName' => 'ci_session',
        'expiration' => 0,
@@ -568,7 +570,7 @@
        'cookieLifetime' => NULL,
     )),
     'Config\\Database' => 
-    Config\Database::__set_state(array(
+    \Config\Database::__set_state(array(
        'filesPath' => '/var/www/html/Prueba/app/Database/',
        'defaultGroup' => 'default',
        'default' => 
@@ -627,7 +629,7 @@
       ),
     )),
     'Config\\Email' => 
-    Config\Email::__set_state(array(
+    \Config\Email::__set_state(array(
        'fromEmail' => 'RackOnOficial@gmail.com',
        'fromName' => 'RackOn',
        'recipients' => '',
@@ -656,7 +658,7 @@
        'DSN' => false,
     )),
     'Config\\Validation' => 
-    Config\Validation::__set_state(array(
+    \Config\Validation::__set_state(array(
        'ruleSets' => 
       array (
         0 => 'CodeIgniter\\Validation\\StrictRules\\Rules',
@@ -671,7 +673,7 @@
       ),
     )),
     'Config\\Security' => 
-    Config\Security::__set_state(array(
+    \Config\Security::__set_state(array(
        'csrfProtection' => 'cookie',
        'tokenRandomize' => false,
        'tokenName' => 'csrf_test_name',
@@ -683,7 +685,7 @@
        'samesite' => 'Lax',
     )),
     'Config\\Format' => 
-    Config\Format::__set_state(array(
+    \Config\Format::__set_state(array(
        'supportedResponseFormats' => 
       array (
         0 => 'application/json',
@@ -702,6 +704,16 @@
         'application/xml' => 0,
         'text/xml' => 0,
       ),
+    )),
+    'Config\\Pager' => 
+    \Config\Pager::__set_state(array(
+       'templates' => 
+      array (
+        'default_full' => 'CodeIgniter\\Pager\\Views\\default_full',
+        'default_simple' => 'CodeIgniter\\Pager\\Views\\default_simple',
+        'default_head' => 'CodeIgniter\\Pager\\Views\\default_head',
+      ),
+       'perPage' => 20,
     )),
   ),
 );
