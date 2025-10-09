@@ -1017,16 +1017,25 @@
                 <div class="user-value"><?php echo session()->get('Ultimo_Acceso'); ?></div>
             </div>
             <div class="user-info-item">
-                <div class="user-label">ID Rol</div>
-                <div class="user-value"><?php echo session()->get('ID_Rol'); ?></div>
+                <div class="user-label">Rol</div>
+                <div class="user-value">
+                    <?php
+                        $rol = session()->get('ID_Rol');
+                        if ($rol == 5) {
+                            echo 'Administrador';
+                        } elseif ($rol == 6) {
+                            echo 'Supervisor';
+                        } elseif ($rol == 7) {
+                            echo 'Usuario';
+                        } else {
+                           echo 'Desconocido';
+                        }
+                    ?>
+            </div>
             </div>
             <div class="user-info-item">
-                <div class="user-label">ID Tarjeta</div>
+                <div class="user-label">Tarjeta</div>
                 <div class="user-value"><?php echo session()->get('ID_Tarjeta') ?? 'No asignada'; ?></div>
-            </div>
-            <div class="user-info-item">
-                <div class="user-label">Token</div>
-                <div class="user-value"><?php echo session()->get('Token') ?? 'No asignado'; ?></div>
             </div>
             <div class="user-info-item">
                 <div class="user-label">Verificado</div>
