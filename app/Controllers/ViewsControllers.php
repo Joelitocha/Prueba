@@ -45,12 +45,15 @@ public function VistaConsultar() {
     return view("consultar-rfid", ["tarjeta" => $tarjetaData]);
 }
 
-    public function VistaAlertas() {
+public function VistaAlertas()
+{
+    $session = session();
+    $id_empresa = $session->get('id_empresa');
 
-        $alertamodel = new AlertaModel;
+    $alertaModel = new \App\Models\AlertaModel();
+    $alertas = $alertaModel->getAlertasByEmpresa($id_empresa);
 
-        $alertas = $alertamodel->getalertas();
+    return view('ver-alertas', ['alertas' => $alertas]);
+}
 
-        return view("ver-alertas", ['alertas' => $alertas]);
-    }
 }
