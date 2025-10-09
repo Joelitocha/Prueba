@@ -22,8 +22,9 @@ class RegistroAccesoModel extends Model
     public function getPaginatedRecordsByEmpresa($idEmpresa, $perPage, $offset)
     {
         return $this->db->table($this->table)
-            ->select('registro_acceso_rf.*')
+            ->select('registro_acceso_rf.*, usuario.Nombre as Nombre_Usuario, usuario.Apellido as Apellido_Usuario, tarjeta_acceso.Codigo_Tarjeta')
             ->join('tarjeta_acceso', 'tarjeta_acceso.ID_Tarjeta = registro_acceso_rf.ID_Tarjeta')
+            ->join('usuario', 'usuario.ID_Usuario = tarjeta_acceso.ID_Usuario')
             ->where('tarjeta_acceso.id_empresa', $idEmpresa)
             ->orderBy('registro_acceso_rf.Fecha_Hora', 'DESC')
             ->limit($perPage, $offset)
@@ -35,6 +36,7 @@ class RegistroAccesoModel extends Model
     {
         return $this->db->table($this->table)
             ->join('tarjeta_acceso', 'tarjeta_acceso.ID_Tarjeta = registro_acceso_rf.ID_Tarjeta')
+            ->join('usuario', 'usuario.ID_Usuario = tarjeta_acceso.ID_Usuario')
             ->where('tarjeta_acceso.id_empresa', $idEmpresa)
             ->countAllResults();
     }
@@ -47,14 +49,11 @@ class RegistroAccesoModel extends Model
             ->getResultArray();
     }
     
-
-    public function updateregistro($id,$archivo){
-
-        $table=$this->db->table('registro_acceso_rf');
-        $table->where(['ID_Acceso'=>$id]);
-        $table->set(['Archivo_Video'=>$archivo]);
+    public function updateregistro($id, $archivo)
+    {
+        $table = $this->db->table('registro_acceso_rf');
+        $table->where(['ID_Acceso' => $id]);
+        $table->set(['Archivo_Video' => $archivo]);
         $table->update();
-
     }
-    
 }
