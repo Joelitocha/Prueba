@@ -991,7 +991,7 @@
       </a>
     </div>
 
-<!-- Apartado de Información del Usuario -->
+<!-- Contenido Principal -->
 <div class="user-info-card">
     <div class="user-card-header">
         <i class="fas fa-user-circle"></i>
