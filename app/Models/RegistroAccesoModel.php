@@ -24,7 +24,7 @@ class RegistroAccesoModel extends Model
         return $this->db->table($this->table)
             ->select('registro_acceso_rf.*, usuario.Nombre as Nombre_Usuario')
             ->join('tarjeta_acceso', 'tarjeta_acceso.ID_Tarjeta = registro_acceso_rf.ID_Tarjeta')
-            ->join('usuario', 'usuario.ID_Usuario = usuario.id_tarjeta')
+            ->join('usuario', 'usuario.ID_Tarjeta = tarjeta_acceso.ID_Tarjeta')            
             ->where('tarjeta_acceso.id_empresa', $idEmpresa)
             ->orderBy('registro_acceso_rf.Fecha_Hora', 'DESC')
             ->limit($perPage, $offset)
