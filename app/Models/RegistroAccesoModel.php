@@ -22,7 +22,7 @@ class RegistroAccesoModel extends Model
     public function getPaginatedRecordsByEmpresa($idEmpresa, $perPage, $offset)
     {
         return $this->db->table($this->table)
-            ->select('registro_acceso_rf.*, usuario.Nombre as Nombre_Usuario, tarjeta_acceso.Codigo_Tarjeta')
+            ->select('registro_acceso_rf.*, usuario.Nombre as Nombre_Usuario, usuario.Apellido as Apellido_Usuario, tarjeta_acceso.Codigo_Tarjeta')
             ->join('tarjeta_acceso', 'tarjeta_acceso.ID_Tarjeta = registro_acceso_rf.ID_Tarjeta')
             ->join('usuario', 'usuario.ID_Usuario = tarjeta_acceso.ID_Usuario')
             ->where('tarjeta_acceso.id_empresa', $idEmpresa)

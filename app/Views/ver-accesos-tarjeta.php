@@ -561,6 +561,7 @@
                         <th>Fecha y Hora</th>
                         <th>Resultado</th>
                         <th>ID_Usuario</th>
+                        <th>ID Tarjeta</th>
                         <th>Foto</th>
                     </tr>
                 </thead>
