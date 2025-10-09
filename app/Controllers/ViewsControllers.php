@@ -51,9 +51,13 @@ public function VistaAlertas()
     $id_empresa = $session->get('id_empresa');
 
     $alertaModel = new \App\Models\AlertaModel();
-    $alertas = $alertaModel->getAlertasByEmpresa($id_empresa);
 
-    return view('ver-alertas', ['alertas' => $alertas]);
+    // Obtener alertas paginadas
+    $data['alertas'] = $alertaModel->getAlertasByEmpresaPaginadas($id_empresa, 10);
+    $data['pager'] = $alertaModel->pager; // necesario para mostrar los botones
+
+    return view('ver-alertas', $data);
 }
+
 
 }

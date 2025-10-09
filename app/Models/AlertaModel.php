@@ -26,5 +26,15 @@ class AlertaModel extends Model
 
         return $builder->get()->getResultArray();
     }
+    public function getAlertasByEmpresaPaginadas($id_empresa, $perPage = 10)
+    {
+        return $this->select('alertas.*, rack.id_empresa, empresa.nombre AS nombre_empresa')
+                ->join('rack', 'alertas.id_rack = rack.id_rack')
+                ->join('empresa', 'rack.id_empresa = empresa.id_empresa')
+                ->where('rack.id_empresa', $id_empresa)
+                ->orderBy('alertas.fecha', 'DESC')
+                ->paginate($perPage);
+    }
+
 }
 
