@@ -560,8 +560,7 @@
                     <tr>
                         <th>Fecha y Hora</th>
                         <th>Resultado</th>
-                        <th>ID_Usuario</th>
-                        <th>ID Tarjeta</th>
+                        <th>Usuario</th>
                         <th>Foto</th>
                     </tr>
                 </thead>
