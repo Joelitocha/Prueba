@@ -3,6 +3,7 @@
 namespace App\Controllers; // Define el espacio de nombres de los controladores en el proyecto
 
 use App\Models\RegistroAccesoModel; // Importa el modelo RegistroAccesoModel para interactuar con los registros de acceso en la base de datos
+use App\Models\UserModel;
 
 class RegistrosAccesoController extends BaseController
 {
