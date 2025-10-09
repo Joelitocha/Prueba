@@ -11,6 +11,7 @@ if ($session->get("ID_Rol") != 5 && $session->get("ID_Rol") != 6) {
     exit;
 }
 ?>
+<?php use CodeIgniter\Pager\PagerRenderer; ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -364,6 +365,11 @@ if ($session->get("ID_Rol") != 5 && $session->get("ID_Rol") != 6) {
                         <?php endforeach; ?>
                     </tbody>
                 </table>
+                <?php if (isset($pager)) : ?>
+                  <div style="text-align:center; margin-top: 20px;">
+                      <?= $pager->links() ?>
+                  </div>
+                <?php endif; ?>
             <?php else: ?>
                 <div class="no-alertas"><p>No hay alertas registradas en el sistema</p></div>
             <?php endif; ?>
