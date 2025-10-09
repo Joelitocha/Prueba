@@ -1045,10 +1045,6 @@
                     </span>
                 </div>
             </div>
-            <div class="user-info-item">
-                <div class="user-label">ID Empresa</div>
-                <div class="user-value"><?php echo session()->get('id_empresa'); ?></div>
-            </div>
         </div>
     </div>
 </div>
