@@ -33,7 +33,6 @@ class AuthController extends BaseController
     }
 public function loginUser()
 {
-    // Inicializar y regenerar sesión de forma segura
     session()->regenerate(true);
 
     $model = new UserModel();
@@ -51,24 +50,27 @@ public function loginUser()
         // Actualizar último acceso
         $model->update($user['ID_Usuario'], ['Ultimo_Acceso' => date('Y-m-d H:i:s')]);
 
-        $empresadata= $emodel->getEmpresaDataById($user["id_empresa"]);
+        $empresadata = $emodel->getEmpresaDataById($user["id_empresa"]);
 
-        // Configurar datos de sesión persistentes
+        // 🔹 Coincidir los nombres de las variables de sesión con los usados en la vista
         $sessionData = [
-            "user_id"    => $user["ID_Usuario"],
-            "logged_in"  => true,
-            "username"   => $user["Nombre"],
-            "ID_Rol"     => $user["ID_Rol"],
-            "ID_tarjeta" => $user["ID_Tarjeta"],
-            "id_empresa" => $user["id_empresa"],
-            "enombre" => $empresadata["nombre"],
-            "ecode" => $empresadata["Ecode"],
-            "last_activity" => time()
+            "ID_Usuario"     => $user["ID_Usuario"],
+            "Nombre"         => $user["Nombre"],
+            "Email"          => $user["Email"],
+            "Ultimo_Acceso"  => $user["Ultimo_Acceso"],
+            "ID_Rol"         => $user["ID_Rol"],
+            "ID_Tarjeta"     => $user["ID_Tarjeta"],
+            "Token"          => $user["Token"] ?? null,
+            "Verificado"     => $user["Verificado"],
+            "id_empresa"     => $user["id_empresa"],
+            "enombre"        => $empresadata["nombre"],
+            "ecode"          => $empresadata["Ecode"],
+            "logged_in"      => true,
+            "last_activity"  => time()
         ];
-        
+
         session()->set($sessionData);
 
-        // Verificación de sesión
         if (!session()->get('logged_in')) {
             return redirect()->to('/login')->with('error', 'Error técnico al iniciar sesión');
         }
@@ -77,9 +79,10 @@ public function loginUser()
     }
 
     return redirect()->to('/login')
-           ->with('error', 'Email o contraseña incorrectos')
-           ->withInput();
+        ->with('error', 'Email o contraseña incorrectos')
+        ->withInput();
 }
+
 
     private function generarToken()
     {

@@ -1000,47 +1000,47 @@
     
     <div class="user-card-body">
         <div class="user-info-grid">
-            <div class="user-info-item">
-                <div class="user-label">ID Usuario</div>
-                <div class="user-value"><?php echo session()->get('ID_Usuario'); ?></div>
-            </div>
-            <div class="user-info-item">
-                <div class="user-label">Nombre</div>
-                <div class="user-value"><?php echo session()->get('Nombre'); ?></div>
-            </div>
-            <div class="user-info-item">
-                <div class="user-label">Email</div>
-                <div class="user-value"><?php echo session()->get('Email'); ?></div>
-            </div>
-            <div class="user-info-item">
-                <div class="user-label">Último Acceso</div>
-                <div class="user-value"><?php echo session()->get('Ultimo_Acceso'); ?></div>
-            </div>
-            <div class="user-info-item">
-                <div class="user-label">ID Rol</div>
-                <div class="user-value"><?php echo session()->get('ID_Rol'); ?></div>
-            </div>
-            <div class="user-info-item">
-                <div class="user-label">ID Tarjeta</div>
-                <div class="user-value"><?php echo session()->get('ID_Tarjeta') ?? 'No asignada'; ?></div>
-            </div>
-            <div class="user-info-item">
-                <div class="user-label">Token</div>
-                <div class="user-value"><?php echo session()->get('Token') ?? 'No asignado'; ?></div>
-            </div>
-            <div class="user-info-item">
-                <div class="user-label">Verificado</div>
-                <div class="user-value">
-                    <span class="status-badge <?php echo session()->get('Verificado') ? 'verified' : 'not-verified'; ?>">
-                        <?php echo session()->get('Verificado') ? '✓ Verificado' : '✗ No verificado'; ?>
-                    </span>
-                </div>
-            </div>
-            <div class="user-info-item">
-                <div class="user-label">ID Empresa</div>
-                <div class="user-value"><?php echo session()->get('id_empresa'); ?></div>
-            </div>
-        </div>
+<div class="user-info-item">
+    <div class="user-label">ID Usuario</div>
+    <div class="user-value"><?php echo session()->get('user_id'); ?></div>
+</div>
+<div class="user-info-item">
+    <div class="user-label">Nombre</div>
+    <div class="user-value"><?php echo session()->get('username'); ?></div>
+</div>
+<div class="user-info-item">
+    <div class="user-label">Email</div>
+    <div class="user-value"><?php echo session()->get('Email'); ?></div>
+</div>
+<div class="user-info-item">
+    <div class="user-label">Último Acceso</div>
+    <div class="user-value"><?php echo session()->get('Ultimo_Acceso'); ?></div>
+</div>
+<div class="user-info-item">
+    <div class="user-label">ID Rol</div>
+    <div class="user-value"><?php echo session()->get('ID_Rol'); ?></div>
+</div>
+<div class="user-info-item">
+    <div class="user-label">ID Tarjeta</div>
+    <div class="user-value"><?php echo session()->get('ID_tarjeta') ?? 'No asignada'; ?></div>
+</div>
+<div class="user-info-item">
+    <div class="user-label">Token</div>
+    <div class="user-value"><?php echo session()->get('Token') ?? 'No asignado'; ?></div>
+</div>
+<div class="user-info-item">
+    <div class="user-label">Verificado</div>
+    <div class="user-value">
+        <span class="status-badge <?php echo session()->get('Verificado') ? 'verified' : 'not-verified'; ?>">
+            <?php echo session()->get('Verificado') ? '✓ Verificado' : '✗ No verificado'; ?>
+        </span>
+    </div>
+</div>
+<div class="user-info-item">
+    <div class="user-label">ID Empresa</div>
+    <div class="user-value"><?php echo session()->get('id_empresa'); ?></div>
+</div>
+
     </div>
 </div>
 
