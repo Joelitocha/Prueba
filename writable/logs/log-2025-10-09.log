@@ -29641,3 +29641,441 @@ WARNING - 2025-10-09 10:00:41 --> [DEPRECATED] Creation of dynamic property App\
  4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-09 10:00:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 10:00:44 --> [DEPRECATED] Creation of dynamic property App\Controllers\Esp32Controller::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-09 10:00:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 10:00:47 --> [DEPRECATED] Creation of dynamic property App\Controllers\Esp32Controller::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-09 10:00:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 10:00:49 --> [DEPRECATED] Creation of dynamic property App\Controllers\Esp32Controller::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-09 10:00:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 10:00:49 --> [DEPRECATED] Creation of dynamic property App\Controllers\RegistrosAccesoController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-10-09 10:00:49 --> mysqli_sql_exception: Unknown column 'registro_acceso_rf.IS_Usuario' in 'on clause' in /var/www/html/Prueba/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /var/www/html/Prueba/system/Database/MySQLi/Connection.php(312): mysqli->query()
+#1 /var/www/html/Prueba/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/Prueba/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/Prueba/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/Prueba/app/Models/RegistroAccesoModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/Prueba/app/Controllers/RegistrosAccesoController.php(33): App\Models\RegistroAccesoModel->getPaginatedRecordsByEmpresa()
+#6 /var/www/html/Prueba/system/CodeIgniter.php(933): App\Controllers\RegistrosAccesoController->verRegistros()
+#7 /var/www/html/Prueba/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#8 /var/www/html/Prueba/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#9 /var/www/html/Prueba/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /var/www/html/Prueba/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#11 /var/www/html/Prueba/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#12 {main}
+CRITICAL - 2025-10-09 10:00:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'registro_acceso_rf.IS_Usuario' in 'on clause'
+[Method: GET, Route: ver-accesos-tarjeta]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/RegistroAccesoModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/RegistrosAccesoController.php(33): App\Models\RegistroAccesoModel->getPaginatedRecordsByEmpresa()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\RegistrosAccesoController->verRegistros()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-09 10:00:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'registro_acceso_rf.IS_Usuario' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/RegistroAccesoModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/RegistrosAccesoController.php(33): App\Models\RegistroAccesoModel->getPaginatedRecordsByEmpresa()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\RegistrosAccesoController->verRegistros()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-09 10:00:49 --> [Caused by] mysqli_sql_exception: Unknown column 'registro_acceso_rf.IS_Usuario' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/RegistroAccesoModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/RegistrosAccesoController.php(33): App\Models\RegistroAccesoModel->getPaginatedRecordsByEmpresa()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\RegistrosAccesoController->verRegistros()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-09 10:00:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 10:00:52 --> [DEPRECATED] Creation of dynamic property App\Controllers\Esp32Controller::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-09 10:00:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 10:00:54 --> [DEPRECATED] Creation of dynamic property App\Controllers\Esp32Controller::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-09 10:00:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 10:00:59 --> [DEPRECATED] Creation of dynamic property App\Controllers\Esp32Controller::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-09 10:00:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 10:00:59 --> [DEPRECATED] Creation of dynamic property App\Controllers\Esp32Controller::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-09 10:01:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 10:01:05 --> [DEPRECATED] Creation of dynamic property App\Controllers\Esp32Controller::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-09 10:01:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 10:01:05 --> [DEPRECATED] Creation of dynamic property App\Controllers\Esp32Controller::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-09 10:01:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 10:01:09 --> [DEPRECATED] Creation of dynamic property App\Controllers\Esp32Controller::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-09 10:01:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 10:01:11 --> [DEPRECATED] Creation of dynamic property App\Controllers\Esp32Controller::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-09 10:01:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 10:01:15 --> [DEPRECATED] Creation of dynamic property App\Controllers\Esp32Controller::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-09 10:01:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 10:01:16 --> [DEPRECATED] Creation of dynamic property App\Controllers\Esp32Controller::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-09 10:01:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 10:01:19 --> [DEPRECATED] Creation of dynamic property App\Controllers\Esp32Controller::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-09 10:01:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 10:01:21 --> [DEPRECATED] Creation of dynamic property App\Controllers\RegistrosAccesoController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-10-09 10:01:21 --> mysqli_sql_exception: Unknown column 'registro_acceso_rf.IS_Usuario' in 'on clause' in /var/www/html/Prueba/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /var/www/html/Prueba/system/Database/MySQLi/Connection.php(312): mysqli->query()
+#1 /var/www/html/Prueba/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/Prueba/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/Prueba/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/Prueba/app/Models/RegistroAccesoModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/Prueba/app/Controllers/RegistrosAccesoController.php(33): App\Models\RegistroAccesoModel->getPaginatedRecordsByEmpresa()
+#6 /var/www/html/Prueba/system/CodeIgniter.php(933): App\Controllers\RegistrosAccesoController->verRegistros()
+#7 /var/www/html/Prueba/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#8 /var/www/html/Prueba/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#9 /var/www/html/Prueba/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /var/www/html/Prueba/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#11 /var/www/html/Prueba/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#12 {main}
+CRITICAL - 2025-10-09 10:01:21 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'registro_acceso_rf.IS_Usuario' in 'on clause'
+[Method: GET, Route: ver-accesos-tarjeta]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/RegistroAccesoModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/RegistrosAccesoController.php(33): App\Models\RegistroAccesoModel->getPaginatedRecordsByEmpresa()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\RegistrosAccesoController->verRegistros()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-09 10:01:21 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'registro_acceso_rf.IS_Usuario' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/RegistroAccesoModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/RegistrosAccesoController.php(33): App\Models\RegistroAccesoModel->getPaginatedRecordsByEmpresa()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\RegistrosAccesoController->verRegistros()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-09 10:01:21 --> [Caused by] mysqli_sql_exception: Unknown column 'registro_acceso_rf.IS_Usuario' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/RegistroAccesoModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/RegistrosAccesoController.php(33): App\Models\RegistroAccesoModel->getPaginatedRecordsByEmpresa()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\RegistrosAccesoController->verRegistros()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-09 10:01:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 10:01:22 --> [DEPRECATED] Creation of dynamic property App\Controllers\Esp32Controller::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-09 10:01:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 10:01:22 --> [DEPRECATED] Creation of dynamic property App\Controllers\RegistrosAccesoController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-10-09 10:01:22 --> mysqli_sql_exception: Unknown column 'registro_acceso_rf.IS_Usuario' in 'on clause' in /var/www/html/Prueba/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /var/www/html/Prueba/system/Database/MySQLi/Connection.php(312): mysqli->query()
+#1 /var/www/html/Prueba/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/Prueba/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/Prueba/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/Prueba/app/Models/RegistroAccesoModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/Prueba/app/Controllers/RegistrosAccesoController.php(33): App\Models\RegistroAccesoModel->getPaginatedRecordsByEmpresa()
+#6 /var/www/html/Prueba/system/CodeIgniter.php(933): App\Controllers\RegistrosAccesoController->verRegistros()
+#7 /var/www/html/Prueba/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#8 /var/www/html/Prueba/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#9 /var/www/html/Prueba/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /var/www/html/Prueba/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#11 /var/www/html/Prueba/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#12 {main}
+CRITICAL - 2025-10-09 10:01:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'registro_acceso_rf.IS_Usuario' in 'on clause'
+[Method: GET, Route: ver-accesos-tarjeta]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/RegistroAccesoModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/RegistrosAccesoController.php(33): App\Models\RegistroAccesoModel->getPaginatedRecordsByEmpresa()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\RegistrosAccesoController->verRegistros()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-09 10:01:22 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'registro_acceso_rf.IS_Usuario' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/RegistroAccesoModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/RegistrosAccesoController.php(33): App\Models\RegistroAccesoModel->getPaginatedRecordsByEmpresa()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\RegistrosAccesoController->verRegistros()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-09 10:01:22 --> [Caused by] mysqli_sql_exception: Unknown column 'registro_acceso_rf.IS_Usuario' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/RegistroAccesoModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/RegistrosAccesoController.php(33): App\Models\RegistroAccesoModel->getPaginatedRecordsByEmpresa()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\RegistrosAccesoController->verRegistros()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-09 10:01:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 10:01:22 --> [DEPRECATED] Creation of dynamic property App\Controllers\RegistrosAccesoController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-10-09 10:01:22 --> mysqli_sql_exception: Unknown column 'registro_acceso_rf.IS_Usuario' in 'on clause' in /var/www/html/Prueba/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /var/www/html/Prueba/system/Database/MySQLi/Connection.php(312): mysqli->query()
+#1 /var/www/html/Prueba/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/Prueba/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/Prueba/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/Prueba/app/Models/RegistroAccesoModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/Prueba/app/Controllers/RegistrosAccesoController.php(33): App\Models\RegistroAccesoModel->getPaginatedRecordsByEmpresa()
+#6 /var/www/html/Prueba/system/CodeIgniter.php(933): App\Controllers\RegistrosAccesoController->verRegistros()
+#7 /var/www/html/Prueba/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#8 /var/www/html/Prueba/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#9 /var/www/html/Prueba/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /var/www/html/Prueba/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#11 /var/www/html/Prueba/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#12 {main}
+CRITICAL - 2025-10-09 10:01:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'registro_acceso_rf.IS_Usuario' in 'on clause'
+[Method: GET, Route: ver-accesos-tarjeta]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/RegistroAccesoModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/RegistrosAccesoController.php(33): App\Models\RegistroAccesoModel->getPaginatedRecordsByEmpresa()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\RegistrosAccesoController->verRegistros()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-09 10:01:22 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'registro_acceso_rf.IS_Usuario' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/RegistroAccesoModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/RegistrosAccesoController.php(33): App\Models\RegistroAccesoModel->getPaginatedRecordsByEmpresa()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\RegistrosAccesoController->verRegistros()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-09 10:01:22 --> [Caused by] mysqli_sql_exception: Unknown column 'registro_acceso_rf.IS_Usuario' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/RegistroAccesoModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/RegistrosAccesoController.php(33): App\Models\RegistroAccesoModel->getPaginatedRecordsByEmpresa()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\RegistrosAccesoController->verRegistros()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-09 10:01:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 10:01:23 --> [DEPRECATED] Creation of dynamic property App\Controllers\RegistrosAccesoController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-10-09 10:01:23 --> mysqli_sql_exception: Unknown column 'registro_acceso_rf.IS_Usuario' in 'on clause' in /var/www/html/Prueba/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /var/www/html/Prueba/system/Database/MySQLi/Connection.php(312): mysqli->query()
+#1 /var/www/html/Prueba/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/Prueba/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/Prueba/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/Prueba/app/Models/RegistroAccesoModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/Prueba/app/Controllers/RegistrosAccesoController.php(33): App\Models\RegistroAccesoModel->getPaginatedRecordsByEmpresa()
+#6 /var/www/html/Prueba/system/CodeIgniter.php(933): App\Controllers\RegistrosAccesoController->verRegistros()
+#7 /var/www/html/Prueba/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#8 /var/www/html/Prueba/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#9 /var/www/html/Prueba/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /var/www/html/Prueba/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#11 /var/www/html/Prueba/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#12 {main}
+CRITICAL - 2025-10-09 10:01:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'registro_acceso_rf.IS_Usuario' in 'on clause'
+[Method: GET, Route: ver-accesos-tarjeta]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/RegistroAccesoModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/RegistrosAccesoController.php(33): App\Models\RegistroAccesoModel->getPaginatedRecordsByEmpresa()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\RegistrosAccesoController->verRegistros()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-09 10:01:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'registro_acceso_rf.IS_Usuario' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/RegistroAccesoModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/RegistrosAccesoController.php(33): App\Models\RegistroAccesoModel->getPaginatedRecordsByEmpresa()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\RegistrosAccesoController->verRegistros()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-09 10:01:23 --> [Caused by] mysqli_sql_exception: Unknown column 'registro_acceso_rf.IS_Usuario' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/RegistroAccesoModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/RegistrosAccesoController.php(33): App\Models\RegistroAccesoModel->getPaginatedRecordsByEmpresa()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\RegistrosAccesoController->verRegistros()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-09 10:01:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-09 10:01:24 --> [DEPRECATED] Creation of dynamic property App\Controllers\Esp32Controller::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
