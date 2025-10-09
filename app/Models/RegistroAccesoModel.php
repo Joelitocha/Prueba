@@ -36,7 +36,7 @@ class RegistroAccesoModel extends Model
     {
         return $this->db->table($this->table)
             ->join('tarjeta_acceso', 'tarjeta_acceso.ID_Tarjeta = registro_acceso_rf.ID_Tarjeta')
-            ->join('usuario', 'usuario.ID_Usuario = tarjeta_acceso.ID_Usuario')
+            ->join('usuario', 'usuario.ID_Tarjeta = tarjeta_acceso.ID_Tarjeta')
             ->where('tarjeta_acceso.id_empresa', $idEmpresa)
             ->countAllResults();
     }
