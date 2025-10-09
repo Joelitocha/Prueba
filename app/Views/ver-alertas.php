@@ -11,6 +11,7 @@ if ($session->get("ID_Rol") != 5 && $session->get("ID_Rol") != 6) {
     exit;
 }
 ?>
+<?php use CodeIgniter\Pager\PagerRenderer; ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -253,6 +254,39 @@ if ($session->get("ID_Rol") != 5 && $session->get("ID_Rol") != 6) {
   }
 }
 </style>
+<!--Estilo para la paginación-->
+<style>
+  .pagination {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.pagination li {
+  display: inline;
+  margin: 0 4px;
+}
+
+.pagination a, .pagination span {
+  color: #3498db;
+  padding: 8px 12px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.pagination a:hover {
+  background-color: #3498db;
+  color: white;
+}
+
+.pagination .active span {
+  background-color: #3498db;
+  color: white;
+  border-color: #3498db;
+}
+
+</style>
 </head>
 <body>
 
@@ -364,6 +398,11 @@ if ($session->get("ID_Rol") != 5 && $session->get("ID_Rol") != 6) {
                         <?php endforeach; ?>
                     </tbody>
                 </table>
+                <?php if (isset($pager)) : ?>
+                  <div style="text-align:center; margin-top: 20px;">
+                      <?= $pager->links() ?>
+                  </div>
+                <?php endif; ?>
             <?php else: ?>
                 <div class="no-alertas"><p>No hay alertas registradas en el sistema</p></div>
             <?php endif; ?>
