@@ -881,7 +881,7 @@
               <p>Control de Accesos</p>
             </a>
             <a href="<?php echo site_url('/mi-usuario');?>" class="masonry-item">
-              <i class="fa-solid fa-circle-user"></i>
+              <i class="	fas fa-angry"></i>
               <p>Mis Datos</p>
             </a>
             
