@@ -881,8 +881,12 @@
               <p>Control de Accesos</p>
             </a>
             <a href="<?php echo site_url('/mi-usuario');?>" class="masonry-item">
-              <i class="fas fa-id-card-alt"></i>
+              <i class="fas fa-stamp"></i>
               <p>Mis Datos</p>
+            </a>
+            <a href="<?php echo site_url('/dispositivo');?>" class="masonry-item">
+              <i class="fas fa-network-wired"></i>
+              <p>Gestionar Dispositivo</p>
             </a>
             
           <?php elseif ($rol == 6): ?>
