@@ -892,20 +892,24 @@
           <?php elseif ($rol == 6): ?>
             <!-- Iconos para Supervisor -->
             <a href="<?php echo site_url('/consultar-rfid');?>" class="masonry-item">
-              <i class="fas fa-search"></i>
-              <p>Consultar Estado</p>
+              <i class="fas fa-money-check"></i>
+              <p>Consultar Estado de la Tarjeta</p>
             </a>
             <a href="<?php echo site_url('/ver-alertas');?>" class="masonry-item">
-              <i class="fas fa-bell"></i>
-              <p>Alertas Recientes</p>
-            </a>
-            <a href="<?php echo site_url('/ver-accesos-tarjeta');?>" class="masonry-item">
-              <i class="fas fa-door-open"></i>
-              <p>Registro de Accesos</p>
+              <i class="fas fa-exclamation-triangle"></i>
+              <p>Alertas del Sistema</p>
             </a>
             <a href="<?php echo site_url('/historial-cambios');?>" class="masonry-item">
               <i class="fas fa-history"></i>
-              <p>Historial de Cambios</p>
+              <p>Historial Completo</p>
+            </a>
+            <a href="<?php echo site_url('/ver-accesos-tarjeta');?>" class="masonry-item">
+              <i class="fas fa-door-open"></i>
+              <p>Control de Accesos</p>
+            </a>
+            <a href="<?php echo site_url('/mi-usuario');?>" class="masonry-item">
+              <i class="fas fa-stamp"></i>
+              <p>Mis Datos</p>
             </a>
 
           <?php elseif ($rol == 7): ?>
