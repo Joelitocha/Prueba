@@ -918,6 +918,10 @@
               <i class="fas fa-search"></i>
               <p>Consultar Estado</p>
             </a>
+            <a href="<?php echo site_url('/mi-usuario');?>" class="masonry-item">
+              <i class="fas fa-stamp"></i>
+              <p>Mis Datos</p>
+            </a>
           <?php endif; ?>
         </div>
       </div>
