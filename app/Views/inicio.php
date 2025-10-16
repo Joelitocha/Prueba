@@ -880,6 +880,10 @@
               <i class="fas fa-door-open"></i>
               <p>Control de Accesos</p>
             </a>
+            <a href="<?php echo site_url('/mi-usuario');?>" class="masonry-item">
+              <i class="fa-solid fa-circle-user"></i>
+              <p>Mis Datos</p>
+            </a>
             
           <?php elseif ($rol == 6): ?>
             <!-- Iconos para Supervisor -->
