@@ -465,7 +465,7 @@ $rol = $session->get("ID_Rol");
               <span class="detail-label">ID:</span>
               <span class="detail-value"><?= esc($tarjeta['ID_Tarjeta'] ?? 'N/A') ?></span>
           </div>
-          <div class="detail-row <?= ($tarjeta['estado'] ?? '') === 'Activa' ? 'status-active' : 'status-inactive' ?>">
+          <div class="detail-row <?= ($tarjeta['Estado'] ?? '') === 'Activa' ? 'status-active' : 'status-inactive' ?>">
               <span class="detail-label">Estado:</span>
               <span class="detail-value"><?= esc($tarjeta['Estado'] ?? 'Desconocido') ?></span>
           </div>
