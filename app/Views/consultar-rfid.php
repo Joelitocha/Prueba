@@ -463,27 +463,27 @@ $rol = $session->get("ID_Rol");
       <div class="card-details">
           <div class="detail-row">
               <span class="detail-label">ID:</span>
-              <span class="detail-value"><?= esc($tarjeta['id'] ?? 'N/A') ?></span>
+              <span class="detail-value"><?= esc($tarjeta['ID_Tarjeta'] ?? 'N/A') ?></span>
           </div>
           <div class="detail-row <?= ($tarjeta['estado'] ?? '') === 'Activa' ? 'status-active' : 'status-inactive' ?>">
               <span class="detail-label">Estado:</span>
-              <span class="detail-value"><?= esc($tarjeta['estado'] ?? 'Desconocido') ?></span>
+              <span class="detail-value"><?= esc($tarjeta['Estado'] ?? 'Desconocido') ?></span>
           </div>
           <div class="detail-row">
               <span class="detail-label">Fecha Emisión:</span>
-              <span class="detail-value"><?= esc($tarjeta['fecha_emision'] ?? 'N/A') ?></span>
+              <span class="detail-value"><?= esc($tarjeta['Fecha_emision'] ?? 'N/A') ?></span>
           </div>
           <div class="detail-row">
               <span class="detail-label">Fecha Expiración:</span>
-              <span class="detail-value"><?= esc($tarjeta['fecha_expiracion'] ?? 'No expira') ?></span>
+              <span class="detail-value"><?= esc($tarjeta['Fecha_Expiracion'] ?? 'No expira') ?></span>
           </div>
           <div class="detail-row">
               <span class="detail-label">Intentos Fallidos:</span>
-              <span class="detail-value"><?= esc($tarjeta['intentos_fallidos'] ?? 0) ?></span>
+              <span class="detail-value"><?= esc($tarjeta['Intentos_Fallidos'] ?? 0) ?></span>
           </div>
           <div class="detail-row">
               <span class="detail-label">Horario Uso:</span>
-              <span class="detail-value"><?= esc($tarjeta['horario_uso'] ?? 'Sin límite') ?></span>
+              <span class="detail-value"><?= esc($tarjeta['Horario_Uso'] ?? 'Sin límite') ?></span>
           </div>
       </div>
   <?php elseif (isset($error)): ?>
