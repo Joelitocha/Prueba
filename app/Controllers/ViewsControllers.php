@@ -19,7 +19,11 @@ public function VistaConsultar() {
     $tarjetamodel = new \App\Models\TarjetaModel;
     $id = session()->get('ID_tarjeta');
 
-
+    if (empty($id)) {
+        return view("consultar-rfid", [
+            "error" => "No tienes ninguna tarjeta asociada a tu cuenta."
+        ]);
+    }
 
     $tarjeta = $tarjetamodel->obtenerEstado($id);
 
