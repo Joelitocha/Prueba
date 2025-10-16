@@ -17,7 +17,7 @@ class ViewsControllers extends BaseController
 
 public function VistaConsultar() {
     $tarjetamodel = new \App\Models\TarjetaModel;
-    $id = session()->get('ID_tarjeta');
+    $id = session()->get('ID_Tarjeta');
 
     if (empty($id)) {
         return view("consultar-rfid", [
