@@ -1,0 +1,2227 @@
+INFO - 2025-10-18 00:13:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 00:13:20 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 00:40:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 00:40:09 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 01:04:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 01:04:44 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-18 01:58:19 --> ErrorException: Undefined variable $message
+[Method: GET, Route: aa.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:19 --> ErrorException: Undefined variable $message
+[Method: GET, Route: abcd.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:20 --> ErrorException: Undefined variable $message
+[Method: GET, Route: admin.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:20 --> ErrorException: Undefined variable $message
+[Method: GET, Route: buy.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:21 --> ErrorException: Undefined variable $message
+[Method: GET, Route: cgi-bin/]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:22 --> ErrorException: Undefined variable $message
+[Method: GET, Route: edit.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:22 --> ErrorException: Undefined variable $message
+[Method: GET, Route: file.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:23 --> ErrorException: Undefined variable $message
+[Method: GET, Route: flower.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:24 --> ErrorException: Undefined variable $message
+[Method: GET, Route: images/index.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:24 --> ErrorException: Undefined variable $message
+[Method: GET, Route: info.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:25 --> ErrorException: Undefined variable $message
+[Method: GET, Route: ioxi-o.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:25 --> ErrorException: Undefined variable $message
+[Method: GET, Route: nc4.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:26 --> ErrorException: Undefined variable $message
+[Method: GET, Route: xleet.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:27 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wp-admin/includes/]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:27 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wp-content/upgrade/index.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:28 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wp-content/uploads/admin.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:28 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wp-good.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:29 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wp-includes/Text/Diff/Renderer/]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:30 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wp-includes/style-engine/]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:30 --> ErrorException: Undefined variable $message
+[Method: GET, Route: xmrlpc.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:31 --> ErrorException: Undefined variable $message
+[Method: GET, Route: about.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:32 --> ErrorException: Undefined variable $message
+[Method: GET, Route: adminfuns.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:32 --> ErrorException: Undefined variable $message
+[Method: GET, Route: alfa.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:33 --> ErrorException: Undefined variable $message
+[Method: GET, Route: asasx.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:33 --> ErrorException: Undefined variable $message
+[Method: GET, Route: autoload_classmap.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:34 --> ErrorException: Undefined variable $message
+[Method: GET, Route: classwithtostring.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:35 --> ErrorException: Undefined variable $message
+[Method: GET, Route: cong.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:35 --> ErrorException: Undefined variable $message
+[Method: GET, Route: file2.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:36 --> ErrorException: Undefined variable $message
+[Method: GET, Route: moon.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:36 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wp-admin/css/colors/blue/index.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:37 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wp-content/index.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:38 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wp-content/plugins/yanierin/akcc.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:38 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wp-content/uploads/index.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:39 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wp-content/wp-conflg.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:40 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wp-cron.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:40 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wp-includes/IXR/]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:41 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wp-includes/block-supports/]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:41 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wp-includes/fonts/]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:42 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wp-includes/fonts/index.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:43 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wp-includes/js/crop/]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:43 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wp-includes/rest-api/]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 01:58:44 --> ErrorException: Undefined variable $message
+[Method: GET, Route: wp-includes/widgets/]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-18 02:40:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 02:40:15 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 02:45:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 02:45:04 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 02:56:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 02:56:37 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 02:58:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 02:58:36 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-18 03:00:00 --> ErrorException: Undefined variable $message
+[Method: GET, Route: cargar_acceso]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 03:00:03 --> ErrorException: Undefined variable $message
+[Method: GET, Route: cargar_acceso]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 03:00:07 --> ErrorException: Undefined variable $message
+[Method: GET, Route: cargar_acceso]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-18 03:25:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 03:25:53 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-18 03:26:15 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .git/config]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 03:27:09 --> ErrorException: Undefined variable $message
+[Method: GET, Route: swiper-bundle.min.js]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 03:27:09 --> ErrorException: Undefined variable $message
+[Method: GET, Route: cdn.js]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-18 04:42:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 04:42:25 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 04:42:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 04:42:48 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 05:22:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 05:22:32 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 06:28:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 06:28:47 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 06:29:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 06:29:16 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 07:26:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 07:26:05 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-18 07:26:43 --> ErrorException: Undefined variable $message
+[Method: GET, Route: security.txt]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-18 07:30:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 07:30:54 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-18 07:38:18 --> ErrorException: Undefined variable $message
+[Method: GET, Route: cargar_acceso]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-18 08:20:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 08:20:27 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 08:28:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 08:28:24 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 08:28:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 08:28:30 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 08:30:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 08:30:58 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 08:52:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 08:52:32 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-18 09:06:13 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:06:14 --> ErrorException: Undefined variable $message
+[Method: POST, Route: /]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:07:07 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-18 09:07:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 09:07:09 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-18 09:07:13 --> ErrorException: Undefined variable $message
+[Method: GET, Route: sendgrid.env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:07:14 --> ErrorException: Undefined variable $message
+[Method: GET, Route: twilio.env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:07:15 --> ErrorException: Undefined variable $message
+[Method: GET, Route: api/.env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:07:17 --> ErrorException: Undefined variable $message
+[Method: GET, Route: phpinfo/]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:07:18 --> ErrorException: Undefined variable $message
+[Method: GET, Route: dev/.env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:07:20 --> ErrorException: Undefined variable $message
+[Method: GET, Route: app_dev.php/_profiler/phpinfo]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:07:22 --> ErrorException: Undefined variable $message
+[Method: GET, Route: admin/.env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:07:23 --> ErrorException: Undefined variable $message
+[Method: GET, Route: laravel/.env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:07:25 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .config.yaml]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:07:26 --> ErrorException: Undefined variable $message
+[Method: GET, Route: backend/.env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:07:28 --> ErrorException: Undefined variable $message
+[Method: GET, Route: secrets.env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:07:30 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .env.example]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:07:32 --> ErrorException: Undefined variable $message
+[Method: GET, Route: web/.env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:07:33 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .env.bak]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:07:35 --> ErrorException: Undefined variable $message
+[Method: GET, Route: staging/.env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:07:36 --> ErrorException: Undefined variable $message
+[Method: GET, Route: debug/default/view]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:07:38 --> ErrorException: Undefined variable $message
+[Method: GET, Route: core/.env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:07:39 --> ErrorException: Undefined variable $message
+[Method: GET, Route: phpinfo.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:07:40 --> ErrorException: Undefined variable $message
+[Method: GET, Route: info/]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:07:42 --> ErrorException: Undefined variable $message
+[Method: GET, Route: images/.env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:07:43 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .env.save.1]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:07:46 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .env.save]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:07:47 --> ErrorException: Undefined variable $message
+[Method: GET, Route: API/.env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:07:49 --> ErrorException: Undefined variable $message
+[Method: GET, Route: app/.env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:07:50 --> ErrorException: Undefined variable $message
+[Method: GET, Route: test]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:22:50 --> ErrorException: Undefined variable $message
+[Method: GET, Route: owa/auth/x.js]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:51:35 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 09:51:36 --> ErrorException: Undefined variable $message
+[Method: POST, Route: /]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-18 12:01:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 12:01:49 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 12:12:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 12:12:18 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 12:12:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 12:12:25 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 12:12:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 12:12:28 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 12:12:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 12:12:31 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-18 12:24:04 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .git/config]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-18 13:18:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 13:18:05 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 13:29:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 13:29:54 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 13:39:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 13:39:06 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-18 14:21:24 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .git/config]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-18 14:25:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 14:25:02 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-18 14:28:33 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .git/config]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 15:26:35 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 15:26:36 --> ErrorException: Undefined variable $message
+[Method: POST, Route: /]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-18 15:43:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 15:43:32 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 16:44:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 16:44:18 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 17:03:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 17:03:45 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-18 17:20:39 --> ErrorException: Undefined variable $message
+[Method: GET, Route: phpinfo.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 17:20:39 --> ErrorException: Undefined variable $message
+[Method: GET, Route: p.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 17:20:39 --> ErrorException: Undefined variable $message
+[Method: GET, Route: info.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 17:20:39 --> ErrorException: Undefined variable $message
+[Method: GET, Route: i.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 17:20:39 --> ErrorException: Undefined variable $message
+[Method: GET, Route: test.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-18 17:24:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 17:24:30 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 17:24:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 17:24:31 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 17:24:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 17:24:32 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 17:24:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 17:24:33 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-18 17:24:34 --> ErrorException: Undefined variable $message
+[Method: GET, Route: purchases/save]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-18 17:49:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 17:49:19 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-18 18:34:56 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 18:34:57 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 19:27:20 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 19:27:21 --> ErrorException: Undefined variable $message
+[Method: POST, Route: /]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-18 19:27:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 19:27:36 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 20:43:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 20:43:41 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-18 21:06:03 --> ErrorException: Undefined variable $message
+[Method: GET, Route: ab2g]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 21:06:04 --> ErrorException: Undefined variable $message
+[Method: GET, Route: ab2h]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 21:06:05 --> ErrorException: Undefined variable $message
+[Method: GET, Route: alive.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-18 21:06:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 21:06:10 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 21:06:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 21:06:11 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-18 21:06:12 --> ErrorException: Undefined variable $message
+[Method: GET, Route: teorema505]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-18 21:07:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 21:07:44 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-18 21:19:52 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 21:19:56 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 21:20:02 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .env.save]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-18 21:20:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 21:20:07 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-18 21:20:08 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .env.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 21:20:15 --> ErrorException: Undefined variable $message
+[Method: GET, Route: beta/.env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 21:20:21 --> ErrorException: Undefined variable $message
+[Method: GET, Route: prod/.env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 21:20:27 --> ErrorException: Undefined variable $message
+[Method: GET, Route: env.js]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 21:20:36 --> ErrorException: Undefined variable $message
+[Method: POST, Route: /]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 21:20:43 --> ErrorException: Undefined variable $message
+[Method: GET, Route: phpinfo]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 21:20:52 --> ErrorException: Undefined variable $message
+[Method: GET, Route: phpinfo.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-18 21:28:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 21:28:13 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-18 21:33:47 --> ErrorException: Undefined variable $message
+[Method: GET, Route: geoserver/web/]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-18 21:45:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 21:45:29 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 22:35:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 22:35:57 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-18 22:37:57 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .git/config]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-18 22:43:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 22:43:22 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 22:43:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 22:43:24 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 22:43:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 22:43:25 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 22:43:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 22:43:26 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 22:47:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 22:47:37 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 23:11:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 23:11:44 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 23:24:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 23:24:08 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 23:30:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 23:30:44 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 23:30:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 23:30:45 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-18 23:36:34 --> ErrorException: Undefined variable $message
+[Method: GET, Route: developmentserver/metadatauploader]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-18 23:37:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 23:37:47 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-18 23:39:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 23:39:57 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-18 23:52:07 --> ErrorException: Undefined variable $message
+[Method: GET, Route: backend/.env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 23:52:09 --> ErrorException: Undefined variable $message
+[Method: GET, Route: app/.env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 23:52:13 --> ErrorException: Undefined variable $message
+[Method: GET, Route: core/.env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 23:52:16 --> ErrorException: Undefined variable $message
+[Method: GET, Route: admin/.env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 23:52:21 --> ErrorException: Undefined variable $message
+[Method: GET, Route: www/.env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 23:52:23 --> ErrorException: Undefined variable $message
+[Method: GET, Route: docker/.env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 23:52:24 --> ErrorException: Undefined variable $message
+[Method: GET, Route: laravel/.env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 23:52:26 --> ErrorException: Undefined variable $message
+[Method: GET, Route: env/.env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 23:52:27 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .env.prod]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 23:52:32 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .env.local]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 23:52:45 --> ErrorException: Undefined variable $message
+[Method: GET, Route: env.backup]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 23:52:51 --> ErrorException: Undefined variable $message
+[Method: GET, Route: phpinfo.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 23:52:54 --> ErrorException: Undefined variable $message
+[Method: GET, Route: _phpinfo.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 23:52:58 --> ErrorException: Undefined variable $message
+[Method: GET, Route: info.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 23:53:10 --> ErrorException: Undefined variable $message
+[Method: GET, Route: api/login]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 23:53:28 --> ErrorException: Undefined variable $message
+[Method: GET, Route: backup.sql]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 23:53:31 --> ErrorException: Undefined variable $message
+[Method: GET, Route: awc_prod.sql]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 23:53:33 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .AWS_/credentials]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 23:53:39 --> ErrorException: Undefined variable $message
+[Method: GET, Route: config.php]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 23:53:41 --> ErrorException: Undefined variable $message
+[Method: GET, Route: .env]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 23:53:42 --> ErrorException: Undefined variable $message
+[Method: POST, Route: /]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-18 23:53:42 --> ErrorException: Undefined variable $message
+[Method: GET, Route: config.json]
+in APPPATH/Views/errors/html/error_404.php on line 172.
+ 1 APPPATH/Views/errors/html/error_404.php(172): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/var/www/html/Prueba/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Config/Routes.php(88): view()
+ 6 SYSTEMPATH/CodeIgniter.php(955): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH/CodeIgniter.php(364): CodeIgniter\CodeIgniter->display404errors()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+INFO - 2025-10-18 23:54:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-18 23:54:21 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
