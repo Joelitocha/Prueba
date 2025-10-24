@@ -52,7 +52,6 @@ public function loginUser()
 
         $empresadata = $emodel->getEmpresaDataById($user["id_empresa"]);
 
-        // 🔹 Coincidir los nombres de las variables de sesión con los usados en la vista
         $sessionData = [
             "ID_Usuario"     => $user["ID_Usuario"],
             "Nombre"         => $user["Nombre"],
