@@ -303,7 +303,7 @@
         </form>
 
         <div class="additional-options">
-            <a href="<?= base_url('/forgot-password') ?>">
+            <a href="<?= base_url('/#') ?>">
                 <i class="fas fa-question-circle me-1"></i> ¿Olvidaste tu contraseña?
             </a>
         </div>
