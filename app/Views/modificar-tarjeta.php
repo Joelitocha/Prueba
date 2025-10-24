@@ -584,7 +584,6 @@
             <tr>
               <th>ID Tarjeta</th>
               <th>UID</th>
-              <th>Horario de Uso</th>
               <th>Estado</th>
               <th>Acciones</th>
             </tr>
@@ -594,9 +593,6 @@
     <tr>
       <td><?= esc($tarjeta['ID_Tarjeta']); ?></td>
       <td><?= esc($tarjeta['UID']); ?></td>
-      <td>
-        <?= !empty($tarjeta['Horario_Uso']) ? esc($tarjeta['Horario_Uso']) : 'Sin límite'; ?>
-      </td>
       <td class="<?= $tarjeta['Estado'] == 1 ? 'estado-activa' : 'estado-inactiva'; ?>">
         <?= $tarjeta['Estado'] == 1 ? 'Activa' : 'Inactiva'; ?>
       </td>

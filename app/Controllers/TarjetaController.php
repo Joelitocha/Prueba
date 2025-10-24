@@ -189,9 +189,6 @@ public function update()
     $fechaExpiracion = $this->request->getPost('fecha_expiracion');
     $data['Fecha_Expiracion'] = empty($fechaExpiracion) ? null : $fechaExpiracion;
 
-    // Manejar Horario_Uso
-    $horarioUso = trim($this->request->getPost('horario_uso'));
-    $data['Horario_Uso'] = empty($horarioUso) ? null : $horarioUso;
 
     $model->update($id, $data);
     return redirect()->to('/modificar-tarjeta')->with('success', 'Tarjeta actualizada exitosamente');

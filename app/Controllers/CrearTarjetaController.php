@@ -52,10 +52,6 @@ class CrearTarjetaController extends BaseController
         $fechaExpiracion = $this->request->getPost('Fecha_Expiracion');
         $data['Fecha_Expiracion'] = empty($fechaExpiracion) ? null : $fechaExpiracion;
     
-        // Manejar Horario_Uso (convertir vacío a null)
-        $horarioUso = trim($this->request->getPost('Horario_Uso'));
-        $data['Horario_Uso'] = empty($horarioUso) ? null : $horarioUso;
-    
         // Validar UID
         if (empty($data['UID'])) {
             return redirect()->back()->with('error', 'El UID de la tarjeta es requerido');
