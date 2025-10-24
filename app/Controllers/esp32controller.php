@@ -79,7 +79,7 @@ public function vincular_esp()
             ])->setStatusCode(400);
         }
 
-        $resultado = $modelo->vincular_dispositivo($device_id, $ssid, $password, $nombre, $empresa['id_empresa']);
+        $resultado = $modelo->vincular_dispositivo($device_id, $ssid, $password, $nombre, $empresa['id_empresa'],$idrack);
 
         if (!$resultado) {
             return $this->response->setJSON([
