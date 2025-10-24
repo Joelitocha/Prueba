@@ -432,7 +432,7 @@ $rol = $session->get("ID_Rol");
               <option value="inactivo" <?= $dispositivo['estado'] == 'inactivo' ? 'selected' : '' ?>>Inactivo</option>
             </select>
           </div>
-
+          <input type="hidden" name="ID_Rack" value="<?php echo $dispositivo["ID_Rack"];?>">
           <div class="button-container">
             <a href="<?php echo site_url('/dispositivo'); ?>" class="btn-volver">
               <i class="fas fa-times"></i> Cancelar
