@@ -631,6 +631,7 @@
               <th>Email</th>
               <th>Rol</th>
               <th>Tarjeta</th>
+              <th>Horario de Uso</th>
               <th>Acciones</th>
             </tr>
           </thead>
@@ -663,6 +664,18 @@
                 <span class="<?php echo $rolClase; ?>"><?php echo $rolNombre; ?></span>
               </td>
               <td><?php echo $u["ID_Tarjeta"]; ?></td>
+              <td>
+                  <?php 
+                  if (!empty($u["horario_uso"])) {
+                      $horario = json_decode($u["horario_uso"], true);
+                      foreach ($horario as $dia => $h) {
+                          echo ucfirst($dia) . ": " . $h["inicio"] . " - " . $h["fin"] . "<br>";
+                      }
+                  } else {
+                      echo "Sin horario definido";
+                  }
+                  ?>
+              </td>
               <td>
                 <div style="display: flex; gap: 5px;">
                   <!-- Botón Modificar (siempre visible) -->
