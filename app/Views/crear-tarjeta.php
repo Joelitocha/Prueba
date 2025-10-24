@@ -431,12 +431,6 @@
           </div>
 
           <div class="form-group">
-            <label for="Horario_Uso">Horario de Uso</label>
-            <input type="text" name="Horario_Uso" id="Horario_Uso" value="" placeholder="Ej: 08:00-18:00 o L-V:08:00-18:00,S-D:10:00-15:00">
-            <p class="form-note">Dejar vacío para tarjeta sin restricción horaria</p>
-          </div>
-
-          <div class="form-group">
             <label for="Intentos_Fallidos">Intentos Fallidos Permitidos</label>
             <input type="number" name="Intentos_Fallidos" id="Intentos_Fallidos" min="1" max="5" value="3">
             <p class="form-note">Número de intentos fallidos antes del bloqueo automático (1-5)</p>
