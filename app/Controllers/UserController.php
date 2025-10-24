@@ -79,6 +79,9 @@ class UserController extends BaseController
         // Obtener los datos previos del usuario
         $usuarioAnterior = $userModel->find($id);
 
+        $horarioAnterior = json_decode($usuarioAnterior['horario_uso'], true);
+        $horarioNuevo = json_decode($data['horario_uso'], true);
+
         $data = [
             'ID_Usuario' => $id,
             'Nombre' => $nombre,
@@ -88,7 +91,13 @@ class UserController extends BaseController
             'horario_uso' => json_encode($horarioUso)
         ];
         
-
+        $diasCambiados = [];
+        foreach ($horarioNuevo as $dia => $valor) {
+            $ant = isset($horarioAnterior[$dia]) ? $horarioAnterior[$dia] : null;
+            if ($valor !== $ant) {
+                $diasCambiados[] = $dia;
+            }
+        }
         // Actualizar los datos del usuario
         if ($userModel->updateUser($id, $data)) {
             // Verificar si hubo cambios y registrar cada uno
@@ -106,6 +115,10 @@ class UserController extends BaseController
             }
             if ($usuarioAnterior['ID_Tarjeta'] !== $tarjeta) {
                 $mensaje = "MT: El usuario \"{$nombre}\" cambió su tarjeta de \"{$usuarioAnterior['ID_Tarjeta']}\" a \"{$tarjeta}\".";
+                $this->registrarCambio($mensaje);
+            }
+            if (!empty($diasCambiados)) {
+                $mensaje = "MH: El usuario \"{$nombre}\" cambió los días de acceso: " . implode(", ", $diasCambiados);
                 $this->registrarCambio($mensaje);
             }
 
