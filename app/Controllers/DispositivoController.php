@@ -17,7 +17,8 @@ public function vistadisp($idRack = null)
     if ($idRack) {
         // 🔹 Mostrar dispositivos de un rack específico
         $rack = $rackModel->where('ID_Rack', $idRack)
-                          ->where('id_empresa', $idEmpresa); // 🔹 validamos que el rack sea de la empresa;
+                          ->where('id_empresa', $idEmpresa) // 🔹 validamos que el rack sea de la empresa
+                          ->first();
 
         if (!$rack) {
             return redirect()->to('/dispositivo')->with('error', 'No tenés permiso para ver este rack');
