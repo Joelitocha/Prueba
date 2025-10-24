@@ -10,7 +10,7 @@
     <meta property="og:url" content="<?= current_url() ?>">
     <meta property="og:title" content="<?= $og_title ?? $title ?? 'RackON' ?>">
     <meta property="og:description" content="<?= $og_description ?? $description ?? 'Soluciones RFID para gestión de accesos' ?>">
-    <meta property="og:image" content="<?= base_url('assets/img/og-image.jpg') ?>">
+    <meta property="og:image" content="<?= base_url('assets/images/og-image.jpg') ?>">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
