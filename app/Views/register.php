@@ -436,17 +436,30 @@
             <option value="7">Usuario</option>
           </select>
 
-          <div class="horarios-container">
-            <?php 
-              $dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
-              foreach ($dias as $dia): ?>
-                <div class="horario-dia">
-                  <label><?php echo $dia; ?></label>
-                  <input type="time" name="horario_uso[<?php echo strtolower($dia); ?>][inicio]" value="09:00">
-                  <input type="time" name="horario_uso[<?php echo strtolower($dia); ?>][fin]" value="18:00">
-                </div>
-              <?php endforeach; ?>
-          </div>
+  <label><strong>Horario de uso</strong></label>
+  <div id="horarios-container">
+    <?php
+    $dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+    $horarioGuardado = isset($usuario) && $usuario["horario_uso"] ? json_decode($usuario["horario_uso"], true) : [];
+    
+    foreach ($dias as $dia):
+      $diaLower = strtolower($dia);
+      $activo = isset($horarioGuardado[$diaLower]) && $horarioGuardado[$diaLower] !== null;
+      $inicio = $activo ? $horarioGuardado[$diaLower]['inicio'] : '';
+      $fin = $activo ? $horarioGuardado[$diaLower]['fin'] : '';
+    ?>
+    <div class="dia-item" style="margin-bottom: 8px;">
+      <input type="checkbox" id="check_<?php echo $diaLower; ?>" name="horario_uso[<?php echo $diaLower; ?>][activo]" value="1" <?php echo $activo ? 'checked' : ''; ?>>
+      <label for="check_<?php echo $diaLower; ?>"><?php echo $dia; ?></label>
+
+      <div id="horas_<?php echo $diaLower; ?>" class="horas-dia" style="display: <?php echo $activo ? 'inline-block' : 'none'; ?>; margin-left: 15px;">
+        <input type="time" name="horario_uso[<?php echo $diaLower; ?>][inicio]" value="<?php echo $inicio; ?>">
+        <input type="time" name="horario_uso[<?php echo $diaLower; ?>][fin]" value="<?php echo $fin; ?>">
+      </div>
+    </div>
+    <?php endforeach; ?>
+  </div>
+</div>
           
           <button type="submit">Registrar Usuario</button>
           <a href="<?php echo site_url('/modificar-usuario'); ?>" class="volver-btn">
@@ -470,6 +483,24 @@
         }
       ?>
     </div>
+
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const dias = ['lunes','martes','miércoles','jueves','viernes','sábado','domingo'];
+  dias.forEach(dia => {
+    const check = document.getElementById(`check_${dia}`);
+    const horasDiv = document.getElementById(`horas_${dia}`);
+    if (check) {
+      check.addEventListener('change', () => {
+        horasDiv.style.display = check.checked ? 'inline-block' : 'none';
+        if (!check.checked) {
+          horasDiv.querySelectorAll('input').forEach(inp => inp.value = '');
+        }
+      });
+    }
+  });
+});
+</script>
 
     <script>
       // Mostrar/ocultar sidebar en móviles
