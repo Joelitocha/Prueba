@@ -666,7 +666,7 @@
               <td><?php echo $u["ID_Tarjeta"]; ?></td>
               <td>
               <?php 
-                  $horarios = json_decode($usuario['horario_uso'], true);
+                  $horarios = json_decode($usuario['Horario_Uso'], true);
                   if ($horarios) {
                       foreach ($horarios as $dia => $data) {
                           if ($data !== null) {
