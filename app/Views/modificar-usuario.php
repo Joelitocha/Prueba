@@ -643,21 +643,20 @@
                 $rolNombre = "";
                 $rolClase = "";
                 switch ($u["ID_Rol"]) {
-                  case 5: // Administrador
+                  case 5:
                     $rolNombre = "Administrador";
                     $rolClase = "role-admin";
                     break;
-                  case 6: // Supervisor
+                  case 6:
                     $rolNombre = "Supervisor";
                     $rolClase = "role-supervisor";
                     break;
-                  case 7: // Usuario
+                  case 7:
                     $rolNombre = "Usuario";
                     $rolClase = "role-user";
                     break;
                   default:
                     $rolNombre = "Desconocido";
-                    $rolClase = "";
                 }
                 ?>
                 <span class="<?php echo $rolClase; ?>"><?php echo $rolNombre; ?></span>
@@ -665,15 +664,20 @@
               <td><?php echo $u["ID_Tarjeta"]; ?></td>
               <td>
                 <div style="display: flex; gap: 5px;">
+                  <!-- Botón Modificar (siempre visible) -->
                   <form action="<?= site_url('modificar-usuario2') ?>" method="post">
                     <input type="hidden" value="<?php echo $u["ID_Usuario"]; ?>" name="id">
                     <button type="submit" class="action-btn edit-btn">
                       <i class="fas fa-edit"></i> Modificar
                     </button>
                   </form>
-                  <button type="button" class="action-btn delete-btn" onclick="mostrarModal(<?php echo $u['ID_Usuario']; ?>)">
-                    <i class="fas fa-trash-alt"></i> Eliminar
-                  </button>
+
+                  <!-- Solo mostrar botón Eliminar si NO es el mismo usuario en sesión -->
+                  <?php if ($u["ID_Usuario"] != $idSesion): ?>
+                    <button type="button" class="action-btn delete-btn" onclick="mostrarModal(<?php echo $u['ID_Usuario']; ?>)">
+                      <i class="fas fa-trash-alt"></i> Eliminar
+                    </button>
+                  <?php endif; ?>
                 </div>
               </td>
             </tr>
