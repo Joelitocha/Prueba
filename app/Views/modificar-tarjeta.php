@@ -600,7 +600,7 @@
       <td>
           <?= $tarjeta['Fecha_Expiracion'] !== null ? 
               esc($tarjeta['Fecha_Expiracion']) : 
-              'No tiene límite.' 
+              'No expira.' 
           ?>
       </td>
       <td>
