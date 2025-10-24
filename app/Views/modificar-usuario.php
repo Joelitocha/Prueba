@@ -1,6 +1,7 @@
 <?php
     $session = session();
     $rol = $session->get("ID_Rol");
+    $idSesion = $session->get("ID_Usuario");
 ?>
 
 <!doctype html>
