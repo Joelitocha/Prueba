@@ -42,7 +42,7 @@ $session=session();
         color: var(--text-color);
         overflow-x: hidden;
         scroll-behavior: smooth;
-        padding-top: 50px;
+        padding-top: 0;
         background-color: var(--light-color);
     }
     
@@ -52,13 +52,42 @@ $session=session();
         font-weight: 600;
     }
     
-    /* NAVBAR RESPONSIVE */
+    /* NAVBAR TRANSPARENTE */
     #navbar {
-        padding: 0.5rem 1rem;
-        background-color: rgba(255, 255, 255, 0.95) !important;
+        padding: 1rem 1rem;
+        background-color: rgba(255, 255, 255, 0.1) !important;
         backdrop-filter: blur(10px);
-        box-shadow: 0 2px 15px rgba(0,0,0,0.05);
         transition: all 0.3s ease;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    #navbar.scrolled {
+        background-color: rgba(255, 255, 255, 0.95) !important;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        padding: 0.5rem 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    #navbar.scrolled .navbar-brand,
+    #navbar.scrolled .nav-link,
+    #navbar.scrolled .navbar-toggler {
+        color: var(--dark-color) !important;
+    }
+    
+    #navbar.scrolled .nav-link:hover,
+    #navbar.scrolled .nav-link.active {
+        color: var(--primary-color) !important;
+        background-color: var(--primary-light);
+    }
+    
+    #navbar.scrolled .btn-outline-light {
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+    }
+    
+    #navbar.scrolled .btn-outline-light:hover {
+        background-color: var(--primary-color);
+        color: white;
     }
     
     #navbar .navbar-brand {
@@ -67,6 +96,7 @@ $session=session();
         height: 40px;
         display: flex;
         align-items: center;
+        color: white;
     }
     
     #navbar .navbar-brand img {
@@ -78,9 +108,9 @@ $session=session();
     #navbar .navbar-toggler {
         margin-left: auto;
         padding: 0.5rem;
-        border: 1px solid var(--border-color);
+        border: 1px solid rgba(255, 255, 255, 0.3);
         font-size: 1.25rem;
-        color: var(--dark-color);
+        color: white;
     }
     
     #navbar .navbar-collapse {
@@ -98,7 +128,7 @@ $session=session();
     }
     
     #navbar .nav-link {
-        color: var(--dark-color);
+        color: white;
         padding: 0.5rem 1rem;
         transition: all 0.3s ease;
         border-radius: 6px;
@@ -106,13 +136,13 @@ $session=session();
     
     #navbar .nav-link:hover,
     #navbar .nav-link.active {
-        color: var(--primary-color);
-        background-color: var(--primary-light);
+        color: white;
+        background-color: rgba(255, 255, 255, 0.2);
     }
     
     #navbar .btn-outline-light {
-        border-color: var(--primary-color);
-        color: var(--primary-color);
+        border-color: rgba(255,255,255,0.5);
+        color: white;
         padding: 0.375rem 1rem;
         white-space: nowrap;
         transition: all 0.3s ease;
@@ -120,13 +150,8 @@ $session=session();
     }
     
     #navbar .btn-outline-light:hover {
-        background-color: var(--primary-color);
-        color: white;
-    }
-    
-    #navbar.scrolled {
-        box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-        padding: 0.25rem 1rem;
+        background-color: rgba(255,255,255,0.1);
+        border-color: white;
     }
     
     /* SECCIONES GENERALES */
@@ -155,40 +180,58 @@ $session=session();
         color: var(--text-color);
     }
     
-    /* HEADER */
+    /* HEADER TRANSPARENTE */
     #header {
-        background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('assets/images/princ.png') center center no-repeat;
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assets/images/princ.png') center center no-repeat;
         background-size: cover;
-        color: var(--dark-color);
+        color: white;
         text-align: center;
+        position: relative;
+    }
+    
+    #header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(13, 110, 253, 0.1);
+        z-index: 0;
+    }
+    
+    #header .container {
+        position: relative;
+        z-index: 1;
     }
     
     #header .h1-large {
         font-size: 3.5rem;
         line-height: 1.2;
         margin-bottom: 1.5rem;
-        color: var(--dark-color);
+        color: white;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
     
     /* BOTONES */
     .btn-solid-lg {
         display: inline-block;
         padding: 15px 30px;
-        border: 1px solid var(--primary-color);
+        border: 1px solid white;
         border-radius: 6px;
-        background-color: var(--primary-color);
+        background-color: rgba(255, 255, 255, 0.2);
         color: white;
         font-weight: 600;
         text-decoration: none;
         transition: all 0.3s;
-        box-shadow: 0 4px 6px rgba(13, 110, 253, 0.2);
+        backdrop-filter: blur(5px);
     }
     
     .btn-solid-lg:hover {
-        background-color: transparent;
+        background-color: white;
         color: var(--primary-color);
         transform: translateY(-2px);
-        box-shadow: 0 6px 12px rgba(13, 110, 253, 0.25);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.2);
     }
     
     /* TARJETAS */
@@ -439,7 +482,11 @@ $session=session();
     /* Dispositivos grandes (desktops, 992px y más) */
     @media (min-width: 992px) {
         #navbar {
-            padding: 0.75rem 1.5rem;
+            padding: 1rem 1.5rem;
+        }
+        
+        #navbar.scrolled {
+            padding: 0.5rem 1.5rem;
         }
         
         #navbar .nav-item {
@@ -455,10 +502,6 @@ $session=session();
             margin-left: 1rem;
         }
         
-        #navbar.scrolled {
-            padding: 0.5rem 1.5rem;
-        }
-        
         #header .h1-large {
             font-size: 5rem;
         }
@@ -471,7 +514,7 @@ $session=session();
     /* Dispositivos pequeños (teléfonos, menos de 768px) - MEJORADO */
     @media (max-width: 767.98px) {
         body {
-            padding-top: 70px;
+            padding-top: 0;
         }
         
         #header .h1-large {
@@ -487,17 +530,25 @@ $session=session();
             padding: 0.75rem 1rem;
         }
         
+        #navbar.scrolled {
+            padding: 0.5rem 1rem;
+        }
+        
         #navbar .navbar-brand img {
             height: 45px;
         }
         
         #navbar .navbar-collapse {
-            background-color: var(--light-color);
+            background-color: rgba(255, 255, 255, 0.95);
             padding: 1rem;
             margin: 0.5rem -1rem 0 -1rem;
             border-radius: 0 0 12px 12px;
             text-align: left;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        #navbar.scrolled .navbar-collapse {
+            background-color: rgba(255, 255, 255, 0.95);
         }
         
         #navbar .navbar-nav {
@@ -513,6 +564,7 @@ $session=session();
             padding: 0.75rem 1rem;
             font-size: 1.1rem;
             display: block;
+            color: var(--dark-color);
         }
         
         #navbar .btn-outline-light {
@@ -521,6 +573,8 @@ $session=session();
             padding: 0.75rem 1rem;
             font-size: 1.1rem;
             text-align: center;
+            color: var(--primary-color);
+            border-color: var(--primary-color);
         }
         
         #funcionamiento .image-column {
