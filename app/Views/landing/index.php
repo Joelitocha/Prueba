@@ -1360,10 +1360,118 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script>
+// ============================================
+// NAVBAR SCROLL EFFECT - CORREGIDO
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.getElementById('navbar');
+    const backToTopButton = document.getElementById('backToTop');
+    
+    console.log('Navbar encontrada:', navbar);
+    
+    // Función para manejar el scroll
+    function handleScroll() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+            console.log('Scroll > 50 - Añadiendo clase scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+            console.log('Scroll <= 50 - Removiendo clase scrolled');
+        }
+        
+        // Mostrar/ocultar botón "volver arriba"
+        if (backToTopButton) {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        }
+    }
+    
+    // Ejecutar al cargar la página
+    handleScroll();
+    
+    // Escuchar el evento scroll
+    window.addEventListener('scroll', handleScroll);
+    
+    // Botón "volver arriba"
+    if (backToTopButton) {
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+});
+
+// ============================================
+// FORMULARIO DE CONTACTO
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const feedback = document.getElementById('formFeedback');
+            const spinner = document.getElementById('submitSpinner');
+            const submitText = document.getElementById('submitText');
+            
+            // Mostrar spinner
+            spinner.classList.remove('d-none');
+            submitText.textContent = 'Enviando...';
+            submitBtn.disabled = true;
+            
+            // Enviar formulario
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    feedback.textContent = '¡Mensaje enviado con éxito!';
+                    feedback.classList.remove('alert-danger', 'd-none');
+                    feedback.classList.add('alert-success');
+                    form.reset();
+                } else {
+                    throw new Error('Error en el envío');
+                }
+            })
+            .catch(error => {
+                feedback.textContent = 'Error al enviar. Por favor, inténtalo de nuevo.';
+                feedback.classList.remove('alert-success', 'd-none');
+                feedback.classList.add('alert-danger');
+            })
+            .finally(() => {
+                spinner.classList.add('d-none');
+                submitText.textContent = 'Enviar Mensaje';
+                submitBtn.disabled = false;
+            });
+        });
+    }
+});
+
+// ============================================
+// CÓDIGO DE COMPRAS
+// ============================================
 document.addEventListener('DOMContentLoaded', function() {
     // 1. Configuración inicial
-    const companyRegistrationModal = new bootstrap.Modal(document.getElementById('companyRegistrationModal'));
-    const purchaseModal = new bootstrap.Modal(document.getElementById('purchaseModal'));
+    const companyRegistrationModal = document.getElementById('companyRegistrationModal');
+    const purchaseModal = document.getElementById('purchaseModal');
+    
+    if (!companyRegistrationModal || !purchaseModal) {
+        console.log('Modales no encontrados, saliendo del código de compras');
+        return;
+    }
+    
+    const bsCompanyRegistrationModal = new bootstrap.Modal(companyRegistrationModal);
+    const bsPurchaseModal = new bootstrap.Modal(purchaseModal);
     const formSteps = document.querySelectorAll('.form-step');
     let currentStep = 0;
     let isProcessing = false;
@@ -1413,34 +1521,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function initEventListeners() {
         // Botón "Personalizar y Comprar"
-        document.querySelector('.btn-compra').addEventListener('click', () => {
-            companyRegistrationModal.show();
-        });
+        const compraBtn = document.querySelector('.btn-compra');
+        if (compraBtn) {
+            compraBtn.addEventListener('click', () => {
+                bsCompanyRegistrationModal.show();
+            });
+        }
 
         // Formulario de registro de empresa
-        document.getElementById('companyRegistrationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            transferCompanyData();
-            companyRegistrationModal.hide();
-            purchaseModal.show();
-            showStep(0);
-        });
+        const companyForm = document.getElementById('companyRegistrationForm');
+        if (companyForm) {
+            companyForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                transferCompanyData();
+                bsCompanyRegistrationModal.hide();
+                bsPurchaseModal.show();
+                showStep(0);
+            });
+        }
 
         // Navegación entre pasos
-        document.getElementById('purchaseForm').addEventListener('click', function(e) {
-            if (e.target.classList.contains('next-step')) {
-                handleNextStep();
-            } else if (e.target.classList.contains('prev-step')) {
-                handlePrevStep();
-            }
-        });
+        const purchaseForm = document.getElementById('purchaseForm');
+        if (purchaseForm) {
+            purchaseForm.addEventListener('click', function(e) {
+                if (e.target.classList.contains('next-step')) {
+                    handleNextStep();
+                } else if (e.target.classList.contains('prev-step')) {
+                    handlePrevStep();
+                }
+            });
+        }
 
         // Cantidad de dispositivos
-        document.getElementById('deviceQuantity').addEventListener('change', function() {
-            purchaseCalculations.quantity = parseInt(this.value);
-            updatePurchaseSummary();
-            renderPayPalButtons();
-        });
+        const deviceQuantity = document.getElementById('deviceQuantity');
+        if (deviceQuantity) {
+            deviceQuantity.addEventListener('change', function() {
+                purchaseCalculations.quantity = parseInt(this.value);
+                updatePurchaseSummary();
+                renderPayPalButtons();
+            });
+        }
 
         // Opciones de personalización
         document.querySelectorAll('.customization-option').forEach(input => {
@@ -1452,7 +1572,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Botón de confirmación final
-        document.getElementById('confirmPurchaseBtn').addEventListener('click', handleFinalConfirmation);
+        const confirmBtn = document.getElementById('confirmPurchaseBtn');
+        if (confirmBtn) {
+            confirmBtn.addEventListener('click', handleFinalConfirmation);
+        }
     }
 
     // 4. Funciones principales
@@ -1466,7 +1589,11 @@ document.addEventListener('DOMContentLoaded', function() {
         ];
 
         fields.forEach(([displayId, inputId]) => {
-            document.getElementById(displayId).textContent = document.getElementById(inputId).value;
+            const displayElement = document.getElementById(displayId);
+            const inputElement = document.getElementById(inputId);
+            if (displayElement && inputElement) {
+                displayElement.textContent = inputElement.value;
+            }
         });
     }
 
@@ -1678,6 +1805,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 6. Función para verificar pagos completados
     function checkPaymentsCompletion() {
         const confirmBtn = document.getElementById('confirmPurchaseBtn');
+        if (!confirmBtn) return;
         
         console.log('🔍 Verificando pagos:', {
             devicePayment: window.devicePaymentCompleted,
@@ -1717,6 +1845,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isProcessing) return;
         
         const btn = document.getElementById('confirmPurchaseBtn');
+        if (!btn) return;
+        
         const originalText = btn.innerHTML;
         
         try {
@@ -1751,7 +1881,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Resetear después de 3 segundos
             setTimeout(() => {
-                purchaseModal.hide();
+                bsPurchaseModal.hide();
                 resetForms();
                 resetPaymentStatus();
             }, 3000);
@@ -1772,13 +1902,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Función para enviar datos al controlador de CodeIgniter 4
     async function sendDataToCodeIgniterController() {
-        const clientEmail = document.getElementById('companyContactEmail').value;
-        const companyName = document.getElementById('companyName').value;
+        const clientEmail = document.getElementById('companyContactEmail');
+        const companyName = document.getElementById('companyName');
+        
+        if (!clientEmail || !companyName) {
+            throw new Error('Campos de empresa no encontrados');
+        }
         
         // Datos estructurados para CodeIgniter
         const purchaseData = {
-            email: clientEmail,
-            company_name: companyName,
+            email: clientEmail.value,
+            company_name: companyName.value,
             contact_person: document.getElementById('companyContactPerson').value,
             phone: document.getElementById('companyContactPhone').value,
             tax_id: document.getElementById('companyTaxId').value,
@@ -2019,7 +2153,7 @@ Te contactaremos dentro de 24-48 horas para coordinar el envío.
     }
 
     // Inicialización del modal
-    $('#purchaseModal').on('show.bs.modal', function() {
+    purchaseModal.addEventListener('show.bs.modal', function() {
         updatePurchaseSummary();
         resetPaymentStatus();
         document.getElementById('confirmPurchaseBtn').classList.add('d-none');
