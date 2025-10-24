@@ -58,8 +58,10 @@ public function vincular_esp()
     $password = $data->password ?? null;
     $nombre = $data->nombre ?? null;
     $ecode = $data->ecode ?? null;
+    $idrack = $data->id_rack ?? null;
 
-    if (!$device_id || !$ssid || !$password || !$nombre || !$ecode) {
+
+    if (!$device_id || !$ssid || !$password || !$nombre || !$ecode || !$idrack) {
         return $this->response->setJSON([
             "status" => "error",
             "message" => "Faltan datos obligatorios"
