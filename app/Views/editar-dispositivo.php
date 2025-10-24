@@ -411,7 +411,7 @@ $rol = $session->get("ID_Rol");
       <a href="<?php echo site_url('/dispositivo'); ?>" class="btn-volver">
         <i class="fas fa-arrow-left"></i> Volver a Dispositivos
       </a>
-      
+      <?php var_dump($dispositivo['ID_Rack']);?>
       <div class="form-container">
         <h2>Editar Dispositivo</h2>
         <form action="<?= site_url('/actualizar-dispositivo/'.$dispositivo['ID_Sistema']) ?>" method="post">
@@ -432,7 +432,7 @@ $rol = $session->get("ID_Rol");
               <option value="inactivo" <?= $dispositivo['estado'] == 'inactivo' ? 'selected' : '' ?>>Inactivo</option>
             </select>
           </div>
-
+          <input type="hidden" name="ID_Rack" value="<?php echo $dispositivo["ID_Rack"];?>">
           <div class="button-container">
             <a href="<?php echo site_url('/dispositivo'); ?>" class="btn-volver">
               <i class="fas fa-times"></i> Cancelar
