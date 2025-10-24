@@ -28,9 +28,12 @@ $session=session();
     <style>
     :root {
         --primary-color: #0d6efd;
-        --dark-color: #161223;
-        --light-color: #f7f9fd;
-        --text-color: #000000;
+        --primary-light: #e8f2ff;
+        --dark-color: #2c3e50;
+        --light-color: #ffffff;
+        --light-bg: #f8f9fa;
+        --text-color: #4a5568;
+        --border-color: #e2e8f0;
     }
     
     /* Estilos base */
@@ -39,7 +42,8 @@ $session=session();
         color: var(--text-color);
         overflow-x: hidden;
         scroll-behavior: smooth;
-        padding-top: 50px; 
+        padding-top: 50px;
+        background-color: var(--light-color);
     }
     
     h1, h2, h3, h4, h5, h6 {
@@ -51,7 +55,9 @@ $session=session();
     /* NAVBAR RESPONSIVE */
     #navbar {
         padding: 0.5rem 1rem;
-        background-color: var(--dark-color) !important;
+        background-color: rgba(255, 255, 255, 0.95) !important;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 15px rgba(0,0,0,0.05);
         transition: all 0.3s ease;
     }
     
@@ -72,9 +78,9 @@ $session=session();
     #navbar .navbar-toggler {
         margin-left: auto;
         padding: 0.5rem;
-        border: none;
+        border: 1px solid var(--border-color);
         font-size: 1.25rem;
-        color: rgba(255,255,255,0.8);
+        color: var(--dark-color);
     }
     
     #navbar .navbar-collapse {
@@ -92,19 +98,21 @@ $session=session();
     }
     
     #navbar .nav-link {
-        color: rgba(255,255,255,0.8);
+        color: var(--dark-color);
         padding: 0.5rem 1rem;
         transition: all 0.3s ease;
+        border-radius: 6px;
     }
     
     #navbar .nav-link:hover,
     #navbar .nav-link.active {
-        color: white;
+        color: var(--primary-color);
+        background-color: var(--primary-light);
     }
     
     #navbar .btn-outline-light {
-        border-color: rgba(255,255,255,0.5);
-        color: white;
+        border-color: var(--primary-color);
+        color: var(--primary-color);
         padding: 0.375rem 1rem;
         white-space: nowrap;
         transition: all 0.3s ease;
@@ -112,12 +120,12 @@ $session=session();
     }
     
     #navbar .btn-outline-light:hover {
-        background-color: rgba(255,255,255,0.1);
-        border-color: white;
+        background-color: var(--primary-color);
+        color: white;
     }
     
     #navbar.scrolled {
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 15px rgba(0,0,0,0.08);
         padding: 0.25rem 1rem;
     }
     
@@ -144,13 +152,14 @@ $session=session();
         font-size: 1.25rem;
         max-width: 800px;
         margin: 0 auto;
+        color: var(--text-color);
     }
     
     /* HEADER */
     #header {
-        background: linear-gradient(rgba(21, 35, 63, 0.7), rgba(21, 35, 63, 0.7)), url('assets/images/princ.png') center center no-repeat;
+        background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('assets/images/princ.png') center center no-repeat;
         background-size: cover;
-        color: white;
+        color: var(--dark-color);
         text-align: center;
     }
     
@@ -158,6 +167,7 @@ $session=session();
         font-size: 3.5rem;
         line-height: 1.2;
         margin-bottom: 1.5rem;
+        color: var(--dark-color);
     }
     
     /* BOTONES */
@@ -165,31 +175,36 @@ $session=session();
         display: inline-block;
         padding: 15px 30px;
         border: 1px solid var(--primary-color);
-        border-radius: 4px;
+        border-radius: 6px;
         background-color: var(--primary-color);
         color: white;
         font-weight: 600;
         text-decoration: none;
         transition: all 0.3s;
+        box-shadow: 0 4px 6px rgba(13, 110, 253, 0.2);
     }
     
     .btn-solid-lg:hover {
         background-color: transparent;
         color: var(--primary-color);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(13, 110, 253, 0.25);
     }
     
     /* TARJETAS */
     .card {
-        border: none;
-        border-radius: 8px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        transition: transform 0.3s;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        transition: transform 0.3s, box-shadow 0.3s;
         height: 100%;
         margin-bottom: 1.5rem;
+        background-color: var(--light-color);
     }
     
     .card:hover {
         transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     }
     
     .card-icon {
@@ -200,7 +215,7 @@ $session=session();
     
     /* SECCIÓN FUNCIONAMIENTO */
     #funcionamiento {
-        background-color: white;
+        background-color: var(--light-bg);
     }
     
     #funcionamiento .image-column {
@@ -213,6 +228,7 @@ $session=session();
         width: 100%;
         height: 100%;
         object-fit: cover;
+        border-radius: 12px;
     }
     
     #funcionamiento .content-column {
@@ -221,8 +237,10 @@ $session=session();
     
     #funcionamiento .step-card {
         margin-bottom: 1.5rem;
-        border: none;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        border: 1px solid var(--border-color);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        border-radius: 12px;
+        background-color: var(--light-color);
     }
     
     #funcionamiento .step-badge {
@@ -234,6 +252,9 @@ $session=session();
         justify-content: center;
         margin-right: 1rem;
         flex-shrink: 0;
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 50%;
     }
     
     /* SECCIÓN HARDWARE */
@@ -248,13 +269,14 @@ $session=session();
 
     /* SECCIÓN PLANES */
     #planes {
-        background-color: var(--light-color);
+        background-color: var(--light-bg);
         padding-top: 80px;
         padding-bottom: 80px;
     }
 
     .plan-card {
         transition: all 0.3s;
+        border-radius: 12px;
     }
 
     .plan-card:hover {
@@ -309,40 +331,41 @@ $session=session();
 
     /* SECCIÓN CONTACTO */
     #contact {
-        background: linear-gradient(rgba(2, 15, 29, 0.8), rgba(2, 15, 29, 0.8)), url('assets/images/contact-background.jpg') center center no-repeat;
+        background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('assets/images/contact-background.jpg') center center no-repeat;
         background-size: cover;
-        color: white;
+        color: var(--dark-color);
     }
     
     .contact-form .form-control {
-        background-color: rgba(255,255,255,0.1);
-        border: 1px solid rgba(255,255,255,0.2);
-        color: white;
+        background-color: rgba(255,255,255,0.8);
+        border: 1px solid var(--border-color);
+        color: var(--text-color);
         padding: 12px 15px;
+        border-radius: 8px;
     }
     
     .contact-form .form-control::placeholder {
-        color: rgba(255,255,255,0.7);
+        color: #a0aec0;
     }
 
     #contact .section-title h2 {
-        color: white !important;
+        color: var(--dark-color) !important;
     }
 
     /* FOOTER */
     footer {
         background-color: var(--dark-color);
-        color: #9ba3b1;
+        color: #cbd5e0;
     }
     
     footer a {
-        color: #9ba3b1;
+        color: #cbd5e0;
         text-decoration: none;
         transition: color 0.3s;
     }
     
     footer a:hover {
-        color: var(--primary-color);
+        color: white;
     }
     
     .social-icons a {
@@ -375,6 +398,14 @@ $session=session();
         z-index: 99;
         font-size: 20px;
         line-height: 1;
+        background-color: var(--primary-color);
+        border: none;
+        box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+    }
+    
+    #backToTop:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(13, 110, 253, 0.4);
     }
     
     /* ========================================= */
@@ -461,11 +492,12 @@ $session=session();
         }
         
         #navbar .navbar-collapse {
-            background-color: var(--dark-color);
+            background-color: var(--light-color);
             padding: 1rem;
             margin: 0.5rem -1rem 0 -1rem;
-            border-radius: 0;
+            border-radius: 0 0 12px 12px;
             text-align: left;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         #navbar .navbar-nav {
@@ -649,12 +681,10 @@ $session=session();
 </head>
 <body>
     
-<nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top py-2">
+<nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top py-2">
     <div class="container">
         <a class="navbar-brand" href="#header">
-            <img src="assets/images/mapache - rackon.png" alt="RackON Logo" 
-                 class="img-fluid" 
-                 style="height: 50px; width: auto; max-width: 150px; transition: all 0.3s ease;">
+            <!-- Aquí puedes agregar tu logo -->
         </a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
@@ -673,7 +703,7 @@ $session=session();
                        role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 1.1rem;">
                         Producto
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="productoDropdown">
+                    <ul class="dropdown-menu" aria-labelledby="productoDropdown">
                         <li><h6 class="dropdown-header">Sobre RackON</h6></li>
                         <li><a class="dropdown-item py-2" href="#introduction">
                             <i class="fas fa-question-circle me-2"></i>¿Qué es RackON?
@@ -713,7 +743,7 @@ $session=session();
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="h1-large text-white">Sistema Inteligente de Seguridad para Servidores Rack</h1>
+                <h1 class="h1-large">Sistema Inteligente de Seguridad para Servidores Rack</h1>
                 <a class="btn-solid-lg mt-3" href="#introduction">Conocer más</a>
             </div>
         </div>
@@ -778,7 +808,7 @@ $session=session();
             <div class="col-lg-6 order-lg-1 order-2 image-column">
                 <div class="h-100 w-100 overflow-hidden">
                     <img src="assets/images/rack.png" alt="Tecnología RackON en acción" class="img-fluid w-100 h-100 object-fit-cover">
-                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(0,0,0,0.3);">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(0,0,0,0.1);">
                     </div>
                 </div>
             </div>
@@ -838,7 +868,7 @@ $session=session();
     </div>
 </section>
 
-<section id="hardware" class="fullpage-section bg-light">
+<section id="hardware" class="fullpage-section">
     <div class="container">
         <div class="section-title">
             <h2>Hardware Utilizado</h2>
@@ -921,7 +951,7 @@ $session=session();
 
 <section id="contact" class="fullpage-section">
     <div class="container">
-        <div class="section-title text-white">
+        <div class="section-title">
             <h2>Contáctenos</h2>
             <p class="lead">Complete el formulario y nos pondremos en contacto con usted</p>
         </div>
