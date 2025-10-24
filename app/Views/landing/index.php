@@ -652,7 +652,7 @@ $session=session();
 <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top py-2">
     <div class="container">
         <a class="navbar-brand" href="#header">
-            <img src="assets/images/RackON.jpg" alt="RackON Logo" 
+            <img src="assets/images/mapache - rackon.png" alt="RackON Logo" 
                  class="img-fluid" 
                  style="height: 50px; width: auto; max-width: 150px; transition: all 0.3s ease;">
         </a>
