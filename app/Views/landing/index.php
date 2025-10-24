@@ -52,7 +52,7 @@ $session=session();
         font-weight: 600;
     }
     
-    /* NAVBAR TRANSPARENTE */
+        /* NAVBAR TRANSPARENTE */
     #navbar {
         padding: 1rem 1rem;
         background-color: rgba(255, 255, 255, 0.1) !important;
@@ -61,14 +61,7 @@ $session=session();
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     
-    #navbar.scrolled {
-        background-color: rgba(255, 255, 255, 0.95) !important;
-        box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-        padding: 0.5rem 1rem;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    }
-    
-    /* Cuando NO hay scroll - letras blancas */
+    /* Estado INICIAL (sin scroll) - letras BLANCAS */
     #navbar .navbar-brand,
     #navbar .nav-link,
     #navbar .navbar-toggler {
@@ -92,11 +85,18 @@ $session=session();
         color: white;
     }
     
-    /* Cuando SÍ hay scroll - letras oscuras */
+    /* Estado CON SCROLL - fondo blanco y letras OSCURAS */
+    #navbar.scrolled {
+        background-color: rgba(255, 255, 255, 0.95) !important;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        padding: 0.5rem 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
     #navbar.scrolled .navbar-brand,
     #navbar.scrolled .nav-link,
     #navbar.scrolled .navbar-toggler {
-        color: #2d3748 !important; /* Gris oscuro */
+        color: #2d3748 !important; /* Gris oscuro para buen contraste */
     }
     
     #navbar.scrolled .nav-link:hover,
@@ -114,7 +114,6 @@ $session=session();
         background-color: var(--primary-color);
         color: white;
     }
-    
     /* SECCIONES GENERALES */
     .fullpage-section {
         width: 100%;
