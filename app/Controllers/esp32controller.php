@@ -52,7 +52,7 @@ class Esp32Controller extends BaseController
 public function vincular_esp()
 {
     $data = $this->request->getJSON();
-
+log_message('debug', 'Datos recibidos: ' . print_r($data, true));
     $device_id = $data->device_id ?? null;
     $ssid = $data->ssid ?? null;
     $password = $data->password ?? null;
@@ -61,12 +61,12 @@ public function vincular_esp()
     $idrack = $data->id_rack ?? null;
 
 
-    if (!$device_id || !$ssid || !$password || !$nombre || !$ecode || !$idrack) {
-        return $this->response->setJSON([
-            "status" => "error",
-            "message" => "Faltan datos obligatorios"
-        ])->setStatusCode(400);
-    }
+    // if (!$device_id || !$ssid || !$password || !$nombre || !$ecode || !$idrack) {
+    //     return $this->response->setJSON([
+    //         "status" => "error",
+    //         "message" => "Faltan datos obligatorios"
+    //     ])->setStatusCode(400);
+    // }
 
     try {
         $modelo = new Esp32Model();
