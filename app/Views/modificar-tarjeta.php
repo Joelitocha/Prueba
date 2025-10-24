@@ -585,6 +585,7 @@
               <th>ID Tarjeta</th>
               <th>UID</th>
               <th>Estado</th>
+              <th>Fecha de Expiración</th>
               <th>Acciones</th>
             </tr>
           </thead>
