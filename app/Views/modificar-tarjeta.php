@@ -597,7 +597,12 @@
       <td class="<?= $tarjeta['Estado'] == 1 ? 'estado-activa' : 'estado-inactiva'; ?>">
         <?= $tarjeta['Estado'] == 1 ? 'Activa' : 'Inactiva'; ?>
       </td>
-      <td><?= esc($tarjeta['Fecha_Expiracion']); ?></td>
+      <td>
+          <?= $tarjeta['Fecha_Expiracion'] !== null ? 
+              esc($tarjeta['Fecha_Expiracion']) : 
+              'No tiene límite.' 
+          ?>
+      </td>
       <td>
         <div class="btn-group">
           <form action="<?= site_url('modificar-tarjeta2') ?>" method="post" style="display: inline-block;">
