@@ -435,6 +435,18 @@
             <option value="6">Supervisor</option>
             <option value="7">Usuario</option>
           </select>
+
+          <div class="horarios-container">
+            <?php 
+              $dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+              foreach ($dias as $dia): ?>
+                <div class="horario-dia">
+                  <label><?php echo $dia; ?></label>
+                  <input type="time" name="horario_uso[<?php echo strtolower($dia); ?>][inicio]" value="09:00">
+                  <input type="time" name="horario_uso[<?php echo strtolower($dia); ?>][fin]" value="18:00">
+                </div>
+              <?php endforeach; ?>
+          </div>
           
           <button type="submit">Registrar Usuario</button>
           <a href="<?php echo site_url('/modificar-usuario'); ?>" class="volver-btn">
