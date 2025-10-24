@@ -16,7 +16,6 @@ class TarjetaModel extends Model
         'UID',
         'Fecha_Expiracion',
         'Intentos_Fallidos',
-        'Horario_Uso',
         'id_empresa'
     ];
 

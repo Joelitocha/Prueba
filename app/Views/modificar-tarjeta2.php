@@ -428,12 +428,6 @@
                 <small class="form-text">Dejar vacío para tarjeta sin expiración</small>
           </div>      
           
-          <div class="form-group">
-            <label for="horario_uso">Horario de Uso</label>
-            <input type="text" name="horario_uso" id="horario_uso" value="<?= !empty($tarjeta['Horario_Uso']) ? esc($tarjeta['Horario_Uso']) : '' ?>" placeholder="Ej: 08:00-18:00 o L-V:08:00-18:00,S-D:10:00-15:00">
-            <small class="form-text">Dejar vacío para tarjeta sin restricción horaria</small>
-          </div>
-          
           <button type="submit" class="btn-submit">Actualizar Tarjeta</button>
           <a href="<?= site_url('modificar-tarjeta') ?>" class="btn-volver">Volver</a>
       </form>
