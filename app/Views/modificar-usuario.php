@@ -665,6 +665,18 @@
               </td>
               <td><?php echo $u["ID_Tarjeta"]; ?></td>
               <td>
+                  <?php 
+                  if (!empty($u["horario_uso"])) {
+                      $horario = json_decode($u["horario_uso"], true);
+                      foreach ($horario as $dia => $h) {
+                          echo ucfirst($dia) . ": " . $h["inicio"] . " - " . $h["fin"] . "<br>";
+                      }
+                  } else {
+                      echo "Sin horario definido";
+                  }
+                  ?>
+              </td>
+              <td>
                 <div style="display: flex; gap: 5px;">
                   <!-- Botón Modificar (siempre visible) -->
                   <form action="<?= site_url('modificar-usuario2') ?>" method="post">

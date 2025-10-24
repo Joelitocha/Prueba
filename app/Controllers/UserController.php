@@ -42,6 +42,8 @@ class UserController extends BaseController
         $uid = $this->request->getPost('ID_Tarjeta');
         $rol = $this->request->getPost('ID_Rol');
 
+        $horarioUso = $this->request->getPost('horario_uso');
+
         $data = [
             'Nombre' => $nombre,
             'Email' => $email,
@@ -49,8 +51,10 @@ class UserController extends BaseController
             'ID_Rol' => $rol,
             'ID_Tarjeta' => $uid,
             'Token' => null,
-            'Verificado' => 1
+            'Verificado' => 1,
+            'horario_uso' => json_encode($horarioUso)
         ];
+        
 
         if ($userModel->insertUser($data)) {
             $mensaje = "CU: Se creó un nuevo usuario \"{$nombre}\" con rol \"{$rol}\" y tarjeta \"{$uid}\".";
@@ -70,6 +74,7 @@ class UserController extends BaseController
         $email = $this->request->getPost('Email');
         $rol = $this->request->getPost('ID_Rol');
         $tarjeta = $this->request->getPost('ID_Tarjeta');
+        $horarioUso = $this->request->getPost('horario_uso');
 
         // Obtener los datos previos del usuario
         $usuarioAnterior = $userModel->find($id);
@@ -80,7 +85,9 @@ class UserController extends BaseController
             'Email' => $email,
             'ID_Rol' => $rol,
             'ID_Tarjeta' => $tarjeta,
+            'horario_uso' => json_encode($horarioUso)
         ];
+        
 
         // Actualizar los datos del usuario
         if ($userModel->updateUser($id, $data)) {

@@ -416,6 +416,18 @@
               <?php endforeach; ?>
             </select>
           </div>
+
+          <div class="horarios-container">
+            <?php 
+              $dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+              foreach ($dias as $dia): ?>
+                <div class="horario-dia">
+                  <label><?php echo $dia; ?></label>
+                  <input type="time" name="horario_uso[<?php echo strtolower($dia); ?>][inicio]" value="09:00">
+                  <input type="time" name="horario_uso[<?php echo strtolower($dia); ?>][fin]" value="18:00">
+                </div>
+              <?php endforeach; ?>
+          </div>
           
           <input type="hidden" name="id" value="<?= $user[0]['ID_Usuario'] ?>">
           <button type="submit" class="btn-submit">Actualizar Usuario</button>
