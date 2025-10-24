@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Controllers; // Define el espacio de nombres de los controladores en el proyecto
+namespace App\Controllers; 
 
-use App\Models\TarjetaModel; // Importa el modelo TarjetaModel para interactuar con la base de datos de tarjetas
+use App\Models\TarjetaModel; 
 
 class CrearTarjetaController extends BaseController
 {
     // Método para mostrar la vista de creación de tarjeta
     public function index()
     {
-        return view('crear-tarjeta'); // Carga la vista 'crear-tarjeta', donde se muestra el formulario para crear una nueva tarjeta
+        return view('crear-tarjeta'); 
     }
     private function registrarCambio($mensaje)
     {
