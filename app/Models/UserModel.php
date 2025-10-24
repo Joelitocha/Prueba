@@ -20,6 +20,7 @@ class UserModel extends Model
         'ID_Tarjeta', 
         'Token', 
         'Verificado', 
+        'Horario_Uso',
         'id_empresa'
     ];
     protected $useTimestamps = false;

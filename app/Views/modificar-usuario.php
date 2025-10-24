@@ -631,6 +631,7 @@
               <th>Email</th>
               <th>Rol</th>
               <th>Tarjeta</th>
+              <th>Horario de Uso</th>
               <th>Acciones</th>
             </tr>
           </thead>
