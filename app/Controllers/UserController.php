@@ -66,70 +66,67 @@ class UserController extends BaseController
     }
 
     // Función para actualizar los datos del usuario
-    public function actualizarUsuario()
-    {
-        $userModel = new UserModel();
-        $id = $this->request->getPost('id');
-        $nombre = $this->request->getPost('Nombre');
-        $email = $this->request->getPost('Email');
-        $rol = $this->request->getPost('ID_Rol');
-        $tarjeta = $this->request->getPost('ID_Tarjeta');
-        $horarioUso = $this->request->getPost('horario_uso');
+public function actualizarUsuario()
+{
+    $userModel = new UserModel();
+    $id = $this->request->getPost('id');
+    $nombre = $this->request->getPost('Nombre');
+    $email = $this->request->getPost('Email');
+    $rol = $this->request->getPost('ID_Rol');
+    $tarjeta = $this->request->getPost('ID_Tarjeta');
+    $horarioUso = $this->request->getPost('horario_uso');
 
-        // Obtener los datos previos del usuario
-        $usuarioAnterior = $userModel->find($id);
+    // Obtener los datos previos del usuario
+    $usuarioAnterior = $userModel->find($id);
 
-        $horarioAnterior = json_decode($usuarioAnterior['horario_uso'], true);
-        $horarioNuevo = json_decode($data['horario_uso'], true);
+    $horarioAnterior = json_decode($usuarioAnterior['horario_uso'], true);
+    $horarioNuevo = $horarioUso; // Array recibido del formulario
 
-        $data = [
-            'ID_Usuario' => $id,
-            'Nombre' => $nombre,
-            'Email' => $email,
-            'ID_Rol' => $rol,
-            'ID_Tarjeta' => $tarjeta,
-            'horario_uso' => json_encode($horarioUso)
-        ];
-        
-        $diasCambiados = [];
-        foreach ($horarioNuevo as $dia => $valor) {
-            $ant = isset($horarioAnterior[$dia]) ? $horarioAnterior[$dia] : null;
-            if ($valor !== $ant) {
-                $diasCambiados[] = $dia;
-            }
-        }
-        // Actualizar los datos del usuario
-        if ($userModel->updateUser($id, $data)) {
-            // Verificar si hubo cambios y registrar cada uno
-            if ($usuarioAnterior['Nombre'] !== $nombre) {
-                $mensaje = "MU: El usuario con ID \"{$id}\" cambió su nombre de \"{$usuarioAnterior['Nombre']}\" a \"{$nombre}\".";
-                $this->registrarCambio($mensaje);
-            }
-            if ($usuarioAnterior['Email'] !== $email) {
-                $mensaje = "ME: El usuario \"{$nombre}\" actualizó su email de \"{$usuarioAnterior['Email']}\" a \"{$email}\".";
-                $this->registrarCambio($mensaje);
-            }
-            if ($usuarioAnterior['ID_Rol'] !== $rol) {
-                $mensaje = "MR: El usuario \"{$nombre}\" cambió su rol de \"{$usuarioAnterior['ID_Rol']}\" a \"{$rol}\".";
-                $this->registrarCambio($mensaje);
-            }
-            if ($usuarioAnterior['ID_Tarjeta'] !== $tarjeta) {
-                $mensaje = "MT: El usuario \"{$nombre}\" cambió su tarjeta de \"{$usuarioAnterior['ID_Tarjeta']}\" a \"{$tarjeta}\".";
-                $this->registrarCambio($mensaje);
-            }
-            if (!empty($diasCambiados)) {
-                $mensaje = "MH: El usuario \"{$nombre}\" cambió los días de acceso: " . implode(", ", $diasCambiados);
-                $this->registrarCambio($mensaje);
-            }
-
-            log_message('info', 'Actualización de usuario realizada: ' . $mensaje);
-
-            return redirect()->to(site_url('/modificar-usuario'))->with('success', 'Usuario actualizado correctamente');
-        } else {
-            log_message('error', 'Error al actualizar el usuario.');
-            return redirect()->to(site_url('/modificar-usuario'))->with('error', 'Hubo un problema al actualizar el usuario.');
+    // Verificar qué días cambiaron
+    $diasCambiados = [];
+    foreach ($horarioNuevo as $dia => $valor) {
+        $ant = isset($horarioAnterior[$dia]) ? $horarioAnterior[$dia] : null;
+        if ($valor !== $ant) {
+            $diasCambiados[] = $dia;
         }
     }
+
+    // Preparar datos para actualizar
+    $data = [
+        'ID_Usuario' => $id,
+        'Nombre' => $nombre,
+        'Email' => $email,
+        'ID_Rol' => $rol,
+        'ID_Tarjeta' => $tarjeta,
+        'horario_uso' => json_encode($horarioUso)
+    ];
+
+    // Actualizar los datos del usuario
+    if ($userModel->updateUser($id, $data)) {
+        // Registrar cambios individuales
+        if ($usuarioAnterior['Nombre'] !== $nombre) {
+            $this->registrarCambio("MU: El usuario con ID \"{$id}\" cambió su nombre de \"{$usuarioAnterior['Nombre']}\" a \"{$nombre}\".");
+        }
+        if ($usuarioAnterior['Email'] !== $email) {
+            $this->registrarCambio("ME: El usuario \"{$nombre}\" actualizó su email de \"{$usuarioAnterior['Email']}\" a \"{$email}\".");
+        }
+        if ($usuarioAnterior['ID_Rol'] !== $rol) {
+            $this->registrarCambio("MR: El usuario \"{$nombre}\" cambió su rol de \"{$usuarioAnterior['ID_Rol']}\" a \"{$rol}\".");
+        }
+        if ($usuarioAnterior['ID_Tarjeta'] !== $tarjeta) {
+            $this->registrarCambio("MT: El usuario \"{$nombre}\" cambió su tarjeta de \"{$usuarioAnterior['ID_Tarjeta']}\" a \"{$tarjeta}\".");
+        }
+        if (!empty($diasCambiados)) {
+            $this->registrarCambio("MH: El usuario \"{$nombre}\" cambió los días de acceso: " . implode(", ", $diasCambiados));
+        }
+
+        return redirect()->to(site_url('/modificar-usuario'))->with('success', 'Usuario actualizado correctamente');
+    } else {
+        log_message('error', 'Error al actualizar el usuario.');
+        return redirect()->to(site_url('/modificar-usuario'))->with('error', 'Hubo un problema al actualizar el usuario.');
+    }
+}
+
 
     // Función para mostrar la vista de modificar usuarios
     public function VistaModificar()
