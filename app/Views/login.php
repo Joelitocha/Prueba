@@ -16,6 +16,8 @@
         --light-bg: #f8f9fa;
         --text-color: #4a5568;
         --border-color: #e2e8f0;
+        --error-color: #dc3545;
+        --success-color: #198754;
     }
     
     body {
@@ -88,6 +90,11 @@
         box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
     }
 
+    .input-group input.error {
+        border-color: var(--error-color);
+        box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+    }
+
     .input-group i {
         position: absolute;
         left: 1rem;
@@ -95,6 +102,22 @@
         transform: translateY(-50%);
         color: #6c757d;
         font-size: 1.1rem;
+    }
+
+    .input-group i.error {
+        color: var(--error-color);
+    }
+
+    .error-message {
+        color: var(--error-color);
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+        text-align: left;
+        display: none;
+    }
+
+    .error-message.show {
+        display: block;
     }
 
     /* Botones con estilo moderno */
@@ -115,6 +138,17 @@
         box-sizing: border-box;
         text-decoration: none;
         display: block;
+    }
+
+    .btn-login:disabled {
+        background-color: #6c757d;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    .btn-login:disabled:hover {
+        transform: none;
+        box-shadow: none;
     }
 
     .btn-login:hover, .btn-volver:hover {
@@ -214,18 +248,32 @@
             </div>
         <?php endif; ?>
 
-        <form action="<?= base_url('login') ?>" method="POST" class="form-login">
+        <?php if (isset($validation)): ?>
+            <div class="alert alert-error">
+                <i class="fas fa-exclamation-circle me-2"></i>
+                <?= $validation->listErrors() ?>
+            </div>
+        <?php endif; ?>
+
+        <form action="<?= base_url('login') ?>" method="POST" class="form-login" id="loginForm">
+            <!-- Protección CSRF -->
+            <?= csrf_field() ?>
+            
             <div class="input-group">
-                <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Correo Electrónico" name="Email" required>
+                <i class="fas fa-envelope" id="emailIcon"></i>
+                <input type="email" placeholder="Correo Electrónico" name="Email" id="email" required
+                       value="<?= old('Email') ?>">
+                <div class="error-message" id="emailError">Por favor ingresa un email válido</div>
             </div>
 
             <div class="input-group">
-                <i class="fas fa-key"></i>
-                <input type="password" placeholder="Contraseña" name="Contraseña" required>
+                <i class="fas fa-key" id="passwordIcon"></i>
+                <input type="password" placeholder="Contraseña" name="Contraseña" id="password" required
+                       minlength="6">
+                <div class="error-message" id="passwordError">La contraseña debe tener al menos 6 caracteres</div>
             </div>
 
-            <button type="submit" class="btn-login">
+            <button type="submit" class="btn-login" id="submitBtn">
                 <i class="fas fa-sign-in-alt me-2"></i> Entrar
             </button>
         </form>
@@ -240,5 +288,73 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+    // Validación en tiempo real
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('loginForm');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const submitBtn = document.getElementById('submitBtn');
+        const emailError = document.getElementById('emailError');
+        const passwordError = document.getElementById('passwordError');
+        const emailIcon = document.getElementById('emailIcon');
+        const passwordIcon = document.getElementById('passwordIcon');
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function validateForm() {
+            let isValid = true;
+
+            // Validar email
+            if (!validateEmail(emailInput.value)) {
+                emailInput.classList.add('error');
+                emailIcon.classList.add('error');
+                emailError.classList.add('show');
+                isValid = false;
+            } else {
+                emailInput.classList.remove('error');
+                emailIcon.classList.remove('error');
+                emailError.classList.remove('show');
+            }
+
+            // Validar contraseña
+            if (passwordInput.value.length < 6) {
+                passwordInput.classList.add('error');
+                passwordIcon.classList.add('error');
+                passwordError.classList.add('show');
+                isValid = false;
+            } else {
+                passwordInput.classList.remove('error');
+                passwordIcon.classList.remove('error');
+                passwordError.classList.remove('show');
+            }
+
+            submitBtn.disabled = !isValid;
+            return isValid;
+        }
+
+        // Event listeners
+        emailInput.addEventListener('input', validateForm);
+        passwordInput.addEventListener('input', validateForm);
+
+        // Validar al enviar el formulario
+        form.addEventListener('submit', function(e) {
+            if (!validateForm()) {
+                e.preventDefault();
+            } else {
+                // Mostrar loading
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Procesando...';
+            }
+        });
+
+        // Validación inicial
+        validateForm();
+    });
+    </script>
 </body>
 </html>
