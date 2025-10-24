@@ -39,31 +39,41 @@
         padding: 3rem;
         border-radius: 16px;
         width: 100%;
-        max-width: 420px;
+        max-width: 500px; /* AUMENTADO de 420px a 500px */
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         text-align: center;
         margin: 20px;
         border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
+    .login-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .login-icon {
+        font-size: 3.5rem; /* Aumentado ligeramente */
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
     .login-container h2 {
         color: var(--dark-color);
-        margin-bottom: 2rem;
-        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        font-size: 2.25rem; /* Aumentado */
         font-weight: 600;
         font-family: 'Poppins', sans-serif;
     }
 
-    .login-icon {
-        font-size: 3rem;
-        color: var(--primary-color);
-        margin-bottom: 1rem;
+    .login-subtitle {
+        color: #6c757d;
+        font-size: 1.1rem;
+        margin-bottom: 0;
     }
 
     .form-login {
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1.75rem; /* Aumentado el espaciado */
     }
 
     .input-group {
@@ -72,12 +82,12 @@
 
     .input-group input {
         width: 100%;
-        padding: 1rem 1rem 1rem 3rem;
+        padding: 1.125rem 1.125rem 1.125rem 3.5rem; /* Aumentado padding */
         border: 1px solid var(--border-color);
-        border-radius: 8px;
+        border-radius: 10px; /* Bordes más redondeados */
         background-color: var(--light-color);
         color: var(--text-color);
-        font-size: 1rem;
+        font-size: 1.05rem; /* Texto ligeramente más grande */
         transition: all 0.3s ease;
         box-sizing: border-box;
         font-family: 'Open Sans', sans-serif;
@@ -87,21 +97,21 @@
         border-color: var(--primary-color);
         outline: none;
         background-color: var(--light-color);
-        box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+        box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15); /* Sombra más pronunciada */
     }
 
     .input-group input.error {
         border-color: var(--error-color);
-        box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+        box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.15);
     }
 
     .input-group i {
         position: absolute;
-        left: 1rem;
+        left: 1.25rem; /* Aumentado el espacio del icono */
         top: 50%;
         transform: translateY(-50%);
         color: #6c757d;
-        font-size: 1.1rem;
+        font-size: 1.2rem; /* Iconos más grandes */
     }
 
     .input-group i.error {
@@ -110,30 +120,31 @@
 
     .error-message {
         color: var(--error-color);
-        font-size: 0.875rem;
-        margin-top: 0.25rem;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
         text-align: left;
         display: none;
+        padding-left: 0.5rem;
     }
 
     .error-message.show {
         display: block;
     }
 
-    /* Botones con estilo moderno */
+    /* Botones más grandes */
     .btn-login, .btn-volver {
         width: 100%;
-        padding: 1rem;
-        border-radius: 8px;
+        padding: 1.125rem; /* Aumentado padding */
+        border-radius: 10px;
         border: none;
         background-color: var(--primary-color);
         color: white;
         font-family: 'Open Sans', sans-serif;
-        font-size: 1rem;
+        font-size: 1.1rem; /* Texto más grande */
         font-weight: 600;
         cursor: pointer;
         transition: all 0.3s ease;
-        margin-top: 0.5rem;
+        margin-top: 0.75rem; /* Más espacio arriba */
         text-align: center;
         box-sizing: border-box;
         text-decoration: none;
@@ -154,7 +165,7 @@
     .btn-login:hover, .btn-volver:hover {
         background-color: #0b5ed7;
         transform: translateY(-2px);
-        box-shadow: 0 6px 12px rgba(13, 110, 253, 0.25);
+        box-shadow: 0 8px 16px rgba(13, 110, 253, 0.3); /* Sombra más pronunciada */
         color: white;
     }
 
@@ -162,12 +173,12 @@
         transform: translateY(0);
     }
 
-    /* Alertas mejoradas */
+    /* Alertas más grandes */
     .alert {
-        padding: 1rem 1.25rem;
-        border-radius: 8px;
-        margin-bottom: 1.5rem;
-        font-size: 0.95rem;
+        padding: 1.25rem 1.5rem; /* Aumentado padding */
+        border-radius: 10px;
+        margin-bottom: 1.75rem;
+        font-size: 1rem; /* Texto más grande */
         border: 1px solid transparent;
     }
 
@@ -184,11 +195,11 @@
     }
 
     .login-footer {
-        margin-top: 2rem;
-        padding-top: 1.5rem;
+        margin-top: 2.5rem; /* Más espacio */
+        padding-top: 1.75rem;
         border-top: 1px solid var(--border-color);
         color: #6c757d;
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
 
     .brand-text {
@@ -197,42 +208,75 @@
         font-family: 'Poppins', sans-serif;
     }
 
+    .additional-options {
+        margin-top: 1.5rem;
+        text-align: center;
+    }
+
+    .additional-options a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.3s ease;
+    }
+
+    .additional-options a:hover {
+        color: #0b5ed7;
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        .login-container {
+            max-width: 450px; /* Más ancho en tablets */
+            padding: 2.5rem 2rem;
+        }
+    }
+
     @media (max-width: 576px) {
         .login-container {
             padding: 2rem 1.5rem;
             margin: 15px;
+            max-width: 400px; /* Aún más ancho en móviles */
+        }
+        
+        .login-container h2 {
+            font-size: 2rem;
+        }
+        
+        .login-icon {
+            font-size: 3rem;
+        }
+        
+        .input-group input {
+            padding: 1rem 1rem 1rem 3rem;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .login-container {
+            padding: 1.75rem 1.25rem;
+            max-width: 350px;
         }
         
         .login-container h2 {
             font-size: 1.75rem;
         }
         
-        .login-icon {
-            font-size: 2.5rem;
-        }
-    }
-
-    @media (max-width: 400px) {
-        .login-container {
-            padding: 1.5rem 1rem;
-        }
-        
-        .login-container h2 {
-            font-size: 1.5rem;
-        }
-        
         .input-group input {
-            padding: 0.875rem 0.875rem 0.875rem 2.5rem;
+            padding: 0.875rem 0.875rem 0.875rem 2.75rem;
         }
     }
     </style>
 </head>
 <body>
     <div class="login-container">
-        <div class="login-icon">
-            <i class="fas fa-lock"></i>
+        <div class="login-header">
+            <div class="login-icon">
+                <i class="fas fa-lock"></i>
+            </div>
+            <h2>Iniciar Sesión</h2>
+            <p class="login-subtitle">Accede a tu cuenta RackON</p>
         </div>
-        <h2>Iniciar Sesión</h2>
 
         <?php if (session()->getFlashdata('success')): ?>
             <div class="alert alert-success">
@@ -268,20 +312,28 @@
 
             <div class="input-group">
                 <i class="fas fa-key" id="passwordIcon"></i>
-                <input type="password" placeholder="Contraseña" name="Contraseña" id="password" required>
+                <input type="password" placeholder="Contraseña" name="Contraseña" id="password" required
+                       minlength="6">
+                <div class="error-message" id="passwordError">La contraseña debe tener al menos 6 caracteres</div>
             </div>
 
             <button type="submit" class="btn-login" id="submitBtn">
-                <i class="fas fa-sign-in-alt me-2"></i> Entrar
+                <i class="fas fa-sign-in-alt me-2"></i> Iniciar Sesión
             </button>
         </form>
+
+        <div class="additional-options">
+            <a href="<?= base_url('/forgot-password') ?>">
+                <i class="fas fa-question-circle me-1"></i> ¿Olvidaste tu contraseña?
+            </a>
+        </div>
 
         <a href="<?= base_url('/') ?>" class="btn-volver">
             <i class="fas fa-arrow-left me-2"></i> Volver a la página principal
         </a>
 
         <div class="login-footer">
-            <p>Sistema <span class="brand-text">RackON</span> - Seguridad Inteligente</p>
+            <p>Sistema <span class="brand-text">RackON</span> - Seguridad Inteligente para Racks</p>
         </div>
     </div>
 
