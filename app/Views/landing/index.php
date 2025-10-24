@@ -68,10 +68,35 @@ $session=session();
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     }
     
+    /* Cuando NO hay scroll - letras blancas */
+    #navbar .navbar-brand,
+    #navbar .nav-link,
+    #navbar .navbar-toggler {
+        color: white !important;
+    }
+    
+    #navbar .nav-link:hover,
+    #navbar .nav-link.active {
+        color: white !important;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    #navbar .btn-outline-light {
+        border-color: rgba(255,255,255,0.5);
+        color: white;
+    }
+    
+    #navbar .btn-outline-light:hover {
+        background-color: rgba(255,255,255,0.1);
+        border-color: white;
+        color: white;
+    }
+    
+    /* Cuando SÍ hay scroll - letras oscuras */
     #navbar.scrolled .navbar-brand,
     #navbar.scrolled .nav-link,
     #navbar.scrolled .navbar-toggler {
-        color: var(--dark-color) !important;
+        color: #2d3748 !important; /* Gris oscuro */
     }
     
     #navbar.scrolled .nav-link:hover,
@@ -88,70 +113,6 @@ $session=session();
     #navbar.scrolled .btn-outline-light:hover {
         background-color: var(--primary-color);
         color: white;
-    }
-    
-    #navbar .navbar-brand {
-        margin-right: 0;
-        padding: 0;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        color: white;
-    }
-    
-    #navbar .navbar-brand img {
-        height: 100%;
-        width: auto;
-        max-width: 100%;
-    }
-    
-    #navbar .navbar-toggler {
-        margin-left: auto;
-        padding: 0.5rem;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        font-size: 1.25rem;
-        color: white;
-    }
-    
-    #navbar .navbar-collapse {
-        flex-basis: 100%;
-        justify-content: flex-end;
-    }
-    
-    #navbar .navbar-nav {
-        align-items: center;
-        padding-top: 0.5rem;
-    }
-    
-    #navbar .nav-item {
-        margin-left: 0.5rem;
-    }
-    
-    #navbar .nav-link {
-        color: white;
-        padding: 0.5rem 1rem;
-        transition: all 0.3s ease;
-        border-radius: 6px;
-    }
-    
-    #navbar .nav-link:hover,
-    #navbar .nav-link.active {
-        color: white;
-        background-color: rgba(255, 255, 255, 0.2);
-    }
-    
-    #navbar .btn-outline-light {
-        border-color: rgba(255,255,255,0.5);
-        color: white;
-        padding: 0.375rem 1rem;
-        white-space: nowrap;
-        transition: all 0.3s ease;
-        margin-left: 0.5rem;
-    }
-    
-    #navbar .btn-outline-light:hover {
-        background-color: rgba(255,255,255,0.1);
-        border-color: white;
     }
     
     /* SECCIONES GENERALES */
