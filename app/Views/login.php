@@ -292,8 +292,7 @@
 
             <div class="input-group">
                 <i class="fas fa-key" id="passwordIcon"></i>
-                <input type="password" placeholder="Contraseña" name="Contraseña" id="password" required
-                       minlength="6">
+                <input type="password" placeholder="Contraseña" name="Contraseña" id="password" required>
                 <div class="error-message" id="passwordError">La contraseña debe tener al menos 6 caracteres</div>
             </div>
 
