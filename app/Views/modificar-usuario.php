@@ -666,20 +666,19 @@
               <td><?php echo $u["ID_Tarjeta"]; ?></td>
               <td>
               <?php 
-$horarios = json_decode($usuario['horario_uso'], true);
-if ($horarios) {
-    foreach ($horarios as $dia => $data) {
-        if ($data !== null) {
-            echo ucfirst($dia) . ': ' . $data['inicio'] . ' - ' . $data['fin'] . '<br>';
-        } else {
-            echo ucfirst($dia) . ': No permitido<br>';
-        }
-    }
-} else {
-    echo "Sin horario asignado";
-}
-?>
-
+                  $horarios = json_decode($usuario['horario_uso'], true);
+                  if ($horarios) {
+                      foreach ($horarios as $dia => $data) {
+                          if ($data !== null) {
+                              echo ucfirst($dia) . ': ' . $data['inicio'] . ' - ' . $data['fin'] . '<br>';
+                          } else {
+                              echo ucfirst($dia) . ': No permitido<br>';
+                          }
+                      }
+                  } else {
+                      echo "Sin horario asignado";
+                  }
+                ?>
               </td>
               <td>
                 <div style="display: flex; gap: 5px;">
