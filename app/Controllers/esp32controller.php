@@ -59,9 +59,10 @@ log_message('debug', 'Datos recibidos: ' . print_r($data, true));
     $nombre = $data->nombre ?? null;
     $ecode = $data->ecode ?? null;
     $idrack = $data->id_rack ?? null;
+    $nivel = $data->nivel ?? null;
 
 
-     if (!$device_id || !$ssid || !$password || !$nombre || !$ecode || !$idrack) {
+     if (!$device_id || !$ssid || !$password || !$nombre || !$ecode || !$idrack || !$nivel) {
          return $this->response->setJSON([
              "status" => "error",
              "message" => "Faltan datos obligatorios"
@@ -79,7 +80,7 @@ log_message('debug', 'Datos recibidos: ' . print_r($data, true));
             ])->setStatusCode(400);
         }
 
-        $resultado = $modelo->vincular_dispositivo($device_id, $ssid, $password, $nombre, $empresa['id_empresa'],$idrack);
+        $resultado = $modelo->vincular_dispositivo($device_id, $ssid, $password, $nombre, $empresa['id_empresa'],$idrack, $nivel);
 
         if (!$resultado) {
             return $this->response->setJSON([
