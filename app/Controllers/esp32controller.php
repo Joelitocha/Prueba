@@ -59,7 +59,7 @@ log_message('debug', 'Datos recibidos: ' . print_r($data, true));
     $nombre = $data->nombre ?? null;
     $ecode = $data->ecode ?? null;
     $idrack = $data->id_rack ?? null;
-    $nivel = $data->nivel ?? null;
+    $nivel = $data->Nivel ?? null;
 
 
      if (!$device_id || !$ssid || !$password || !$nombre || !$ecode || !$idrack || !$nivel) {
