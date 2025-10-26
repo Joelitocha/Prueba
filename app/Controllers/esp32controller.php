@@ -61,12 +61,12 @@ log_message('debug', 'Datos recibidos: ' . print_r($data, true));
     $idrack = $data->id_rack ?? null;
 
 
-    // if (!$device_id || !$ssid || !$password || !$nombre || !$ecode || !$idrack) {
-    //     return $this->response->setJSON([
-    //         "status" => "error",
-    //         "message" => "Faltan datos obligatorios"
-    //     ])->setStatusCode(400);
-    // }
+     if (!$device_id || !$ssid || !$password || !$nombre || !$ecode || !$idrack) {
+         return $this->response->setJSON([
+             "status" => "error",
+             "message" => "Faltan datos obligatorios"
+         ])->setStatusCode(400);
+     }
 
     try {
         $modelo = new Esp32Model();
