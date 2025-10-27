@@ -415,7 +415,17 @@ $rol = $session->get("ID_Rol");
     </a>
     
     <h1>Dispositivos del Rack: <?= esc($rack_seleccionado['Ubicacion']) ?></h1>
+
+    <div style="background-color: #f8f9fa; padding: 15px; border-radius: 6px; margin-bottom: 20px; border-left: 4px solid #3498db;">
+      <strong>ID del Rack:</strong> 
+      <span style="font-family: monospace; background-color: white; padding: 4px 8px; border-radius: 4px; margin-left: 10px;">
+        <?= esc($rack_seleccionado['ID_Rack']) ?>
+      </span>
+    </div>
     
+
+
+
     <?php if (!empty($dispositivos)): ?>
       <table>
         <tr>
