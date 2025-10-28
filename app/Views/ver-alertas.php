@@ -367,6 +367,10 @@ if ($session->get("ID_Rol") != 5 && $session->get("ID_Rol") != 6) {
 
 <div class="content">
   <div class="admin-container">
+    <div class="admin-header">
+      <h1>Alertas del Sistema</h1>
+    </div>
+
     <div class="alertas-table-container">
             <?php if (isset($alertas) && !empty($alertas)): ?>
                 <table class="alertas-table">
