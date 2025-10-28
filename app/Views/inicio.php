@@ -835,7 +835,7 @@
     <div class="content">
       <div class="welcome-container">
         <div class="welcome-header">
-          <h1>Bienvenido/a al Sistemaaaaaaaaaaaaaa</h1>
+          <h1>Bienvenido/a al Sistema</h1>
         </div>
         <div class="welcome-message">
           <?php 

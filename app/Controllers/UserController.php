@@ -42,7 +42,7 @@ class UserController extends BaseController
         $uid = $this->request->getPost('ID_Tarjeta');
         $rol = $this->request->getPost('ID_Rol');
 
-        $horarioUso = $this->request->getPost('horario_uso');
+        $horarioUso = $this->request->getPost('Horario_Uso');
 
         $data = [
             'Nombre' => $nombre,
@@ -52,7 +52,7 @@ class UserController extends BaseController
             'ID_Tarjeta' => $uid,
             'Token' => null,
             'Verificado' => 1,
-            'horario_uso' => json_encode($horarioUso)
+            'Horario_Uso' => json_encode($horarioUso)
         ];
         
 
@@ -74,11 +74,11 @@ class UserController extends BaseController
         $email = $this->request->getPost('Email');
         $rol = $this->request->getPost('ID_Rol');
         $tarjeta = $this->request->getPost('ID_Tarjeta');
-        $horarioUso = $this->request->getPost('horario_uso');
+        $horarioUso = $this->request->getPost('Horario_Uso');
     
         // Datos previos del usuario
         $usuarioAnterior = $userModel->find($id);
-        $horarioAnterior = json_decode($usuarioAnterior['horario_uso'], true);
+        $horarioAnterior = json_decode($usuarioAnterior['Horario_uso'], true);
         $horarioNuevo = $horarioUso; // Array recibido del formulario
     
         // Preparar datos para actualizar
@@ -88,7 +88,7 @@ class UserController extends BaseController
             'Email' => $email,
             'ID_Rol' => $rol,
             'ID_Tarjeta' => $tarjeta,
-            'horario_uso' => json_encode($horarioUso)
+            'Horario_uso' => json_encode($horarioUso)
         ];
     
         // Calcular cambios en horarios
