@@ -6,22 +6,33 @@ use CodeIgniter\Model;
 
 class Esp32Model extends Model
 {
-    public function insertar_registro($id)
-    {
-        $table = $this->db->table('registro_acceso_rf');
-        $tarjeta = $this->buscar_id($id);
+public function insertar_registro($uid)
+{
+    $table = $this->db->table('registro_acceso_rf');
+    $tarjeta = $this->buscar_id($uid);
 
-        $data = [
-            "Resultado"       => $tarjeta[0]["Estado"],
-            "Accion_Tomada"   => NULL,
-            "Archivo_Video"   => NULL,
-            "Ubicacion_Camara"=> NULL,
-            "ID_Rack"      => $id_rack[0]["ID_Rack"],
-            "ID_Tarjeta"      => $tarjeta[0]["ID_Tarjeta"]
-        ];
+    if (empty($tarjeta)) return false;
 
-        $table->insert($data);
-    }
+    // Buscamos el rack de la empresa de la tarjeta
+    $id_empresa = $tarjeta[0]['id_empresa'];
+    $rack = $this->db->table('racks')
+                 ->where('id_empresa', $id_empresa)
+                 ->get()
+                 ->getRowArray(); // o getResultArray si puede haber varios
+
+    $data = [
+        "Resultado"       => $tarjeta[0]["Estado"],
+        "Accion_Tomada"   => NULL,
+        "Archivo_Video"   => NULL,
+        "Ubicacion_Camara"=> NULL,
+        "ID_Rack"         => $rack['ID_Rack'] ?? null, // agarramos el rack de esa empresa
+        "ID_Tarjeta"      => $tarjeta[0]["ID_Tarjeta"]
+    ];
+
+    $table->insert($data);
+}
+
+
 
     public function buscar_id($id)
     {
