@@ -58,6 +58,9 @@ public function VistaAlertas()
 
     return view('ver-alertas', $data);
 }
-
+    public function VistaFAQ()
+    {
+        return view("FAQ");
+    }
 
 }
