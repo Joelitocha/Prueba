@@ -14,8 +14,14 @@ class ViewsControllers extends BaseController
     public function VistaGestionar() {
         return view("gestionar-tarjeta");
     }
-    public function VistaFAQ() {
-        return view("FAQ");
+    public function VistaFAQ()     {
+        $data = [
+            'title' => 'Preguntas Frecuentes - RackON',
+            'description' => 'Encuentra respuestas a las preguntas más comunes sobre RackON, nuestro sistema de seguridad para racks de servidores.',
+            'keywords' => 'FAQ RackON, preguntas frecuentes, seguridad racks, soporte técnico'
+        ];
+
+        return view('faq', $data);
     }
 public function VistaConsultar() {
     $tarjetamodel = new \App\Models\TarjetaModel;
