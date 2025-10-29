@@ -11,7 +11,7 @@ class Services extends BaseService
         $emailService = \Config\Services::email();
 
         $emailService->setTo($email);
-        $emailService->setFrom('rackonoficiall@gmail.com', 'RackON');
+        $emailService->setFrom('ariasfedericoadrian@gmail.com', 'RackON');
         $emailService->setSubject($asunto);
         $emailService->setMessage($cuerpo);
 
