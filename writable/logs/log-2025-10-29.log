@@ -20059,3 +20059,36 @@ The following SMTP error was encountered: 550-5.4.5 Daily user sending limit exc
 
 quit: 221 2.0.0 closing connection 98e67ed59e1d1-3405089b069sm368001a91.0 - gsmtp
 
+ERROR - 2025-10-29 20:44:45 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-10-29 20:44:45 --> 220 smtp.gmail.com ESMTP 41be03b00d2f7-b712d7cdf28sm14777070a12.31 - gsmtp
+
+hello: 250-smtp.gmail.com at your service, [18.231.148.68]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+starttls: 220 2.0.0 Ready to start TLS
+
+hello: 250-smtp.gmail.com at your service, [18.231.148.68]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+from: 250 2.1.0 OK 41be03b00d2f7-b712d7cdf28sm14777070a12.31 - gsmtp
+
+to: 250 2.1.5 OK 41be03b00d2f7-b712d7cdf28sm14777070a12.31 - gsmtp
+
+data: 354 Go ahead 41be03b00d2f7-b712d7cdf28sm14777070a12.31 - gsmtp
+
+
+quit: 
+The following SMTP error was encountered: 
+The following SMTP error was encountered: 
