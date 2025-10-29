@@ -19895,3 +19895,48 @@ WARNING - 2025-10-29 20:00:42 --> [DEPRECATED] Creation of dynamic property App\
  4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
  5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-10-29 20:18:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-10-29 20:18:25 --> [DEPRECATED] Creation of dynamic property App\Controllers\AuthController::$validation is deprecated in APPPATH/Controllers/BaseController.php on line 75.
+ 1 SYSTEMPATH/CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-10-29 20:19:25 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-10-29 20:19:25 --> 220 smtp.gmail.com ESMTP d2e1a72fcca58-7a41408e0cbsm16466893b3a.66 - gsmtp
+
+hello: 250-smtp.gmail.com at your service, [18.231.148.68]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+starttls: 220 2.0.0 Ready to start TLS
+
+hello: 250-smtp.gmail.com at your service, [18.231.148.68]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+from: 250 2.1.0 OK d2e1a72fcca58-7a41408e0cbsm16466893b3a.66 - gsmtp
+
+to: 250 2.1.5 OK d2e1a72fcca58-7a41408e0cbsm16466893b3a.66 - gsmtp
+
+data: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail
+550-5.4.5 sending limits go to
+550 5.4.5  https://support.google.com/a/answer/166852 d2e1a72fcca58-7a41408e0cbsm16466893b3a.66 - gsmtp
+
+The following SMTP error was encountered: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail
+550-5.4.5 sending limits go to
+550 5.4.5  https://support.google.com/a/answer/166852 d2e1a72fcca58-7a41408e0cbsm16466893b3a.66 - gsmtp
+
+quit: 221 2.0.0 closing connection d2e1a72fcca58-7a41408e0cbsm16466893b3a.66 - gsmtp
+
