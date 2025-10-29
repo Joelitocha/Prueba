@@ -744,7 +744,7 @@ $session=session();
                     <a class="nav-link px-2 px-lg-3 py-2" href="#contact" style="font-size: 1.1rem;">Contacto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link px-2 px-lg-3 py-2" href="/FAQ" style="font-size: 1.1rem;">FAQ</a>
+                    <a class="nav-link px-2 px-lg-3 py-2" href="<?= base_url('faq') ?>" style="font-size: 1.1rem;">FAQ</a>
                 </li>
                 <li class="nav-item ms-lg-3">
                     <a class="btn btn-outline-light px-3 py-2" href="login" style="font-size: 1.1rem;">
