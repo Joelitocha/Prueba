@@ -974,7 +974,7 @@ $session=session();
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <form id="contactForm" class="contact-form" action="https://formsubmit.co/rackonoficial@gmail.com" method="POST">
+                <form id="contactForm" class="contact-form" action="https://formsubmit.co/rackonoficiall@gmail.com" method="POST">
                     <!-- Configuración avanzada -->
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table"> <!-- Más organizado -->
@@ -2022,7 +2022,7 @@ Te contactaremos dentro de 24-48 horas para coordinar el envío.
     }
 
     async function sendEmailConfirmation(formData) {
-        return await fetch('https://formsubmit.co/ajax/rackonoficial@gmail.com', {
+        return await fetch('https://formsubmit.co/ajax/rackonoficiall@gmail.com', {
             method: 'POST',
             body: formData,
             headers: { 
