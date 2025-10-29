@@ -12,47 +12,40 @@ use App\Models\AlertaModel;
 
 class Esp32Controller extends BaseController
 {
-public function insertar_registro()
-{
-    $data = $this->request->getJSON();
-    $uid  = $data->uid ?? null;
-    $mac  = $data->device_id ?? null;
-
-    $modelo  = new Esp32Model();
-    $tarjeta = $modelo->buscar_id($uid);
-
-    // Si la tarjeta no está registrada
-    if (empty($tarjeta)) {
-        return $this->response
-            ->setJSON([
-                "status"  => "error",
-                "message" => "Tarjeta no registrada"
-            ])
-            ->setStatusCode(404);
+    public function insertar_registro()
+    {
+        $data = $this->request->getJSON();
+        $uid  = $data->uid ?? null;
+        $mac  = $data->device_id ?? null;
+    
+        $modelo  = new Esp32Model();
+        $tarjeta = $modelo->buscar_id($uid);
+    
+        // Si la tarjeta no está registrada
+        if (empty($tarjeta)) {
+            return $this->response
+                ->setJSON([
+                    "status"  => "error",
+                    "message" => "Tarjeta no registrada"
+                ])
+                ->setStatusCode(404);
+        }
+    
+        // Insertar registro de acceso (acá podrías guardar también la MAC si lo necesitás)
+        $modelo->insertar_registro($uid);
+    
+        if ((int)$tarjeta[0]['Estado'] === 1) {
+            return $this->response->setJSON([
+                "status"  => "success",
+                "message" => "Acceso autorizado"
+            ]);
+        } else {
+            return $this->response->setJSON([
+                "status"  => "denied",
+                "message" => "Acceso denegado: tarjeta inactiva"
+            ]);
+        }
     }
-
-    // Buscar la info del dispositivo según su MAC
-    $esp_info = $modelo->where('codevin', $mac)->first();
-
-    // Si encontró el dispositivo, usamos su ID_Rack
-    $idRack = $esp_info ? $esp_info['ID_Rack'] : 1; // si no lo encuentra, por defecto 1
-
-    // Insertar registro con UID y Rack correcto
-    $modelo->insertar_registro($uid, $idRack);
-
-    if ((int)$tarjeta[0]['Estado'] === 1) {
-        return $this->response->setJSON([
-            "status"  => "success",
-            "message" => "Acceso autorizado"
-        ]);
-    } else {
-        return $this->response->setJSON([
-            "status"  => "denied",
-            "message" => "Acceso denegado: tarjeta inactiva"
-        ]);
-    }
-}
-
     
     
 
