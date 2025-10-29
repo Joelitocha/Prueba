@@ -65,6 +65,7 @@ $routes->group('', ['filter' => '\App\Filters\AuthFilter'], function($routes) {
 
 // Rutas públicas (sin autenticación)
 $routes->get('/', 'AuthController::index');
+$routes->get('/FAQ', 'ViewsControllers::VistaFAQ');
 $routes->post('/login', 'AuthController::loginUser');
 $routes->get('/login', 'AuthController::inicio');
 $routes->get('/verify', 'AuthController::verifyEmail');
