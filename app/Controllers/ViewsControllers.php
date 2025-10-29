@@ -14,7 +14,9 @@ class ViewsControllers extends BaseController
     public function VistaGestionar() {
         return view("gestionar-tarjeta");
     }
-
+    public function VistaFAQ() {
+        return view("FAQ");
+    }
 public function VistaConsultar() {
     $tarjetamodel = new \App\Models\TarjetaModel;
     $id = session()->get('ID_Tarjeta');
