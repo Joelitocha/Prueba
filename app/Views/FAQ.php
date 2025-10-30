@@ -735,7 +735,7 @@ $session=session();
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <form id="contactForm" class="contact-form" action="https://formsubmit.co/no-reply@rackon.tech" method="POST">
+                <form id="contactForm" class="contact-form" action="https://formsubmit.co/RackOnOficial@gmail.com" method="POST">
                     <!-- Configuración avanzada -->
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table"> <!-- Más organizado -->
