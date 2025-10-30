@@ -14,15 +14,15 @@ class Email extends BaseConfig
     public string $protocol = 'smtp';
     public string $mailPath = '/usr/sbin/sendmail';
     
-    // CAMBIAR A SSL Y PUERTO 465
+    // CONFIGURACIÓN FORZADA
     public string $SMTPHost = 'email-smtp.sa-east-1.amazonaws.com';
     public string $SMTPUser = 'AKIAUJQ7RSKIDELQORXV';
     public string $SMTPPass = 'BNLhm3MWtmovSnuEEjLqQIiTJXW9aCLPfslOQ02f1/U';
-    public int $SMTPPort = 465;
-    public string $SMTPCrypto = 'ssl';  // Cambiar de 'tls' a 'ssl'
-    
-    public int $SMTPTimeout = 30;
+    public int $SMTPPort = 587;
+    public string $SMTPCrypto = '';  // VACÍO - sin cifrado
+    public int $SMTPTimeout = 60;
     public bool $SMTPKeepAlive = false;
+    
     public bool $wordWrap = true;
     public int $wrapChars = 76;
     public string $mailType = 'html';
