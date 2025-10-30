@@ -74,8 +74,6 @@ $routes->get('/set-password', 'AuthController::showSetPassword');
 $routes->post('/complete-registration', 'AuthController::completeRegistration');
 $routes->get('/logout', 'AuthController::logout');
 $routes->post('/logout', 'AuthController::logout');
-//Ruta anashe para el envio del mail
-$routes->post('contact/send', 'Contact::send');
 // Para el envio y registro de la compra del dispositivo.
 $routes->post('purchases/save', 'Purchases::save');
 // Rutas para ESP32 (públicas o con autenticación alternativa si es necesario)
