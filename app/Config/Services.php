@@ -11,14 +11,16 @@ class Services extends BaseService
         $emailService = \Config\Services::email();
 
         $emailService->setTo($email);
-        $emailService->setFrom('ariasfedericoadrian@gmail.com', 'RackON');
+        $emailService->setFrom('no-reply@rackon.tech', 'RackON');
         $emailService->setSubject($asunto);
         $emailService->setMessage($cuerpo);
 
         if ($emailService->send()) {
             return true;
         } else {
+            log_message('error', $emailService->printDebugger(['headers']));
             return false;
         }
     }
 }
+
