@@ -19,7 +19,7 @@ $session=session();
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome@6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap" rel="stylesheet">
     
@@ -463,7 +463,7 @@ $session=session();
         }
         
         #header .h1-large {
-            fontSize: 5rem;
+            font-size: 5rem;
         }
         
         #funcionamiento .content-column {
@@ -974,8 +974,15 @@ $session=session();
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <!-- FORMULARIO CORREGIDO - Ahora usa CodeIgniter -->
-                <form id="contactForm" class="contact-form" action="<?= site_url('contact/send') ?>" method="POST">
+                <form id="contactForm" class="contact-form" action="https://formsubmit.co/rackonoficial@gmail.com" method="POST">
+                    <!-- Configuración avanzada -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table"> <!-- Más organizado -->
+                    <input type="hidden" name="_subject" value="Nuevo contacto desde RackON"> <!-- Asunto personalizado -->
+                    <input type="hidden" name="_autoresponse" value="Gracias por contactarnos. Hemos recibido tu mensaje y te responderemos pronto."> <!-- Autorespuesta -->
+                    <input type="text" name="_honey" style="display:none"> <!-- Trampa para bots -->
+                    
+                    <!-- Campos del formulario -->
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <input type="text" name="nombre" class="form-control" placeholder="Nombre" required>
@@ -1005,6 +1012,52 @@ $session=session();
         </div>
     </div>
 </section>
+
+<!-- JavaScript para manejar el envío -->
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const feedback = document.getElementById('formFeedback');
+    const spinner = document.getElementById('submitSpinner');
+    const submitText = document.getElementById('submitText');
+    
+    // Mostrar spinner
+    spinner.classList.remove('d-none');
+    submitText.textContent = 'Enviando...';
+    submitBtn.disabled = true;
+    
+    // Enviar formulario
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            feedback.textContent = '¡Mensaje enviado con éxito!';
+            feedback.classList.remove('alert-danger', 'd-none');
+            feedback.classList.add('alert-success');
+            form.reset();
+        } else {
+            throw new Error('Error en el envío');
+        }
+    })
+    .catch(error => {
+        feedback.textContent = 'Error al enviar. Por favor, inténtalo de nuevo.';
+        feedback.classList.remove('alert-success', 'd-none');
+        feedback.classList.add('alert-danger');
+    })
+    .finally(() => {
+        spinner.classList.add('d-none');
+        submitText.textContent = 'Enviar Mensaje';
+        submitBtn.disabled = false;
+    });
+});
+</script>
 
 <footer class="py-5">
     <div class="container">
@@ -1357,7 +1410,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ============================================
-// FORMULARIO DE CONTACTO CORREGIDO - Ahora usa CodeIgniter
+// FORMULARIO DE CONTACTO
 // ============================================
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
@@ -1375,27 +1428,26 @@ document.addEventListener('DOMContentLoaded', function() {
             submitText.textContent = 'Enviando...';
             submitBtn.disabled = true;
             
-            // Enviar formulario a CodeIgniter
+            // Enviar formulario
             fetch(form.action, {
                 method: 'POST',
                 body: new FormData(form),
                 headers: {
-                    'X-Requested-With': 'XMLHttpRequest'
+                    'Accept': 'application/json'
                 }
             })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    feedback.textContent = data.message;
+            .then(response => {
+                if (response.ok) {
+                    feedback.textContent = '¡Mensaje enviado con éxito!';
                     feedback.classList.remove('alert-danger', 'd-none');
                     feedback.classList.add('alert-success');
                     form.reset();
                 } else {
-                    throw new Error(data.error || 'Error en el envío');
+                    throw new Error('Error en el envío');
                 }
             })
             .catch(error => {
-                feedback.textContent = error.message;
+                feedback.textContent = 'Error al enviar. Por favor, inténtalo de nuevo.';
                 feedback.classList.remove('alert-success', 'd-none');
                 feedback.classList.add('alert-danger');
             })
@@ -1970,7 +2022,7 @@ Te contactaremos dentro de 24-48 horas para coordinar el envío.
     }
 
     async function sendEmailConfirmation(formData) {
-        return await fetch('https://formsubmit.co/ajax/no-reply@rackon.tech', {
+        return await fetch('https://formsubmit.co/ajax/rackonoficial@gmail.com', {
             method: 'POST',
             body: formData,
             headers: { 
