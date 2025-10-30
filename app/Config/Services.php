@@ -6,7 +6,10 @@ use CodeIgniter\Config\BaseService;
 
 class Services extends BaseService
 {
-    public static function sendEmail($email, $asunto, $cuerpo)
+    /**
+     * Enviar correo usando el servicio configurado en Email.php
+     */
+    public static function sendEmail(string $email, string $asunto, string $cuerpo): bool
     {
         $emailService = \Config\Services::email();
 
@@ -16,11 +19,11 @@ class Services extends BaseService
         $emailService->setMessage($cuerpo);
 
         if ($emailService->send()) {
+            log_message('info', "Correo enviado correctamente a {$email}");
             return true;
         } else {
-            log_message('error', $emailService->printDebugger(['headers']));
+            log_message('error', "Fallo al enviar correo a {$email}: " . $emailService->printDebugger(['headers', 'subject']));
             return false;
         }
     }
 }
-
