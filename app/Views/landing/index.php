@@ -15,6 +15,7 @@ $session=session();
     <meta property="og:image" content="assets/images/RackON.jpg"> 
     <meta property="og:url" content="https://rackon.tech">
     <meta property="og:type" content="website">
+    <meta name="google-adsense-account" content="ca-pub-7824769168582395">
     <title>RackON - Rack Security</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
