@@ -24,7 +24,8 @@ $session=session();
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap" rel="stylesheet">
     
     <link href="https://unpkg.com/swiper@7/swiper-bundle.min.css" rel="stylesheet">
-    
+
+    <!--necesito plata -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7824769168582395"
      crossorigin="anonymous"></script>
     
