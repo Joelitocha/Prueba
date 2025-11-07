@@ -25,6 +25,9 @@ $session=session();
     
     <link href="https://unpkg.com/swiper@7/swiper-bundle.min.css" rel="stylesheet">
     
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7824769168582395"
+     crossorigin="anonymous"></script>
+    
     <style>
     :root {
         --primary-color: #0d6efd;
