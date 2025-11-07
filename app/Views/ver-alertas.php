@@ -369,15 +369,7 @@ if ($session->get("ID_Rol") != 5 && $session->get("ID_Rol") != 6) {
   <div class="admin-container">
     <div class="admin-header">
       <h1>Alertas del Sistema</h1>
-      <div class="alerta-filtros">
-        <button class="filtro-btn active" data-tipo="todas">Todas</button>
-        <button class="filtro-btn" data-tipo="hardware">Hardware</button>
-        <button class="filtro-btn" data-tipo="software">Software</button>
-        <button class="filtro-btn" data-tipo="acceso">Acceso</button>
-        <button class="filtro-btn" data-tipo="sistema">Sistema</button>
-      </div>
     </div>
-
     <div class="alertas-table-container">
             <?php if (isset($alertas) && !empty($alertas)): ?>
                 <table class="alertas-table">
